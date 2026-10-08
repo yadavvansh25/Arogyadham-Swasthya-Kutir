@@ -1,0 +1,498 @@
+/* Arogyadham Swasthya Kutir - Official Taj Hotels Aesthetic Design System */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@200;300;400;500;600;700&display=swap');
+
+:root {
+  --taj-gold: #b98944;
+  --taj-gold-hover: #a17332;
+  --taj-gold-light: #dfc28d;
+  --taj-gold-subtle: #f4ecdf;
+  --taj-charcoal: #222222;
+  --taj-body: #454545;
+  --taj-muted: #767676;
+  --taj-ivory: #FAF8F5;
+  --taj-cream: #F5EFEB;
+  --taj-sand: #ECE4D9;
+  --taj-border: #E8E2D8;
+  --taj-white: #FFFFFF;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Montserrat', sans-serif;
+  color: var(--taj-body);
+  background-color: var(--taj-white);
+}
+
+body {
+  overflow-x: hidden;
+  background-color: var(--taj-white);
+  color: var(--taj-body);
+}
+
+/* Typography */
+.font-cinzel {
+  font-family: 'Cinzel', serif;
+}
+
+.font-cormorant {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.font-montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Taj Gold Button - Iconic Rectangular Shape */
+.btn-taj-primary {
+  background-color: var(--taj-gold);
+  color: #FFFFFF;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 11px 24px;
+  border-radius: 0px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid var(--taj-gold);
+}
+
+.btn-taj-primary:hover {
+  background-color: var(--taj-gold-hover);
+  border-color: var(--taj-gold-hover);
+  box-shadow: 0 4px 15px rgba(185, 137, 68, 0.35);
+  transform: translateY(-1px);
+}
+
+.btn-taj-outline-dark {
+  border: 1px solid var(--taj-charcoal);
+  color: var(--taj-charcoal);
+  background: transparent;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 10px 22px;
+  border-radius: 0px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-taj-outline-dark:hover {
+  background-color: var(--taj-charcoal);
+  color: #FFFFFF;
+}
+
+.btn-taj-outline-gold {
+  border: 1px solid var(--taj-gold);
+  color: var(--taj-gold);
+  background: transparent;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 10px 22px;
+  border-radius: 0px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-taj-outline-gold:hover {
+  background-color: var(--taj-gold);
+  color: #FFFFFF;
+}
+
+/* Header Gradient Overlay */
+.taj-header-gradient {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 60%, transparent 100%);
+}
+
+.taj-header-scrolled {
+  background-color: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid rgba(185, 137, 68, 0.25);
+}
+
+/* Floating Taj Search Pill */
+.taj-floating-search {
+  background: #FFFFFF;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+}
+
+.taj-floating-search:hover {
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.32);
+}
+
+/* Taj Section Accent Title (—— TITLE ——) */
+.taj-section-title-line {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--taj-charcoal);
+  font-family: 'Cinzel', serif;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.taj-section-title-line::before,
+.taj-section-title-line::after {
+  content: '';
+  height: 1px;
+  width: 45px;
+  background-color: var(--taj-gold);
+}
+
+/* Luxury Card Shadow & Hover */
+.taj-white-card {
+  background: #FFFFFF;
+  border: 1px solid var(--taj-border);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.taj-white-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+  border-color: var(--taj-gold);
+}
+
+/* Category Filter Tabs */
+.subcat-tab-btn {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 10px 22px;
+  border-bottom: 2px solid transparent;
+  color: var(--taj-muted);
+  transition: all 0.25s ease;
+}
+
+.subcat-tab-btn:hover {
+  color: var(--taj-charcoal);
+}
+
+.subcat-tab-btn.active {
+  color: var(--taj-gold);
+  border-bottom-color: var(--taj-gold);
+}
+
+/* Modal Transitions */
+.modal-overlay {
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.modal-overlay.hidden-modal {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.modal-overlay.show-modal {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.modal-card {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+}
+.hidden-modal .modal-card {
+  transform: translateY(20px) scale(0.96);
+  opacity: 0;
+}
+.show-modal .modal-card {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+/* Toast styling */
+#toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  pointer-events: none;
+}
+
+.taj-toast {
+  pointer-events: auto;
+  min-width: 320px;
+  max-width: 440px;
+  background: #FFFFFF;
+  border-left: 4px solid var(--taj-gold);
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  border-right: 1px solid rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  transform: translateX(120%);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.taj-toast.toast-active {
+  transform: translateX(0);
+}
+
+/* Smooth custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F7F5F0;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--taj-gold);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--taj-gold-hover);
+}
+
+/* Print styles for booking voucher */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #booking-confirmation-receipt, #booking-confirmation-receipt * {
+    visibility: visible;
+  }
+  #booking-confirmation-receipt {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    color: #111;
+    background: #fff;
+    padding: 24px;
+  }
+}
+
+/* Dedicated Page View Transitions */
+.view-page {
+  animation: viewFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes viewFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Breadcrumb button hover */
+.breadcrumb-back-btn {
+  transition: all 0.25s ease;
+}
+.breadcrumb-back-btn:hover {
+  color: var(--taj-gold);
+  transform: translateX(-3px);
+}
+
+/* ================= DINING MENU & BILL ESTIMATOR STYLES ================= */
+.dining-tab-btn {
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 12px 20px;
+  border-bottom: 2px solid transparent;
+  color: var(--taj-muted);
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.dining-tab-btn:hover {
+  color: var(--taj-charcoal);
+  background-color: rgba(185, 137, 68, 0.04);
+}
+
+.dining-tab-btn.active {
+  color: var(--taj-gold);
+  border-bottom-color: var(--taj-gold);
+  background-color: rgba(185, 137, 68, 0.08);
+}
+
+.dining-subcat-chip {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  padding: 6px 14px;
+  border: 1px solid var(--taj-border);
+  background: #FFFFFF;
+  color: var(--taj-body);
+  transition: all 0.2s ease;
+  border-radius: 9999px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.dining-subcat-chip:hover {
+  border-color: var(--taj-gold);
+  color: var(--taj-gold);
+}
+
+.dining-subcat-chip.active {
+  background: var(--taj-charcoal);
+  border-color: var(--taj-charcoal);
+  color: #FFFFFF;
+}
+
+.menu-dish-card {
+  background: #FFFFFF;
+  border: 1px solid var(--taj-border);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.menu-dish-card:hover {
+  border-color: var(--taj-gold);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px);
+}
+
+.veg-symbol {
+  width: 14px;
+  height: 14px;
+  border: 1.5px solid #16a34a;
+  padding: 2px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #FFFFFF;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.veg-symbol::after {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: #16a34a;
+  border-radius: 50%;
+}
+
+.bill-receipt-paper {
+  background: #FFFFFF;
+  border: 1px solid var(--taj-border);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.08);
+  position: relative;
+}
+
+.bill-receipt-paper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--taj-gold), #dfc28d, var(--taj-gold));
+}
+
+.qty-btn {
+  width: 26px;
+  height: 26px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #FAF8F5;
+  border: 1px solid var(--taj-border);
+  color: var(--taj-charcoal);
+  font-weight: 700;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.qty-btn:hover {
+  background: var(--taj-gold);
+  color: #FFFFFF;
+  border-color: var(--taj-gold);
+}
+
+/* ================= AUTHENTICATION & OTP VERIFICATION STYLES ================= */
+.otp-digit {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  caret-color: var(--taj-gold);
+}
+
+.otp-digit:focus {
+  border-color: var(--taj-gold) !important;
+  box-shadow: 0 0 0 3px rgba(185, 137, 68, 0.25);
+  background-color: #FAF8F5;
+  transform: translateY(-2px);
+}
+
+.otp-digit.filled {
+  border-color: var(--taj-gold);
+  background-color: #FAF8F5;
+  color: var(--taj-charcoal);
+}
+
+/* User Dropdown Animations */
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: dropdownFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+#user-menu-dropdown {
+  transform-origin: top right;
+  animation: dropdownFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Luxury Receipt Print Styles */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #confirmation-modal, #confirmation-modal * {
+    visibility: visible;
+  }
+  #confirmation-modal {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #FFFFFF !important;
+  }
+  #confirmation-modal .modal-card {
+    box-shadow: none !important;
+    border: 1px solid #222 !important;
+    max-width: 100% !important;
+  }
+  #confirmation-modal button {
+    display: none !important;
+  }
+}
+
+
+
