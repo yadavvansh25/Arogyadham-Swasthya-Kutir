@@ -195,15 +195,23 @@ body {
 .modal-overlay {
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
-.modal-overlay.hidden-modal {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
+.modal-overlay.hidden-modal,
+.modal-overlay.hidden,
+#paymentReceiptModal.hidden,
+#confirmation-modal.hidden {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
 }
-.modal-overlay.show-modal {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
+.modal-overlay.show-modal,
+.modal-overlay.flex:not(.hidden),
+#paymentReceiptModal.flex:not(.hidden),
+#confirmation-modal.flex:not(.hidden) {
+  display: flex !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
 }
 
 .modal-card {

@@ -3,6 +3,65 @@
  * Complete Modular Application Logic
  */
 
+// Document compatibility hook: ensure both #paymentReceiptModal and #confirmation-modal resolve
+const _nativeGetElementById = Document.prototype.getElementById;
+Document.prototype.getElementById = function (id) {
+  if (id === 'confirmation-modal') {
+    return _nativeGetElementById.call(this, 'paymentReceiptModal') || _nativeGetElementById.call(this, 'confirmation-modal');
+  }
+  return _nativeGetElementById.call(this, id);
+};
+
+function openModalElement(modal) {
+  if (!modal) return;
+  modal.classList.remove('hidden');
+  modal.classList.add('flex');
+  modal.classList.remove('hidden-modal');
+  modal.classList.add('show-modal');
+  modal.style.display = 'flex';
+}
+
+function closeModalElement(modal) {
+  if (!modal) return;
+  modal.classList.add('hidden');
+  modal.classList.remove('flex');
+  modal.classList.add('hidden-modal');
+  modal.classList.remove('show-modal');
+  modal.style.display = 'none';
+}
+
+/* ================= PAYMENT RECEIPT DISPLAY LOGIC ================= */
+function onPaymentSuccess(response) {
+  const modal = document.getElementById('paymentReceiptModal') || document.getElementById('confirmation-modal');
+  if (modal) {
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    modal.classList.remove('hidden-modal');
+    modal.classList.add('show-modal');
+    modal.style.display = 'flex';
+  }
+}
+
+function closeReceipt() {
+  const modal = document.getElementById('paymentReceiptModal') || document.getElementById('confirmation-modal');
+  if (modal) {
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    modal.classList.add('hidden-modal');
+    modal.classList.remove('show-modal');
+    modal.style.display = 'none';
+  }
+  if (typeof navigateToHomeView === 'function') {
+    navigateToHomeView();
+  }
+}
+
+const closeConfirmationModal = closeReceipt;
+
+window.onPaymentSuccess = onPaymentSuccess;
+window.closeReceipt = closeReceipt;
+window.closeConfirmationModal = closeReceipt;
+
 // Application State
 const tajState = {
   selectedRoom: 'Mandakini Royal Suite',
@@ -15,6 +74,9 @@ const tajState = {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Strictly hide payment receipt modal on initial page load
+  closeReceipt();
+
   tajAuth.init();
   initTajNavbarScroll();
   initReservationDrawer();
@@ -317,10 +379,7 @@ function openAuthModal(tab = 'signin', guardMessage = null) {
 
   switchAuthTab(tab);
 
-  if (modal) {
-    modal.classList.remove('hidden-modal');
-    modal.classList.add('show-modal');
-  }
+  openModalElement(modal);
 
   if (window.lucide) {
     window.lucide.createIcons();
@@ -329,10 +388,7 @@ function openAuthModal(tab = 'signin', guardMessage = null) {
 
 function closeAuthModal() {
   const modal = document.getElementById('auth-modal');
-  if (modal) {
-    modal.classList.add('hidden-modal');
-    modal.classList.remove('show-modal');
-  }
+  closeModalElement(modal);
 }
 
 function switchAuthTab(tab) {
@@ -516,18 +572,12 @@ function openEmailVerificationGuardModal(email) {
   const modal = document.getElementById('email-verification-guard-modal');
   const emailEl = document.getElementById('guard-modal-email');
   if (emailEl && email) emailEl.textContent = email;
-  if (modal) {
-    modal.classList.remove('hidden-modal');
-    modal.classList.add('show-modal');
-  }
+  openModalElement(modal);
 }
 
 function closeEmailVerificationGuardModal() {
   const modal = document.getElementById('email-verification-guard-modal');
-  if (modal) {
-    modal.classList.add('hidden-modal');
-    modal.classList.remove('show-modal');
-  }
+  closeModalElement(modal);
 }
 
 async function handleCheckEmailVerification() {
@@ -672,10 +722,7 @@ function openMyBookingsModal() {
     }
   }
 
-  if (modal) {
-    modal.classList.remove('hidden-modal');
-    modal.classList.add('show-modal');
-  }
+  openModalElement(modal);
 
   if (window.lucide) {
     window.lucide.createIcons();
@@ -684,10 +731,7 @@ function openMyBookingsModal() {
 
 function closeMyBookingsModal() {
   const modal = document.getElementById('my-bookings-modal');
-  if (modal) {
-    modal.classList.add('hidden-modal');
-    modal.classList.remove('show-modal');
-  }
+  closeModalElement(modal);
 }
 
 function viewBookingVoucher(refNo) {
@@ -723,8 +767,7 @@ function viewBookingVoucher(refNo) {
   document.getElementById('receipt-total').textContent = `₹${Number(bTotal).toLocaleString('en-IN')}`;
 
   if (confirmModal) {
-    confirmModal.classList.remove('hidden-modal');
-    confirmModal.classList.add('show-modal');
+    onPaymentSuccess();
   }
 }
 
@@ -768,10 +811,7 @@ function openUserProfileModal() {
   }
   if (bookingsCount) bookingsCount.textContent = bookings.length;
 
-  if (modal) {
-    modal.classList.remove('hidden-modal');
-    modal.classList.add('show-modal');
-  }
+  openModalElement(modal);
 
   if (window.lucide) {
     window.lucide.createIcons();
@@ -780,18 +820,12 @@ function openUserProfileModal() {
 
 function closeUserProfileModal() {
   const modal = document.getElementById('profile-modal');
-  if (modal) {
-    modal.classList.add('hidden-modal');
-    modal.classList.remove('show-modal');
-  }
+  closeModalElement(modal);
 }
 
 function showSavedKutirsModal() {
   const modal = document.getElementById('saved-kutirs-modal');
-  if (modal) {
-    modal.classList.remove('hidden-modal');
-    modal.classList.add('show-modal');
-  }
+  openModalElement(modal);
   if (window.lucide) {
     window.lucide.createIcons();
   }
@@ -799,10 +833,7 @@ function showSavedKutirsModal() {
 
 function closeSavedKutirsModal() {
   const modal = document.getElementById('saved-kutirs-modal');
-  if (modal) {
-    modal.classList.add('hidden-modal');
-    modal.classList.remove('show-modal');
-  }
+  closeModalElement(modal);
 }
 
 /* ================= TAJ NAVBAR SCROLL EFFECT ================= */
@@ -1192,10 +1223,7 @@ function openBookingDrawer(roomName = 'Mandakini Royal Suite', rate = 12000) {
 
   calculateTotals();
 
-  if (drawer) {
-    drawer.classList.remove('hidden-modal');
-    drawer.classList.add('show-modal');
-  }
+  openModalElement(drawer);
 
   if (window.lucide) {
     window.lucide.createIcons();
@@ -1204,35 +1232,18 @@ function openBookingDrawer(roomName = 'Mandakini Royal Suite', rate = 12000) {
 
 function closeBookingDrawer() {
   const drawer = document.getElementById('booking-drawer');
-  if (drawer) {
-    drawer.classList.add('hidden-modal');
-    drawer.classList.remove('show-modal');
-  }
-}
-
-function closeConfirmationModal() {
-  const modal = document.getElementById('confirmation-modal');
-  if (modal) {
-    modal.classList.add('hidden-modal');
-    modal.classList.remove('show-modal');
-  }
+  closeModalElement(drawer);
 }
 
 function openMenuModal() {
   const modal = document.getElementById('menu-modal');
-  if (modal) {
-    modal.classList.remove('hidden-modal');
-    modal.classList.add('show-modal');
-  }
+  openModalElement(modal);
   lucide.createIcons();
 }
 
 function closeMenuModal() {
   const modal = document.getElementById('menu-modal');
-  if (modal) {
-    modal.classList.add('hidden-modal');
-    modal.classList.remove('show-modal');
-  }
+  closeModalElement(modal);
 }
 
 function showFacilityModal(title, body) {
@@ -1243,19 +1254,13 @@ function showFacilityModal(title, body) {
   if (titleElem) titleElem.textContent = title;
   if (bodyElem) bodyElem.textContent = body;
 
-  if (modal) {
-    modal.classList.remove('hidden-modal');
-    modal.classList.add('show-modal');
-  }
+  openModalElement(modal);
   lucide.createIcons();
 }
 
 function closeFacilityModal() {
   const modal = document.getElementById('facility-modal');
-  if (modal) {
-    modal.classList.add('hidden-modal');
-    modal.classList.remove('show-modal');
-  }
+  closeModalElement(modal);
 }
 
 function initReservationDrawer() {
@@ -1590,7 +1595,6 @@ function handleRazorpaySuccess(response, bookingDetails) {
   tajAuth.addBooking(bookingDetails);
 
   // 2. Populate and display Luxury Booking Confirmation Voucher
-  const confirmModal = document.getElementById('confirmation-modal');
   const refNoElem = document.getElementById('receipt-ref-no');
   const payIdElem = document.getElementById('receipt-payment-id');
   const guestElem = document.getElementById('receipt-guest');
@@ -1613,10 +1617,7 @@ function handleRazorpaySuccess(response, bookingDetails) {
   if (taxElem) taxElem.textContent = `₹${bookingDetails.tax.toLocaleString('en-IN')}`;
   if (totalElem) totalElem.textContent = `₹${bookingDetails.total.toLocaleString('en-IN')}`;
 
-  if (confirmModal) {
-    confirmModal.classList.remove('hidden-modal');
-    confirmModal.classList.add('show-modal');
-  }
+  onPaymentSuccess(response);
 
   showTajToast(
     'Payment Confirmed',
@@ -1628,6 +1629,27 @@ function handleRazorpaySuccess(response, bookingDetails) {
     window.lucide.createIcons();
   }
 }
+
+window.completeSimulatedPayment = function () {
+  const sampleRef = `ASK-2026-${Math.floor(1000 + Math.random() * 9000)}`;
+  const samplePay = `rzp_pay_${Date.now()}`;
+  const bookingDetails = {
+    refNo: sampleRef,
+    paymentId: samplePay,
+    guestName: tajAuth.currentUser ? tajAuth.currentUser.name : 'Vansh Yadav',
+    guestEmail: tajAuth.currentUser ? tajAuth.currentUser.email : 'vansh@example.com',
+    guestPhone: '+91 98765 43210',
+    room: tajState.selectedRoom || 'Mandakini Royal Suite',
+    checkIn: tajState.checkIn || '18 Oct 2026',
+    checkOut: tajState.checkOut || '19 Oct 2026',
+    nights: tajState.nights || 1,
+    base: tajState.calculatedBase || 12000,
+    tax: tajState.calculatedTax || 1440,
+    taxLabel: tajState.calculatedTaxLabel || 'GST (12% Hospitality Tax):',
+    total: tajState.calculatedTotal || 13440
+  };
+  handleRazorpaySuccess({ razorpay_payment_id: samplePay }, bookingDetails);
+};
 
 /* ================= COPY ADDRESS TO CLIPBOARD ================= */
 function initCopyAddress() {

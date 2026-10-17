@@ -2158,7 +2158,8 @@
 
   <!-- ================= TAJ-STYLE "BOOK A STAY" RESERVATION DRAWER ================= -->
   <div id="booking-drawer"
-    class="modal-overlay hidden-modal fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm">
+    class="modal-overlay hidden-modal fixed inset-0 z-50 items-center justify-center p-4 bg-black/75 backdrop-blur-sm hidden"
+    style="display: none;">
     <div
       class="modal-card w-full max-w-2xl bg-white border border-taj-border shadow-2xl overflow-hidden text-taj-charcoal">
 
@@ -2313,7 +2314,8 @@
 
   <!-- ================= AAHAR-VIHAR FULL MENU MODAL ================= -->
   <div id="menu-modal"
-    class="modal-overlay hidden-modal fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+    class="modal-overlay hidden-modal fixed inset-0 z-50 items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden"
+    style="display: none;">
     <div
       class="modal-card w-full max-w-4xl bg-white border border-taj-border shadow-2xl p-6 sm:p-8 max-h-[88vh] overflow-y-auto text-taj-charcoal">
       
@@ -2439,7 +2441,8 @@
 
   <!-- ================= GENERAL FACILITY DETAILS MODAL ================= -->
   <div id="facility-modal"
-    class="modal-overlay hidden-modal fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+    class="modal-overlay hidden-modal fixed inset-0 z-50 items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden"
+    style="display: none;">
     <div class="modal-card w-full max-w-md bg-white border-2 border-taj-gold shadow-2xl p-6 sm:p-8 text-taj-charcoal">
       <div class="flex items-center justify-between border-b border-taj-border pb-3 mb-4">
         <h3 id="facility-modal-title" class="font-cinzel text-lg font-bold text-taj-charcoal">Facility Details</h3>
@@ -2461,7 +2464,8 @@
 
   <!-- ================= AUTHENTICATION & VERIFICATION MODAL ================= -->
   <div id="auth-modal"
-    class="modal-overlay hidden-modal fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+    class="modal-overlay hidden-modal fixed inset-0 z-50 items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden"
+    style="display: none;">
     <div
       class="modal-card w-full max-w-md bg-white border-2 border-taj-gold shadow-2xl overflow-hidden text-taj-charcoal animate-fadeIn">
 
@@ -2633,7 +2637,8 @@
 
   <!-- ================= STANDALONE EMAIL VERIFICATION PROMPT MODAL ================= -->
   <div id="email-verification-guard-modal"
-    class="modal-overlay hidden-modal fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+    class="modal-overlay hidden-modal fixed inset-0 z-50 items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden"
+    style="display: none;">
     <div
       class="modal-card w-full max-w-md bg-white border-2 border-taj-gold shadow-2xl overflow-hidden text-taj-charcoal animate-fadeIn p-6 text-center space-y-4">
       <div class="w-12 h-12 bg-amber-50 border border-taj-gold text-taj-gold mx-auto flex items-center justify-center shadow-sm">
@@ -2672,7 +2677,8 @@
 
   <!-- ================= USER MY BOOKINGS MODAL ================= -->
   <div id="my-bookings-modal"
-    class="modal-overlay hidden-modal fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+    class="modal-overlay hidden-modal fixed inset-0 z-50 items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden"
+    style="display: none;">
     <div
       class="modal-card w-full max-w-2xl bg-white border-2 border-taj-gold shadow-2xl p-6 sm:p-8 text-taj-charcoal max-h-[85vh] overflow-y-auto">
       <div class="flex items-center justify-between border-b border-taj-border pb-4 mb-5">
@@ -2719,7 +2725,8 @@
 
   <!-- ================= USER PROFILE MODAL ================= -->
   <div id="profile-modal"
-    class="modal-overlay hidden-modal fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+    class="modal-overlay hidden-modal fixed inset-0 z-50 items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden"
+    style="display: none;">
     <div
       class="modal-card w-full max-w-md bg-white border-2 border-taj-gold shadow-2xl p-6 sm:p-8 text-taj-charcoal">
       <div class="flex items-center justify-between border-b border-taj-border pb-4 mb-5">
@@ -2777,7 +2784,8 @@
 
   <!-- ================= SAVED KUTIRS MODAL ================= -->
   <div id="saved-kutirs-modal"
-    class="modal-overlay hidden-modal fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+    class="modal-overlay hidden-modal fixed inset-0 z-50 items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden"
+    style="display: none;">
     <div
       class="modal-card w-full max-w-lg bg-white border-2 border-taj-gold shadow-2xl p-6 sm:p-8 text-taj-charcoal">
       <div class="flex items-center justify-between border-b border-taj-border pb-4 mb-5">
@@ -2834,8 +2842,9 @@
   </div>
 
   <!-- ================= BOOKING CONFIRMATION & LUXURY RECEIPT VOUCHER MODAL ================= -->
-  <div id="confirmation-modal"
-    class="modal-overlay hidden-modal fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+  <div id="paymentReceiptModal" data-modal="confirmation-modal"
+    class="modal-overlay hidden-modal fixed inset-0 z-50 items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden"
+    style="display: none;">
     <div
       class="modal-card w-full max-w-lg bg-white border-2 border-taj-gold shadow-2xl p-6 sm:p-8 text-center text-taj-charcoal max-h-[90vh] overflow-y-auto">
       <div id="booking-confirmation-receipt" class="space-y-4">
@@ -2906,11 +2915,11 @@
             <i data-lucide="printer" class="w-3.5 h-3.5"></i>
             <span>Print Receipt</span>
           </button>
-          <button onclick="closeConfirmationModal(); openMyBookingsModal();" class="flex-1 btn-taj-outline-gold py-2.5 text-xs font-semibold flex items-center justify-center gap-1.5">
+          <button onclick="closeReceipt(); openMyBookingsModal();" class="flex-1 btn-taj-outline-gold py-2.5 text-xs font-semibold flex items-center justify-center gap-1.5">
             <i data-lucide="calendar" class="w-3.5 h-3.5"></i>
             <span>My Bookings</span>
           </button>
-          <button onclick="closeConfirmationModal()" class="flex-1 btn-taj-primary py-2.5 text-xs font-semibold">
+          <button onclick="closeReceipt()" class="flex-1 btn-taj-primary py-2.5 text-xs font-semibold">
             Done
           </button>
         </div>
