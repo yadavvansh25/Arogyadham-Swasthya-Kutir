@@ -790,39 +790,13 @@ function initMealPlanModalListeners() {
 
 function initActionDelegation() {
   document.addEventListener('click', function(e) {
-    // 1. Aahar-Vihar Menu Click
-    if (e.target.closest('#btn-aahar-vihar-menu, [data-nav="aahar-vihar-menu"]')) {
-      e.preventDefault();
-      if (typeof window.switchView === 'function') window.switchView('view-aahar-vihar-menu');
-      return;
-    }
-
-    // 2. Panchvati Pasoee Menu Click
-    if (e.target.closest('#btn-panchvati-menu, [data-nav="panchvati-menu"]')) {
-      e.preventDefault();
-      if (typeof window.switchView === 'function') window.switchView('view-panchvati-pasoee-menu');
-      return;
-    }
-
-    // 3. Swasthya Kutir Rooms Click
-    if (e.target.closest('#btn-swasthya-rooms, [data-nav="swasthya-rooms"]')) {
-      e.preventDefault();
-      if (typeof window.switchView === 'function') window.switchView('view-swasthya-kutir');
-      return;
-    }
-
-    // 4. Panchvati Rooms Click
-    if (e.target.closest('#btn-panchvati-rooms, [data-nav="panchvati-rooms"]')) {
-      e.preventDefault();
-      if (typeof window.switchView === 'function') window.switchView('view-panchvati');
-      return;
-    }
-
-    // 5. Back to Home Buttons
-    if (e.target.closest('.btn-back-home, [data-nav="home"]')) {
-      e.preventDefault();
-      if (typeof window.switchView === 'function') window.switchView('view-home');
-      return;
+    // Allow natural HTML multi-page navigation for links
+    const link = e.target.closest('a[href]');
+    if (link) {
+      const href = link.getAttribute('href');
+      if (href && (href.startsWith('/') || href.endsWith('.html') || href.includes('.html#') || href.startsWith('http') || href.startsWith('tel:') || href.startsWith('mailto:'))) {
+        return;
+      }
     }
 
     const btn = e.target.closest('[data-action]');
@@ -1272,6 +1246,17 @@ function initRouting() {
 }
 
 function handleRouting() {
+  const path = (window.location.pathname || '').toLowerCase();
+  // If on a dedicated subpage, do not run index-view router
+  if (
+    path.includes('swasthya-kutir') ||
+    path.includes('panchvati') ||
+    path.includes('aahar-vihar') ||
+    path.includes('pasoee')
+  ) {
+    return;
+  }
+
   const rawHash = window.location.hash.toLowerCase().trim();
   const hash = rawHash.replace(/^#\/?/, '');
 
@@ -1279,37 +1264,32 @@ function handleRouting() {
     hash === 'swasthya-kutir-rooms' || hash === 'swasthya-kutir' || hash === 'view-swasthya-kutir' ||
     hash === 'vaidehi-rooms' || hash === 'vaidehi' || hash === 'kutir-rooms' || hash === 'swasthya-rooms'
   ) {
-    window.switchView('view-swasthya-kutir');
-    document.title = "Arogyadham Swasthya Kutir Wing | Heritage & Wellness Sanctuary, Chitrakoot";
+    window.location.href = '/swasthya-kutir.html';
+    return;
   } else if (
     hash === 'panchvati-rooms' || hash === 'panchvati' || hash === 'view-panchvati' ||
     hash === 'panchwati-rooms' || hash === 'panchwati'
   ) {
-    window.switchView('view-panchvati');
-    document.title = "Panchvati Wing | Sacred Community & Family Living, Chitrakoot";
+    window.location.href = '/panchvati.html';
+    return;
   } else if (
     hash === 'aahar-vihar-menu' || hash === 'menu' || hash === 'dining-menu' ||
     hash === 'view-aahar-vihar-menu' || hash === 'aahar-vihar'
   ) {
-    window.switchView('view-aahar-vihar-menu');
-    document.title = "Aahar-Vihar Restaurant Menu | Arogyadham Swasthya Kutir, Chitrakoot";
-    if (typeof renderDiningDishes === 'function') {
-      renderDiningDishes();
-      updateDiningBillUI();
-    }
+    window.location.href = '/aahar-vihar-menu.html';
+    return;
   } else if (
     hash === 'panchvati-pasoee-menu' || hash === 'panchvati-rasoee-menu' || hash === 'panchvati-pasoee' ||
     hash === 'panchvati-rasoee' || hash === 'view-panchvati-pasoee-menu' || hash === 'pasoee-menu' || hash === 'rasoee-menu' ||
     hash === 'pasoee' || hash === 'rasoee'
   ) {
-    window.switchView('view-panchvati-pasoee-menu');
-    document.title = "Panchvati Pasoee Menu | Arogyadham Swasthya Kutir, Chitrakoot";
-    if (typeof renderPasoeeItems === 'function') {
-      renderPasoeeItems();
-      updatePasoeeCartUI();
-    }
+    window.location.href = '/panchvati-pasoee-menu.html';
+    return;
   } else {
-    window.switchView('view-home');
+    const homeEl = document.getElementById('view-home');
+    if (homeEl) {
+      window.switchView('view-home');
+    }
     document.title = "Arogyadham Swasthya Kutir, Chitrakoot | Luxury Wellness Resort";
     if (hash === 'rooms-section' || hash === 'rooms-wings' || hash === 'rooms-pillars' || hash === 'rooms') {
       setTimeout(() => {
