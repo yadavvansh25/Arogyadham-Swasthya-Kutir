@@ -273,7 +273,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between gap-4">
           <a href="./index.html" class="breadcrumb-back-btn btn-back-home min-h-[44px] px-5 py-2.5 inline-flex items-center justify-center gap-2 text-xs font-semibold tracking-wider uppercase text-taj-charcoal hover:text-taj-gold bg-white border border-taj-border hover:border-taj-gold shrink-0 cursor-pointer transition-all shadow-sm">
             <i data-lucide="arrow-left" class="w-4 h-4 text-taj-gold"></i>
-            <span>← Back to Main Sanctuary</span>
+            <span>← Back to Main Website</span>
           </a>
           <div class="text-xs text-taj-muted tracking-wider flex items-center gap-2">
             <a href="./index.html#hero" class="hover:text-taj-charcoal">Home</a>
@@ -289,7 +289,7 @@
       <div class="relative py-16 sm:py-24 bg-taj-charcoal text-white text-center px-4 overflow-hidden">
         <div class="absolute inset-0 z-0">
           <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1920&q=80"
-            alt="Panchvati Rasoee Traditional Dining Hall"
+            alt="Panchvati Pasoee Traditional Dining Hall"
             loading="lazy"
             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80';"
             class="w-full h-full object-cover opacity-25">
@@ -302,10 +302,10 @@
             <span>Community Tradition & Sacred Bhojan</span>
           </div>
           <h1 class="font-cinzel text-3xl sm:text-5xl md:text-6xl font-bold uppercase tracking-[0.15em] text-white">
-            PANCHVATI RASOEE MENU
+            PANCHVATI PASOEE MENU
           </h1>
           <p class="font-cormorant italic text-lg sm:text-2xl text-taj-gold-light font-normal max-w-3xl mx-auto">
-            "Simple, nourishing Satvik Bhojan prepared daily with sacred reverence."
+            "Traditional Vedic Pilgrimage & Wellness Dining Hall (+5% GST Applicable)"
           </p>
 
           <!-- Operating Timings Pill Strip -->
@@ -335,7 +335,7 @@
           <!-- 2-COLUMN LAYOUT: DISH CARDS & LIVE COUPON ESTIMATOR SIDEBAR -->
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
 
-            <!-- LEFT: 6 AUTHENTIC PANCHVATI RASOEE DISHES GRID -->
+            <!-- LEFT: 6 AUTHENTIC PANCHVATI PASOEE DISHES GRID -->
             <div class="lg:col-span-8 space-y-6">
               <div class="flex items-center justify-between border-b border-taj-border pb-3">
                 <span class="text-xs uppercase tracking-wider font-semibold text-taj-charcoal">
@@ -344,8 +344,297 @@
                 <span class="text-xs text-taj-muted">100% Satvik Pure Veg</span>
               </div>
 
+              <!-- PRE-RENDERED VISIBLE ITEMS CONTAINER (VISIBLE BY DEFAULT) -->
               <div id="pasoee-items-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <!-- Dynamically rendered via app.js with +5% GST calculation note and + ADD button -->
+
+                <!-- 1. Satvik Thali (Lunch / Dinner) -->
+                <div class="taj-white-card p-5 flex flex-col justify-between hover:border-taj-gold transition-all duration-300 group">
+                  <div class="space-y-3">
+                    <div class="flex items-start justify-between gap-2 border-b border-taj-border/60 pb-2.5">
+                      <div>
+                        <div class="flex items-center gap-1.5 mb-1">
+                          <span class="w-2.5 h-2.5 rounded-full bg-emerald-600 inline-block"></span>
+                          <span class="text-[10px] uppercase font-bold tracking-widest text-taj-gold">Community Staple</span>
+                        </div>
+                        <h4 class="font-cinzel text-base font-bold text-taj-charcoal group-hover:text-taj-gold transition-colors">
+                          Satvik Thali (Lunch / Dinner)
+                        </h4>
+                        <span class="text-[11px] text-taj-gold font-medium block">दैनिक सात्विक थाली (दोपहर / रात्रि)</span>
+                      </div>
+                      <span class="text-[10px] font-semibold px-2 py-0.5 bg-taj-ivory border border-taj-border text-taj-charcoal uppercase tracking-wider flex-shrink-0">
+                        +5% GST
+                      </span>
+                    </div>
+
+                    <p class="text-xs text-taj-body leading-relaxed">
+                      Includes Seasonal Dal, 2 Subzi, Phulka, Steamed Rice & Sweet.
+                    </p>
+
+                    <div class="flex items-center gap-1 text-[11px] text-taj-muted pt-1">
+                      <i data-lucide="clock" class="w-3.5 h-3.5 text-taj-gold flex-shrink-0"></i>
+                      <span>Lunch 12:00-02:30 PM | Dinner 07:30-09:30 PM</span>
+                    </div>
+                  </div>
+
+                  <div class="pt-4 mt-3 border-t border-taj-border flex items-center justify-between">
+                    <div>
+                      <div class="flex items-baseline gap-1">
+                        <span class="font-cinzel text-lg font-bold text-taj-charcoal">₹220</span>
+                        <span class="text-[10px] text-taj-muted">+ 5% GST</span>
+                      </div>
+                      <span class="text-[10px] text-taj-gold block font-medium">= ₹231.00 incl. tax</span>
+                    </div>
+
+                    <div>
+                      <button type="button" onclick="addToPasoeeCart('pasoee-satvik-thali')"
+                        class="btn-taj-primary py-1.5 px-4 text-xs flex items-center gap-1.5 cursor-pointer">
+                        <i data-lucide="plus" class="w-3.5 h-3.5"></i>
+                        <span>Add</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 2. Wholesome Morning Breakfast -->
+                <div class="taj-white-card p-5 flex flex-col justify-between hover:border-taj-gold transition-all duration-300 group">
+                  <div class="space-y-3">
+                    <div class="flex items-start justify-between gap-2 border-b border-taj-border/60 pb-2.5">
+                      <div>
+                        <div class="flex items-center gap-1.5 mb-1">
+                          <span class="w-2.5 h-2.5 rounded-full bg-emerald-600 inline-block"></span>
+                          <span class="text-[10px] uppercase font-bold tracking-widest text-taj-gold">Daily Pratham Aahar</span>
+                        </div>
+                        <h4 class="font-cinzel text-base font-bold text-taj-charcoal group-hover:text-taj-gold transition-colors">
+                          Wholesome Morning Breakfast
+                        </h4>
+                        <span class="text-[11px] text-taj-gold font-medium block">पौष्टिक प्रभात अल्पाहार</span>
+                      </div>
+                      <span class="text-[10px] font-semibold px-2 py-0.5 bg-taj-ivory border border-taj-border text-taj-charcoal uppercase tracking-wider flex-shrink-0">
+                        +5% GST
+                      </span>
+                    </div>
+
+                    <p class="text-xs text-taj-body leading-relaxed">
+                      Includes Millet Daliya / Herbal Tea, Poha / Idli & Fresh Fruits.
+                    </p>
+
+                    <div class="flex items-center gap-1 text-[11px] text-taj-muted pt-1">
+                      <i data-lucide="clock" class="w-3.5 h-3.5 text-taj-gold flex-shrink-0"></i>
+                      <span>Breakfast 07:30-09:30 AM</span>
+                    </div>
+                  </div>
+
+                  <div class="pt-4 mt-3 border-t border-taj-border flex items-center justify-between">
+                    <div>
+                      <div class="flex items-baseline gap-1">
+                        <span class="font-cinzel text-lg font-bold text-taj-charcoal">₹150</span>
+                        <span class="text-[10px] text-taj-muted">+ 5% GST</span>
+                      </div>
+                      <span class="text-[10px] text-taj-gold block font-medium">= ₹157.50 incl. tax</span>
+                    </div>
+
+                    <div>
+                      <button type="button" onclick="addToPasoeeCart('pasoee-morning-breakfast')"
+                        class="btn-taj-primary py-1.5 px-4 text-xs flex items-center gap-1.5 cursor-pointer">
+                        <i data-lucide="plus" class="w-3.5 h-3.5"></i>
+                        <span>Add</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 3. Special Festival / Ayurvedic Thali -->
+                <div class="taj-white-card p-5 flex flex-col justify-between hover:border-taj-gold transition-all duration-300 group">
+                  <div class="space-y-3">
+                    <div class="flex items-start justify-between gap-2 border-b border-taj-border/60 pb-2.5">
+                      <div>
+                        <div class="flex items-center gap-1.5 mb-1">
+                          <span class="w-2.5 h-2.5 rounded-full bg-emerald-600 inline-block"></span>
+                          <span class="text-[10px] uppercase font-bold tracking-widest text-taj-gold">Ayurvedic Feast</span>
+                        </div>
+                        <h4 class="font-cinzel text-base font-bold text-taj-charcoal group-hover:text-taj-gold transition-colors">
+                          Special Festival / Ayurvedic Thali
+                        </h4>
+                        <span class="text-[11px] text-taj-gold font-medium block">विशेष आयुर्वेदिक एवं पर्व थाली</span>
+                      </div>
+                      <span class="text-[10px] font-semibold px-2 py-0.5 bg-taj-ivory border border-taj-border text-taj-charcoal uppercase tracking-wider flex-shrink-0">
+                        +5% GST
+                      </span>
+                    </div>
+
+                    <p class="text-xs text-taj-body leading-relaxed">
+                      Tridosha-harmonizing royal thali featuring Paneer Pasanda, Seasonal Greens, Dal Panchmel, 2 Millet Rotis + 2 Phulkas, Sawa Rice / Millet Khichdi, Cow Milk Kheer & Digestive Herbal Rasam.
+                    </p>
+
+                    <div class="flex items-center gap-1 text-[11px] text-taj-muted pt-1">
+                      <i data-lucide="clock" class="w-3.5 h-3.5 text-taj-gold flex-shrink-0"></i>
+                      <span>Lunch 12:00-02:30 PM | Dinner 07:30-09:30 PM</span>
+                    </div>
+                  </div>
+
+                  <div class="pt-4 mt-3 border-t border-taj-border flex items-center justify-between">
+                    <div>
+                      <div class="flex items-baseline gap-1">
+                        <span class="font-cinzel text-lg font-bold text-taj-charcoal">₹280</span>
+                        <span class="text-[10px] text-taj-muted">+ 5% GST</span>
+                      </div>
+                      <span class="text-[10px] text-taj-gold block font-medium">= ₹294.00 incl. tax</span>
+                    </div>
+
+                    <div>
+                      <button type="button" onclick="addToPasoeeCart('pasoee-festival-thali')"
+                        class="btn-taj-primary py-1.5 px-4 text-xs flex items-center gap-1.5 cursor-pointer">
+                        <i data-lucide="plus" class="w-3.5 h-3.5"></i>
+                        <span>Add</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 4. Desi Ghee Bowl -->
+                <div class="taj-white-card p-5 flex flex-col justify-between hover:border-taj-gold transition-all duration-300 group">
+                  <div class="space-y-3">
+                    <div class="flex items-start justify-between gap-2 border-b border-taj-border/60 pb-2.5">
+                      <div>
+                        <div class="flex items-center gap-1.5 mb-1">
+                          <span class="w-2.5 h-2.5 rounded-full bg-emerald-600 inline-block"></span>
+                          <span class="text-[10px] uppercase font-bold tracking-widest text-taj-gold">Pure Vedic Ghee</span>
+                        </div>
+                        <h4 class="font-cinzel text-base font-bold text-taj-charcoal group-hover:text-taj-gold transition-colors">
+                          Desi Ghee Bowl
+                        </h4>
+                        <span class="text-[11px] text-taj-gold font-medium block">शुद्ध वैदिक गौ-घृत कटोरी</span>
+                      </div>
+                      <span class="text-[10px] font-semibold px-2 py-0.5 bg-taj-ivory border border-taj-border text-taj-charcoal uppercase tracking-wider flex-shrink-0">
+                        +5% GST
+                      </span>
+                    </div>
+
+                    <p class="text-xs text-taj-body leading-relaxed">
+                      Freshly clarified pure A2 Desi Cow Ghee bowl prepared from indigenous Gir cows in our Parisar Gow Shala.
+                    </p>
+
+                    <div class="flex items-center gap-1 text-[11px] text-taj-muted pt-1">
+                      <i data-lucide="clock" class="w-3.5 h-3.5 text-taj-gold flex-shrink-0"></i>
+                      <span>Available All Meals</span>
+                    </div>
+                  </div>
+
+                  <div class="pt-4 mt-3 border-t border-taj-border flex items-center justify-between">
+                    <div>
+                      <div class="flex items-baseline gap-1">
+                        <span class="font-cinzel text-lg font-bold text-taj-charcoal">₹30</span>
+                        <span class="text-[10px] text-taj-muted">+ 5% GST</span>
+                      </div>
+                      <span class="text-[10px] text-taj-gold block font-medium">= ₹31.50 incl. tax</span>
+                    </div>
+
+                    <div>
+                      <button type="button" onclick="addToPasoeeCart('pasoee-desi-ghee')"
+                        class="btn-taj-primary py-1.5 px-4 text-xs flex items-center gap-1.5 cursor-pointer">
+                        <i data-lucide="plus" class="w-3.5 h-3.5"></i>
+                        <span>Add</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 5. Herbal Chhach / Buttermilk -->
+                <div class="taj-white-card p-5 flex flex-col justify-between hover:border-taj-gold transition-all duration-300 group">
+                  <div class="space-y-3">
+                    <div class="flex items-start justify-between gap-2 border-b border-taj-border/60 pb-2.5">
+                      <div>
+                        <div class="flex items-center gap-1.5 mb-1">
+                          <span class="w-2.5 h-2.5 rounded-full bg-emerald-600 inline-block"></span>
+                          <span class="text-[10px] uppercase font-bold tracking-widest text-taj-gold">Digestive Elixir</span>
+                        </div>
+                        <h4 class="font-cinzel text-base font-bold text-taj-charcoal group-hover:text-taj-gold transition-colors">
+                          Herbal Chhach / Buttermilk
+                        </h4>
+                        <span class="text-[11px] text-taj-gold font-medium block">मसाला छाछ / पाचक तक्र</span>
+                      </div>
+                      <span class="text-[10px] font-semibold px-2 py-0.5 bg-taj-ivory border border-taj-border text-taj-charcoal uppercase tracking-wider flex-shrink-0">
+                        +5% GST
+                      </span>
+                    </div>
+
+                    <p class="text-xs text-taj-body leading-relaxed">
+                      Traditional chilled probiotic buttermilk churned fresh with roasted cumin seeds, Himalayan rock salt, fresh mint, and coriander.
+                    </p>
+
+                    <div class="flex items-center gap-1 text-[11px] text-taj-muted pt-1">
+                      <i data-lucide="clock" class="w-3.5 h-3.5 text-taj-gold flex-shrink-0"></i>
+                      <span>Breakfast 07:30-09:30 AM | Lunch 12:00-02:30 PM</span>
+                    </div>
+                  </div>
+
+                  <div class="pt-4 mt-3 border-t border-taj-border flex items-center justify-between">
+                    <div>
+                      <div class="flex items-baseline gap-1">
+                        <span class="font-cinzel text-lg font-bold text-taj-charcoal">₹40</span>
+                        <span class="text-[10px] text-taj-muted">+ 5% GST</span>
+                      </div>
+                      <span class="text-[10px] text-taj-gold block font-medium">= ₹42.00 incl. tax</span>
+                    </div>
+
+                    <div>
+                      <button type="button" onclick="addToPasoeeCart('pasoee-herbal-buttermilk')"
+                        class="btn-taj-primary py-1.5 px-4 text-xs flex items-center gap-1.5 cursor-pointer">
+                        <i data-lucide="plus" class="w-3.5 h-3.5"></i>
+                        <span>Add</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 6. Chapati Basket -->
+                <div class="taj-white-card p-5 flex flex-col justify-between hover:border-taj-gold transition-all duration-300 group">
+                  <div class="space-y-3">
+                    <div class="flex items-start justify-between gap-2 border-b border-taj-border/60 pb-2.5">
+                      <div>
+                        <div class="flex items-center gap-1.5 mb-1">
+                          <span class="w-2.5 h-2.5 rounded-full bg-emerald-600 inline-block"></span>
+                          <span class="text-[10px] uppercase font-bold tracking-widest text-taj-gold">Add-On</span>
+                        </div>
+                        <h4 class="font-cinzel text-base font-bold text-taj-charcoal group-hover:text-taj-gold transition-colors">
+                          Chapati Basket
+                        </h4>
+                        <span class="text-[11px] text-taj-gold font-medium block">अतिरिक्त देसी घी फुल्का टोकरी (४ रोटी)</span>
+                      </div>
+                      <span class="text-[10px] font-semibold px-2 py-0.5 bg-taj-ivory border border-taj-border text-taj-charcoal uppercase tracking-wider flex-shrink-0">
+                        +5% GST
+                      </span>
+                    </div>
+
+                    <p class="text-xs text-taj-body leading-relaxed">
+                      Basket of 4 hot whole-wheat tawa chapatis roasted on traditional cast-iron tawa and brushed with pure A2 Desi Cow Ghee.
+                    </p>
+
+                    <div class="flex items-center gap-1 text-[11px] text-taj-muted pt-1">
+                      <i data-lucide="clock" class="w-3.5 h-3.5 text-taj-gold flex-shrink-0"></i>
+                      <span>Available All Meals</span>
+                    </div>
+                  </div>
+
+                  <div class="pt-4 mt-3 border-t border-taj-border flex items-center justify-between">
+                    <div>
+                      <div class="flex items-baseline gap-1">
+                        <span class="font-cinzel text-lg font-bold text-taj-charcoal">₹40</span>
+                        <span class="text-[10px] text-taj-muted">+ 5% GST</span>
+                      </div>
+                      <span class="text-[10px] text-taj-gold block font-medium">= ₹42.00 incl. tax</span>
+                    </div>
+
+                    <div>
+                      <button type="button" onclick="addToPasoeeCart('pasoee-extra-phulka')"
+                        class="btn-taj-primary py-1.5 px-4 text-xs flex items-center gap-1.5 cursor-pointer">
+                        <i data-lucide="plus" class="w-3.5 h-3.5"></i>
+                        <span>Add</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
               </div>
             </div>
 
@@ -355,7 +644,7 @@
                 <div class="border-b border-taj-border pb-3">
                   <span class="text-[9px] uppercase font-bold tracking-widest text-taj-gold block">Pre-Book Meal Coupons</span>
                   <h4 class="font-cinzel text-base font-bold text-taj-charcoal mt-0.5">
-                    PANCHVATI RASOEE ESTIMATE
+                    PANCHVATI PASOEE ESTIMATE
                   </h4>
                   <p class="text-[11px] text-taj-muted">Transparent 5% GST (2.5% CGST + 2.5% SGST)</p>
                 </div>

@@ -2064,6 +2064,7 @@ const aaharViharMenu = [
 ];
 
 const diningSubcategories = {
+  'all': ['All', 'Breakfast', 'Starters & Soups', 'Mains & Millets', 'Breads', 'Desserts & Beverages'],
   'breakfast': ['All', 'Indian Breakfast', 'South Indian', 'Continental & Sandwiches'],
   'starters-soups': ['All', 'Indian Kebabs', 'Chinese Starters', 'Soups', 'Pizzas & Pastas'],
   'mains': ['All', 'Indian Gravies', 'Chinese Mains', 'Millet Specials', 'Breads', 'Rice & Biryani', 'Raita & Salads'],
@@ -2071,7 +2072,7 @@ const diningSubcategories = {
 };
 
 const diningMenuState = {
-  currentTab: 'breakfast',
+  currentTab: 'all',
   currentSubcat: 'All',
   searchQuery: '',
   cart: {} // { [dishId]: quantity }
@@ -2091,7 +2092,7 @@ function switchDiningTab(tabId) {
   diningMenuState.currentSubcat = 'All';
 
   // Update Tab Buttons UI
-  ['breakfast', 'starters-soups', 'mains', 'desserts-beverages'].forEach(tab => {
+  ['all', 'breakfast', 'starters-soups', 'mains', 'desserts-beverages'].forEach(tab => {
     const btn = document.getElementById(`tab-btn-${tab}`);
     if (btn) {
       if (tab === tabId) {
@@ -2175,8 +2176,18 @@ function renderDiningDishes() {
     }
 
     // Standard category & subcategory filtering
-    if (item.category !== diningMenuState.currentTab) return false;
-    if (diningMenuState.currentSubcat !== 'All' && item.subcat !== diningMenuState.currentSubcat) return false;
+    if (diningMenuState.currentTab !== 'all') {
+      if (item.category !== diningMenuState.currentTab) return false;
+      if (diningMenuState.currentSubcat !== 'All' && item.subcat !== diningMenuState.currentSubcat) return false;
+    } else {
+      if (diningMenuState.currentSubcat !== 'All') {
+        if (diningMenuState.currentSubcat === 'Breakfast' && item.category !== 'breakfast') return false;
+        if (diningMenuState.currentSubcat === 'Starters & Soups' && item.category !== 'starters-soups') return false;
+        if (diningMenuState.currentSubcat === 'Mains & Millets' && (item.category !== 'mains' || item.subcat === 'Breads')) return false;
+        if (diningMenuState.currentSubcat === 'Breads' && item.subcat !== 'Breads') return false;
+        if (diningMenuState.currentSubcat === 'Desserts & Beverages' && item.category !== 'desserts-beverages') return false;
+      }
+    }
 
     return true;
   });
@@ -2407,53 +2418,43 @@ function shareOrderOnWhatsApp() {
   window.open(url, '_blank');
 }
 
-/* ================= PANCHVATI RASOEE MENU & COUPON ESTIMATOR ================= */
+/* ================= PANCHVATI PASOEE MENU & COUPON ESTIMATOR ================= */
 const PANCHVATI_RASOEE_ITEMS = [
   {
     id: 'pasoee-satvik-thali',
-    name: 'Regular Satvik Thali',
+    name: 'Satvik Thali (Lunch / Dinner)',
     hindi: 'दैनिक सात्विक थाली (दोपहर / रात्रि)',
-    desc: 'Seasonal Dal Tadka, 2 Daily Seasonal Sabzi (e.g. Lauki Kofta / Aloo Jeera), 4 Fresh Tava Phulkas with Desi Ghee, Steamed Rice, Fresh Salad, Papad & Vedic Sweet.',
-    timing: 'Lunch (12:00 - 14:30) & Dinner (19:30 - 21:30)',
+    desc: 'Includes Seasonal Dal, 2 Subzi, Phulka with Desi Ghee, Steamed Rice & Sweet.',
+    timing: 'Lunch 12:00-02:30 PM | Dinner 07:30-09:30 PM',
     basePrice: 220,
     gstRate: 0.05,
     tag: 'Community Staple'
+  },
+  {
+    id: 'pasoee-morning-breakfast',
+    name: 'Wholesome Morning Breakfast',
+    hindi: 'पौष्टिक प्रभात अल्पाहार',
+    desc: 'Includes Millet Daliya / Herbal Tea, Poha / Idli & Fresh Fruits.',
+    timing: 'Breakfast 07:30-09:30 AM',
+    basePrice: 150,
+    gstRate: 0.05,
+    tag: 'Daily Pratham Aahar'
   },
   {
     id: 'pasoee-festival-thali',
     name: 'Special Festival / Ayurvedic Thali',
     hindi: 'विशेष आयुर्वेदिक एवं पर्व थाली',
     desc: 'Tridosha-harmonizing royal thali featuring Paneer Pasanda, Seasonal Greens, Dal Panchmel, 2 Millet Rotis + 2 Phulkas, Sawa Rice / Millet Khichdi, Cow Milk Kheer & Digestive Herbal Rasam.',
-    timing: 'Lunch & Dinner Special',
+    timing: 'Lunch 12:00-02:30 PM | Dinner 07:30-09:30 PM',
     basePrice: 280,
     gstRate: 0.05,
     tag: 'Ayurvedic Feast'
   },
   {
-    id: 'pasoee-morning-breakfast',
-    name: 'Morning Wholesome Breakfast',
-    hindi: 'पौष्टिक प्रभात अल्पाहार',
-    desc: 'Nourishing Morning Breakfast with Organic Millet Daliya, Fluffy Indori Poha / Steamed Idli Sambar, Seasonal Fresh Fruit Bowl & Hot Jaggery Tulsi Tea.',
-    timing: 'Breakfast (07:30 - 09:30 AM)',
-    basePrice: 150,
-    gstRate: 0.05,
-    tag: 'Daily Pratham Aahar'
-  },
-  {
-    id: 'pasoee-extra-phulka',
-    name: 'Extra Phulka / Chapatis Basket (4 Pcs)',
-    hindi: 'अतिरिक्त देसी घी फुल्का टोकरी (४ रोटी)',
-    desc: 'Basket of 4 hot whole-wheat tawa rotis roasted on traditional cast-iron tawa and brushed with pure A2 Desi Cow Ghee.',
-    timing: 'Available All Meals',
-    basePrice: 40,
-    gstRate: 0.05,
-    tag: 'Add-On'
-  },
-  {
     id: 'pasoee-desi-ghee',
-    name: 'Desi Ghee Bowl (50ml)',
+    name: 'Desi Ghee Bowl',
     hindi: 'शुद्ध वैदिक गौ-घृत कटोरी',
-    desc: 'Freshly clarified A2 Desi Cow Ghee bowl (50ml) prepared from indigenous Gir cows in our Parisar Gow Shala.',
+    desc: 'Freshly clarified pure A2 Desi Cow Ghee bowl prepared from indigenous Gir cows in our Parisar Gow Shala.',
     timing: 'Available All Meals',
     basePrice: 30,
     gstRate: 0.05,
@@ -2461,13 +2462,23 @@ const PANCHVATI_RASOEE_ITEMS = [
   },
   {
     id: 'pasoee-herbal-buttermilk',
-    name: 'Herbal Buttermilk / Chhach (300ml)',
+    name: 'Herbal Chhach / Buttermilk',
     hindi: 'मसाला छाछ / पाचक तक्र',
     desc: 'Traditional chilled probiotic buttermilk churned fresh with roasted cumin seeds, Himalayan rock salt, fresh mint, and coriander.',
-    timing: 'Breakfast & Lunch',
+    timing: 'Breakfast 07:30-09:30 AM | Lunch 12:00-02:30 PM',
     basePrice: 40,
     gstRate: 0.05,
     tag: 'Digestive Elixir'
+  },
+  {
+    id: 'pasoee-extra-phulka',
+    name: 'Chapati Basket',
+    hindi: 'अतिरिक्त देसी घी फुल्का टोकरी (४ रोटी)',
+    desc: 'Basket of 4 hot whole-wheat tawa chapatis roasted on traditional cast-iron tawa and brushed with pure A2 Desi Cow Ghee.',
+    timing: 'Available All Meals',
+    basePrice: 40,
+    gstRate: 0.05,
+    tag: 'Add-On'
   }
 ];
 const PANCHVATI_PASOEE_ITEMS = PANCHVATI_RASOEE_ITEMS;
