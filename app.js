@@ -58,18 +58,28 @@ const tajState = {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Strictly hide payment receipt modal on initial page load
-  closeReceipt();
+  // Safe Lucide initialization
+  if (typeof lucide !== 'undefined') {
+    try {
+      lucide.createIcons();
+    } catch (e) {
+      console.warn('Lucide load issue:', e);
+    }
+  }
 
-  tajAuth.init();
-  initTajNavbarScroll();
-  initReservationDrawer();
-  initCopyAddress();
-  initSearchInput();
-  initRouting();
-  initDiningMenu();
-  initRasoeeMenu();
-  initMealPlanModalListeners();
+  // Strictly hide payment receipt modal on initial page load
+  try { closeReceipt(); } catch (e) {}
+
+  try { tajAuth.init(); } catch (e) { console.warn('tajAuth init issue:', e); }
+  try { initTajNavbarScroll(); } catch (e) { console.warn('navbar init issue:', e); }
+  try { initReservationDrawer(); } catch (e) { console.warn('drawer init issue:', e); }
+  try { initCopyAddress(); } catch (e) { console.warn('copy address issue:', e); }
+  try { initSearchInput(); } catch (e) { console.warn('search input issue:', e); }
+  try { initRouting(); } catch (e) { console.warn('routing issue:', e); }
+  try { initDiningMenu(); } catch (e) { console.warn('dining menu issue:', e); }
+  try { initRasoeeMenu(); } catch (e) { console.warn('rasoee menu issue:', e); }
+  try { initMealPlanModalListeners(); } catch (e) { console.warn('meal plan listeners issue:', e); }
+  try { initActionDelegation(); } catch (e) { console.warn('action delegation issue:', e); }
 });
 
 function initRasoeeMenu() {
@@ -720,7 +730,7 @@ function openMealPlanModal(roomIdentifier) {
             <div class="font-cinzel text-xl sm:text-2xl font-bold text-taj-charcoal">${opt.priceFormatted}</div>
             <div class="text-[10px] uppercase font-semibold tracking-wider text-taj-muted">per night (incl. taxes)</div>
           </div>
-          <button onclick="handleDjuboAdd('${opt.djuboKey}')"
+          <button onclick="handleDjuboAdd('${opt.djuboKey}')" data-action="redirect-djubo" data-target="${opt.djuboKey}"
             class="bg-[#FF7700] hover:bg-[#E06600] active:scale-95 text-white font-bold text-xs uppercase tracking-wider px-6 py-2.5 shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer flex items-center justify-center min-w-[90px] min-h-[42px] shrink-0"
             title="Book ${opt.title} on Djubo">
             <span>ADD</span>
@@ -738,6 +748,9 @@ function closeMealPlanModal() {
   const modal = document.getElementById('meal-plan-modal');
   closeModalElement(modal);
 }
+
+const openMealModal = openMealPlanModal;
+const closeMealModal = closeMealPlanModal;
 
 function handleDjuboAdd(key) {
   let targetLink = window.DJUBO_LINKS && window.DJUBO_LINKS[key];
@@ -775,10 +788,71 @@ function initMealPlanModalListeners() {
   });
 }
 
+function initActionDelegation() {
+  document.addEventListener('click', function(e) {
+    const btn = e.target.closest('[data-action]');
+    if (!btn) return;
+    const action = btn.getAttribute('data-action');
+    const target = btn.getAttribute('data-target');
+
+    if (action === 'open-meal-modal') {
+      if (typeof window.openMealModal === 'function') {
+        window.openMealModal(target);
+      } else if (typeof window.openMealPlanModal === 'function') {
+        window.openMealPlanModal(target);
+      }
+    } else if (action === 'switch-view') {
+      if (typeof window.switchView === 'function') {
+        window.switchView(target);
+      }
+    } else if (action === 'close-modal') {
+      if (typeof window.closeMealModal === 'function') {
+        window.closeMealModal();
+      } else if (typeof window.closeMealPlanModal === 'function') {
+        window.closeMealPlanModal();
+      }
+    } else if (action === 'open-booking-drawer') {
+      const rate = Number(btn.getAttribute('data-rate') || 12000);
+      if (typeof window.openBookingDrawer === 'function') {
+        window.openBookingDrawer(target || 'Mandakini Royal Suite', rate);
+      }
+    } else if (action === 'close-booking-drawer') {
+      if (typeof window.closeBookingDrawer === 'function') {
+        window.closeBookingDrawer();
+      }
+    } else if (action === 'toggle-booking-drawer' || action === 'toggle-drawer') {
+      if (typeof window.toggleBookingDrawer === 'function') {
+        window.toggleBookingDrawer();
+      }
+    } else if (action === 'redirect-djubo') {
+      if (typeof window.handleDjuboAdd === 'function') {
+        window.handleDjuboAdd(target);
+      } else if (typeof window.redirectToDjubo === 'function') {
+        window.redirectToDjubo(target);
+      }
+    } else if (action === 'copy-address') {
+      if (typeof window.copyAddress === 'function') {
+        window.copyAddress();
+      }
+    } else if (action === 'share-property') {
+      if (typeof window.shareProperty === 'function') {
+        window.shareProperty();
+      }
+    } else if (action === 'toggle-mobile-menu') {
+      if (typeof window.toggleMobileMenu === 'function') {
+        window.toggleMobileMenu();
+      }
+    }
+  });
+}
+
 window.openMealPlanModal = openMealPlanModal;
+window.openMealModal = openMealModal;
 window.closeMealPlanModal = closeMealPlanModal;
+window.closeMealModal = closeMealModal;
 window.handleDjuboAdd = handleDjuboAdd;
 window.initMealPlanModalListeners = initMealPlanModalListeners;
+window.initActionDelegation = initActionDelegation;
 
 function redirectToDjubo(roomNameOrKey, planType = null, explicitKey = null) {
   let key = explicitKey;
@@ -1098,7 +1172,7 @@ function initTajNavbarScroll() {
 }
 
 /* ================= ROBUST JAVASCRIPT VIEW CONTROLLER ================= */
-window.switchView = function(targetViewId) {
+function switchView(targetViewId) {
   const views = [
     'view-home',
     'view-swasthya-kutir',
@@ -1143,10 +1217,15 @@ window.switchView = function(targetViewId) {
   }
 
   window.scrollTo({ top: 0, behavior: 'smooth' });
-  if (typeof lucide !== 'undefined' && lucide.createIcons) {
-    lucide.createIcons();
+  if (typeof lucide !== 'undefined') {
+    try {
+      lucide.createIcons();
+    } catch(e) {
+      console.warn('Lucide load issue:', e);
+    }
   }
-};
+}
+window.switchView = switchView;
 
 function initRouting() {
   window.addEventListener('hashchange', handleRouting);
@@ -2668,8 +2747,17 @@ function onPaymentSuccess() {}
 window.onPaymentSuccess = onPaymentSuccess;
 window.safeCreateIcons = safeCreateIcons;
 window.showTajToast = showTajToast;
+window.openMealModal = openMealPlanModal;
 window.openMealPlanModal = openMealPlanModal;
+window.closeMealModal = closeMealPlanModal;
 window.closeMealPlanModal = closeMealPlanModal;
+window.switchView = switchView;
+window.toggleBookingDrawer = toggleBookingDrawer;
+window.redirectToDjubo = redirectToDjubo;
 window.handleDjuboAdd = handleDjuboAdd;
+window.copyAddress = copyAddress;
+window.copyResortAddress = copyAddress;
+window.shareProperty = shareProperty;
 window.DJUBO_LINKS = DJUBO_LINKS;
+
 

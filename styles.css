@@ -206,9 +206,11 @@ body {
 /* Modal Transitions */
 .modal-overlay {
   transition: opacity 0.3s ease, visibility 0.3s ease;
+  pointer-events: none;
 }
 .modal-overlay.hidden-modal,
 .modal-overlay.hidden,
+.modal-overlay:not(.show-modal),
 #paymentReceiptModal.hidden,
 #confirmation-modal.hidden {
   display: none !important;
@@ -217,7 +219,7 @@ body {
   pointer-events: none !important;
 }
 .modal-overlay.show-modal,
-.modal-overlay.flex:not(.hidden),
+.modal-overlay.flex:not(.hidden):not(.hidden-modal),
 #paymentReceiptModal.flex:not(.hidden),
 #confirmation-modal.flex:not(.hidden) {
   display: flex !important;
