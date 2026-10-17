@@ -69,6 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initRouting();
   initDiningMenu();
   initRasoeeMenu();
+  initMealPlanModalListeners();
 });
 
 function initRasoeeMenu() {
@@ -493,22 +494,291 @@ async function handleGoogleSignIn() {
   }
 }
 
-/* ================= DJUBO BOOKING ENGINE MULTI-TIER REDIRECTION ================= */
+/* ================= DJUBO BOOKING ENGINE MULTI-TIER REDIRECTION & MEAL PLANS ================= */
 const DJUBO_LINKS = {
   "MANDAKINI_ROOM_ONLY": "#",
   "MANDAKINI_BREAKFAST": "#",
   "MANDAKINI_MAP": "#",
-  "PAIYSHWANI_ROOM_ONLY": "#",
-  "PAIYSHWANI_BREAKFAST": "#",
-  "PAIYSHWANI_MAP": "#",
+  "PAISHWANI_ROOM_ONLY": "#",
+  "PAISHWANI_BREAKFAST": "#",
+  "PAISHWANI_MAP": "#",
   "VAIDEHI_SUITE_ROOM_ONLY": "#",
   "VAIDEHI_SUITE_BREAKFAST": "#",
   "VAIDEHI_SUITE_MAP": "#",
   "VAIDEHI_TWIN_ROOM_ONLY": "#",
   "VAIDEHI_TWIN_BREAKFAST": "#",
-  "VAIDEHI_TWIN_MAP": "#"
+  "VAIDEHI_TWIN_MAP": "#",
+  // Aliases for backwards-compatibility:
+  "PAIYSHWANI_ROOM_ONLY": "#",
+  "PAIYSHWANI_BREAKFAST": "#",
+  "PAIYSHWANI_MAP": "#"
 };
 window.DJUBO_LINKS = DJUBO_LINKS;
+
+const SWASTHYA_KUTIR_MEAL_PLANS = {
+  MANDAKINI: {
+    roomKey: "MANDAKINI",
+    title: "MANDAKINI COTTAGE",
+    specs: "Bathroom amenities | Max Occupancy: 9 (Adults: 7, Children: 2) | Bed Type: Double Bed - 1",
+    options: [
+      {
+        id: "opt_1",
+        title: "Room Only (1 Adult | 0 Child)",
+        description: "Room-only accommodation in royal riverside cottage. Dining on order.",
+        perk: "Vedic Pulse Consultation & Private Riverfront Deck Included",
+        priceFormatted: "₹9,440",
+        priceNumber: 9440,
+        djuboKey: "MANDAKINI_ROOM_ONLY"
+      },
+      {
+        id: "opt_2",
+        title: "Breakfast (1 Adult | 0 Child)",
+        description: "Morning wellness Satvik breakfast spread at Aahar-Vihar included.",
+        perk: "Complimentary Chef-Curated Morning Satvik Breakfast",
+        priceFormatted: "₹10,030",
+        priceNumber: 10030,
+        djuboKey: "MANDAKINI_BREAKFAST"
+      },
+      {
+        id: "opt_3",
+        title: "Breakfast And Lunch/Dinner (1 Adult | 0 Child)",
+        description: "Full Modified American Plan (MAP): Satvik Breakfast plus choice of Lunch or Dinner.",
+        perk: "Breakfast + Choice of Royal Satvik Lunch or Dinner",
+        priceFormatted: "₹10,679",
+        priceNumber: 10679,
+        djuboKey: "MANDAKINI_MAP"
+      }
+    ]
+  },
+  PAISHWANI: {
+    roomKey: "PAISHWANI",
+    title: "PAISHWANI COTTAGE",
+    specs: "Bathroom amenities | Max Occupancy: 8 (Adults: 6, Children: 2) | Bed Type: Double Bed - 1",
+    options: [
+      {
+        id: "opt_1",
+        title: "Room Only (1 Adult | 0 Child)",
+        description: "Room-only accommodation by holy ghats with private open stone verandah.",
+        perk: "Scenic River Verandah & Herbal Consultation Included",
+        priceFormatted: "₹7,350",
+        priceNumber: 7350,
+        djuboKey: "PAISHWANI_ROOM_ONLY"
+      },
+      {
+        id: "opt_2",
+        title: "Breakfast (1 Adult | 0 Child)",
+        description: "Pure Desi Cow Ghee & fresh millet morning Satvik breakfast included.",
+        perk: "Daily Satvik Breakfast + Complimentary Morning Boating",
+        priceFormatted: "₹7,875",
+        priceNumber: 7875,
+        djuboKey: "PAISHWANI_BREAKFAST"
+      },
+      {
+        id: "opt_3",
+        title: "Breakfast And Lunch/Dinner (1 Adult | 0 Child)",
+        description: "Full Modified American Plan (MAP): Satvik Breakfast plus Lunch or Dinner.",
+        perk: "Breakfast + Choice of Satvik Thali Lunch or Dinner",
+        priceFormatted: "₹9,735",
+        priceNumber: 9735,
+        djuboKey: "PAISHWANI_MAP"
+      }
+    ]
+  },
+  VAIDEHI_SUITE: {
+    roomKey: "VAIDEHI_SUITE",
+    title: "VAIDEHI SUITE ROOM",
+    specs: "Bathroom amenities | Max Occupancy: 4 (Adults: 3, Children: 1) | Bed Type: Double Bed - 1",
+    options: [
+      {
+        id: "opt_1",
+        title: "Room Only (1 Adult | 0 Child)",
+        description: "Master living suite with private balcony, marble bath, and luxury lounge.",
+        perk: "Private Sitting Lounge & Sacred Forest View Balcony",
+        priceFormatted: "₹9,440",
+        priceNumber: 9440,
+        djuboKey: "VAIDEHI_SUITE_ROOM_ONLY"
+      },
+      {
+        id: "opt_2",
+        title: "Breakfast (1 Adult | 0 Child)",
+        description: "Satvik breakfast served fresh in-suite or at Aahar-Vihar dining hall.",
+        perk: "Complimentary Satvik Breakfast & Ayurvedic Pulse Reading",
+        priceFormatted: "₹10,030",
+        priceNumber: 10030,
+        djuboKey: "VAIDEHI_SUITE_BREAKFAST"
+      },
+      {
+        id: "opt_3",
+        title: "Breakfast And Lunch/Dinner (1 Adult | 0 Child)",
+        description: "Full Modified American Plan (MAP): Satvik Breakfast plus Lunch or Dinner.",
+        perk: "Breakfast + Choice of Fine Satvik Lunch or Dinner",
+        priceFormatted: "₹11,446",
+        priceNumber: 11446,
+        djuboKey: "VAIDEHI_SUITE_MAP"
+      }
+    ]
+  },
+  VAIDEHI_TWIN: {
+    roomKey: "VAIDEHI_TWIN",
+    title: "VAIDEHI TWIN ROOM",
+    specs: "Bathroom amenities | Max Occupancy: 3 (Adults: 3, Children: 1) | Bed Type: Double Bed - 1",
+    options: [
+      {
+        id: "opt_1",
+        title: "Room Only (1 Adult | 0 Child)",
+        description: "Ergonomic heritage twin room with direct garden promenade access.",
+        perk: "Two Ergonomic Beds & In-Room Herbal Tea Station",
+        priceFormatted: "₹5,775",
+        priceNumber: 5775,
+        djuboKey: "VAIDEHI_TWIN_ROOM_ONLY"
+      },
+      {
+        id: "opt_2",
+        title: "Breakfast (1 Adult | 0 Child)",
+        description: "Healthy morning breakfast featuring local grains, herbal infusions & fruits.",
+        perk: "Nutritious Satvik Breakfast Included",
+        priceFormatted: "₹6,300",
+        priceNumber: 6300,
+        djuboKey: "VAIDEHI_TWIN_BREAKFAST"
+      },
+      {
+        id: "opt_3",
+        title: "Breakfast And Lunch/Dinner (1 Adult | 0 Child)",
+        description: "Full Modified American Plan (MAP): Satvik Breakfast plus Lunch or Dinner.",
+        perk: "Breakfast + Choice of Satvik Lunch or Dinner",
+        priceFormatted: "₹7,560",
+        priceNumber: 7560,
+        djuboKey: "VAIDEHI_TWIN_MAP"
+      }
+    ]
+  }
+};
+window.SWASTHYA_KUTIR_MEAL_PLANS = SWASTHYA_KUTIR_MEAL_PLANS;
+
+function openMealPlanModal(roomIdentifier) {
+  const norm = String(roomIdentifier || '').toUpperCase();
+  let selected = SWASTHYA_KUTIR_MEAL_PLANS.MANDAKINI;
+  if (norm.includes('PAISHWANI') || norm.includes('PAIYSHWANI')) {
+    selected = SWASTHYA_KUTIR_MEAL_PLANS.PAISHWANI;
+  } else if (norm.includes('VAIDEHI') && norm.includes('SUITE')) {
+    selected = SWASTHYA_KUTIR_MEAL_PLANS.VAIDEHI_SUITE;
+  } else if (norm.includes('VAIDEHI') && norm.includes('TWIN')) {
+    selected = SWASTHYA_KUTIR_MEAL_PLANS.VAIDEHI_TWIN;
+  } else {
+    selected = SWASTHYA_KUTIR_MEAL_PLANS.MANDAKINI;
+  }
+
+  const modal = document.getElementById('meal-plan-modal');
+  const titleEl = document.getElementById('meal-plan-modal-title');
+  const subtextEl = document.getElementById('meal-plan-modal-subtext');
+  const specsEl = document.getElementById('meal-plan-modal-specs');
+  const optionsEl = document.getElementById('meal-plan-modal-options');
+
+  if (titleEl) {
+    titleEl.textContent = `SELECT OPTION FOR ${selected.title}`;
+  }
+  if (subtextEl) {
+    subtextEl.textContent = "Select your preferred meal plan for 1 Adult | 0 Child (Per night, incl. taxes)";
+  }
+  if (specsEl) {
+    const parts = selected.specs.split('|').map(s => s.trim());
+    specsEl.innerHTML = `
+      <div class="flex items-center gap-1.5 text-taj-charcoal text-xs">
+        <i data-lucide="sparkles" class="w-3.5 h-3.5 text-taj-gold flex-shrink-0"></i>
+        <span>${parts[0] || 'Bathroom amenities'}</span>
+      </div>
+      <span class="text-taj-border">|</span>
+      <div class="flex items-center gap-1.5 text-taj-charcoal text-xs">
+        <i data-lucide="users" class="w-3.5 h-3.5 text-taj-gold flex-shrink-0"></i>
+        <span>${parts[1] || 'Max Occupancy: 2'}</span>
+      </div>
+      <span class="text-taj-border">|</span>
+      <div class="flex items-center gap-1.5 text-taj-charcoal text-xs">
+        <i data-lucide="bed-double" class="w-3.5 h-3.5 text-taj-gold flex-shrink-0"></i>
+        <span>${parts[2] || 'Bed Type: Double Bed - 1'}</span>
+      </div>
+    `;
+  }
+
+  if (optionsEl) {
+    optionsEl.innerHTML = selected.options.map(opt => `
+      <div class="p-4 sm:p-5 bg-taj-cream/30 border border-taj-border hover:border-taj-gold/70 transition-all shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4 group">
+        <div class="space-y-1.5 flex-1">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-taj-gold group-hover:scale-125 transition-transform flex-shrink-0"></span>
+            <h4 class="font-cinzel text-sm sm:text-base font-bold text-taj-charcoal">${opt.title}</h4>
+          </div>
+          <p class="text-xs text-taj-body leading-relaxed">${opt.description}</p>
+          <div class="text-[11px] text-taj-gold font-semibold flex items-center gap-1.5 pt-0.5">
+            <i data-lucide="check" class="w-3.5 h-3.5 text-taj-gold flex-shrink-0"></i>
+            <span>${opt.perk}</span>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between sm:justify-end gap-5 border-t sm:border-t-0 pt-3 sm:pt-0 border-taj-border/60 flex-shrink-0">
+          <div class="text-left sm:text-right">
+            <div class="font-cinzel text-xl sm:text-2xl font-bold text-taj-charcoal">${opt.priceFormatted}</div>
+            <div class="text-[10px] uppercase font-semibold tracking-wider text-taj-muted">per night (incl. taxes)</div>
+          </div>
+          <button onclick="handleDjuboAdd('${opt.djuboKey}')"
+            class="bg-[#FF7700] hover:bg-[#E06600] active:scale-95 text-white font-bold text-xs uppercase tracking-wider px-6 py-2.5 shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer flex items-center justify-center min-w-[90px] min-h-[42px] shrink-0"
+            title="Book ${opt.title} on Djubo">
+            <span>ADD</span>
+          </button>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  openModalElement(modal);
+  safeCreateIcons();
+}
+
+function closeMealPlanModal() {
+  const modal = document.getElementById('meal-plan-modal');
+  closeModalElement(modal);
+}
+
+function handleDjuboAdd(key) {
+  let targetLink = window.DJUBO_LINKS && window.DJUBO_LINKS[key];
+  if (!targetLink || targetLink === "#") {
+    targetLink = window.DJUBO_BOOKING_URL || "https://live.ipms247.com/booking/book-rooms-arogyadham";
+  }
+
+  if (typeof showTajToast === 'function') {
+    showTajToast(
+      'Arogyadham Reservation Desk',
+      'Redirecting to Arogyadham Secure Booking Engine (Djubo)...',
+      'shield-check'
+    );
+  }
+
+  window.open(targetLink, '_blank');
+}
+
+function initMealPlanModalListeners() {
+  const modal = document.getElementById('meal-plan-modal');
+  if (modal) {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeMealPlanModal();
+      }
+    });
+  }
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      const m = document.getElementById('meal-plan-modal');
+      if (m && !m.classList.contains('hidden') && m.style.display !== 'none') {
+        closeMealPlanModal();
+      }
+    }
+  });
+}
+
+window.openMealPlanModal = openMealPlanModal;
+window.closeMealPlanModal = closeMealPlanModal;
+window.handleDjuboAdd = handleDjuboAdd;
+window.initMealPlanModalListeners = initMealPlanModalListeners;
 
 function redirectToDjubo(roomNameOrKey, planType = null, explicitKey = null) {
   let key = explicitKey;
@@ -520,7 +790,7 @@ function redirectToDjubo(roomNameOrKey, planType = null, explicitKey = null) {
       const r = String(roomNameOrKey).toUpperCase();
       const p = String(planType).toUpperCase();
       let rKey = "MANDAKINI";
-      if (r.includes("PAIYSHWANI") || r.includes("PAISHWANI")) rKey = "PAIYSHWANI";
+      if (r.includes("PAIYSHWANI") || r.includes("PAISHWANI")) rKey = "PAISHWANI";
       else if (r.includes("VAIDEHI") && r.includes("SUITE")) rKey = "VAIDEHI_SUITE";
       else if (r.includes("VAIDEHI") && r.includes("TWIN")) rKey = "VAIDEHI_TWIN";
 
@@ -534,21 +804,7 @@ function redirectToDjubo(roomNameOrKey, planType = null, explicitKey = null) {
     }
   }
 
-  let targetLink = DJUBO_LINKS[key];
-  if (!targetLink || targetLink === "#") {
-    targetLink = window.DJUBO_BOOKING_URL || "https://live.ipms247.com/booking/book-rooms-arogyadham";
-  }
-
-  if (typeof showTajToast === 'function') {
-    showTajToast(
-      'Arogyadham Reservation Desk',
-      'Redirecting to Arogyadham Secure Booking Engine (Djubo)...',
-      'shield-check'
-    );
-  }
-
-  // Open target link directly in new tab without auth guards or popups
-  window.open(targetLink, '_blank');
+  handleDjuboAdd(key);
 }
 window.redirectToDjubo = redirectToDjubo;
 
@@ -2412,4 +2668,8 @@ function onPaymentSuccess() {}
 window.onPaymentSuccess = onPaymentSuccess;
 window.safeCreateIcons = safeCreateIcons;
 window.showTajToast = showTajToast;
+window.openMealPlanModal = openMealPlanModal;
+window.closeMealPlanModal = closeMealPlanModal;
+window.handleDjuboAdd = handleDjuboAdd;
+window.DJUBO_LINKS = DJUBO_LINKS;
 
