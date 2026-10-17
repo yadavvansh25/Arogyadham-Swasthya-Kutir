@@ -42,8 +42,8 @@
   <!-- Lucide Icons CDN -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
-  <!-- Razorpay Checkout Script -->
-  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <!-- Google Identity Services (GIS) Official Client SDK -->
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
 
   <!-- Firebase v10+ Modular Client Integration -->
   <script type="module" src="firebase-init.js"></script>
@@ -2351,15 +2351,15 @@
           </div>
         </div>
 
-        <!-- Razorpay Checkout Trigger Button -->
+        <!-- Djubo Reservation Desk Trigger Button -->
         <div>
-          <button type="submit" id="drawer-pay-btn" class="w-full btn-taj-primary py-3.5 text-xs font-bold uppercase tracking-[0.16em] flex items-center justify-center gap-2">
-            <i data-lucide="shield-check" class="w-4 h-4 text-white"></i>
-            <span id="drawer-pay-btn-label">Pay & Confirm Booking with Razorpay (₹13,440)</span>
+          <button type="button" onclick="proceedToDjuboBooking()" id="drawer-pay-btn" class="w-full btn-taj-primary py-3.5 text-xs font-bold uppercase tracking-[0.16em] flex items-center justify-center gap-2 cursor-pointer">
+            <i data-lucide="calendar-check" class="w-4 h-4 text-white"></i>
+            <span id="drawer-pay-btn-label">Proceed to Secure Reservation Desk (Djubo)</span>
           </button>
           <div class="flex items-center justify-center gap-2 text-[10px] text-taj-muted text-center pt-2.5">
             <i data-lucide="lock" class="w-3.5 h-3.5 text-taj-gold"></i>
-            <span>Secured by Razorpay • 256-bit SSL • Cards, UPI, NetBanking</span>
+            <span>Official Booking Engine • Instant Confirmation • Best Rate Guarantee</span>
           </div>
         </div>
 
@@ -2517,215 +2517,70 @@
     </div>
   </div>
 
-  <!-- ================= AUTHENTICATION & VERIFICATION MODAL ================= -->
+  <!-- ================= AUTHENTICATION MODAL ================= -->
   <div id="auth-modal"
     class="modal-overlay hidden-modal fixed inset-0 z-50 items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden"
     style="display: none;">
     <div
-      class="modal-card w-full max-w-md bg-white border-2 border-taj-gold shadow-2xl overflow-hidden text-taj-charcoal animate-fadeIn">
+      class="modal-card w-full max-w-md bg-[#FAF8F5] border-2 border-taj-gold shadow-2xl overflow-hidden text-taj-charcoal animate-fadeIn">
 
       <!-- Modal Header -->
-      <div class="bg-taj-cream p-5 border-b border-taj-border relative text-center">
-        <button onclick="closeAuthModal()" class="absolute right-4 top-4 text-taj-charcoal hover:text-taj-gold transition-colors p-1" aria-label="Close Authentication">
+      <div class="bg-taj-cream p-6 border-b border-taj-border relative text-center">
+        <button onclick="closeAuthModal()" class="absolute right-4 top-4 text-taj-charcoal hover:text-taj-gold transition-colors p-1 cursor-pointer" aria-label="Close Authentication">
           <i data-lucide="x" class="w-5 h-5"></i>
         </button>
-        <div class="w-10 h-10 border border-taj-gold text-taj-gold mx-auto flex items-center justify-center mb-2 shadow-sm bg-white">
-          <i data-lucide="crown" class="w-5 h-5"></i>
+        <div class="w-12 h-12 border-2 border-taj-gold text-taj-gold mx-auto flex items-center justify-center mb-3 shadow-sm bg-white">
+          <i data-lucide="crown" class="w-6 h-6"></i>
         </div>
-        <h3 class="font-cinzel text-base sm:text-lg font-bold text-taj-charcoal tracking-wider">AROGYADHAM SWASTHYA KUTIR</h3>
-        <p class="text-[10px] sm:text-[11px] text-taj-muted uppercase tracking-widest mt-0.5">Guest Authentication & Sanctuary Access</p>
+        <h3 id="auth-modal-title" class="font-cinzel text-base sm:text-lg font-bold text-taj-charcoal tracking-wider">Sign In with Google to Proceed to Reservation Desk</h3>
+        <p class="text-[10px] sm:text-[11px] text-taj-muted uppercase tracking-widest mt-1">Arogyadham Swasthya Kutir, Chitrakoot</p>
       </div>
 
-      <!-- Booking Intercept Alert Banner (Shown when redirected from booking button) -->
-      <div id="auth-guard-alert" class="hidden bg-amber-50 border-b border-amber-300 px-5 py-3 text-left flex items-start gap-2.5 text-xs text-amber-950">
-        <i data-lucide="lock" class="w-4 h-4 text-taj-gold flex-shrink-0 mt-0.5"></i>
-        <div>
-          <strong class="font-bold block text-amber-950">Reservation Guard</strong>
-          <span id="auth-guard-msg">Please login or signup with Google/Email to proceed with your booking.</span>
+      <!-- Selected Room Banner (when redirected from a specific room) -->
+      <div id="auth-guard-alert" class="hidden bg-amber-50/80 border-b border-taj-gold/30 px-5 py-3 text-left flex items-center justify-between text-xs text-taj-charcoal">
+        <div class="flex items-center gap-2">
+          <i data-lucide="bed-double" class="w-4 h-4 text-taj-gold flex-shrink-0"></i>
+          <div>
+            <span class="text-[10px] text-taj-muted uppercase tracking-wider block">Selected Sanctuary</span>
+            <strong id="auth-guard-msg" class="font-cinzel text-xs font-bold text-taj-charcoal">Mandakini Royal Suite</strong>
+          </div>
         </div>
+        <span class="text-[10px] uppercase font-bold tracking-wider text-taj-gold bg-white px-2 py-0.5 border border-taj-gold/40">
+          Best Rate Guarantee
+        </span>
       </div>
 
       <!-- Card Body Content -->
-      <div class="p-6">
+      <div class="p-6 sm:p-8 space-y-6">
 
-        <!-- SOCIAL SIGN-IN: CONTINUE WITH GOOGLE -->
-        <div id="auth-social-section" class="mb-5">
+        <p class="text-xs text-center text-taj-muted leading-relaxed">
+          Sign in to access real-time cottage availability, personalized wellness itineraries, and instant reservation confirmation via our secure booking engine.
+        </p>
+
+        <!-- PRIMARY ACTION: CONTINUE WITH GOOGLE -->
+        <div id="auth-social-section">
           <button type="button" onclick="handleGoogleSignIn()"
-            class="w-full flex items-center justify-center gap-3 py-3 px-4 bg-white border border-taj-border hover:border-taj-gold hover:shadow-md transition-all text-xs font-semibold text-taj-charcoal uppercase tracking-wider group shadow-sm">
+            class="w-full flex items-center justify-center gap-3 py-3.5 px-5 bg-white border-2 border-taj-border hover:border-taj-gold hover:shadow-lg transition-all text-xs font-bold text-taj-charcoal uppercase tracking-wider group shadow-sm cursor-pointer min-h-[48px]">
             <!-- Official Multi-Color Google 'G' Logo -->
-            <svg class="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24">
+            <svg class="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24">
               <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
               <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
               <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
               <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
             </svg>
-            <span class="group-hover:text-taj-gold transition-colors">Continue with Google</span>
-          </button>
-
-          <!-- Divider -->
-          <div class="relative flex items-center justify-center my-4">
-            <div class="border-t border-taj-border w-full"></div>
-            <span class="bg-white px-3 text-[10px] text-taj-muted uppercase tracking-widest relative">or continue with email</span>
-          </div>
-        </div>
-
-        <!-- AUTH TABS: SIGN IN vs SIGN UP -->
-        <div id="auth-tabs-header" class="flex border-b border-taj-border mb-5">
-          <button id="auth-tab-btn-signin" type="button" onclick="switchAuthTab('signin')"
-            class="flex-1 py-2.5 text-xs font-bold uppercase tracking-wider text-center border-b-2 border-taj-gold text-taj-gold transition-all">
-            Sign In
-          </button>
-          <button id="auth-tab-btn-signup" type="button" onclick="switchAuthTab('signup')"
-            class="flex-1 py-2.5 text-xs font-semibold uppercase tracking-wider text-center border-b-2 border-transparent text-taj-muted hover:text-taj-charcoal transition-all">
-            Sign Up
+            <span class="group-hover:text-taj-gold transition-colors tracking-[0.14em]">Continue with Google</span>
           </button>
         </div>
 
-        <!-- TAB 1: SIGN IN FORM -->
-        <form id="auth-signin-form" class="space-y-4" onsubmit="handleEmailSignIn(event)">
-          <div>
-            <label class="block text-[11px] font-bold uppercase tracking-wider text-taj-charcoal mb-1">Email Address</label>
-            <input type="email" id="signin-email" required placeholder="vansh@example.com"
-              class="w-full bg-white border border-taj-border p-2.5 text-xs text-taj-charcoal focus:border-taj-gold focus:outline-none">
+        <!-- Security & Privacy Reassurance -->
+        <div class="pt-2 border-t border-taj-border/80 flex flex-col items-center gap-1.5 text-[11px] text-taj-muted text-center">
+          <div class="flex items-center gap-1.5 text-taj-charcoal font-medium">
+            <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-600"></i>
+            <span>Google Identity Services • 256-bit SSL Verified</span>
           </div>
-          <div>
-            <div class="flex items-center justify-between mb-1">
-              <label class="text-[11px] font-bold uppercase tracking-wider text-taj-charcoal">Password</label>
-              <button type="button" onclick="forgotPasswordNotice()" class="text-[10px] text-taj-gold hover:underline font-medium">Forgot Password?</button>
-            </div>
-            <div class="relative">
-              <input type="password" id="signin-password" required placeholder="••••••••"
-                class="w-full bg-white border border-taj-border p-2.5 text-xs text-taj-charcoal focus:border-taj-gold focus:outline-none pr-9">
-              <button type="button" onclick="togglePasswordVisibility('signin-password')" class="absolute right-2.5 top-2.5 text-taj-muted hover:text-taj-charcoal">
-                <i data-lucide="eye" class="w-4 h-4"></i>
-              </button>
-            </div>
-          </div>
-          <div class="flex items-center justify-between text-xs text-taj-muted">
-            <label class="flex items-center gap-2 cursor-pointer">
-              <input type="checkbox" id="signin-remember" checked class="accent-[#b98944] w-3.5 h-3.5">
-              <span class="text-[11px]">Remember Me</span>
-            </label>
-            <span class="text-[10px] text-taj-muted">Instant Access Active</span>
-          </div>
-          <button type="submit" class="w-full btn-taj-primary py-3 text-xs font-bold uppercase tracking-[0.16em]">
-            Sign In to Sanctuary
-          </button>
-        </form>
-
-        <!-- TAB 2: SIGN UP FORM -->
-        <form id="auth-signup-form" class="space-y-3.5 hidden" onsubmit="handleEmailSignUp(event)">
-          <div>
-            <label class="block text-[11px] font-bold uppercase tracking-wider text-taj-charcoal mb-1">Full Name</label>
-            <input type="text" id="signup-fullname" required placeholder="e.g. Vansh Yadav"
-              class="w-full bg-white border border-taj-border p-2.5 text-xs text-taj-charcoal focus:border-taj-gold focus:outline-none">
-          </div>
-          <div>
-            <label class="block text-[11px] font-bold uppercase tracking-wider text-taj-charcoal mb-1">Phone Number</label>
-            <input type="tel" id="signup-phone" required placeholder="+91 98765 43210"
-              class="w-full bg-white border border-taj-border p-2.5 text-xs text-taj-charcoal focus:border-taj-gold focus:outline-none">
-          </div>
-          <div>
-            <label class="block text-[11px] font-bold uppercase tracking-wider text-taj-charcoal mb-1">Email Address</label>
-            <input type="email" id="signup-email" required placeholder="name@example.com"
-              class="w-full bg-white border border-taj-border p-2.5 text-xs text-taj-charcoal focus:border-taj-gold focus:outline-none">
-          </div>
-          <div>
-            <label class="block text-[11px] font-bold uppercase tracking-wider text-taj-charcoal mb-1">Create Password</label>
-            <div class="relative">
-              <input type="password" id="signup-password" required placeholder="Minimum 6 characters"
-                class="w-full bg-white border border-taj-border p-2.5 text-xs text-taj-charcoal focus:border-taj-gold focus:outline-none pr-9">
-              <button type="button" onclick="togglePasswordVisibility('signup-password')" class="absolute right-2.5 top-2.5 text-taj-muted hover:text-taj-charcoal">
-                <i data-lucide="eye" class="w-4 h-4"></i>
-              </button>
-            </div>
-          </div>
-          <label class="flex items-start gap-2 text-[11px] text-taj-muted cursor-pointer pt-1">
-            <input type="checkbox" id="signup-terms" required class="accent-[#b98944] w-3.5 h-3.5 mt-0.5">
-            <span>I agree to Arogyadham's Terms of Stay, Satvik Sanctuary Guidelines, and Privacy Policy.</span>
-          </label>
-          <button type="submit" class="w-full btn-taj-primary py-3 text-xs font-bold uppercase tracking-[0.16em]">
-            Create Account & Send Verification Link
-          </button>
-        </form>
-
-        <!-- REAL FIREBASE EMAIL VERIFICATION STEP -->
-        <div id="auth-verify-step" class="hidden space-y-4 text-center">
-          <div class="w-12 h-12 bg-amber-50 border border-taj-gold text-taj-gold mx-auto flex items-center justify-center shadow-sm">
-            <i data-lucide="mail-check" class="w-6 h-6"></i>
-          </div>
-          <div>
-            <h4 class="font-cinzel text-base font-bold text-taj-charcoal">Verify Your Email Address</h4>
-            <div class="bg-amber-50 border border-amber-300 p-3 mt-2 text-left text-xs text-amber-950">
-              <strong class="block mb-1 text-amber-950">Action Required:</strong>
-              Please verify your email via the link sent to your inbox before proceeding with bookings.
-            </div>
-            <p class="text-xs text-taj-muted mt-2.5">Verification link dispatched to:</p>
-            <p id="verify-target-email" class="font-bold text-xs text-taj-charcoal font-mono mt-0.5">guest@example.com</p>
-          </div>
-
-          <!-- Real Firebase Actions -->
-          <div class="space-y-2 pt-2">
-            <button type="button" onclick="handleCheckEmailVerification()" class="w-full btn-taj-primary py-3 text-xs font-bold uppercase tracking-[0.16em] flex items-center justify-center gap-2">
-              <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i>
-              <span>I Have Verified (Check Status)</span>
-            </button>
-            <button type="button" onclick="handleResendVerificationEmail()" class="w-full btn-taj-outline-gold py-2.5 text-xs font-semibold flex items-center justify-center gap-2">
-              <i data-lucide="send" class="w-3.5 h-3.5"></i>
-              <span>Resend Verification Link</span>
-            </button>
-          </div>
-
-          <div class="flex items-center justify-between text-xs text-taj-muted pt-2 border-t border-taj-border">
-            <button type="button" onclick="handleSignOutFromVerify()" class="text-taj-muted hover:text-red-700">
-              Sign out / Different Account
-            </button>
-            <button type="button" onclick="switchAuthTab('signin')" class="text-taj-gold hover:underline">
-              ← Back to Sign In
-            </button>
-          </div>
+          <p class="text-[10px] text-taj-muted/80">Direct instant reservation via Djubo Booking Engine.</p>
         </div>
 
-      </div>
-    </div>
-  </div>
-
-  <!-- ================= STANDALONE EMAIL VERIFICATION PROMPT MODAL ================= -->
-  <div id="email-verification-guard-modal"
-    class="modal-overlay hidden-modal fixed inset-0 z-50 items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden"
-    style="display: none;">
-    <div
-      class="modal-card w-full max-w-md bg-white border-2 border-taj-gold shadow-2xl overflow-hidden text-taj-charcoal animate-fadeIn p-6 text-center space-y-4">
-      <div class="w-12 h-12 bg-amber-50 border border-taj-gold text-taj-gold mx-auto flex items-center justify-center shadow-sm">
-        <i data-lucide="mail-warning" class="w-6 h-6"></i>
-      </div>
-      <div>
-        <h4 class="font-cinzel text-lg font-bold text-taj-charcoal">Email Verification Required</h4>
-        <div class="bg-amber-50 border border-amber-300 p-3 mt-2 text-left text-xs text-amber-950">
-          <strong>Please verify your email via the link sent to your inbox before proceeding with bookings.</strong>
-        </div>
-        <p class="text-xs text-taj-muted mt-2">Account email:</p>
-        <p id="guard-modal-email" class="font-bold text-xs text-taj-charcoal font-mono mt-0.5">guest@example.com</p>
-      </div>
-
-      <div class="space-y-2 pt-2">
-        <button type="button" onclick="handleCheckEmailVerification()" class="w-full btn-taj-primary py-3 text-xs font-bold uppercase tracking-[0.16em] flex items-center justify-center gap-2">
-          <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i>
-          <span>Check Verification Status</span>
-        </button>
-        <button type="button" onclick="handleResendVerificationEmail()" class="w-full btn-taj-outline-gold py-2.5 text-xs font-semibold flex items-center justify-center gap-2">
-          <i data-lucide="send" class="w-3.5 h-3.5"></i>
-          <span>Resend Email Verification Link</span>
-        </button>
-      </div>
-
-      <div class="flex items-center justify-between text-xs text-taj-muted pt-2 border-t border-taj-border">
-        <button type="button" onclick="closeEmailVerificationGuardModal()" class="hover:text-taj-charcoal">
-          Cancel
-        </button>
-        <button type="button" onclick="handleSignOutFromVerify()" class="text-red-700 hover:underline">
-          Sign Out
-        </button>
       </div>
     </div>
   </div>
@@ -2896,92 +2751,7 @@
     </div>
   </div>
 
-  <!-- ================= BOOKING CONFIRMATION & LUXURY RECEIPT VOUCHER MODAL ================= -->
-  <div id="paymentReceiptModal" data-modal="confirmation-modal"
-    class="modal-overlay hidden-modal fixed inset-0 z-50 items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden"
-    style="display: none;">
-    <div
-      class="modal-card w-full max-w-lg bg-white border-2 border-taj-gold shadow-2xl p-6 sm:p-8 text-center text-taj-charcoal max-h-[90vh] overflow-y-auto">
-      <div id="booking-confirmation-receipt" class="space-y-4">
-        
-        <!-- Luxury Crest -->
-        <div class="w-14 h-14 bg-amber-50 border-2 border-taj-gold mx-auto flex items-center justify-center text-taj-gold shadow-sm">
-          <i data-lucide="crown" class="w-7 h-7"></i>
-        </div>
 
-        <div>
-          <span class="text-[10px] font-bold uppercase tracking-widest text-emerald-800 bg-emerald-100 border border-emerald-300 px-3 py-1 inline-block">
-            ✓ PAYMENT VERIFIED & RESERVATION GUARANTEED
-          </span>
-          <h3 class="font-cinzel text-xl font-bold text-taj-charcoal mt-2">AROGYADHAM SWASTHYA KUTIR</h3>
-          <p class="text-xs text-taj-muted">Chitrakoot, Madhya Pradesh • Luxury Sanctuary Voucher</p>
-        </div>
-
-        <!-- Voucher Details Table -->
-        <div class="p-5 bg-taj-ivory border-2 border-taj-border text-left text-xs space-y-2.5">
-          <div class="flex justify-between items-center border-b border-taj-border pb-2">
-            <span class="text-taj-muted uppercase tracking-wider text-[10px] font-bold">Booking Reference:</span>
-            <strong id="receipt-ref-no" class="font-mono text-taj-gold font-bold text-sm tracking-wider">ASK-2026-8942</strong>
-          </div>
-          <div class="flex justify-between items-center">
-            <span class="text-taj-muted uppercase tracking-wider text-[10px] font-bold">Razorpay Payment ID:</span>
-            <span id="receipt-payment-id" class="font-mono text-emerald-800 font-bold text-[11px] bg-emerald-50 px-2 py-0.5 border border-emerald-200">rzp_pay_sample123</span>
-          </div>
-          <div class="flex justify-between">
-            <span class="text-taj-muted">Primary Guest:</span>
-            <strong id="receipt-guest" class="text-taj-charcoal">Vansh Yadav</strong>
-          </div>
-          <div class="flex justify-between">
-            <span class="text-taj-muted">Contact Info:</span>
-            <span id="receipt-contact" class="text-taj-charcoal font-mono text-[11px]">vansh@example.com</span>
-          </div>
-          <div class="flex justify-between">
-            <span class="text-taj-muted">Reserved Sanctuary:</span>
-            <strong id="receipt-room" class="text-taj-charcoal font-cinzel">Mandakini Royal Suite</strong>
-          </div>
-          <div class="flex justify-between">
-            <span class="text-taj-muted">Stay Dates:</span>
-            <span id="receipt-dates" class="text-taj-charcoal font-medium">18 Oct — 19 Oct 2026 (1 Night)</span>
-          </div>
-
-          <div class="border-t border-taj-border pt-2 space-y-1 text-[11px]">
-            <div class="flex justify-between text-taj-muted">
-              <span>Base Subtotal:</span>
-              <span id="receipt-base" class="text-taj-charcoal font-semibold">₹12,000</span>
-            </div>
-            <div class="flex justify-between text-taj-muted">
-              <span id="receipt-tax-label">GST Tax:</span>
-              <span id="receipt-tax" class="text-taj-charcoal font-semibold">₹1,440</span>
-            </div>
-            <div class="flex justify-between border-t border-taj-border pt-1.5 font-bold text-sm">
-              <span class="text-taj-charcoal">Total Amount Paid:</span>
-              <span id="receipt-total" class="font-cinzel text-taj-gold text-base">₹13,440</span>
-            </div>
-          </div>
-        </div>
-
-        <p class="text-[10px] text-taj-muted italic">
-          A copy of this digital voucher has been linked to your verified account and dispatched via email.
-        </p>
-
-        <!-- Action Buttons -->
-        <div class="flex items-center gap-3 pt-2">
-          <button onclick="window.print()" class="flex-1 btn-taj-outline-dark py-2.5 text-xs font-semibold flex items-center justify-center gap-1.5">
-            <i data-lucide="printer" class="w-3.5 h-3.5"></i>
-            <span>Print Receipt</span>
-          </button>
-          <button onclick="closeReceipt(); openMyBookingsModal();" class="flex-1 btn-taj-outline-gold py-2.5 text-xs font-semibold flex items-center justify-center gap-1.5">
-            <i data-lucide="calendar" class="w-3.5 h-3.5"></i>
-            <span>My Bookings</span>
-          </button>
-          <button onclick="closeReceipt()" class="flex-1 btn-taj-primary py-2.5 text-xs font-semibold">
-            Done
-          </button>
-        </div>
-
-      </div>
-    </div>
-  </div>
 
   <!-- Toast Notification Container -->
   <div id="toast-container"></div>
