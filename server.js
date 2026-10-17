@@ -250,9 +250,10 @@ app.use((req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-// Start Express Server
-app.listen(PORT, () => {
-  console.log(`
+// Start Express Server when run directly
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`
 ================================================================
 🏛️  AROGYADHAM SWASTHYA KUTIR — FULL-STACK PRODUCTION SERVER
 ================================================================
@@ -263,5 +264,8 @@ app.listen(PORT, () => {
   - POST /api/create-razorpay-order
   - POST /api/verify-payment
 ================================================================
-  `);
-});
+    `);
+  });
+}
+
+module.exports = app;

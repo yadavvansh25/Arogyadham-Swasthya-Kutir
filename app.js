@@ -832,6 +832,17 @@ function closeSavedKutirsModal() {
   closeModalElement(modal);
 }
 
+function toggleMobileMenu(forceClose = false) {
+  const mobileMenu = document.getElementById('mobile-nav-menu');
+  if (mobileMenu) {
+    if (forceClose === true) {
+      mobileMenu.classList.add('hidden');
+    } else {
+      mobileMenu.classList.toggle('hidden');
+    }
+  }
+}
+
 /* ================= TAJ NAVBAR SCROLL EFFECT ================= */
 function initTajNavbarScroll() {
   const nav = document.getElementById('taj-nav');
@@ -842,9 +853,9 @@ function initTajNavbarScroll() {
   const mobileBtn = document.getElementById('mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-nav-menu');
 
-  if (mobileBtn && mobileMenu) {
+  if (mobileBtn) {
     mobileBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
+      toggleMobileMenu();
     });
   }
 
@@ -1292,8 +1303,14 @@ function openBookingCheckout(roomName, price) {
   openBookingDrawer(roomName, price);
 }
 
+function closeBookingCheckout() {
+  closeBookingDrawer();
+  closeReceipt();
+}
+
 window.toggleBookingDrawer = toggleBookingDrawer;
 window.openBookingCheckout = openBookingCheckout;
+window.closeBookingCheckout = closeBookingCheckout;
 window.openBookingDrawer = openBookingDrawer;
 window.closeBookingDrawer = closeBookingDrawer;
 
@@ -1717,20 +1734,59 @@ window.completeSimulatedPayment = function () {
 };
 
 /* ================= COPY ADDRESS TO CLIPBOARD ================= */
+function copyAddress() {
+  const addressText = 'Arogya Dham Rd, Parisar, Majhgawan, Chitrakoot, Madhya Pradesh 485334';
+  const copyLabel = document.getElementById('copy-btn-label');
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(addressText).then(() => {
+      if (copyLabel) copyLabel.textContent = 'Address Copied!';
+      showTajToast('Address Copied', addressText, 'map-pin');
+      setTimeout(() => {
+        if (copyLabel) copyLabel.textContent = 'Copy Address';
+      }, 3000);
+    }).catch(() => {
+      showTajToast('Resort Address', addressText, 'map-pin');
+    });
+  } else {
+    showTajToast('Resort Address', addressText, 'map-pin');
+  }
+}
+const copyResortAddress = copyAddress;
+
+function shareProperty() {
+  const shareData = {
+    title: 'Arogyadham Swasthya Kutir, Chitrakoot',
+    text: 'Experience luxury wellness and serene Ayurvedic sanctuary living at Arogyadham Swasthya Kutir, Chitrakoot.',
+    url: window.location.href
+  };
+  if (navigator.share) {
+    navigator.share(shareData).catch(() => {});
+  } else if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      showTajToast('Link Copied', 'Resort sanctuary link copied to clipboard.', 'share-2');
+    }).catch(() => {
+      showTajToast('Share Arogyadham', window.location.href, 'share-2');
+    });
+  } else {
+    showTajToast('Share Arogyadham', window.location.href, 'share-2');
+  }
+}
+
+let arePricesWithTax = false;
+function toggleAllPrices(includeTax) {
+  if (typeof includeTax === 'boolean') {
+    arePricesWithTax = includeTax;
+  } else {
+    arePricesWithTax = !arePricesWithTax;
+  }
+  showTajToast('Pricing Display', arePricesWithTax ? 'Displaying estimated total prices with GST.' : 'Displaying base nightly rates excluding GST.', 'tag');
+}
+
 function initCopyAddress() {
   const copyBtn = document.getElementById('copy-address-btn');
-  const copyLabel = document.getElementById('copy-btn-label');
-  const addressText = 'Arogya Dham Rd, Parisar, Majhgawan, Chitrakoot, Madhya Pradesh 485334';
-
   if (copyBtn) {
     copyBtn.addEventListener('click', () => {
-      navigator.clipboard.writeText(addressText).then(() => {
-        if (copyLabel) copyLabel.textContent = 'Address Copied!';
-        showTajToast('Address Copied', addressText, 'map-pin');
-        setTimeout(() => {
-          if (copyLabel) copyLabel.textContent = 'Copy Address';
-        }, 3000);
-      });
+      copyAddress();
     });
   }
 }
@@ -2593,10 +2649,15 @@ window.handleGoogleSignIn = typeof handleGoogleSignIn !== 'undefined' ? handleGo
 window.handleEmailSignIn = handleEmailSignIn;
 window.handleEmailSignUp = handleEmailSignUp;
 window.handleCheckEmailVerification = typeof handleCheckEmailVerification !== 'undefined' ? handleCheckEmailVerification : () => {};
+window.handleResendVerificationEmail = typeof handleResendVerificationEmail !== 'undefined' ? handleResendVerificationEmail : () => {};
+window.handleSignOutFromVerify = typeof handleSignOutFromVerify !== 'undefined' ? handleSignOutFromVerify : () => {};
+window.openEmailVerificationGuardModal = typeof openEmailVerificationGuardModal !== 'undefined' ? openEmailVerificationGuardModal : () => {};
+window.closeEmailVerificationGuardModal = typeof closeEmailVerificationGuardModal !== 'undefined' ? closeEmailVerificationGuardModal : () => {};
+window.forgotPasswordNotice = typeof forgotPasswordNotice !== 'undefined' ? forgotPasswordNotice : () => {};
 window.handleAuthSubmit = handleEmailSignIn;
-window.sendPhoneOTP = sendPhoneOTP;
-window.verifyPhoneOTP = verifyPhoneOTP;
-window.resendPhoneOTP = resendPhoneOTP;
+window.sendPhoneOTP = typeof sendPhoneOTP !== 'undefined' ? sendPhoneOTP : () => {};
+window.verifyPhoneOTP = typeof verifyPhoneOTP !== 'undefined' ? verifyPhoneOTP : () => {};
+window.resendPhoneOTP = typeof resendPhoneOTP !== 'undefined' ? resendPhoneOTP : () => {};
 window.handleLogout = handleLogout;
 window.toggleUserDropdown = toggleUserDropdown;
 window.closeUserDropdown = closeUserDropdown;
@@ -2610,12 +2671,35 @@ window.showSavedKutirsModal = showSavedKutirsModal;
 window.closeSavedKutirsModal = closeSavedKutirsModal;
 window.handleRouting = handleRouting;
 window.routeHashChange = handleRouting;
+window.navigateToView = navigateToView;
+window.navigateToSwasthyaKutir = navigateToSwasthyaKutir;
+window.navigateToPanchvati = navigateToPanchvati;
+window.navigateToMenu = navigateToMenu;
+window.navigateToPanchvatiRasoeeMenu = navigateToPanchvatiRasoeeMenu;
+window.navigateToHomeDining = navigateToHomeDining;
+window.navigateToHomeRooms = navigateToHomeRooms;
+window.navigateToHomeView = navigateToHomeView;
+window.navigateToSection = navigateToSection;
 window.triggerQuickSearch = triggerQuickSearch;
-window.copyResortAddress = copyResortAddress;
+window.copyAddress = copyAddress;
+window.copyResortAddress = copyAddress;
+window.shareProperty = shareProperty;
+window.toggleAllPrices = toggleAllPrices;
+window.toggleBookingDrawer = toggleBookingDrawer;
+window.openBookingDrawer = openBookingDrawer;
+window.closeBookingDrawer = closeBookingDrawer;
+window.openBookingCheckout = openBookingCheckout;
+window.closeBookingCheckout = closeBookingCheckout;
 window.adjustNights = adjustNights;
 window.applyPromoCode = applyPromoCode;
 window.handleReservationSubmit = handleReservationSubmit;
 window.handleDirectCheckout = handleDirectCheckout;
+window.openMenuModal = openMenuModal;
+window.closeMenuModal = closeMenuModal;
+window.showFacilityModal = showFacilityModal;
+window.closeFacilityModal = closeFacilityModal;
+window.switchDiningTab = switchDiningTab;
+window.clearDiningSearch = clearDiningSearch;
 window.filterDiningCategory = filterDiningCategory;
 window.addToDiningCart = addToDiningCart;
 window.addDishToBill = addToDiningCart;
@@ -2628,6 +2712,7 @@ window.calculateDiningBill = calculateDiningBill;
 window.updateDiningBillUI = updateDiningBillUI;
 window.reserveTableWithOrder = reserveTableWithOrder;
 window.shareDiningWhatsApp = shareDiningWhatsApp;
+window.shareOrderOnWhatsApp = shareOrderOnWhatsApp;
 window.filterPasoeeCategory = filterPasoeeCategory;
 window.addToPasoeeCart = addToPasoeeCart;
 window.addPasoeeToCart = addToPasoeeCart;
@@ -2645,5 +2730,9 @@ window.calculateRasoeeBill = calculateRasoeeBill;
 window.updateRasoeeCartUI = updateRasoeeCartUI;
 window.reserveRasoeeCoupon = reserveRasoeeCoupon;
 window.shareRasoeeWhatsApp = shareRasoeeWhatsApp;
+window.closeReceipt = closeReceipt;
+window.closeConfirmationModal = closeReceipt;
+window.onPaymentSuccess = onPaymentSuccess;
+window.safeCreateIcons = safeCreateIcons;
 window.showTajToast = showTajToast;
 

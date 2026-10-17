@@ -2979,9 +2979,11 @@
   <!-- JavaScript Modules -->
   <script src="app.js"></script>
   <script>
-    if (typeof lucide !== 'undefined' && lucide.createIcons) {
-      lucide.createIcons();
-    }
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof lucide !== 'undefined' && lucide.createIcons) {
+        lucide.createIcons();
+      }
+    });
   </script>
 </body>
 
