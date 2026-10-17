@@ -39,15 +39,25 @@ if (razorpayKeyId && razorpayKeySecret && !razorpayKeyId.includes('YOUR_KEY_HERE
 
 // Room Catalog Pricing for Server-Side Verification
 const ROOM_CATALOG = {
+  // Wing 1: Arogyadham Swasthya Kutir
+  'Mandakini Premium Cottage': 12000,
   'Mandakini Royal Suite': 12000,
+  'Paishwani Cottage': 10000,
   'Paishwani Heritage Suite': 10000,
+  'Vaidehi Suite Room': 8000,
   'Vaidehi Suite': 8000,
+  'Vaidehi Twin Room': 5500,
   'Vaidehi Twin': 5500,
+  // Wing 2: Panchvati
+  'Panchwati Quad': 4500,
   'Panchvati Quad Room': 4500,
+  'Panchwati Suite Room': 3500,
   'Panchvati Suite Room': 3500,
+  'Panchwati Triple': 3500,
   'Panchvati Triple Room': 3500,
-  'Panchvati King Size': 2500,
+  'Panchwati Twin Bed': 2500,
   'Panchvati Twin Bed': 2500,
+  'Panchvati King Size': 2500,
 };
 
 // Dining Catalog

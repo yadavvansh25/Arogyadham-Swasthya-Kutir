@@ -91,12 +91,12 @@
           class="hidden xl:flex items-center gap-6 text-[11px] uppercase tracking-[0.16em] font-medium text-white/90">
           <a href="#hero" onclick="navigateToHomeView()"
             class="nav-link hover:text-taj-gold-light transition-colors py-2">Destinations</a>
-          <a href="#rooms-pillars" onclick="navigateToHomeRooms()"
+          <a href="#rooms-wings" onclick="navigateToHomeRooms()"
             class="nav-link hover:text-taj-gold-light transition-colors py-2">Rooms & Suites</a>
-          <a href="#vaidehi-rooms" onclick="navigateToVaidehi()"
-            class="nav-link hover:text-taj-gold-light transition-colors py-2">Vaidehi</a>
+          <a href="#swasthya-kutir-rooms" onclick="navigateToSwasthyaKutir()"
+            class="nav-link hover:text-taj-gold-light transition-colors py-2">Swasthya Kutir Wing</a>
           <a href="#panchvati-rooms" onclick="navigateToPanchvati()"
-            class="nav-link hover:text-taj-gold-light transition-colors py-2">Panchvati</a>
+            class="nav-link hover:text-taj-gold-light transition-colors py-2">Panchvati Wing</a>
           <a href="#aahar-vihar-menu" onclick="navigateToMenu()"
             class="nav-link hover:text-taj-gold-light transition-colors py-2">Dining (Aahar-Vihar)</a>
           <a href="#wellness-facilities" onclick="navigateToSection('wellness-facilities')"
@@ -246,12 +246,12 @@
 
       <a href="#hero" onclick="navigateToHomeView()"
         class="block py-2 hover:text-taj-gold border-b border-gray-100">Destinations</a>
-      <a href="#rooms-pillars" onclick="navigateToHomeRooms()"
-        class="block py-2 hover:text-taj-gold border-b border-gray-100">Rooms & Suites (The 4 Pillars)</a>
-      <a href="#vaidehi-rooms" onclick="navigateToVaidehi()"
-        class="block py-2 hover:text-taj-gold border-b border-gray-100">Vaidehi Collection (2 Categories)</a>
+      <a href="#rooms-wings" onclick="navigateToHomeRooms()"
+        class="block py-2 hover:text-taj-gold border-b border-gray-100">Rooms & Suites (2 Grand Wings)</a>
+      <a href="#swasthya-kutir-rooms" onclick="navigateToSwasthyaKutir()"
+        class="block py-2 hover:text-taj-gold border-b border-gray-100">Wing 1: Arogyadham Swasthya Kutir</a>
       <a href="#panchvati-rooms" onclick="navigateToPanchvati()"
-        class="block py-2 hover:text-taj-gold border-b border-gray-100">Panchvati Collection (5 Categories)</a>
+        class="block py-2 hover:text-taj-gold border-b border-gray-100">Wing 2: Panchvati Collection</a>
       <a href="#aahar-vihar-menu" onclick="navigateToMenu()"
         class="block py-2 hover:text-taj-gold border-b border-gray-100">Dining: Aahar-Vihar Menu</a>
       <a href="#panchvati-rasoee-menu" onclick="navigateToPanchvatiRasoeeMenu()"
@@ -350,8 +350,9 @@
         </div>
       </section>
 
-      <!-- ================= 2. PRIMARY ROOMS & SUITES SECTION (THE 4 MAIN PILLARS) ================= -->
-      <section id="rooms-pillars" class="py-20 sm:py-28 bg-white border-b border-taj-border">
+      <!-- ================= 2. PRIMARY ROOMS & SUITES SECTION (2 MAIN GRAND WINGS) ================= -->
+      <section id="rooms-wings" class="py-20 sm:py-28 bg-white border-b border-taj-border relative">
+        <div id="rooms-pillars" class="absolute -top-28"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           <div class="text-center mb-16">
@@ -361,234 +362,173 @@
               </span>
             </div>
             <h2 class="font-cinzel text-2xl sm:text-4xl font-bold text-taj-charcoal uppercase tracking-wider mb-3">
-              The Four Architectural Pillars
+              The Two Grand Architectural Wings
             </h2>
             <p class="font-cormorant italic text-lg sm:text-2xl text-taj-body max-w-3xl mx-auto leading-relaxed">
-              From regal waterfront suites overlooking holy Mandakini waters to intimate cottages nestled in sacred
-              gardens.
+              Experience quintessential Taj-inspired luxury across our royal heritage wellness sanctuary and sacred community family living wing.
             </p>
           </div>
 
-          <!-- 4 Primary Pillars Grid -->
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+          <!-- 2 Main Grand Sections Side-by-Side -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
 
-            <!-- Pillar 1: MANDAKINI -->
-            <div class="taj-white-card flex flex-col justify-between group">
+            <!-- WING 1: AROGYADHAM SWASTHYA KUTIR (Heritage & Wellness Wing) -->
+            <div class="taj-white-card flex flex-col justify-between group overflow-hidden border border-taj-border hover:border-taj-gold/80 transition-all duration-500 shadow-sm hover:shadow-xl">
               <div>
-                <div class="relative h-72 sm:h-80 overflow-hidden">
-                  <img src="assets/images/hero_palace.jpg" alt="Mandakini Royal Waterfront Suite"
+                <div class="relative h-72 sm:h-88 overflow-hidden">
+                  <img src="assets/images/hero_palace.jpg" alt="Arogyadham Swasthya Kutir - Heritage & Wellness Sanctuary"
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                   <div
-                    class="absolute top-4 left-4 bg-taj-gold text-white px-3 py-1 text-[10px] font-bold uppercase tracking-widest shadow">
-                    Royal Flagship
+                    class="absolute top-4 left-4 bg-taj-gold text-white px-3.5 py-1.5 text-[10px] font-bold uppercase tracking-[0.2em] shadow-md border border-taj-gold-light/40">
+                    HERITAGE WELLNESS SANCTUARY
                   </div>
                   <div
-                    class="absolute bottom-4 right-4 bg-black/60 text-white text-xs px-3 py-1 backdrop-blur flex items-center gap-1.5">
-                    <i data-lucide="waves" class="w-3.5 h-3.5 text-taj-gold-light"></i> Waterfront Sanctuary
+                    class="absolute bottom-4 right-4 bg-black/75 text-white text-xs px-3.5 py-1.5 backdrop-blur-md flex items-center gap-1.5 border border-white/20">
+                    <i data-lucide="crown" class="w-3.5 h-3.5 text-taj-gold-light"></i> 4 Royal Accommodations
                   </div>
                 </div>
 
-                <div class="p-6 sm:p-8 space-y-4">
+                <div class="p-6 sm:p-8 space-y-5">
                   <div class="flex items-baseline justify-between gap-4 border-b border-taj-border pb-4">
                     <div>
-                      <h3 class="font-cinzel text-2xl font-bold text-taj-charcoal">
-                        1. MANDAKINI
+                      <h3 class="font-cinzel text-2xl sm:text-3xl font-bold text-taj-charcoal">
+                        Arogyadham Swasthya Kutir
                       </h3>
-                      <p class="text-xs text-taj-muted mt-0.5">Royal Waterfront Suite • Panoramic River Balcony</p>
+                      <p class="text-xs text-taj-gold font-semibold uppercase tracking-wider mt-1">
+                        Heritage & Wellness Wing • Sacred Waterfront Living
+                      </p>
                     </div>
                     <div class="text-right flex-shrink-0">
-                      <span class="font-cinzel text-2xl font-bold text-taj-charcoal">₹12,000</span>
+                      <span class="text-[10px] text-taj-muted uppercase block font-semibold">Starting From</span>
+                      <span class="font-cinzel text-2xl sm:text-3xl font-bold text-taj-charcoal">₹5,500</span>
                       <span class="text-[10px] text-taj-muted block">+ GST / night</span>
                     </div>
                   </div>
 
                   <p class="text-xs sm:text-sm text-taj-body leading-relaxed">
-                    Ultra-luxury royal waterfront suite featuring serene balcony views over holy Mandakini waters,
-                    private handcrafted Vedic copper soaking tub, and dedicated royal butler service.
+                    Royal waterfront cottages & premium Ayurvedic suites overlooking holy waters. Distinguished by hand-carved classical architecture, expansive sitting lounges, private balconies, and restorative Vedic pulse consultations.
                   </p>
 
-                  <div class="grid grid-cols-2 gap-2 text-xs text-taj-muted pt-2">
+                  <!-- 4 Included Categories Overview -->
+                  <div class="p-4 bg-taj-ivory border border-taj-border/80 space-y-2.5">
+                    <span class="text-[10px] uppercase font-bold tracking-widest text-taj-gold block">
+                      Includes 4 Distinct Luxury Accommodations:
+                    </span>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-taj-charcoal">
+                      <div class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-3.5 h-3.5 text-taj-gold flex-shrink-0"></i>
+                        <span><strong>Mandakini Premium</strong> (₹12,000)</span>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-3.5 h-3.5 text-taj-gold flex-shrink-0"></i>
+                        <span><strong>Paishwani Cottage</strong> (₹10,000)</span>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-3.5 h-3.5 text-taj-gold flex-shrink-0"></i>
+                        <span><strong>Vaidehi Suite Room</strong> (₹8,000)</span>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-3.5 h-3.5 text-taj-gold flex-shrink-0"></i>
+                        <span><strong>Vaidehi Twin Room</strong> (₹5,500)</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Amenities Pills -->
+                  <div class="grid grid-cols-2 gap-2 text-xs text-taj-muted pt-1">
+                    <span class="flex items-center gap-1.5"><i data-lucide="check"
+                        class="w-3.5 h-3.5 text-taj-gold"></i> Waterfront Balconies</span>
+                    <span class="flex items-center gap-1.5"><i data-lucide="check"
+                        class="w-3.5 h-3.5 text-taj-gold"></i> Marble Ayurvedic Bath</span>
                     <span class="flex items-center gap-1.5"><i data-lucide="check"
                         class="w-3.5 h-3.5 text-taj-gold"></i> Dedicated Butler Service</span>
                     <span class="flex items-center gap-1.5"><i data-lucide="check"
-                        class="w-3.5 h-3.5 text-taj-gold"></i> Private Vedic Herb Bath</span>
-                    <span class="flex items-center gap-1.5"><i data-lucide="check"
-                        class="w-3.5 h-3.5 text-taj-gold"></i> Riverfront Jharokha Balcony</span>
-                    <span class="flex items-center gap-1.5"><i data-lucide="check"
-                        class="w-3.5 h-3.5 text-taj-gold"></i> Complimentary Aahar-Vihar Dining</span>
+                        class="w-3.5 h-3.5 text-taj-gold"></i> Pulse Check & Aahar-Vihar</span>
                   </div>
                 </div>
               </div>
 
               <div class="p-6 sm:p-8 pt-0 border-t border-taj-border pt-5 flex items-center justify-between">
-                <span class="text-xs text-taj-charcoal font-semibold">Immediate Royal Confirmation</span>
-                <button onclick="openBookingDrawer('Mandakini Royal Suite', 12000)" class="btn-taj-primary">
-                  <span>Book Now</span>
+                <div>
+                  <span class="text-xs text-taj-charcoal font-semibold block">From ₹5,500 + GST / night</span>
+                  <span class="text-[10px] text-taj-muted">Royal waterfront & wellness retreat</span>
+                </div>
+                <button onclick="navigateToSwasthyaKutir()" class="btn-taj-primary py-3 px-6 text-xs flex items-center gap-2">
+                  <span>Explore Swasthya Kutir Rooms →</span>
                 </button>
               </div>
             </div>
 
-            <!-- Pillar 2: PAISHWANI -->
-            <div class="taj-white-card flex flex-col justify-between group">
+            <!-- WING 2: PANCHVATI (Pilgrim, Family & Group Wing) -->
+            <div class="taj-white-card flex flex-col justify-between group overflow-hidden border border-taj-border hover:border-emerald-700/80 transition-all duration-500 shadow-sm hover:shadow-xl">
               <div>
-                <div class="relative h-72 sm:h-80 overflow-hidden">
-                  <img src="assets/images/deluxe_kutir.jpg" alt="Paishwani Grand Heritage Living"
+                <div class="relative h-72 sm:h-88 overflow-hidden">
+                  <img src="assets/images/ayurvedic_spa.jpg" alt="Panchvati - Pilgrim, Family & Group Living Wing"
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                   <div
-                    class="absolute top-4 left-4 bg-taj-charcoal text-white px-3 py-1 text-[10px] font-bold uppercase tracking-widest shadow">
-                    Heritage Landmark
+                    class="absolute top-4 left-4 bg-emerald-800 text-white px-3.5 py-1.5 text-[10px] font-bold uppercase tracking-[0.2em] shadow-md border border-emerald-400/40">
+                    SACRED COMMUNITY & FAMILY LIVING
                   </div>
                   <div
-                    class="absolute bottom-4 right-4 bg-black/60 text-white text-xs px-3 py-1 backdrop-blur flex items-center gap-1.5">
-                    <i data-lucide="trees" class="w-3.5 h-3.5 text-taj-gold-light"></i> Garden Sanctorum
+                    class="absolute bottom-4 right-4 bg-black/75 text-white text-xs px-3.5 py-1.5 backdrop-blur-md flex items-center gap-1.5 border border-white/20">
+                    <i data-lucide="users" class="w-3.5 h-3.5 text-taj-gold-light"></i> 4 Versatile Categories
                   </div>
                 </div>
 
-                <div class="p-6 sm:p-8 space-y-4">
+                <div class="p-6 sm:p-8 space-y-5">
                   <div class="flex items-baseline justify-between gap-4 border-b border-taj-border pb-4">
                     <div>
-                      <h3 class="font-cinzel text-2xl font-bold text-taj-charcoal">
-                        2. PAISHWANI
+                      <h3 class="font-cinzel text-2xl sm:text-3xl font-bold text-taj-charcoal">
+                        PANCHVATI
                       </h3>
-                      <p class="text-xs text-taj-muted mt-0.5">Grand Heritage Living • Classical Courtyard Views</p>
+                      <p class="text-xs text-emerald-800 font-semibold uppercase tracking-wider mt-1">
+                        Pilgrim, Family & Group Wing • Vedic Harmony
+                      </p>
                     </div>
                     <div class="text-right flex-shrink-0">
-                      <span class="font-cinzel text-2xl font-bold text-taj-charcoal">₹10,000</span>
+                      <span class="text-[10px] text-taj-muted uppercase block font-semibold">Starting From</span>
+                      <span class="font-cinzel text-2xl sm:text-3xl font-bold text-taj-charcoal">₹2,500</span>
                       <span class="text-[10px] text-taj-muted block">+ GST / night</span>
                     </div>
                   </div>
 
                   <p class="text-xs sm:text-sm text-taj-body leading-relaxed">
-                    Grand heritage living distinguished by classical Indian hand-carved teak wood furnishings, lavish
-                    en-suite marble bath, luxury wellness amenities, and peaceful Parisar garden courtyards.
+                    Serene, spacious accommodations tailored for families, pilgrims, and retreat groups. Thoughtfully engineered with ground-level accessibility, tranquil Parisar garden surroundings, and attached Satvik community dining.
                   </p>
 
-                  <div class="grid grid-cols-2 gap-2 text-xs text-taj-muted pt-2">
-                    <span class="flex items-center gap-1.5"><i data-lucide="check"
-                        class="w-3.5 h-3.5 text-taj-gold"></i> Hand-Carved Teak Interior</span>
-                    <span class="flex items-center gap-1.5"><i data-lucide="check"
-                        class="w-3.5 h-3.5 text-taj-gold"></i> Daily Vaidya Pulse Check</span>
-                    <span class="flex items-center gap-1.5"><i data-lucide="check"
-                        class="w-3.5 h-3.5 text-taj-gold"></i> Botanical Garden Courtyard</span>
-                    <span class="flex items-center gap-1.5"><i data-lucide="check"
-                        class="w-3.5 h-3.5 text-taj-gold"></i> High-Speed Fiber Wi-Fi</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="p-6 sm:p-8 pt-0 border-t border-taj-border pt-5 flex items-center justify-between">
-                <span class="text-xs text-taj-charcoal font-semibold">Classical Heritage Grandeur</span>
-                <button onclick="openBookingDrawer('Paishwani Heritage Suite', 10000)" class="btn-taj-primary">
-                  <span>Book Now</span>
-                </button>
-              </div>
-            </div>
-
-            <!-- Pillar 3: VAIDEHI -->
-            <div class="taj-white-card flex flex-col justify-between group">
-              <div>
-                <div class="relative h-72 sm:h-80 overflow-hidden">
-                  <img src="assets/images/panchakarma_kutir.jpg" alt="Vaidehi Suites & Twin Collection"
-                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                  <div
-                    class="absolute top-4 left-4 bg-taj-gold/90 text-white px-3 py-1 text-[10px] font-bold uppercase tracking-widest shadow">
-                    2 Categories Available
-                  </div>
-                  <div
-                    class="absolute bottom-4 right-4 bg-black/60 text-white text-xs px-3 py-1 backdrop-blur flex items-center gap-1.5">
-                    <i data-lucide="layers" class="w-3.5 h-3.5 text-taj-gold-light"></i> Suite & Twin Options
-                  </div>
-                </div>
-
-                <div class="p-6 sm:p-8 space-y-4">
-                  <div class="flex items-baseline justify-between gap-4 border-b border-taj-border pb-4">
-                    <div>
-                      <h3 class="font-cinzel text-2xl font-bold text-taj-charcoal">
-                        3. VAIDEHI
-                      </h3>
-                      <p class="text-xs text-taj-gold font-semibold uppercase tracking-wider mt-0.5">Vaidehi Suite &
-                        Twin</p>
-                    </div>
-                    <div class="text-right flex-shrink-0">
-                      <span class="text-[10px] text-taj-muted uppercase block">Price Tag</span>
-                      <span class="font-cinzel text-2xl font-bold text-taj-charcoal">From ₹5,500</span>
-                      <span class="text-[10px] text-taj-muted block">+ GST / night</span>
+                  <!-- 4 Included Categories Overview -->
+                  <div class="p-4 bg-taj-ivory border border-taj-border/80 space-y-2.5">
+                    <span class="text-[10px] uppercase font-bold tracking-widest text-emerald-800 block">
+                      Includes 4 Dedicated Family & Group Categories:
+                    </span>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-taj-charcoal">
+                      <div class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-700 flex-shrink-0"></i>
+                        <span><strong>Panchwati Quad</strong> (₹4,500)</span>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-700 flex-shrink-0"></i>
+                        <span><strong>Panchwati Suite Room</strong> (₹3,500)</span>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-700 flex-shrink-0"></i>
+                        <span><strong>Panchwati Triple</strong> (₹3,500)</span>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-700 flex-shrink-0"></i>
+                        <span><strong>Panchwati Twin Bed</strong> (₹2,500)</span>
+                      </div>
                     </div>
                   </div>
 
-                  <p class="text-xs sm:text-sm text-taj-body leading-relaxed">
-                    Featuring the expansive <strong>Vaidehi Suite</strong> (₹8,000) and the comfortable <strong>Vaidehi
-                      Twin</strong> (₹5,500). Crafted for wellness seekers, couples, and friends seeking refined
-                    tranquility.
-                  </p>
-
-                  <div class="grid grid-cols-2 gap-2 text-xs text-taj-muted pt-2">
+                  <!-- Amenities Pills -->
+                  <div class="grid grid-cols-2 gap-2 text-xs text-taj-muted pt-1">
                     <span class="flex items-center gap-1.5"><i data-lucide="check"
-                        class="w-3.5 h-3.5 text-taj-gold"></i> Vaidehi Suite (₹8,000/nt)</span>
+                        class="w-3.5 h-3.5 text-taj-gold"></i> Multi-Bed Family Setups</span>
                     <span class="flex items-center gap-1.5"><i data-lucide="check"
-                        class="w-3.5 h-3.5 text-taj-gold"></i> Vaidehi Twin (₹5,500/nt)</span>
+                        class="w-3.5 h-3.5 text-taj-gold"></i> Ground-Floor Accessibility</span>
                     <span class="flex items-center gap-1.5"><i data-lucide="check"
-                        class="w-3.5 h-3.5 text-taj-gold"></i> Luxury Sitting Lounges</span>
-                    <span class="flex items-center gap-1.5"><i data-lucide="check"
-                        class="w-3.5 h-3.5 text-taj-gold"></i> Dedicated Herbal Steam</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="p-6 sm:p-8 pt-0 border-t border-taj-border pt-5 flex items-center justify-between">
-                <span class="text-xs text-taj-muted">Suite or Twin configuration</span>
-                <button onclick="navigateToVaidehi()" class="btn-taj-primary">
-                  <span>Explore Vaidehi Rooms</span>
-                  <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-                </button>
-              </div>
-            </div>
-
-            <!-- Pillar 4: PANCHVATI -->
-            <div class="taj-white-card flex flex-col justify-between group">
-              <div>
-                <div class="relative h-72 sm:h-80 overflow-hidden">
-                  <img src="assets/images/ayurvedic_spa.jpg" alt="Panchvati Rooms & Suites Collection"
-                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                  <div
-                    class="absolute top-4 left-4 bg-emerald-800 text-white px-3 py-1 text-[10px] font-bold uppercase tracking-widest shadow">
-                    5 Categories Available
-                  </div>
-                  <div
-                    class="absolute bottom-4 right-4 bg-black/60 text-white text-xs px-3 py-1 backdrop-blur flex items-center gap-1.5">
-                    <i data-lucide="users" class="w-3.5 h-3.5 text-taj-gold-light"></i> Solo to Large Family
-                  </div>
-                </div>
-
-                <div class="p-6 sm:p-8 space-y-4">
-                  <div class="flex items-baseline justify-between gap-4 border-b border-taj-border pb-4">
-                    <div>
-                      <h3 class="font-cinzel text-2xl font-bold text-taj-charcoal">
-                        4. PANCHVATI
-                      </h3>
-                      <p class="text-xs text-emerald-700 font-semibold uppercase tracking-wider mt-0.5">Family & Pilgrim
-                        Living</p>
-                    </div>
-                    <div class="text-right flex-shrink-0">
-                      <span class="text-[10px] text-taj-muted uppercase block">Price Tag</span>
-                      <span class="font-cinzel text-2xl font-bold text-taj-charcoal">From ₹2,500</span>
-                      <span class="text-[10px] text-taj-muted block">+ GST / night</span>
-                    </div>
-                  </div>
-
-                  <p class="text-xs sm:text-sm text-taj-body leading-relaxed">
-                    Our versatile campus collection spanning <strong>King Size</strong>, <strong>Suite Rooms</strong>,
-                    <strong>Twin Beds</strong>, <strong>Triple</strong>, and <strong>Quad</strong> configurations for
-                    families and spiritual pilgrims.
-                  </p>
-
-                  <div class="grid grid-cols-2 gap-2 text-xs text-taj-muted pt-2">
-                    <span class="flex items-center gap-1.5"><i data-lucide="check"
-                        class="w-3.5 h-3.5 text-taj-gold"></i> King & Twin (₹2,500/nt)</span>
-                    <span class="flex items-center gap-1.5"><i data-lucide="check"
-                        class="w-3.5 h-3.5 text-taj-gold"></i> Suite & Triple (₹3,500/nt)</span>
-                    <span class="flex items-center gap-1.5"><i data-lucide="check"
-                        class="w-3.5 h-3.5 text-taj-gold"></i> Quad Room (₹4,500/nt)</span>
+                        class="w-3.5 h-3.5 text-taj-gold"></i> Clean Vedic Ambiance</span>
                     <span class="flex items-center gap-1.5"><i data-lucide="check"
                         class="w-3.5 h-3.5 text-taj-gold"></i> Attached Panchvati Rasoee</span>
                   </div>
@@ -596,10 +536,12 @@
               </div>
 
               <div class="p-6 sm:p-8 pt-0 border-t border-taj-border pt-5 flex items-center justify-between">
-                <span class="text-xs text-taj-muted">5 options for every group</span>
-                <button onclick="navigateToPanchvati()" class="btn-taj-primary">
-                  <span>Explore Panchvati Rooms</span>
-                  <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                <div>
+                  <span class="text-xs text-taj-charcoal font-semibold block">From ₹2,500 + GST / night</span>
+                  <span class="text-[10px] text-taj-muted">Ideal for families, retreats & pilgrims</span>
+                </div>
+                <button onclick="navigateToPanchvati()" class="btn-taj-primary py-3 px-6 text-xs flex items-center gap-2">
+                  <span>Explore Panchvati Rooms →</span>
                 </button>
               </div>
             </div>
@@ -1088,22 +1030,22 @@
       </section>
     </div><!-- /#home-view -->
 
-    <!-- ================= 2. DEDICATED SEPARATE PAGE FOR VAIDEHI ================= -->
-    <div id="vaidehi-view" class="view-page hidden">
+    <!-- ================= 2. DEDICATED SEPARATE PAGE FOR AROGYADHAM SWASTHYA KUTIR ================= -->
+    <div id="swasthya-kutir-view" class="view-page hidden">
       <!-- Top Breadcrumb Bar -->
       <div class="bg-taj-ivory border-b border-taj-border pt-24 sm:pt-28 pb-4">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between gap-4">
           <button onclick="navigateToHomeRooms()"
             class="breadcrumb-back-btn inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-taj-charcoal hover:text-taj-gold">
             <i data-lucide="arrow-left" class="w-4 h-4 text-taj-gold"></i>
-            <span>← Back to All Rooms</span>
+            <span>← Back to All Wings</span>
           </button>
           <div class="text-xs text-taj-muted tracking-wider flex items-center gap-2">
             <a href="#hero" onclick="navigateToHomeView()" class="hover:text-taj-charcoal">Home</a>
             <span class="text-taj-border">/</span>
-            <a href="#rooms-pillars" onclick="navigateToHomeRooms()" class="hover:text-taj-charcoal">Rooms & Suites</a>
+            <a href="#rooms-wings" onclick="navigateToHomeRooms()" class="hover:text-taj-charcoal">Rooms & Suites</a>
             <span class="text-taj-border">/</span>
-            <span class="text-taj-gold font-semibold">Vaidehi Collection</span>
+            <span class="text-taj-gold font-semibold">Swasthya Kutir Wing</span>
           </div>
         </div>
       </div>
@@ -1111,55 +1053,173 @@
       <!-- Hero Banner / Header -->
       <div class="relative py-20 sm:py-28 bg-taj-charcoal text-white text-center px-4 overflow-hidden">
         <div class="absolute inset-0 z-0">
-          <img src="assets/images/panchakarma_kutir.jpg" alt="Vaidehi Collection Heritage Ambience"
-            class="w-full h-full object-cover opacity-25">
+          <img src="assets/images/hero_palace.jpg" alt="Arogyadham Swasthya Kutir Heritage Ambience"
+            class="w-full h-full object-cover opacity-30">
           <div class="absolute inset-0 bg-gradient-to-t from-taj-charcoal via-taj-charcoal/80 to-transparent"></div>
         </div>
         <div class="relative z-10 max-w-4xl mx-auto space-y-4">
           <div
             class="inline-flex items-center gap-2 px-3.5 py-1.5 border border-taj-gold/60 bg-black/40 backdrop-blur text-[10px] uppercase font-bold tracking-[0.22em] text-taj-gold-light">
             <i data-lucide="sparkles" class="w-3.5 h-3.5 text-taj-gold"></i>
-            <span>Sacred Heritage Wing</span>
+            <span>HERITAGE WELLNESS SANCTUARY</span>
           </div>
           <h1 class="font-cinzel text-3xl sm:text-5xl md:text-6xl font-bold uppercase tracking-[0.15em] text-white">
-            VAIDEHI COLLECTION
+            AROGYADHAM SWASTHYA KUTIR
           </h1>
           <p
-            class="font-cormorant italic text-xl sm:text-2xl md:text-3xl text-taj-gold-light font-medium max-w-2xl mx-auto leading-relaxed">
-            Refined Heritage Comfort & Suites in Chitrakoot
+            class="font-cormorant italic text-xl sm:text-2xl md:text-3xl text-taj-gold-light font-medium max-w-3xl mx-auto leading-relaxed">
+            Royal waterfront cottages & premium Ayurvedic suites overlooking holy waters
           </p>
           <div class="w-20 h-0.5 bg-taj-gold mx-auto mt-6"></div>
         </div>
       </div>
 
-      <!-- The 2 Vaidehi Categories Grid -->
+      <!-- The 4 Swasthya Kutir Categories Grid -->
       <section class="py-16 sm:py-24 bg-white border-b border-taj-border">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-          <div class="text-center mb-12">
-            <span class="taj-section-title-line">THE 2 VAIDEHI CATEGORIES</span>
-            <h2 class="font-cinzel text-2xl sm:text-3xl font-bold text-taj-charcoal uppercase tracking-wider mt-2">
-              Sanctuary Suite & Ergonomic Twin
+          <div class="text-center mb-14">
+            <span class="taj-section-title-line">THE 4 SWASTHYA KUTIR CATEGORIES</span>
+            <h2 class="font-cinzel text-2xl sm:text-3xl md:text-4xl font-bold text-taj-charcoal uppercase tracking-wider mt-2">
+              Royal Waterfront Sanctuaries & Heritage Suites
             </h2>
-            <p class="font-cormorant italic text-lg sm:text-xl text-taj-body max-w-2xl mx-auto mt-1">
-              Choose between expansive living luxury and twin-bed wellness convenience.
+            <p class="font-cormorant italic text-lg sm:text-xl text-taj-body max-w-2xl mx-auto mt-2">
+              Bespoke Vedic luxury, holistic Ayurvedic consultations, and sublime Mandakini river panoramas.
             </p>
           </div>
 
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
 
-            <!-- VAIDEHI SUITE -->
-            <div class="taj-white-card flex flex-col justify-between group overflow-hidden">
+            <!-- CATEGORY 1: MANDAKINI PREMIUM COTTAGE -->
+            <div class="taj-white-card flex flex-col justify-between group overflow-hidden border border-taj-border hover:shadow-2xl transition-all duration-500">
               <div>
                 <div class="relative h-72 sm:h-84 overflow-hidden">
-                  <img src="assets/images/panchakarma_kutir.jpg" alt="Vaidehi Suite Master Accommodation"
+                  <img src="assets/images/hero_palace.jpg" alt="Mandakini Premium Cottage"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                  <div
+                    class="absolute top-4 left-4 bg-taj-gold text-white px-3 py-1 text-[10px] font-bold uppercase tracking-widest shadow">
+                    Royal Waterfront Cottage
+                  </div>
+                  <div
+                    class="absolute bottom-4 right-4 bg-black/75 text-white text-xs px-3 py-1.5 backdrop-blur flex items-center gap-1.5">
+                    <i data-lucide="crown" class="w-3.5 h-3.5 text-taj-gold-light"></i> Mandakini Riverfront • King Bed
+                  </div>
+                </div>
+
+                <div class="p-6 sm:p-8 space-y-4">
+                  <div class="flex items-baseline justify-between gap-4 border-b border-taj-border pb-4">
+                    <div>
+                      <span class="text-[10px] uppercase font-bold tracking-widest text-taj-gold block">Category 1</span>
+                      <h3 class="font-cinzel text-2xl font-bold text-taj-charcoal">MANDAKINI PREMIUM COTTAGE</h3>
+                      <p class="text-xs text-taj-muted mt-0.5">Private Waterfront Heritage Cottage</p>
+                    </div>
+                    <div class="text-right flex-shrink-0">
+                      <span class="font-cinzel text-2xl sm:text-3xl font-bold text-taj-charcoal">₹12,000</span>
+                      <span class="text-[10px] text-taj-muted block">+ GST / night</span>
+                    </div>
+                  </div>
+
+                  <p class="text-xs sm:text-sm text-taj-body leading-relaxed">
+                    Our crown jewel wellness cottage perched directly along the tranquil Mandakini riverbank. Features private panoramic water deck, private courtyard, bespoke copper soaking tub, and round-the-clock dedicated wellness concierge.
+                  </p>
+
+                  <div
+                    class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-taj-muted pt-2 border-t border-taj-border/60">
+                    <span class="flex items-center gap-2"><i data-lucide="check"
+                        class="w-3.5 h-3.5 text-taj-gold flex-shrink-0"></i> Private Mandakini Riverfront Sundeck</span>
+                    <span class="flex items-center gap-2"><i data-lucide="check"
+                        class="w-3.5 h-3.5 text-taj-gold flex-shrink-0"></i> Dedicated Vedic Butler & Concierge</span>
+                    <span class="flex items-center gap-2"><i data-lucide="check"
+                        class="w-3.5 h-3.5 text-taj-gold flex-shrink-0"></i> Ayurvedic Pulse Consultation</span>
+                    <span class="flex items-center gap-2"><i data-lucide="check"
+                        class="w-3.5 h-3.5 text-taj-gold flex-shrink-0"></i> Royal Satvik All-Meals Inclusive</span>
+                    <span class="flex items-center gap-2"><i data-lucide="check"
+                        class="w-3.5 h-3.5 text-taj-gold flex-shrink-0"></i> Handcrafted Brass & Teak Finishes</span>
+                    <span class="flex items-center gap-2"><i data-lucide="check"
+                        class="w-3.5 h-3.5 text-taj-gold flex-shrink-0"></i> En-Suite Jacuzzi & Herbal Bath</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="p-6 sm:p-8 pt-0 border-t border-taj-border pt-5 flex items-center justify-between">
+                <span class="text-xs text-taj-charcoal font-semibold">Max 2 Adults + 1 Child</span>
+                <button onclick="openBookingDrawer('Mandakini Premium Cottage', 12000)" class="btn-taj-primary">
+                  <span>Book Mandakini Premium</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- CATEGORY 2: PAISHWANI COTTAGE -->
+            <div class="taj-white-card flex flex-col justify-between group overflow-hidden border border-taj-border hover:shadow-2xl transition-all duration-500">
+              <div>
+                <div class="relative h-72 sm:h-84 overflow-hidden">
+                  <img src="assets/images/panchakarma_kutir.jpg" alt="Paishwani Cottage"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                  <div
+                    class="absolute top-4 left-4 bg-taj-gold text-white px-3 py-1 text-[10px] font-bold uppercase tracking-widest shadow">
+                    Riverside Heritage Cottage
+                  </div>
+                  <div
+                    class="absolute bottom-4 right-4 bg-black/75 text-white text-xs px-3 py-1.5 backdrop-blur flex items-center gap-1.5">
+                    <i data-lucide="feather" class="w-3.5 h-3.5 text-taj-gold-light"></i> Ghat View • King Bed
+                  </div>
+                </div>
+
+                <div class="p-6 sm:p-8 space-y-4">
+                  <div class="flex items-baseline justify-between gap-4 border-b border-taj-border pb-4">
+                    <div>
+                      <span class="text-[10px] uppercase font-bold tracking-widest text-taj-gold block">Category 2</span>
+                      <h3 class="font-cinzel text-2xl font-bold text-taj-charcoal">PAISHWANI COTTAGE</h3>
+                      <p class="text-xs text-taj-muted mt-0.5">Sanctuary by the Holy Ghats</p>
+                    </div>
+                    <div class="text-right flex-shrink-0">
+                      <span class="font-cinzel text-2xl sm:text-3xl font-bold text-taj-charcoal">₹10,000</span>
+                      <span class="text-[10px] text-taj-muted block">+ GST / night</span>
+                    </div>
+                  </div>
+
+                  <p class="text-xs sm:text-sm text-taj-body leading-relaxed">
+                    Tranquil riverside cottage enveloped in lush medicinal gardens and neem groves. Features open stone verandah, hand-carved teakwood interiors, traditional charpai daybeds, and soothing sacred river views.
+                  </p>
+
+                  <div
+                    class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-taj-muted pt-2 border-t border-taj-border/60">
+                    <span class="flex items-center gap-2"><i data-lucide="check"
+                        class="w-3.5 h-3.5 text-taj-gold flex-shrink-0"></i> Scenic River & Garden Verandah</span>
+                    <span class="flex items-center gap-2"><i data-lucide="check"
+                        class="w-3.5 h-3.5 text-taj-gold flex-shrink-0"></i> Handcrafted Teak & Rosewood Interiors</span>
+                    <span class="flex items-center gap-2"><i data-lucide="check"
+                        class="w-3.5 h-3.5 text-taj-gold flex-shrink-0"></i> Daily Satvik Breakfast Included</span>
+                    <span class="flex items-center gap-2"><i data-lucide="check"
+                        class="w-3.5 h-3.5 text-taj-gold flex-shrink-0"></i> Complimentary Morning Boating</span>
+                    <span class="flex items-center gap-2"><i data-lucide="check"
+                        class="w-3.5 h-3.5 text-taj-gold flex-shrink-0"></i> En-Suite Natural Stone Bathroom</span>
+                    <span class="flex items-center gap-2"><i data-lucide="check"
+                        class="w-3.5 h-3.5 text-taj-gold flex-shrink-0"></i> Daily Herbal Consultation</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="p-6 sm:p-8 pt-0 border-t border-taj-border pt-5 flex items-center justify-between">
+                <span class="text-xs text-taj-charcoal font-semibold">Max 2 Adults + 1 Child</span>
+                <button onclick="openBookingDrawer('Paishwani Cottage', 10000)" class="btn-taj-primary">
+                  <span>Book Paishwani Cottage</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- CATEGORY 3: VAIDEHI SUITE ROOM -->
+            <div class="taj-white-card flex flex-col justify-between group overflow-hidden border border-taj-border hover:shadow-2xl transition-all duration-500">
+              <div>
+                <div class="relative h-72 sm:h-84 overflow-hidden">
+                  <img src="assets/images/deluxe_kutir.jpg" alt="Vaidehi Suite Room"
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                   <div
                     class="absolute top-4 left-4 bg-taj-gold text-white px-3 py-1 text-[10px] font-bold uppercase tracking-widest shadow">
                     Master Suite
                   </div>
                   <div
-                    class="absolute bottom-4 right-4 bg-black/70 text-white text-xs px-3 py-1 backdrop-blur flex items-center gap-1.5">
+                    class="absolute bottom-4 right-4 bg-black/75 text-white text-xs px-3 py-1.5 backdrop-blur flex items-center gap-1.5">
                     <i data-lucide="crown" class="w-3.5 h-3.5 text-taj-gold-light"></i> 1 King Bed • Lounge
                   </div>
                 </div>
@@ -1167,9 +1227,8 @@
                 <div class="p-6 sm:p-8 space-y-4">
                   <div class="flex items-baseline justify-between gap-4 border-b border-taj-border pb-4">
                     <div>
-                      <span class="text-[10px] uppercase font-bold tracking-widest text-taj-gold block">Category
-                        1</span>
-                      <h3 class="font-cinzel text-2xl font-bold text-taj-charcoal">VAIDEHI SUITE</h3>
+                      <span class="text-[10px] uppercase font-bold tracking-widest text-taj-gold block">Category 3</span>
+                      <h3 class="font-cinzel text-2xl font-bold text-taj-charcoal">VAIDEHI SUITE ROOM</h3>
                       <p class="text-xs text-taj-muted mt-0.5">Expansive Master Living Suite</p>
                     </div>
                     <div class="text-right flex-shrink-0">
@@ -1179,19 +1238,17 @@
                   </div>
 
                   <p class="text-xs sm:text-sm text-taj-body leading-relaxed">
-                    Expansive master living suite with luxury sitting lounge, private balcony, marble bath, Satvik
-                    breakfast. Designed for guests seeking refined tranquility and restorative serenity in sacred
-                    Chitrakoot.
+                    Expansive master living suite with luxury sitting lounge, private balcony, marble bath, and Satvik breakfast. Designed for guests seeking refined tranquility and restorative serenity in sacred Chitrakoot.
                   </p>
 
                   <div
                     class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-taj-muted pt-2 border-t border-taj-border/60">
                     <span class="flex items-center gap-2"><i data-lucide="check"
-                        class="w-3.5 h-3.5 text-taj-gold flex-shrink-0"></i> Luxury Sitting Lounge</span>
+                        class="w-3.5 h-3.5 text-taj-gold flex-shrink-0"></i> Luxury Sitting Lounge & Daybed</span>
                     <span class="flex items-center gap-2"><i data-lucide="check"
                         class="w-3.5 h-3.5 text-taj-gold flex-shrink-0"></i> Private Balcony with Views</span>
                     <span class="flex items-center gap-2"><i data-lucide="check"
-                        class="w-3.5 h-3.5 text-taj-gold flex-shrink-0"></i> En-Suite Marble Bath</span>
+                        class="w-3.5 h-3.5 text-taj-gold flex-shrink-0"></i> En-Suite Marble Bath with Herbal Soaps</span>
                     <span class="flex items-center gap-2"><i data-lucide="check"
                         class="w-3.5 h-3.5 text-taj-gold flex-shrink-0"></i> Satvik Breakfast Included</span>
                     <span class="flex items-center gap-2"><i data-lucide="check"
@@ -1204,24 +1261,24 @@
 
               <div class="p-6 sm:p-8 pt-0 border-t border-taj-border pt-5 flex items-center justify-between">
                 <span class="text-xs text-taj-charcoal font-semibold">Max 2 Adults + 1 Child</span>
-                <button onclick="openBookingDrawer('Vaidehi Suite', 8000)" class="btn-taj-primary">
+                <button onclick="openBookingDrawer('Vaidehi Suite Room', 8000)" class="btn-taj-primary">
                   <span>Book Vaidehi Suite</span>
                 </button>
               </div>
             </div>
 
-            <!-- VAIDEHI TWIN -->
-            <div class="taj-white-card flex flex-col justify-between group overflow-hidden">
+            <!-- CATEGORY 4: VAIDEHI TWIN ROOM -->
+            <div class="taj-white-card flex flex-col justify-between group overflow-hidden border border-taj-border hover:shadow-2xl transition-all duration-500">
               <div>
                 <div class="relative h-72 sm:h-84 overflow-hidden">
-                  <img src="assets/images/deluxe_kutir.jpg" alt="Vaidehi Twin Accommodation"
+                  <img src="assets/images/ayurvedic_spa.jpg" alt="Vaidehi Twin Room"
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                   <div
                     class="absolute top-4 left-4 bg-taj-charcoal text-white px-3 py-1 text-[10px] font-bold uppercase tracking-widest shadow">
                     Twin Comfort
                   </div>
                   <div
-                    class="absolute bottom-4 right-4 bg-black/70 text-white text-xs px-3 py-1 backdrop-blur flex items-center gap-1.5">
+                    class="absolute bottom-4 right-4 bg-black/75 text-white text-xs px-3 py-1.5 backdrop-blur flex items-center gap-1.5">
                     <i data-lucide="bed-double" class="w-3.5 h-3.5 text-taj-gold-light"></i> 2 Twin Beds
                   </div>
                 </div>
@@ -1229,9 +1286,8 @@
                 <div class="p-6 sm:p-8 space-y-4">
                   <div class="flex items-baseline justify-between gap-4 border-b border-taj-border pb-4">
                     <div>
-                      <span class="text-[10px] uppercase font-bold tracking-widest text-taj-gold block">Category
-                        2</span>
-                      <h3 class="font-cinzel text-2xl font-bold text-taj-charcoal">VAIDEHI TWIN</h3>
+                      <span class="text-[10px] uppercase font-bold tracking-widest text-taj-gold block">Category 4</span>
+                      <h3 class="font-cinzel text-2xl font-bold text-taj-charcoal">VAIDEHI TWIN ROOM</h3>
                       <p class="text-xs text-taj-muted mt-0.5">Ergonomic Twin Heritage Room</p>
                     </div>
                     <div class="text-right flex-shrink-0">
@@ -1241,8 +1297,7 @@
                   </div>
 
                   <p class="text-xs sm:text-sm text-taj-body leading-relaxed">
-                    Two twin beds in ergonomic heritage space, garden promenade access, tea station. Meticulously
-                    planned for companions, friends, and family pilgrims desiring serene privacy and herbal wellness.
+                    Two twin beds in ergonomic heritage space, garden promenade access, and in-room herbal tea station. Meticulously planned for companions, friends, and family pilgrims desiring serene privacy and herbal wellness.
                   </p>
 
                   <div
@@ -1265,7 +1320,7 @@
 
               <div class="p-6 sm:p-8 pt-0 border-t border-taj-border pt-5 flex items-center justify-between">
                 <span class="text-xs text-taj-charcoal font-semibold">Twin Occupancy (2 Beds)</span>
-                <button onclick="openBookingDrawer('Vaidehi Twin', 5500)" class="btn-taj-primary">
+                <button onclick="openBookingDrawer('Vaidehi Twin Room', 5500)" class="btn-taj-primary">
                   <span>Book Vaidehi Twin</span>
                 </button>
               </div>
@@ -1277,17 +1332,15 @@
           <div
             class="mt-14 p-6 sm:p-8 bg-taj-ivory border border-taj-border flex flex-col sm:flex-row items-center justify-between gap-4">
             <div class="text-center sm:text-left">
-              <h4 class="font-cinzel text-base font-bold text-taj-charcoal uppercase">Looking for larger family
-                accommodation?</h4>
-              <p class="text-xs text-taj-muted">Discover our 5 Panchvati room categories starting from ₹2,500 + GST /
-                night.</p>
+              <h4 class="font-cinzel text-base font-bold text-taj-charcoal uppercase">Looking for family or group accommodation?</h4>
+              <p class="text-xs text-taj-muted">Discover our 4 Panchvati room categories starting from ₹2,500 + GST / night.</p>
             </div>
             <div class="flex items-center gap-3">
               <button onclick="navigateToHomeRooms()" class="btn-taj-outline-dark">
-                <span>← All Rooms</span>
+                <span>← All Wings</span>
               </button>
               <button onclick="navigateToPanchvati()" class="btn-taj-primary">
-                <span>Explore Panchvati Collection</span>
+                <span>Explore Panchvati Wing</span>
                 <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
               </button>
             </div>
@@ -1305,14 +1358,14 @@
           <button onclick="navigateToHomeRooms()"
             class="breadcrumb-back-btn inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-taj-charcoal hover:text-taj-gold">
             <i data-lucide="arrow-left" class="w-4 h-4 text-taj-gold"></i>
-            <span>← Back to All Rooms</span>
+            <span>← Back to All Wings</span>
           </button>
           <div class="text-xs text-taj-muted tracking-wider flex items-center gap-2">
             <a href="#hero" onclick="navigateToHomeView()" class="hover:text-taj-charcoal">Home</a>
             <span class="text-taj-border">/</span>
-            <a href="#rooms-pillars" onclick="navigateToHomeRooms()" class="hover:text-taj-charcoal">Rooms & Suites</a>
+            <a href="#rooms-wings" onclick="navigateToHomeRooms()" class="hover:text-taj-charcoal">Rooms & Suites</a>
             <span class="text-taj-border">/</span>
-            <span class="text-emerald-700 font-semibold">Panchvati Collection</span>
+            <span class="text-emerald-700 font-semibold">Panchvati Wing</span>
           </div>
         </div>
       </div>
@@ -1328,297 +1381,248 @@
           <div
             class="inline-flex items-center gap-2 px-3.5 py-1.5 border border-emerald-500/60 bg-black/40 backdrop-blur text-[10px] uppercase font-bold tracking-[0.22em] text-emerald-300">
             <i data-lucide="users" class="w-3.5 h-3.5"></i>
-            <span>Family, Pilgrim & Group Living</span>
+            <span>SACRED COMMUNITY & FAMILY LIVING</span>
           </div>
           <h1 class="font-cinzel text-3xl sm:text-5xl md:text-6xl font-bold uppercase tracking-[0.15em] text-white">
-            PANCHVATI COLLECTION
+            PANCHVATI
           </h1>
           <p
-            class="font-cormorant italic text-xl sm:text-2xl md:text-3xl text-taj-gold-light font-medium max-w-2xl mx-auto leading-relaxed">
-            Comfortable Family, Pilgrim & Group Living
+            class="font-cormorant italic text-xl sm:text-2xl md:text-3xl text-emerald-100 font-medium max-w-3xl mx-auto leading-relaxed">
+            Serene, spacious accommodations tailored for families, pilgrims, and retreat groups
           </p>
           <div class="w-20 h-0.5 bg-emerald-500 mx-auto mt-6"></div>
         </div>
       </div>
 
-      <!-- The 5 Panchvati Categories Grid -->
+      <!-- The 4 Panchvati Categories Grid -->
       <section class="py-16 sm:py-24 bg-white border-b border-taj-border">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-          <div class="text-center mb-12">
-            <span class="taj-section-title-line">THE 5 PANCHVATI CATEGORIES</span>
-            <h2 class="font-cinzel text-2xl sm:text-3xl font-bold text-taj-charcoal uppercase tracking-wider mt-2">
-              Tailored Configurations for Every Group
+          <div class="text-center mb-14">
+            <span class="taj-section-title-line">THE 4 PANCHVATI CATEGORIES</span>
+            <h2 class="font-cinzel text-2xl sm:text-3xl md:text-4xl font-bold text-taj-charcoal uppercase tracking-wider mt-2">
+              Family, Pilgrim & Group Living
             </h2>
-            <p class="font-cormorant italic text-lg sm:text-xl text-taj-body max-w-2xl mx-auto mt-1">
-              From single companions to expansive family retreats, paired with community Satvik dining.
+            <p class="font-cormorant italic text-lg sm:text-xl text-taj-body max-w-2xl mx-auto mt-2">
+              Comfortable, peaceful configurations paired with sacred Parisar gardens and authentic community dining.
             </p>
           </div>
 
-          <!-- Row 1: 3 Cards (Quad, Suite Room, Triple) -->
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8">
+          <!-- Balanced 2x2 Grid matching Swasthya Kutir -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
 
-            <!-- Card 1: PANCHVATI QUAD -->
-            <div class="taj-white-card flex flex-col justify-between group overflow-hidden">
+            <!-- Category 1: PANCHWATI QUAD -->
+            <div class="taj-white-card flex flex-col justify-between group overflow-hidden border border-taj-border hover:shadow-2xl transition-all duration-500">
               <div>
-                <div class="relative h-60 overflow-hidden">
-                  <img src="assets/images/ayurvedic_spa.jpg" alt="Panchvati Quad Room"
+                <div class="relative h-72 sm:h-84 overflow-hidden">
+                  <img src="assets/images/ayurvedic_spa.jpg" alt="Panchwati Quad Room"
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                   <div
-                    class="absolute top-4 left-4 bg-emerald-800 text-white px-2.5 py-1 text-[9px] font-bold uppercase tracking-widest shadow">
+                    class="absolute top-4 left-4 bg-emerald-800 text-white px-3 py-1 text-[10px] font-bold uppercase tracking-widest shadow">
                     Up to 4 Guests
                   </div>
+                  <div
+                    class="absolute bottom-4 right-4 bg-black/75 text-white text-xs px-3 py-1.5 backdrop-blur flex items-center gap-1.5">
+                    <i data-lucide="users" class="w-3.5 h-3.5 text-emerald-300"></i> 4 Single Beds • Family Room
+                  </div>
                 </div>
 
-                <div class="p-6 space-y-3">
-                  <div class="flex items-baseline justify-between gap-2 border-b border-taj-border pb-3">
+                <div class="p-6 sm:p-8 space-y-4">
+                  <div class="flex items-baseline justify-between gap-4 border-b border-taj-border pb-4">
                     <div>
-                      <span class="text-[10px] uppercase font-bold tracking-widest text-emerald-700 block">Category
-                        1</span>
-                      <h3 class="font-cinzel text-lg font-bold text-taj-charcoal">PANCHVATI QUAD</h3>
+                      <span class="text-[10px] uppercase font-bold tracking-widest text-emerald-700 block">Category 1</span>
+                      <h3 class="font-cinzel text-2xl font-bold text-taj-charcoal">PANCHWATI QUAD</h3>
+                      <p class="text-xs text-taj-muted mt-0.5">Spacious Family & Group Room</p>
                     </div>
                     <div class="text-right flex-shrink-0">
-                      <span class="font-cinzel text-xl font-bold text-taj-charcoal">₹4,500</span>
+                      <span class="font-cinzel text-2xl sm:text-3xl font-bold text-taj-charcoal">₹4,500</span>
                       <span class="text-[10px] text-taj-muted block">+ GST / night</span>
                     </div>
                   </div>
 
-                  <p class="text-xs text-taj-body leading-relaxed">
-                    Four comfortable beds for large families and group retreats. Generous living proportions with
-                    attached modern bath amenities and serene Parisar garden views.
+                  <p class="text-xs sm:text-sm text-taj-body leading-relaxed">
+                    Four comfortable beds for large families and group retreats. Generous living proportions with attached modern bath amenities and serene Parisar garden views.
                   </p>
 
-                  <ul class="text-xs text-taj-muted space-y-1.5 pt-2 border-t border-taj-border/60">
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-taj-gold"></i> 4
-                      Individual Single Beds</li>
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-taj-gold"></i>
-                      Dual Bath Utilities</li>
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-taj-gold"></i>
-                      Ground-Level Garden Access</li>
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-taj-gold"></i>
-                      Ample Luggage Storage</li>
-                  </ul>
+                  <div
+                    class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-taj-muted pt-2 border-t border-taj-border/60">
+                    <span class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 flex-shrink-0"></i> 4 Individual Single Beds</span>
+                    <span class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 flex-shrink-0"></i> Dual Bath Utilities</span>
+                    <span class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 flex-shrink-0"></i> Ground-Level Garden Access</span>
+                    <span class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 flex-shrink-0"></i> Ample Luggage Storage</span>
+                    <span class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 flex-shrink-0"></i> Peaceful Devotional Setting</span>
+                    <span class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 flex-shrink-0"></i> Daily Housekeeping</span>
+                  </div>
                 </div>
               </div>
 
-              <div class="p-6 pt-0 border-t border-taj-border pt-4 mt-4 flex items-center justify-between">
-                <span class="text-[11px] text-taj-muted font-medium">4 Beds Setup</span>
-                <button onclick="openBookingDrawer('Panchvati Quad Room', 4500)"
-                  class="btn-taj-primary py-2 px-4 text-[10px]">
-                  <span>Book Panchvati Quad</span>
+              <div class="p-6 sm:p-8 pt-0 border-t border-taj-border pt-5 flex items-center justify-between">
+                <span class="text-xs text-taj-charcoal font-semibold">4 Beds Setup</span>
+                <button onclick="openBookingDrawer('Panchwati Quad', 4500)"
+                  class="btn-taj-primary">
+                  <span>Book Panchwati Quad</span>
                 </button>
               </div>
             </div>
 
-            <!-- Card 2: PANCHVATI SUITE ROOM -->
-            <div class="taj-white-card flex flex-col justify-between group overflow-hidden">
+            <!-- Category 2: PANCHWATI SUITE ROOM -->
+            <div class="taj-white-card flex flex-col justify-between group overflow-hidden border border-taj-border hover:shadow-2xl transition-all duration-500">
               <div>
-                <div class="relative h-60 overflow-hidden">
-                  <img src="assets/images/deluxe_kutir.jpg" alt="Panchvati Suite Room"
+                <div class="relative h-72 sm:h-84 overflow-hidden">
+                  <img src="assets/images/deluxe_kutir.jpg" alt="Panchwati Suite Room"
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                   <div
-                    class="absolute top-4 left-4 bg-taj-gold text-white px-2.5 py-1 text-[9px] font-bold uppercase tracking-widest shadow">
+                    class="absolute top-4 left-4 bg-taj-gold text-white px-3 py-1 text-[10px] font-bold uppercase tracking-widest shadow">
                     Family Suite
                   </div>
+                  <div
+                    class="absolute bottom-4 right-4 bg-black/75 text-white text-xs px-3 py-1.5 backdrop-blur flex items-center gap-1.5">
+                    <i data-lucide="crown" class="w-3.5 h-3.5 text-taj-gold-light"></i> Living Lounge • Work Desk
+                  </div>
                 </div>
 
-                <div class="p-6 space-y-3">
-                  <div class="flex items-baseline justify-between gap-2 border-b border-taj-border pb-3">
+                <div class="p-6 sm:p-8 space-y-4">
+                  <div class="flex items-baseline justify-between gap-4 border-b border-taj-border pb-4">
                     <div>
-                      <span class="text-[10px] uppercase font-bold tracking-widest text-emerald-700 block">Category
-                        2</span>
-                      <h3 class="font-cinzel text-lg font-bold text-taj-charcoal">PANCHVATI SUITE ROOM</h3>
+                      <span class="text-[10px] uppercase font-bold tracking-widest text-emerald-700 block">Category 2</span>
+                      <h3 class="font-cinzel text-2xl font-bold text-taj-charcoal">PANCHWATI SUITE ROOM</h3>
+                      <p class="text-xs text-taj-muted mt-0.5">Upgraded Family Living Suite</p>
                     </div>
                     <div class="text-right flex-shrink-0">
-                      <span class="font-cinzel text-xl font-bold text-taj-charcoal">₹3,500</span>
+                      <span class="font-cinzel text-2xl sm:text-3xl font-bold text-taj-charcoal">₹3,500</span>
                       <span class="text-[10px] text-taj-muted block">+ GST / night</span>
                     </div>
                   </div>
 
-                  <p class="text-xs text-taj-body leading-relaxed">
-                    Upgraded family suite with extended lounge space, private sitting area, dedicated workstation, and
-                    plush bedding for prolonged rejuvenating stays.
+                  <p class="text-xs sm:text-sm text-taj-body leading-relaxed">
+                    Upgraded family suite with extended lounge space, private sitting area, dedicated workstation, and plush bedding for prolonged rejuvenating stays.
                   </p>
 
-                  <ul class="text-xs text-taj-muted space-y-1.5 pt-2 border-t border-taj-border/60">
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-taj-gold"></i>
-                      Extended Living & Sitting Lounge</li>
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-taj-gold"></i>
-                      Work Desk & High-Speed Wi-Fi</li>
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-taj-gold"></i>
-                      Deluxe Herbal Amenities</li>
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-taj-gold"></i>
-                      Quiet Courtyard Facing</li>
-                  </ul>
+                  <div
+                    class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-taj-muted pt-2 border-t border-taj-border/60">
+                    <span class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 flex-shrink-0"></i> Extended Living & Sitting Lounge</span>
+                    <span class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 flex-shrink-0"></i> Work Desk & High-Speed Wi-Fi</span>
+                    <span class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 flex-shrink-0"></i> Deluxe Herbal Amenities</span>
+                    <span class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 flex-shrink-0"></i> Quiet Courtyard Facing</span>
+                    <span class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 flex-shrink-0"></i> Attached Modern Bathroom</span>
+                    <span class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 flex-shrink-0"></i> Satvik Room Dining Option</span>
+                  </div>
                 </div>
               </div>
 
-              <div class="p-6 pt-0 border-t border-taj-border pt-4 mt-4 flex items-center justify-between">
-                <span class="text-[11px] text-taj-muted font-medium">Suite Living</span>
-                <button onclick="openBookingDrawer('Panchvati Suite Room', 3500)"
-                  class="btn-taj-primary py-2 px-4 text-[10px]">
-                  <span>Book Panchvati Suite</span>
+              <div class="p-6 sm:p-8 pt-0 border-t border-taj-border pt-5 flex items-center justify-between">
+                <span class="text-xs text-taj-charcoal font-semibold">Suite Living</span>
+                <button onclick="openBookingDrawer('Panchwati Suite Room', 3500)"
+                  class="btn-taj-primary">
+                  <span>Book Panchwati Suite</span>
                 </button>
               </div>
             </div>
 
-            <!-- Card 3: PANCHVATI TRIPLE -->
-            <div class="taj-white-card flex flex-col justify-between group overflow-hidden">
+            <!-- Category 3: PANCHWATI TRIPLE -->
+            <div class="taj-white-card flex flex-col justify-between group overflow-hidden border border-taj-border hover:shadow-2xl transition-all duration-500">
               <div>
-                <div class="relative h-60 overflow-hidden">
-                  <img src="assets/images/panchakarma_kutir.jpg" alt="Panchvati Triple Room"
+                <div class="relative h-72 sm:h-84 overflow-hidden">
+                  <img src="assets/images/panchakarma_kutir.jpg" alt="Panchwati Triple Room"
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                   <div
-                    class="absolute top-4 left-4 bg-taj-charcoal text-white px-2.5 py-1 text-[9px] font-bold uppercase tracking-widest shadow">
+                    class="absolute top-4 left-4 bg-taj-charcoal text-white px-3 py-1 text-[10px] font-bold uppercase tracking-widest shadow">
                     Up to 3 Guests
                   </div>
+                  <div
+                    class="absolute bottom-4 right-4 bg-black/75 text-white text-xs px-3 py-1.5 backdrop-blur flex items-center gap-1.5">
+                    <i data-lucide="bed-double" class="w-3.5 h-3.5 text-emerald-300"></i> 3 Beds • Ground Floor
+                  </div>
                 </div>
 
-                <div class="p-6 space-y-3">
-                  <div class="flex items-baseline justify-between gap-2 border-b border-taj-border pb-3">
+                <div class="p-6 sm:p-8 space-y-4">
+                  <div class="flex items-baseline justify-between gap-4 border-b border-taj-border pb-4">
                     <div>
-                      <span class="text-[10px] uppercase font-bold tracking-widest text-emerald-700 block">Category
-                        3</span>
-                      <h3 class="font-cinzel text-lg font-bold text-taj-charcoal">PANCHVATI TRIPLE</h3>
+                      <span class="text-[10px] uppercase font-bold tracking-widest text-emerald-700 block">Category 3</span>
+                      <h3 class="font-cinzel text-2xl font-bold text-taj-charcoal">PANCHWATI TRIPLE</h3>
+                      <p class="text-xs text-taj-muted mt-0.5">Triple Pilgrim & Devotee Room</p>
                     </div>
                     <div class="text-right flex-shrink-0">
-                      <span class="font-cinzel text-xl font-bold text-taj-charcoal">₹3,500</span>
+                      <span class="font-cinzel text-2xl sm:text-3xl font-bold text-taj-charcoal">₹3,500</span>
                       <span class="text-[10px] text-taj-muted block">+ GST / night</span>
                     </div>
                   </div>
 
-                  <p class="text-xs text-taj-body leading-relaxed">
-                    Triple occupancy room designed for pilgrims and families with three restful beds, attached bathroom,
-                    and peaceful atmosphere for devotees.
+                  <p class="text-xs sm:text-sm text-taj-body leading-relaxed">
+                    Triple occupancy room designed for pilgrims and families with three restful beds, attached bathroom, and peaceful atmosphere for devotees.
                   </p>
 
-                  <ul class="text-xs text-taj-muted space-y-1.5 pt-2 border-t border-taj-border/60">
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-taj-gold"></i> 3
-                      Comfortable Individual Beds</li>
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-taj-gold"></i>
-                      Attached Modern Bath</li>
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-taj-gold"></i>
-                      Generous Wardrobes</li>
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-taj-gold"></i>
-                      Ground-Floor Accessibility</li>
-                  </ul>
+                  <div
+                    class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-taj-muted pt-2 border-t border-taj-border/60">
+                    <span class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 flex-shrink-0"></i> 3 Comfortable Individual Beds</span>
+                    <span class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 flex-shrink-0"></i> Attached Modern Bath</span>
+                    <span class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 flex-shrink-0"></i> Generous Wardrobes</span>
+                    <span class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 flex-shrink-0"></i> Ground-Floor Accessibility</span>
+                    <span class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 flex-shrink-0"></i> Hot Water Geyser</span>
+                    <span class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 flex-shrink-0"></i> Fresh Satvik Drinking Water</span>
+                  </div>
                 </div>
               </div>
 
-              <div class="p-6 pt-0 border-t border-taj-border pt-4 mt-4 flex items-center justify-between">
-                <span class="text-[11px] text-taj-muted font-medium">3 Beds Setup</span>
-                <button onclick="openBookingDrawer('Panchvati Triple Room', 3500)"
-                  class="btn-taj-primary py-2 px-4 text-[10px]">
-                  <span>Book Panchvati Triple</span>
+              <div class="p-6 sm:p-8 pt-0 border-t border-taj-border pt-5 flex items-center justify-between">
+                <span class="text-xs text-taj-charcoal font-semibold">3 Beds Setup</span>
+                <button onclick="openBookingDrawer('Panchwati Triple', 3500)"
+                  class="btn-taj-primary">
+                  <span>Book Panchwati Triple</span>
                 </button>
               </div>
             </div>
 
-          </div>
-
-          <!-- Row 2: 2 Cards (King Size, Twin Bed) -->
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
-
-            <!-- Card 4: PANCHVATI KING SIZE -->
-            <div class="taj-white-card flex flex-col justify-between group overflow-hidden">
+            <!-- Category 4: PANCHWATI TWIN BED -->
+            <div class="taj-white-card flex flex-col justify-between group overflow-hidden border border-taj-border hover:shadow-2xl transition-all duration-500">
               <div>
-                <div class="relative h-60 overflow-hidden">
-                  <img src="assets/images/hero_palace.jpg" alt="Panchvati King Size"
+                <div class="relative h-72 sm:h-84 overflow-hidden">
+                  <img src="assets/images/hero_palace.jpg" alt="Panchwati Twin Bed"
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                   <div
-                    class="absolute top-4 left-4 bg-emerald-800 text-white px-2.5 py-1 text-[9px] font-bold uppercase tracking-widest shadow">
-                    King Double
-                  </div>
-                </div>
-
-                <div class="p-6 space-y-3">
-                  <div class="flex items-baseline justify-between gap-2 border-b border-taj-border pb-3">
-                    <div>
-                      <span class="text-[10px] uppercase font-bold tracking-widest text-emerald-700 block">Category
-                        4</span>
-                      <h3 class="font-cinzel text-lg font-bold text-taj-charcoal">PANCHVATI KING SIZE</h3>
-                    </div>
-                    <div class="text-right flex-shrink-0">
-                      <span class="font-cinzel text-xl font-bold text-taj-charcoal">₹2,500</span>
-                      <span class="text-[10px] text-taj-muted block">+ GST / night</span>
-                    </div>
-                  </div>
-
-                  <p class="text-xs text-taj-body leading-relaxed">
-                    Comfortable double king bed amidst peaceful garden setting, clean Vedic ambiance, and morning
-                    birdsong for natural rejuvenation and deep restful sleep.
-                  </p>
-
-                  <ul class="text-xs text-taj-muted space-y-1.5 pt-2 border-t border-taj-border/60">
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-taj-gold"></i> 1
-                      Comfortable King Bed</li>
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-taj-gold"></i>
-                      Peaceful Garden Setting</li>
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-taj-gold"></i>
-                      Attached Modern Bath (Hot Water)</li>
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-taj-gold"></i>
-                      Vedic Satvik Atmosphere</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div class="p-6 pt-0 border-t border-taj-border pt-4 mt-4 flex items-center justify-between">
-                <span class="text-[11px] text-emerald-700 font-semibold">Best Value</span>
-                <button onclick="openBookingDrawer('Panchvati King Size', 2500)"
-                  class="btn-taj-primary py-2 px-4 text-[10px]">
-                  <span>Book Panchvati King</span>
-                </button>
-              </div>
-            </div>
-
-            <!-- Card 5: PANCHVATI TWIN BED -->
-            <div class="taj-white-card flex flex-col justify-between group overflow-hidden">
-              <div>
-                <div class="relative h-60 overflow-hidden">
-                  <img src="assets/images/deluxe_kutir.jpg" alt="Panchvati Twin Bed"
-                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                  <div
-                    class="absolute top-4 left-4 bg-taj-charcoal text-white px-2.5 py-1 text-[9px] font-bold uppercase tracking-widest shadow">
+                    class="absolute top-4 left-4 bg-taj-charcoal text-white px-3 py-1 text-[10px] font-bold uppercase tracking-widest shadow">
                     Twin Beds
                   </div>
+                  <div
+                    class="absolute bottom-4 right-4 bg-black/75 text-white text-xs px-3 py-1.5 backdrop-blur flex items-center gap-1.5">
+                    <i data-lucide="bed-double" class="w-3.5 h-3.5 text-emerald-300"></i> 2 Single Beds • Quiet
+                  </div>
                 </div>
 
-                <div class="p-6 space-y-3">
-                  <div class="flex items-baseline justify-between gap-2 border-b border-taj-border pb-3">
+                <div class="p-6 sm:p-8 space-y-4">
+                  <div class="flex items-baseline justify-between gap-4 border-b border-taj-border pb-4">
                     <div>
-                      <span class="text-[10px] uppercase font-bold tracking-widest text-emerald-700 block">Category
-                        5</span>
-                      <h3 class="font-cinzel text-lg font-bold text-taj-charcoal">PANCHVATI TWIN BED</h3>
+                      <span class="text-[10px] uppercase font-bold tracking-widest text-emerald-700 block">Category 4</span>
+                      <h3 class="font-cinzel text-2xl font-bold text-taj-charcoal">PANCHWATI TWIN BED</h3>
+                      <p class="text-xs text-taj-muted mt-0.5">Essential Pilgrim Twin Room</p>
                     </div>
                     <div class="text-right flex-shrink-0">
-                      <span class="font-cinzel text-xl font-bold text-taj-charcoal">₹2,500</span>
+                      <span class="font-cinzel text-2xl sm:text-3xl font-bold text-taj-charcoal">₹2,500</span>
                       <span class="text-[10px] text-taj-muted block">+ GST / night</span>
                     </div>
                   </div>
 
-                  <p class="text-xs text-taj-body leading-relaxed">
-                    Two single beds with clean Vedic ambiance and attached modern bathroom. Designed for traveling
-                    companions seeking simplicity and tranquility.
+                  <p class="text-xs sm:text-sm text-taj-body leading-relaxed">
+                    Two single beds with clean Vedic ambiance and attached modern bathroom. Designed for traveling companions seeking simplicity, peace, and spiritual tranquility.
                   </p>
 
-                  <ul class="text-xs text-taj-muted space-y-1.5 pt-2 border-t border-taj-border/60">
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-taj-gold"></i> 2
-                      Ergonomic Single Beds</li>
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-taj-gold"></i>
-                      Clean Vedic Ambiance</li>
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-taj-gold"></i>
-                      Attached Modern Bathroom</li>
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-taj-gold"></i>
-                      Courtyard Facing & Quiet</li>
-                  </ul>
+                  <div
+                    class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-taj-muted pt-2 border-t border-taj-border/60">
+                    <span class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 flex-shrink-0"></i> 2 Ergonomic Single Beds</span>
+                    <span class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 flex-shrink-0"></i> Clean Vedic Ambiance</span>
+                    <span class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 flex-shrink-0"></i> Attached Modern Bathroom</span>
+                    <span class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 flex-shrink-0"></i> Courtyard Facing & Quiet</span>
+                    <span class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 flex-shrink-0"></i> Hot Water Geyser</span>
+                    <span class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 flex-shrink-0"></i> Community Dining Access</span>
+                  </div>
                 </div>
               </div>
 
-              <div class="p-6 pt-0 border-t border-taj-border pt-4 mt-4 flex items-center justify-between">
-                <span class="text-[11px] text-taj-muted font-medium">2 Single Beds</span>
-                <button onclick="openBookingDrawer('Panchvati Twin Bed', 2500)"
-                  class="btn-taj-primary py-2 px-4 text-[10px]">
-                  <span>Book Panchvati Twin</span>
+              <div class="p-6 sm:p-8 pt-0 border-t border-taj-border pt-5 flex items-center justify-between">
+                <span class="text-xs text-taj-charcoal font-semibold">2 Single Beds</span>
+                <button onclick="openBookingDrawer('Panchwati Twin Bed', 2500)"
+                  class="btn-taj-primary">
+                  <span>Book Panchwati Twin</span>
                 </button>
               </div>
             </div>
@@ -1629,17 +1633,15 @@
           <div
             class="mt-14 p-6 sm:p-8 bg-taj-ivory border border-taj-border flex flex-col sm:flex-row items-center justify-between gap-4">
             <div class="text-center sm:text-left">
-              <h4 class="font-cinzel text-base font-bold text-taj-charcoal uppercase">Looking for royal suite luxury?
-              </h4>
-              <p class="text-xs text-taj-muted">Explore the Vaidehi, Paishwani, and Mandakini Royal Waterfront Suites.
-              </p>
+              <h4 class="font-cinzel text-base font-bold text-taj-charcoal uppercase">Looking for royal waterfront luxury?</h4>
+              <p class="text-xs text-taj-muted">Explore the Mandakini, Paishwani, and Vaidehi royal suites starting from ₹5,500 + GST / night.</p>
             </div>
             <div class="flex items-center gap-3">
               <button onclick="navigateToHomeRooms()" class="btn-taj-outline-dark">
-                <span>← All Rooms</span>
+                <span>← All Wings</span>
               </button>
-              <button onclick="navigateToVaidehi()" class="btn-taj-primary">
-                <span>Explore Vaidehi Collection</span>
+              <button onclick="navigateToSwasthyaKutir()" class="btn-taj-primary">
+                <span>Explore Swasthya Kutir Wing</span>
                 <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
               </button>
             </div>
@@ -2103,14 +2105,10 @@
         <div class="space-y-2.5">
           <h4 class="font-cinzel text-xs uppercase tracking-widest text-white font-bold">Suite Collections</h4>
           <ul class="space-y-1.5 text-white/70">
-            <li><a href="#rooms-pillars" onclick="navigateToHomeRooms()" class="hover:text-white transition-colors">1.
-                Mandakini Suite (₹12,000)</a></li>
-            <li><a href="#rooms-pillars" onclick="navigateToHomeRooms()" class="hover:text-white transition-colors">2.
-                Paishwani Suite (₹10,000)</a></li>
-            <li><a href="#vaidehi-rooms" onclick="navigateToVaidehi()" class="hover:text-white transition-colors">3.
-                Vaidehi Collection (From ₹5,500)</a></li>
-            <li><a href="#panchvati-rooms" onclick="navigateToPanchvati()" class="hover:text-white transition-colors">4.
-                Panchvati Collection (From ₹2,500)</a></li>
+            <li><a href="#rooms-wings" onclick="navigateToHomeRooms()" class="hover:text-white transition-colors">1. Rooms & Suites (2 Grand Wings)</a></li>
+            <li><a href="#swasthya-kutir-rooms" onclick="navigateToSwasthyaKutir()" class="hover:text-white transition-colors">2. Swasthya Kutir Wing (From ₹5,500)</a></li>
+            <li><a href="#panchvati-rooms" onclick="navigateToPanchvati()" class="hover:text-white transition-colors">3. Panchvati Wing (From ₹2,500)</a></li>
+            <li><a href="#swasthya-kutir-rooms" onclick="navigateToSwasthyaKutir()" class="hover:text-white transition-colors">4. Mandakini & Paishwani Cottages</a></li>
           </ul>
         </div>
 

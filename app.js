@@ -865,7 +865,7 @@ function initRouting() {
 function handleRouting() {
   const hash = window.location.hash.toLowerCase();
   const homeView = document.getElementById('home-view');
-  const vaidehiView = document.getElementById('vaidehi-view');
+  const swasthyaKutirView = document.getElementById('swasthya-kutir-view') || document.getElementById('vaidehi-view');
   const panchvatiView = document.getElementById('panchvati-view');
   const menuView = document.getElementById('menu-view');
   const pasoeeView = document.getElementById('panchvati-rasoee-view') || document.getElementById('panchvati-pasoee-view');
@@ -875,30 +875,36 @@ function handleRouting() {
     mobileMenu.classList.add('hidden');
   }
 
-  if (!homeView || !vaidehiView || !panchvatiView || !menuView) return;
+  if (!homeView || !swasthyaKutirView || !panchvatiView || !menuView) return;
 
-  if (hash === '#vaidehi-rooms' || hash === '#vaidehi' || hash === '#/vaidehi') {
-    // 2. DEDICATED SEPARATE PAGE FOR VAIDEHI
+  if (
+    hash === '#swasthya-kutir-rooms' || hash === '#swasthya-kutir' || hash === '#kutir-rooms' || hash === '#swasthya-rooms' ||
+    hash === '#vaidehi-rooms' || hash === '#vaidehi' || hash === '#/vaidehi'
+  ) {
+    // 2. DEDICATED SEPARATE PAGE FOR AROGYADHAM SWASTHYA KUTIR (HERITAGE & WELLNESS WING)
     homeView.classList.add('hidden');
     panchvatiView.classList.add('hidden');
     menuView.classList.add('hidden');
     if (pasoeeView) pasoeeView.classList.add('hidden');
-    vaidehiView.classList.remove('hidden');
+    swasthyaKutirView.classList.remove('hidden');
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    document.title = "Vaidehi Collection | Arogyadham Swasthya Kutir, Chitrakoot";
-  } else if (hash === '#panchvati-rooms' || hash === '#panchvati' || hash === '#/panchvati' || hash === '#panchwati-rooms' || hash === '#panchwati' || hash === '#/panchwati') {
-    // 3. DEDICATED SEPARATE PAGE FOR PANCHVATI ROOMS
+    document.title = "Arogyadham Swasthya Kutir Wing | Heritage & Wellness Sanctuary, Chitrakoot";
+  } else if (
+    hash === '#panchvati-rooms' || hash === '#panchvati' || hash === '#/panchvati' ||
+    hash === '#panchwati-rooms' || hash === '#panchwati' || hash === '#/panchwati'
+  ) {
+    // 3. DEDICATED SEPARATE PAGE FOR PANCHVATI (PILGRIM, FAMILY & GROUP WING)
     homeView.classList.add('hidden');
-    vaidehiView.classList.add('hidden');
+    swasthyaKutirView.classList.add('hidden');
     menuView.classList.add('hidden');
     if (pasoeeView) pasoeeView.classList.add('hidden');
     panchvatiView.classList.remove('hidden');
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    document.title = "Panchvati Collection | Arogyadham Swasthya Kutir, Chitrakoot";
+    document.title = "Panchvati Wing | Sacred Community & Family Living, Chitrakoot";
   } else if (hash === '#aahar-vihar-menu' || hash === '#menu' || hash === '#/menu' || hash === '#dining-menu' || hash === '#aahar-vihar') {
     // 4. DEDICATED SEPARATE FULL-PAGE AAHAR-VIHAR MENU VIEW
     homeView.classList.add('hidden');
-    vaidehiView.classList.add('hidden');
+    swasthyaKutirView.classList.add('hidden');
     panchvatiView.classList.add('hidden');
     if (pasoeeView) pasoeeView.classList.add('hidden');
     menuView.classList.remove('hidden');
@@ -914,7 +920,7 @@ function handleRouting() {
   ) {
     // 5. DEDICATED SEPARATE FULL-PAGE PANCHVATI RASOEE MENU VIEW
     homeView.classList.add('hidden');
-    vaidehiView.classList.add('hidden');
+    swasthyaKutirView.classList.add('hidden');
     panchvatiView.classList.add('hidden');
     menuView.classList.add('hidden');
     if (pasoeeView) pasoeeView.classList.remove('hidden');
@@ -925,17 +931,17 @@ function handleRouting() {
       updatePasoeeCartUI();
     }
   } else {
-    // 1. HOMEPAGE VIEW (ONLY 4 PRIMARY PILLARS & RESORT HIGHLIGHTS)
-    vaidehiView.classList.add('hidden');
+    // 1. HOMEPAGE VIEW (THE 2 GRAND WINGS & RESORT HIGHLIGHTS)
+    swasthyaKutirView.classList.add('hidden');
     panchvatiView.classList.add('hidden');
     menuView.classList.add('hidden');
     if (pasoeeView) pasoeeView.classList.add('hidden');
     homeView.classList.remove('hidden');
     document.title = "Arogyadham Swasthya Kutir, Chitrakoot | Luxury Wellness Resort";
 
-    if (hash === '#rooms-pillars') {
+    if (hash === '#rooms-wings' || hash === '#rooms-pillars' || hash === '#rooms') {
       setTimeout(() => {
-        const el = document.getElementById('rooms-pillars');
+        const el = document.getElementById('rooms-wings') || document.getElementById('rooms-pillars');
         if (el) el.scrollIntoView({ behavior: 'smooth' });
       }, 50);
     } else if (hash === '#dining') {
@@ -956,10 +962,12 @@ function handleRouting() {
   }
 }
 
-function navigateToVaidehi() {
-  window.location.hash = '#vaidehi-rooms';
+function navigateToSwasthyaKutir() {
+  window.location.hash = '#swasthya-kutir-rooms';
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+const navigateToVaidehi = navigateToSwasthyaKutir;
+const navigateToKutir = navigateToSwasthyaKutir;
 
 function navigateToPanchvati() {
   window.location.hash = '#panchvati-rooms';
@@ -982,13 +990,13 @@ const navigateToPasoeeMenu = navigateToPanchvatiRasoeeMenu;
 
 function navigateToHomeDining() {
   const homeView = document.getElementById('home-view');
-  const vaidehiView = document.getElementById('vaidehi-view');
+  const swasthyaKutirView = document.getElementById('swasthya-kutir-view') || document.getElementById('vaidehi-view');
   const panchvatiView = document.getElementById('panchvati-view');
   const menuView = document.getElementById('menu-view');
   const pasoeeView = document.getElementById('panchvati-rasoee-view') || document.getElementById('panchvati-pasoee-view');
 
   if (homeView) homeView.classList.remove('hidden');
-  if (vaidehiView) vaidehiView.classList.add('hidden');
+  if (swasthyaKutirView) swasthyaKutirView.classList.add('hidden');
   if (panchvatiView) panchvatiView.classList.add('hidden');
   if (menuView) menuView.classList.add('hidden');
   if (pasoeeView) pasoeeView.classList.add('hidden');
@@ -1002,31 +1010,31 @@ function navigateToHomeDining() {
 
 function navigateToHomeRooms() {
   const homeView = document.getElementById('home-view');
-  const vaidehiView = document.getElementById('vaidehi-view');
+  const swasthyaKutirView = document.getElementById('swasthya-kutir-view') || document.getElementById('vaidehi-view');
   const panchvatiView = document.getElementById('panchvati-view');
   const menuView = document.getElementById('menu-view');
   const pasoeeView = document.getElementById('panchvati-rasoee-view') || document.getElementById('panchvati-pasoee-view');
   if (homeView) homeView.classList.remove('hidden');
-  if (vaidehiView) vaidehiView.classList.add('hidden');
+  if (swasthyaKutirView) swasthyaKutirView.classList.add('hidden');
   if (panchvatiView) panchvatiView.classList.add('hidden');
   if (menuView) menuView.classList.add('hidden');
   if (pasoeeView) pasoeeView.classList.add('hidden');
 
-  window.location.hash = '#rooms-pillars';
+  window.location.hash = '#rooms-wings';
   setTimeout(() => {
-    const el = document.getElementById('rooms-pillars');
+    const el = document.getElementById('rooms-wings') || document.getElementById('rooms-pillars');
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   }, 50);
 }
 
 function navigateToHomeView() {
   const homeView = document.getElementById('home-view');
-  const vaidehiView = document.getElementById('vaidehi-view');
+  const swasthyaKutirView = document.getElementById('swasthya-kutir-view') || document.getElementById('vaidehi-view');
   const panchvatiView = document.getElementById('panchvati-view');
   const menuView = document.getElementById('menu-view');
   const pasoeeView = document.getElementById('panchvati-rasoee-view') || document.getElementById('panchvati-pasoee-view');
   if (homeView) homeView.classList.remove('hidden');
-  if (vaidehiView) vaidehiView.classList.add('hidden');
+  if (swasthyaKutirView) swasthyaKutirView.classList.add('hidden');
   if (panchvatiView) panchvatiView.classList.add('hidden');
   if (menuView) menuView.classList.add('hidden');
   if (pasoeeView) pasoeeView.classList.add('hidden');
@@ -1069,12 +1077,12 @@ function triggerQuickSearch() {
   const query = (input ? input.value : '').trim().toLowerCase();
 
   if (query.includes('mandakini')) {
-    openBookingDrawer('Mandakini Royal Suite', 12000);
+    openBookingDrawer('Mandakini Premium Cottage', 12000);
   } else if (query.includes('paishwani')) {
-    openBookingDrawer('Paishwani Heritage Suite', 10000);
-  } else if (query.includes('vaidehi')) {
-    navigateToVaidehi();
-  } else if (query.includes('panchvati') || query.includes('panchwati') || query.includes('rashoyi') || query.includes('thali')) {
+    openBookingDrawer('Paishwani Cottage', 10000);
+  } else if (query.includes('swasthya') || query.includes('kutir') || query.includes('vaidehi')) {
+    navigateToSwasthyaKutir();
+  } else if (query.includes('panchvati') || query.includes('panchwati') || query.includes('rashoyi') || query.includes('rasoee') || query.includes('thali')) {
     navigateToPanchvati();
   } else if (query.includes('dining') || query.includes('food') || query.includes('menu') || query.includes('aahar')) {
     navigateToSection('dining');
@@ -1082,7 +1090,7 @@ function triggerQuickSearch() {
     navigateToSection('wellness-facilities');
   } else {
     // Default open drawer
-    openBookingDrawer('Mandakini Royal Suite', 12000);
+    openBookingDrawer('Mandakini Premium Cottage', 12000);
   }
 }
 
