@@ -790,12 +790,12 @@ function initMealPlanModalListeners() {
 
 function initActionDelegation() {
   document.addEventListener('click', function(e) {
-    // Allow natural HTML multi-page navigation for links
+    // Allow natural HTML multi-page navigation for all links with valid href
     const link = e.target.closest('a[href]');
     if (link) {
       const href = link.getAttribute('href');
-      if (href && (href.startsWith('/') || href.endsWith('.html') || href.includes('.html#') || href.startsWith('http') || href.startsWith('tel:') || href.startsWith('mailto:'))) {
-        return;
+      if (href && href !== '#' && !href.startsWith('javascript:')) {
+        return; // Zero interference for true HTML multi-page links
       }
     }
 
@@ -811,6 +811,22 @@ function initActionDelegation() {
         window.openMealPlanModal(target);
       }
     } else if (action === 'switch-view') {
+      if (target === 'view-swasthya-kutir' || target === 'swasthya-kutir') {
+        window.location.href = './swasthya-kutir.html';
+        return;
+      } else if (target === 'view-panchvati' || target === 'panchvati') {
+        window.location.href = './panchvati.html';
+        return;
+      } else if (target === 'view-aahar-vihar-menu' || target === 'aahar-vihar-menu') {
+        window.location.href = './aahar-vihar-menu.html';
+        return;
+      } else if (target === 'view-panchvati-pasoee-menu' || target === 'panchvati-pasoee-menu') {
+        window.location.href = './panchvati-pasoee-menu.html';
+        return;
+      } else if (target === 'view-home' || target === 'home') {
+        window.location.href = './index.html';
+        return;
+      }
       if (typeof window.switchView === 'function') {
         window.switchView(target);
       }
@@ -1207,6 +1223,26 @@ function switchView(targetViewId) {
     resolvedId = 'view-home';
   }
 
+  const targetEl = document.getElementById(resolvedId);
+  if (!targetEl) {
+    if (resolvedId === 'view-swasthya-kutir') {
+      window.location.href = './swasthya-kutir.html';
+      return;
+    } else if (resolvedId === 'view-panchvati') {
+      window.location.href = './panchvati.html';
+      return;
+    } else if (resolvedId === 'view-aahar-vihar-menu') {
+      window.location.href = './aahar-vihar-menu.html';
+      return;
+    } else if (resolvedId === 'view-panchvati-pasoee-menu') {
+      window.location.href = './panchvati-pasoee-menu.html';
+      return;
+    } else if (resolvedId === 'view-home') {
+      window.location.href = './index.html';
+      return;
+    }
+  }
+
   views.forEach(id => {
     const el = document.getElementById(id);
     if (el) {
@@ -1264,26 +1300,26 @@ function handleRouting() {
     hash === 'swasthya-kutir-rooms' || hash === 'swasthya-kutir' || hash === 'view-swasthya-kutir' ||
     hash === 'vaidehi-rooms' || hash === 'vaidehi' || hash === 'kutir-rooms' || hash === 'swasthya-rooms'
   ) {
-    window.location.href = '/swasthya-kutir.html';
+    window.location.href = './swasthya-kutir.html';
     return;
   } else if (
     hash === 'panchvati-rooms' || hash === 'panchvati' || hash === 'view-panchvati' ||
     hash === 'panchwati-rooms' || hash === 'panchwati'
   ) {
-    window.location.href = '/panchvati.html';
+    window.location.href = './panchvati.html';
     return;
   } else if (
     hash === 'aahar-vihar-menu' || hash === 'menu' || hash === 'dining-menu' ||
     hash === 'view-aahar-vihar-menu' || hash === 'aahar-vihar'
   ) {
-    window.location.href = '/aahar-vihar-menu.html';
+    window.location.href = './aahar-vihar-menu.html';
     return;
   } else if (
     hash === 'panchvati-pasoee-menu' || hash === 'panchvati-rasoee-menu' || hash === 'panchvati-pasoee' ||
     hash === 'panchvati-rasoee' || hash === 'view-panchvati-pasoee-menu' || hash === 'pasoee-menu' || hash === 'rasoee-menu' ||
     hash === 'pasoee' || hash === 'rasoee'
   ) {
-    window.location.href = '/panchvati-pasoee-menu.html';
+    window.location.href = './panchvati-pasoee-menu.html';
     return;
   } else {
     const homeEl = document.getElementById('view-home');

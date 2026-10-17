@@ -13,6 +13,19 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
+const fs = require('fs');
+
+// Clean URLs support (matches Vercel cleanUrls: true)
+app.use((req, res, next) => {
+  if (req.method === 'GET' && !req.path.includes('.') && req.path !== '/') {
+    const candidateFile = path.join(__dirname, req.path + '.html');
+    if (fs.existsSync(candidateFile)) {
+      return res.sendFile(candidateFile);
+    }
+  }
+  next();
+});
+
 // Serve static frontend assets
 app.use(express.static(path.join(__dirname)));
 
