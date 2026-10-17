@@ -128,7 +128,9 @@
                 class="flex items-center gap-2 text-white/95 hover:text-taj-gold transition-colors text-xs font-semibold uppercase tracking-wider py-1 px-2.5 border border-taj-gold/50 bg-black/35 hover:border-taj-gold">
                 <div id="nav-user-avatar"
                   class="w-7 h-7 bg-taj-gold text-white font-bold text-xs flex items-center justify-center rounded-full border border-white/40 shadow-sm overflow-hidden flex-shrink-0">
-                  <img id="nav-user-photo" class="w-full h-full object-cover hidden" alt="User Profile">
+                  <img id="nav-user-photo" class="w-full h-full object-cover hidden" alt="User Profile"
+                    loading="lazy"
+                    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80';">
                   <span id="nav-user-initials">VY</span>
                 </div>
                 <span id="nav-user-name" class="hidden md:inline max-w-[120px] truncate text-[11px] tracking-wider text-white">Vansh Yadav</span>
@@ -183,7 +185,7 @@
           </div>
 
           <!-- Iconic Taj Mustard Gold Rectangular Button -->
-          <button onclick="openBookingDrawer('Mandakini Royal Suite', 12000)" class="btn-taj-primary shadow-lg">
+          <button onclick="openBookingDrawer('Mandakini Royal Suite', 12000)" class="btn-taj-primary shadow-lg shrink-0 cursor-pointer min-h-[44px] px-6 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all">
             <span>Book A Stay</span>
           </button>
 
@@ -216,7 +218,9 @@
             <div class="flex items-center gap-2.5">
               <div id="mobile-user-avatar"
                 class="w-8 h-8 bg-taj-gold text-white font-bold text-xs flex items-center justify-center rounded-full border border-taj-gold overflow-hidden flex-shrink-0">
-                <img id="mobile-user-photo" class="w-full h-full object-cover hidden" alt="User Profile">
+                <img id="mobile-user-photo" class="w-full h-full object-cover hidden" alt="User Profile"
+                  loading="lazy"
+                  onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80';">
                 <span id="mobile-user-initials">VY</span>
               </div>
               <div>
@@ -225,18 +229,18 @@
               </div>
             </div>
             <button onclick="handleLogout(); toggleMobileMenu();"
-              class="text-[10px] text-red-600 font-bold border border-red-300 px-2 py-1 bg-white hover:bg-red-50">
+              class="text-[10px] text-red-600 font-bold border border-red-300 px-2 py-1 bg-white hover:bg-red-50 cursor-pointer min-h-[36px]">
               LOGOUT
             </button>
           </div>
           <div class="grid grid-cols-2 gap-2 pt-1 text-[10px]">
             <button onclick="openMyBookingsModal(); toggleMobileMenu();"
-              class="py-2 bg-white border border-taj-border text-taj-charcoal hover:border-taj-gold font-bold flex items-center justify-center gap-1">
+              class="py-2 min-h-[40px] bg-white border border-taj-border text-taj-charcoal hover:border-taj-gold font-bold flex items-center justify-center gap-1 cursor-pointer">
               <i data-lucide="calendar" class="w-3 h-3 text-taj-gold"></i>
               <span>My Bookings</span>
             </button>
             <button onclick="showSavedKutirsModal(); toggleMobileMenu();"
-              class="py-2 bg-white border border-taj-border text-taj-charcoal hover:border-taj-gold font-bold flex items-center justify-center gap-1">
+              class="py-2 min-h-[40px] bg-white border border-taj-border text-taj-charcoal hover:border-taj-gold font-bold flex items-center justify-center gap-1 cursor-pointer">
               <i data-lucide="bookmark" class="w-3 h-3 text-taj-gold"></i>
               <span>Saved Kutirs</span>
             </button>
@@ -261,7 +265,7 @@
       <a href="#reviews" onclick="navigateToSection('reviews')" class="block py-2 hover:text-taj-gold">Google Reviews &
         Map</a>
       <div class="pt-3">
-        <button onclick="openBookingDrawer('Mandakini Royal Suite', 12000)" class="w-full btn-taj-primary py-3">
+        <button onclick="openBookingDrawer('Mandakini Royal Suite', 12000); toggleMobileMenu();" class="w-full btn-taj-primary min-h-[44px] py-3 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer">
           Book A Stay Now
         </button>
       </div>
@@ -279,7 +283,9 @@
         class="relative min-h-[92vh] sm:min-h-screen flex items-end justify-center overflow-hidden pb-16 sm:pb-24">
         <!-- Twilight Golden-Lit Palace Facade Image -->
         <div class="absolute inset-0 z-0">
-          <img src="assets/images/hero_palace.jpg" alt="Arogyadham Swasthya Kutir Palace at Dusk"
+          <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1920&q=80" alt="Arogyadham Swasthya Kutir Palace at Dusk"
+            loading="lazy"
+            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80';"
             class="w-full h-full object-cover object-center transform scale-100 transition-transform duration-1000">
           <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/55"></div>
           <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(0,0,0,0.6)_100%)]">
@@ -376,7 +382,9 @@
             <div class="taj-white-card flex flex-col justify-between group overflow-hidden border border-taj-border hover:border-taj-gold/80 transition-all duration-500 shadow-sm hover:shadow-xl">
               <div>
                 <div class="relative h-72 sm:h-88 overflow-hidden">
-                  <img src="assets/images/hero_palace.jpg" alt="Arogyadham Swasthya Kutir - Heritage & Wellness Sanctuary"
+                  <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80" alt="Arogyadham Swasthya Kutir - Heritage & Wellness Sanctuary"
+                    loading="lazy"
+                    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80';"
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                   <div
                     class="absolute top-4 left-4 bg-taj-gold text-white px-3.5 py-1.5 text-[10px] font-bold uppercase tracking-[0.2em] shadow-md border border-taj-gold-light/40">
@@ -448,12 +456,12 @@
                 </div>
               </div>
 
-              <div class="p-6 sm:p-8 pt-0 border-t border-taj-border pt-5 flex items-center justify-between">
+              <div class="p-6 sm:p-8 pt-0 border-t border-taj-border pt-5 flex flex-wrap items-center justify-between gap-3">
                 <div>
                   <span class="text-xs text-taj-charcoal font-semibold block">From ₹5,500 + GST / night</span>
                   <span class="text-[10px] text-taj-muted">Royal waterfront & wellness retreat</span>
                 </div>
-                <button onclick="navigateToSwasthyaKutir()" class="btn-taj-primary py-3 px-6 text-xs flex items-center gap-2">
+                <button onclick="navigateToSwasthyaKutir()" class="btn-taj-primary min-h-[44px] px-6 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer gap-2">
                   <span>Explore Swasthya Kutir Rooms →</span>
                 </button>
               </div>
@@ -463,7 +471,9 @@
             <div class="taj-white-card flex flex-col justify-between group overflow-hidden border border-taj-border hover:border-emerald-700/80 transition-all duration-500 shadow-sm hover:shadow-xl">
               <div>
                 <div class="relative h-72 sm:h-88 overflow-hidden">
-                  <img src="assets/images/ayurvedic_spa.jpg" alt="Panchvati - Pilgrim, Family & Group Living Wing"
+                  <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80" alt="Panchvati - Pilgrim, Family & Group Living Wing"
+                    loading="lazy"
+                    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80';"
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                   <div
                     class="absolute top-4 left-4 bg-emerald-800 text-white px-3.5 py-1.5 text-[10px] font-bold uppercase tracking-[0.2em] shadow-md border border-emerald-400/40">
@@ -535,12 +545,12 @@
                 </div>
               </div>
 
-              <div class="p-6 sm:p-8 pt-0 border-t border-taj-border pt-5 flex items-center justify-between">
+              <div class="p-6 sm:p-8 pt-0 border-t border-taj-border pt-5 flex flex-wrap items-center justify-between gap-3">
                 <div>
                   <span class="text-xs text-taj-charcoal font-semibold block">From ₹2,500 + GST / night</span>
                   <span class="text-[10px] text-taj-muted">Ideal for families, retreats & pilgrims</span>
                 </div>
-                <button onclick="navigateToPanchvati()" class="btn-taj-primary py-3 px-6 text-xs flex items-center gap-2">
+                <button onclick="navigateToPanchvati()" class="btn-taj-primary min-h-[44px] px-6 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer gap-2">
                   <span>Explore Panchvati Rooms →</span>
                 </button>
               </div>
@@ -629,7 +639,9 @@
             <div class="taj-white-card flex flex-col justify-between overflow-hidden">
               <div>
                 <div class="relative h-72 sm:h-80 overflow-hidden">
-                  <img src="assets/images/dining_aahar_vihar.jpg" alt="Aahar-Vihar Luxury Satvik Restaurant"
+                  <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80" alt="Aahar-Vihar Luxury Satvik Restaurant"
+                    loading="lazy"
+                    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80';"
                     class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
                   <div class="absolute top-4 left-4 bg-white/95 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-taj-charcoal border border-taj-border">
                     FINE SATVIK DINING
@@ -664,7 +676,7 @@
 
               <div class="p-6 sm:p-8 pt-0 border-t border-taj-border pt-4 flex flex-wrap items-center justify-between gap-3">
                 <span class="text-xs text-taj-muted">Breakfast, Lunch & Dinner Available</span>
-                <button onclick="navigateToMenu()" class="btn-taj-primary py-2.5 px-6 text-xs flex items-center gap-2">
+                <button onclick="navigateToMenu()" class="btn-taj-primary min-h-[44px] px-6 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer gap-2">
                   <span>VIEW FULL AAHAR-VIHAR MENU →</span>
                 </button>
               </div>
@@ -674,7 +686,9 @@
             <div class="taj-white-card flex flex-col justify-between overflow-hidden">
               <div>
                 <div class="relative h-72 sm:h-80 overflow-hidden">
-                  <img src="assets/images/panchvati_rasoee.jpg" alt="Panchvati Rasoee Traditional Dining Hall"
+                  <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80" alt="Panchvati Rasoee Traditional Dining Hall"
+                    loading="lazy"
+                    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80';"
                     class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
                   <div class="absolute top-4 left-4 bg-white/95 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-taj-charcoal border border-taj-border">
                     COMMUNITY TRADITION
@@ -732,7 +746,7 @@
 
               <div class="p-6 sm:p-8 pt-0 border-t border-taj-border pt-4 flex flex-wrap items-center justify-between gap-3">
                 <span class="text-xs text-taj-muted">Pilgrim & Community Meals</span>
-                <button onclick="navigateToPanchvatiRasoeeMenu()" class="btn-taj-primary py-2.5 px-6 text-xs flex items-center gap-2">
+                <button onclick="navigateToPanchvatiRasoeeMenu()" class="btn-taj-primary min-h-[44px] px-6 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer gap-2">
                   <span>EXPLORE PANCHVATI RASOEE MENU →</span>
                 </button>
               </div>
@@ -751,11 +765,11 @@
               </p>
             </div>
             <div class="flex flex-wrap items-center gap-3">
-              <button onclick="navigateToMenu()" class="btn-taj-primary py-3 px-5 text-xs whitespace-nowrap flex items-center gap-2">
+              <button onclick="navigateToMenu()" class="btn-taj-primary min-h-[44px] px-5 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer whitespace-nowrap sm:whitespace-normal gap-2">
                 <span>Aahar-Vihar Menu (120+ Dishes)</span>
                 <i data-lucide="arrow-right" class="w-4 h-4"></i>
               </button>
-              <button onclick="navigateToPanchvatiRasoeeMenu()" class="btn-taj-outline-dark py-3 px-5 text-xs whitespace-nowrap flex items-center gap-2">
+              <button onclick="navigateToPanchvatiRasoeeMenu()" class="btn-taj-outline-dark min-h-[44px] px-5 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer whitespace-nowrap sm:whitespace-normal gap-2">
                 <span>Panchvati Rasoee Menu</span>
                 <i data-lucide="arrow-right" class="w-4 h-4"></i>
               </button>
@@ -1012,16 +1026,16 @@
               <p class="text-xs text-taj-muted">Distance: Ramghat Aarti (3.8 km) • Chitrakoot Dham Karwi Station (9.4
                 km)</p>
             </div>
-            <div class="flex items-center gap-3">
-              <button id="copy-address-btn" class="btn-taj-outline-dark py-2.5 text-[10px] flex items-center gap-1.5">
+            <div class="flex flex-wrap items-center gap-3">
+              <button id="copy-address-btn" class="btn-taj-outline-dark min-h-[44px] px-5 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer gap-2">
                 <i data-lucide="copy" class="w-3.5 h-3.5"></i>
                 <span id="copy-btn-label">Copy Address</span>
               </button>
               <a href="https://maps.google.com/?q=Arogyadham+Swasthya+Kutir+Chitrakoot+Madhya+Pradesh+485334"
                 target="_blank" rel="noopener noreferrer"
-                class="btn-taj-primary py-2.5 text-[10px] flex items-center gap-1.5">
+                class="btn-taj-primary min-h-[44px] px-5 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer gap-2">
                 <i data-lucide="navigation" class="w-3.5 h-3.5"></i>
-                <span>Google Maps</span>
+                <span>Directions & Maps</span>
               </a>
             </div>
           </div>
@@ -1032,11 +1046,12 @@
 
     <!-- ================= 2. DEDICATED SEPARATE PAGE FOR AROGYADHAM SWASTHYA KUTIR ================= -->
     <div id="swasthya-kutir-view" class="view-page hidden">
+      <a id="swasthya-kutir-rooms" class="sr-only"></a>
       <!-- Top Breadcrumb Bar -->
       <div class="bg-taj-ivory border-b border-taj-border pt-24 sm:pt-28 pb-4">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between gap-4">
           <button onclick="navigateToHomeRooms()"
-            class="breadcrumb-back-btn inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-taj-charcoal hover:text-taj-gold">
+            class="breadcrumb-back-btn inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-taj-charcoal hover:text-taj-gold min-h-[44px] cursor-pointer">
             <i data-lucide="arrow-left" class="w-4 h-4 text-taj-gold"></i>
             <span>← Back to All Wings</span>
           </button>
@@ -1053,7 +1068,9 @@
       <!-- Hero Banner / Header -->
       <div class="relative py-20 sm:py-28 bg-taj-charcoal text-white text-center px-4 overflow-hidden">
         <div class="absolute inset-0 z-0">
-          <img src="assets/images/hero_palace.jpg" alt="Arogyadham Swasthya Kutir Heritage Ambience"
+          <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1920&q=80" alt="Arogyadham Swasthya Kutir Heritage Ambience"
+            loading="lazy"
+            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80';"
             class="w-full h-full object-cover opacity-30">
           <div class="absolute inset-0 bg-gradient-to-t from-taj-charcoal via-taj-charcoal/80 to-transparent"></div>
         </div>
@@ -1094,7 +1111,9 @@
             <div class="taj-white-card flex flex-col justify-between group overflow-hidden border border-taj-border hover:shadow-2xl transition-all duration-500">
               <div>
                 <div class="relative h-72 sm:h-84 overflow-hidden">
-                  <img src="assets/images/hero_palace.jpg" alt="Mandakini Premium Cottage"
+                  <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80" alt="Mandakini Premium Cottage"
+                    loading="lazy"
+                    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80';"
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                   <div
                     class="absolute top-4 left-4 bg-taj-gold text-white px-3 py-1 text-[10px] font-bold uppercase tracking-widest shadow">
@@ -1141,9 +1160,9 @@
                 </div>
               </div>
 
-              <div class="p-6 sm:p-8 pt-0 border-t border-taj-border pt-5 flex items-center justify-between">
+              <div class="p-6 sm:p-8 pt-0 border-t border-taj-border pt-5 flex flex-wrap items-center justify-between gap-3">
                 <span class="text-xs text-taj-charcoal font-semibold">Max 2 Adults + 1 Child</span>
-                <button onclick="openBookingDrawer('Mandakini Premium Cottage', 12000)" class="btn-taj-primary">
+                <button onclick="openBookingDrawer('Mandakini Premium Cottage', 12000)" class="btn-taj-primary min-h-[44px] px-6 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer">
                   <span>Book Mandakini Premium</span>
                 </button>
               </div>
@@ -1153,7 +1172,9 @@
             <div class="taj-white-card flex flex-col justify-between group overflow-hidden border border-taj-border hover:shadow-2xl transition-all duration-500">
               <div>
                 <div class="relative h-72 sm:h-84 overflow-hidden">
-                  <img src="assets/images/panchakarma_kutir.jpg" alt="Paishwani Cottage"
+                  <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1200&q=80" alt="Paishwani Cottage"
+                    loading="lazy"
+                    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80';"
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                   <div
                     class="absolute top-4 left-4 bg-taj-gold text-white px-3 py-1 text-[10px] font-bold uppercase tracking-widest shadow">
@@ -1200,9 +1221,9 @@
                 </div>
               </div>
 
-              <div class="p-6 sm:p-8 pt-0 border-t border-taj-border pt-5 flex items-center justify-between">
+              <div class="p-6 sm:p-8 pt-0 border-t border-taj-border pt-5 flex flex-wrap items-center justify-between gap-3">
                 <span class="text-xs text-taj-charcoal font-semibold">Max 2 Adults + 1 Child</span>
-                <button onclick="openBookingDrawer('Paishwani Cottage', 10000)" class="btn-taj-primary">
+                <button onclick="openBookingDrawer('Paishwani Cottage', 10000)" class="btn-taj-primary min-h-[44px] px-6 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer">
                   <span>Book Paishwani Cottage</span>
                 </button>
               </div>
@@ -1212,7 +1233,9 @@
             <div class="taj-white-card flex flex-col justify-between group overflow-hidden border border-taj-border hover:shadow-2xl transition-all duration-500">
               <div>
                 <div class="relative h-72 sm:h-84 overflow-hidden">
-                  <img src="assets/images/deluxe_kutir.jpg" alt="Vaidehi Suite Room"
+                  <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=80" alt="Vaidehi Suite Room"
+                    loading="lazy"
+                    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80';"
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                   <div
                     class="absolute top-4 left-4 bg-taj-gold text-white px-3 py-1 text-[10px] font-bold uppercase tracking-widest shadow">
@@ -1259,9 +1282,9 @@
                 </div>
               </div>
 
-              <div class="p-6 sm:p-8 pt-0 border-t border-taj-border pt-5 flex items-center justify-between">
+              <div class="p-6 sm:p-8 pt-0 border-t border-taj-border pt-5 flex flex-wrap items-center justify-between gap-3">
                 <span class="text-xs text-taj-charcoal font-semibold">Max 2 Adults + 1 Child</span>
-                <button onclick="openBookingDrawer('Vaidehi Suite Room', 8000)" class="btn-taj-primary">
+                <button onclick="openBookingDrawer('Vaidehi Suite Room', 8000)" class="btn-taj-primary min-h-[44px] px-6 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer">
                   <span>Book Vaidehi Suite</span>
                 </button>
               </div>
@@ -1271,7 +1294,9 @@
             <div class="taj-white-card flex flex-col justify-between group overflow-hidden border border-taj-border hover:shadow-2xl transition-all duration-500">
               <div>
                 <div class="relative h-72 sm:h-84 overflow-hidden">
-                  <img src="assets/images/ayurvedic_spa.jpg" alt="Vaidehi Twin Room"
+                  <img src="https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=1200&q=80" alt="Vaidehi Twin Room"
+                    loading="lazy"
+                    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80';"
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                   <div
                     class="absolute top-4 left-4 bg-taj-charcoal text-white px-3 py-1 text-[10px] font-bold uppercase tracking-widest shadow">
@@ -1318,9 +1343,9 @@
                 </div>
               </div>
 
-              <div class="p-6 sm:p-8 pt-0 border-t border-taj-border pt-5 flex items-center justify-between">
+              <div class="p-6 sm:p-8 pt-0 border-t border-taj-border pt-5 flex flex-wrap items-center justify-between gap-3">
                 <span class="text-xs text-taj-charcoal font-semibold">Twin Occupancy (2 Beds)</span>
-                <button onclick="openBookingDrawer('Vaidehi Twin Room', 5500)" class="btn-taj-primary">
+                <button onclick="openBookingDrawer('Vaidehi Twin Room', 5500)" class="btn-taj-primary min-h-[44px] px-6 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer">
                   <span>Book Vaidehi Twin</span>
                 </button>
               </div>
@@ -1335,11 +1360,11 @@
               <h4 class="font-cinzel text-base font-bold text-taj-charcoal uppercase">Looking for family or group accommodation?</h4>
               <p class="text-xs text-taj-muted">Discover our 4 Panchvati room categories starting from ₹2,500 + GST / night.</p>
             </div>
-            <div class="flex items-center gap-3">
-              <button onclick="navigateToHomeRooms()" class="btn-taj-outline-dark">
+            <div class="flex flex-wrap items-center gap-3">
+              <button onclick="navigateToHomeRooms()" class="btn-taj-outline-dark min-h-[44px] px-5 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer">
                 <span>← All Wings</span>
               </button>
-              <button onclick="navigateToPanchvati()" class="btn-taj-primary">
+              <button onclick="navigateToPanchvati()" class="btn-taj-primary min-h-[44px] px-5 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer gap-2">
                 <span>Explore Panchvati Wing</span>
                 <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
               </button>
@@ -1352,11 +1377,12 @@
 
     <!-- ================= 3. DEDICATED SEPARATE PAGE FOR PANCHVATI ================= -->
     <div id="panchvati-view" class="view-page hidden">
+      <a id="panchvati-rooms" class="sr-only"></a>
       <!-- Top Breadcrumb Bar -->
       <div class="bg-taj-ivory border-b border-taj-border pt-24 sm:pt-28 pb-4">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between gap-4">
           <button onclick="navigateToHomeRooms()"
-            class="breadcrumb-back-btn inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-taj-charcoal hover:text-taj-gold">
+            class="breadcrumb-back-btn inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-taj-charcoal hover:text-taj-gold min-h-[44px] cursor-pointer">
             <i data-lucide="arrow-left" class="w-4 h-4 text-taj-gold"></i>
             <span>← Back to All Wings</span>
           </button>
@@ -1373,7 +1399,9 @@
       <!-- Hero Banner / Header -->
       <div class="relative py-20 sm:py-28 bg-[#16221c] text-white text-center px-4 overflow-hidden">
         <div class="absolute inset-0 z-0">
-          <img src="assets/images/ayurvedic_spa.jpg" alt="Panchvati Collection Grounds"
+          <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1920&q=80" alt="Panchvati Collection Grounds"
+            loading="lazy"
+            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80';"
             class="w-full h-full object-cover opacity-25">
           <div class="absolute inset-0 bg-gradient-to-t from-[#16221c] via-[#16221c]/80 to-transparent"></div>
         </div>
@@ -1415,7 +1443,9 @@
             <div class="taj-white-card flex flex-col justify-between group overflow-hidden border border-taj-border hover:shadow-2xl transition-all duration-500">
               <div>
                 <div class="relative h-72 sm:h-84 overflow-hidden">
-                  <img src="assets/images/ayurvedic_spa.jpg" alt="Panchwati Quad Room"
+                  <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1200&q=80" alt="Panchwati Quad Room"
+                    loading="lazy"
+                    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80';"
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                   <div
                     class="absolute top-4 left-4 bg-emerald-800 text-white px-3 py-1 text-[10px] font-bold uppercase tracking-widest shadow">
@@ -1456,10 +1486,10 @@
                 </div>
               </div>
 
-              <div class="p-6 sm:p-8 pt-0 border-t border-taj-border pt-5 flex items-center justify-between">
+              <div class="p-6 sm:p-8 pt-0 border-t border-taj-border pt-5 flex flex-wrap items-center justify-between gap-3">
                 <span class="text-xs text-taj-charcoal font-semibold">4 Beds Setup</span>
                 <button onclick="openBookingDrawer('Panchwati Quad', 4500)"
-                  class="btn-taj-primary">
+                  class="btn-taj-primary min-h-[44px] px-6 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer">
                   <span>Book Panchwati Quad</span>
                 </button>
               </div>
@@ -1469,7 +1499,9 @@
             <div class="taj-white-card flex flex-col justify-between group overflow-hidden border border-taj-border hover:shadow-2xl transition-all duration-500">
               <div>
                 <div class="relative h-72 sm:h-84 overflow-hidden">
-                  <img src="assets/images/deluxe_kutir.jpg" alt="Panchwati Suite Room"
+                  <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=80" alt="Panchwati Suite Room"
+                    loading="lazy"
+                    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80';"
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                   <div
                     class="absolute top-4 left-4 bg-taj-gold text-white px-3 py-1 text-[10px] font-bold uppercase tracking-widest shadow">
@@ -1510,10 +1542,10 @@
                 </div>
               </div>
 
-              <div class="p-6 sm:p-8 pt-0 border-t border-taj-border pt-5 flex items-center justify-between">
+              <div class="p-6 sm:p-8 pt-0 border-t border-taj-border pt-5 flex flex-wrap items-center justify-between gap-3">
                 <span class="text-xs text-taj-charcoal font-semibold">Suite Living</span>
                 <button onclick="openBookingDrawer('Panchwati Suite Room', 3500)"
-                  class="btn-taj-primary">
+                  class="btn-taj-primary min-h-[44px] px-6 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer">
                   <span>Book Panchwati Suite</span>
                 </button>
               </div>
@@ -1523,7 +1555,9 @@
             <div class="taj-white-card flex flex-col justify-between group overflow-hidden border border-taj-border hover:shadow-2xl transition-all duration-500">
               <div>
                 <div class="relative h-72 sm:h-84 overflow-hidden">
-                  <img src="assets/images/panchakarma_kutir.jpg" alt="Panchwati Triple Room"
+                  <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=1200&q=80" alt="Panchwati Triple Room"
+                    loading="lazy"
+                    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80';"
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                   <div
                     class="absolute top-4 left-4 bg-taj-charcoal text-white px-3 py-1 text-[10px] font-bold uppercase tracking-widest shadow">
@@ -1564,10 +1598,10 @@
                 </div>
               </div>
 
-              <div class="p-6 sm:p-8 pt-0 border-t border-taj-border pt-5 flex items-center justify-between">
+              <div class="p-6 sm:p-8 pt-0 border-t border-taj-border pt-5 flex flex-wrap items-center justify-between gap-3">
                 <span class="text-xs text-taj-charcoal font-semibold">3 Beds Setup</span>
                 <button onclick="openBookingDrawer('Panchwati Triple', 3500)"
-                  class="btn-taj-primary">
+                  class="btn-taj-primary min-h-[44px] px-6 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer">
                   <span>Book Panchwati Triple</span>
                 </button>
               </div>
@@ -1577,7 +1611,9 @@
             <div class="taj-white-card flex flex-col justify-between group overflow-hidden border border-taj-border hover:shadow-2xl transition-all duration-500">
               <div>
                 <div class="relative h-72 sm:h-84 overflow-hidden">
-                  <img src="assets/images/hero_palace.jpg" alt="Panchwati Twin Bed"
+                  <img src="https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=1200&q=80" alt="Panchwati Twin Bed"
+                    loading="lazy"
+                    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80';"
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                   <div
                     class="absolute top-4 left-4 bg-taj-charcoal text-white px-3 py-1 text-[10px] font-bold uppercase tracking-widest shadow">
@@ -1618,10 +1654,10 @@
                 </div>
               </div>
 
-              <div class="p-6 sm:p-8 pt-0 border-t border-taj-border pt-5 flex items-center justify-between">
+              <div class="p-6 sm:p-8 pt-0 border-t border-taj-border pt-5 flex flex-wrap items-center justify-between gap-3">
                 <span class="text-xs text-taj-charcoal font-semibold">2 Single Beds</span>
                 <button onclick="openBookingDrawer('Panchwati Twin Bed', 2500)"
-                  class="btn-taj-primary">
+                  class="btn-taj-primary min-h-[44px] px-6 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer">
                   <span>Book Panchwati Twin</span>
                 </button>
               </div>
@@ -1636,11 +1672,11 @@
               <h4 class="font-cinzel text-base font-bold text-taj-charcoal uppercase">Looking for royal waterfront luxury?</h4>
               <p class="text-xs text-taj-muted">Explore the Mandakini, Paishwani, and Vaidehi royal suites starting from ₹5,500 + GST / night.</p>
             </div>
-            <div class="flex items-center gap-3">
-              <button onclick="navigateToHomeRooms()" class="btn-taj-outline-dark">
+            <div class="flex flex-wrap items-center gap-3">
+              <button onclick="navigateToHomeRooms()" class="btn-taj-outline-dark min-h-[44px] px-5 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer">
                 <span>← All Wings</span>
               </button>
-              <button onclick="navigateToSwasthyaKutir()" class="btn-taj-primary">
+              <button onclick="navigateToSwasthyaKutir()" class="btn-taj-primary min-h-[44px] px-5 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer gap-2">
                 <span>Explore Swasthya Kutir Wing</span>
                 <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
               </button>
@@ -1653,11 +1689,12 @@
 
     <!-- ================= 4. DEDICATED SEPARATE PAGE FOR AAHAR-VIHAR RESTAURANT MENU ================= -->
     <div id="menu-view" class="view-page hidden">
+      <a id="aahar-vihar-menu" class="sr-only"></a>
       <!-- Top Breadcrumb Bar -->
       <div class="bg-taj-ivory border-b border-taj-border pt-24 sm:pt-28 pb-4">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between gap-4">
           <button onclick="navigateToHomeDining()"
-            class="breadcrumb-back-btn inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-taj-charcoal hover:text-taj-gold">
+            class="breadcrumb-back-btn min-h-[44px] px-5 py-2.5 inline-flex items-center justify-center gap-2 text-xs font-semibold tracking-wider uppercase text-taj-charcoal hover:text-taj-gold bg-white border border-taj-border hover:border-taj-gold shrink-0 cursor-pointer transition-all shadow-sm">
             <i data-lucide="arrow-left" class="w-4 h-4 text-taj-gold"></i>
             <span>← Back to Homepage</span>
           </button>
@@ -1674,7 +1711,10 @@
       <!-- Hero Banner / Header -->
       <div class="relative py-16 sm:py-24 bg-taj-charcoal text-white text-center px-4 overflow-hidden">
         <div class="absolute inset-0 z-0">
-          <img src="assets/images/dining_aahar_vihar.jpg" alt="Aahar-Vihar Authentic Satvik Menu"
+          <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1920&q=80"
+            alt="Aahar-Vihar Authentic Satvik Menu"
+            loading="lazy"
+            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80';"
             class="w-full h-full object-cover opacity-25">
           <div class="absolute inset-0 bg-gradient-to-t from-taj-charcoal via-taj-charcoal/85 to-transparent"></div>
         </div>
@@ -1887,7 +1927,7 @@
               <h5 class="font-cinzel text-sm font-bold text-taj-charcoal">Finished Viewing the Menu?</h5>
               <p class="text-xs text-taj-muted">Return to the resort homepage to explore suites and wellness therapies.</p>
             </div>
-            <button onclick="navigateToHomeDining()" class="btn-taj-outline-dark py-2.5 px-6 text-xs flex items-center gap-2">
+            <button onclick="navigateToHomeDining()" class="btn-taj-outline-dark min-h-[44px] py-2.5 px-6 text-xs flex items-center justify-center gap-2 shrink-0 cursor-pointer">
               <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
               <span>← Back to Homepage</span>
             </button>
@@ -1899,11 +1939,13 @@
 
     <!-- ================= 5. DEDICATED SEPARATE PAGE FOR PANCHVATI RASOEE MENU ================= -->
     <div id="panchvati-rasoee-view" class="view-page hidden">
+      <a id="panchvati-rasoee-menu" class="sr-only"></a>
+      <a id="panchvati-pasoee-menu" class="sr-only"></a>
       <!-- Top Breadcrumb Bar -->
       <div class="bg-taj-ivory border-b border-taj-border pt-24 sm:pt-28 pb-4">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between gap-4">
           <button onclick="navigateToHomeDining()"
-            class="breadcrumb-back-btn inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-taj-charcoal hover:text-taj-gold">
+            class="breadcrumb-back-btn min-h-[44px] px-5 py-2.5 inline-flex items-center justify-center gap-2 text-xs font-semibold tracking-wider uppercase text-taj-charcoal hover:text-taj-gold bg-white border border-taj-border hover:border-taj-gold shrink-0 cursor-pointer transition-all shadow-sm">
             <i data-lucide="arrow-left" class="w-4 h-4 text-taj-gold"></i>
             <span>← Back to Homepage</span>
           </button>
@@ -1920,7 +1962,10 @@
       <!-- Hero Banner / Header -->
       <div class="relative py-16 sm:py-24 bg-taj-charcoal text-white text-center px-4 overflow-hidden">
         <div class="absolute inset-0 z-0">
-          <img src="assets/images/panchvati_rasoee.jpg" alt="Panchvati Rasoee Traditional Dining Hall"
+          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1920&q=80"
+            alt="Panchvati Rasoee Traditional Dining Hall"
+            loading="lazy"
+            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80';"
             class="w-full h-full object-cover opacity-25">
           <div class="absolute inset-0 bg-gradient-to-t from-taj-charcoal via-taj-charcoal/85 to-transparent"></div>
         </div>
@@ -2065,12 +2110,12 @@
               <h5 class="font-cinzel text-sm font-bold text-taj-charcoal">Finished Viewing Panchvati Rasoee?</h5>
               <p class="text-xs text-taj-muted">Return to the resort homepage or explore the Aahar-Vihar luxury restaurant menu.</p>
             </div>
-            <div class="flex items-center gap-3">
-              <button onclick="navigateToMenu()" class="btn-taj-outline-gold py-2.5 px-5 text-xs flex items-center gap-2">
+            <div class="flex flex-wrap items-center gap-3">
+              <button onclick="navigateToMenu()" class="btn-taj-outline-gold min-h-[44px] py-2.5 px-5 text-xs flex items-center justify-center gap-2 shrink-0 cursor-pointer">
                 <span>View Aahar-Vihar Menu</span>
                 <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
               </button>
-              <button onclick="navigateToHomeDining()" class="btn-taj-outline-dark py-2.5 px-5 text-xs flex items-center gap-2">
+              <button onclick="navigateToHomeDining()" class="btn-taj-outline-dark min-h-[44px] py-2.5 px-5 text-xs flex items-center justify-center gap-2 shrink-0 cursor-pointer">
                 <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
                 <span>← Back to Homepage</span>
               </button>
@@ -2740,7 +2785,7 @@
         <div class="flex items-center gap-3 p-4 bg-taj-ivory border border-taj-border">
           <div id="profile-modal-avatar"
             class="w-12 h-12 bg-taj-gold text-white font-bold text-base flex items-center justify-center rounded-full border-2 border-white shadow overflow-hidden flex-shrink-0">
-            <img id="profile-modal-photo" class="w-full h-full object-cover hidden" alt="User Profile">
+            <img id="profile-modal-photo" class="w-full h-full object-cover hidden" alt="User Profile" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80';">
             <span id="profile-modal-initials">VY</span>
           </div>
           <div>
@@ -2934,7 +2979,9 @@
   <!-- JavaScript Modules -->
   <script src="app.js"></script>
   <script>
-    lucide.createIcons();
+    if (typeof lucide !== 'undefined' && lucide.createIcons) {
+      lucide.createIcons();
+    }
   </script>
 </body>
 

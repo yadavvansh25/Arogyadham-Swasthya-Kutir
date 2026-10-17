@@ -52,6 +52,10 @@ body {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   padding: 11px 24px;
+  min-height: 44px;
+  cursor: pointer;
+  flex-shrink: 0;
+  touch-action: manipulation;
   border-radius: 0px;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   display: inline-flex;
@@ -77,6 +81,10 @@ body {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   padding: 10px 22px;
+  min-height: 44px;
+  cursor: pointer;
+  flex-shrink: 0;
+  touch-action: manipulation;
   border-radius: 0px;
   transition: all 0.3s ease;
   display: inline-flex;
@@ -99,6 +107,10 @@ body {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   padding: 10px 22px;
+  min-height: 44px;
+  cursor: pointer;
+  flex-shrink: 0;
+  touch-action: manipulation;
   border-radius: 0px;
   transition: all 0.3s ease;
   display: inline-flex;

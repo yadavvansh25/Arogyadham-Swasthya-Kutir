@@ -30,6 +30,17 @@ function closeModalElement(modal) {
   modal.style.display = 'none';
 }
 
+function safeCreateIcons() {
+  if (typeof lucide !== 'undefined' && lucide && typeof lucide.createIcons === 'function') {
+    try {
+      lucide.createIcons();
+    } catch (e) {
+      console.warn('Lucide createIcons warning:', e);
+    }
+  }
+}
+window.safeCreateIcons = safeCreateIcons;
+
 /* ================= PAYMENT RECEIPT DISPLAY LOGIC ================= */
 function onPaymentSuccess(response) {
   const modal = document.getElementById('paymentReceiptModal') || document.getElementById('confirmation-modal');
@@ -311,9 +322,7 @@ const tajAuth = {
       if (drawerBadge) drawerBadge.classList.add('hidden');
     }
 
-    if (window.lucide) {
-      window.lucide.createIcons();
-    }
+    safeCreateIcons();
   },
 
   checkAndResumeIntendedBooking() {
@@ -380,10 +389,7 @@ function openAuthModal(tab = 'signin', guardMessage = null) {
   switchAuthTab(tab);
 
   openModalElement(modal);
-
-  if (window.lucide) {
-    window.lucide.createIcons();
-  }
+  safeCreateIcons();
 }
 
 function closeAuthModal() {
@@ -424,9 +430,7 @@ function switchAuthTab(tab) {
     if (signupForm) signupForm.classList.remove('hidden');
   }
 
-  if (window.lucide) {
-    window.lucide.createIcons();
-  }
+  safeCreateIcons();
 }
 
 function togglePasswordVisibility(inputId) {
@@ -723,10 +727,7 @@ function openMyBookingsModal() {
   }
 
   openModalElement(modal);
-
-  if (window.lucide) {
-    window.lucide.createIcons();
-  }
+  safeCreateIcons();
 }
 
 function closeMyBookingsModal() {
@@ -812,10 +813,7 @@ function openUserProfileModal() {
   if (bookingsCount) bookingsCount.textContent = bookings.length;
 
   openModalElement(modal);
-
-  if (window.lucide) {
-    window.lucide.createIcons();
-  }
+  safeCreateIcons();
 }
 
 function closeUserProfileModal() {
@@ -826,9 +824,7 @@ function closeUserProfileModal() {
 function showSavedKutirsModal() {
   const modal = document.getElementById('saved-kutirs-modal');
   openModalElement(modal);
-  if (window.lucide) {
-    window.lucide.createIcons();
-  }
+  safeCreateIcons();
 }
 
 function closeSavedKutirsModal() {
@@ -988,13 +984,12 @@ function handleRouting() {
     }
   }
 
-  if (window.lucide) {
-    window.lucide.createIcons();
-  }
+  safeCreateIcons();
 }
 
 function navigateToSwasthyaKutir() {
   window.location.hash = '#swasthya-kutir-rooms';
+  handleRouting();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 const navigateToVaidehi = navigateToSwasthyaKutir;
@@ -1002,17 +997,20 @@ const navigateToKutir = navigateToSwasthyaKutir;
 
 function navigateToPanchvati() {
   window.location.hash = '#panchvati-rooms';
+  handleRouting();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 const navigateToPanchwati = navigateToPanchvati;
 
 function navigateToMenu() {
   window.location.hash = '#aahar-vihar-menu';
+  handleRouting();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function navigateToPanchvatiRasoeeMenu() {
   window.location.hash = '#panchvati-rasoee-menu';
+  handleRouting();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 const navigateToPanchvatiPasoeeMenu = navigateToPanchvatiRasoeeMenu;
@@ -1033,6 +1031,7 @@ function navigateToHomeDining() {
   if (pasoeeView) pasoeeView.classList.add('hidden');
 
   window.location.hash = '#dining';
+  handleRouting();
   setTimeout(() => {
     const el = document.getElementById('dining');
     if (el) el.scrollIntoView({ behavior: 'smooth' });
@@ -1052,6 +1051,7 @@ function navigateToHomeRooms() {
   if (pasoeeView) pasoeeView.classList.add('hidden');
 
   window.location.hash = '#rooms-wings';
+  handleRouting();
   setTimeout(() => {
     const el = document.getElementById('rooms-wings') || document.getElementById('rooms-pillars');
     if (el) el.scrollIntoView({ behavior: 'smooth' });
@@ -1071,18 +1071,21 @@ function navigateToHomeView() {
   if (pasoeeView) pasoeeView.classList.add('hidden');
 
   window.location.hash = '#hero';
+  handleRouting();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function navigateToSection(sectionId) {
   const homeView = document.getElementById('home-view');
-  const vaidehiView = document.getElementById('vaidehi-view');
+  const swasthyaKutirView = document.getElementById('swasthya-kutir-view') || document.getElementById('vaidehi-view');
   const panchvatiView = document.getElementById('panchvati-view');
   const menuView = document.getElementById('menu-view');
+  const pasoeeView = document.getElementById('panchvati-rasoee-view') || document.getElementById('panchvati-pasoee-view');
   if (homeView) homeView.classList.remove('hidden');
-  if (vaidehiView) vaidehiView.classList.add('hidden');
+  if (swasthyaKutirView) swasthyaKutirView.classList.add('hidden');
   if (panchvatiView) panchvatiView.classList.add('hidden');
   if (menuView) menuView.classList.add('hidden');
+  if (pasoeeView) pasoeeView.classList.add('hidden');
 
   window.location.hash = `#${sectionId}`;
   setTimeout(() => {
@@ -1090,6 +1093,44 @@ function navigateToSection(sectionId) {
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   }, 50);
 }
+
+function navigateToView(viewId) {
+  if (!viewId) return;
+  const target = String(viewId).trim().replace(/^#/, '');
+  if (target === 'swasthya-kutir-rooms' || target === 'swasthya-kutir' || target === 'swasthya-kutir-view' || target === 'vaidehi-rooms' || target === 'vaidehi-view') {
+    navigateToSwasthyaKutir();
+  } else if (target === 'panchvati-rooms' || target === 'panchvati' || target === 'panchvati-view' || target === 'panchwati-rooms' || target === 'panchwati') {
+    navigateToPanchvati();
+  } else if (target === 'aahar-vihar-menu' || target === 'menu' || target === 'menu-view' || target === 'dining-menu' || target === 'aahar-vihar') {
+    navigateToMenu();
+  } else if (target === 'panchvati-rasoee-menu' || target === 'panchvati-pasoee-menu' || target === 'panchvati-rasoee-view' || target === 'panchvati-pasoee-view' || target === 'rasoee' || target === 'pasoee') {
+    navigateToPanchvatiRasoeeMenu();
+  } else if (target === 'home' || target === 'hero' || target === 'home-view') {
+    navigateToHomeView();
+  } else if (target === 'rooms-wings' || target === 'rooms-pillars' || target === 'rooms') {
+    navigateToHomeRooms();
+  } else if (target === 'dining') {
+    navigateToHomeDining();
+  } else {
+    navigateToSection(target);
+  }
+}
+
+window.navigateToView = navigateToView;
+window.navigateToHomeView = navigateToHomeView;
+window.navigateToHomeRooms = navigateToHomeRooms;
+window.navigateToSwasthyaKutir = navigateToSwasthyaKutir;
+window.navigateToVaidehi = navigateToSwasthyaKutir;
+window.navigateToKutir = navigateToSwasthyaKutir;
+window.navigateToPanchvati = navigateToPanchvati;
+window.navigateToPanchwati = navigateToPanchvati;
+window.navigateToMenu = navigateToMenu;
+window.navigateToPanchvatiRasoeeMenu = navigateToPanchvatiRasoeeMenu;
+window.navigateToPanchvatiPasoeeMenu = navigateToPanchvatiRasoeeMenu;
+window.navigateToRasoeeMenu = navigateToPanchvatiRasoeeMenu;
+window.navigateToPasoeeMenu = navigateToPanchvatiRasoeeMenu;
+window.navigateToHomeDining = navigateToHomeDining;
+window.navigateToSection = navigateToSection;
 
 /* ================= FLOATING SEARCH HANDLER ================= */
 function initSearchInput() {
@@ -1224,10 +1265,7 @@ function openBookingDrawer(roomName = 'Mandakini Royal Suite', rate = 12000) {
   calculateTotals();
 
   openModalElement(drawer);
-
-  if (window.lucide) {
-    window.lucide.createIcons();
-  }
+  safeCreateIcons();
 }
 
 function closeBookingDrawer() {
@@ -1235,10 +1273,34 @@ function closeBookingDrawer() {
   closeModalElement(drawer);
 }
 
+function toggleBookingDrawer(show) {
+  const drawer = document.getElementById('booking-drawer');
+  if (show === false) {
+    closeBookingDrawer();
+  } else if (show === true) {
+    openBookingDrawer();
+  } else {
+    if (drawer && !drawer.classList.contains('hidden') && drawer.style.display !== 'none') {
+      closeBookingDrawer();
+    } else {
+      openBookingDrawer();
+    }
+  }
+}
+
+function openBookingCheckout(roomName, price) {
+  openBookingDrawer(roomName, price);
+}
+
+window.toggleBookingDrawer = toggleBookingDrawer;
+window.openBookingCheckout = openBookingCheckout;
+window.openBookingDrawer = openBookingDrawer;
+window.closeBookingDrawer = closeBookingDrawer;
+
 function openMenuModal() {
   const modal = document.getElementById('menu-modal');
   openModalElement(modal);
-  lucide.createIcons();
+  safeCreateIcons();
 }
 
 function closeMenuModal() {
@@ -1255,13 +1317,18 @@ function showFacilityModal(title, body) {
   if (bodyElem) bodyElem.textContent = body;
 
   openModalElement(modal);
-  lucide.createIcons();
+  safeCreateIcons();
 }
 
 function closeFacilityModal() {
   const modal = document.getElementById('facility-modal');
   closeModalElement(modal);
 }
+
+window.openMenuModal = openMenuModal;
+window.closeMenuModal = closeMenuModal;
+window.showFacilityModal = showFacilityModal;
+window.closeFacilityModal = closeFacilityModal;
 
 function initReservationDrawer() {
   const form = document.getElementById('drawer-reservation-form');
@@ -1625,9 +1692,7 @@ function handleRazorpaySuccess(response, bookingDetails) {
     'crown'
   );
 
-  if (window.lucide) {
-    window.lucide.createIcons();
-  }
+  safeCreateIcons();
 }
 
 window.completeSimulatedPayment = function () {
@@ -1691,7 +1756,7 @@ function showTajToast(title, message, iconName = 'sparkles') {
   `;
 
   container.appendChild(toast);
-  lucide.createIcons();
+  safeCreateIcons();
 
   requestAnimationFrame(() => {
     toast.classList.add('toast-active');
@@ -2062,9 +2127,7 @@ function renderDiningDishes() {
     `;
   }).join('');
 
-  if (window.lucide) {
-    window.lucide.createIcons();
-  }
+  safeCreateIcons();
 }
 
 function addToDiningCart(dishId) {
@@ -2182,9 +2245,7 @@ function updateDiningBillUI() {
     }
   }
 
-  if (window.lucide) {
-    window.lucide.createIcons();
-  }
+  safeCreateIcons();
 }
 
 function reserveTableWithOrder() {
@@ -2472,9 +2533,7 @@ function updatePasoeeCartUI() {
     }
   }
 
-  if (window.lucide) {
-    window.lucide.createIcons();
-  }
+  safeCreateIcons();
 }
 
 function reservePasoeeCoupon() {
@@ -2524,3 +2583,67 @@ const updateRasoeeCartUI = updatePasoeeCartUI;
 const reserveRasoeeCoupon = reservePasoeeCoupon;
 const shareRasoeeWhatsApp = sharePasoeeWhatsApp;
 const rasoeeCart = pasoeeCart;
+
+// Complete Window Bindings for Production Resilience on Vercel
+window.openAuthModal = openAuthModal;
+window.closeAuthModal = closeAuthModal;
+window.switchAuthTab = switchAuthTab;
+window.togglePasswordVisibility = togglePasswordVisibility;
+window.handleGoogleSignIn = typeof handleGoogleSignIn !== 'undefined' ? handleGoogleSignIn : () => {};
+window.handleEmailSignIn = handleEmailSignIn;
+window.handleEmailSignUp = handleEmailSignUp;
+window.handleCheckEmailVerification = typeof handleCheckEmailVerification !== 'undefined' ? handleCheckEmailVerification : () => {};
+window.handleAuthSubmit = handleEmailSignIn;
+window.sendPhoneOTP = sendPhoneOTP;
+window.verifyPhoneOTP = verifyPhoneOTP;
+window.resendPhoneOTP = resendPhoneOTP;
+window.handleLogout = handleLogout;
+window.toggleUserDropdown = toggleUserDropdown;
+window.closeUserDropdown = closeUserDropdown;
+window.toggleMobileMenu = toggleMobileMenu;
+window.openMyBookingsModal = openMyBookingsModal;
+window.closeMyBookingsModal = closeMyBookingsModal;
+window.viewBookingVoucher = viewBookingVoucher;
+window.openUserProfileModal = openUserProfileModal;
+window.closeUserProfileModal = closeUserProfileModal;
+window.showSavedKutirsModal = showSavedKutirsModal;
+window.closeSavedKutirsModal = closeSavedKutirsModal;
+window.handleRouting = handleRouting;
+window.routeHashChange = handleRouting;
+window.triggerQuickSearch = triggerQuickSearch;
+window.copyResortAddress = copyResortAddress;
+window.adjustNights = adjustNights;
+window.applyPromoCode = applyPromoCode;
+window.handleReservationSubmit = handleReservationSubmit;
+window.handleDirectCheckout = handleDirectCheckout;
+window.filterDiningCategory = filterDiningCategory;
+window.addToDiningCart = addToDiningCart;
+window.addDishToBill = addToDiningCart;
+window.addToOrder = addToDiningCart;
+window.changeDiningQty = changeDiningQty;
+window.removeDishFromBill = function(dishId) { changeDiningQty(dishId, -1); };
+window.clearDiningCart = clearDiningCart;
+window.clearDiningBill = clearDiningCart;
+window.calculateDiningBill = calculateDiningBill;
+window.updateDiningBillUI = updateDiningBillUI;
+window.reserveTableWithOrder = reserveTableWithOrder;
+window.shareDiningWhatsApp = shareDiningWhatsApp;
+window.filterPasoeeCategory = filterPasoeeCategory;
+window.addToPasoeeCart = addToPasoeeCart;
+window.addPasoeeToCart = addToPasoeeCart;
+window.changePasoeeQty = changePasoeeQty;
+window.clearPasoeeCart = clearPasoeeCart;
+window.calculatePasoeeBill = calculatePasoeeBill;
+window.updatePasoeeCartUI = updatePasoeeCartUI;
+window.reservePasoeeCoupon = reservePasoeeCoupon;
+window.sharePasoeeWhatsApp = sharePasoeeWhatsApp;
+window.renderRasoeeItems = renderRasoeeItems;
+window.addToRasoeeCart = addToRasoeeCart;
+window.changeRasoeeQty = changeRasoeeQty;
+window.clearRasoeeCart = clearRasoeeCart;
+window.calculateRasoeeBill = calculateRasoeeBill;
+window.updateRasoeeCartUI = updateRasoeeCartUI;
+window.reserveRasoeeCoupon = reserveRasoeeCoupon;
+window.shareRasoeeWhatsApp = shareRasoeeWhatsApp;
+window.showTajToast = showTajToast;
+
