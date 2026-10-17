@@ -1897,170 +1897,170 @@ function showTajToast(title, message, iconName = 'sparkles') {
 const aaharViharMenu = [
   // ================= TAB 1: BREAKFAST =================
   // Indian Breakfast
-  { id: 'b-1', name: 'Puri Bhaji (4 pcs)', category: 'breakfast', subcat: 'Indian Breakfast', price: 165, desc: 'Fluffy whole wheat puris served with authentic spiced potato curry and pickle.' },
-  { id: 'b-2', name: 'Plain Paratha', category: 'breakfast', subcat: 'Indian Breakfast', price: 55, desc: 'Layered whole wheat paratha roasted golden on traditional tawa.' },
-  { id: 'b-3', name: 'Paneer Paratha', category: 'breakfast', subcat: 'Indian Breakfast', price: 89, desc: 'Stuffed with spiced fresh cottage cheese and aromatic herbs, served with curd.' },
-  { id: 'b-4', name: 'Aloo Paratha', category: 'breakfast', subcat: 'Indian Breakfast', price: 75, desc: 'Classic spiced mashed potato stuffing with roasted cumin and coriander.' },
-  { id: 'b-5', name: 'Mix Veg Pakora (8 pcs)', category: 'breakfast', subcat: 'Indian Breakfast', price: 165, desc: 'Crispy golden fritters of farm-fresh seasonal vegetables in gram flour batter.' },
-  { id: 'b-6', name: 'Paneer Pakora (8 pcs)', category: 'breakfast', subcat: 'Indian Breakfast', price: 185, desc: 'Tender fresh cottage cheese fritters dusted with chaat masala and mint chutney.' },
+  { id: 'b-1', name: 'Puri Bhaji (4 pcs)', category: 'breakfast', subcat: 'Indian Breakfast', price: 165, image: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=800&q=80', desc: 'Fluffy whole wheat puris served with authentic spiced potato curry and pickle.' },
+  { id: 'b-2', name: 'Plain Paratha', category: 'breakfast', subcat: 'Indian Breakfast', price: 55, image: 'https://images.unsplash.com/photo-1606491956689-2ea866880c84?auto=format&fit=crop&w=800&q=80', desc: 'Layered whole wheat paratha roasted golden on traditional tawa.' },
+  { id: 'b-3', name: 'Paneer Paratha', category: 'breakfast', subcat: 'Indian Breakfast', price: 89, image: 'https://images.unsplash.com/photo-1645177628172-a94c1f96e6db?auto=format&fit=crop&w=800&q=80', desc: 'Stuffed with spiced fresh cottage cheese and aromatic herbs, served with curd.' },
+  { id: 'b-4', name: 'Aloo Paratha', category: 'breakfast', subcat: 'Indian Breakfast', price: 75, image: 'https://images.unsplash.com/photo-1626074353765-517a681e40be?auto=format&fit=crop&w=800&q=80', desc: 'Classic spiced mashed potato stuffing with roasted cumin and coriander.' },
+  { id: 'b-5', name: 'Mix Veg Pakora (8 pcs)', category: 'breakfast', subcat: 'Indian Breakfast', price: 165, image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=800&q=80', desc: 'Crispy golden fritters of farm-fresh seasonal vegetables in gram flour batter.' },
+  { id: 'b-6', name: 'Paneer Pakora (8 pcs)', category: 'breakfast', subcat: 'Indian Breakfast', price: 185, image: 'https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=800&q=80', desc: 'Tender fresh cottage cheese fritters dusted with chaat masala and mint chutney.' },
 
   // South Indian
-  { id: 'b-7', name: 'Idli Sambar', category: 'breakfast', subcat: 'South Indian', price: 165, desc: 'Steamed fluffy rice & lentil cakes served with drumstick sambar and fresh coconut chutney.' },
-  { id: 'b-8', name: 'Vada Sambar', category: 'breakfast', subcat: 'South Indian', price: 165, desc: 'Crisp golden medu vadas served steeped in piping hot aromatic lentil sambar.' },
-  { id: 'b-9', name: 'Uttapam', category: 'breakfast', subcat: 'South Indian', price: 145, desc: 'Thick fermented rice pancake topped with fresh tomatoes, onions and green chillies.' },
-  { id: 'b-10', name: 'Plain Dosa', category: 'breakfast', subcat: 'South Indian', price: 165, desc: 'Crispy golden crepe served with coconut chutney, tomato chutney, and hot sambar.' },
-  { id: 'b-11', name: 'Masala Dosa', category: 'breakfast', subcat: 'South Indian', price: 185, desc: 'Crispy crepe filled with traditional tempered potato mash and mustard seeds.' },
-  { id: 'b-12', name: 'Cheese Dosa', category: 'breakfast', subcat: 'South Indian', price: 209, desc: 'Artisanal golden crisp dosa loaded with melted cheddar and fresh herbs.' },
-  { id: 'b-13', name: 'Veg Upma', category: 'breakfast', subcat: 'South Indian', price: 165, desc: 'Roasted semolina tempered with mustard seeds, curry leaves, and crunchy cashews.' },
-  { id: 'b-14', name: 'Indori Poha', category: 'breakfast', subcat: 'South Indian', price: 109, desc: 'Steamed flattened rice tempered with fennel seeds, turmeric, roasted peanuts, and Sev.' },
+  { id: 'b-7', name: 'Idli Sambar', category: 'breakfast', subcat: 'South Indian', price: 165, image: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80', desc: 'Steamed fluffy rice & lentil cakes served with drumstick sambar and fresh coconut chutney.' },
+  { id: 'b-8', name: 'Vada Sambar', category: 'breakfast', subcat: 'South Indian', price: 165, image: 'https://images.unsplash.com/photo-1630383249896-424e482df921?auto=format&fit=crop&w=800&q=80', desc: 'Crisp golden medu vadas served steeped in piping hot aromatic lentil sambar.' },
+  { id: 'b-9', name: 'Uttapam', category: 'breakfast', subcat: 'South Indian', price: 145, image: 'https://images.unsplash.com/photo-1668236543090-82eba5ee5976?auto=format&fit=crop&w=800&q=80', desc: 'Thick fermented rice pancake topped with fresh tomatoes, onions and green chillies.' },
+  { id: 'b-10', name: 'Plain Dosa', category: 'breakfast', subcat: 'South Indian', price: 165, image: 'https://images.unsplash.com/photo-1668236543090-82eba5ee5976?auto=format&fit=crop&w=800&q=80', desc: 'Crispy golden crepe served with coconut chutney, tomato chutney, and hot sambar.' },
+  { id: 'b-11', name: 'Masala Dosa', category: 'breakfast', subcat: 'South Indian', price: 185, image: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80', desc: 'Crispy crepe filled with traditional tempered potato mash and mustard seeds.' },
+  { id: 'b-12', name: 'Cheese Dosa', category: 'breakfast', subcat: 'South Indian', price: 209, image: 'https://images.unsplash.com/photo-1668236543090-82eba5ee5976?auto=format&fit=crop&w=800&q=80', desc: 'Artisanal golden crisp dosa loaded with melted cheddar and fresh herbs.' },
+  { id: 'b-13', name: 'Veg Upma', category: 'breakfast', subcat: 'South Indian', price: 165, image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=800&q=80', desc: 'Roasted semolina tempered with mustard seeds, curry leaves, and crunchy cashews.' },
+  { id: 'b-14', name: 'Indori Poha', category: 'breakfast', subcat: 'South Indian', price: 109, image: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=800&q=80', desc: 'Steamed flattened rice tempered with fennel seeds, turmeric, roasted peanuts, and Sev.' },
 
   // Continental & Sandwiches
-  { id: 'b-15', name: 'Veg Cutlet', category: 'breakfast', subcat: 'Continental & Sandwiches', price: 165, desc: 'Golden crumbed vegetable patties served with house dip.' },
-  { id: 'b-16', name: 'French Fries', category: 'breakfast', subcat: 'Continental & Sandwiches', price: 145, desc: 'Crisp salted golden potato fries served with dip.' },
-  { id: 'b-17', name: 'Bread Ghee Jam', category: 'breakfast', subcat: 'Continental & Sandwiches', price: 89, desc: 'Toasted farmhouse bread with pure A2 cow ghee and fruit preserves.' },
-  { id: 'b-18', name: 'Oats', category: 'breakfast', subcat: 'Continental & Sandwiches', price: 165, desc: 'Warm wholesome rolled oats simmered in milk with dry fruits and honey.' },
-  { id: 'b-19', name: 'Choco Flakes', category: 'breakfast', subcat: 'Continental & Sandwiches', price: 109, desc: 'Served with chilled or warm fresh milk.' },
-  { id: 'b-20', name: 'Corn Flakes', category: 'breakfast', subcat: 'Continental & Sandwiches', price: 109, desc: 'Crispy toasted corn cereal served with farm milk.' },
-  { id: 'b-21', name: 'Fruit Platter', category: 'breakfast', subcat: 'Continental & Sandwiches', price: 199, desc: 'Chef’s selection of fresh seasonal cut fruits and berries.' },
-  { id: 'b-22', name: 'Veg Sandwich', category: 'breakfast', subcat: 'Continental & Sandwiches', price: 145, desc: 'Fresh cucumber, tomato, mint chutney and cheese slices in soft bread.' },
-  { id: 'b-23', name: 'Veg Grilled Sandwich', category: 'breakfast', subcat: 'Continental & Sandwiches', price: 165, desc: 'Crisp pressed sandwich with cheese, crunchy bell peppers, and herbs.' },
-  { id: 'b-24', name: 'Veg Club Sandwich', category: 'breakfast', subcat: 'Continental & Sandwiches', price: 189, desc: 'Triple-decker toasted sandwich loaded with vegetables, cheese, and house coleslaw.' },
-  { id: 'b-25', name: 'Cheese Chilly Toast', category: 'breakfast', subcat: 'Continental & Sandwiches', price: 145, desc: 'Golden toast topped with molten cheese, green chillies, and oregano.' },
+  { id: 'b-15', name: 'Veg Cutlet', category: 'breakfast', subcat: 'Continental & Sandwiches', price: 165, image: 'https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=800&q=80', desc: 'Golden crumbed vegetable patties served with house dip.' },
+  { id: 'b-16', name: 'French Fries', category: 'breakfast', subcat: 'Continental & Sandwiches', price: 145, image: 'https://images.unsplash.com/photo-1576107232684-1279f3908594?auto=format&fit=crop&w=800&q=80', desc: 'Crisp salted golden potato fries served with dip.' },
+  { id: 'b-17', name: 'Bread Ghee Jam', category: 'breakfast', subcat: 'Continental & Sandwiches', price: 89, image: 'https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=800&q=80', desc: 'Toasted farmhouse bread with pure A2 cow ghee and fruit preserves.' },
+  { id: 'b-18', name: 'Oats', category: 'breakfast', subcat: 'Continental & Sandwiches', price: 165, image: 'https://images.unsplash.com/photo-1517673132405-a56a62b18caf?auto=format&fit=crop&w=800&q=80', desc: 'Warm wholesome rolled oats simmered in milk with dry fruits and honey.' },
+  { id: 'b-19', name: 'Choco Flakes', category: 'breakfast', subcat: 'Continental & Sandwiches', price: 109, image: 'https://images.unsplash.com/photo-1521483451569-e33803c0330c?auto=format&fit=crop&w=800&q=80', desc: 'Served with chilled or warm fresh milk.' },
+  { id: 'b-20', name: 'Corn Flakes', category: 'breakfast', subcat: 'Continental & Sandwiches', price: 109, image: 'https://images.unsplash.com/photo-1521483451569-e33803c0330c?auto=format&fit=crop&w=800&q=80', desc: 'Crispy toasted corn cereal served with farm milk.' },
+  { id: 'b-21', name: 'Fruit Platter', category: 'breakfast', subcat: 'Continental & Sandwiches', price: 199, image: 'https://images.unsplash.com/photo-1519996529931-28324d5a630e?auto=format&fit=crop&w=800&q=80', desc: 'Chef’s selection of fresh seasonal cut fruits and berries.' },
+  { id: 'b-22', name: 'Veg Sandwich', category: 'breakfast', subcat: 'Continental & Sandwiches', price: 145, image: 'https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=800&q=80', desc: 'Fresh cucumber, tomato, mint chutney and cheese slices in soft bread.' },
+  { id: 'b-23', name: 'Veg Grilled Sandwich', category: 'breakfast', subcat: 'Continental & Sandwiches', price: 165, image: 'https://images.unsplash.com/photo-1528736235302-52922df5c122?auto=format&fit=crop&w=800&q=80', desc: 'Crisp pressed sandwich with cheese, crunchy bell peppers, and herbs.' },
+  { id: 'b-24', name: 'Veg Club Sandwich', category: 'breakfast', subcat: 'Continental & Sandwiches', price: 189, image: 'https://images.unsplash.com/photo-1567234669003-dce7a7a88821?auto=format&fit=crop&w=800&q=80', desc: 'Triple-decker toasted sandwich loaded with vegetables, cheese, and house coleslaw.' },
+  { id: 'b-25', name: 'Cheese Chilly Toast', category: 'breakfast', subcat: 'Continental & Sandwiches', price: 145, image: 'https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=800&q=80', desc: 'Golden toast topped with molten cheese, green chillies, and oregano.' },
 
   // ================= TAB 2: STARTERS & SOUPS =================
   // Indian Kebabs
-  { id: 's-1', name: 'Hara Bhara Kebab', category: 'starters-soups', subcat: 'Indian Kebabs', price: 219, desc: 'Spinach, green pea and cottage cheese patties shallow fried with aromatic spices.' },
-  { id: 's-2', name: 'Dahi Ke Kebab', category: 'starters-soups', subcat: 'Indian Kebabs', price: 275, desc: 'Silken hung curd kebabs with a delicately spiced crisp golden exterior.' },
-  { id: 's-3', name: 'Paneer Tikka / Peshawari / Malai', category: 'starters-soups', subcat: 'Indian Kebabs', price: 275, desc: 'Charcoal-grilled cottage cheese cubes marinated in your choice of Peshawari spices or rich Malai cream.' },
-  { id: 's-4', name: 'Corn Cheese Kebab', category: 'starters-soups', subcat: 'Indian Kebabs', price: 219, desc: 'Sweet corn and mozzarella skewers lightly spiced and griddle roasted.' },
-  { id: 's-5', name: 'Tandoori Mushroom', category: 'starters-soups', subcat: 'Indian Kebabs', price: 275, desc: 'Fresh button mushrooms marinated in spiced hung curd and clay oven roasted.' },
+  { id: 's-1', name: 'Hara Bhara Kebab', category: 'starters-soups', subcat: 'Indian Kebabs', price: 219, image: 'https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&w=800&q=80', desc: 'Spinach, green pea and cottage cheese patties shallow fried with aromatic spices.' },
+  { id: 's-2', name: 'Dahi Ke Kebab', category: 'starters-soups', subcat: 'Indian Kebabs', price: 275, image: 'https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=800&q=80', desc: 'Silken hung curd kebabs with a delicately spiced crisp golden exterior.' },
+  { id: 's-3', name: 'Paneer Tikka / Peshawari / Malai', category: 'starters-soups', subcat: 'Indian Kebabs', price: 275, image: 'https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=800&q=80', desc: 'Charcoal-grilled cottage cheese cubes marinated in your choice of Peshawari spices or rich Malai cream.' },
+  { id: 's-4', name: 'Corn Cheese Kebab', category: 'starters-soups', subcat: 'Indian Kebabs', price: 219, image: 'https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=800&q=80', desc: 'Sweet corn and mozzarella skewers lightly spiced and griddle roasted.' },
+  { id: 's-5', name: 'Tandoori Mushroom', category: 'starters-soups', subcat: 'Indian Kebabs', price: 275, image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80', desc: 'Fresh button mushrooms marinated in spiced hung curd and clay oven roasted.' },
 
   // Chinese Starters
-  { id: 's-6', name: 'Chilli Mushroom', category: 'starters-soups', subcat: 'Chinese Starters', price: 275, desc: 'Wok-tossed button mushrooms with bell peppers, spring onion, and soy sauce.' },
-  { id: 's-7', name: 'Veg Manchurian (Dry)', category: 'starters-soups', subcat: 'Chinese Starters', price: 249, desc: 'Crisp vegetable dumplings tossed in tangy Manchurian glaze with coriander.' },
-  { id: 's-8', name: 'Chilli Paneer (Dry)', category: 'starters-soups', subcat: 'Chinese Starters', price: 285, desc: 'Cottage cheese cubes tossed in spicy chilli garlic sauce with crunchy capsicum.' },
-  { id: 's-9', name: 'Crispy Corn', category: 'starters-soups', subcat: 'Chinese Starters', price: 219, desc: 'Golden fried sweet corn kernels tossed with black pepper, spring onion, and lime.' },
-  { id: 's-10', name: 'Veg Spring Roll', category: 'starters-soups', subcat: 'Chinese Starters', price: 275, desc: 'Crispy roll stuffed with sautéed julienne vegetables, served with sweet chilli dip.' },
-  { id: 's-11', name: 'Honey Chilli Potato', category: 'starters-soups', subcat: 'Chinese Starters', price: 249, desc: 'Crispy potato fingers glazed in honey, chilli, and toasted sesame seeds.' },
-  { id: 's-12', name: 'Chinese Sizzler', category: 'starters-soups', subcat: 'Chinese Starters', price: 439, desc: 'Smoking hot platter with noodles, fried rice, veg manchurian, French fries and grilled veggies.' },
+  { id: 's-6', name: 'Chilli Mushroom', category: 'starters-soups', subcat: 'Chinese Starters', price: 275, image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80', desc: 'Wok-tossed button mushrooms with bell peppers, spring onion, and soy sauce.' },
+  { id: 's-7', name: 'Veg Manchurian (Dry)', category: 'starters-soups', subcat: 'Chinese Starters', price: 249, image: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=800&q=80', desc: 'Crisp vegetable dumplings tossed in tangy Manchurian glaze with coriander.' },
+  { id: 's-8', name: 'Chilli Paneer (Dry)', category: 'starters-soups', subcat: 'Chinese Starters', price: 285, image: 'https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=800&q=80', desc: 'Cottage cheese cubes tossed in spicy chilli garlic sauce with crunchy capsicum.' },
+  { id: 's-9', name: 'Crispy Corn', category: 'starters-soups', subcat: 'Chinese Starters', price: 219, image: 'https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=800&q=80', desc: 'Golden fried sweet corn kernels tossed with black pepper, spring onion, and lime.' },
+  { id: 's-10', name: 'Veg Spring Roll', category: 'starters-soups', subcat: 'Chinese Starters', price: 275, image: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80', desc: 'Crisp roll stuffed with sautéed julienne vegetables, served with sweet chilli dip.' },
+  { id: 's-11', name: 'Honey Chilli Potato', category: 'starters-soups', subcat: 'Chinese Starters', price: 249, image: 'https://images.unsplash.com/photo-1576107232684-1279f3908594?auto=format&fit=crop&w=800&q=80', desc: 'Crispy potato fingers glazed in honey, chilli, and toasted sesame seeds.' },
+  { id: 's-12', name: 'Chinese Sizzler', category: 'starters-soups', subcat: 'Chinese Starters', price: 439, image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80', desc: 'Smoking hot platter with noodles, fried rice, veg manchurian, French fries and grilled veggies.' },
 
   // Soups
-  { id: 'sp-1', name: 'Cream of Tomato Soup', category: 'starters-soups', subcat: 'Soups', price: 165, desc: 'Rich ripe tomato reduction infused with fresh basil, butter, and crunchy croutons.' },
-  { id: 'sp-2', name: 'Hot & Sour Soup', category: 'starters-soups', subcat: 'Soups', price: 165, desc: 'Spicy tangy oriental vegetable broth with shredded bamboo and mushrooms.' },
-  { id: 'sp-3', name: 'Veg Manchow Soup', category: 'starters-soups', subcat: 'Soups', price: 165, desc: 'Classic dark soya garlic soup garnished with crispy fried noodles.' },
-  { id: 'sp-4', name: 'Sweet Corn Soup', category: 'starters-soups', subcat: 'Soups', price: 165, desc: 'Velvety cream soup of sweet American corn and finely chopped vegetables.' },
-  { id: 'sp-5', name: 'Cream of Spinach Soup', category: 'starters-soups', subcat: 'Soups', price: 165, desc: 'Fresh farm spinach simmered with nutmeg and fresh cream.' },
-  { id: 'sp-6', name: 'Clear Veg Soup', category: 'starters-soups', subcat: 'Soups', price: 165, desc: 'Nourishing light herbal broth with garden veggies and aromatic peppercorns.' },
-  { id: 'sp-7', name: 'Lemon Coriander Soup', category: 'starters-soups', subcat: 'Soups', price: 165, desc: 'Zesty lemon and fresh coriander broth with vitamin-rich garden vegetables.' },
-  { id: 'sp-8', name: 'Mix Millet Soup', category: 'starters-soups', subcat: 'Soups', price: 189, desc: 'Signature Arogyadham wellness soup prepared with toasted barnyard millets and fresh herbs.' },
+  { id: 'sp-1', name: 'Cream of Tomato Soup', category: 'starters-soups', subcat: 'Soups', price: 165, image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80', desc: 'Rich ripe tomato reduction infused with fresh basil, butter, and crunchy croutons.' },
+  { id: 'sp-2', name: 'Hot & Sour Soup', category: 'starters-soups', subcat: 'Soups', price: 165, image: 'https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=80', desc: 'Spicy tangy oriental vegetable broth with shredded bamboo and mushrooms.' },
+  { id: 'sp-3', name: 'Veg Manchow Soup', category: 'starters-soups', subcat: 'Soups', price: 165, image: 'https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=80', desc: 'Classic dark soya garlic soup garnished with crispy fried noodles.' },
+  { id: 'sp-4', name: 'Sweet Corn Soup', category: 'starters-soups', subcat: 'Soups', price: 165, image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80', desc: 'Velvety cream soup of sweet American corn and finely chopped vegetables.' },
+  { id: 'sp-5', name: 'Cream of Spinach Soup', category: 'starters-soups', subcat: 'Soups', price: 165, image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80', desc: 'Fresh farm spinach simmered with nutmeg and fresh cream.' },
+  { id: 'sp-6', name: 'Clear Veg Soup', category: 'starters-soups', subcat: 'Soups', price: 165, image: 'https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=80', desc: 'Nourishing light herbal broth with garden veggies and aromatic peppercorns.' },
+  { id: 'sp-7', name: 'Lemon Coriander Soup', category: 'starters-soups', subcat: 'Soups', price: 165, image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80', desc: 'Zesty lemon and fresh coriander broth with vitamin-rich garden vegetables.' },
+  { id: 'sp-8', name: 'Mix Millet Soup', category: 'starters-soups', subcat: 'Soups', price: 189, image: 'https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=80', desc: 'Signature Arogyadham wellness soup prepared with toasted barnyard millets and fresh herbs.' },
 
   // Pizzas & Pastas
-  { id: 'pz-1', name: 'Paneer Tikka Pizza', category: 'starters-soups', subcat: 'Pizzas & Pastas', price: 265, desc: 'Stone-baked pizza topped with spiced paneer tikka, bell peppers, and mozzarella.' },
-  { id: 'pz-2', name: 'Margherita Pizza', category: 'starters-soups', subcat: 'Pizzas & Pastas', price: 219, desc: 'Classic San Marzano tomato sauce, fresh basil leaves, and molten mozzarella.' },
-  { id: 'pz-3', name: 'Corn Veg Pizza', category: 'starters-soups', subcat: 'Pizzas & Pastas', price: 239, desc: 'Golden sweet corn, crisp onions, capsicum, olives, and mozzarella.' },
-  { id: 'pz-4', name: 'Pasta Alfredo / Pink Sauce', category: 'starters-soups', subcat: 'Pizzas & Pastas', price: 165, desc: 'Penne pasta tossed in rich parmesan cream sauce or zesty pink tomato-herb sauce.' },
-  { id: 'pz-5', name: 'Cheese Chilly Balls', category: 'starters-soups', subcat: 'Pizzas & Pastas', price: 319, desc: 'Crisp breaded golden spheres bursting with molten jalapeño cheese.' },
-  { id: 'pz-6', name: 'Sauteed Veg', category: 'starters-soups', subcat: 'Pizzas & Pastas', price: 275, desc: 'Farm-fresh broccoli, zucchini, bell peppers and baby corn tossed in olive oil & herbs.' },
+  { id: 'pz-1', name: 'Paneer Tikka Pizza', category: 'starters-soups', subcat: 'Pizzas & Pastas', price: 265, image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80', desc: 'Stone-baked pizza topped with spiced paneer tikka, bell peppers, and mozzarella.' },
+  { id: 'pz-2', name: 'Margherita Pizza', category: 'starters-soups', subcat: 'Pizzas & Pastas', price: 219, image: 'https://images.unsplash.com/photo-1604382355076-af4b0eb60143?auto=format&fit=crop&w=800&q=80', desc: 'Classic San Marzano tomato sauce, fresh basil leaves, and molten mozzarella.' },
+  { id: 'pz-3', name: 'Corn Veg Pizza', category: 'starters-soups', subcat: 'Pizzas & Pastas', price: 239, image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80', desc: 'Golden sweet corn, crisp onions, capsicum, olives, and mozzarella.' },
+  { id: 'pz-4', name: 'Pasta Alfredo / Pink Sauce', category: 'starters-soups', subcat: 'Pizzas & Pastas', price: 165, image: 'https://images.unsplash.com/photo-1621996346565-e3d5d6281023?auto=format&fit=crop&w=800&q=80', desc: 'Penne pasta tossed in rich parmesan cream sauce or zesty pink tomato-herb sauce.' },
+  { id: 'pz-5', name: 'Cheese Chilly Balls', category: 'starters-soups', subcat: 'Pizzas & Pastas', price: 319, image: 'https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=800&q=80', desc: 'Crisp breaded golden spheres bursting with molten jalapeño cheese.' },
+  { id: 'pz-6', name: 'Sauteed Veg', category: 'starters-soups', subcat: 'Pizzas & Pastas', price: 275, image: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80', desc: 'Farm-fresh broccoli, zucchini, bell peppers and baby corn tossed in olive oil & herbs.' },
 
   // ================= TAB 3: MAIN COURSE =================
   // Millet Specials
-  { id: 'm-1', name: 'Mix Millet Khichdi', category: 'mains', subcat: 'Millet Specials', price: 385, desc: 'Superfood blend of Kodo, Foxtail & Barnyard millets slow-cooked with yellow moong and A2 cow ghee.' },
-  { id: 'm-2', name: 'Makai Palak Ki Subzi', category: 'mains', subcat: 'Millet Specials', price: 385, desc: 'Sweet corn kernels simmered in a rich velvety spinach gravy with roasted garlic and cumin.' },
-  { id: 'm-3', name: 'Millet Daliya', category: 'mains', subcat: 'Millet Specials', price: 385, desc: 'Traditional broken pearl millet cooked with farm vegetables and light digestives.' },
-  { id: 'm-4', name: 'Black Fried Rice', category: 'mains', subcat: 'Millet Specials', price: 385, desc: 'Antioxidant-rich organic black rice wok-tossed with garden vegetables.' },
+  { id: 'm-1', name: 'Mix Millet Khichdi', category: 'mains', subcat: 'Millet Specials', price: 385, image: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=800&q=80', desc: 'Superfood blend of Kodo, Foxtail & Barnyard millets slow-cooked with yellow moong and A2 cow ghee.' },
+  { id: 'm-2', name: 'Makai Palak Ki Subzi', category: 'mains', subcat: 'Millet Specials', price: 385, image: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80', desc: 'Sweet corn kernels simmered in a rich velvety spinach gravy with roasted garlic and cumin.' },
+  { id: 'm-3', name: 'Millet Daliya', category: 'mains', subcat: 'Millet Specials', price: 385, image: 'https://images.unsplash.com/photo-1517673132405-a56a62b18caf?auto=format&fit=crop&w=800&q=80', desc: 'Traditional broken pearl millet cooked with farm vegetables and light digestives.' },
+  { id: 'm-4', name: 'Black Fried Rice', category: 'mains', subcat: 'Millet Specials', price: 385, image: 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=800&q=80', desc: 'Antioxidant-rich organic black rice wok-tossed with garden vegetables.' },
 
   // Indian Gravies
-  { id: 'im-1', name: 'Paneer Butter Masala', category: 'mains', subcat: 'Indian Gravies', price: 329, desc: 'Cottage cheese simmered in rich creamy tomato and butter gravy with fenugreek.' },
-  { id: 'im-2', name: 'Kadai Paneer', category: 'mains', subcat: 'Indian Gravies', price: 329, desc: 'Paneer and bell peppers cooked in freshly crushed coriander and red chilli masala.' },
-  { id: 'im-3', name: 'Palak Paneer', category: 'mains', subcat: 'Indian Gravies', price: 329, desc: 'Tender cottage cheese cooked in creamy fresh spinach purée with aromatic spices.' },
-  { id: 'im-4', name: 'Matar Paneer', category: 'mains', subcat: 'Indian Gravies', price: 329, desc: 'Traditional homestyle combination of green peas and paneer in spiced onion gravy.' },
-  { id: 'im-5', name: 'Paneer Lababdar', category: 'mains', subcat: 'Indian Gravies', price: 329, desc: 'Rich luscious cashew-tomato gravy garnished with grated paneer and cream.' },
-  { id: 'im-6', name: 'Paneer Bhurji', category: 'mains', subcat: 'Indian Gravies', price: 329, desc: 'Crumbled cottage cheese sautéed with onions, ripe tomatoes, green chillies and fresh herbs.' },
-  { id: 'im-7', name: 'Veg Kofta', category: 'mains', subcat: 'Indian Gravies', price: 275, desc: 'Melt-in-mouth vegetable and paneer dumplings in a mild golden cardamom gravy.' },
-  { id: 'im-8', name: 'Tomato Palak Bhurji', category: 'mains', subcat: 'Indian Gravies', price: 219, desc: 'Light rustic preparation of fresh farm spinach and juicy ripe tomatoes.' },
-  { id: 'im-9', name: 'Hing Dhaniya Aloo', category: 'mains', subcat: 'Indian Gravies', price: 219, desc: 'Baby potatoes tempered with asafetida (hing), roasted coriander seeds and cumin.' },
-  { id: 'im-10', name: 'Methi Matar Malai', category: 'mains', subcat: 'Indian Gravies', price: 275, desc: 'Fresh fenugreek leaves and sweet green peas in a smooth sweet cream reduction.' },
-  { id: 'im-11', name: 'Bhindi Masala', category: 'mains', subcat: 'Indian Gravies', price: 279, desc: 'Crisp ladyfingers pan-roasted with onions, amchur and roasted cumin.' },
-  { id: 'im-12', name: 'Baingan Bharta', category: 'mains', subcat: 'Indian Gravies', price: 219, desc: 'Smoked roasted aubergine mashed with tomatoes, green chillies, and mustard oil.' },
-  { id: 'im-13', name: 'Lauki Home Style', category: 'mains', subcat: 'Indian Gravies', price: 219, desc: 'Wholesome digestive bottle gourd cooked in light cumin and turmeric broth.' },
-  { id: 'im-14', name: 'Karela Sabji', category: 'mains', subcat: 'Indian Gravies', price: 219, desc: 'Ayurvedic bitter gourd caramelized with jaggery, fennel seeds, and mango powder.' },
-  { id: 'im-15', name: 'Veg Kolhapuri', category: 'mains', subcat: 'Indian Gravies', price: 275, desc: 'Spicy mixed vegetables cooked in robust Kolhapuri red chilli and coconut paste.' },
-  { id: 'im-16', name: 'Mix Veg', category: 'mains', subcat: 'Indian Gravies', price: 275, desc: 'Assorted seasonal vegetables sautéed with traditional north Indian spices.' },
-  { id: 'im-17', name: 'Soya Keema Matar', category: 'mains', subcat: 'Indian Gravies', price: 249, desc: 'Protein-packed minced soya granules and green peas in spiced bhuna gravy.' },
-  { id: 'im-18', name: 'Sev Tomato', category: 'mains', subcat: 'Indian Gravies', price: 219, desc: 'Zesty Kathiyawadi sweet-and-sour tomato curry topped with crisp gram flour sev.' },
-  { id: 'im-19', name: 'Yellow Dal Tadka', category: 'mains', subcat: 'Indian Gravies', price: 219, desc: 'Yellow lentils tempered with A2 cow ghee, cumin, dry red chillies, and garlic.' },
-  { id: 'im-20', name: 'Dal Makhani', category: 'mains', subcat: 'Indian Gravies', price: 229, desc: 'Black lentils slow-cooked overnight over tandoor embers with butter and cream.' },
+  { id: 'im-1', name: 'Paneer Butter Masala', category: 'mains', subcat: 'Indian Gravies', price: 329, image: 'https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=800&q=80', desc: 'Cottage cheese simmered in rich creamy tomato and butter gravy with fenugreek.' },
+  { id: 'im-2', name: 'Kadai Paneer', category: 'mains', subcat: 'Indian Gravies', price: 329, image: 'https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=800&q=80', desc: 'Paneer and bell peppers cooked in freshly crushed coriander and red chilli masala.' },
+  { id: 'im-3', name: 'Palak Paneer', category: 'mains', subcat: 'Indian Gravies', price: 329, image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=800&q=80', desc: 'Tender cottage cheese cooked in creamy fresh spinach purée with aromatic spices.' },
+  { id: 'im-4', name: 'Matar Paneer', category: 'mains', subcat: 'Indian Gravies', price: 329, image: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=800&q=80', desc: 'Traditional homestyle combination of green peas and paneer in spiced onion gravy.' },
+  { id: 'im-5', name: 'Paneer Lababdar', category: 'mains', subcat: 'Indian Gravies', price: 329, image: 'https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=800&q=80', desc: 'Rich luscious cashew-tomato gravy garnished with grated paneer and cream.' },
+  { id: 'im-6', name: 'Paneer Bhurji', category: 'mains', subcat: 'Indian Gravies', price: 329, image: 'https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=800&q=80', desc: 'Crumbled cottage cheese sautéed with onions, ripe tomatoes, green chillies and fresh herbs.' },
+  { id: 'im-7', name: 'Veg Kofta', category: 'mains', subcat: 'Indian Gravies', price: 275, image: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80', desc: 'Melt-in-mouth vegetable and paneer dumplings in a mild golden cardamom gravy.' },
+  { id: 'im-8', name: 'Tomato Palak Bhurji', category: 'mains', subcat: 'Indian Gravies', price: 219, image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=800&q=80', desc: 'Light rustic preparation of fresh farm spinach and juicy ripe tomatoes.' },
+  { id: 'im-9', name: 'Hing Dhaniya Aloo', category: 'mains', subcat: 'Indian Gravies', price: 219, image: 'https://images.unsplash.com/photo-1626074353765-517a681e40be?auto=format&fit=crop&w=800&q=80', desc: 'Baby potatoes tempered with asafetida (hing), roasted coriander seeds and cumin.' },
+  { id: 'im-10', name: 'Methi Matar Malai', category: 'mains', subcat: 'Indian Gravies', price: 275, image: 'https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=800&q=80', desc: 'Fresh fenugreek leaves and sweet green peas in a smooth sweet cream reduction.' },
+  { id: 'im-11', name: 'Bhindi Masala', category: 'mains', subcat: 'Indian Gravies', price: 279, image: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=800&q=80', desc: 'Crisp ladyfingers pan-roasted with onions, amchur and roasted cumin.' },
+  { id: 'im-12', name: 'Baingan Bharta', category: 'mains', subcat: 'Indian Gravies', price: 219, image: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80', desc: 'Smoked roasted aubergine mashed with tomatoes, green chillies, and mustard oil.' },
+  { id: 'im-13', name: 'Lauki Home Style', category: 'mains', subcat: 'Indian Gravies', price: 219, image: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=800&q=80', desc: 'Wholesome digestive bottle gourd cooked in light cumin and turmeric broth.' },
+  { id: 'im-14', name: 'Karela Sabji', category: 'mains', subcat: 'Indian Gravies', price: 219, image: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=800&q=80', desc: 'Ayurvedic bitter gourd caramelized with jaggery, fennel seeds, and mango powder.' },
+  { id: 'im-15', name: 'Veg Kolhapuri', category: 'mains', subcat: 'Indian Gravies', price: 275, image: 'https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=800&q=80', desc: 'Spicy mixed vegetables cooked in robust Kolhapuri red chilli and coconut paste.' },
+  { id: 'im-16', name: 'Mix Veg', category: 'mains', subcat: 'Indian Gravies', price: 275, image: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=800&q=80', desc: 'Assorted seasonal vegetables sautéed with traditional north Indian spices.' },
+  { id: 'im-17', name: 'Soya Keema Matar', category: 'mains', subcat: 'Indian Gravies', price: 249, image: 'https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=800&q=80', desc: 'Protein-packed minced soya granules and green peas in spiced bhuna gravy.' },
+  { id: 'im-18', name: 'Sev Tomato', category: 'mains', subcat: 'Indian Gravies', price: 219, image: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=800&q=80', desc: 'Zesty Kathiyawadi sweet-and-sour tomato curry topped with crisp gram flour sev.' },
+  { id: 'im-19', name: 'Yellow Dal Tadka', category: 'mains', subcat: 'Indian Gravies', price: 219, image: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=800&q=80', desc: 'Yellow lentils tempered with A2 cow ghee, cumin, dry red chillies, and garlic.' },
+  { id: 'im-20', name: 'Dal Makhani', category: 'mains', subcat: 'Indian Gravies', price: 229, image: 'https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=800&q=80', desc: 'Black lentils slow-cooked overnight over tandoor embers with butter and cream.' },
 
   // Chinese Mains
-  { id: 'cm-1', name: 'Veg Manchurian Gravy', category: 'mains', subcat: 'Chinese Mains', price: 249, desc: 'Crispy veg dumplings served in hearty savory garlic-coriander gravy.' },
-  { id: 'cm-2', name: 'Chilli Paneer Gravy', category: 'mains', subcat: 'Chinese Mains', price: 275, desc: 'Paneer cubes in zesty oriental chilli gravy with bell peppers and spring onion.' },
-  { id: 'cm-3', name: 'Hakka Noodles', category: 'mains', subcat: 'Chinese Mains', price: 219, desc: 'Wok-tossed noodles with shredded cabbage, carrots, bell peppers and mild seasoning.' },
-  { id: 'cm-4', name: 'Schezwan Noodles', category: 'mains', subcat: 'Chinese Mains', price: 249, desc: 'Fiery wok-tossed noodles with house Schezwan pepper sauce.' },
-  { id: 'cm-5', name: 'Veg Fried Rice', category: 'mains', subcat: 'Chinese Mains', price: 219, desc: 'Long grain rice tossed with finely diced vegetables and light soy.' },
-  { id: 'cm-6', name: 'Schezwan Rice', category: 'mains', subcat: 'Chinese Mains', price: 249, desc: 'Aromatic spicy fried rice with red chillies, garlic, and fresh vegetables.' },
-  { id: 'cm-7', name: 'Veg Noodle Special', category: 'mains', subcat: 'Chinese Mains', price: 275, desc: 'Special chef noodles loaded with pan-seared vegetables and sesame.' },
-  { id: 'cm-8', name: 'Triple Schezwan Noodle & Rice', category: 'mains', subcat: 'Chinese Mains', price: 385, desc: 'Combination of fried rice, noodles, crispy noodles and hot Schezwan gravy.' },
+  { id: 'cm-1', name: 'Veg Manchurian Gravy', category: 'mains', subcat: 'Chinese Mains', price: 249, image: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=800&q=80', desc: 'Crispy veg dumplings served in hearty savory garlic-coriander gravy.' },
+  { id: 'cm-2', name: 'Chilli Paneer Gravy', category: 'mains', subcat: 'Chinese Mains', price: 275, image: 'https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=800&q=80', desc: 'Paneer cubes in zesty oriental chilli gravy with bell peppers and spring onion.' },
+  { id: 'cm-3', name: 'Hakka Noodles', category: 'mains', subcat: 'Chinese Mains', price: 219, image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=800&q=80', desc: 'Wok-tossed noodles with shredded cabbage, carrots, bell peppers and mild seasoning.' },
+  { id: 'cm-4', name: 'Schezwan Noodles', category: 'mains', subcat: 'Chinese Mains', price: 249, image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=800&q=80', desc: 'Fiery wok-tossed noodles with house Schezwan pepper sauce.' },
+  { id: 'cm-5', name: 'Veg Fried Rice', category: 'mains', subcat: 'Chinese Mains', price: 219, image: 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=800&q=80', desc: 'Long grain rice tossed with finely diced vegetables and light soy.' },
+  { id: 'cm-6', name: 'Schezwan Rice', category: 'mains', subcat: 'Chinese Mains', price: 249, image: 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=800&q=80', desc: 'Aromatic spicy fried rice with red chillies, garlic, and fresh vegetables.' },
+  { id: 'cm-7', name: 'Veg Noodle Special', category: 'mains', subcat: 'Chinese Mains', price: 275, image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=800&q=80', desc: 'Special chef noodles loaded with pan-seared vegetables and sesame.' },
+  { id: 'cm-8', name: 'Triple Schezwan Noodle & Rice', category: 'mains', subcat: 'Chinese Mains', price: 385, image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=800&q=80', desc: 'Combination of fried rice, noodles, crispy noodles and hot Schezwan gravy.' },
 
   // Breads
-  { id: 'br-1', name: 'Bajra / Makka / Jowar Roti (Plain ₹55 / Ghee ₹60)', category: 'mains', subcat: 'Breads', price: 55, desc: 'Traditional gluten-free millet flatbreads cooked over open flame.' },
-  { id: 'br-2', name: 'Lachha Paratha', category: 'mains', subcat: 'Breads', price: 55, desc: 'Multi-layered crispy whole wheat tandoori flatbread with butter.' },
-  { id: 'br-3', name: 'Tawa Chapati (Plain ₹35 / Ghee ₹45)', category: 'mains', subcat: 'Breads', price: 35, desc: 'Soft whole wheat phulka made fresh on tawa.' },
-  { id: 'br-4', name: 'Missi Roti', category: 'mains', subcat: 'Breads', price: 45, desc: 'Spiced gram flour and wheat flatbread with carom seeds and onions.' },
-  { id: 'br-5', name: 'Naan (Plain ₹70 / Butter ₹75)', category: 'mains', subcat: 'Breads', price: 70, desc: 'Classic clay oven baked refined flour bread.' },
-  { id: 'br-6', name: 'Tandoori Roti (Plain ₹30 / Butter ₹40)', category: 'mains', subcat: 'Breads', price: 30, desc: 'Crisp whole wheat bread baked in clay tandoor.' },
-  { id: 'br-7', name: 'Stuffed Kulcha (Paneer / Aloo ₹99 / ₹119)', category: 'mains', subcat: 'Breads', price: 99, desc: 'Amritsari style kulcha stuffed with spiced fillings.' },
-  { id: 'br-8', name: 'Bread Basket (Assorted 5 Pcs)', category: 'mains', subcat: 'Breads', price: 195, desc: 'Chef’s selection: Butter Naan, Laccha Paratha, Missi Roti & Tandoori Roti.' },
+  { id: 'br-1', name: 'Bajra / Makka / Jowar Roti (Plain ₹55 / Ghee ₹60)', category: 'mains', subcat: 'Breads', price: 55, image: 'https://images.unsplash.com/photo-1606491956689-2ea866880c84?auto=format&fit=crop&w=800&q=80', desc: 'Traditional gluten-free millet flatbreads cooked over open flame.' },
+  { id: 'br-2', name: 'Lachha Paratha', category: 'mains', subcat: 'Breads', price: 55, image: 'https://images.unsplash.com/photo-1606491956689-2ea866880c84?auto=format&fit=crop&w=800&q=80', desc: 'Multi-layered crispy whole wheat tandoori flatbread with butter.' },
+  { id: 'br-3', name: 'Tawa Chapati (Plain ₹35 / Ghee ₹45)', category: 'mains', subcat: 'Breads', price: 35, image: 'https://images.unsplash.com/photo-1606491956689-2ea866880c84?auto=format&fit=crop&w=800&q=80', desc: 'Soft whole wheat phulka made fresh on tawa.' },
+  { id: 'br-4', name: 'Missi Roti', category: 'mains', subcat: 'Breads', price: 45, image: 'https://images.unsplash.com/photo-1606491956689-2ea866880c84?auto=format&fit=crop&w=800&q=80', desc: 'Spiced gram flour and wheat flatbread with carom seeds and onions.' },
+  { id: 'br-5', name: 'Naan (Plain ₹70 / Butter ₹75)', category: 'mains', subcat: 'Breads', price: 70, image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=800&q=80', desc: 'Classic clay oven baked refined flour bread.' },
+  { id: 'br-6', name: 'Tandoori Roti (Plain ₹30 / Butter ₹40)', category: 'mains', subcat: 'Breads', price: 30, image: 'https://images.unsplash.com/photo-1606491956689-2ea866880c84?auto=format&fit=crop&w=800&q=80', desc: 'Crisp whole wheat bread baked in clay tandoor.' },
+  { id: 'br-7', name: 'Stuffed Kulcha (Paneer / Aloo ₹99 / ₹119)', category: 'mains', subcat: 'Breads', price: 99, image: 'https://images.unsplash.com/photo-1626074353765-517a681e40be?auto=format&fit=crop&w=800&q=80', desc: 'Amritsari style kulcha stuffed with spiced fillings.' },
+  { id: 'br-8', name: 'Bread Basket (Assorted 5 Pcs)', category: 'mains', subcat: 'Breads', price: 195, image: 'https://images.unsplash.com/photo-1606491956689-2ea866880c84?auto=format&fit=crop&w=800&q=80', desc: 'Chef’s selection: Butter Naan, Laccha Paratha, Missi Roti & Tandoori Roti.' },
 
   // Rice & Biryani
-  { id: 'rc-1', name: 'Subz Dum Biryani', category: 'mains', subcat: 'Rice & Biryani', price: 385, desc: 'Fragrant basmati rice layered with garden vegetables, saffron and spices, cooked on dum in sealed handi.' },
-  { id: 'rc-2', name: 'Paneer Tikka Biryani', category: 'mains', subcat: 'Rice & Biryani', price: 499, desc: 'Smoked tandoori paneer tikka slow-cooked with basmati rice, mint, and saffron.' },
-  { id: 'rc-3', name: 'Jeera Rice', category: 'mains', subcat: 'Rice & Biryani', price: 219, desc: 'Steamed basmati rice tempered with cumin seeds and whole ghee.' },
-  { id: 'rc-4', name: 'Veg Pulao', category: 'mains', subcat: 'Rice & Biryani', price: 329, desc: 'Aromatic basmati rice cooked with fresh seasonal vegetables and whole garam masala.' },
-  { id: 'rc-5', name: 'Steamed Rice', category: 'mains', subcat: 'Rice & Biryani', price: 165, desc: 'Fluffy long grain basmati rice.' },
-  { id: 'rc-6', name: 'Dal Khichdi', category: 'mains', subcat: 'Rice & Biryani', price: 329, desc: 'Comforting home-style moong dal and rice tempered with ghee and cumin.' },
+  { id: 'rc-1', name: 'Subz Dum Biryani', category: 'mains', subcat: 'Rice & Biryani', price: 385, image: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=800&q=80', desc: 'Fragrant basmati rice layered with garden vegetables, saffron and spices, cooked on dum in sealed handi.' },
+  { id: 'rc-2', name: 'Paneer Tikka Biryani', category: 'mains', subcat: 'Rice & Biryani', price: 499, image: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=800&q=80', desc: 'Smoked tandoori paneer tikka slow-cooked with basmati rice, mint, and saffron.' },
+  { id: 'rc-3', name: 'Jeera Rice', category: 'mains', subcat: 'Rice & Biryani', price: 219, image: 'https://images.unsplash.com/photo-1516684732162-798a0062be99?auto=format&fit=crop&w=800&q=80', desc: 'Steamed basmati rice tempered with cumin seeds and whole ghee.' },
+  { id: 'rc-4', name: 'Veg Pulao', category: 'mains', subcat: 'Rice & Biryani', price: 329, image: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=800&q=80', desc: 'Aromatic basmati rice cooked with fresh seasonal vegetables and whole garam masala.' },
+  { id: 'rc-5', name: 'Steamed Rice', category: 'mains', subcat: 'Rice & Biryani', price: 165, image: 'https://images.unsplash.com/photo-1516684732162-798a0062be99?auto=format&fit=crop&w=800&q=80', desc: 'Fluffy long grain basmati rice.' },
+  { id: 'rc-6', name: 'Dal Khichdi', category: 'mains', subcat: 'Rice & Biryani', price: 329, image: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=800&q=80', desc: 'Comforting home-style moong dal and rice tempered with ghee and cumin.' },
 
   // Raita & Salads
-  { id: 'rs-1', name: 'Mix Veg Raita', category: 'mains', subcat: 'Raita & Salads', price: 129, desc: 'Chilled curd with cucumber, tomato, onion and roasted cumin.' },
-  { id: 'rs-2', name: 'Boondi Raita', category: 'mains', subcat: 'Raita & Salads', price: 109, desc: 'Crispy gram flour puffs soaked in seasoned spiced yoghurt.' },
-  { id: 'rs-3', name: 'Pineapple Raita', category: 'mains', subcat: 'Raita & Salads', price: 155, desc: 'Sweet diced pineapple in chilled creamy sweetened yoghurt.' },
-  { id: 'rs-4', name: 'Mixed Fruit Raita', category: 'mains', subcat: 'Raita & Salads', price: 165, desc: 'Assorted seasonal diced fruits in spiced chilled curd.' },
-  { id: 'rs-5', name: 'Masala Papad', category: 'mains', subcat: 'Raita & Salads', price: 55, desc: 'Roasted or fried lentil papad topped with spicy onion-tomato-coriander mix.' },
-  { id: 'rs-6', name: 'Plain Papad', category: 'mains', subcat: 'Raita & Salads', price: 35, desc: 'Crispy roasted or fried poppadom.' },
-  { id: 'rs-7', name: 'Green Salad', category: 'mains', subcat: 'Raita & Salads', price: 119, desc: 'Fresh slices of cucumber, tomato, carrot, radish, and green chillies with lemon.' },
-  { id: 'rs-8', name: 'Russian Salad', category: 'mains', subcat: 'Raita & Salads', price: 179, desc: 'Diced boiled vegetables and pineapple in creamy dressing.' },
-  { id: 'rs-9', name: 'Kachumber Salad', category: 'mains', subcat: 'Raita & Salads', price: 119, desc: 'Finely chopped onion, tomato, cucumber tossed with lemon juice and chaat masala.' },
+  { id: 'rs-1', name: 'Mix Veg Raita', category: 'mains', subcat: 'Raita & Salads', price: 129, image: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80', desc: 'Chilled curd with cucumber, tomato, onion and roasted cumin.' },
+  { id: 'rs-2', name: 'Boondi Raita', category: 'mains', subcat: 'Raita & Salads', price: 109, image: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80', desc: 'Crispy gram flour puffs soaked in seasoned spiced yoghurt.' },
+  { id: 'rs-3', name: 'Pineapple Raita', category: 'mains', subcat: 'Raita & Salads', price: 155, image: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80', desc: 'Sweet diced pineapple in chilled creamy sweetened yoghurt.' },
+  { id: 'rs-4', name: 'Mixed Fruit Raita', category: 'mains', subcat: 'Raita & Salads', price: 165, image: 'https://images.unsplash.com/photo-1519996529931-28324d5a630e?auto=format&fit=crop&w=800&q=80', desc: 'Assorted seasonal diced fruits in spiced chilled curd.' },
+  { id: 'rs-5', name: 'Masala Papad', category: 'mains', subcat: 'Raita & Salads', price: 55, image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=800&q=80', desc: 'Roasted or fried lentil papad topped with spicy onion-tomato-coriander mix.' },
+  { id: 'rs-6', name: 'Plain Papad', category: 'mains', subcat: 'Raita & Salads', price: 35, image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=800&q=80', desc: 'Crispy roasted or fried poppadom.' },
+  { id: 'rs-7', name: 'Green Salad', category: 'mains', subcat: 'Raita & Salads', price: 119, image: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80', desc: 'Fresh slices of cucumber, tomato, carrot, radish, and green chillies with lemon.' },
+  { id: 'rs-8', name: 'Russian Salad', category: 'mains', subcat: 'Raita & Salads', price: 179, image: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80', desc: 'Diced boiled vegetables and pineapple in creamy dressing.' },
+  { id: 'rs-9', name: 'Kachumber Salad', category: 'mains', subcat: 'Raita & Salads', price: 119, image: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80', desc: 'Finely chopped onion, tomato, cucumber tossed with lemon juice and chaat masala.' },
 
   // ================= TAB 4: DESSERTS & BEVERAGES =================
   // Desserts
-  { id: 'd-1', name: 'Sawa Ki Kheer', category: 'desserts-beverages', subcat: 'Desserts', price: 165, desc: 'Barnyard millet slow-simmered in thick sweetened milk with saffron and almonds.' },
-  { id: 'd-2', name: 'Sewaiyan Kheer', category: 'desserts-beverages', subcat: 'Desserts', price: 165, desc: 'Roasted vermicelli pudding flavored with green cardamom and dry fruits.' },
-  { id: 'd-3', name: 'Gulab Jamun (2 pcs)', category: 'desserts-beverages', subcat: 'Desserts', price: 79, desc: 'Warm golden milk dumplings steeped in rose and cardamom sugar syrup.' },
-  { id: 'd-4', name: 'Moong Dal Halwa', category: 'desserts-beverages', subcat: 'Desserts', price: 165, desc: 'Rich golden yellow lentil pudding slow-roasted in pure cow ghee and garnished with pistachios.' },
-  { id: 'd-5', name: 'Gajar Halwa (Seasonal)', category: 'desserts-beverages', subcat: 'Desserts', price: 165, desc: 'Red carrot halwa cooked in full-cream milk, khoya and pure ghee.' },
-  { id: 'd-6', name: 'Ice Cream (Scoop)', category: 'desserts-beverages', subcat: 'Desserts', price: 79, desc: 'Choice of Vanilla, Mango, or Kesar Pista.' },
+  { id: 'd-1', name: 'Sawa Ki Kheer', category: 'desserts-beverages', subcat: 'Desserts', price: 165, image: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=800&q=80', desc: 'Barnyard millet slow-simmered in thick sweetened milk with saffron and almonds.' },
+  { id: 'd-2', name: 'Sewaiyan Kheer', category: 'desserts-beverages', subcat: 'Desserts', price: 165, image: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=800&q=80', desc: 'Roasted vermicelli pudding flavored with green cardamom and dry fruits.' },
+  { id: 'd-3', name: 'Gulab Jamun (2 pcs)', category: 'desserts-beverages', subcat: 'Desserts', price: 79, image: 'https://images.unsplash.com/photo-1589119908995-c6837fa14d48?auto=format&fit=crop&w=800&q=80', desc: 'Warm golden milk dumplings steeped in rose and cardamom sugar syrup.' },
+  { id: 'd-4', name: 'Moong Dal Halwa', category: 'desserts-beverages', subcat: 'Desserts', price: 165, image: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=800&q=80', desc: 'Rich golden yellow lentil pudding slow-roasted in pure cow ghee and garnished with pistachios.' },
+  { id: 'd-5', name: 'Gajar Halwa (Seasonal)', category: 'desserts-beverages', subcat: 'Desserts', price: 165, image: 'https://images.unsplash.com/photo-1589119908995-c6837fa14d48?auto=format&fit=crop&w=800&q=80', desc: 'Red carrot halwa cooked in full-cream milk, khoya and pure ghee.' },
+  { id: 'd-6', name: 'Ice Cream (Scoop)', category: 'desserts-beverages', subcat: 'Desserts', price: 79, image: 'https://images.unsplash.com/photo-1501443762994-82bd5dace89a?auto=format&fit=crop&w=800&q=80', desc: 'Choice of Vanilla, Mango, or Kesar Pista.' },
 
   // Beverages
-  { id: 'bv-1', name: 'Fresh Juice (Watermelon / Sweet Lime / Orange)', category: 'desserts-beverages', subcat: 'Beverages', price: 135, desc: '100% freshly pressed cold fruit juice without added sugar.' },
-  { id: 'bv-2', name: 'Shakes (Mango / Banana / Chocolate)', category: 'desserts-beverages', subcat: 'Beverages', price: 135, desc: 'Chilled thick milkshakes made with real fruit and premium ingredients.' },
-  { id: 'bv-3', name: 'Buttermilk (Chach / Spiced)', category: 'desserts-beverages', subcat: 'Beverages', price: 89, desc: 'Digestive probiotic drink blended with roasted cumin, rock salt, and mint.' },
-  { id: 'bv-4', name: 'Lassi (Sweet / Salted)', category: 'desserts-beverages', subcat: 'Beverages', price: 109, desc: 'Thick churned creamy yoghurt drink served in clay kulhad.' },
-  { id: 'bv-5', name: 'Cold Coffee', category: 'desserts-beverages', subcat: 'Beverages', price: 129, desc: 'Rich chilled blended coffee with fresh milk and ice cream.' },
-  { id: 'bv-6', name: 'Soda / Coke (Can/Glass ₹65 / ₹85)', category: 'desserts-beverages', subcat: 'Beverages', price: 65, desc: 'Chilled beverage or aerated soda.' },
-  { id: 'bv-7', name: 'Mineral Water (1 Litre)', category: 'desserts-beverages', subcat: 'Beverages', price: 45, desc: 'Packaged natural mineral drinking water.' },
-  { id: 'bv-8', name: 'Alkaline Water (1 Litre)', category: 'desserts-beverages', subcat: 'Beverages', price: 60, desc: 'Pure pH-balanced energized wellness water.' },
+  { id: 'bv-1', name: 'Fresh Juice (Watermelon / Sweet Lime / Orange)', category: 'desserts-beverages', subcat: 'Beverages', price: 135, image: 'https://images.unsplash.com/photo-1622597467836-f3285f2131b8?auto=format&fit=crop&w=800&q=80', desc: '100% freshly pressed cold fruit juice without added sugar.' },
+  { id: 'bv-2', name: 'Shakes (Mango / Banana / Chocolate)', category: 'desserts-beverages', subcat: 'Beverages', price: 135, image: 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=800&q=80', desc: 'Chilled thick milkshakes made with real fruit and premium ingredients.' },
+  { id: 'bv-3', name: 'Buttermilk (Chach / Spiced)', category: 'desserts-beverages', subcat: 'Beverages', price: 89, image: 'https://images.unsplash.com/photo-1556881286-fc6915169721?auto=format&fit=crop&w=800&q=80', desc: 'Digestive probiotic drink blended with roasted cumin, rock salt, and mint.' },
+  { id: 'bv-4', name: 'Lassi (Sweet / Salted)', category: 'desserts-beverages', subcat: 'Beverages', price: 109, image: 'https://images.unsplash.com/photo-1556881286-fc6915169721?auto=format&fit=crop&w=800&q=80', desc: 'Thick churned creamy yoghurt drink served in clay kulhad.' },
+  { id: 'bv-5', name: 'Cold Coffee', category: 'desserts-beverages', subcat: 'Beverages', price: 129, image: 'https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?auto=format&fit=crop&w=800&q=80', desc: 'Rich chilled blended coffee with fresh milk and ice cream.' },
+  { id: 'bv-6', name: 'Soda / Coke (Can/Glass ₹65 / ₹85)', category: 'desserts-beverages', subcat: 'Beverages', price: 65, image: 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=800&q=80', desc: 'Chilled beverage or aerated soda.' },
+  { id: 'bv-7', name: 'Mineral Water (1 Litre)', category: 'desserts-beverages', subcat: 'Beverages', price: 45, image: 'https://images.unsplash.com/photo-1560023907-5f339617ea30?auto=format&fit=crop&w=800&q=80', desc: 'Packaged natural mineral drinking water.' },
+  { id: 'bv-8', name: 'Alkaline Water (1 Litre)', category: 'desserts-beverages', subcat: 'Beverages', price: 60, image: 'https://images.unsplash.com/photo-1560023907-5f339617ea30?auto=format&fit=crop&w=800&q=80', desc: 'Pure pH-balanced energized wellness water.' },
 
   // Mocktails
-  { id: 'bv-9', name: 'Fruit Punch Mocktail', category: 'desserts-beverages', subcat: 'Mocktails', price: 149, desc: 'Layered blend of fresh tropical fruit juices, grenadine, and ice.' },
-  { id: 'bv-10', name: 'Virgin Mojito', category: 'desserts-beverages', subcat: 'Mocktails', price: 149, desc: 'Crushed garden mint, fresh lime wedges, sparkling soda, and cane sugar.' },
-  { id: 'bv-11', name: 'Fresh Lime Soda (Sweet / Salted)', category: 'desserts-beverages', subcat: 'Mocktails', price: 79, desc: 'Freshly squeezed lemon juice topped with bubbly soda.' },
-  { id: 'bv-12', name: 'Fresh Lime Water', category: 'desserts-beverages', subcat: 'Mocktails', price: 65, desc: 'Chilled lemon water with cumin and rock salt.' },
+  { id: 'bv-9', name: 'Fruit Punch Mocktail', category: 'desserts-beverages', subcat: 'Mocktails', price: 149, image: 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=800&q=80', desc: 'Layered blend of fresh tropical fruit juices, grenadine, and ice.' },
+  { id: 'bv-10', name: 'Virgin Mojito', category: 'desserts-beverages', subcat: 'Mocktails', price: 149, image: 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=800&q=80', desc: 'Crushed garden mint, fresh lime wedges, sparkling soda, and cane sugar.' },
+  { id: 'bv-11', name: 'Fresh Lime Soda (Sweet / Salted)', category: 'desserts-beverages', subcat: 'Mocktails', price: 79, image: 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=800&q=80', desc: 'Freshly squeezed lemon juice topped with bubbly soda.' },
+  { id: 'bv-12', name: 'Fresh Lime Water', category: 'desserts-beverages', subcat: 'Mocktails', price: 65, image: 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=800&q=80', desc: 'Chilled lemon water with cumin and rock salt.' },
 
   // Chai & Coffee
-  { id: 'bv-13', name: 'Chai (Masala / Black / Gud Tulsi)', category: 'desserts-beverages', subcat: 'Chai & Coffee', price: 65, desc: 'Simmered with ginger, cardamom, holy basil and organic jaggery.' },
-  { id: 'bv-14', name: 'Green Tea (Herbal)', category: 'desserts-beverages', subcat: 'Chai & Coffee', price: 75, desc: 'Antioxidant whole leaf green tea with lemon grass.' },
-  { id: 'bv-15', name: 'Coffee (Filter / Espresso ₹75 / ₹85)', category: 'desserts-beverages', subcat: 'Chai & Coffee', price: 75, desc: 'Freshly brewed aromatic South Indian filter coffee or espresso.' },
-  { id: 'bv-16', name: 'Hot Milk (Organic A2 Cow Milk)', category: 'desserts-beverages', subcat: 'Chai & Coffee', price: 85, desc: 'Pure boiled farm milk with optional turmeric or cardamom.' },
-  { id: 'bv-17', name: 'Bournvita / Hot Chocolate', category: 'desserts-beverages', subcat: 'Chai & Coffee', price: 109, desc: 'Warm velvety chocolate health drink with farm milk.' }
+  { id: 'bv-13', name: 'Chai (Masala / Black / Gud Tulsi)', category: 'desserts-beverages', subcat: 'Chai & Coffee', price: 65, image: 'https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=800&q=80', desc: 'Simmered with ginger, cardamom, holy basil and organic jaggery.' },
+  { id: 'bv-14', name: 'Green Tea (Herbal)', category: 'desserts-beverages', subcat: 'Chai & Coffee', price: 75, image: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=800&q=80', desc: 'Antioxidant whole leaf green tea with lemon grass.' },
+  { id: 'bv-15', name: 'Coffee (Filter / Espresso ₹75 / ₹85)', category: 'desserts-beverages', subcat: 'Chai & Coffee', price: 75, image: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80', desc: 'Freshly brewed aromatic South Indian filter coffee or espresso.' },
+  { id: 'bv-16', name: 'Hot Milk (Organic A2 Cow Milk)', category: 'desserts-beverages', subcat: 'Chai & Coffee', price: 85, image: 'https://images.unsplash.com/photo-1556881286-fc6915169721?auto=format&fit=crop&w=800&q=80', desc: 'Pure boiled farm milk with optional turmeric or cardamom.' },
+  { id: 'bv-17', name: 'Bournvita / Hot Chocolate', category: 'desserts-beverages', subcat: 'Chai & Coffee', price: 109, image: 'https://images.unsplash.com/photo-1542990253-0d0f5be5f0ed?auto=format&fit=crop&w=800&q=80', desc: 'Warm velvety chocolate health drink with farm milk.' }
 ];
 
 const diningSubcategories = {
@@ -2208,40 +2208,55 @@ function renderDiningDishes() {
     const basePrice = item.price;
     const gstAmount = +(basePrice * 0.05).toFixed(2);
     const totalPrice = +(basePrice + gstAmount).toFixed(2);
+    const imgUrl = item.image || 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80';
 
     return `
-      <div class="menu-dish-card p-5 flex flex-col justify-between group hover:border-taj-gold transition-all duration-300">
-        <div class="space-y-2">
-          <div class="flex items-start justify-between gap-2 border-b border-taj-border/60 pb-2">
-            <div class="flex items-center gap-2">
-              <span class="veg-symbol" title="100% Satvik Pure Veg"></span>
-              <span class="text-[10px] uppercase font-bold tracking-wider text-taj-gold">${item.subcat}</span>
+      <div class="bg-white border border-[#E6DFC8] rounded-sm overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 group flex flex-col justify-between">
+        <div>
+          <!-- Dedicated Visual Photo Container (4/3 Aspect Ratio) -->
+          <div class="relative w-full aspect-[4/3] overflow-hidden bg-[#FAF8F5]">
+            <img src="${imgUrl}" alt="${item.name}"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy"
+              onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80';">
+            <div class="absolute top-2.5 left-2.5 bg-white/95 backdrop-blur-sm px-2 py-0.5 border border-[#E6DFC8] text-[9px] font-bold uppercase tracking-wider text-[#997B3E]">
+              ${item.subcat}
             </div>
-            <span class="text-[10px] text-taj-muted bg-taj-ivory px-2 py-0.5 border border-taj-border font-semibold">+5% GST</span>
+            <div class="absolute top-2.5 right-2.5 bg-black/60 backdrop-blur-sm px-1.5 py-0.5 text-[9px] font-semibold text-white/95">
+              +5% GST
+            </div>
           </div>
 
-          <h4 class="font-cinzel text-base font-bold text-taj-charcoal group-hover:text-taj-gold transition-colors leading-snug">
-            ${item.name}
-          </h4>
+          <!-- Card Content -->
+          <div class="p-4 space-y-2">
+            <div class="flex items-center gap-1.5">
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-600 inline-block border border-emerald-800" title="100% Satvik Pure Veg"></span>
+              <span class="text-[10px] uppercase font-bold tracking-widest text-emerald-800">Pure Veg</span>
+            </div>
 
-          <p class="text-xs text-taj-body leading-relaxed">
-            ${item.desc}
-          </p>
+            <h4 class="font-cinzel text-base font-bold text-taj-charcoal group-hover:text-taj-gold transition-colors leading-snug">
+              ${item.name}
+            </h4>
+
+            <p class="text-xs text-taj-body line-clamp-2 leading-relaxed">
+              ${item.desc}
+            </p>
+          </div>
         </div>
 
-        <div class="pt-4 mt-4 border-t border-taj-border/80 flex items-center justify-between">
+        <!-- Card Footer -->
+        <div class="px-4 pb-4 pt-3 border-t border-[#E6DFC8]/60 flex items-center justify-between">
           <div>
             <div class="flex items-baseline gap-1">
               <span class="font-cinzel text-lg font-bold text-taj-charcoal">₹${basePrice}</span>
-              <span class="text-[10px] text-taj-muted font-normal">+ 5% GST</span>
+              <span class="text-[10px] text-taj-muted">+ 5% GST</span>
             </div>
-            <span class="text-[11px] text-taj-gold block font-semibold">
+            <span class="text-[11px] text-[#997B3E] block font-semibold">
               = ₹${totalPrice} incl. tax
             </span>
           </div>
 
           <div class="text-right">
-            <span class="text-[9px] uppercase font-bold tracking-widest text-taj-gold block">Pure Satvik</span>
+            <span class="text-[9px] uppercase font-bold tracking-widest text-[#997B3E] block">Pure Satvik</span>
             <span class="text-[10px] text-taj-muted">Farm Fresh</span>
           </div>
         </div>
@@ -2413,61 +2428,67 @@ const PANCHVATI_RASOEE_ITEMS = [
     id: 'pasoee-satvik-thali',
     name: 'Satvik Thali (Lunch / Dinner)',
     hindi: 'दैनिक सात्विक थाली (दोपहर / रात्रि)',
-    desc: 'Includes Seasonal Dal, 2 Subzi, Phulka with Desi Ghee, Steamed Rice & Sweet.',
+    desc: 'Seasonal Dal, 2 Subzi, Phulka with Desi Ghee, Steamed Rice & Sweet.',
     timing: 'Lunch 12:00-02:30 PM | Dinner 07:30-09:30 PM',
     basePrice: 220,
     gstRate: 0.05,
-    tag: 'Community Staple'
+    tag: 'Community Staple',
+    image: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=800&q=80'
   },
   {
     id: 'pasoee-morning-breakfast',
     name: 'Wholesome Morning Breakfast',
     hindi: 'पौष्टिक प्रभात अल्पाहार',
-    desc: 'Includes Millet Daliya / Herbal Tea, Poha / Idli & Fresh Fruits.',
+    desc: 'Millet Daliya / Herbal Tea, Poha / Idli & Fresh Fruits.',
     timing: 'Breakfast 07:30-09:30 AM',
     basePrice: 150,
     gstRate: 0.05,
-    tag: 'Daily Pratham Aahar'
+    tag: 'Daily Pratham Aahar',
+    image: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80'
   },
   {
     id: 'pasoee-festival-thali',
-    name: 'Special Festival / Ayurvedic Thali',
+    name: 'Special Ayurvedic / Festive Thali',
     hindi: 'विशेष आयुर्वेदिक एवं पर्व थाली',
-    desc: 'Tridosha-harmonizing royal thali featuring Paneer Pasanda, Seasonal Greens, Dal Panchmel, 2 Millet Rotis + 2 Phulkas, Sawa Rice / Millet Khichdi, Cow Milk Kheer & Digestive Herbal Rasam.',
+    desc: 'Grand festive thali cooked with pure cow ghee and tridosha balancing herbs.',
     timing: 'Lunch 12:00-02:30 PM | Dinner 07:30-09:30 PM',
     basePrice: 280,
     gstRate: 0.05,
-    tag: 'Ayurvedic Feast'
+    tag: 'Ayurvedic Feast',
+    image: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=800&q=80'
   },
   {
     id: 'pasoee-desi-ghee',
-    name: 'Desi Ghee Bowl',
-    hindi: 'शुद्ध वैदिक गौ-घृत कटोरी',
-    desc: 'Freshly clarified pure A2 Desi Cow Ghee bowl prepared from indigenous Gir cows in our Parisar Gow Shala.',
+    name: 'Desi Cow Ghee Katori',
+    hindi: 'शुद्ध वैदिक गौ-घृत कटोरी (50ml)',
+    desc: 'Golden warm A2 cow ghee prepared traditionally in our Parisar Gow Shala.',
     timing: 'Available All Meals',
     basePrice: 30,
     gstRate: 0.05,
-    tag: 'Pure Vedic Ghee'
+    tag: 'Pure Vedic Ghee',
+    image: 'https://images.unsplash.com/photo-1589119908995-c6837fa14d48?auto=format&fit=crop&w=800&q=80'
   },
   {
     id: 'pasoee-herbal-buttermilk',
-    name: 'Herbal Chhach / Buttermilk',
-    hindi: 'मसाला छाछ / पाचक तक्र',
-    desc: 'Traditional chilled probiotic buttermilk churned fresh with roasted cumin seeds, Himalayan rock salt, fresh mint, and coriander.',
+    name: 'Fresh Herbal Chhach / Buttermilk',
+    hindi: 'मसाला छाछ / पाचक तक्र (300ml)',
+    desc: 'Clay kulhad of spiced buttermilk with roasted cumin and fresh mint.',
     timing: 'Breakfast 07:30-09:30 AM | Lunch 12:00-02:30 PM',
     basePrice: 40,
     gstRate: 0.05,
-    tag: 'Digestive Elixir'
+    tag: 'Digestive Elixir',
+    image: 'https://images.unsplash.com/photo-1556881286-fc6915169721?auto=format&fit=crop&w=800&q=80'
   },
   {
     id: 'pasoee-extra-phulka',
-    name: 'Chapati Basket',
+    name: 'Hot Phulka Basket',
     hindi: 'अतिरिक्त देसी घी फुल्का टोकरी (४ रोटी)',
-    desc: 'Basket of 4 hot whole-wheat tawa chapatis roasted on traditional cast-iron tawa and brushed with pure A2 Desi Cow Ghee.',
+    desc: 'Soft puffed wheat chapatis served in cloth basket brushed with pure cow ghee.',
     timing: 'Available All Meals',
     basePrice: 40,
     gstRate: 0.05,
-    tag: 'Add-On'
+    tag: 'Add-On',
+    image: 'https://images.unsplash.com/photo-1606491956689-2ea866880c84?auto=format&fit=crop&w=800&q=80'
   }
 ];
 const PANCHVATI_PASOEE_ITEMS = PANCHVATI_RASOEE_ITEMS;
@@ -2479,50 +2500,58 @@ function renderPasoeeItems() {
   if (!container) return;
 
   container.innerHTML = PANCHVATI_RASOEE_ITEMS.map(item => {
-    const qty = pasoeeCart[item.id] || 0;
     const gstAmount = +(item.basePrice * item.gstRate).toFixed(2);
     const totalInclTax = +(item.basePrice + gstAmount).toFixed(2);
+    const imgUrl = item.image || 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80';
 
     return `
-      <div class="taj-white-card p-5 flex flex-col justify-between hover:border-taj-gold transition-all duration-300 group">
-        <div class="space-y-3">
-          <div class="flex items-start justify-between gap-2 border-b border-taj-border/60 pb-2.5">
-            <div>
-              <div class="flex items-center gap-1.5 mb-1">
-                <span class="w-2.5 h-2.5 rounded-full bg-emerald-600 inline-block"></span>
-                <span class="text-[10px] uppercase font-bold tracking-widest text-taj-gold">${item.tag}</span>
-              </div>
-              <h4 class="font-cinzel text-base font-bold text-taj-charcoal group-hover:text-taj-gold transition-colors">
-                ${item.name}
-              </h4>
-              <span class="text-[11px] text-taj-gold font-medium block">${item.hindi}</span>
+      <div class="bg-white border border-[#E6DFC8] rounded-sm overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 group flex flex-col justify-between">
+        <div>
+          <!-- Dedicated Visual Photo Container (4/3 Aspect Ratio) -->
+          <div class="relative w-full aspect-[4/3] overflow-hidden bg-[#FAF8F5]">
+            <img src="${imgUrl}" alt="${item.name}"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy"
+              onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80';">
+            <div class="absolute top-2.5 left-2.5 bg-white/95 backdrop-blur-sm px-2 py-0.5 border border-[#E6DFC8] text-[9px] font-bold uppercase tracking-wider text-[#997B3E]">
+              ${item.tag}
             </div>
-            <span class="text-[10px] font-semibold px-2 py-0.5 bg-taj-ivory border border-taj-border text-taj-charcoal uppercase tracking-wider flex-shrink-0">
+            <div class="absolute top-2.5 right-2.5 bg-black/60 backdrop-blur-sm px-1.5 py-0.5 text-[9px] font-semibold text-white/95">
               +5% GST
-            </span>
+            </div>
           </div>
 
-          <p class="text-xs text-taj-body leading-relaxed">
-            ${item.desc}
-          </p>
+          <!-- Card Header & Content -->
+          <div class="p-4 space-y-2">
+            <div class="flex items-center gap-1.5">
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-600 inline-block border border-emerald-800" title="100% Satvik Pure Veg"></span>
+              <span class="text-[10px] uppercase font-bold tracking-widest text-emerald-800">Pure Veg</span>
+            </div>
 
-          <div class="flex items-center gap-1 text-[11px] text-taj-muted pt-1">
-            <i data-lucide="clock" class="w-3.5 h-3.5 text-taj-gold flex-shrink-0"></i>
-            <span>${item.timing}</span>
+            <h4 class="font-cinzel text-base font-bold text-taj-charcoal group-hover:text-taj-gold transition-colors leading-snug">
+              ${item.name}
+            </h4>
+            <span class="text-[11px] text-[#997B3E] font-medium block">${item.hindi}</span>
+
+            <p class="text-xs text-taj-body line-clamp-2 leading-relaxed">
+              ${item.desc}
+            </p>
           </div>
         </div>
 
-        <div class="pt-4 mt-3 border-t border-taj-border flex items-center justify-between">
+        <!-- Card Footer -->
+        <div class="px-4 pb-4 pt-3 border-t border-[#E6DFC8]/60 flex items-center justify-between">
           <div>
             <div class="flex items-baseline gap-1">
               <span class="font-cinzel text-lg font-bold text-taj-charcoal">₹${item.basePrice}</span>
               <span class="text-[10px] text-taj-muted">+ 5% GST</span>
             </div>
-            <span class="text-[10px] text-taj-gold block font-medium">= ₹${totalInclTax} incl. tax</span>
+            <span class="text-[11px] text-[#997B3E] block font-semibold">
+              = ₹${totalInclTax} incl. tax
+            </span>
           </div>
 
           <div class="text-right">
-            <span class="text-[10px] uppercase font-bold tracking-widest text-taj-gold block">Sacred Offering</span>
+            <span class="text-[9px] uppercase font-bold tracking-widest text-[#997B3E] block">Sacred Offering</span>
             <span class="text-[10px] text-taj-muted">Vedic Bhojan</span>
           </div>
         </div>
