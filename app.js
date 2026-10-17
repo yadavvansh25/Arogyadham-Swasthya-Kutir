@@ -2205,55 +2205,44 @@ function renderDiningDishes() {
   if (emptyState) emptyState.classList.add('hidden');
 
   grid.innerHTML = filtered.map(item => {
-    const qty = diningMenuState.cart[item.id] || 0;
     const basePrice = item.price;
     const gstAmount = +(basePrice * 0.05).toFixed(2);
     const totalPrice = +(basePrice + gstAmount).toFixed(2);
 
     return `
-      <div class="menu-dish-card p-4 sm:p-5 flex flex-col justify-between group">
-        <div>
-          <div class="flex items-start justify-between gap-2 mb-2">
+      <div class="menu-dish-card p-5 flex flex-col justify-between group hover:border-taj-gold transition-all duration-300">
+        <div class="space-y-2">
+          <div class="flex items-start justify-between gap-2 border-b border-taj-border/60 pb-2">
             <div class="flex items-center gap-2">
               <span class="veg-symbol" title="100% Satvik Pure Veg"></span>
               <span class="text-[10px] uppercase font-bold tracking-wider text-taj-gold">${item.subcat}</span>
             </div>
-            <span class="text-[10px] text-taj-muted bg-taj-ivory px-2 py-0.5 border border-taj-border">+5% GST</span>
+            <span class="text-[10px] text-taj-muted bg-taj-ivory px-2 py-0.5 border border-taj-border font-semibold">+5% GST</span>
           </div>
 
-          <h4 class="font-cinzel text-sm sm:text-base font-bold text-taj-charcoal group-hover:text-taj-gold transition-colors leading-snug">
+          <h4 class="font-cinzel text-base font-bold text-taj-charcoal group-hover:text-taj-gold transition-colors leading-snug">
             ${item.name}
           </h4>
 
-          <p class="text-xs text-taj-body mt-1 leading-relaxed line-clamp-2">
+          <p class="text-xs text-taj-body leading-relaxed">
             ${item.desc}
           </p>
         </div>
 
-        <div class="pt-4 mt-3 border-t border-taj-border/80 flex items-center justify-between">
+        <div class="pt-4 mt-4 border-t border-taj-border/80 flex items-center justify-between">
           <div>
             <div class="flex items-baseline gap-1">
-              <span class="font-cinzel text-base font-bold text-taj-charcoal">₹${basePrice}</span>
+              <span class="font-cinzel text-lg font-bold text-taj-charcoal">₹${basePrice}</span>
               <span class="text-[10px] text-taj-muted font-normal">+ 5% GST</span>
             </div>
-            <span class="text-[10px] text-taj-gold block font-medium">
+            <span class="text-[11px] text-taj-gold block font-semibold">
               = ₹${totalPrice} incl. tax
             </span>
           </div>
 
-          <div>
-            ${qty > 0 ? `
-              <div class="flex items-center gap-1.5 border border-taj-gold bg-taj-ivory p-0.5">
-                <button type="button" onclick="changeDiningQty('${item.id}', -1)" class="qty-btn" title="Decrease">−</button>
-                <span class="w-6 text-center text-xs font-bold text-taj-charcoal">${qty}</span>
-                <button type="button" onclick="changeDiningQty('${item.id}', 1)" class="qty-btn" title="Increase">+</button>
-              </div>
-            ` : `
-              <button type="button" onclick="addToDiningCart('${item.id}')"
-                class="btn-taj-primary py-1.5 px-3.5 text-[11px] font-semibold tracking-wider">
-                + Add
-              </button>
-            `}
+          <div class="text-right">
+            <span class="text-[9px] uppercase font-bold tracking-widest text-taj-gold block">Pure Satvik</span>
+            <span class="text-[10px] text-taj-muted">Farm Fresh</span>
           </div>
         </div>
       </div>
@@ -2532,22 +2521,9 @@ function renderPasoeeItems() {
             <span class="text-[10px] text-taj-gold block font-medium">= ₹${totalInclTax} incl. tax</span>
           </div>
 
-          <div>
-            ${qty === 0 ? `
-              <button type="button" onclick="addToPasoeeCart('${item.id}')"
-                class="btn-taj-primary py-1.5 px-4 text-xs flex items-center gap-1.5">
-                <i data-lucide="plus" class="w-3.5 h-3.5"></i>
-                <span>Add</span>
-              </button>
-            ` : `
-              <div class="flex items-center border border-taj-gold bg-taj-ivory">
-                <button type="button" onclick="changePasoeeQty('${item.id}', -1)"
-                  class="w-7 h-7 flex items-center justify-center hover:bg-taj-gold hover:text-white transition-colors text-xs font-bold">−</button>
-                <span class="w-8 text-center text-xs font-bold text-taj-charcoal">${qty}</span>
-                <button type="button" onclick="changePasoeeQty('${item.id}', 1)"
-                  class="w-7 h-7 flex items-center justify-center hover:bg-taj-gold hover:text-white transition-colors text-xs font-bold">+</button>
-              </div>
-            `}
+          <div class="text-right">
+            <span class="text-[10px] uppercase font-bold tracking-widest text-taj-gold block">Sacred Offering</span>
+            <span class="text-[10px] text-taj-muted">Vedic Bhojan</span>
           </div>
         </div>
       </div>
@@ -2821,8 +2797,66 @@ window.toggleBookingDrawer = toggleBookingDrawer;
 window.redirectToDjubo = redirectToDjubo;
 window.handleDjuboAdd = handleDjuboAdd;
 window.copyAddress = copyAddress;
-window.copyResortAddress = copyAddress;
-window.shareProperty = shareProperty;
-window.DJUBO_LINKS = DJUBO_LINKS;
+function openMenuPdfModal() {
+  const modal = document.getElementById('menu-pdf-modal');
+  if (modal) modal.classList.remove('hidden');
+}
+
+function closeMenuPdfModal() {
+  const modal = document.getElementById('menu-pdf-modal');
+  if (modal) modal.classList.add('hidden');
+}
+
+function openMenuPageZoom(volNumber) {
+  const modal = document.getElementById('menu-zoom-modal');
+  const imgElem = document.getElementById('menu-zoom-img');
+  const titleElem = document.getElementById('menu-zoom-title');
+  const descElem = document.getElementById('menu-zoom-desc');
+  
+  const volumes = {
+    1: {
+      title: 'Volume I: Prabhat Aahar — Breakfast Collection',
+      desc: 'Authentic South Indian & North Indian breakfast selection prepared fresh daily.',
+      img: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=1200&q=80'
+    },
+    2: {
+      title: 'Volume II: Shuruvaat — Starters & Nourishing Soups',
+      desc: 'Charcoal-grilled kebabs, tandoori appetizers, wholesome soups, and artisanal stone-baked pizzas.',
+      img: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=1200&q=80'
+    },
+    3: {
+      title: 'Volume III: Mukhya Bhojan — Royal Gravies & Superfood Millets',
+      desc: 'Signature barnyard and foxtail millet khichdi, rich paneer gravies, and slow-simmered lentils.',
+      img: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=1200&q=80'
+    },
+    4: {
+      title: 'Volume IV: Roti & Chawal — Artisanal Breads & Dum Biryani',
+      desc: 'Gluten-free traditional millet rotis, whole wheat tawa chapatis, and sealed handi saffron biryanis.',
+      img: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=1200&q=80'
+    },
+    5: {
+      title: 'Volume V: Madhur & Peya — Desserts & Rejuvenating Beverages',
+      desc: 'Vedic sawa kheer, rich moong dal halwa, fresh cold-pressed fruit juices, and sacred herbal teas.',
+      img: 'https://images.unsplash.com/photo-1505253758473-96b3015f240a?auto=format&fit=crop&w=1200&q=80'
+    }
+  };
+
+  const vol = volumes[volNumber] || volumes[1];
+  if (titleElem) titleElem.textContent = vol.title;
+  if (descElem) descElem.textContent = vol.desc;
+  if (imgElem) imgElem.src = vol.img;
+  if (modal) modal.classList.remove('hidden');
+}
+
+function closeMenuPageZoom() {
+  const modal = document.getElementById('menu-zoom-modal');
+  if (modal) modal.classList.add('hidden');
+}
+
+window.openMenuPdfModal = openMenuPdfModal;
+window.closeMenuPdfModal = closeMenuPdfModal;
+window.openMenuPageZoom = openMenuPageZoom;
+window.closeMenuPageZoom = closeMenuPageZoom;
+
 
 
