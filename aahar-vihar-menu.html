@@ -1,1477 +1,451 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aahar-Vihar Restaurant Menu | Arogyadham Swasthya Kutir, Chitrakoot</title>
-  <meta name="description"
-    content="View the complete digital dining menu for Aahar-Vihar Satvik Restaurant in Arogyadham Swasthya Kutir, Chitrakoot with live 5% GST billing and WhatsApp direct ordering.">
+  <title>Aahar-Vihar Restaurant Menu | Arogyadham Swasthya Kutir</title>
+
+  <!-- Google Fonts: Cinzel, Cormorant Garamond, and Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            taj: {
-              gold: '#b98944',
-              'gold-hover': '#a17332',
-              'gold-light': '#dfc28d',
-              'gold-subtle': '#f4ecdf',
-              charcoal: '#222222',
-              body: '#454545',
-              muted: '#767676',
-              ivory: '#FAF8F5',
-              cream: '#F5EFEB',
-              sand: '#ECE4D9',
-              border: '#E8E2D8',
-            }
+            tajGold: '#b98944',
+            tajGoldHover: '#9e7436',
+            tajGoldLight: '#dfc28d',
+            tajDark: '#111827',
+            tajNavy: '#0c131f',
+            tajIvory: '#FAF8F5',
+            tajCream: '#F4EFE6',
+            tajBorder: '#E6DFC8',
+            tajMuted: '#686661'
           },
           fontFamily: {
-            cinzel: ['Cinzel', 'serif'],
-            cormorant: ['Cormorant Garamond', 'serif'],
-            montserrat: ['Montserrat', 'sans-serif'],
+            cinzel: ['"Cinzel"', 'serif'],
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Montserrat"', 'sans-serif'],
           }
         }
       }
     }
   </script>
 
-  <!-- Lucide Icons CDN -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-
-  <!-- Google Identity Services (GIS) Official Client SDK -->
-  <script src="https://accounts.google.com/gsi/client" async defer></script>
-
-  <!-- Firebase v10+ Modular Client Integration -->
-  <script type="module" src="firebase-init.js"></script>
-
-  <!-- Custom Taj Styles -->
-  <link rel="stylesheet" href="styles.css">
+  <style>
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #FAF8F5; }
+    ::-webkit-scrollbar-thumb { background: #b98944; border-radius: 3px; }
+  </style>
 </head>
+<body class="bg-tajIvory text-tajDark font-sans antialiased selection:bg-tajGold selection:text-white min-h-screen flex flex-col justify-between">
 
-<body class="bg-white text-taj-body font-montserrat antialiased selection:bg-taj-gold selection:text-white">
-
-  <!-- ================= 1. HERO & TOP NAVIGATION (OFFICIAL TAJ STYLE) ================= -->
-  <header id="taj-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 taj-header-gradient">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-20 sm:h-24">
-
-        <!-- Left: Authentic Taj-style Logo Icon with AROGYADHAM -->
-        <a href="./index.html#hero" class="flex items-center gap-3 group">
-          <div
-            class="w-10 h-10 sm:w-11 sm:h-11 border border-taj-gold/80 p-1 flex items-center justify-center rounded-none bg-black/25 backdrop-blur-sm group-hover:border-white transition-colors">
-            <!-- Taj Imperial Lotus & Crest SVG -->
-            <svg class="w-7 h-7 text-taj-gold-light group-hover:scale-105 transition-transform" viewBox="0 0 100 100"
-              fill="currentColor">
-              <path d="M50 8 C47 22 35 32 20 35 C32 40 42 50 45 65 C48 50 58 40 70 35 C55 32 53 22 50 8 Z"
-                fill="#dfc28d" />
-              <path d="M50 25 C45 38 32 46 15 48 C28 53 38 62 40 76 C44 62 54 53 67 48 C52 46 51 38 50 25 Z"
-                fill="#b98944" />
-              <circle cx="50" cy="50" r="4" fill="#FFFFFF" />
-              <path d="M22 84 C34 78 66 78 78 84 C70 88 30 88 22 84 Z" fill="#dfc28d" />
-            </svg>
-          </div>
-          <div>
-            <span
-              class="nav-brand-title block font-cinzel text-lg sm:text-xl font-bold tracking-[0.22em] text-white transition-colors">
-              AROGYADHAM
-            </span>
-            <span
-              class="nav-brand-sub block font-montserrat text-[9px] tracking-[0.25em] text-taj-gold-light uppercase -mt-0.5 font-medium transition-colors">
-              Chitrakoot • Swasthya Kutir
-            </span>
-          </div>
-        </a>
-
-        <!-- Center Navigation Links -->
-        <nav
-          class="hidden xl:flex items-center gap-5 text-[11px] uppercase tracking-[0.16em] font-medium text-white/90">
-          <a href="./index.html#hero" class="nav-link hover:text-taj-gold-light transition-colors py-2">Destinations</a>
-          <a href="./index.html#rooms-section" class="nav-link hover:text-taj-gold-light transition-colors py-2">Rooms & Suites</a>
-          <a href="./swasthya-kutir.html" class="nav-link hover:text-taj-gold-light transition-colors py-2">Vaidehi / Swasthya Kutir</a>
-          <a href="./panchvati.html" class="nav-link hover:text-taj-gold-light transition-colors py-2">Panchvati</a>
-          <a href="./index.html#dining-section" class="nav-link hover:text-taj-gold-light transition-colors py-2">Dining</a>
-          <a href="./aahar-vihar-menu.html" class="nav-link hover:text-taj-gold-light transition-colors py-2">Aahar-Vihar Menu</a>
-          <a href="./panchvati-pasoee-menu.html" class="nav-link hover:text-taj-gold-light transition-colors py-2">Panchvati Pasoee</a>
-          <a href="./index.html#wellness-facilities" class="nav-link hover:text-taj-gold-light transition-colors py-2">Wellness</a>
-          <a href="./index.html#reviews" class="nav-link hover:text-taj-gold-light transition-colors py-2">Reviews</a>
-        </nav>
-
-        <!-- Right CTA: Phone, Auth State, and Mustard gold rectangular button "BOOK A STAY" -->
-        <div class="flex items-center gap-3 sm:gap-5">
-          <a href="tel:+917670265334"
-            class="nav-phone-btn text-[11px] uppercase tracking-[0.15em] font-medium text-white/90 hover:text-taj-gold-light transition-colors hidden sm:flex items-center gap-1.5">
-            <i data-lucide="phone" class="w-3.5 h-3.5 text-taj-gold"></i>
-            <span>+91 76702 65334</span>
-          </a>
-
-          <!-- USER AUTHENTICATION STATE (DESKTOP) -->
-          <div id="nav-auth-container" class="relative">
-            <!-- 1. Logged Out State: "LOGIN / JOIN" Button -->
-            <button id="nav-login-btn" onclick="openAuthModal('signin')"
-              class="text-[11px] uppercase tracking-[0.16em] font-medium text-white/95 hover:text-taj-gold-light transition-colors py-1.5 px-3 border border-white/20 hover:border-taj-gold bg-black/20 hover:bg-black/40 flex items-center gap-1.5">
-              <i data-lucide="user" class="w-3.5 h-3.5 text-taj-gold"></i>
-              <span>LOGIN / JOIN</span>
-            </button>
-
-            <!-- 2. Logged In State: User Avatar, Initials & Dropdown Menu -->
-            <div id="nav-user-dropdown" class="hidden relative">
-              <button id="nav-user-btn" onclick="toggleUserDropdown()"
-                class="flex items-center gap-2 text-white/95 hover:text-taj-gold transition-colors text-xs font-semibold uppercase tracking-wider py-1 px-2.5 border border-taj-gold/50 bg-black/35 hover:border-taj-gold">
-                <div id="nav-user-avatar"
-                  class="w-7 h-7 bg-taj-gold text-white font-bold text-xs flex items-center justify-center rounded-full border border-white/40 shadow-sm overflow-hidden flex-shrink-0">
-                  <img id="nav-user-photo" class="w-full h-full object-cover hidden" alt="User Profile"
-                    loading="lazy"
-                    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80';">
-                  <span id="nav-user-initials">VY</span>
-                </div>
-                <span id="nav-user-name" class="hidden md:inline max-w-[120px] truncate text-[11px] tracking-wider text-white">Vansh Yadav</span>
-                <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-taj-gold"></i>
-              </button>
-
-              <!-- Luxury User Profile Dropdown Menu -->
-              <div id="user-menu-dropdown"
-                class="hidden absolute right-0 mt-2 w-64 bg-white border-2 border-taj-gold shadow-2xl py-2 z-50 text-taj-charcoal">
-                <div class="px-4 py-2.5 border-b border-taj-border bg-taj-ivory">
-                  <div class="flex items-center justify-between">
-                    <p id="dropdown-user-fullname" class="font-cinzel font-bold text-xs text-taj-charcoal truncate">Vansh Yadav</p>
-                    <span id="dropdown-user-badge" class="text-[9px] uppercase tracking-wider px-1.5 py-0.5 bg-emerald-100 text-emerald-800 font-bold border border-emerald-300">
-                      ✓ Verified
-                    </span>
-                  </div>
-                  <p id="dropdown-user-email" class="text-[10px] text-taj-muted truncate mt-0.5 font-mono">vansh@example.com</p>
-                  <p id="dropdown-user-phone" class="text-[10px] text-taj-muted truncate mt-0.5">+91 98765 43210</p>
-                </div>
-                
-                <div class="py-1">
-                  <button onclick="openMyBookingsModal(); closeUserDropdown();"
-                    class="w-full text-left flex items-center justify-between px-4 py-2 text-xs font-medium hover:bg-taj-ivory hover:text-taj-gold transition-colors">
-                    <div class="flex items-center gap-2.5">
-                      <i data-lucide="calendar" class="w-3.5 h-3.5 text-taj-gold"></i>
-                      <span>My Bookings</span>
-                    </div>
-                    <span id="nav-bookings-count" class="text-[10px] px-1.5 py-0.2 bg-taj-gold text-white font-bold rounded-full">0</span>
-                  </button>
-
-                  <button onclick="openUserProfileModal(); closeUserDropdown();"
-                    class="w-full text-left flex items-center gap-2.5 px-4 py-2 text-xs font-medium hover:bg-taj-ivory hover:text-taj-gold transition-colors">
-                    <i data-lucide="user-check" class="w-3.5 h-3.5 text-taj-gold"></i>
-                    <span>Profile Details</span>
-                  </button>
-
-                  <button onclick="showSavedKutirsModal(); closeUserDropdown();"
-                    class="w-full text-left flex items-center gap-2.5 px-4 py-2 text-xs font-medium hover:bg-taj-ivory hover:text-taj-gold transition-colors">
-                    <i data-lucide="bookmark" class="w-3.5 h-3.5 text-taj-gold"></i>
-                    <span>Saved Kutirs</span>
-                  </button>
-                </div>
-
-                <div class="border-t border-taj-border/80 my-1"></div>
-                <button onclick="handleLogout(); closeUserDropdown();"
-                  class="w-full text-left flex items-center gap-2.5 px-4 py-2 text-xs font-bold text-red-600 hover:bg-red-50 transition-colors uppercase tracking-wider">
-                  <i data-lucide="log-out" class="w-3.5 h-3.5"></i>
-                  <span>Logout</span>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Iconic Taj Mustard Gold Rectangular Button -->
-          <button onclick="openBookingDrawer('Mandakini Royal Suite', 12000)" class="btn-taj-primary shadow-lg shrink-0 cursor-pointer min-h-[44px] px-6 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all">
-            <span>Book A Stay</span>
-          </button>
-
-          <!-- Mobile Hamburger -->
-          <button id="mobile-menu-btn" class="xl:hidden p-2 text-white hover:text-taj-gold-light"
-            aria-label="Toggle Menu">
-            <i data-lucide="menu" class="w-6 h-6"></i>
-          </button>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- Mobile Navigation Drawer -->
-    <div id="mobile-nav-menu"
-      class="hidden xl:hidden bg-white/98 backdrop-blur-md border-t border-taj-border px-6 py-6 space-y-4 text-xs uppercase tracking-[0.18em] text-taj-charcoal font-medium shadow-2xl">
+  <!-- TOP LUXURY HEADER -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-tajBorder shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       
-      <!-- Mobile Auth Header Card -->
-      <div id="mobile-auth-section" class="pb-3 border-b border-taj-border">
-        <!-- Logged out mobile CTA -->
-        <button id="mobile-login-btn" onclick="openAuthModal('signin'); toggleMobileMenu();"
-          class="w-full py-2.5 px-4 text-center text-taj-charcoal border-2 border-taj-gold bg-taj-ivory font-bold hover:bg-taj-gold hover:text-white transition-colors flex items-center justify-center gap-2 text-xs">
-          <i data-lucide="user" class="w-4 h-4 text-taj-gold"></i>
-          <span>LOGIN / JOIN SWASTHYA KUTIR</span>
-        </button>
-
-        <!-- Logged in mobile profile card -->
-        <div id="mobile-user-profile-bar" class="hidden p-3 bg-taj-ivory border border-taj-gold space-y-2.5">
-          <div class="flex items-center justify-between">
-            <div class="flex items-center gap-2.5">
-              <div id="mobile-user-avatar"
-                class="w-8 h-8 bg-taj-gold text-white font-bold text-xs flex items-center justify-center rounded-full border border-taj-gold overflow-hidden flex-shrink-0">
-                <img id="mobile-user-photo" class="w-full h-full object-cover hidden" alt="User Profile"
-                  loading="lazy"
-                  onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80';">
-                <span id="mobile-user-initials">VY</span>
-              </div>
-              <div>
-                <div id="mobile-user-name" class="font-bold text-xs text-taj-charcoal">Vansh Yadav</div>
-                <div id="mobile-user-badge" class="text-[9px] text-emerald-700 font-semibold">✓ Verified Member</div>
-              </div>
-            </div>
-            <button onclick="handleLogout(); toggleMobileMenu();"
-              class="text-[10px] text-red-600 font-bold border border-red-300 px-2 py-1 bg-white hover:bg-red-50 cursor-pointer min-h-[36px]">
-              LOGOUT
-            </button>
-          </div>
-          <div class="grid grid-cols-2 gap-2 pt-1 text-[10px]">
-            <button onclick="openMyBookingsModal(); toggleMobileMenu();"
-              class="py-2 min-h-[40px] bg-white border border-taj-border text-taj-charcoal hover:border-taj-gold font-bold flex items-center justify-center gap-1 cursor-pointer">
-              <i data-lucide="calendar" class="w-3 h-3 text-taj-gold"></i>
-              <span>My Bookings</span>
-            </button>
-            <button onclick="showSavedKutirsModal(); toggleMobileMenu();"
-              class="py-2 min-h-[40px] bg-white border border-taj-border text-taj-charcoal hover:border-taj-gold font-bold flex items-center justify-center gap-1 cursor-pointer">
-              <i data-lucide="bookmark" class="w-3 h-3 text-taj-gold"></i>
-              <span>Saved Kutirs</span>
-            </button>
-          </div>
+      <!-- Logo & Back to Home -->
+      <a href="./index.html" class="flex items-center space-x-3 group">
+        <div class="flex flex-col">
+          <span class="font-cinzel text-xl font-bold tracking-[0.2em] text-tajDark group-hover:text-tajGold transition-colors">AROGYADHAM</span>
+          <span class="text-[9px] uppercase tracking-[0.25em] text-tajMuted">Swasthya Kutir • Chitrakoot</span>
         </div>
+      </a>
+
+      <!-- Center Title -->
+      <div class="hidden md:flex flex-col items-center">
+        <span class="font-cinzel text-base tracking-widest text-tajGold font-bold uppercase">AAHAR-VIHAR</span>
+        <span class="text-[10px] text-gray-500 uppercase tracking-wider">Satvik Pure Vegetarian Gastronomy</span>
       </div>
 
-      <a href="./index.html#hero" onclick="toggleMobileMenu(true);" class="block py-2 hover:text-taj-gold border-b border-gray-100">Destinations</a>
-      <a href="./index.html#rooms-section" onclick="toggleMobileMenu(true);" class="block py-2 hover:text-taj-gold border-b border-gray-100">Rooms & Suites</a>
-      <a href="./swasthya-kutir.html" onclick="toggleMobileMenu(true);" class="block py-2 hover:text-taj-gold border-b border-gray-100">Swasthya Kutir (Vaidehi) Wing</a>
-      <a href="./panchvati.html" onclick="toggleMobileMenu(true);" class="block py-2 hover:text-taj-gold border-b border-gray-100">Panchvati Wing</a>
-      <a href="./index.html#dining-section" onclick="toggleMobileMenu(true);" class="block py-2 hover:text-taj-gold border-b border-gray-100">Dining Overview</a>
-      <a href="./aahar-vihar-menu.html" onclick="toggleMobileMenu(true);" class="block py-2 hover:text-taj-gold border-b border-gray-100">Aahar-Vihar Menu</a>
-      <a href="./panchvati-pasoee-menu.html" onclick="toggleMobileMenu(true);" class="block py-2 hover:text-taj-gold border-b border-gray-100">Panchvati Pasoee Menu</a>
-      <a href="./index.html#wellness-facilities" onclick="toggleMobileMenu(true);" class="block py-2 hover:text-taj-gold border-b border-gray-100">Specialized Services & Campus</a>
-      <a href="./index.html#reviews" onclick="toggleMobileMenu(true);" class="block py-2 hover:text-taj-gold">Google Reviews &
-        Map</a>
-      <div class="pt-3">
-        <button onclick="openBookingDrawer('Mandakini Royal Suite', 12000); toggleMobileMenu();" class="w-full btn-taj-primary min-h-[44px] py-3 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer">
-          Book A Stay Now
-        </button>
+      <!-- Action Button -->
+      <div>
+        <a href="./index.html" class="inline-flex items-center space-x-2 px-5 py-2.5 border border-tajGold text-tajGold hover:bg-tajGold hover:text-white text-xs font-bold uppercase tracking-wider rounded-sm transition-all shadow-sm">
+          <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+          <span>Back to Sanctuary</span>
+        </a>
       </div>
+
     </div>
   </header>
 
-  <!-- ================= MAIN APP VIEW ROUTING CONTAINER ================= -->
-  <main id="taj-app-content">
-<!-- ================= 4. DEDICATED SEPARATE PAGE FOR AAHAR-VIHAR RESTAURANT MENU ================= -->
-    <div id="view-aahar-vihar-menu" class="view-page block" style="display: block;">
-      <a id="menu-view" class="sr-only"></a>
-      <a id="aahar-vihar-menu" class="sr-only"></a>
-
-      <!-- Top Breadcrumb Bar -->
-      <div class="bg-taj-ivory border-b border-taj-border pt-24 sm:pt-28 pb-4">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between gap-4">
-          <a href="./index.html" class="breadcrumb-back-btn btn-back-home min-h-[44px] px-5 py-2.5 inline-flex items-center justify-center gap-2 text-xs font-semibold tracking-wider uppercase text-taj-charcoal hover:text-taj-gold bg-white border border-taj-border hover:border-taj-gold shrink-0 cursor-pointer transition-all shadow-sm">
-            <i data-lucide="arrow-left" class="w-4 h-4 text-taj-gold"></i>
-            <span>&lt; Back to Main Sanctuary</span>
-          </a>
-          <div class="text-xs text-taj-muted tracking-wider flex items-center gap-2">
-            <a href="./index.html#hero" class="hover:text-taj-charcoal">Home</a>
-            <span class="text-taj-border">/</span>
-            <a href="./index.html#dining-section" class="hover:text-taj-charcoal">Dining</a>
-            <span class="text-taj-border">/</span>
-            <span class="text-taj-gold font-semibold">Aahar-Vihar Menu</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Hero Banner / Header -->
-      <div class="relative py-20 sm:py-28 bg-taj-charcoal text-white text-center px-4 overflow-hidden">
-        <div class="absolute inset-0 z-0">
-          <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1920&q=80"
-            alt="Aahar-Vihar Authentic Satvik Menu"
-            loading="lazy"
-            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80';"
-            class="w-full h-full object-cover opacity-20">
-          <div class="absolute inset-0 bg-gradient-to-t from-taj-charcoal via-taj-charcoal/85 to-transparent"></div>
-        </div>
-        <div class="relative z-10 max-w-4xl mx-auto space-y-4">
-          <div
-            class="inline-flex items-center gap-2 px-3.5 py-1.5 border border-taj-gold/60 bg-black/40 backdrop-blur text-[10px] uppercase font-bold tracking-[0.22em] text-taj-gold-light">
-            <i data-lucide="utensils" class="w-3.5 h-3.5 text-taj-gold"></i>
-            <span>Authentic Satvik Gastronomy &amp; Pure Vedic Cuisine</span>
-          </div>
-          <h1 class="font-cinzel text-4xl sm:text-6xl md:text-7xl font-bold uppercase tracking-[0.18em] text-white">
-            AAHAR-VIHAR
-          </h1>
-          <p class="font-cormorant italic text-lg sm:text-2xl text-taj-gold-light font-normal max-w-3xl mx-auto">
-            "Authentic Satvik Gastronomy &amp; Pure Vedic Cuisine"
-          </p>
-
-          <!-- Operating Timings Pill Strip -->
-          <div class="inline-flex flex-wrap items-center justify-center gap-4 sm:gap-8 pt-4 text-xs text-white/90">
-            <span class="flex items-center gap-1.5"><i data-lucide="sunrise" class="w-4 h-4 text-taj-gold-light"></i> Breakfast 07:00 – 10:30 AM</span>
-            <span class="flex items-center gap-1.5"><i data-lucide="sun" class="w-4 h-4 text-taj-gold-light"></i> Lunch 12:30 – 03:30 PM</span>
-            <span class="flex items-center gap-1.5"><i data-lucide="moon" class="w-4 h-4 text-taj-gold-light"></i> Dinner 07:00 – 10:30 PM</span>
-          </div>
-
-          <!-- Statutory Notice -->
-          <div class="pt-2">
-            <span class="inline-block text-[11px] uppercase tracking-wider text-taj-gold-light/90 border border-taj-gold/40 px-3.5 py-1.5 bg-black/30 backdrop-blur">
-              Government taxes extra as applicable (+5% GST on all food &amp; beverages).
-            </span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Main Visual Menu Body -->
-      <div class="py-16 sm:py-20 bg-taj-ivory">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-
-          <!-- Action & Statutory Notice Toolbar -->
-          <div class="p-5 sm:p-6 bg-white border border-taj-gold/50 shadow-sm flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
-            <div class="flex items-center gap-4">
-              <div class="w-12 h-12 rounded-full bg-taj-ivory border border-taj-gold flex items-center justify-center text-taj-gold flex-shrink-0">
-                <i data-lucide="book-open" class="w-6 h-6"></i>
-              </div>
-              <div>
-                <h4 class="font-cinzel text-base font-bold text-taj-charcoal">Official Physical Menu Card Catalog</h4>
-                <p class="text-xs text-taj-muted mt-0.5">Explore our bound restaurant menu volumes or browse the complete categorized dish card collection below.</p>
-              </div>
-            </div>
-            <div class="flex flex-wrap items-center justify-center gap-3">
-              <button type="button" onclick="openMenuPdfModal()" class="btn-taj-primary min-h-[42px] px-5 py-2 text-xs flex items-center gap-2 font-bold uppercase tracking-wider cursor-pointer">
-                <i data-lucide="file-text" class="w-4 h-4"></i>
-                <span>Download / View PDF Menu</span>
-              </button>
-              <button type="button" onclick="window.print()" class="btn-taj-outline-dark min-h-[42px] px-4 py-2 text-xs flex items-center gap-2 font-semibold uppercase tracking-wider cursor-pointer">
-                <i data-lucide="printer" class="w-3.5 h-3.5 text-taj-gold"></i>
-                <span>Print Menu</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- ================= 1. PHYSICAL MENU BOOK DISPLAY (FRAMED PHOTO GALLERY CARDS) ================= -->
-          <div class="space-y-8">
-            <div class="text-center max-w-2xl mx-auto space-y-2">
-              <span class="text-[10px] uppercase font-bold tracking-[0.25em] text-taj-gold block">The Physical Menu Book</span>
-              <h2 class="font-cinzel text-2xl sm:text-3xl font-bold text-taj-charcoal">High-Resolution Menu Volumes</h2>
-              <p class="text-xs sm:text-sm text-taj-muted">Inspect the authentic bound physical menu cards of Aahar-Vihar. Click any page card to zoom in and examine.</p>
-              <div class="w-16 h-0.5 bg-taj-gold mx-auto"></div>
-            </div>
-
-            <!-- 5 Framed Physical Menu Cards -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-
-              <!-- VOL 1: Breakfast Collection -->
-              <div class="taj-white-card p-4 flex flex-col justify-between group hover:border-taj-gold transition-all duration-300 shadow-sm border border-taj-border">
-                <div class="space-y-3">
-                  <div class="relative h-48 overflow-hidden border border-taj-border/80">
-                    <img src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80"
-                      alt="Volume I: Breakfast Collection"
-                      loading="lazy"
-                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                    <div class="absolute top-2 left-2 bg-black/80 px-2 py-0.5 text-[9px] font-bold uppercase tracking-widest text-taj-gold-light">
-                      Page 1 • Vol I
-                    </div>
-                    <button type="button" onclick="openMenuPageZoom(1)"
-                      class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-1.5 text-white text-xs font-bold uppercase tracking-wider backdrop-blur-[2px]">
-                      <i data-lucide="zoom-in" class="w-4 h-4 text-taj-gold"></i>
-                      <span>Inspect Page</span>
-                    </button>
-                  </div>
-                  <div>
-                    <span class="text-[10px] uppercase font-bold tracking-widest text-taj-gold block">07:00 – 10:30 AM</span>
-                    <h4 class="font-cinzel text-base font-bold text-taj-charcoal mt-0.5">Prabhat Aahar</h4>
-                    <p class="text-[11px] text-taj-muted mt-1 leading-relaxed">
-                      Puri Bhaji (₹165), Masala Dosa (₹185), Parathas (₹55–₹89), Pakoras (₹165), Poha (₹109), Sandwiches (₹145–₹189).
-                    </p>
-                  </div>
-                </div>
-                <div class="pt-3 mt-3 border-t border-taj-border flex items-center justify-between">
-                  <button type="button" onclick="switchDiningTab('breakfast')" class="text-[11px] font-bold uppercase tracking-wider text-taj-gold hover:text-taj-charcoal flex items-center gap-1">
-                    <span>View Section →</span>
-                  </button>
-                  <button type="button" onclick="openMenuPageZoom(1)" class="text-taj-muted hover:text-taj-gold" title="Zoom Page">
-                    <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
-                  </button>
-                </div>
-              </div>
-
-              <!-- VOL 2: Starters & Soups -->
-              <div class="taj-white-card p-4 flex flex-col justify-between group hover:border-taj-gold transition-all duration-300 shadow-sm border border-taj-border">
-                <div class="space-y-3">
-                  <div class="relative h-48 overflow-hidden border border-taj-border/80">
-                    <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=800&q=80"
-                      alt="Volume II: Starters & Soups"
-                      loading="lazy"
-                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                    <div class="absolute top-2 left-2 bg-black/80 px-2 py-0.5 text-[9px] font-bold uppercase tracking-widest text-taj-gold-light">
-                      Page 2 • Vol II
-                    </div>
-                    <button type="button" onclick="openMenuPageZoom(2)"
-                      class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-1.5 text-white text-xs font-bold uppercase tracking-wider backdrop-blur-[2px]">
-                      <i data-lucide="zoom-in" class="w-4 h-4 text-taj-gold"></i>
-                      <span>Inspect Page</span>
-                    </button>
-                  </div>
-                  <div>
-                    <span class="text-[10px] uppercase font-bold tracking-widest text-taj-gold block">Starters &amp; Ras</span>
-                    <h4 class="font-cinzel text-base font-bold text-taj-charcoal mt-0.5">Shuruvaat</h4>
-                    <p class="text-[11px] text-taj-muted mt-1 leading-relaxed">
-                      Hara Bhara Kebab (₹219), Dahi Ke Kebab (₹275), Paneer Tikka (₹275), Soups (₹165), Pizzas (₹219–₹265).
-                    </p>
-                  </div>
-                </div>
-                <div class="pt-3 mt-3 border-t border-taj-border flex items-center justify-between">
-                  <button type="button" onclick="switchDiningTab('starters-soups')" class="text-[11px] font-bold uppercase tracking-wider text-taj-gold hover:text-taj-charcoal flex items-center gap-1">
-                    <span>View Section →</span>
-                  </button>
-                  <button type="button" onclick="openMenuPageZoom(2)" class="text-taj-muted hover:text-taj-gold" title="Zoom Page">
-                    <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
-                  </button>
-                </div>
-              </div>
-
-              <!-- VOL 3: Main Course & Millets -->
-              <div class="taj-white-card p-4 flex flex-col justify-between group hover:border-taj-gold transition-all duration-300 shadow-sm border border-taj-border">
-                <div class="space-y-3">
-                  <div class="relative h-48 overflow-hidden border border-taj-border/80">
-                    <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=800&q=80"
-                      alt="Volume III: Main Course & Millets"
-                      loading="lazy"
-                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                    <div class="absolute top-2 left-2 bg-black/80 px-2 py-0.5 text-[9px] font-bold uppercase tracking-widest text-taj-gold-light">
-                      Page 3 • Vol III
-                    </div>
-                    <button type="button" onclick="openMenuPageZoom(3)"
-                      class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-1.5 text-white text-xs font-bold uppercase tracking-wider backdrop-blur-[2px]">
-                      <i data-lucide="zoom-in" class="w-4 h-4 text-taj-gold"></i>
-                      <span>Inspect Page</span>
-                    </button>
-                  </div>
-                  <div>
-                    <span class="text-[10px] uppercase font-bold tracking-widest text-taj-gold block">Royal Mains &amp; Millets</span>
-                    <h4 class="font-cinzel text-base font-bold text-taj-charcoal mt-0.5">Mukhya Bhojan</h4>
-                    <p class="text-[11px] text-taj-muted mt-1 leading-relaxed">
-                      Millet Khichdi (₹385), Makai Palak (₹385), Paneer Butter Masala (₹329), Kadai Paneer (₹329), Dal Makhani (₹229).
-                    </p>
-                  </div>
-                </div>
-                <div class="pt-3 mt-3 border-t border-taj-border flex items-center justify-between">
-                  <button type="button" onclick="switchDiningTab('mains')" class="text-[11px] font-bold uppercase tracking-wider text-taj-gold hover:text-taj-charcoal flex items-center gap-1">
-                    <span>View Section →</span>
-                  </button>
-                  <button type="button" onclick="openMenuPageZoom(3)" class="text-taj-muted hover:text-taj-gold" title="Zoom Page">
-                    <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
-                  </button>
-                </div>
-              </div>
-
-              <!-- VOL 4: Breads & Rice -->
-              <div class="taj-white-card p-4 flex flex-col justify-between group hover:border-taj-gold transition-all duration-300 shadow-sm border border-taj-border">
-                <div class="space-y-3">
-                  <div class="relative h-48 overflow-hidden border border-taj-border/80">
-                    <img src="https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=800&q=80"
-                      alt="Volume IV: Breads & Rice"
-                      loading="lazy"
-                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                    <div class="absolute top-2 left-2 bg-black/80 px-2 py-0.5 text-[9px] font-bold uppercase tracking-widest text-taj-gold-light">
-                      Page 4 • Vol IV
-                    </div>
-                    <button type="button" onclick="openMenuPageZoom(4)"
-                      class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-1.5 text-white text-xs font-bold uppercase tracking-wider backdrop-blur-[2px]">
-                      <i data-lucide="zoom-in" class="w-4 h-4 text-taj-gold"></i>
-                      <span>Inspect Page</span>
-                    </button>
-                  </div>
-                  <div>
-                    <span class="text-[10px] uppercase font-bold tracking-widest text-taj-gold block">Tawa &amp; Handi Dum</span>
-                    <h4 class="font-cinzel text-base font-bold text-taj-charcoal mt-0.5">Roti &amp; Chawal</h4>
-                    <p class="text-[11px] text-taj-muted mt-1 leading-relaxed">
-                      Bajra/Jowar Roti (₹55), Tawa Chapati (₹35–₹45), Tandoori Roti (₹30–₹40), Dum Biryani (₹385), Jeera Rice (₹219).
-                    </p>
-                  </div>
-                </div>
-                <div class="pt-3 mt-3 border-t border-taj-border flex items-center justify-between">
-                  <button type="button" onclick="switchDiningTab('mains'); filterDiningSubcat('Breads');" class="text-[11px] font-bold uppercase tracking-wider text-taj-gold hover:text-taj-charcoal flex items-center gap-1">
-                    <span>View Section →</span>
-                  </button>
-                  <button type="button" onclick="openMenuPageZoom(4)" class="text-taj-muted hover:text-taj-gold" title="Zoom Page">
-                    <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
-                  </button>
-                </div>
-              </div>
-
-              <!-- VOL 5: Desserts & Beverages -->
-              <div class="taj-white-card p-4 flex flex-col justify-between group hover:border-taj-gold transition-all duration-300 shadow-sm border border-taj-border">
-                <div class="space-y-3">
-                  <div class="relative h-48 overflow-hidden border border-taj-border/80">
-                    <img src="https://images.unsplash.com/photo-1505253758473-96b3015f240a?auto=format&fit=crop&w=800&q=80"
-                      alt="Volume V: Desserts & Beverages"
-                      loading="lazy"
-                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                    <div class="absolute top-2 left-2 bg-black/80 px-2 py-0.5 text-[9px] font-bold uppercase tracking-widest text-taj-gold-light">
-                      Page 5 • Vol V
-                    </div>
-                    <button type="button" onclick="openMenuPageZoom(5)"
-                      class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-1.5 text-white text-xs font-bold uppercase tracking-wider backdrop-blur-[2px]">
-                      <i data-lucide="zoom-in" class="w-4 h-4 text-taj-gold"></i>
-                      <span>Inspect Page</span>
-                    </button>
-                  </div>
-                  <div>
-                    <span class="text-[10px] uppercase font-bold tracking-widest text-taj-gold block">Sweet &amp; Rejuvenating</span>
-                    <h4 class="font-cinzel text-base font-bold text-taj-charcoal mt-0.5">Madhur &amp; Peya</h4>
-                    <p class="text-[11px] text-taj-muted mt-1 leading-relaxed">
-                      Sawa Ki Kheer (₹165), Moong Dal Halwa (₹165), Gulab Jamun (₹79), Fresh Juices (₹135), Lassi (₹109), Tulsi Chai (₹65).
-                    </p>
-                  </div>
-                </div>
-                <div class="pt-3 mt-3 border-t border-taj-border flex items-center justify-between">
-                  <button type="button" onclick="switchDiningTab('desserts-beverages')" class="text-[11px] font-bold uppercase tracking-wider text-taj-gold hover:text-taj-charcoal flex items-center gap-1">
-                    <span>View Section →</span>
-                  </button>
-                  <button type="button" onclick="openMenuPageZoom(5)" class="text-taj-muted hover:text-taj-gold" title="Zoom Page">
-                    <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
-                  </button>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- ================= 2. COMPLETE DETAILED DISH CATALOG (FULL WIDTH) ================= -->
-          <div class="space-y-8 pt-4">
-
-            <!-- Filter & Search Toolbar -->
-            <div class="space-y-4">
-              <!-- Search Bar -->
-              <div class="max-w-2xl mx-auto">
-                <div class="relative flex items-center">
-                  <i data-lucide="search" class="w-4 h-4 text-taj-gold absolute left-4 pointer-events-none"></i>
-                  <input type="text" id="dining-search-input"
-                    oninput="handleDiningSearch(this.value)"
-                    placeholder="Search dishes (e.g. Paneer Butter Masala, Sawa Ki Kheer, Dosa, Kadha, Biryani, Roti...)"
-                    class="w-full pl-11 pr-10 py-3.5 bg-white border border-taj-border text-xs sm:text-sm text-taj-charcoal placeholder-taj-muted tracking-wide focus:outline-none focus:border-taj-gold shadow-sm">
-                  <button type="button" id="dining-search-clear" onclick="clearDiningSearch()"
-                    class="hidden absolute right-3 p-1 text-taj-muted hover:text-taj-charcoal">
-                    <i data-lucide="x" class="w-4 h-4"></i>
-                  </button>
-                </div>
-              </div>
-
-              <!-- Primary Category Navigation Tabs -->
-              <div class="flex items-center justify-center border-b border-taj-border overflow-x-auto gap-2 sm:gap-4 pb-1">
-                <button type="button" id="tab-btn-all" onclick="switchDiningTab('all')"
-                  class="dining-tab-btn active">
-                  <span>All Dishes (120+)</span>
-                </button>
-                <button type="button" id="tab-btn-breakfast" onclick="switchDiningTab('breakfast')"
-                  class="dining-tab-btn">
-                  <span>Breakfast</span>
-                </button>
-                <button type="button" id="tab-btn-starters-soups" onclick="switchDiningTab('starters-soups')"
-                  class="dining-tab-btn">
-                  <span>Starters &amp; Soups</span>
-                </button>
-                <button type="button" id="tab-btn-mains" onclick="switchDiningTab('mains')"
-                  class="dining-tab-btn">
-                  <span>Main Course &amp; Millets</span>
-                </button>
-                <button type="button" id="tab-btn-desserts-beverages" onclick="switchDiningTab('desserts-beverages')"
-                  class="dining-tab-btn">
-                  <span>Desserts &amp; Beverages</span>
-                </button>
-              </div>
-
-              <!-- Subcategory Chips -->
-              <div id="dining-subcat-chips" class="flex flex-wrap items-center justify-center gap-2 pt-1">
-                <!-- Dynamically populated by app.js -->
-              </div>
-            </div>
-
-            <!-- Full-Width Dishes Grid (No Right Sidebar Basket) -->
-            <div>
-              <!-- Count Bar -->
-              <div class="flex items-center justify-between pb-3 mb-6 border-b border-taj-border text-xs text-taj-muted">
-                <span id="dining-dishes-count-label" class="font-medium text-taj-charcoal">Showing 129 authentic Satvik dishes (Taxes: +5% GST)</span>
-                <span class="flex items-center gap-1.5 text-emerald-700 font-semibold text-[11px]">
-                  <span class="veg-symbol"></span> 100% Satvik Pure Veg
-                </span>
-              </div>
-
-              <!-- Responsive Luxury Dishes Catalog Grid -->
-              <div id="dining-dishes-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                <!-- Dynamically rendered and hydrated by app.js with dedicated luxury culinary photography -->
-              </div>
-
-              <!-- Empty Search State -->
-              <div id="dining-empty-state" class="hidden p-12 bg-white border border-taj-border text-center space-y-3 shadow-sm">
-                <i data-lucide="utensils" class="w-10 h-10 text-taj-gold mx-auto stroke-1"></i>
-                <h4 class="font-cinzel text-base font-bold text-taj-charcoal uppercase">No Dishes Found</h4>
-                <p class="text-xs text-taj-muted">Try searching with a different ingredient or category name.</p>
-                <button onclick="clearDiningSearch()" class="btn-taj-outline-gold text-xs py-2 px-5 mt-2">
-                  Show All Dishes
-                </button>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- Bottom Statutory Tax & Dietary Notice -->
-          <div class="mt-12 p-5 bg-white border border-taj-gold/50 flex flex-col sm:flex-row items-center justify-center gap-4 text-center sm:text-left shadow-sm">
-            <div class="w-10 h-10 rounded-full bg-taj-ivory border border-taj-gold flex items-center justify-center text-taj-gold flex-shrink-0">
-              <i data-lucide="shield-check" class="w-5 h-5"></i>
-            </div>
-            <p class="text-xs sm:text-sm text-taj-charcoal font-medium leading-relaxed">
-              <strong class="font-semibold text-taj-gold uppercase tracking-wider">Statutory Notice:</strong> 
-              Government taxes extra as applicable (+5% GST on all food &amp; beverages). All meals prepared using pure wood-pressed oils, Parisar natural filtered well water, and pure Vedic cow ghee. No onion, no garlic.
-            </p>
-          </div>
-
-          <!-- Return to Sanctuary & Explore Panchvati Pasoee Bar -->
-          <div class="p-8 bg-white border border-taj-border shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
-            <div class="space-y-1 text-center md:text-left">
-              <span class="text-[10px] uppercase font-bold tracking-widest text-taj-gold block">Complete Dining Experience</span>
-              <h4 class="font-cinzel text-lg font-bold text-taj-charcoal">Explore Panchvati Pasoee Community Dining</h4>
-              <p class="text-xs text-taj-muted">Discover our traditional pilgrimage Bhojanshala thalis or return to the main resort portal.</p>
-            </div>
-            <div class="flex flex-wrap items-center gap-3">
-              <a href="./panchvati-pasoee-menu.html" class="btn-taj-primary min-h-[44px] py-2.5 px-6 text-xs flex items-center justify-center gap-2 font-bold uppercase tracking-wider transition-all cursor-pointer">
-                <span>View Panchvati Pasoee Menu Card</span>
-                <i data-lucide="arrow-right" class="w-4 h-4"></i>
-              </a>
-              <a href="./index.html" class="btn-back-home btn-taj-outline-dark min-h-[44px] py-2.5 px-5 text-xs flex items-center justify-center gap-2 font-bold uppercase tracking-wider transition-all cursor-pointer">
-                <i data-lucide="arrow-left" class="w-4 h-4 text-taj-gold"></i>
-                <span>&lt; Back to Main Sanctuary</span>
-              </a>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- ================= 3. PDF MENU CARD MODAL VIEWER ================= -->
-      <div id="menu-pdf-modal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-black/85 backdrop-blur-sm p-4 sm:p-6 flex items-center justify-center">
-        <div class="relative bg-white w-full max-w-4xl border-2 border-taj-gold shadow-2xl p-6 sm:p-8 space-y-6 max-h-[90vh] overflow-y-auto text-taj-charcoal">
-          
-          <div class="flex items-start justify-between border-b border-taj-border pb-4">
-            <div>
-              <span class="text-[10px] uppercase font-bold tracking-widest text-taj-gold block">Arogyadham Swasthya Kutir, Chitrakoot</span>
-              <h3 class="font-cinzel text-2xl font-bold text-taj-charcoal">AAHAR-VIHAR COMPLETE PDF MENU</h3>
-              <p class="text-xs text-taj-muted mt-0.5">Authentic Satvik Gastronomy • Official Restaurant Card (+5% GST)</p>
-            </div>
-            <button onclick="closeMenuPdfModal()" class="w-9 h-9 rounded-full bg-taj-ivory border border-taj-border hover:border-taj-gold flex items-center justify-center text-taj-charcoal cursor-pointer">
-              <i data-lucide="x" class="w-4 h-4"></i>
-            </button>
-          </div>
-
-          <!-- PDF Preview Notice -->
-          <div class="p-4 bg-taj-ivory border border-taj-gold/50 flex flex-wrap items-center justify-between gap-4 text-xs">
-            <div class="flex items-center gap-2.5">
-              <i data-lucide="file-check" class="w-5 h-5 text-taj-gold"></i>
-              <span>High-resolution physical menu book catalog with complete ingredients and tax breakdown.</span>
-            </div>
-            <button onclick="window.print()" class="btn-taj-primary py-2 px-4 text-xs flex items-center gap-1.5 font-bold cursor-pointer">
-              <i data-lucide="printer" class="w-3.5 h-3.5"></i>
-              <span>Print / Save as PDF</span>
-            </button>
-          </div>
-
-          <!-- Printable Menu Digest -->
-          <div class="space-y-6 text-xs text-taj-charcoal">
-            <div class="border border-taj-border p-4 bg-taj-ivory/50">
-              <h5 class="font-cinzel font-bold text-sm text-taj-gold uppercase tracking-wider mb-2">Volume I: Prabhat Aahar (Breakfast • 07:00 – 10:30 AM)</h5>
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px]">
-                <p>• Puri Bhaji (4 pcs): ₹165 (+5% GST = ₹173.25)</p>
-                <p>• Masala Dosa: ₹185 (+5% GST = ₹194.25)</p>
-                <p>• Plain Paratha: ₹55 (+5% GST = ₹57.75)</p>
-                <p>• Paneer Paratha: ₹89 (+5% GST = ₹93.45)</p>
-                <p>• Aloo Paratha: ₹75 (+5% GST = ₹78.75)</p>
-                <p>• Idli Sambar: ₹165 (+5% GST = ₹173.25)</p>
-                <p>• Vada Sambar: ₹165 (+5% GST = ₹173.25)</p>
-                <p>• Indori Poha: ₹109 (+5% GST = ₹114.45)</p>
-                <p>• Veg Upma: ₹165 (+5% GST = ₹173.25)</p>
-                <p>• Veg Club Sandwich: ₹189 (+5% GST = ₹198.45)</p>
-              </div>
-            </div>
-
-            <div class="border border-taj-border p-4 bg-taj-ivory/50">
-              <h5 class="font-cinzel font-bold text-sm text-taj-gold uppercase tracking-wider mb-2">Volume II: Shuruvaat (Starters &amp; Soups)</h5>
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px]">
-                <p>• Hara Bhara Kebab: ₹219 (+5% GST = ₹229.95)</p>
-                <p>• Dahi Ke Kebab: ₹275 (+5% GST = ₹288.75)</p>
-                <p>• Paneer Tikka / Peshawari: ₹275 (+5% GST = ₹288.75)</p>
-                <p>• Chilli Paneer (Dry): ₹285 (+5% GST = ₹299.25)</p>
-                <p>• Chinese Sizzler: ₹439 (+5% GST = ₹460.95)</p>
-                <p>• Cream of Tomato / Manchow Soup: ₹165 (+5% GST = ₹173.25)</p>
-                <p>• Sweet Corn / Lemon Coriander Soup: ₹165 (+5% GST = ₹173.25)</p>
-                <p>• Paneer Tikka Pizza: ₹265 (+5% GST = ₹278.25)</p>
-              </div>
-            </div>
-
-            <div class="border border-taj-border p-4 bg-taj-ivory/50">
-              <h5 class="font-cinzel font-bold text-sm text-taj-gold uppercase tracking-wider mb-2">Volume III: Mukhya Bhojan (Mains &amp; Millets)</h5>
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px]">
-                <p>• Mix Millet Khichdi: ₹385 (+5% GST = ₹404.25)</p>
-                <p>• Makai Palak Ki Subzi: ₹385 (+5% GST = ₹404.25)</p>
-                <p>• Millet Daliya: ₹385 (+5% GST = ₹404.25)</p>
-                <p>• Paneer Butter Masala: ₹329 (+5% GST = ₹345.45)</p>
-                <p>• Kadai Paneer: ₹329 (+5% GST = ₹345.45)</p>
-                <p>• Dal Makhani: ₹229 (+5% GST = ₹240.45)</p>
-                <p>• Yellow Dal Tadka: ₹219 (+5% GST = ₹229.95)</p>
-                <p>• Subz Dum Biryani: ₹385 (+5% GST = ₹404.25)</p>
-              </div>
-            </div>
-
-            <div class="border border-taj-border p-4 bg-taj-ivory/50">
-              <h5 class="font-cinzel font-bold text-sm text-taj-gold uppercase tracking-wider mb-2">Volume IV: Roti &amp; Chawal (Breads &amp; Rice)</h5>
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px]">
-                <p>• Bajra / Makka / Jowar Roti: ₹55–₹60 (+5% GST)</p>
-                <p>• Lachha Paratha: ₹55 (+5% GST = ₹57.75)</p>
-                <p>• Tawa Chapati (Plain/Ghee): ₹35–₹45 (+5% GST)</p>
-                <p>• Tandoori Roti (Plain/Butter): ₹30–₹40 (+5% GST)</p>
-                <p>• Naan (Plain/Butter): ₹70–₹75 (+5% GST)</p>
-                <p>• Jeera Rice: ₹219 (+5% GST = ₹229.95)</p>
-              </div>
-            </div>
-
-            <div class="border border-taj-border p-4 bg-taj-ivory/50">
-              <h5 class="font-cinzel font-bold text-sm text-taj-gold uppercase tracking-wider mb-2">Volume V: Madhur &amp; Peya (Desserts &amp; Beverages)</h5>
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px]">
-                <p>• Sawa Ki Kheer: ₹165 (+5% GST = ₹173.25)</p>
-                <p>• Sewaiyan Kheer: ₹165 (+5% GST = ₹173.25)</p>
-                <p>• Moong Dal Halwa: ₹165 (+5% GST = ₹173.25)</p>
-                <p>• Gulab Jamun (2 pcs): ₹79 (+5% GST = ₹82.95)</p>
-                <p>• Fresh Fruit Juice: ₹135 (+5% GST = ₹141.75)</p>
-                <p>• Thick Kulhad Lassi: ₹109 (+5% GST = ₹114.45)</p>
-                <p>• Masala / Gud Tulsi Chai: ₹65 (+5% GST = ₹68.25)</p>
-                <p>• Filter Coffee / Espresso: ₹75–₹85 (+5% GST)</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="pt-4 border-t border-taj-border flex justify-end gap-3">
-            <button onclick="closeMenuPdfModal()" class="btn-taj-outline-dark py-2 px-5 text-xs font-semibold uppercase">Close</button>
-            <button onclick="window.print()" class="btn-taj-primary py-2 px-5 text-xs font-semibold uppercase">Print Menu Card</button>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- ================= 4. MENU PAGE ZOOM / INSPECT MODAL ================= -->
-      <div id="menu-zoom-modal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-black/90 backdrop-blur-md p-4 sm:p-6 flex items-center justify-center">
-        <div class="relative bg-white w-full max-w-3xl border-2 border-taj-gold shadow-2xl p-6 sm:p-8 space-y-4 max-h-[92vh] overflow-y-auto text-taj-charcoal">
-          
-          <div class="flex items-center justify-between border-b border-taj-border pb-3">
-            <div>
-              <span class="text-[10px] uppercase font-bold tracking-widest text-taj-gold block">Aahar-Vihar Visual Menu Page</span>
-              <h3 id="menu-zoom-title" class="font-cinzel text-xl font-bold text-taj-charcoal">Volume Inspection</h3>
-            </div>
-            <button onclick="closeMenuPageZoom()" class="w-8 h-8 rounded-full bg-taj-ivory border border-taj-border hover:border-taj-gold flex items-center justify-center text-taj-charcoal cursor-pointer">
-              <i data-lucide="x" class="w-4 h-4"></i>
-            </button>
-          </div>
-
-          <div class="relative h-80 sm:h-96 overflow-hidden border border-taj-border">
-            <img id="menu-zoom-img" src="" alt="Menu Volume Page" class="w-full h-full object-cover">
-          </div>
-
-          <p id="menu-zoom-desc" class="text-xs text-taj-body leading-relaxed"></p>
-
-          <div class="p-3 bg-taj-ivory border border-taj-border text-xs flex items-center justify-between">
-            <span class="text-taj-muted text-[11px]">All items freshly prepared in pure wood-pressed oils &amp; A2 cow ghee.</span>
-            <span class="font-bold text-taj-gold uppercase tracking-wider text-[11px]">+5% GST applicable</span>
-          </div>
-
-          <div class="pt-2 flex justify-end gap-3">
-            <button onclick="closeMenuPageZoom()" class="btn-taj-primary py-2 px-5 text-xs font-semibold uppercase">Done Viewing</button>
-          </div>
-
-        </div>
-      </div>
-<!-- ================= TAJ-STYLE LUXURY FOOTER ================= -->
-      <footer class="bg-taj-charcoal text-white/70 py-16 text-xs mt-16 border-t border-taj-gold/20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-white/10">
-
-            <div class="space-y-3">
-              <div class="flex items-center gap-2.5">
-                <div class="w-8 h-8 border border-taj-gold flex items-center justify-center">
-                  <i data-lucide="crown" class="w-4 h-4 text-taj-gold-light"></i>
-                </div>
-                <span class="font-cinzel text-base font-bold text-white tracking-widest">AROGYADHAM</span>
-              </div>
-              <p class="text-xs text-white/60 leading-relaxed">
-                Arogyadham Swasthya Kutir, Chitrakoot. Honoring classical Ayurvedic living and the regal hospitality
-                traditions of Taj Hotels.
-              </p>
-              <p class="text-[11px] text-taj-gold-light">4.7 ★ Verified Google Rating (156 Reviews)</p>
-            </div>
-
-            <div class="space-y-2.5">
-              <h4 class="font-cinzel text-xs uppercase tracking-widest text-white font-bold">Suite Collections</h4>
-              <ul class="space-y-1.5 text-white/70">
-                <li><a href="./index.html#rooms-section" class="hover:text-white transition-colors cursor-pointer">1. Rooms & Suites (2 Grand Wings)</a></li>
-                <li><a href="./swasthya-kutir.html" class="hover:text-white transition-colors cursor-pointer">2. Swasthya Kutir Wing (From ₹5,500)</a></li>
-                <li><a href="./panchvati.html" class="hover:text-white transition-colors cursor-pointer">3. Panchvati Wing (From ₹2,500)</a></li>
-                <li><a href="./swasthya-kutir.html" class="hover:text-white transition-colors cursor-pointer">4. Mandakini & Paishwani Cottages</a></li>
-              </ul>
-            </div>
-
-            <div class="space-y-2.5">
-              <h4 class="font-cinzel text-xs uppercase tracking-widest text-white font-bold">Campus Facilities</h4>
-              <ul class="space-y-1.5 text-white/70">
-                <li><a href="./aahar-vihar-menu.html"
-                    class="hover:text-white transition-colors cursor-pointer">Aahar-Vihar Full Restaurant Menu</a></li>
-                <li><a href="./panchvati-pasoee-menu.html"
-                    class="hover:text-white transition-colors cursor-pointer">Panchvati Pasoee (₹220 Thali)</a></li>
-                <li><a href="./index.html#wellness-facilities"
-                    class="hover:text-white transition-colors cursor-pointer">Matru Sadan Hospital & Rasshala</a></li>
-                <li><a href="./index.html#wellness-facilities"
-                    class="hover:text-white transition-colors cursor-pointer">Panchkarma, Gow Shala & Boating</a></li>
-              </ul>
-            </div>
-
-            <div class="space-y-2.5">
-              <h4 class="font-cinzel text-xs uppercase tracking-widest text-white font-bold">Reservations & Concierge</h4>
-              <p class="text-white/70">Arogya Dham Rd, Parisar, Majhgawan, Chitrakoot, MP 485334</p>
-              <p class="text-white">
-                Direct Concierge: <a href="tel:+917670265334" class="text-taj-gold-light hover:underline font-semibold">+91
-                  76702 65334</a>
-              </p>
-              <div class="pt-2">
-                <button onclick="openBookingDrawer('Mandakini Royal Suite', 12000)"
-                  class="btn-taj-primary py-2 px-4 text-[10px] cursor-pointer">
-                  Book Your Sanctuary
-                </button>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-white/40">
-            <p>© 2026 Arogyadham Swasthya Kutir, Chitrakoot. Inspired by Taj Hotels & Resorts standards.</p>
-            <div class="flex items-center gap-4">
-              <a href="#" class="hover:text-white">Privacy Policy</a>
-              <span>•</span>
-              <a href="#" class="hover:text-white">Terms & Conditions</a>
-              <span>•</span>
-              <a href="#" class="hover:text-white">Ayurvedic Guidelines</a>
-            </div>
-          </div>
-        </div>
-      </footer>
-  </main><!-- /#taj-app-content -->
-
-<!-- ================= TAJ LUXURY MEAL PLAN SELECTION MODAL ================= -->
-  <div id="meal-plan-modal"
-    class="modal-overlay hidden-modal fixed inset-0 z-50 items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden"
-    style="display: none;"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="meal-plan-modal-title">
-    <div
-      class="modal-card w-full max-w-2xl bg-white border-2 border-taj-gold shadow-2xl overflow-hidden text-taj-charcoal animate-fadeIn max-h-[92vh] flex flex-col">
-      
-      <!-- Modal Header -->
-      <div class="bg-gradient-to-r from-taj-cream via-white to-taj-cream p-5 sm:p-6 border-b border-taj-border relative flex-shrink-0">
-        <button onclick="closeMealPlanModal()" data-action="close-modal"
-          class="absolute right-4 top-4 w-9 h-9 rounded-full bg-taj-ivory border border-taj-border flex items-center justify-center text-taj-charcoal hover:text-white hover:bg-taj-charcoal hover:border-taj-charcoal transition-all p-1 cursor-pointer shadow-sm"
-          aria-label="Close Meal Plan Options">
-          <i data-lucide="x" class="w-5 h-5"></i>
-        </button>
-
-        <div class="pr-10">
-          <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-taj-gold/10 border border-taj-gold/30 text-[10px] uppercase font-bold tracking-[0.18em] text-taj-gold mb-1.5">
-            <i data-lucide="sparkles" class="w-3 h-3 text-taj-gold"></i>
-            <span>AROGYADHAM RESERVATION DESK</span>
-          </div>
-          <h3 id="meal-plan-modal-title" class="font-cinzel text-xl sm:text-2xl font-bold text-taj-charcoal uppercase tracking-wider">
-            SELECT OPTION FOR MANDAKINI COTTAGE
-          </h3>
-          <p id="meal-plan-modal-subtext" class="text-xs sm:text-sm text-taj-body mt-1">
-            Select your preferred meal plan for 1 Adult | 0 Child (Per night, incl. taxes)
-          </p>
-        </div>
-      </div>
-
-      <!-- Room Specs Strip -->
-      <div id="meal-plan-modal-specs" class="bg-taj-ivory/80 px-5 sm:px-6 py-3 border-b border-taj-border text-xs text-taj-charcoal font-medium flex flex-wrap items-center gap-2 sm:gap-4 flex-shrink-0">
-        <!-- Injected dynamically -->
-      </div>
-
-      <!-- Dynamic Options List Container (Scrollable) -->
-      <div id="meal-plan-modal-options" class="p-5 sm:p-6 space-y-4 overflow-y-auto flex-1">
-        <!-- Injected dynamically by app.js -->
-      </div>
-
-      <!-- Modal Footer -->
-      <div class="bg-taj-cream/50 px-5 sm:px-6 py-3.5 border-t border-taj-border flex items-center justify-between gap-3 text-xs text-taj-muted flex-shrink-0">
-        <div class="flex items-center gap-1.5">
-          <i data-lucide="shield-check" class="w-4 h-4 text-taj-gold"></i>
-          <span>Best Rate Guarantee • Instant Confirmation via Djubo</span>
-        </div>
-        <button onclick="closeMealPlanModal()" data-action="close-modal" class="text-xs text-taj-charcoal hover:text-taj-gold font-semibold uppercase tracking-wider underline cursor-pointer">
-          Cancel
-        </button>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ================= TAJ-STYLE "BOOK A STAY" RESERVATION DRAWER ================= -->
-  <div id="booking-drawer"
-    class="modal-overlay hidden-modal fixed inset-0 z-50 items-center justify-center p-4 bg-black/75 backdrop-blur-sm hidden"
-    style="display: none;">
-    <div
-      class="modal-card w-full max-w-2xl bg-white border border-taj-border shadow-2xl overflow-hidden text-taj-charcoal">
-
-      <!-- Drawer Header -->
-      <div class="bg-taj-cream p-5 border-b border-taj-border flex items-center justify-between">
-        <div class="flex items-center gap-3">
-          <div class="w-8 h-8 border border-taj-gold flex items-center justify-center text-taj-gold">
-            <i data-lucide="crown" class="w-4 h-4"></i>
-          </div>
-          <div>
-            <h3 class="font-cinzel text-base font-bold text-taj-charcoal tracking-wider">Book A Stay • Arogyadham</h3>
-            <p class="text-[11px] text-taj-muted">Arogya Dham Rd, Parisar, Chitrakoot, MP 485334</p>
-          </div>
-        </div>
-        <button onclick="closeBookingDrawer()" class="p-1.5 text-taj-charcoal hover:text-taj-gold transition-colors">
-          <i data-lucide="x" class="w-5 h-5"></i>
-        </button>
-      </div>
-
-      <!-- Drawer Body Form -->
-      <form id="drawer-reservation-form" class="p-6 sm:p-8 space-y-5 max-h-[80vh] overflow-y-auto">
-
-        <!-- Logged-in Verified Member Status Badge -->
-        <div id="drawer-user-badge" class="p-3 bg-emerald-50 border border-emerald-300 text-xs flex items-center justify-between text-emerald-900">
-          <div class="flex items-center gap-2">
-            <i data-lucide="shield-check" class="w-4 h-4 text-emerald-600 flex-shrink-0"></i>
-            <span class="text-[11px]">Auto-filled for <strong id="drawer-user-badge-name">Guest Member</strong> (<span id="drawer-user-badge-email" class="font-mono">guest@arogyadham.in</span>)</span>
-          </div>
-          <span class="text-[9px] uppercase tracking-wider font-bold bg-white px-2 py-0.5 border border-emerald-300 text-emerald-800">
-            ✓ Verified
-          </span>
-        </div>
-
-        <!-- Accommodation Selection Dropdown -->
-        <div class="space-y-1.5">
-          <label class="block text-xs font-bold uppercase tracking-wider text-taj-charcoal">Select Category</label>
-          <select id="drawer-room-select"
-            class="w-full bg-white border border-taj-border p-2.5 text-xs text-taj-charcoal focus:border-taj-gold focus:outline-none font-semibold">
-            <optgroup label="The 4 Main Pillars">
-              <option value="12000" data-name="Mandakini Royal Suite">Mandakini Royal Suite — ₹12,000 / night</option>
-              <option value="10000" data-name="Paishwani Heritage Suite">Paishwani Heritage Suite — ₹10,000 / night
-              </option>
-            </optgroup>
-            <optgroup label="Vaidehi Collection">
-              <option value="8000" data-name="Vaidehi Suite">Vaidehi Suite — ₹8,000 / night</option>
-              <option value="5500" data-name="Vaidehi Twin">Vaidehi Twin — ₹5,500 / night</option>
-            </optgroup>
-            <optgroup label="Panchvati Collection">
-              <option value="4500" data-name="Panchvati Quad Room">Panchvati Quad Room — ₹4,500 / night</option>
-              <option value="3500" data-name="Panchvati Suite Room">Panchvati Suite Room — ₹3,500 / night</option>
-              <option value="3500" data-name="Panchvati Triple Room">Panchvati Triple Room — ₹3,500 / night</option>
-              <option value="2500" data-name="Panchvati King Size">Panchvati King Size — ₹2,500 / night</option>
-              <option value="2500" data-name="Panchvati Twin Bed">Panchvati Twin Bed — ₹2,500 / night</option>
-            </optgroup>
-          </select>
-        </div>
-
-        <!-- Room Summary Pill -->
-        <div class="p-4 bg-taj-ivory border border-taj-border flex items-center justify-between">
-          <div>
-            <span class="text-[10px] uppercase font-bold tracking-wider text-taj-muted block">Selected Sanctuary</span>
-            <div id="drawer-kutir-name" class="font-cinzel text-base font-bold text-taj-charcoal">
-              Mandakini Royal Suite
-            </div>
-            <div id="drawer-nights-display" class="text-xs text-taj-muted mt-0.5">
-              18 Oct — 19 Oct (1 Night) • 2 Guests
-            </div>
-          </div>
-          <div class="text-right">
-            <span class="text-[10px] uppercase font-bold tracking-wider text-taj-muted block">Base Rate</span>
-            <div id="drawer-kutir-rate" class="font-cinzel text-xl font-bold text-taj-gold">₹12,000</div>
-          </div>
-        </div>
-
-        <!-- Date Inputs -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div>
-            <label class="block text-xs font-semibold uppercase tracking-wider text-taj-charcoal mb-1">Check-in
-              Date</label>
-            <input type="date" id="drawer-checkin" value="2026-10-18"
-              class="w-full bg-white border border-taj-border p-2.5 text-xs text-taj-charcoal focus:border-taj-gold focus:outline-none">
-          </div>
-          <div>
-            <label class="block text-xs font-semibold uppercase tracking-wider text-taj-charcoal mb-1">Check-out
-              Date</label>
-            <input type="date" id="drawer-checkout" value="2026-10-19"
-              class="w-full bg-white border border-taj-border p-2.5 text-xs text-taj-charcoal focus:border-taj-gold focus:outline-none">
-          </div>
-        </div>
-
-        <!-- Guest Details -->
-        <div class="space-y-3 pt-2">
-          <div class="flex items-center justify-between">
-            <span class="text-xs font-bold uppercase tracking-wider text-taj-charcoal block">Primary Guest Information</span>
-            <span class="text-[10px] text-taj-gold font-semibold uppercase tracking-wider">Auto-filled from Verified Account</span>
-          </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <input type="text" id="drawer-guest-name" required placeholder="Full Name (e.g. Vansh Yadav)"
-              class="w-full bg-white border border-taj-border p-2.5 text-xs text-taj-charcoal focus:border-taj-gold focus:outline-none">
-            <input type="tel" id="drawer-guest-phone" required placeholder="Phone / WhatsApp (+91 ...)"
-              class="w-full bg-white border border-taj-border p-2.5 text-xs text-taj-charcoal focus:border-taj-gold focus:outline-none">
-          </div>
-          <input type="email" id="drawer-guest-email" required placeholder="Email Address for Voucher Confirmation"
-            class="w-full bg-white border border-taj-border p-2.5 text-xs text-taj-charcoal focus:border-taj-gold focus:outline-none">
-        </div>
-
-        <!-- Promo Code -->
-        <div class="flex items-center gap-2">
-          <input type="text" id="drawer-promo-code" placeholder="Promo Code (Use 'TAJWELLNESS')"
-            class="flex-1 bg-white border border-taj-border p-2.5 text-xs text-taj-charcoal uppercase tracking-wider focus:border-taj-gold focus:outline-none">
-          <button type="button" id="drawer-apply-promo" class="btn-taj-outline-dark py-2.5 px-4 text-[10px]">
-            Apply
-          </button>
-        </div>
-        <p id="drawer-promo-msg" class="text-[11px] text-emerald-700 hidden"></p>
-
-        <!-- Calculation Breakdown -->
-        <div class="p-4 bg-taj-ivory border border-taj-border space-y-1.5 text-xs">
-          <div class="flex justify-between text-taj-muted">
-            <span>Base Subtotal (<span id="calc-nights-count">1</span> Night):</span>
-            <span id="drawer-calc-base" class="text-taj-charcoal font-semibold">₹12,000</span>
-          </div>
-          <div id="drawer-discount-row" class="hidden flex justify-between text-emerald-700">
-            <span>Taj Heritage Discount (10%):</span>
-            <span id="drawer-calc-discount">-₹1,200</span>
-          </div>
-          <div class="flex justify-between text-taj-muted">
-            <span id="drawer-calc-tax-label">GST (12% Hospitality Tax):</span>
-            <span id="drawer-calc-tax" class="text-taj-charcoal font-semibold">₹1,440</span>
-          </div>
-          <div class="pt-2 border-t border-taj-border flex justify-between font-bold text-sm text-taj-charcoal">
-            <span>Total Payable Amount:</span>
-            <span id="drawer-calc-total" class="font-cinzel text-base text-taj-gold font-bold">₹13,440</span>
-          </div>
-        </div>
-
-        <!-- Djubo Reservation Desk Trigger Button -->
-        <div>
-          <button type="button" onclick="proceedToDjuboBooking()" id="drawer-pay-btn" class="w-full btn-taj-primary py-3.5 text-xs font-bold uppercase tracking-[0.16em] flex items-center justify-center gap-2 cursor-pointer">
-            <i data-lucide="calendar-check" class="w-4 h-4 text-white"></i>
-            <span id="drawer-pay-btn-label">Proceed to Secure Reservation Desk (Djubo)</span>
-          </button>
-          <div class="flex items-center justify-center gap-2 text-[10px] text-taj-muted text-center pt-2.5">
-            <i data-lucide="lock" class="w-3.5 h-3.5 text-taj-gold"></i>
-            <span>Official Booking Engine • Instant Confirmation • Best Rate Guarantee</span>
-          </div>
-        </div>
-
-      </form>
-    </div>
-  </div>
-
-  <!-- ================= AAHAR-VIHAR FULL MENU MODAL ================= -->
-  <div id="menu-modal"
-    class="modal-overlay hidden-modal fixed inset-0 z-50 items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden"
-    style="display: none;">
-    <div
-      class="modal-card w-full max-w-4xl bg-white border border-taj-border shadow-2xl p-6 sm:p-8 max-h-[88vh] overflow-y-auto text-taj-charcoal">
-      
-      <!-- Modal Header -->
-      <div class="flex items-center justify-between border-b border-taj-border pb-4 mb-4">
-        <div>
-          <span class="text-[10px] uppercase font-bold tracking-widest text-taj-gold block">Ayurvedic Satvik Gastronomy</span>
-          <h3 class="font-cinzel text-xl sm:text-2xl font-bold text-taj-charcoal">AAHAR-VIHAR AUTHENTIC MENU</h3>
-        </div>
-        <button onclick="closeMenuModal()" class="p-1 text-taj-charcoal hover:text-taj-gold">
-          <i data-lucide="x" class="w-6 h-6"></i>
-        </button>
-      </div>
-
-      <!-- Top Statutory Notice -->
-      <div class="mb-5 p-3.5 bg-taj-ivory border border-taj-gold/50 flex items-center gap-3 text-xs text-taj-charcoal">
-        <i data-lucide="info" class="w-4 h-4 text-taj-gold flex-shrink-0"></i>
-        <span><strong>Statutory Notice:</strong> Government taxes extra as applicable (+5% GST on all food & beverages). Kindly inform for any dietary restrictions or allergens.</span>
-      </div>
-
-      <!-- Operating Timings Strip -->
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6 text-xs bg-white border border-taj-border p-3">
-        <div class="flex items-center gap-2">
-          <i data-lucide="sunrise" class="w-4 h-4 text-taj-gold flex-shrink-0"></i>
-          <div>
-            <strong class="text-taj-charcoal block">Breakfast</strong>
-            <span class="text-taj-muted text-[11px]">07:00 AM – 10:30 AM</span>
-          </div>
-        </div>
-        <div class="flex items-center gap-2 sm:border-l sm:border-taj-border sm:pl-3">
-          <i data-lucide="sun" class="w-4 h-4 text-taj-gold flex-shrink-0"></i>
-          <div>
-            <strong class="text-taj-charcoal block">Lunch</strong>
-            <span class="text-taj-muted text-[11px]">12:30 PM – 03:30 PM</span>
-          </div>
-        </div>
-        <div class="flex items-center gap-2 sm:border-l sm:border-taj-border sm:pl-3">
-          <i data-lucide="moon" class="w-4 h-4 text-taj-gold flex-shrink-0"></i>
-          <div>
-            <strong class="text-taj-charcoal block">Dinner</strong>
-            <span class="text-taj-muted text-[11px]">07:00 PM – 10:30 PM</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Jump to Interactive Menu Banner -->
-      <div class="mb-6 p-4 bg-taj-ivory border border-taj-gold/40 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
-        <div>
-          <h5 class="font-cinzel text-xs font-bold uppercase text-taj-charcoal">Interactive Bill & 5% GST Estimator Active</h5>
-          <p class="text-[11px] text-taj-muted">You can customize, add dishes, and calculate live 5% GST bills in our live dining explorer.</p>
-        </div>
-        <button onclick="closeMenuModal(); document.getElementById('aahar-vihar-menu-section').scrollIntoView({ behavior: 'smooth' });"
-          class="btn-taj-primary py-2 px-4 text-xs whitespace-nowrap">
-          Open Live Menu & Bill Estimator
-        </button>
-      </div>
-
-      <!-- 4 Pillars of Menu Highlight -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
-        
-        <!-- Tab 1 Highlights -->
-        <div class="border border-taj-border p-4 bg-taj-ivory/30 space-y-2">
-          <div class="flex items-center justify-between border-b border-taj-border pb-1">
-            <h4 class="font-cinzel text-xs font-bold text-taj-gold uppercase tracking-wider">Tab 1: Breakfast</h4>
-            <span class="text-[10px] text-taj-muted">25 Dishes</span>
-          </div>
-          <p class="text-[11px] text-taj-muted">Puri Bhaji (₹165), Parathas (₹55 - ₹89), Idli Sambar (₹165), Dosas (₹165 - ₹209), Indori Poha (₹109), Fresh Fruit Platter (₹199), Veg Club Sandwich (₹189).</p>
-          <span class="text-[10px] text-taj-gold font-medium block">+5% GST applicable on all items</span>
-        </div>
-
-        <!-- Tab 2 Highlights -->
-        <div class="border border-taj-border p-4 bg-taj-ivory/30 space-y-2">
-          <div class="flex items-center justify-between border-b border-taj-border pb-1">
-            <h4 class="font-cinzel text-xs font-bold text-taj-gold uppercase tracking-wider">Tab 2: Starters & Soups</h4>
-            <span class="text-[10px] text-taj-muted">26 Dishes</span>
-          </div>
-          <p class="text-[11px] text-taj-muted">Hara Bhara Kebab (₹219), Dahi Ke Kebab (₹275), Paneer Tikka (₹275), Soups (₹165), Mix Millet Soup (₹189), Pizzas (₹219 - ₹265), Chinese Sizzler (₹439).</p>
-          <span class="text-[10px] text-taj-gold font-medium block">+5% GST applicable on all items</span>
-        </div>
-
-        <!-- Tab 3 Highlights -->
-        <div class="border border-taj-border p-4 bg-taj-ivory/30 space-y-2">
-          <div class="flex items-center justify-between border-b border-taj-border pb-1">
-            <h4 class="font-cinzel text-xs font-bold text-taj-gold uppercase tracking-wider">Tab 3: Main Course</h4>
-            <span class="text-[10px] text-taj-muted">55 Dishes</span>
-          </div>
-          <p class="text-[11px] text-taj-muted">Paneer Gravies (₹329), Mix Millet Khichdi (₹385), Dal Makhani (₹229), Chinese Mains (₹219 - ₹385), Millet/Makka Rotis (₹55), Subz Dum Biryani (₹385).</p>
-          <span class="text-[10px] text-taj-gold font-medium block">+5% GST applicable on all items</span>
-        </div>
-
-        <!-- Tab 4 Highlights -->
-        <div class="border border-taj-border p-4 bg-taj-ivory/30 space-y-2">
-          <div class="flex items-center justify-between border-b border-taj-border pb-1">
-            <h4 class="font-cinzel text-xs font-bold text-taj-gold uppercase tracking-wider">Tab 4: Desserts & Beverages</h4>
-            <span class="text-[10px] text-taj-muted">23 Dishes</span>
-          </div>
-          <p class="text-[11px] text-taj-muted">Sawa Ki Kheer (₹165), Moong Dal Halwa (₹165), Fresh Juices (₹135), Shakes (₹135), Virgin Mojito (₹149), Gud Tulsi Chai (₹65), Filter Coffee (₹75/₹85).</p>
-          <span class="text-[10px] text-taj-gold font-medium block">+5% GST applicable on all items</span>
-        </div>
-
-      </div>
-
-      <!-- Bottom Notice -->
-      <div class="mt-5 p-3 bg-taj-ivory border border-taj-gold/40 text-[11px] text-taj-charcoal text-center">
-        Government taxes extra as applicable (+5% GST on all food & beverages). Kindly inform for any dietary restrictions or allergens.
-      </div>
-
-      <!-- Modal Footer -->
-      <div class="pt-5 mt-5 border-t border-taj-border flex flex-wrap items-center justify-between gap-3">
-        <span class="text-xs text-taj-muted">Advance dining reservations recommended for dinner.</span>
-        <div class="flex items-center gap-2">
-          <button onclick="closeMenuModal(); openBookingDrawer('Table Reservation at Aahar-Vihar', 450);"
-            class="btn-taj-primary py-2.5 px-5 text-xs">
-            Reserve A Table
-          </button>
-          <button onclick="closeMenuModal()" class="btn-taj-outline-dark py-2.5 px-4 text-xs">
-            Close
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ================= GENERAL FACILITY DETAILS MODAL ================= -->
-  <div id="facility-modal"
-    class="modal-overlay hidden-modal fixed inset-0 z-50 items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden"
-    style="display: none;">
-    <div class="modal-card w-full max-w-md bg-white border-2 border-taj-gold shadow-2xl p-6 sm:p-8 text-taj-charcoal">
-      <div class="flex items-center justify-between border-b border-taj-border pb-3 mb-4">
-        <h3 id="facility-modal-title" class="font-cinzel text-lg font-bold text-taj-charcoal">Facility Details</h3>
-        <button onclick="closeFacilityModal()" class="text-taj-charcoal hover:text-taj-gold">
-          <i data-lucide="x" class="w-5 h-5"></i>
-        </button>
-      </div>
-      <p id="facility-modal-body" class="text-xs sm:text-sm text-taj-body leading-relaxed mb-6"></p>
-      <div class="flex gap-3">
-        <a href="tel:+917670265334" class="flex-1 btn-taj-outline-dark py-2.5 text-[10px] text-center">
-          Inquire Now
-        </a>
-        <button onclick="closeFacilityModal()" class="flex-1 btn-taj-primary py-2.5 text-[10px]">
-          Close
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- ================= AUTHENTICATION MODAL ================= -->
-  <div id="auth-modal"
-    class="modal-overlay hidden-modal fixed inset-0 z-50 items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden"
-    style="display: none;">
-    <div
-      class="modal-card w-full max-w-md bg-[#FAF8F5] border-2 border-taj-gold shadow-2xl overflow-hidden text-taj-charcoal animate-fadeIn">
-
-      <!-- Modal Header -->
-      <div class="bg-taj-cream p-6 border-b border-taj-border relative text-center">
-        <button onclick="closeAuthModal()" class="absolute right-4 top-4 text-taj-charcoal hover:text-taj-gold transition-colors p-1 cursor-pointer" aria-label="Close Authentication">
-          <i data-lucide="x" class="w-5 h-5"></i>
-        </button>
-        <div class="w-12 h-12 border-2 border-taj-gold text-taj-gold mx-auto flex items-center justify-center mb-3 shadow-sm bg-white">
-          <i data-lucide="crown" class="w-6 h-6"></i>
-        </div>
-        <h3 id="auth-modal-title" class="font-cinzel text-base sm:text-lg font-bold text-taj-charcoal tracking-wider">Sign In with Google to Proceed to Reservation Desk</h3>
-        <p class="text-[10px] sm:text-[11px] text-taj-muted uppercase tracking-widest mt-1">Arogyadham Swasthya Kutir, Chitrakoot</p>
-      </div>
-
-      <!-- Selected Room Banner (when redirected from a specific room) -->
-      <div id="auth-guard-alert" class="hidden bg-amber-50/80 border-b border-taj-gold/30 px-5 py-3 text-left flex items-center justify-between text-xs text-taj-charcoal">
-        <div class="flex items-center gap-2">
-          <i data-lucide="bed-double" class="w-4 h-4 text-taj-gold flex-shrink-0"></i>
-          <div>
-            <span class="text-[10px] text-taj-muted uppercase tracking-wider block">Selected Sanctuary</span>
-            <strong id="auth-guard-msg" class="font-cinzel text-xs font-bold text-taj-charcoal">Mandakini Royal Suite</strong>
-          </div>
-        </div>
-        <span class="text-[10px] uppercase font-bold tracking-wider text-taj-gold bg-white px-2 py-0.5 border border-taj-gold/40">
-          Best Rate Guarantee
+  <!-- BANNER & NOTICE -->
+  <section class="bg-white border-b border-tajBorder py-12 px-4 sm:px-6 lg:px-8 text-center">
+    <div class="max-w-4xl mx-auto space-y-3">
+      <span class="text-xs uppercase tracking-[0.3em] text-tajGold font-bold">Complete Visual Culinary Catalog</span>
+      <h1 class="font-cinzel text-3xl sm:text-5xl uppercase tracking-wider text-tajDark">
+        Aahar-Vihar Restaurant Menu
+      </h1>
+      <div class="w-16 h-0.5 bg-tajGold mx-auto my-3"></div>
+      <p class="font-serif italic text-base sm:text-lg text-tajMuted max-w-2xl mx-auto">
+        "Pure Satvik preparations crafted in holy Chitrakoot with cold-pressed oils, unadulterated cow ghee, fresh herbal infusions, and wholesome millets."
+      </p>
+
+      <!-- Timings Pill -->
+      <div class="pt-4 flex flex-wrap justify-center items-center gap-4 text-xs text-gray-600 font-medium">
+        <span class="bg-tajIvory border border-tajBorder px-3 py-1.5 rounded-sm">
+          <strong class="text-tajDark">Breakfast:</strong> 07:00 – 10:30 AM
+        </span>
+        <span class="bg-tajIvory border border-tajBorder px-3 py-1.5 rounded-sm">
+          <strong class="text-tajDark">Lunch:</strong> 12:30 – 03:30 PM
+        </span>
+        <span class="bg-tajIvory border border-tajBorder px-3 py-1.5 rounded-sm">
+          <strong class="text-tajDark">Dinner:</strong> 07:00 – 10:30 PM
         </span>
       </div>
 
-      <!-- Card Body Content -->
-      <div class="p-6 sm:p-8 space-y-6">
-
-        <p class="text-xs text-center text-taj-muted leading-relaxed">
-          Sign in to access real-time cottage availability, personalized wellness itineraries, and instant reservation confirmation via our secure booking engine.
-        </p>
-
-        <!-- PRIMARY ACTION: CONTINUE WITH GOOGLE -->
-        <div id="auth-social-section">
-          <button type="button" onclick="handleGoogleSignIn()"
-            class="w-full flex items-center justify-center gap-3 py-3.5 px-5 bg-white border-2 border-taj-border hover:border-taj-gold hover:shadow-lg transition-all text-xs font-bold text-taj-charcoal uppercase tracking-wider group shadow-sm cursor-pointer min-h-[48px]">
-            <!-- Official Multi-Color Google 'G' Logo -->
-            <svg class="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24">
-              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-              <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
-              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
-            </svg>
-            <span class="group-hover:text-taj-gold transition-colors tracking-[0.14em]">Continue with Google</span>
-          </button>
-        </div>
-
-        <!-- Security & Privacy Reassurance -->
-        <div class="pt-2 border-t border-taj-border/80 flex flex-col items-center gap-1.5 text-[11px] text-taj-muted text-center">
-          <div class="flex items-center gap-1.5 text-taj-charcoal font-medium">
-            <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-600"></i>
-            <span>Google Identity Services • 256-bit SSL Verified</span>
-          </div>
-          <p class="text-[10px] text-taj-muted/80">Direct instant reservation via Djubo Booking Engine.</p>
-        </div>
-
+      <div class="text-[11px] text-amber-800 bg-amber-50 border border-amber-200 py-1.5 px-4 rounded-sm inline-block mt-3 font-semibold">
+        Government taxes extra as applicable (+5% GST on all food &amp; beverages).
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- ================= USER MY BOOKINGS MODAL ================= -->
-  <div id="my-bookings-modal"
-    class="modal-overlay hidden-modal fixed inset-0 z-50 items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden"
-    style="display: none;">
-    <div
-      class="modal-card w-full max-w-2xl bg-white border-2 border-taj-gold shadow-2xl p-6 sm:p-8 text-taj-charcoal max-h-[85vh] overflow-y-auto">
-      <div class="flex items-center justify-between border-b border-taj-border pb-4 mb-5">
-        <div class="flex items-center gap-3">
-          <div class="w-9 h-9 border border-taj-gold flex items-center justify-center text-taj-gold">
-            <i data-lucide="calendar" class="w-5 h-5"></i>
-          </div>
-          <div>
-            <h3 class="font-cinzel text-lg font-bold text-taj-charcoal">My Reservations & Vouchers</h3>
-            <p class="text-[11px] text-taj-muted">Arogyadham Swasthya Kutir, Chitrakoot</p>
-          </div>
-        </div>
-        <button onclick="closeMyBookingsModal()" class="text-taj-charcoal hover:text-taj-gold p-1">
-          <i data-lucide="x" class="w-5 h-5"></i>
+  <!-- SEARCH & CATEGORY FILTER TABS -->
+  <section class="sticky top-20 z-30 bg-tajIvory/98 backdrop-blur-md border-b border-tajBorder py-4 px-4 sm:px-6 lg:px-8 shadow-sm">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      
+      <!-- Search Input -->
+      <div class="relative w-full md:w-80">
+        <input 
+          id="dish-search"
+          type="text" 
+          placeholder="Search dishes (e.g. Dosa, Paneer, Kheer, Biryani)..."
+          oninput="handleSearch(this.value)"
+          class="w-full h-11 pl-10 pr-4 bg-white border border-tajBorder focus:border-tajGold text-xs text-tajDark rounded-sm outline-none transition-colors shadow-sm"
+        />
+        <i data-lucide="search" class="w-4 h-4 text-tajGold absolute left-3.5 top-3.5"></i>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="flex items-center space-x-2 overflow-x-auto w-full md:w-auto pb-1 md:pb-0 scrollbar-none">
+        <button onclick="filterCategory('ALL')" data-cat="ALL" class="cat-btn px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-sm border border-tajGold bg-tajGold text-white transition-all whitespace-nowrap shadow-sm">
+          All Dishes (120+)
+        </button>
+        <button onclick="filterCategory('BREAKFAST')" data-cat="BREAKFAST" class="cat-btn px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-sm border border-tajBorder bg-white text-gray-700 hover:border-tajGold hover:text-tajGold transition-all whitespace-nowrap shadow-sm">
+          Breakfast
+        </button>
+        <button onclick="filterCategory('STARTERS')" data-cat="STARTERS" class="cat-btn px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-sm border border-tajBorder bg-white text-gray-700 hover:border-tajGold hover:text-tajGold transition-all whitespace-nowrap shadow-sm">
+          Starters &amp; Soups
+        </button>
+        <button onclick="filterCategory('MAINS')" data-cat="MAINS" class="cat-btn px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-sm border border-tajBorder bg-white text-gray-700 hover:border-tajGold hover:text-tajGold transition-all whitespace-nowrap shadow-sm">
+          Main Course &amp; Millets
+        </button>
+        <button onclick="filterCategory('DESSERTS')" data-cat="DESSERTS" class="cat-btn px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-sm border border-tajBorder bg-white text-gray-700 hover:border-tajGold hover:text-tajGold transition-all whitespace-nowrap shadow-sm">
+          Desserts &amp; Beverages
         </button>
       </div>
 
-      <!-- Bookings List Container -->
-      <div id="user-bookings-list" class="space-y-4">
-        <!-- Rendered dynamically via app.js -->
-      </div>
-
-      <!-- Empty State -->
-      <div id="user-bookings-empty" class="hidden text-center py-10 space-y-3">
-        <div class="w-12 h-12 bg-taj-ivory border border-taj-gold/40 mx-auto flex items-center justify-center text-taj-gold">
-          <i data-lucide="bed" class="w-6 h-6"></i>
-        </div>
-        <h4 class="font-cinzel text-base font-bold text-taj-charcoal">No Active Bookings Yet</h4>
-        <p class="text-xs text-taj-muted max-w-sm mx-auto">You have not reserved any Kutirs or Dining experiences yet. Discover our serene sanctuary suites in Chitrakoot.</p>
-        <div class="pt-2">
-          <button onclick="closeMyBookingsModal(); navigateToHomeRooms();" class="btn-taj-primary py-2.5 px-6 text-xs">
-            Explore Rooms & Suites
-          </button>
-        </div>
-      </div>
-
-      <div class="pt-5 mt-6 border-t border-taj-border flex justify-end">
-        <button onclick="closeMyBookingsModal()" class="btn-taj-outline-dark py-2 px-5 text-xs">
-          Close
-        </button>
-      </div>
     </div>
-  </div>
+  </section>
 
-  <!-- ================= USER PROFILE MODAL ================= -->
-  <div id="profile-modal"
-    class="modal-overlay hidden-modal fixed inset-0 z-50 items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden"
-    style="display: none;">
-    <div
-      class="modal-card w-full max-w-md bg-white border-2 border-taj-gold shadow-2xl p-6 sm:p-8 text-taj-charcoal">
-      <div class="flex items-center justify-between border-b border-taj-border pb-4 mb-5">
-        <h3 class="font-cinzel text-lg font-bold text-taj-charcoal">Guest Member Profile</h3>
-        <button onclick="closeUserProfileModal()" class="text-taj-charcoal hover:text-taj-gold p-1">
-          <i data-lucide="x" class="w-5 h-5"></i>
-        </button>
-      </div>
+  <!-- COMPLETE DISHES PHOTO CATALOG GRID -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow w-full">
+    
+    <div class="flex justify-between items-center mb-6 border-b border-tajBorder/60 pb-3">
+      <span class="text-xs uppercase tracking-widest text-gray-500 font-semibold">
+        Displaying: <strong id="dish-counter" class="text-tajDark">0</strong> Dishes
+      </span>
+      <span class="text-[11px] text-emerald-800 flex items-center gap-1.5 font-semibold">
+        <span class="w-2.5 h-2.5 rounded-full bg-emerald-600 inline-block border border-emerald-800"></span> 100% Satvik Pure Vegetarian
+      </span>
+    </div>
 
-      <div class="space-y-4 text-xs">
-        <div class="flex items-center gap-3 p-4 bg-taj-ivory border border-taj-border">
-          <div id="profile-modal-avatar"
-            class="w-12 h-12 bg-taj-gold text-white font-bold text-base flex items-center justify-center rounded-full border-2 border-white shadow overflow-hidden flex-shrink-0">
-            <img id="profile-modal-photo" class="w-full h-full object-cover hidden" alt="User Profile" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80';">
-            <span id="profile-modal-initials">VY</span>
-          </div>
+    <!-- Active Grid -->
+    <div id="dishes-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <!-- Populated via JavaScript with full photo cards -->
+    </div>
+
+    <!-- No Match State -->
+    <div id="no-results" class="hidden text-center py-24 bg-white border border-tajBorder rounded-sm mt-6">
+      <i data-lucide="utensils" class="w-12 h-12 text-gray-300 mx-auto mb-3"></i>
+      <h3 class="font-cinzel text-lg text-tajDark font-bold">No Matching Dishes Found</h3>
+      <p class="text-xs text-gray-500 mt-1">Try another keyword or select "All Dishes (120+)".</p>
+    </div>
+
+  </main>
+
+  <!-- LUXURY FOOTER -->
+  <footer class="bg-tajNavy text-white border-t border-tajGold/30 py-10 px-4 text-center text-xs">
+    <div class="max-w-5xl mx-auto space-y-3">
+      <span class="font-cinzel text-base tracking-widest text-tajGold block font-bold">AAHAR-VIHAR • AROGYADHAM SWASTHYA KUTIR</span>
+      <p class="text-gray-400 font-light text-[11px]">
+        Arogya Dham Rd, Parisar, Majhgawan, Chitrakoot, Madhya Pradesh 485334
+      </p>
+      <p class="text-[10px] text-gray-500">
+        © 2026 Arogyadham Swasthya Kutir. All culinary items prepared in strict accordance with Ayurvedic Satvik guidelines.
+      </p>
+    </div>
+  </footer>
+
+  <!-- COMPLETE 120+ DISHES DATABASE WITH DEDICATED VISUAL PHOTOGRAPHY -->
+  <script>
+    const DISHES_DATA = [
+      // === A) INDIAN BREAKFAST ===
+      { name: "Puri Bhaji (4 pcs)", price: 165, cat: "BREAKFAST", sub: "Indian Breakfast", img: "https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=800&q=80" },
+      { name: "Plain Paratha", price: 55, cat: "BREAKFAST", sub: "Indian Breakfast", img: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80" },
+      { name: "Paneer Paratha", price: 89, cat: "BREAKFAST", sub: "Indian Breakfast", img: "https://images.unsplash.com/photo-1606491956689-2ea866880c84?auto=format&fit=crop&w=800&q=80" },
+      { name: "Aloo Paratha", price: 75, cat: "BREAKFAST", sub: "Indian Breakfast", img: "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=800&q=80" },
+      { name: "Mix Veg Pakora (8 pcs)", price: 165, cat: "BREAKFAST", sub: "Indian Breakfast", img: "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=800&q=80" },
+      { name: "Paneer Pakora (8 pcs)", price: 185, cat: "BREAKFAST", sub: "Indian Breakfast", img: "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=800&q=80" },
+
+      // === SOUTH INDIAN BREAKFAST ===
+      { name: "Idli Sambar with Chutney", price: 165, cat: "BREAKFAST", sub: "South Indian", img: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80" },
+      { name: "Vada Sambar with Chutney", price: 165, cat: "BREAKFAST", sub: "South Indian", img: "https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=800&q=80" },
+      { name: "Uttapam (Plain / Masala)", price: 145, cat: "BREAKFAST", sub: "South Indian", img: "https://images.unsplash.com/photo-1610192244261-3f33de3f55e4?auto=format&fit=crop&w=800&q=80" },
+      { name: "Plain Dosa", price: 165, cat: "BREAKFAST", sub: "South Indian", img: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80" },
+      { name: "Masala Dosa", price: 185, cat: "BREAKFAST", sub: "South Indian", img: "https://images.unsplash.com/photo-1668236543090-82eba5ee5976?auto=format&fit=crop&w=800&q=80" },
+      { name: "Cheese Dosa", price: 209, cat: "BREAKFAST", sub: "South Indian", img: "https://images.unsplash.com/photo-1610192244261-3f33de3f55e4?auto=format&fit=crop&w=800&q=80" },
+      { name: "Veg Upma with Sambar & Chutney", price: 165, cat: "BREAKFAST", sub: "South Indian", img: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80" },
+      { name: "Indori Poha", price: 109, cat: "BREAKFAST", sub: "South Indian", img: "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=800&q=80" },
+
+      // === CONTINENTAL & QUICK BITES ===
+      { name: "Veg Cutlet", price: 165, cat: "BREAKFAST", sub: "Continental", img: "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=800&q=80" },
+      { name: "French Fries", price: 145, cat: "BREAKFAST", sub: "Continental", img: "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=800&q=80" },
+      { name: "Bread Ghee Jam", price: 89, cat: "BREAKFAST", sub: "Continental", img: "https://images.unsplash.com/photo-1509722747041-616f39b57569?auto=format&fit=crop&w=800&q=80" },
+      { name: "Oats (Sweet / Salty)", price: 165, cat: "BREAKFAST", sub: "Continental", img: "https://images.unsplash.com/photo-1517673132405-a56a62b18caf?auto=format&fit=crop&w=800&q=80" },
+      { name: "Choco Flakes with Milk", price: 109, cat: "BREAKFAST", sub: "Continental", img: "https://images.unsplash.com/photo-1584776296944-ab6fb57b0bdd?auto=format&fit=crop&w=800&q=80" },
+      { name: "Corn Flakes with Milk", price: 109, cat: "BREAKFAST", sub: "Continental", img: "https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=800&q=80" },
+      { name: "Fresh Fruit Platter", price: 199, cat: "BREAKFAST", sub: "Fruits", img: "https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?auto=format&fit=crop&w=800&q=80" },
+      { name: "Veg Sandwich", price: 145, cat: "BREAKFAST", sub: "Sandwiches", img: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=800&q=80" },
+      { name: "Veg Grilled Sandwich", price: 165, cat: "BREAKFAST", sub: "Sandwiches", img: "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80" },
+      { name: "Veg Club Sandwich", price: 189, cat: "BREAKFAST", sub: "Sandwiches", img: "https://images.unsplash.com/photo-1567234669003-dce7a7a88821?auto=format&fit=crop&w=800&q=80" },
+      { name: "Cheese Chilly Toast", price: 145, cat: "BREAKFAST", sub: "Sandwiches", img: "https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=800&q=80" },
+
+      // === STARTERS (INDIAN & CHINESE) ===
+      { name: "Hara Bhara Kebab", price: 219, cat: "STARTERS", sub: "Indian Starters", img: "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=800&q=80" },
+      { name: "Dahi Ke Kebab", price: 275, cat: "STARTERS", sub: "Indian Starters", img: "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=800&q=80" },
+      { name: "Paneer Tikka", price: 275, cat: "STARTERS", sub: "Tandoori", img: "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=800&q=80" },
+      { name: "Peshawari Paneer Tikka", price: 275, cat: "STARTERS", sub: "Tandoori", img: "https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&w=800&q=80" },
+      { name: "Malai Paneer Tikka", price: 275, cat: "STARTERS", sub: "Tandoori", img: "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=800&q=80" },
+      { name: "Corn Cheese Kebab", price: 219, cat: "STARTERS", sub: "Starters", img: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80" },
+      { name: "Tandoori Mushroom", price: 275, cat: "STARTERS", sub: "Tandoori", img: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80" },
+      { name: "Chilli Mushroom (Dry)", price: 275, cat: "STARTERS", sub: "Chinese Starters", img: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80" },
+      { name: "Veg Manchurian (Dry)", price: 249, cat: "STARTERS", sub: "Chinese Starters", img: "https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=800&q=80" },
+      { name: "Chilli Paneer (Dry)", price: 285, cat: "STARTERS", sub: "Chinese Starters", img: "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=800&q=80" },
+      { name: "Crispy Corn", price: 219, cat: "STARTERS", sub: "Chinese Starters", img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d?auto=format&fit=crop&w=800&q=80" },
+      { name: "Corn Salt & Pepper", price: 219, cat: "STARTERS", sub: "Chinese Starters", img: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80" },
+      { name: "Veg Spring Roll", price: 275, cat: "STARTERS", sub: "Chinese Starters", img: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80" },
+      { name: "Honey Chilli Potato", price: 249, cat: "STARTERS", sub: "Chinese Starters", img: "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=800&q=80" },
+      { name: "Chilli Potato", price: 249, cat: "STARTERS", sub: "Chinese Starters", img: "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=800&q=80" },
+      { name: "Vegetable Chinese Sizzler", price: 439, cat: "STARTERS", sub: "Sizzlers", img: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80" },
+
+      // === SOUPS, PIZZAS & CONTINENTAL ===
+      { name: "Cream of Tomato Soup", price: 165, cat: "STARTERS", sub: "Soups", img: "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80" },
+      { name: "Hot & Sour Soup", price: 165, cat: "STARTERS", sub: "Soups", img: "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80" },
+      { name: "Veg Manchow Soup", price: 165, cat: "STARTERS", sub: "Soups", img: "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80" },
+      { name: "Veg Sweet Corn Soup", price: 165, cat: "STARTERS", sub: "Soups", img: "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80" },
+      { name: "Mix Millet Soup", price: 189, cat: "STARTERS", sub: "Soups", img: "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80" },
+      { name: "Cream of Spinach Soup", price: 165, cat: "STARTERS", sub: "Soups", img: "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80" },
+      { name: "Veg Clear Soup", price: 165, cat: "STARTERS", sub: "Soups", img: "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80" },
+      { name: "Cream of Veg Soup", price: 165, cat: "STARTERS", sub: "Soups", img: "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80" },
+      { name: "Lemon Coriander Soup", price: 165, cat: "STARTERS", sub: "Soups", img: "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80" },
+      { name: "Paneer Tikka Pizza", price: 265, cat: "STARTERS", sub: "Pizza", img: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80" },
+      { name: "Margherita Pizza", price: 219, cat: "STARTERS", sub: "Pizza", img: "https://images.unsplash.com/photo-1604382355076-af4b0eb60143?auto=format&fit=crop&w=800&q=80" },
+      { name: "Corn and Veg Pizza", price: 239, cat: "STARTERS", sub: "Pizza", img: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80" },
+      { name: "Pasta Alfredo / Pink Sauce", price: 165, cat: "STARTERS", sub: "Continental", img: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=800&q=80" },
+      { name: "Cheese Chilly Balls", price: 319, cat: "STARTERS", sub: "Continental", img: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80" },
+      { name: "Sauteed Veg", price: 275, cat: "STARTERS", sub: "Continental", img: "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80" },
+
+      // === MILLET & INDIAN MAIN COURSE ===
+      { name: "Mix Millet Khichdi", price: 385, cat: "MAINS", sub: "Millet Delights", img: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80" },
+      { name: "Makai Palak Ki Subzi", price: 385, cat: "MAINS", sub: "Millet Delights", img: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=800&q=80" },
+      { name: "Millet Daliya", price: 385, cat: "MAINS", sub: "Millet Delights", img: "https://images.unsplash.com/photo-1517673132405-a56a62b18caf?auto=format&fit=crop&w=800&q=80" },
+      { name: "Black Fried Rice", price: 385, cat: "MAINS", sub: "Millet Delights", img: "https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=800&q=80" },
+      { name: "Paneer Butter Masala", price: 329, cat: "MAINS", sub: "Indian Gravies", img: "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=800&q=80" },
+      { name: "Kadai Paneer", price: 329, cat: "MAINS", sub: "Indian Gravies", img: "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=800&q=80" },
+      { name: "Palak Paneer", price: 329, cat: "MAINS", sub: "Indian Gravies", img: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80" },
+      { name: "Matar Paneer", price: 329, cat: "MAINS", sub: "Indian Gravies", img: "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=800&q=80" },
+      { name: "Veg Kofta Curry", price: 275, cat: "MAINS", sub: "Indian Gravies", img: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=800&q=80" },
+      { name: "Veg Tomato Palak Bhurji", price: 219, cat: "MAINS", sub: "Indian Gravies", img: "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80" },
+      { name: "Paneer Lababdar", price: 329, cat: "MAINS", sub: "Indian Gravies", img: "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=800&q=80" },
+      { name: "Paneer Bhurji", price: 329, cat: "MAINS", sub: "Indian Gravies", img: "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=800&q=80" },
+      { name: "Hing Dhaniya Ke Aloo", price: 219, cat: "MAINS", sub: "Indian Sabzi", img: "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=800&q=80" },
+      { name: "Methi Matar Malai", price: 275, cat: "MAINS", sub: "Indian Gravies", img: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=800&q=80" },
+      { name: "Bhindi Masala", price: 279, cat: "MAINS", sub: "Indian Sabzi", img: "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80" },
+      { name: "Baingan Bharta", price: 219, cat: "MAINS", sub: "Indian Sabzi", img: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=800&q=80" },
+      { name: "Lauki Home Style", price: 219, cat: "MAINS", sub: "Indian Sabzi", img: "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80" },
+      { name: "Karela Ki Sabji", price: 219, cat: "MAINS", sub: "Indian Sabzi", img: "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80" },
+      { name: "Veg Kolhapuri", price: 275, cat: "MAINS", sub: "Indian Gravies", img: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=800&q=80" },
+      { name: "Mix Veg", price: 275, cat: "MAINS", sub: "Indian Sabzi", img: "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80" },
+      { name: "Soya Keema Matar", price: 249, cat: "MAINS", sub: "Indian Sabzi", img: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=800&q=80" },
+      { name: "Sev Tomato", price: 219, cat: "MAINS", sub: "Indian Sabzi", img: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=800&q=80" },
+      { name: "Yellow Dal Tadka / Dal Fry", price: 219, cat: "MAINS", sub: "Dal & Lentils", img: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=800&q=80" },
+      { name: "Dal Makhani", price: 229, cat: "MAINS", sub: "Dal & Lentils", img: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=800&q=80" },
+
+      // === CHINESE MAINS, BREADS & RICE ===
+      { name: "Veg Manchurian Gravy", price: 249, cat: "MAINS", sub: "Chinese Mains", img: "https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=800&q=80" },
+      { name: "Chilli Paneer Gravy", price: 275, cat: "MAINS", sub: "Chinese Mains", img: "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=800&q=80" },
+      { name: "Veg Hakka Noodles", price: 219, cat: "MAINS", sub: "Noodles", img: "https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=800&q=80" },
+      { name: "Schezwan Noodles", price: 249, cat: "MAINS", sub: "Noodles", img: "https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=800&q=80" },
+      { name: "Veg Fried Rice", price: 219, cat: "MAINS", sub: "Rice", img: "https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=800&q=80" },
+      { name: "Schezwan Fried Rice", price: 249, cat: "MAINS", sub: "Rice", img: "https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=800&q=80" },
+      { name: "Veg Noodle", price: 275, cat: "MAINS", sub: "Noodles", img: "https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=800&q=80" },
+      { name: "Triple Schezwan Noodle & Rice", price: 385, cat: "MAINS", sub: "Chinese Mains", img: "https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=800&q=80" },
+      { name: "Bajra Ki Roti (Plain/Ghee)", price: 55, cat: "MAINS", sub: "Indian Breads", img: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80" },
+      { name: "Makka Ki Roti (Plain/Ghee)", price: 55, cat: "MAINS", sub: "Indian Breads", img: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80" },
+      { name: "Jowar Ki Roti (Plain/Ghee)", price: 55, cat: "MAINS", sub: "Indian Breads", img: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80" },
+      { name: "Lachha Paratha", price: 55, cat: "MAINS", sub: "Indian Breads", img: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80" },
+      { name: "Tawa Chapati (Plain/Ghee)", price: 35, cat: "MAINS", sub: "Indian Breads", img: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80" },
+      { name: "Missi Roti", price: 45, cat: "MAINS", sub: "Indian Breads", img: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80" },
+      { name: "Naan (Plain/Ghee)", price: 70, cat: "MAINS", sub: "Indian Breads", img: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80" },
+      { name: "Tandoori Roti (Plain/Ghee)", price: 30, cat: "MAINS", sub: "Indian Breads", img: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80" },
+      { name: "Stuffed Kulcha (Aloo/Paneer)", price: 99, cat: "MAINS", sub: "Indian Breads", img: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80" },
+      { name: "Indian Bread Basket", price: 195, cat: "MAINS", sub: "Indian Breads", img: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80" },
+      { name: "Subz Dum Biryani", price: 385, cat: "MAINS", sub: "Rice & Biryani", img: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=800&q=80" },
+      { name: "Paneer Tikka Biryani", price: 499, cat: "MAINS", sub: "Rice & Biryani", img: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=800&q=80" },
+      { name: "Jeera Rice", price: 219, cat: "MAINS", sub: "Rice & Biryani", img: "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=800&q=80" },
+      { name: "Veg Pulao / Matar Pulao", price: 329, cat: "MAINS", sub: "Rice & Biryani", img: "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=800&q=80" },
+      { name: "Steamed Rice", price: 165, cat: "MAINS", sub: "Rice & Biryani", img: "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=800&q=80" },
+      { name: "Dal Khichdi", price: 329, cat: "MAINS", sub: "Rice & Biryani", img: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80" },
+
+      // === RAITA, SALADS, DESSERTS & BEVERAGES ===
+      { name: "Masala Papad", price: 55, cat: "STARTERS", sub: "Papad", img: "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=800&q=80" },
+      { name: "Plain Papad (fry/dry)", price: 35, cat: "STARTERS", sub: "Papad", img: "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=800&q=80" },
+      { name: "Mix Veg Raita", price: 129, cat: "MAINS", sub: "Raita", img: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80" },
+      { name: "Boondi Raita", price: 109, cat: "MAINS", sub: "Raita", img: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80" },
+      { name: "Pineapple Raita", price: 155, cat: "MAINS", sub: "Raita", img: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80" },
+      { name: "Mixed Fruit Raita", price: 165, cat: "MAINS", sub: "Raita", img: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80" },
+      { name: "Fresh Garden Green Salad", price: 119, cat: "STARTERS", sub: "Salads", img: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80" },
+      { name: "Russian Salad", price: 179, cat: "STARTERS", sub: "Salads", img: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80" },
+      { name: "Kachumber Salad", price: 119, cat: "STARTERS", sub: "Salads", img: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80" },
+      { name: "Sawa Ki Kheer", price: 165, cat: "DESSERTS", sub: "Desserts", img: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80" },
+      { name: "Sewaiyan Ki Kheer", price: 165, cat: "DESSERTS", sub: "Desserts", img: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80" },
+      { name: "Gulab Jamun (2 pcs)", price: 79, cat: "DESSERTS", sub: "Desserts", img: "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=800&q=80" },
+      { name: "Moong Dal Halwa", price: 165, cat: "DESSERTS", sub: "Desserts", img: "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=800&q=80" },
+      { name: "Gajar Halwa (Seasonal)", price: 165, cat: "DESSERTS", sub: "Desserts", img: "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=800&q=80" },
+      { name: "Assorted Ice Cream", price: 79, cat: "DESSERTS", sub: "Desserts", img: "https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=800&q=80" },
+      { name: "Fresh Watermelon Juice", price: 135, cat: "DESSERTS", sub: "Beverages", img: "https://images.unsplash.com/photo-1589733955941-5eeaf752f6dd?auto=format&fit=crop&w=800&q=80" },
+      { name: "Fresh Sweet Lime Juice", price: 135, cat: "DESSERTS", sub: "Beverages", img: "https://images.unsplash.com/photo-1613478223719-2ab802602423?auto=format&fit=crop&w=800&q=80" },
+      { name: "Fresh Orange Juice", price: 135, cat: "DESSERTS", sub: "Beverages", img: "https://images.unsplash.com/photo-1613478223719-2ab802602423?auto=format&fit=crop&w=800&q=80" },
+      { name: "Milk Shake (Vanilla/Chocolate/Strawberry)", price: 135, cat: "DESSERTS", sub: "Beverages", img: "https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=800&q=80" },
+      { name: "Buttermilk (Plain/Masala)", price: 89, cat: "DESSERTS", sub: "Beverages", img: "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=800&q=80" },
+      { name: "Lassi (Sweet/Salty)", price: 109, cat: "DESSERTS", sub: "Beverages", img: "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=800&q=80" },
+      { name: "Cold Coffee", price: 129, cat: "DESSERTS", sub: "Beverages", img: "https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?auto=format&fit=crop&w=800&q=80" },
+      { name: "Fruit Punch Mocktail", price: 149, cat: "DESSERTS", sub: "Mocktails", img: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=800&q=80" },
+      { name: "Virgin Mojito", price: 149, cat: "DESSERTS", sub: "Mocktails", img: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=800&q=80" },
+      { name: "Fresh Lime Soda (Sweet/Salty)", price: 79, cat: "DESSERTS", sub: "Beverages", img: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=800&q=80" },
+      { name: "Fresh Lime Water", price: 65, cat: "DESSERTS", sub: "Beverages", img: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=800&q=80" },
+      { name: "Tea / Masala Tea / Gud Tulsi Chai", price: 65, cat: "DESSERTS", sub: "Hot Beverages", img: "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=800&q=80" },
+      { name: "Organic Green Tea", price: 75, cat: "DESSERTS", sub: "Hot Beverages", img: "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=800&q=80" },
+      { name: "Black Coffee / Milk Coffee", price: 75, cat: "DESSERTS", sub: "Hot Beverages", img: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80" },
+      { name: "Hot Milk", price: 85, cat: "DESSERTS", sub: "Hot Beverages", img: "https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=800&q=80" },
+      { name: "Bournvita Milk / Hot Chocolate", price: 109, cat: "DESSERTS", sub: "Hot Beverages", img: "https://images.unsplash.com/photo-1542990253-0d0f5be5f0ed?auto=format&fit=crop&w=800&q=80" }
+    ];
+
+    let currentFilter = 'ALL';
+    let currentSearch = '';
+
+    function renderDishes() {
+      const grid = document.getElementById('dishes-grid');
+      const counter = document.getElementById('dish-counter');
+      const noResults = document.getElementById('no-results');
+
+      let filtered = DISHES_DATA;
+
+      if (currentFilter !== 'ALL') {
+        filtered = filtered.filter(item => item.cat === currentFilter);
+      }
+
+      if (currentSearch.trim() !== '') {
+        const q = currentSearch.toLowerCase();
+        filtered = filtered.filter(item => 
+          item.name.toLowerCase().includes(q) || 
+          item.sub.toLowerCase().includes(q)
+        );
+      }
+
+      if (counter) counter.innerText = filtered.length;
+
+      if (filtered.length === 0) {
+        grid.innerHTML = '';
+        noResults.classList.remove('hidden');
+        return;
+      }
+
+      noResults.classList.add('hidden');
+      grid.innerHTML = filtered.map(dish => `
+        <div class="bg-white border border-tajBorder rounded-sm overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 group flex flex-col justify-between">
           <div>
-            <h4 id="profile-modal-name" class="font-cinzel text-base font-bold text-taj-charcoal">Vansh Yadav</h4>
-            <span id="profile-modal-badge" class="inline-block mt-0.5 text-[10px] uppercase tracking-wider px-2 py-0.5 bg-emerald-100 text-emerald-800 font-bold border border-emerald-300">
-              ✓ Verified Member
+            <!-- High-Res Photo Container -->
+            <div class="relative w-full h-48 bg-tajIvory overflow-hidden">
+              <img 
+                src="${dish.img}" 
+                alt="${dish.name}" 
+                loading="lazy"
+                onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80';"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 rounded-t-sm"
+              />
+              <span class="absolute top-2.5 right-2.5 bg-black/70 backdrop-blur-sm text-[10px] text-tajGold font-semibold uppercase tracking-wider px-2 py-0.5 rounded">
+                ${dish.sub}
+              </span>
+            </div>
+
+            <!-- Content -->
+            <div class="p-4">
+              <div class="flex items-start justify-between gap-2">
+                <div class="flex items-center space-x-1.5">
+                  <span class="w-3 h-3 rounded-full border border-emerald-600 flex items-center justify-center p-0.5 shrink-0">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+                  </span>
+                  <h3 class="font-serif font-bold text-base text-tajDark group-hover:text-tajGold transition-colors leading-tight">
+                    ${dish.name}
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Price & Tax Tag -->
+          <div class="px-4 pb-4 pt-2 border-t border-tajBorder/40 flex items-center justify-between">
+            <span class="font-cinzel text-lg font-bold text-tajDark">
+              ₹${dish.price}
+            </span>
+            <span class="text-[10px] font-medium text-amber-800 bg-amber-50 px-2 py-0.5 border border-amber-200 rounded">
+              + 5% GST
             </span>
           </div>
         </div>
+      `).join('');
 
-        <div class="p-4 bg-white border border-taj-border space-y-2.5">
-          <div class="flex justify-between">
-            <span class="text-taj-muted">Email Address:</span>
-            <strong id="profile-modal-email" class="font-mono text-taj-charcoal">vansh@example.com</strong>
-          </div>
-          <div class="flex justify-between">
-            <span class="text-taj-muted">Contact Phone:</span>
-            <strong id="profile-modal-phone" class="text-taj-charcoal">+91 98765 43210</strong>
-          </div>
-          <div class="flex justify-between">
-            <span class="text-taj-muted">Membership Tier:</span>
-            <strong class="text-taj-gold">Arogyadham Heritage Circle (Gold)</strong>
-          </div>
-          <div class="flex justify-between">
-            <span class="text-taj-muted">Total Reservations:</span>
-            <strong id="profile-modal-total-bookings" class="text-taj-charcoal">0</strong>
-          </div>
-        </div>
-      </div>
-
-      <div class="pt-5 mt-5 border-t border-taj-border flex gap-3">
-        <button onclick="closeUserProfileModal(); openMyBookingsModal();" class="flex-1 btn-taj-primary py-2.5 text-xs text-center">
-          View My Bookings
-        </button>
-        <button onclick="closeUserProfileModal()" class="flex-1 btn-taj-outline-dark py-2.5 text-xs text-center">
-          Done
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- ================= SAVED KUTIRS MODAL ================= -->
-  <div id="saved-kutirs-modal"
-    class="modal-overlay hidden-modal fixed inset-0 z-50 items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden"
-    style="display: none;">
-    <div
-      class="modal-card w-full max-w-lg bg-white border-2 border-taj-gold shadow-2xl p-6 sm:p-8 text-taj-charcoal">
-      <div class="flex items-center justify-between border-b border-taj-border pb-4 mb-5">
-        <div class="flex items-center gap-2.5">
-          <i data-lucide="bookmark" class="w-5 h-5 text-taj-gold"></i>
-          <h3 class="font-cinzel text-lg font-bold text-taj-charcoal">Saved Sanctuary Kutirs</h3>
-        </div>
-        <button onclick="closeSavedKutirsModal()" class="text-taj-charcoal hover:text-taj-gold p-1">
-          <i data-lucide="x" class="w-5 h-5"></i>
-        </button>
-      </div>
-
-      <div class="space-y-3 text-xs">
-        <div class="p-3.5 bg-taj-ivory border border-taj-border flex items-center justify-between">
-          <div>
-            <h5 class="font-cinzel font-bold text-sm text-taj-charcoal">Mandakini Royal Suite</h5>
-            <p class="text-[11px] text-taj-gold font-semibold">₹12,000 + 12% GST / night</p>
-          </div>
-          <button onclick="closeSavedKutirsModal(); openBookingDrawer('Mandakini Royal Suite', 12000);"
-            class="btn-taj-primary py-1.5 px-3 text-[10px]">
-            Book Now
-          </button>
-        </div>
-
-        <div class="p-3.5 bg-taj-ivory border border-taj-border flex items-center justify-between">
-          <div>
-            <h5 class="font-cinzel font-bold text-sm text-taj-charcoal">Paishwani Heritage Suite</h5>
-            <p class="text-[11px] text-taj-gold font-semibold">₹10,000 + 12% GST / night</p>
-          </div>
-          <button onclick="closeSavedKutirsModal(); openBookingDrawer('Paishwani Heritage Suite', 10000);"
-            class="btn-taj-primary py-1.5 px-3 text-[10px]">
-            Book Now
-          </button>
-        </div>
-
-        <div class="p-3.5 bg-taj-ivory border border-taj-border flex items-center justify-between">
-          <div>
-            <h5 class="font-cinzel font-bold text-sm text-taj-charcoal">Vaidehi Suite</h5>
-            <p class="text-[11px] text-taj-gold font-semibold">₹8,000 + 12% GST / night</p>
-          </div>
-          <button onclick="closeSavedKutirsModal(); openBookingDrawer('Vaidehi Suite', 8000);"
-            class="btn-taj-primary py-1.5 px-3 text-[10px]">
-            Book Now
-          </button>
-        </div>
-      </div>
-
-      <div class="pt-5 mt-5 border-t border-taj-border flex justify-end">
-        <button onclick="closeSavedKutirsModal()" class="btn-taj-outline-dark py-2 px-5 text-xs">
-          Close
-        </button>
-      </div>
-    </div>
-  </div>
-
-
-
-  <!-- Toast Notification Container -->
-  <div id="toast-container"></div>
-
-    <!-- JavaScript Modules -->
-  <script src="app.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
       if (typeof lucide !== 'undefined') {
-        try { lucide.createIcons(); } catch (err) { console.warn(err); }
+        try { lucide.createIcons(); } catch(e) {}
+      }
+    }
+
+    function filterCategory(cat) {
+      currentFilter = cat;
+      document.querySelectorAll('.cat-btn').forEach(btn => {
+        const btnCat = btn.getAttribute('data-cat');
+        if (btnCat === cat) {
+          btn.classList.add('bg-tajGold', 'text-white', 'border-tajGold');
+          btn.classList.remove('bg-white', 'text-gray-700', 'border-tajBorder');
+        } else {
+          btn.classList.remove('bg-tajGold', 'text-white', 'border-tajGold');
+          btn.classList.add('bg-white', 'text-gray-700', 'border-tajBorder');
+        }
+      });
+      renderDishes();
+    }
+
+    function handleSearch(query) {
+      currentSearch = query;
+      renderDishes();
+    }
+
+    // Initialize on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      renderDishes();
+      if (typeof lucide !== 'undefined') {
+        try { lucide.createIcons(); } catch(e) {}
       }
     });
   </script>
