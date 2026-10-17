@@ -88,20 +88,24 @@
 
         <!-- Center Navigation Links -->
         <nav
-          class="hidden xl:flex items-center gap-6 text-[11px] uppercase tracking-[0.16em] font-medium text-white/90">
-          <a href="#hero" onclick="navigateToHomeView()"
+          class="hidden xl:flex items-center gap-5 text-[11px] uppercase tracking-[0.16em] font-medium text-white/90">
+          <a href="#hero" onclick="switchView('view-home'); window.scrollTo({top: 0, behavior: 'smooth'});"
             class="nav-link hover:text-taj-gold-light transition-colors py-2">Destinations</a>
-          <a href="#rooms-wings" onclick="navigateToHomeRooms()"
+          <a href="#rooms-section" onclick="switchView('view-home'); document.getElementById('rooms-section')?.scrollIntoView({behavior: 'smooth'});"
             class="nav-link hover:text-taj-gold-light transition-colors py-2">Rooms & Suites</a>
-          <a href="#swasthya-kutir-rooms" onclick="navigateToSwasthyaKutir()"
-            class="nav-link hover:text-taj-gold-light transition-colors py-2">Swasthya Kutir Wing</a>
-          <a href="#panchvati-rooms" onclick="navigateToPanchvati()"
-            class="nav-link hover:text-taj-gold-light transition-colors py-2">Panchvati Wing</a>
-          <a href="#aahar-vihar-menu" onclick="navigateToMenu()"
-            class="nav-link hover:text-taj-gold-light transition-colors py-2">Dining (Aahar-Vihar)</a>
-          <a href="#wellness-facilities" onclick="navigateToSection('wellness-facilities')"
-            class="nav-link hover:text-taj-gold-light transition-colors py-2">Wellness & Services</a>
-          <a href="#reviews" onclick="navigateToSection('reviews')"
+          <a href="#swasthya-kutir-rooms" onclick="switchView('view-swasthya-kutir')"
+            class="nav-link hover:text-taj-gold-light transition-colors py-2">Vaidehi / Swasthya Kutir</a>
+          <a href="#panchvati-rooms" onclick="switchView('view-panchvati')"
+            class="nav-link hover:text-taj-gold-light transition-colors py-2">Panchvati</a>
+          <a href="#dining-section" onclick="switchView('view-home'); document.getElementById('dining-section')?.scrollIntoView({behavior: 'smooth'});"
+            class="nav-link hover:text-taj-gold-light transition-colors py-2">Dining</a>
+          <a href="#aahar-vihar-menu" onclick="switchView('view-aahar-vihar-menu')"
+            class="nav-link hover:text-taj-gold-light transition-colors py-2">Aahar-Vihar Menu</a>
+          <a href="#panchvati-pasoee-menu" onclick="switchView('view-panchvati-pasoee-menu')"
+            class="nav-link hover:text-taj-gold-light transition-colors py-2">Panchvati Pasoee</a>
+          <a href="#wellness-facilities" onclick="switchView('view-home'); document.getElementById('wellness-facilities')?.scrollIntoView({behavior: 'smooth'});"
+            class="nav-link hover:text-taj-gold-light transition-colors py-2">Wellness</a>
+          <a href="#reviews" onclick="switchView('view-home'); document.getElementById('reviews')?.scrollIntoView({behavior: 'smooth'});"
             class="nav-link hover:text-taj-gold-light transition-colors py-2">Reviews</a>
         </nav>
 
@@ -248,21 +252,23 @@
         </div>
       </div>
 
-      <a href="#hero" onclick="navigateToHomeView()"
+      <a href="#hero" onclick="switchView('view-home'); toggleMobileMenu(true); window.scrollTo({top: 0, behavior: 'smooth'});"
         class="block py-2 hover:text-taj-gold border-b border-gray-100">Destinations</a>
-      <a href="#rooms-wings" onclick="navigateToHomeRooms()"
-        class="block py-2 hover:text-taj-gold border-b border-gray-100">Rooms & Suites (2 Grand Wings)</a>
-      <a href="#swasthya-kutir-rooms" onclick="navigateToSwasthyaKutir()"
-        class="block py-2 hover:text-taj-gold border-b border-gray-100">Wing 1: Arogyadham Swasthya Kutir</a>
-      <a href="#panchvati-rooms" onclick="navigateToPanchvati()"
-        class="block py-2 hover:text-taj-gold border-b border-gray-100">Wing 2: Panchvati Collection</a>
-      <a href="#aahar-vihar-menu" onclick="navigateToMenu()"
-        class="block py-2 hover:text-taj-gold border-b border-gray-100">Dining: Aahar-Vihar Menu</a>
-      <a href="#panchvati-rasoee-menu" onclick="navigateToPanchvatiRasoeeMenu()"
-        class="block py-2 hover:text-taj-gold border-b border-gray-100">Dining: Panchvati Rasoee Menu</a>
-      <a href="#wellness-facilities" onclick="navigateToSection('wellness-facilities')"
+      <a href="#rooms-section" onclick="switchView('view-home'); toggleMobileMenu(true); document.getElementById('rooms-section')?.scrollIntoView({behavior: 'smooth'});"
+        class="block py-2 hover:text-taj-gold border-b border-gray-100">Rooms & Suites</a>
+      <a href="#swasthya-kutir-rooms" onclick="switchView('view-swasthya-kutir'); toggleMobileMenu(true);"
+        class="block py-2 hover:text-taj-gold border-b border-gray-100">Swasthya Kutir (Vaidehi) Wing</a>
+      <a href="#panchvati-rooms" onclick="switchView('view-panchvati'); toggleMobileMenu(true);"
+        class="block py-2 hover:text-taj-gold border-b border-gray-100">Panchvati Wing</a>
+      <a href="#dining-section" onclick="switchView('view-home'); toggleMobileMenu(true); document.getElementById('dining-section')?.scrollIntoView({behavior: 'smooth'});"
+        class="block py-2 hover:text-taj-gold border-b border-gray-100">Dining Overview</a>
+      <a href="#aahar-vihar-menu" onclick="switchView('view-aahar-vihar-menu'); toggleMobileMenu(true);"
+        class="block py-2 hover:text-taj-gold border-b border-gray-100">Aahar-Vihar Menu</a>
+      <a href="#panchvati-pasoee-menu" onclick="switchView('view-panchvati-pasoee-menu'); toggleMobileMenu(true);"
+        class="block py-2 hover:text-taj-gold border-b border-gray-100">Panchvati Pasoee Menu</a>
+      <a href="#wellness-facilities" onclick="switchView('view-home'); toggleMobileMenu(true); document.getElementById('wellness-facilities')?.scrollIntoView({behavior: 'smooth'});"
         class="block py-2 hover:text-taj-gold border-b border-gray-100">Specialized Services & Campus</a>
-      <a href="#reviews" onclick="navigateToSection('reviews')" class="block py-2 hover:text-taj-gold">Google Reviews &
+      <a href="#reviews" onclick="switchView('view-home'); toggleMobileMenu(true); document.getElementById('reviews')?.scrollIntoView({behavior: 'smooth'});" class="block py-2 hover:text-taj-gold">Google Reviews &
         Map</a>
       <div class="pt-3">
         <button onclick="openBookingDrawer('Mandakini Royal Suite', 12000); toggleMobileMenu();" class="w-full btn-taj-primary min-h-[44px] py-3 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer">
@@ -275,8 +281,8 @@
   <!-- ================= MAIN APP VIEW ROUTING CONTAINER ================= -->
   <main id="taj-app-content">
 
-    <!-- ================= HOME VIEW (THE 4 PILLARS & RESORT HIGHLIGHTS) ================= -->
-    <div id="home-view" class="view-page">
+    <!-- ================= HOME VIEW (THE MAIN LANDING PAGE) ================= -->
+    <div id="view-home" class="view-page block">
 
       <!-- ================= CINEMATIC HERO SECTION ================= -->
       <section id="hero"
@@ -357,7 +363,8 @@
       </section>
 
       <!-- ================= 2. PRIMARY ROOMS & SUITES SECTION (2 MAIN GRAND WINGS) ================= -->
-      <section id="rooms-wings" class="py-20 sm:py-28 bg-white border-b border-taj-border relative">
+      <section id="rooms-section" class="py-20 sm:py-28 bg-white border-b border-taj-border relative">
+        <a id="rooms-wings" class="sr-only"></a>
         <div id="rooms-pillars" class="absolute -top-28"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -461,7 +468,7 @@
                   <span class="text-xs text-taj-charcoal font-semibold block">From ₹5,500 + GST / night</span>
                   <span class="text-[10px] text-taj-muted">Royal waterfront & wellness retreat</span>
                 </div>
-                <button onclick="navigateToSwasthyaKutir()" class="btn-taj-primary min-h-[44px] px-6 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer gap-2">
+                <button onclick="switchView('view-swasthya-kutir')" class="btn-taj-primary min-h-[44px] px-6 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer gap-2">
                   <span>Explore Swasthya Kutir Rooms →</span>
                 </button>
               </div>
@@ -550,7 +557,7 @@
                   <span class="text-xs text-taj-charcoal font-semibold block">From ₹2,500 + GST / night</span>
                   <span class="text-[10px] text-taj-muted">Ideal for families, retreats & pilgrims</span>
                 </div>
-                <button onclick="navigateToPanchvati()" class="btn-taj-primary min-h-[44px] px-6 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer gap-2">
+                <button onclick="switchView('view-panchvati')" class="btn-taj-primary min-h-[44px] px-6 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer gap-2">
                   <span>Explore Panchvati Rooms →</span>
                 </button>
               </div>
@@ -562,7 +569,8 @@
       </section>
 
       <!-- ================= 4. DINING & RESTAURANT OVERVIEW (AAHAR-VIHAR & PANCHVATI RASOEE) ================= -->
-      <section id="dining" class="py-20 sm:py-28 bg-white border-b border-taj-border">
+      <section id="dining-section" class="py-20 sm:py-28 bg-white border-b border-taj-border">
+        <a id="dining" class="sr-only"></a>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           <!-- Section Heading -->
@@ -676,7 +684,7 @@
 
               <div class="p-6 sm:p-8 pt-0 border-t border-taj-border pt-4 flex flex-wrap items-center justify-between gap-3">
                 <span class="text-xs text-taj-muted">Breakfast, Lunch & Dinner Available</span>
-                <button onclick="navigateToMenu()" class="btn-taj-primary min-h-[44px] px-6 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer gap-2">
+                <button onclick="switchView('view-aahar-vihar-menu')" class="btn-taj-primary min-h-[44px] px-6 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer gap-2">
                   <span>VIEW FULL AAHAR-VIHAR MENU →</span>
                 </button>
               </div>
@@ -746,8 +754,8 @@
 
               <div class="p-6 sm:p-8 pt-0 border-t border-taj-border pt-4 flex flex-wrap items-center justify-between gap-3">
                 <span class="text-xs text-taj-muted">Pilgrim & Community Meals</span>
-                <button onclick="navigateToPanchvatiRasoeeMenu()" class="btn-taj-primary min-h-[44px] px-6 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer gap-2">
-                  <span>EXPLORE PANCHVATI RASOEE MENU →</span>
+                <button onclick="switchView('view-panchvati-pasoee-menu')" class="btn-taj-primary min-h-[44px] px-6 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer gap-2">
+                  <span>EXPLORE PANCHVATI PASOEE MENU →</span>
                 </button>
               </div>
             </div>
@@ -765,12 +773,12 @@
               </p>
             </div>
             <div class="flex flex-wrap items-center gap-3">
-              <button onclick="navigateToMenu()" class="btn-taj-primary min-h-[44px] px-5 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer whitespace-nowrap sm:whitespace-normal gap-2">
+              <button onclick="switchView('view-aahar-vihar-menu')" class="btn-taj-primary min-h-[44px] px-5 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer whitespace-nowrap sm:whitespace-normal gap-2">
                 <span>Aahar-Vihar Menu (120+ Dishes)</span>
                 <i data-lucide="arrow-right" class="w-4 h-4"></i>
               </button>
-              <button onclick="navigateToPanchvatiRasoeeMenu()" class="btn-taj-outline-dark min-h-[44px] px-5 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer whitespace-nowrap sm:whitespace-normal gap-2">
-                <span>Panchvati Rasoee Menu</span>
+              <button onclick="switchView('view-panchvati-pasoee-menu')" class="btn-taj-outline-dark min-h-[44px] px-5 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer whitespace-nowrap sm:whitespace-normal gap-2">
+                <span>Panchvati Pasoee Menu</span>
                 <i data-lucide="arrow-right" class="w-4 h-4"></i>
               </button>
             </div>
@@ -1042,23 +1050,96 @@
 
         </div>
       </section>
-    </div><!-- /#home-view -->
+
+      <!-- ================= TAJ-STYLE LUXURY FOOTER ================= -->
+      <footer class="bg-taj-charcoal text-white/70 py-16 text-xs mt-16 border-t border-taj-gold/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+
+            <div class="space-y-3">
+              <div class="flex items-center gap-2.5">
+                <div class="w-8 h-8 border border-taj-gold flex items-center justify-center">
+                  <i data-lucide="crown" class="w-4 h-4 text-taj-gold-light"></i>
+                </div>
+                <span class="font-cinzel text-base font-bold text-white tracking-widest">AROGYADHAM</span>
+              </div>
+              <p class="text-xs text-white/60 leading-relaxed">
+                Arogyadham Swasthya Kutir, Chitrakoot. Honoring classical Ayurvedic living and the regal hospitality
+                traditions of Taj Hotels.
+              </p>
+              <p class="text-[11px] text-taj-gold-light">4.7 ★ Verified Google Rating (156 Reviews)</p>
+            </div>
+
+            <div class="space-y-2.5">
+              <h4 class="font-cinzel text-xs uppercase tracking-widest text-white font-bold">Suite Collections</h4>
+              <ul class="space-y-1.5 text-white/70">
+                <li><a href="#rooms-section" onclick="switchView('view-home'); document.getElementById('rooms-section')?.scrollIntoView({behavior: 'smooth'});" class="hover:text-white transition-colors cursor-pointer">1. Rooms & Suites (2 Grand Wings)</a></li>
+                <li><a href="#swasthya-kutir-rooms" onclick="switchView('view-swasthya-kutir')" class="hover:text-white transition-colors cursor-pointer">2. Swasthya Kutir Wing (From ₹5,500)</a></li>
+                <li><a href="#panchvati-rooms" onclick="switchView('view-panchvati')" class="hover:text-white transition-colors cursor-pointer">3. Panchvati Wing (From ₹2,500)</a></li>
+                <li><a href="#swasthya-kutir-rooms" onclick="switchView('view-swasthya-kutir')" class="hover:text-white transition-colors cursor-pointer">4. Mandakini & Paishwani Cottages</a></li>
+              </ul>
+            </div>
+
+            <div class="space-y-2.5">
+              <h4 class="font-cinzel text-xs uppercase tracking-widest text-white font-bold">Campus Facilities</h4>
+              <ul class="space-y-1.5 text-white/70">
+                <li><a href="#aahar-vihar-menu" onclick="switchView('view-aahar-vihar-menu')"
+                    class="hover:text-white transition-colors cursor-pointer">Aahar-Vihar Full Restaurant Menu</a></li>
+                <li><a href="#panchvati-pasoee-menu" onclick="switchView('view-panchvati-pasoee-menu')"
+                    class="hover:text-white transition-colors cursor-pointer">Panchvati Pasoee (₹220 Thali)</a></li>
+                <li><a href="#wellness-facilities" onclick="switchView('view-home'); document.getElementById('wellness-facilities')?.scrollIntoView({behavior: 'smooth'});"
+                    class="hover:text-white transition-colors cursor-pointer">Matru Sadan Hospital & Rasshala</a></li>
+                <li><a href="#wellness-facilities" onclick="switchView('view-home'); document.getElementById('wellness-facilities')?.scrollIntoView({behavior: 'smooth'});"
+                    class="hover:text-white transition-colors cursor-pointer">Panchkarma, Gow Shala & Boating</a></li>
+              </ul>
+            </div>
+
+            <div class="space-y-2.5">
+              <h4 class="font-cinzel text-xs uppercase tracking-widest text-white font-bold">Reservations & Concierge</h4>
+              <p class="text-white/70">Arogya Dham Rd, Parisar, Majhgawan, Chitrakoot, MP 485334</p>
+              <p class="text-white">
+                Direct Concierge: <a href="tel:+917670265334" class="text-taj-gold-light hover:underline font-semibold">+91
+                  76702 65334</a>
+              </p>
+              <div class="pt-2">
+                <button onclick="openBookingDrawer('Mandakini Royal Suite', 12000)"
+                  class="btn-taj-primary py-2 px-4 text-[10px] cursor-pointer">
+                  Book Your Sanctuary
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-white/40">
+            <p>© 2026 Arogyadham Swasthya Kutir, Chitrakoot. Inspired by Taj Hotels & Resorts standards.</p>
+            <div class="flex items-center gap-4">
+              <a href="#" class="hover:text-white">Privacy Policy</a>
+              <span>•</span>
+              <a href="#" class="hover:text-white">Terms & Conditions</a>
+              <span>•</span>
+              <a href="#" class="hover:text-white">Ayurvedic Guidelines</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div><!-- /#view-home -->
 
     <!-- ================= 2. DEDICATED SEPARATE PAGE FOR AROGYADHAM SWASTHYA KUTIR ================= -->
-    <div id="swasthya-kutir-view" class="view-page hidden">
+    <div id="view-swasthya-kutir" class="view-page hidden">
       <a id="swasthya-kutir-rooms" class="sr-only"></a>
       <!-- Top Breadcrumb Bar -->
       <div class="bg-taj-ivory border-b border-taj-border pt-24 sm:pt-28 pb-4">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between gap-4">
-          <button onclick="navigateToHomeRooms()"
-            class="breadcrumb-back-btn inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-taj-charcoal hover:text-taj-gold min-h-[44px] cursor-pointer">
+          <button onclick="switchView('view-home')"
+            class="breadcrumb-back-btn inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-taj-charcoal hover:text-taj-gold min-h-[44px] px-4 py-2 bg-white border border-taj-border hover:border-taj-gold cursor-pointer transition-all shadow-sm">
             <i data-lucide="arrow-left" class="w-4 h-4 text-taj-gold"></i>
-            <span>← Back to All Wings</span>
+            <span>← Back to Main Sanctuary</span>
           </button>
           <div class="text-xs text-taj-muted tracking-wider flex items-center gap-2">
-            <a href="#hero" onclick="navigateToHomeView()" class="hover:text-taj-charcoal">Home</a>
+            <a href="#hero" onclick="switchView('view-home')" class="hover:text-taj-charcoal">Home</a>
             <span class="text-taj-border">/</span>
-            <a href="#rooms-wings" onclick="navigateToHomeRooms()" class="hover:text-taj-charcoal">Rooms & Suites</a>
+            <a href="#rooms-section" onclick="switchView('view-home'); document.getElementById('rooms-section')?.scrollIntoView({behavior: 'smooth'});" class="hover:text-taj-charcoal">Rooms & Suites</a>
             <span class="text-taj-border">/</span>
             <span class="text-taj-gold font-semibold">Swasthya Kutir Wing</span>
           </div>
@@ -1361,10 +1442,10 @@
               <p class="text-xs text-taj-muted">Discover our 4 Panchvati room categories starting from ₹2,500 + GST / night.</p>
             </div>
             <div class="flex flex-wrap items-center gap-3">
-              <button onclick="navigateToHomeRooms()" class="btn-taj-outline-dark min-h-[44px] px-5 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer">
-                <span>← All Wings</span>
+              <button onclick="switchView('view-home')" class="btn-taj-outline-dark min-h-[44px] px-5 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer">
+                <span>← Back to Main Sanctuary</span>
               </button>
-              <button onclick="navigateToPanchvati()" class="btn-taj-primary min-h-[44px] px-5 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer gap-2">
+              <button onclick="switchView('view-panchvati')" class="btn-taj-primary min-h-[44px] px-5 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer gap-2">
                 <span>Explore Panchvati Wing</span>
                 <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
               </button>
@@ -1373,23 +1454,23 @@
 
         </div>
       </section>
-    </div>
+    </div><!-- /#view-swasthya-kutir -->
 
     <!-- ================= 3. DEDICATED SEPARATE PAGE FOR PANCHVATI ================= -->
-    <div id="panchvati-view" class="view-page hidden">
+    <div id="view-panchvati" class="view-page hidden">
       <a id="panchvati-rooms" class="sr-only"></a>
       <!-- Top Breadcrumb Bar -->
       <div class="bg-taj-ivory border-b border-taj-border pt-24 sm:pt-28 pb-4">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between gap-4">
-          <button onclick="navigateToHomeRooms()"
-            class="breadcrumb-back-btn inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-taj-charcoal hover:text-taj-gold min-h-[44px] cursor-pointer">
+          <button onclick="switchView('view-home')"
+            class="breadcrumb-back-btn inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-taj-charcoal hover:text-taj-gold min-h-[44px] px-4 py-2 bg-white border border-taj-border hover:border-taj-gold cursor-pointer transition-all shadow-sm">
             <i data-lucide="arrow-left" class="w-4 h-4 text-taj-gold"></i>
-            <span>← Back to All Wings</span>
+            <span>← Back to Main Sanctuary</span>
           </button>
           <div class="text-xs text-taj-muted tracking-wider flex items-center gap-2">
-            <a href="#hero" onclick="navigateToHomeView()" class="hover:text-taj-charcoal">Home</a>
+            <a href="#hero" onclick="switchView('view-home')" class="hover:text-taj-charcoal">Home</a>
             <span class="text-taj-border">/</span>
-            <a href="#rooms-wings" onclick="navigateToHomeRooms()" class="hover:text-taj-charcoal">Rooms & Suites</a>
+            <a href="#rooms-section" onclick="switchView('view-home'); document.getElementById('rooms-section')?.scrollIntoView({behavior: 'smooth'});" class="hover:text-taj-charcoal">Rooms & Suites</a>
             <span class="text-taj-border">/</span>
             <span class="text-emerald-700 font-semibold">Panchvati Wing</span>
           </div>
@@ -1673,10 +1754,10 @@
               <p class="text-xs text-taj-muted">Explore the Mandakini, Paishwani, and Vaidehi royal suites starting from ₹5,500 + GST / night.</p>
             </div>
             <div class="flex flex-wrap items-center gap-3">
-              <button onclick="navigateToHomeRooms()" class="btn-taj-outline-dark min-h-[44px] px-5 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer">
-                <span>← All Wings</span>
+              <button onclick="switchView('view-home')" class="btn-taj-outline-dark min-h-[44px] px-5 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer">
+                <span>← Back to Main Sanctuary</span>
               </button>
-              <button onclick="navigateToSwasthyaKutir()" class="btn-taj-primary min-h-[44px] px-5 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer gap-2">
+              <button onclick="switchView('view-swasthya-kutir')" class="btn-taj-primary min-h-[44px] px-5 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer gap-2">
                 <span>Explore Swasthya Kutir Wing</span>
                 <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
               </button>
@@ -1685,23 +1766,24 @@
 
         </div>
       </section>
-    </div><!-- /#panchvati-view -->
+    </div><!-- /#view-panchvati -->
 
     <!-- ================= 4. DEDICATED SEPARATE PAGE FOR AAHAR-VIHAR RESTAURANT MENU ================= -->
-    <div id="menu-view" class="view-page hidden">
+    <div id="view-aahar-vihar-menu" class="view-page hidden">
+      <a id="menu-view" class="sr-only"></a>
       <a id="aahar-vihar-menu" class="sr-only"></a>
       <!-- Top Breadcrumb Bar -->
       <div class="bg-taj-ivory border-b border-taj-border pt-24 sm:pt-28 pb-4">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between gap-4">
-          <button onclick="navigateToHomeDining()"
+          <button onclick="switchView('view-home')"
             class="breadcrumb-back-btn min-h-[44px] px-5 py-2.5 inline-flex items-center justify-center gap-2 text-xs font-semibold tracking-wider uppercase text-taj-charcoal hover:text-taj-gold bg-white border border-taj-border hover:border-taj-gold shrink-0 cursor-pointer transition-all shadow-sm">
             <i data-lucide="arrow-left" class="w-4 h-4 text-taj-gold"></i>
-            <span>← Back to Homepage</span>
+            <span>← Back to Main Sanctuary</span>
           </button>
           <div class="text-xs text-taj-muted tracking-wider flex items-center gap-2">
-            <a href="#hero" onclick="navigateToHomeView()" class="hover:text-taj-charcoal">Home</a>
+            <a href="#hero" onclick="switchView('view-home')" class="hover:text-taj-charcoal">Home</a>
             <span class="text-taj-border">/</span>
-            <a href="#dining" onclick="navigateToHomeDining()" class="hover:text-taj-charcoal">Dining</a>
+            <a href="#dining-section" onclick="switchView('view-home'); document.getElementById('dining-section')?.scrollIntoView({behavior: 'smooth'});" class="hover:text-taj-charcoal">Dining</a>
             <span class="text-taj-border">/</span>
             <span class="text-taj-gold font-semibold">Aahar-Vihar Menu</span>
           </div>
@@ -1927,34 +2009,35 @@
               <h5 class="font-cinzel text-sm font-bold text-taj-charcoal">Finished Viewing the Menu?</h5>
               <p class="text-xs text-taj-muted">Return to the resort homepage to explore suites and wellness therapies.</p>
             </div>
-            <button onclick="navigateToHomeDining()" class="btn-taj-outline-dark min-h-[44px] py-2.5 px-6 text-xs flex items-center justify-center gap-2 shrink-0 cursor-pointer">
+            <button onclick="switchView('view-home')" class="btn-taj-outline-dark min-h-[44px] py-2.5 px-6 text-xs flex items-center justify-center gap-2 shrink-0 cursor-pointer">
               <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
-              <span>← Back to Homepage</span>
+              <span>← Back to Main Sanctuary</span>
             </button>
           </div>
 
         </div>
       </div>
-    </div><!-- /#menu-view -->
+    </div><!-- /#view-aahar-vihar-menu -->
 
-    <!-- ================= 5. DEDICATED SEPARATE PAGE FOR PANCHVATI RASOEE MENU ================= -->
-    <div id="panchvati-rasoee-view" class="view-page hidden">
+    <!-- ================= 5. DEDICATED SEPARATE PAGE FOR PANCHVATI PASOEE MENU ================= -->
+    <div id="view-panchvati-pasoee-menu" class="view-page hidden">
+      <a id="panchvati-rasoee-view" class="sr-only"></a>
       <a id="panchvati-rasoee-menu" class="sr-only"></a>
       <a id="panchvati-pasoee-menu" class="sr-only"></a>
       <!-- Top Breadcrumb Bar -->
       <div class="bg-taj-ivory border-b border-taj-border pt-24 sm:pt-28 pb-4">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between gap-4">
-          <button onclick="navigateToHomeDining()"
+          <button onclick="switchView('view-home')"
             class="breadcrumb-back-btn min-h-[44px] px-5 py-2.5 inline-flex items-center justify-center gap-2 text-xs font-semibold tracking-wider uppercase text-taj-charcoal hover:text-taj-gold bg-white border border-taj-border hover:border-taj-gold shrink-0 cursor-pointer transition-all shadow-sm">
             <i data-lucide="arrow-left" class="w-4 h-4 text-taj-gold"></i>
-            <span>← Back to Homepage</span>
+            <span>← Back to Main Sanctuary</span>
           </button>
           <div class="text-xs text-taj-muted tracking-wider flex items-center gap-2">
-            <a href="#hero" onclick="navigateToHomeView()" class="hover:text-taj-charcoal">Home</a>
+            <a href="#hero" onclick="switchView('view-home')" class="hover:text-taj-charcoal">Home</a>
             <span class="text-taj-border">/</span>
-            <a href="#dining" onclick="navigateToHomeDining()" class="hover:text-taj-charcoal">Dining</a>
+            <a href="#dining-section" onclick="switchView('view-home'); document.getElementById('dining-section')?.scrollIntoView({behavior: 'smooth'});" class="hover:text-taj-charcoal">Dining</a>
             <span class="text-taj-border">/</span>
-            <span class="text-taj-gold font-semibold">Panchvati Rasoee Menu</span>
+            <span class="text-taj-gold font-semibold">Panchvati Pasoee Menu</span>
           </div>
         </div>
       </div>
@@ -2111,95 +2194,22 @@
               <p class="text-xs text-taj-muted">Return to the resort homepage or explore the Aahar-Vihar luxury restaurant menu.</p>
             </div>
             <div class="flex flex-wrap items-center gap-3">
-              <button onclick="navigateToMenu()" class="btn-taj-outline-gold min-h-[44px] py-2.5 px-5 text-xs flex items-center justify-center gap-2 shrink-0 cursor-pointer">
+              <button onclick="switchView('view-aahar-vihar-menu')" class="btn-taj-outline-gold min-h-[44px] py-2.5 px-5 text-xs flex items-center justify-center gap-2 shrink-0 cursor-pointer">
                 <span>View Aahar-Vihar Menu</span>
                 <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
               </button>
-              <button onclick="navigateToHomeDining()" class="btn-taj-outline-dark min-h-[44px] py-2.5 px-5 text-xs flex items-center justify-center gap-2 shrink-0 cursor-pointer">
+              <button onclick="switchView('view-home')" class="btn-taj-outline-dark min-h-[44px] py-2.5 px-5 text-xs flex items-center justify-center gap-2 shrink-0 cursor-pointer">
                 <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
-                <span>← Back to Homepage</span>
+                <span>← Back to Main Sanctuary</span>
               </button>
             </div>
           </div>
 
         </div>
       </div>
-    </div><!-- /#panchvati-rasoee-view -->
+    </div><!-- /#view-panchvati-pasoee-menu -->
 
   </main><!-- /#taj-app-content -->
-
-  <!-- ================= TAJ-STYLE LUXURY FOOTER ================= -->
-  <footer class="bg-taj-charcoal text-white/70 py-16 text-xs">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-white/10">
-
-        <div class="space-y-3">
-          <div class="flex items-center gap-2.5">
-            <div class="w-8 h-8 border border-taj-gold flex items-center justify-center">
-              <i data-lucide="crown" class="w-4 h-4 text-taj-gold-light"></i>
-            </div>
-            <span class="font-cinzel text-base font-bold text-white tracking-widest">AROGYADHAM</span>
-          </div>
-          <p class="text-xs text-white/60 leading-relaxed">
-            Arogyadham Swasthya Kutir, Chitrakoot. Honoring classical Ayurvedic living and the regal hospitality
-            traditions of Taj Hotels.
-          </p>
-          <p class="text-[11px] text-taj-gold-light">4.7 ★ Verified Google Rating (156 Reviews)</p>
-        </div>
-
-        <div class="space-y-2.5">
-          <h4 class="font-cinzel text-xs uppercase tracking-widest text-white font-bold">Suite Collections</h4>
-          <ul class="space-y-1.5 text-white/70">
-            <li><a href="#rooms-wings" onclick="navigateToHomeRooms()" class="hover:text-white transition-colors">1. Rooms & Suites (2 Grand Wings)</a></li>
-            <li><a href="#swasthya-kutir-rooms" onclick="navigateToSwasthyaKutir()" class="hover:text-white transition-colors">2. Swasthya Kutir Wing (From ₹5,500)</a></li>
-            <li><a href="#panchvati-rooms" onclick="navigateToPanchvati()" class="hover:text-white transition-colors">3. Panchvati Wing (From ₹2,500)</a></li>
-            <li><a href="#swasthya-kutir-rooms" onclick="navigateToSwasthyaKutir()" class="hover:text-white transition-colors">4. Mandakini & Paishwani Cottages</a></li>
-          </ul>
-        </div>
-
-        <div class="space-y-2.5">
-          <h4 class="font-cinzel text-xs uppercase tracking-widest text-white font-bold">Campus Facilities</h4>
-          <ul class="space-y-1.5 text-white/70">
-            <li><a href="#aahar-vihar-menu" onclick="navigateToMenu()"
-                class="hover:text-white transition-colors">Aahar-Vihar Full Restaurant Menu</a></li>
-            <li><a href="#panchvati-rasoee-menu" onclick="navigateToPanchvatiRasoeeMenu()"
-                class="hover:text-white transition-colors">Panchvati Rasoee (₹220 Thali)</a></li>
-            <li><a href="#wellness-facilities" onclick="navigateToSection('wellness-facilities')"
-                class="hover:text-white transition-colors">Matru Sadan Hospital & Rasshala</a></li>
-            <li><a href="#wellness-facilities" onclick="navigateToSection('wellness-facilities')"
-                class="hover:text-white transition-colors">Panchkarma, Gow Shala & Boating</a></li>
-          </ul>
-        </div>
-
-        <div class="space-y-2.5">
-          <h4 class="font-cinzel text-xs uppercase tracking-widest text-white font-bold">Reservations & Concierge</h4>
-          <p class="text-white/70">Arogya Dham Rd, Parisar, Majhgawan, Chitrakoot, MP 485334</p>
-          <p class="text-white">
-            Direct Concierge: <a href="tel:+917670265334" class="text-taj-gold-light hover:underline font-semibold">+91
-              76702 65334</a>
-          </p>
-          <div class="pt-2">
-            <button onclick="openBookingDrawer('Mandakini Royal Suite', 12000)"
-              class="btn-taj-primary py-2 px-4 text-[10px]">
-              Book Your Sanctuary
-            </button>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-white/40">
-        <p>© 2026 Arogyadham Swasthya Kutir, Chitrakoot. Inspired by Taj Hotels & Resorts standards.</p>
-        <div class="flex items-center gap-4">
-          <a href="#" class="hover:text-white">Privacy Policy</a>
-          <span>•</span>
-          <a href="#" class="hover:text-white">Terms & Conditions</a>
-          <span>•</span>
-          <a href="#" class="hover:text-white">Ayurvedic Guidelines</a>
-        </div>
-      </div>
-    </div>
-  </footer>
 
   <!-- ================= TAJ-STYLE "BOOK A STAY" RESERVATION DRAWER ================= -->
   <div id="booking-drawer"

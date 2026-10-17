@@ -893,7 +893,57 @@ function initTajNavbarScroll() {
   handleScroll();
 }
 
-/* ================= VIEW ROUTING & NAVIGATION ARCHITECTURE ================= */
+/* ================= ROBUST JAVASCRIPT VIEW CONTROLLER ================= */
+window.switchView = function(targetViewId) {
+  const views = [
+    'view-home',
+    'view-swasthya-kutir',
+    'view-panchvati',
+    'view-aahar-vihar-menu',
+    'view-panchvati-pasoee-menu'
+  ];
+
+  let resolvedId = targetViewId;
+  if (!resolvedId.startsWith('view-')) {
+    resolvedId = 'view-' + resolvedId;
+  }
+  // aliases
+  if (resolvedId === 'view-panchvati-rasoee-menu' || resolvedId === 'view-panchvati-rasoee' || resolvedId === 'view-pasoee' || resolvedId === 'view-rasoee') {
+    resolvedId = 'view-panchvati-pasoee-menu';
+  } else if (resolvedId === 'view-menu' || resolvedId === 'view-dining-menu' || resolvedId === 'view-aahar-vihar') {
+    resolvedId = 'view-aahar-vihar-menu';
+  } else if (resolvedId === 'view-swasthya-kutir-rooms' || resolvedId === 'view-vaidehi') {
+    resolvedId = 'view-swasthya-kutir';
+  } else if (resolvedId === 'view-panchvati-rooms' || resolvedId === 'view-panchwati-rooms') {
+    resolvedId = 'view-panchvati';
+  } else if (resolvedId === 'view-hero' || resolvedId === 'view-landing' || resolvedId === 'view-main') {
+    resolvedId = 'view-home';
+  }
+
+  views.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) {
+      if (id === resolvedId) {
+        el.classList.remove('hidden');
+        el.classList.add('block');
+      } else {
+        el.classList.add('hidden');
+        el.classList.remove('block');
+      }
+    }
+  });
+
+  const mobileMenu = document.getElementById('mobile-nav-menu');
+  if (mobileMenu) {
+    mobileMenu.classList.add('hidden');
+  }
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  if (typeof lucide !== 'undefined' && lucide.createIcons) {
+    lucide.createIcons();
+  }
+};
+
 function initRouting() {
   window.addEventListener('hashchange', handleRouting);
   // Handle on page load (e.g. bookmarks or direct URLs)
@@ -901,204 +951,108 @@ function initRouting() {
 }
 
 function handleRouting() {
-  const hash = window.location.hash.toLowerCase();
-  const homeView = document.getElementById('home-view');
-  const swasthyaKutirView = document.getElementById('swasthya-kutir-view') || document.getElementById('vaidehi-view');
-  const panchvatiView = document.getElementById('panchvati-view');
-  const menuView = document.getElementById('menu-view');
-  const pasoeeView = document.getElementById('panchvati-rasoee-view') || document.getElementById('panchvati-pasoee-view');
-  const mobileMenu = document.getElementById('mobile-nav-menu');
-
-  if (mobileMenu) {
-    mobileMenu.classList.add('hidden');
-  }
-
-  if (!homeView || !swasthyaKutirView || !panchvatiView || !menuView) return;
+  const rawHash = window.location.hash.toLowerCase().trim();
+  const hash = rawHash.replace(/^#\/?/, '');
 
   if (
-    hash === '#swasthya-kutir-rooms' || hash === '#swasthya-kutir' || hash === '#kutir-rooms' || hash === '#swasthya-rooms' ||
-    hash === '#vaidehi-rooms' || hash === '#vaidehi' || hash === '#/vaidehi'
+    hash === 'swasthya-kutir-rooms' || hash === 'swasthya-kutir' || hash === 'view-swasthya-kutir' ||
+    hash === 'vaidehi-rooms' || hash === 'vaidehi' || hash === 'kutir-rooms' || hash === 'swasthya-rooms'
   ) {
-    // 2. DEDICATED SEPARATE PAGE FOR AROGYADHAM SWASTHYA KUTIR (HERITAGE & WELLNESS WING)
-    homeView.classList.add('hidden');
-    panchvatiView.classList.add('hidden');
-    menuView.classList.add('hidden');
-    if (pasoeeView) pasoeeView.classList.add('hidden');
-    swasthyaKutirView.classList.remove('hidden');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.switchView('view-swasthya-kutir');
     document.title = "Arogyadham Swasthya Kutir Wing | Heritage & Wellness Sanctuary, Chitrakoot";
   } else if (
-    hash === '#panchvati-rooms' || hash === '#panchvati' || hash === '#/panchvati' ||
-    hash === '#panchwati-rooms' || hash === '#panchwati' || hash === '#/panchwati'
+    hash === 'panchvati-rooms' || hash === 'panchvati' || hash === 'view-panchvati' ||
+    hash === 'panchwati-rooms' || hash === 'panchwati'
   ) {
-    // 3. DEDICATED SEPARATE PAGE FOR PANCHVATI (PILGRIM, FAMILY & GROUP WING)
-    homeView.classList.add('hidden');
-    swasthyaKutirView.classList.add('hidden');
-    menuView.classList.add('hidden');
-    if (pasoeeView) pasoeeView.classList.add('hidden');
-    panchvatiView.classList.remove('hidden');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.switchView('view-panchvati');
     document.title = "Panchvati Wing | Sacred Community & Family Living, Chitrakoot";
-  } else if (hash === '#aahar-vihar-menu' || hash === '#menu' || hash === '#/menu' || hash === '#dining-menu' || hash === '#aahar-vihar') {
-    // 4. DEDICATED SEPARATE FULL-PAGE AAHAR-VIHAR MENU VIEW
-    homeView.classList.add('hidden');
-    swasthyaKutirView.classList.add('hidden');
-    panchvatiView.classList.add('hidden');
-    if (pasoeeView) pasoeeView.classList.add('hidden');
-    menuView.classList.remove('hidden');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  } else if (
+    hash === 'aahar-vihar-menu' || hash === 'menu' || hash === 'dining-menu' ||
+    hash === 'view-aahar-vihar-menu' || hash === 'aahar-vihar'
+  ) {
+    window.switchView('view-aahar-vihar-menu');
     document.title = "Aahar-Vihar Restaurant Menu | Arogyadham Swasthya Kutir, Chitrakoot";
     if (typeof renderDiningDishes === 'function') {
       renderDiningDishes();
       updateDiningBillUI();
     }
   } else if (
-    hash === '#panchvati-rasoee-menu' || hash === '#panchvati-rasoee' || hash === '#rasoee-menu' || hash === '#/panchvati-rasoee' || hash === '#rasoee' ||
-    hash === '#panchvati-pasoee-menu' || hash === '#panchvati-pasoee' || hash === '#pasoee-menu' || hash === '#/panchvati-pasoee' || hash === '#pasoee'
+    hash === 'panchvati-pasoee-menu' || hash === 'panchvati-rasoee-menu' || hash === 'panchvati-pasoee' ||
+    hash === 'panchvati-rasoee' || hash === 'view-panchvati-pasoee-menu' || hash === 'pasoee-menu' || hash === 'rasoee-menu' ||
+    hash === 'pasoee' || hash === 'rasoee'
   ) {
-    // 5. DEDICATED SEPARATE FULL-PAGE PANCHVATI RASOEE MENU VIEW
-    homeView.classList.add('hidden');
-    swasthyaKutirView.classList.add('hidden');
-    panchvatiView.classList.add('hidden');
-    menuView.classList.add('hidden');
-    if (pasoeeView) pasoeeView.classList.remove('hidden');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    document.title = "Panchvati Rasoee Menu | Arogyadham Swasthya Kutir, Chitrakoot";
+    window.switchView('view-panchvati-pasoee-menu');
+    document.title = "Panchvati Pasoee Menu | Arogyadham Swasthya Kutir, Chitrakoot";
     if (typeof renderPasoeeItems === 'function') {
       renderPasoeeItems();
       updatePasoeeCartUI();
     }
   } else {
-    // 1. HOMEPAGE VIEW (THE 2 GRAND WINGS & RESORT HIGHLIGHTS)
-    swasthyaKutirView.classList.add('hidden');
-    panchvatiView.classList.add('hidden');
-    menuView.classList.add('hidden');
-    if (pasoeeView) pasoeeView.classList.add('hidden');
-    homeView.classList.remove('hidden');
+    window.switchView('view-home');
     document.title = "Arogyadham Swasthya Kutir, Chitrakoot | Luxury Wellness Resort";
-
-    if (hash === '#rooms-wings' || hash === '#rooms-pillars' || hash === '#rooms') {
+    if (hash === 'rooms-section' || hash === 'rooms-wings' || hash === 'rooms-pillars' || hash === 'rooms') {
       setTimeout(() => {
-        const el = document.getElementById('rooms-wings') || document.getElementById('rooms-pillars');
+        const el = document.getElementById('rooms-section') || document.getElementById('rooms-wings') || document.getElementById('rooms-pillars');
         if (el) el.scrollIntoView({ behavior: 'smooth' });
       }, 50);
-    } else if (hash === '#dining') {
+    } else if (hash === 'dining-section' || hash === 'dining') {
       setTimeout(() => {
-        const el = document.getElementById('dining');
+        const el = document.getElementById('dining-section') || document.getElementById('dining');
         if (el) el.scrollIntoView({ behavior: 'smooth' });
       }, 50);
-    } else if (hash && hash !== '#home' && hash !== '#' && hash !== '#hero') {
+    } else if (hash && hash !== 'home' && hash !== 'hero') {
       setTimeout(() => {
-        const target = document.querySelector(hash);
+        const target = document.getElementById(hash);
         if (target) target.scrollIntoView({ behavior: 'smooth' });
       }, 50);
     }
   }
-
-  safeCreateIcons();
 }
 
 function navigateToSwasthyaKutir() {
-  window.location.hash = '#swasthya-kutir-rooms';
-  handleRouting();
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  window.switchView('view-swasthya-kutir');
 }
 const navigateToVaidehi = navigateToSwasthyaKutir;
 const navigateToKutir = navigateToSwasthyaKutir;
 
 function navigateToPanchvati() {
-  window.location.hash = '#panchvati-rooms';
-  handleRouting();
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  window.switchView('view-panchvati');
 }
 const navigateToPanchwati = navigateToPanchvati;
 
 function navigateToMenu() {
-  window.location.hash = '#aahar-vihar-menu';
-  handleRouting();
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  window.switchView('view-aahar-vihar-menu');
 }
 
 function navigateToPanchvatiRasoeeMenu() {
-  window.location.hash = '#panchvati-rasoee-menu';
-  handleRouting();
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  window.switchView('view-panchvati-pasoee-menu');
 }
 const navigateToPanchvatiPasoeeMenu = navigateToPanchvatiRasoeeMenu;
 const navigateToRasoeeMenu = navigateToPanchvatiRasoeeMenu;
 const navigateToPasoeeMenu = navigateToPanchvatiRasoeeMenu;
 
 function navigateToHomeDining() {
-  const homeView = document.getElementById('home-view');
-  const swasthyaKutirView = document.getElementById('swasthya-kutir-view') || document.getElementById('vaidehi-view');
-  const panchvatiView = document.getElementById('panchvati-view');
-  const menuView = document.getElementById('menu-view');
-  const pasoeeView = document.getElementById('panchvati-rasoee-view') || document.getElementById('panchvati-pasoee-view');
-
-  if (homeView) homeView.classList.remove('hidden');
-  if (swasthyaKutirView) swasthyaKutirView.classList.add('hidden');
-  if (panchvatiView) panchvatiView.classList.add('hidden');
-  if (menuView) menuView.classList.add('hidden');
-  if (pasoeeView) pasoeeView.classList.add('hidden');
-
-  window.location.hash = '#dining';
-  handleRouting();
+  window.switchView('view-home');
   setTimeout(() => {
-    const el = document.getElementById('dining');
+    const el = document.getElementById('dining-section') || document.getElementById('dining');
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   }, 50);
 }
 
 function navigateToHomeRooms() {
-  const homeView = document.getElementById('home-view');
-  const swasthyaKutirView = document.getElementById('swasthya-kutir-view') || document.getElementById('vaidehi-view');
-  const panchvatiView = document.getElementById('panchvati-view');
-  const menuView = document.getElementById('menu-view');
-  const pasoeeView = document.getElementById('panchvati-rasoee-view') || document.getElementById('panchvati-pasoee-view');
-  if (homeView) homeView.classList.remove('hidden');
-  if (swasthyaKutirView) swasthyaKutirView.classList.add('hidden');
-  if (panchvatiView) panchvatiView.classList.add('hidden');
-  if (menuView) menuView.classList.add('hidden');
-  if (pasoeeView) pasoeeView.classList.add('hidden');
-
-  window.location.hash = '#rooms-wings';
-  handleRouting();
+  window.switchView('view-home');
   setTimeout(() => {
-    const el = document.getElementById('rooms-wings') || document.getElementById('rooms-pillars');
+    const el = document.getElementById('rooms-section') || document.getElementById('rooms-wings') || document.getElementById('rooms-pillars');
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   }, 50);
 }
 
 function navigateToHomeView() {
-  const homeView = document.getElementById('home-view');
-  const swasthyaKutirView = document.getElementById('swasthya-kutir-view') || document.getElementById('vaidehi-view');
-  const panchvatiView = document.getElementById('panchvati-view');
-  const menuView = document.getElementById('menu-view');
-  const pasoeeView = document.getElementById('panchvati-rasoee-view') || document.getElementById('panchvati-pasoee-view');
-  if (homeView) homeView.classList.remove('hidden');
-  if (swasthyaKutirView) swasthyaKutirView.classList.add('hidden');
-  if (panchvatiView) panchvatiView.classList.add('hidden');
-  if (menuView) menuView.classList.add('hidden');
-  if (pasoeeView) pasoeeView.classList.add('hidden');
-
-  window.location.hash = '#hero';
-  handleRouting();
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  window.switchView('view-home');
 }
 
 function navigateToSection(sectionId) {
-  const homeView = document.getElementById('home-view');
-  const swasthyaKutirView = document.getElementById('swasthya-kutir-view') || document.getElementById('vaidehi-view');
-  const panchvatiView = document.getElementById('panchvati-view');
-  const menuView = document.getElementById('menu-view');
-  const pasoeeView = document.getElementById('panchvati-rasoee-view') || document.getElementById('panchvati-pasoee-view');
-  if (homeView) homeView.classList.remove('hidden');
-  if (swasthyaKutirView) swasthyaKutirView.classList.add('hidden');
-  if (panchvatiView) panchvatiView.classList.add('hidden');
-  if (menuView) menuView.classList.add('hidden');
-  if (pasoeeView) pasoeeView.classList.add('hidden');
-
-  window.location.hash = `#${sectionId}`;
+  window.switchView('view-home');
   setTimeout(() => {
     const el = document.getElementById(sectionId);
     if (el) el.scrollIntoView({ behavior: 'smooth' });
@@ -1106,25 +1060,7 @@ function navigateToSection(sectionId) {
 }
 
 function navigateToView(viewId) {
-  if (!viewId) return;
-  const target = String(viewId).trim().replace(/^#/, '');
-  if (target === 'swasthya-kutir-rooms' || target === 'swasthya-kutir' || target === 'swasthya-kutir-view' || target === 'vaidehi-rooms' || target === 'vaidehi-view') {
-    navigateToSwasthyaKutir();
-  } else if (target === 'panchvati-rooms' || target === 'panchvati' || target === 'panchvati-view' || target === 'panchwati-rooms' || target === 'panchwati') {
-    navigateToPanchvati();
-  } else if (target === 'aahar-vihar-menu' || target === 'menu' || target === 'menu-view' || target === 'dining-menu' || target === 'aahar-vihar') {
-    navigateToMenu();
-  } else if (target === 'panchvati-rasoee-menu' || target === 'panchvati-pasoee-menu' || target === 'panchvati-rasoee-view' || target === 'panchvati-pasoee-view' || target === 'rasoee' || target === 'pasoee') {
-    navigateToPanchvatiRasoeeMenu();
-  } else if (target === 'home' || target === 'hero' || target === 'home-view') {
-    navigateToHomeView();
-  } else if (target === 'rooms-wings' || target === 'rooms-pillars' || target === 'rooms') {
-    navigateToHomeRooms();
-  } else if (target === 'dining') {
-    navigateToHomeDining();
-  } else {
-    navigateToSection(target);
-  }
+  window.switchView(viewId);
 }
 
 window.navigateToView = navigateToView;
@@ -2669,6 +2605,7 @@ window.openUserProfileModal = openUserProfileModal;
 window.closeUserProfileModal = closeUserProfileModal;
 window.showSavedKutirsModal = showSavedKutirsModal;
 window.closeSavedKutirsModal = closeSavedKutirsModal;
+window.switchView = switchView;
 window.handleRouting = handleRouting;
 window.routeHashChange = handleRouting;
 window.navigateToView = navigateToView;
