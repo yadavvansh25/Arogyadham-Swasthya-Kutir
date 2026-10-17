@@ -493,48 +493,84 @@ async function handleGoogleSignIn() {
   }
 }
 
-/* ================= DJUBO BOOKING ENGINE REDIRECTION FLOW ================= */
+/* ================= DJUBO BOOKING ENGINE MULTI-TIER REDIRECTION ================= */
+const DJUBO_LINKS = {
+  "MANDAKINI_ROOM_ONLY": "#",
+  "MANDAKINI_BREAKFAST": "#",
+  "MANDAKINI_MAP": "#",
+  "PAIYSHWANI_ROOM_ONLY": "#",
+  "PAIYSHWANI_BREAKFAST": "#",
+  "PAIYSHWANI_MAP": "#",
+  "VAIDEHI_SUITE_ROOM_ONLY": "#",
+  "VAIDEHI_SUITE_BREAKFAST": "#",
+  "VAIDEHI_SUITE_MAP": "#",
+  "VAIDEHI_TWIN_ROOM_ONLY": "#",
+  "VAIDEHI_TWIN_BREAKFAST": "#",
+  "VAIDEHI_TWIN_MAP": "#"
+};
+window.DJUBO_LINKS = DJUBO_LINKS;
+
+function redirectToDjubo(roomNameOrKey, planType = null, explicitKey = null) {
+  let key = explicitKey;
+
+  if (!key) {
+    if (roomNameOrKey && DJUBO_LINKS[roomNameOrKey] !== undefined) {
+      key = roomNameOrKey;
+    } else if (roomNameOrKey && planType) {
+      const r = String(roomNameOrKey).toUpperCase();
+      const p = String(planType).toUpperCase();
+      let rKey = "MANDAKINI";
+      if (r.includes("PAIYSHWANI") || r.includes("PAISHWANI")) rKey = "PAIYSHWANI";
+      else if (r.includes("VAIDEHI") && r.includes("SUITE")) rKey = "VAIDEHI_SUITE";
+      else if (r.includes("VAIDEHI") && r.includes("TWIN")) rKey = "VAIDEHI_TWIN";
+
+      let pKey = "ROOM_ONLY";
+      if (p.includes("LUNCH") || p.includes("DINNER") || p.includes("MAP")) pKey = "MAP";
+      else if (p.includes("BREAKFAST")) pKey = "BREAKFAST";
+
+      key = `${rKey}_${pKey}`;
+    } else {
+      key = roomNameOrKey;
+    }
+  }
+
+  let targetLink = DJUBO_LINKS[key];
+  if (!targetLink || targetLink === "#") {
+    targetLink = window.DJUBO_BOOKING_URL || "https://live.ipms247.com/booking/book-rooms-arogyadham";
+  }
+
+  if (typeof showTajToast === 'function') {
+    showTajToast(
+      'Arogyadham Reservation Desk',
+      'Redirecting to Arogyadham Secure Booking Engine (Djubo)...',
+      'shield-check'
+    );
+  }
+
+  // Open target link directly in new tab without auth guards or popups
+  window.open(targetLink, '_blank');
+}
+window.redirectToDjubo = redirectToDjubo;
+
 function inferWingFromRoomName(roomName) {
   if (!roomName) return 'Swasthya Kutir';
   if (/panchwati|quad|triple|pasoee/i.test(roomName)) return 'Panchwati';
   return 'Swasthya Kutir';
 }
 
-function triggerRoomBooking(roomName = 'Mandakini Premium Cottage', rate = 12000, wing = null) {
-  const chosenWing = wing || inferWingFromRoomName(roomName);
-  const roomMeta = {
-    roomName: roomName,
-    wing: chosenWing,
-    rate: rate,
-    timestamp: new Date().toISOString()
-  };
-
-  // 1. Save selected room metadata into session/localStorage
-  localStorage.setItem('ask_selected_room', JSON.stringify(roomMeta));
-  sessionStorage.setItem('ask_pending_room', JSON.stringify(roomMeta));
-
-  // 2. Check if user is already authenticated
-  const isAuth = tajAuth.isLoggedIn();
-
-  if (!isAuth) {
-    // IF NOT AUTHENTICATED: Open elegant Google Sign-In modal
-    openAuthModal('signin', 'Sign In with Google to Proceed to Reservation Desk', roomMeta);
-  } else {
-    // IF AUTHENTICATED: Proceed immediately to Djubo
-    proceedToDjuboBooking(roomMeta);
+function triggerRoomBooking(roomName = 'Mandakini Cottage', rate = 9440, wing = null) {
+  // Directly navigate to Swasthya Kutir multi-tier booking section without any auth guards or popups
+  if (typeof switchView === 'function') {
+    switchView('view-swasthya-kutir');
+  }
+  const targetElem = document.getElementById('view-swasthya-kutir');
+  if (targetElem) {
+    targetElem.scrollIntoView({ behavior: 'smooth' });
   }
 }
 
 function proceedToDjuboBooking(meta = null) {
-  showTajToast(
-    'Arogyadham Reservation Desk',
-    'Redirecting to Arogyadham Secure Booking Engine (Djubo)...',
-    'shield-check'
-  );
-
-  setTimeout(() => {
-    window.location.href = DJUBO_BOOKING_URL;
-  }, 750);
+  redirectToDjubo("MANDAKINI_ROOM_ONLY");
 }
 
 window.triggerRoomBooking = triggerRoomBooking;
