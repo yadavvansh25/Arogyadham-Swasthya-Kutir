@@ -282,7 +282,7 @@
   <main id="taj-app-content">
 
     <!-- ================= HOME VIEW (THE MAIN LANDING PAGE) ================= -->
-    <div id="view-home" class="view-page block">
+    <div id="view-home" class="view-page block" style="display: block;">
 
       <!-- ================= CINEMATIC HERO SECTION ================= -->
       <section id="hero"
@@ -468,7 +468,7 @@
                   <span class="text-xs text-taj-charcoal font-semibold block">From ₹5,775 incl. taxes / night</span>
                   <span class="text-[10px] text-taj-muted">Royal waterfront & wellness retreat</span>
                 </div>
-                <button onclick="switchView('view-swasthya-kutir')" data-action="switch-view" data-target="view-swasthya-kutir" class="btn-taj-primary min-h-[44px] px-6 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer gap-2">
+                <button onclick="switchView('view-swasthya-kutir')" data-nav="swasthya-rooms" id="btn-swasthya-rooms" data-action="switch-view" data-target="view-swasthya-kutir" class="btn-taj-primary min-h-[44px] px-6 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer gap-2">
                   <span>Explore Swasthya Kutir Rooms →</span>
                 </button>
               </div>
@@ -557,7 +557,7 @@
                   <span class="text-xs text-taj-charcoal font-semibold block">From ₹2,500 + GST / night</span>
                   <span class="text-[10px] text-taj-muted">Ideal for families, retreats & pilgrims</span>
                 </div>
-                <button onclick="switchView('view-panchvati')" data-action="switch-view" data-target="view-panchvati" class="btn-taj-primary min-h-[44px] px-6 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer gap-2">
+                <button onclick="switchView('view-panchvati')" data-nav="panchvati-rooms" id="btn-panchvati-rooms" data-action="switch-view" data-target="view-panchvati" class="btn-taj-primary min-h-[44px] px-6 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer gap-2">
                   <span>Explore Panchvati Rooms →</span>
                 </button>
               </div>
@@ -684,7 +684,7 @@
 
               <div class="p-6 sm:p-8 pt-0 border-t border-taj-border pt-4 flex flex-wrap items-center justify-between gap-3">
                 <span class="text-xs text-taj-muted">Breakfast, Lunch & Dinner Available</span>
-                <button onclick="switchView('view-aahar-vihar-menu')" data-action="switch-view" data-target="view-aahar-vihar-menu" class="btn-taj-primary min-h-[44px] px-6 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer gap-2">
+                <button onclick="switchView('view-aahar-vihar-menu')" data-nav="aahar-vihar-menu" id="btn-aahar-vihar-menu" data-action="switch-view" data-target="view-aahar-vihar-menu" class="btn-taj-primary min-h-[44px] px-6 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer gap-2">
                   <span>VIEW FULL AAHAR-VIHAR MENU →</span>
                 </button>
               </div>
@@ -754,7 +754,7 @@
 
               <div class="p-6 sm:p-8 pt-0 border-t border-taj-border pt-4 flex flex-wrap items-center justify-between gap-3">
                 <span class="text-xs text-taj-muted">Pilgrim & Community Meals</span>
-                <button onclick="switchView('view-panchvati-pasoee-menu')" data-action="switch-view" data-target="view-panchvati-pasoee-menu" class="btn-taj-primary min-h-[44px] px-6 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer gap-2">
+                <button onclick="switchView('view-panchvati-pasoee-menu')" data-nav="panchvati-menu" id="btn-panchvati-menu" data-action="switch-view" data-target="view-panchvati-pasoee-menu" class="btn-taj-primary min-h-[44px] px-6 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer gap-2">
                   <span>EXPLORE PANCHVATI PASOEE MENU →</span>
                 </button>
               </div>
@@ -773,11 +773,11 @@
               </p>
             </div>
             <div class="flex flex-wrap items-center gap-3">
-              <button onclick="switchView('view-aahar-vihar-menu')" data-action="switch-view" data-target="view-aahar-vihar-menu" class="btn-taj-primary min-h-[44px] px-5 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer whitespace-nowrap sm:whitespace-normal gap-2">
+              <button onclick="switchView('view-aahar-vihar-menu')" data-nav="aahar-vihar-menu" data-action="switch-view" data-target="view-aahar-vihar-menu" class="btn-taj-primary min-h-[44px] px-5 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer whitespace-nowrap sm:whitespace-normal gap-2">
                 <span>Aahar-Vihar Menu (120+ Dishes)</span>
                 <i data-lucide="arrow-right" class="w-4 h-4"></i>
               </button>
-              <button onclick="switchView('view-panchvati-pasoee-menu')" data-action="switch-view" data-target="view-panchvati-pasoee-menu" class="btn-taj-outline-dark min-h-[44px] px-5 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer whitespace-nowrap sm:whitespace-normal gap-2">
+              <button onclick="switchView('view-panchvati-pasoee-menu')" data-nav="panchvati-menu" data-action="switch-view" data-target="view-panchvati-pasoee-menu" class="btn-taj-outline-dark min-h-[44px] px-5 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer whitespace-nowrap sm:whitespace-normal gap-2">
                 <span>Panchvati Pasoee Menu</span>
                 <i data-lucide="arrow-right" class="w-4 h-4"></i>
               </button>
@@ -1126,13 +1126,13 @@
     </div><!-- /#view-home -->
 
     <!-- ================= 2. DEDICATED SEPARATE PAGE FOR AROGYADHAM SWASTHYA KUTIR ================= -->
-    <div id="view-swasthya-kutir" class="view-page hidden">
+    <div id="view-swasthya-kutir" class="view-page hidden" style="display: none;">
       <a id="swasthya-kutir-rooms" class="sr-only"></a>
       <!-- Top Breadcrumb Bar -->
       <div class="bg-taj-ivory border-b border-taj-border pt-24 sm:pt-28 pb-4">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between gap-4">
-          <button onclick="switchView('view-home')" data-action="switch-view" data-target="view-home"
-            class="breadcrumb-back-btn inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-taj-charcoal hover:text-taj-gold min-h-[44px] px-4 py-2 bg-white border border-taj-border hover:border-taj-gold cursor-pointer transition-all shadow-sm">
+          <button onclick="switchView('view-home')" data-nav="home" data-action="switch-view" data-target="view-home"
+            class="breadcrumb-back-btn btn-back-home inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-taj-charcoal hover:text-taj-gold min-h-[44px] px-4 py-2 bg-white border border-taj-border hover:border-taj-gold cursor-pointer transition-all shadow-sm">
             <i data-lucide="arrow-left" class="w-4 h-4 text-taj-gold"></i>
             <span>← Back to Main Sanctuary</span>
           </button>
@@ -1442,10 +1442,10 @@
               <p class="text-xs text-taj-muted">Discover our 4 Panchvati room categories starting from ₹2,500 + GST / night.</p>
             </div>
             <div class="flex flex-wrap items-center gap-3">
-              <button onclick="switchView('view-home')" data-action="switch-view" data-target="view-home" class="btn-taj-outline-dark min-h-[44px] px-5 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer">
+              <button onclick="switchView('view-home')" data-nav="home" data-action="switch-view" data-target="view-home" class="btn-back-home btn-taj-outline-dark min-h-[44px] px-5 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer">
                 <span>← Back to Main Sanctuary</span>
               </button>
-              <button onclick="switchView('view-panchvati')" data-action="switch-view" data-target="view-panchvati" class="btn-taj-primary min-h-[44px] px-5 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer gap-2">
+              <button onclick="switchView('view-panchvati')" data-nav="panchvati-rooms" data-action="switch-view" data-target="view-panchvati" class="btn-taj-primary min-h-[44px] px-5 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer gap-2">
                 <span>Explore Panchvati Wing</span>
                 <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
               </button>
@@ -1457,13 +1457,13 @@
     </div><!-- /#view-swasthya-kutir -->
 
     <!-- ================= 3. DEDICATED SEPARATE PAGE FOR PANCHVATI ================= -->
-    <div id="view-panchvati" class="view-page hidden">
+    <div id="view-panchvati" class="view-page hidden" style="display: none;">
       <a id="panchvati-rooms" class="sr-only"></a>
       <!-- Top Breadcrumb Bar -->
       <div class="bg-taj-ivory border-b border-taj-border pt-24 sm:pt-28 pb-4">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between gap-4">
-          <button onclick="switchView('view-home')"
-            class="breadcrumb-back-btn inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-taj-charcoal hover:text-taj-gold min-h-[44px] px-4 py-2 bg-white border border-taj-border hover:border-taj-gold cursor-pointer transition-all shadow-sm">
+          <button onclick="switchView('view-home')" data-nav="home" data-action="switch-view" data-target="view-home"
+            class="breadcrumb-back-btn btn-back-home inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-taj-charcoal hover:text-taj-gold min-h-[44px] px-4 py-2 bg-white border border-taj-border hover:border-taj-gold cursor-pointer transition-all shadow-sm">
             <i data-lucide="arrow-left" class="w-4 h-4 text-taj-gold"></i>
             <span>← Back to Main Sanctuary</span>
           </button>
@@ -1754,10 +1754,10 @@
               <p class="text-xs text-taj-muted">Explore the Mandakini, Paishwani, and Vaidehi royal suites starting from ₹5,500 + GST / night.</p>
             </div>
             <div class="flex flex-wrap items-center gap-3">
-              <button onclick="switchView('view-home')" class="btn-taj-outline-dark min-h-[44px] px-5 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer">
+              <button onclick="switchView('view-home')" data-nav="home" data-action="switch-view" data-target="view-home" class="btn-back-home btn-taj-outline-dark min-h-[44px] px-5 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer">
                 <span>← Back to Main Sanctuary</span>
               </button>
-              <button onclick="switchView('view-swasthya-kutir')" class="btn-taj-primary min-h-[44px] px-5 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer gap-2">
+              <button onclick="switchView('view-swasthya-kutir')" data-nav="swasthya-rooms" data-action="switch-view" data-target="view-swasthya-kutir" class="btn-taj-primary min-h-[44px] px-5 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer gap-2">
                 <span>Explore Swasthya Kutir Wing</span>
                 <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
               </button>
@@ -1769,14 +1769,14 @@
     </div><!-- /#view-panchvati -->
 
     <!-- ================= 4. DEDICATED SEPARATE PAGE FOR AAHAR-VIHAR RESTAURANT MENU ================= -->
-    <div id="view-aahar-vihar-menu" class="view-page hidden">
+    <div id="view-aahar-vihar-menu" class="view-page hidden" style="display: none;">
       <a id="menu-view" class="sr-only"></a>
       <a id="aahar-vihar-menu" class="sr-only"></a>
       <!-- Top Breadcrumb Bar -->
       <div class="bg-taj-ivory border-b border-taj-border pt-24 sm:pt-28 pb-4">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between gap-4">
-          <button onclick="switchView('view-home')"
-            class="breadcrumb-back-btn min-h-[44px] px-5 py-2.5 inline-flex items-center justify-center gap-2 text-xs font-semibold tracking-wider uppercase text-taj-charcoal hover:text-taj-gold bg-white border border-taj-border hover:border-taj-gold shrink-0 cursor-pointer transition-all shadow-sm">
+          <button onclick="switchView('view-home')" data-nav="home" data-action="switch-view" data-target="view-home"
+            class="breadcrumb-back-btn btn-back-home min-h-[44px] px-5 py-2.5 inline-flex items-center justify-center gap-2 text-xs font-semibold tracking-wider uppercase text-taj-charcoal hover:text-taj-gold bg-white border border-taj-border hover:border-taj-gold shrink-0 cursor-pointer transition-all shadow-sm">
             <i data-lucide="arrow-left" class="w-4 h-4 text-taj-gold"></i>
             <span>← Back to Main Sanctuary</span>
           </button>
@@ -2009,7 +2009,7 @@
               <h5 class="font-cinzel text-sm font-bold text-taj-charcoal">Finished Viewing the Menu?</h5>
               <p class="text-xs text-taj-muted">Return to the resort homepage to explore suites and wellness therapies.</p>
             </div>
-            <button onclick="switchView('view-home')" class="btn-taj-outline-dark min-h-[44px] py-2.5 px-6 text-xs flex items-center justify-center gap-2 shrink-0 cursor-pointer">
+            <button onclick="switchView('view-home')" data-nav="home" data-action="switch-view" data-target="view-home" class="btn-back-home btn-taj-outline-dark min-h-[44px] py-2.5 px-6 text-xs flex items-center justify-center gap-2 shrink-0 cursor-pointer">
               <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
               <span>← Back to Main Sanctuary</span>
             </button>
@@ -2020,15 +2020,15 @@
     </div><!-- /#view-aahar-vihar-menu -->
 
     <!-- ================= 5. DEDICATED SEPARATE PAGE FOR PANCHVATI PASOEE MENU ================= -->
-    <div id="view-panchvati-pasoee-menu" class="view-page hidden">
+    <div id="view-panchvati-pasoee-menu" class="view-page hidden" style="display: none;">
       <a id="panchvati-rasoee-view" class="sr-only"></a>
       <a id="panchvati-rasoee-menu" class="sr-only"></a>
       <a id="panchvati-pasoee-menu" class="sr-only"></a>
       <!-- Top Breadcrumb Bar -->
       <div class="bg-taj-ivory border-b border-taj-border pt-24 sm:pt-28 pb-4">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between gap-4">
-          <button onclick="switchView('view-home')"
-            class="breadcrumb-back-btn min-h-[44px] px-5 py-2.5 inline-flex items-center justify-center gap-2 text-xs font-semibold tracking-wider uppercase text-taj-charcoal hover:text-taj-gold bg-white border border-taj-border hover:border-taj-gold shrink-0 cursor-pointer transition-all shadow-sm">
+          <button onclick="switchView('view-home')" data-nav="home" data-action="switch-view" data-target="view-home"
+            class="breadcrumb-back-btn btn-back-home min-h-[44px] px-5 py-2.5 inline-flex items-center justify-center gap-2 text-xs font-semibold tracking-wider uppercase text-taj-charcoal hover:text-taj-gold bg-white border border-taj-border hover:border-taj-gold shrink-0 cursor-pointer transition-all shadow-sm">
             <i data-lucide="arrow-left" class="w-4 h-4 text-taj-gold"></i>
             <span>← Back to Main Sanctuary</span>
           </button>
@@ -2194,11 +2194,11 @@
               <p class="text-xs text-taj-muted">Return to the resort homepage or explore the Aahar-Vihar luxury restaurant menu.</p>
             </div>
             <div class="flex flex-wrap items-center gap-3">
-              <button onclick="switchView('view-aahar-vihar-menu')" class="btn-taj-outline-gold min-h-[44px] py-2.5 px-5 text-xs flex items-center justify-center gap-2 shrink-0 cursor-pointer">
+              <button onclick="switchView('view-aahar-vihar-menu')" data-nav="aahar-vihar-menu" data-action="switch-view" data-target="view-aahar-vihar-menu" class="btn-taj-outline-gold min-h-[44px] py-2.5 px-5 text-xs flex items-center justify-center gap-2 shrink-0 cursor-pointer">
                 <span>View Aahar-Vihar Menu</span>
                 <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
               </button>
-              <button onclick="switchView('view-home')" class="btn-taj-outline-dark min-h-[44px] py-2.5 px-5 text-xs flex items-center justify-center gap-2 shrink-0 cursor-pointer">
+              <button onclick="switchView('view-home')" data-nav="home" data-action="switch-view" data-target="view-home" class="btn-back-home btn-taj-outline-dark min-h-[44px] py-2.5 px-5 text-xs flex items-center justify-center gap-2 shrink-0 cursor-pointer">
                 <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
                 <span>← Back to Main Sanctuary</span>
               </button>
@@ -2815,14 +2815,105 @@
   <!-- JavaScript Modules -->
   <script src="app.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('DOMContentLoaded', function () {
+      // Ensure Lucide does not throw errors
       if (typeof lucide !== 'undefined') {
-        try {
-          lucide.createIcons();
-        } catch (e) {
-          console.warn('Lucide load issue:', e);
+        try { lucide.createIcons(); } catch (err) { console.warn(err); }
+      }
+
+      // Master Navigation Controller
+      function showView(targetId) {
+        const allViews = [
+          'view-home',
+          'view-swasthya-kutir',
+          'view-panchvati',
+          'view-aahar-vihar-menu',
+          'view-panchvati-pasoee-menu'
+        ];
+
+        let resolvedId = targetId;
+        if (resolvedId && !resolvedId.startsWith('view-')) {
+          resolvedId = 'view-' + resolvedId;
+        }
+
+        allViews.forEach(function (id) {
+          const el = document.getElementById(id);
+          if (el) {
+            if (id === resolvedId) {
+              el.style.display = 'block';
+              el.classList.remove('hidden');
+            } else {
+              el.style.display = 'none';
+              el.classList.add('hidden');
+            }
+          }
+        });
+
+        const mobileMenu = document.getElementById('mobile-nav-menu');
+        if (mobileMenu) {
+          mobileMenu.classList.add('hidden');
+        }
+
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        if (typeof lucide !== 'undefined') {
+          try { lucide.createIcons(); } catch (err) {}
         }
       }
+
+      // Expose to window for any inline calls
+      window.switchView = showView;
+      window.showView = showView;
+
+      // Global Click Interceptor for all buttons & links
+      document.addEventListener('click', function (e) {
+        // 1. Aahar-Vihar Menu Click
+        if (e.target.closest('#btn-aahar-vihar-menu, [data-nav="aahar-vihar-menu"]')) {
+          e.preventDefault();
+          showView('view-aahar-vihar-menu');
+          return;
+        }
+
+        // 2. Panchvati Pasoee Menu Click
+        if (e.target.closest('#btn-panchvati-menu, [data-nav="panchvati-menu"]')) {
+          e.preventDefault();
+          showView('view-panchvati-pasoee-menu');
+          return;
+        }
+
+        // 3. Swasthya Kutir Rooms Click
+        if (e.target.closest('#btn-swasthya-rooms, [data-nav="swasthya-rooms"]')) {
+          e.preventDefault();
+          showView('view-swasthya-kutir');
+          return;
+        }
+
+        // 4. Panchvati Rooms Click
+        if (e.target.closest('#btn-panchvati-rooms, [data-nav="panchvati-rooms"]')) {
+          e.preventDefault();
+          showView('view-panchvati');
+          return;
+        }
+
+        // 5. Back to Home Buttons
+        if (e.target.closest('.btn-back-home, [data-nav="home"]')) {
+          e.preventDefault();
+          showView('view-home');
+          return;
+        }
+      });
+
+      // Hash change fallback (e.g., #aahar-vihar-menu, #panchvati-pasoee-menu)
+      function handleHash() {
+        const hash = window.location.hash;
+        if (hash === '#aahar-vihar-menu') showView('view-aahar-vihar-menu');
+        else if (hash === '#panchvati-pasoee-menu') showView('view-panchvati-pasoee-menu');
+        else if (hash === '#swasthya-kutir-rooms') showView('view-swasthya-kutir');
+        else if (hash === '#panchvati-rooms') showView('view-panchvati');
+        else showView('view-home');
+      }
+
+      window.addEventListener('hashchange', handleHash);
+      if (window.location.hash) handleHash();
     });
   </script>
 </body>

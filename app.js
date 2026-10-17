@@ -790,6 +790,41 @@ function initMealPlanModalListeners() {
 
 function initActionDelegation() {
   document.addEventListener('click', function(e) {
+    // 1. Aahar-Vihar Menu Click
+    if (e.target.closest('#btn-aahar-vihar-menu, [data-nav="aahar-vihar-menu"]')) {
+      e.preventDefault();
+      if (typeof window.switchView === 'function') window.switchView('view-aahar-vihar-menu');
+      return;
+    }
+
+    // 2. Panchvati Pasoee Menu Click
+    if (e.target.closest('#btn-panchvati-menu, [data-nav="panchvati-menu"]')) {
+      e.preventDefault();
+      if (typeof window.switchView === 'function') window.switchView('view-panchvati-pasoee-menu');
+      return;
+    }
+
+    // 3. Swasthya Kutir Rooms Click
+    if (e.target.closest('#btn-swasthya-rooms, [data-nav="swasthya-rooms"]')) {
+      e.preventDefault();
+      if (typeof window.switchView === 'function') window.switchView('view-swasthya-kutir');
+      return;
+    }
+
+    // 4. Panchvati Rooms Click
+    if (e.target.closest('#btn-panchvati-rooms, [data-nav="panchvati-rooms"]')) {
+      e.preventDefault();
+      if (typeof window.switchView === 'function') window.switchView('view-panchvati');
+      return;
+    }
+
+    // 5. Back to Home Buttons
+    if (e.target.closest('.btn-back-home, [data-nav="home"]')) {
+      e.preventDefault();
+      if (typeof window.switchView === 'function') window.switchView('view-home');
+      return;
+    }
+
     const btn = e.target.closest('[data-action]');
     if (!btn) return;
     const action = btn.getAttribute('data-action');
@@ -1202,9 +1237,11 @@ function switchView(targetViewId) {
     const el = document.getElementById(id);
     if (el) {
       if (id === resolvedId) {
+        el.style.display = 'block';
         el.classList.remove('hidden');
         el.classList.add('block');
       } else {
+        el.style.display = 'none';
         el.classList.add('hidden');
         el.classList.remove('block');
       }
@@ -1226,6 +1263,7 @@ function switchView(targetViewId) {
   }
 }
 window.switchView = switchView;
+window.showView = switchView;
 
 function initRouting() {
   window.addEventListener('hashchange', handleRouting);
