@@ -131,7 +131,7 @@
 
         <div class="flex items-center justify-between sm:justify-end w-full sm:w-auto gap-4 text-xs font-semibold">
           <span class="uppercase tracking-wider text-gray-500">
-            Displaying: <strong id="dish-counter" class="text-tajDark font-cinzel text-sm">64</strong> Dishes
+            Displaying: <strong id="dish-counter" class="text-tajDark font-cinzel text-sm">135</strong> Dishes
           </span>
           <span class="text-[11px] text-emerald-800 flex items-center gap-1.5">
             <span class="w-2.5 h-2.5 rounded-full bg-emerald-600 inline-block border border-emerald-800"></span> 100% Satvik Pure Veg
@@ -180,7 +180,7 @@
       We could not find any culinary items matching your search term. Please try another ingredient or clear the search to view our full menu.
     </p>
     <button onclick="clearSearch()" class="mt-5 inline-flex items-center space-x-2 px-5 py-2.5 bg-tajGold text-white hover:bg-tajGoldHover text-xs font-bold uppercase tracking-wider rounded-sm transition-all shadow-sm">
-      <span>View All 64 Dishes</span>
+      <span>View All 135 Dishes</span>
     </button>
   </div>
 
@@ -203,137 +203,1081 @@
 
   <!-- COMPLETE SECTION-WISE JAVASCRIPT DATABASE & RENDER LOGIC -->
   <script>
-    // Master DISHES_DATA array (Verified Satvik Pure-Veg Photography)
-    const DISHES_DATA = [
-  // --- BREAKFAST ---
-  { name: "Puri Bhaji (4 pcs)", price: 165, cat: "BREAKFAST", sub: "Indian Breakfast", img: "https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=700&q=80" },
-  { name: "Plain Paratha", price: 55, cat: "BREAKFAST", sub: "Indian Breakfast", img: "https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=700&q=80" },
-  { name: "Paneer Paratha", price: 89, cat: "BREAKFAST", sub: "Indian Breakfast", img: "https://images.unsplash.com/photo-1606491956689-2ea866880c84?auto=format&fit=crop&w=700&q=80" },
-  { name: "Aloo Paratha", price: 75, cat: "BREAKFAST", sub: "Indian Breakfast", img: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=700&q=80" },
-  { name: "Mix Veg Pakora (8 pcs)", price: 165, cat: "BREAKFAST", sub: "Indian Breakfast", img: "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=700&q=80" },
-  { name: "Paneer Pakora (8 pcs)", price: 185, cat: "BREAKFAST", sub: "Indian Breakfast", img: "https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&w=700&q=80" },
-  { name: "Idli Sambar with Chutney", price: 165, cat: "BREAKFAST", sub: "South Indian", img: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=701&q=80" },
-  { name: "Vada Sambar with Chutney", price: 165, cat: "BREAKFAST", sub: "South Indian", img: "https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=701&q=80" },
-  { name: "Uttapam (Plain / Masala)", price: 145, cat: "BREAKFAST", sub: "South Indian", img: "https://images.unsplash.com/photo-1610192244261-3f33de3f55e4?auto=format&fit=crop&w=700&q=80" },
-  { name: "Plain Dosa", price: 165, cat: "BREAKFAST", sub: "South Indian", img: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=702&q=80" },
-  { name: "Masala Dosa", price: 185, cat: "BREAKFAST", sub: "South Indian", img: "https://images.unsplash.com/photo-1668236543090-82eba5ee5976?auto=format&fit=crop&w=700&q=80" },
-  { name: "Cheese Dosa", price: 209, cat: "BREAKFAST", sub: "South Indian", img: "https://images.unsplash.com/photo-1610192244261-3f33de3f55e4?auto=format&fit=crop&w=701&q=80" },
-  { name: "Veg Upma with Sambar & Chutney", price: 165, cat: "BREAKFAST", sub: "South Indian", img: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=700&q=80" },
-  { name: "Indori Poha", price: 109, cat: "BREAKFAST", sub: "South Indian", img: "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=701&q=80" },
-  { name: "Veg Cutlet", price: 165, cat: "BREAKFAST", sub: "Continental", img: "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=701&q=80" },
-  { name: "French Fries", price: 145, cat: "BREAKFAST", sub: "Continental", img: "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=700&q=80" },
-  { name: "Bread Ghee Jam", price: 89, cat: "BREAKFAST", sub: "Continental", img: "https://images.unsplash.com/photo-1509722747041-616f39b57569?auto=format&fit=crop&w=700&q=80" },
-  { name: "Oats (Sweet / Salty)", price: 165, cat: "BREAKFAST", sub: "Continental", img: "https://images.unsplash.com/photo-1517673132405-a56a62b18caf?auto=format&fit=crop&w=700&q=80" },
-  { name: "Choco Flakes with Milk", price: 109, cat: "BREAKFAST", sub: "Continental", img: "https://images.unsplash.com/photo-1584776296944-ab6fb57b0bdd?auto=format&fit=crop&w=700&q=80" },
-  { name: "Corn Flakes with Milk", price: 109, cat: "BREAKFAST", sub: "Continental", img: "https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=700&q=80" },
-  { name: "Fresh Fruit Platter", price: 199, cat: "BREAKFAST", sub: "Fruits", img: "https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?auto=format&fit=crop&w=700&q=80" },
-  { name: "Veg Sandwich", price: 145, cat: "BREAKFAST", sub: "Sandwiches", img: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=700&q=80" },
-  { name: "Veg Grilled Sandwich", price: 165, cat: "BREAKFAST", sub: "Sandwiches", img: "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=700&q=80" },
-  { name: "Veg Club Sandwich", price: 189, cat: "BREAKFAST", sub: "Sandwiches", img: "https://images.unsplash.com/photo-1567234669003-dce7a7a88821?auto=format&fit=crop&w=700&q=80" },
-  { name: "Cheese Chilly Toast", price: 145, cat: "BREAKFAST", sub: "Sandwiches", img: "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=701&q=80" },
-
-  // --- SOUPS & STARTERS ---
-  { name: "Hara Bhara Kebab", price: 219, cat: "STARTERS", sub: "Indian Starters", img: "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=700&q=80" },
-  { name: "Dahi Ke Kebab", price: 275, cat: "STARTERS", sub: "Indian Starters", img: "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=700&q=80" },
-  { name: "Paneer Tikka", price: 275, cat: "STARTERS", sub: "Tandoori", img: "https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&w=701&q=80" },
-  { name: "Tandoori Mushroom", price: 275, cat: "STARTERS", sub: "Tandoori", img: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=700&q=80" },
-  { name: "Veg Manchurian (Dry)", price: 249, cat: "STARTERS", sub: "Chinese Starters", img: "https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=700&q=80" },
-  { name: "Chilli Paneer (Dry)", price: 285, cat: "STARTERS", sub: "Chinese Starters", img: "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=702&q=80" },
-  { name: "Crispy Corn", price: 219, cat: "STARTERS", sub: "Chinese Starters", img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d?auto=format&fit=crop&w=700&q=80" },
-  { name: "Veg Spring Roll", price: 275, cat: "STARTERS", sub: "Chinese Starters", img: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=80" },
-  { name: "Honey Chilli Potato", price: 249, cat: "STARTERS", sub: "Chinese Starters", img: "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=701&q=80" },
-  { name: "Cream of Tomato Soup", price: 165, cat: "STARTERS", sub: "Soups", img: "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=700&q=80" },
-  { name: "Hot & Sour Soup", price: 165, cat: "STARTERS", sub: "Soups", img: "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=700&q=80" },
-  { name: "Veg Manchow Soup", price: 165, cat: "STARTERS", sub: "Soups", img: "https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?auto=format&fit=crop&w=700&q=80" },
-  { name: "Veg Sweet Corn Soup", price: 165, cat: "STARTERS", sub: "Soups", img: "https://images.unsplash.com/photo-1541832676-9b763b0239ab?auto=format&fit=crop&w=700&q=80" },
-  { name: "Mix Millet Soup", price: 189, cat: "STARTERS", sub: "Soups", img: "https://images.unsplash.com/photo-1588566565463-180a5b2090f2?auto=format&fit=crop&w=700&q=80" },
-  { name: "Cream of Spinach Soup", price: 165, cat: "STARTERS", sub: "Soups", img: "https://images.unsplash.com/photo-1603105037880-880cd4edfb0d?auto=format&fit=crop&w=700&q=80" },
-  { name: "Lemon Coriander Soup", price: 165, cat: "STARTERS", sub: "Soups", img: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=700&q=80" },
-  { name: "Paneer Tikka Pizza", price: 265, cat: "STARTERS", sub: "Pizza", img: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=700&q=80" },
-  { name: "Margherita Pizza", price: 219, cat: "STARTERS", sub: "Pizza", img: "https://images.unsplash.com/photo-1604382355076-af4b0eb60143?auto=format&fit=crop&w=700&q=80" },
-
-  // --- MAINS & MILLETS ---
-  { name: "Mix Millet Khichdi", price: 385, cat: "MAINS", sub: "Millet Delights", img: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=705&q=80" },
-  { name: "Makai Palak Ki Subzi", price: 385, cat: "MAINS", sub: "Millet Delights", img: "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=704&q=80" },
-  { name: "Paneer Butter Masala", price: 329, cat: "MAINS", sub: "Indian Gravies", img: "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=700&q=80" },
-  { name: "Kadai Paneer", price: 329, cat: "MAINS", sub: "Indian Gravies", img: "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=701&q=80" },
-  { name: "Palak Paneer", price: 329, cat: "MAINS", sub: "Indian Gravies", img: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=703&q=80" },
-  { name: "Matar Paneer", price: 329, cat: "MAINS", sub: "Indian Gravies", img: "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=702&q=80" },
-  { name: "Veg Kofta Curry", price: 275, cat: "MAINS", sub: "Indian Gravies", img: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=701&q=80" },
-  { name: "Dal Makhani", price: 229, cat: "MAINS", sub: "Dal & Lentils", img: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=708&q=80" },
-  { name: "Yellow Dal Tadka / Dal Fry", price: 219, cat: "MAINS", sub: "Dal & Lentils", img: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=707&q=80" },
-  { name: "Subz Dum Biryani", price: 385, cat: "MAINS", sub: "Rice & Biryani", img: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=700&q=80" },
-  { name: "Jeera Rice", price: 219, cat: "MAINS", sub: "Rice & Biryani", img: "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=700&q=80" },
-
-  // --- DESSERTS & BEVERAGES ---
-  { name: "Sawa Ki Kheer", price: 165, cat: "DESSERTS", sub: "Desserts", img: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=712&q=80" },
-  { name: "Sewaiyan Ki Kheer", price: 165, cat: "DESSERTS", sub: "Desserts", img: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=713&q=80" },
-  { name: "Gulab Jamun (2 pcs)", price: 79, cat: "DESSERTS", sub: "Desserts", img: "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=705&q=80" },
-  { name: "Moong Dal Halwa", price: 165, cat: "DESSERTS", sub: "Desserts", img: "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=706&q=80" },
-  { name: "Fresh Watermelon Juice", price: 135, cat: "DESSERTS", sub: "Beverages", img: "https://images.unsplash.com/photo-1589733955941-5eeaf752f6dd?auto=format&fit=crop&w=700&q=80" },
-  { name: "Fresh Sweet Lime Juice", price: 135, cat: "DESSERTS", sub: "Beverages", img: "https://images.unsplash.com/photo-1613478223719-2ab802602423?auto=format&fit=crop&w=700&q=80" },
-  { name: "Buttermilk (Plain/Masala)", price: 89, cat: "DESSERTS", sub: "Beverages", img: "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=700&q=80" },
-  { name: "Tea / Masala Tea / Gud Tulsi Chai", price: 65, cat: "DESSERTS", sub: "Hot Beverages", img: "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=700&q=80" },
-  { name: "Organic Green Tea", price: 75, cat: "DESSERTS", sub: "Hot Beverages", img: "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=701&q=80" },
-  { name: "Hot Milk", price: 85, cat: "DESSERTS", sub: "Hot Beverages", img: "https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=700&q=80" }
-];
-
-    // Organized Luxury Menu Sections dynamically derived from DISHES_DATA
+    // Master MENU_SECTIONS array with 100% Satvik metadata (Zero img URLs)
     const MENU_SECTIONS = [
+  {
+    "id": "section-breakfast",
+    "title": "—— I. PRABHAT AAHAR (BREAKFAST & LIGHT BITES) ——",
+    "hindi": "प्रभात अल्पाहार",
+    "desc": "Energizing morning nourishment designed to balance digestive Agni with wholesome grains, live Vedic herbs, and fresh seasonal harvests.",
+    "dishes": [
       {
-        id: "section-breakfast",
-        title: "—— I. PRABHAT AAHAR (BREAKFAST & LIGHT BITES) ——",
-        hindi: "प्रभात अल्पाहार",
-        desc: "Energizing morning nourishment designed to balance digestive Agni with wholesome grains, live Vedic herbs, and fresh seasonal harvests.",
-        dishes: DISHES_DATA.filter(d => d.cat === "BREAKFAST")
+        "name": "Puri Bhaji (4 pcs)",
+        "price": 165,
+        "cat": "BREAKFAST",
+        "sub": "Indian Breakfast"
       },
       {
-        id: "section-starters",
-        title: "—— II. SHURUVAAT & SOUPS (STARTERS & SOUPS) ——",
-        hindi: "शुरुआत एवं सूप",
-        desc: "Appetizing tandoori delights, crisp Satvik bites, and soul-warming Ayurvedic soups.",
-        dishes: DISHES_DATA.filter(d => d.cat === "STARTERS")
+        "name": "Plain Paratha",
+        "price": 55,
+        "cat": "BREAKFAST",
+        "sub": "Indian Breakfast"
       },
       {
-        id: "section-millets",
-        title: "—— III. SHREE ANNA SPECIALS (MILLET DELIGHTS) ——",
-        hindi: "श्री अन्न व्यंजन",
-        desc: "Ancient super-grains — Bajra, Jowar, Ragi, Kodo, and Sanwa — prepared for optimal wellness.",
-        dishes: DISHES_DATA.filter(d => d.cat === "MAINS" && (d.sub === "Millet Delights"))
+        "name": "Paneer Paratha",
+        "price": 89,
+        "cat": "BREAKFAST",
+        "sub": "Indian Breakfast"
       },
       {
-        id: "section-mains",
-        title: "—— IV. MUKHYA BHOJAN (ROYAL MAINS & GRAVIES) ——",
-        hindi: "मुख्य भोजन",
-        desc: "Royal North & Central Indian curries cooked with fresh cottage cheese, cold-pressed oils, and farm-fresh greens.",
-        dishes: DISHES_DATA.filter(d => d.cat === "MAINS" && (d.sub === "Indian Gravies" || d.sub === "Dal & Lentils"))
+        "name": "Aloo Paratha",
+        "price": 75,
+        "cat": "BREAKFAST",
+        "sub": "Indian Breakfast"
       },
       {
-        id: "section-breads-rice",
-        title: "—— V. SUGANDHIT CHAWAL & BIRYANI (RICE & BIRYANI) ——",
-        hindi: "सुगंधित चावल एवं बिरयानी",
-        desc: "Fragrant mountain basmati rice, seasoned with whole aromatic spices and cold-pressed cow ghee.",
-        dishes: DISHES_DATA.filter(d => d.cat === "MAINS" && d.sub === "Rice & Biryani")
+        "name": "Mix Veg Pakora (8 pcs)",
+        "price": 165,
+        "cat": "BREAKFAST",
+        "sub": "Indian Breakfast"
       },
       {
-        id: "section-desserts",
-        title: "—— VI. MADHUR MILAN & PEYA (DESSERTS & BEVERAGES) ——",
-        hindi: "मधुर मिलन एवं पेय",
-        desc: "Vedic sweets prepared with pure desi cow ghee, rock sugar (khand), and therapeutic herbal infusions.",
-        dishes: DISHES_DATA.filter(d => d.cat === "DESSERTS")
+        "name": "Paneer Pakora (8 pcs)",
+        "price": 185,
+        "cat": "BREAKFAST",
+        "sub": "Indian Breakfast"
+      },
+      {
+        "name": "Idli Sambar with Chutney",
+        "price": 165,
+        "cat": "BREAKFAST",
+        "sub": "South Indian"
+      },
+      {
+        "name": "Vada Sambar with Chutney",
+        "price": 165,
+        "cat": "BREAKFAST",
+        "sub": "South Indian"
+      },
+      {
+        "name": "Uttapam (Plain / Masala)",
+        "price": 145,
+        "cat": "BREAKFAST",
+        "sub": "South Indian"
+      },
+      {
+        "name": "Plain Dosa",
+        "price": 165,
+        "cat": "BREAKFAST",
+        "sub": "South Indian"
+      },
+      {
+        "name": "Masala Dosa",
+        "price": 185,
+        "cat": "BREAKFAST",
+        "sub": "South Indian"
+      },
+      {
+        "name": "Cheese Dosa",
+        "price": 209,
+        "cat": "BREAKFAST",
+        "sub": "South Indian"
+      },
+      {
+        "name": "Veg Upma with Sambar & Chutney",
+        "price": 165,
+        "cat": "BREAKFAST",
+        "sub": "South Indian"
+      },
+      {
+        "name": "Indori Poha",
+        "price": 109,
+        "cat": "BREAKFAST",
+        "sub": "South Indian"
+      },
+      {
+        "name": "Veg Cutlet",
+        "price": 165,
+        "cat": "BREAKFAST",
+        "sub": "Continental"
+      },
+      {
+        "name": "French Fries",
+        "price": 145,
+        "cat": "BREAKFAST",
+        "sub": "Continental"
+      },
+      {
+        "name": "Bread Ghee Jam",
+        "price": 89,
+        "cat": "BREAKFAST",
+        "sub": "Continental"
+      },
+      {
+        "name": "Oats (Sweet / Salty)",
+        "price": 165,
+        "cat": "BREAKFAST",
+        "sub": "Continental"
+      },
+      {
+        "name": "Choco Flakes with Milk",
+        "price": 109,
+        "cat": "BREAKFAST",
+        "sub": "Continental"
+      },
+      {
+        "name": "Corn Flakes with Milk",
+        "price": 109,
+        "cat": "BREAKFAST",
+        "sub": "Continental"
+      },
+      {
+        "name": "Fresh Fruit Platter",
+        "price": 199,
+        "cat": "BREAKFAST",
+        "sub": "Fruits"
+      },
+      {
+        "name": "Veg Sandwich",
+        "price": 145,
+        "cat": "BREAKFAST",
+        "sub": "Sandwiches"
+      },
+      {
+        "name": "Veg Grilled Sandwich",
+        "price": 165,
+        "cat": "BREAKFAST",
+        "sub": "Sandwiches"
+      },
+      {
+        "name": "Veg Club Sandwich",
+        "price": 189,
+        "cat": "BREAKFAST",
+        "sub": "Sandwiches"
+      },
+      {
+        "name": "Cheese Chilly Toast",
+        "price": 145,
+        "cat": "BREAKFAST",
+        "sub": "Sandwiches"
       }
-    ];
+    ]
+  },
+  {
+    "id": "section-starters",
+    "title": "—— II. SHURUVAAT (STARTERS, SOUPS & PIZZAS) ——",
+    "hindi": "शुरुआत एवं सूप",
+    "desc": "Appetizing clay-oven roasted delicacies, hand-crafted herbal broths, and artisanal thin-crust oven bakes prepared with farm-fresh organic produce.",
+    "dishes": [
+      {
+        "name": "Hara Bhara Kebab",
+        "price": 219,
+        "cat": "STARTERS",
+        "sub": "Indian Starters"
+      },
+      {
+        "name": "Dahi Ke Kebab",
+        "price": 275,
+        "cat": "STARTERS",
+        "sub": "Indian Starters"
+      },
+      {
+        "name": "Paneer Tikka",
+        "price": 275,
+        "cat": "STARTERS",
+        "sub": "Tandoori"
+      },
+      {
+        "name": "Peshawari Paneer Tikka",
+        "price": 275,
+        "cat": "STARTERS",
+        "sub": "Tandoori"
+      },
+      {
+        "name": "Malai Paneer Tikka",
+        "price": 275,
+        "cat": "STARTERS",
+        "sub": "Tandoori"
+      },
+      {
+        "name": "Corn Cheese Kebab",
+        "price": 219,
+        "cat": "STARTERS",
+        "sub": "Starters"
+      },
+      {
+        "name": "Tandoori Mushroom",
+        "price": 275,
+        "cat": "STARTERS",
+        "sub": "Tandoori"
+      },
+      {
+        "name": "Chilli Mushroom (Dry)",
+        "price": 275,
+        "cat": "STARTERS",
+        "sub": "Chinese Starters"
+      },
+      {
+        "name": "Veg Manchurian (Dry)",
+        "price": 249,
+        "cat": "STARTERS",
+        "sub": "Chinese Starters"
+      },
+      {
+        "name": "Chilli Paneer (Dry)",
+        "price": 285,
+        "cat": "STARTERS",
+        "sub": "Chinese Starters"
+      },
+      {
+        "name": "Crispy Corn",
+        "price": 219,
+        "cat": "STARTERS",
+        "sub": "Chinese Starters"
+      },
+      {
+        "name": "Corn Salt & Pepper",
+        "price": 219,
+        "cat": "STARTERS",
+        "sub": "Chinese Starters"
+      },
+      {
+        "name": "Veg Spring Roll",
+        "price": 275,
+        "cat": "STARTERS",
+        "sub": "Chinese Starters"
+      },
+      {
+        "name": "Honey Chilli Potato",
+        "price": 249,
+        "cat": "STARTERS",
+        "sub": "Chinese Starters"
+      },
+      {
+        "name": "Chilli Potato",
+        "price": 249,
+        "cat": "STARTERS",
+        "sub": "Chinese Starters"
+      },
+      {
+        "name": "Vegetable Chinese Sizzler",
+        "price": 439,
+        "cat": "STARTERS",
+        "sub": "Sizzlers"
+      },
+      {
+        "name": "Cream of Tomato Soup",
+        "price": 165,
+        "cat": "STARTERS",
+        "sub": "Soups"
+      },
+      {
+        "name": "Hot & Sour Soup",
+        "price": 165,
+        "cat": "STARTERS",
+        "sub": "Soups"
+      },
+      {
+        "name": "Veg Manchow Soup",
+        "price": 165,
+        "cat": "STARTERS",
+        "sub": "Soups"
+      },
+      {
+        "name": "Veg Sweet Corn Soup",
+        "price": 165,
+        "cat": "STARTERS",
+        "sub": "Soups"
+      },
+      {
+        "name": "Mix Millet Soup",
+        "price": 189,
+        "cat": "STARTERS",
+        "sub": "Soups"
+      },
+      {
+        "name": "Cream of Spinach Soup",
+        "price": 165,
+        "cat": "STARTERS",
+        "sub": "Soups"
+      },
+      {
+        "name": "Veg Clear Soup",
+        "price": 165,
+        "cat": "STARTERS",
+        "sub": "Soups"
+      },
+      {
+        "name": "Cream of Veg Soup",
+        "price": 165,
+        "cat": "STARTERS",
+        "sub": "Soups"
+      },
+      {
+        "name": "Lemon Coriander Soup",
+        "price": 165,
+        "cat": "STARTERS",
+        "sub": "Soups"
+      },
+      {
+        "name": "Paneer Tikka Pizza",
+        "price": 265,
+        "cat": "STARTERS",
+        "sub": "Pizza"
+      },
+      {
+        "name": "Margherita Pizza",
+        "price": 219,
+        "cat": "STARTERS",
+        "sub": "Pizza"
+      },
+      {
+        "name": "Corn and Veg Pizza",
+        "price": 239,
+        "cat": "STARTERS",
+        "sub": "Pizza"
+      },
+      {
+        "name": "Pasta Alfredo / Pink Sauce",
+        "price": 165,
+        "cat": "STARTERS",
+        "sub": "Continental"
+      },
+      {
+        "name": "Cheese Chilly Balls",
+        "price": 319,
+        "cat": "STARTERS",
+        "sub": "Continental"
+      },
+      {
+        "name": "Sauteed Veg",
+        "price": 275,
+        "cat": "STARTERS",
+        "sub": "Continental"
+      }
+    ]
+  },
+  {
+    "id": "section-millets",
+    "title": "—— III. MILLET DELIGHTS & HEALTH BOWLS ——",
+    "hindi": "प्राचीन श्री-अन्न व्यंजन",
+    "desc": "Ancient healing grains celebrated for light digestion, sustained vitality, and deep cellular rejuvenation as prescribed in Ayurvedic Shastras.",
+    "dishes": [
+      {
+        "name": "Mix Millet Khichdi",
+        "price": 385,
+        "cat": "MAINS",
+        "sub": "Millet Delights"
+      },
+      {
+        "name": "Makai Palak Ki Subzi",
+        "price": 385,
+        "cat": "MAINS",
+        "sub": "Millet Delights"
+      },
+      {
+        "name": "Millet Daliya",
+        "price": 385,
+        "cat": "MAINS",
+        "sub": "Millet Delights"
+      },
+      {
+        "name": "Black Fried Rice",
+        "price": 385,
+        "cat": "MAINS",
+        "sub": "Millet Delights"
+      }
+    ]
+  },
+  {
+    "id": "section-mains",
+    "title": "—— IV. MUKHYA BHOJAN (ROYAL INDIAN MAINS & CURRIES) ——",
+    "hindi": "मुख्य भोजन (शुद्ध सात्विक करी)",
+    "desc": "Rich yet unburdening gravies simmered with cold-pressed oils, pure A2 Gir cow ghee, stone-ground spices, and zero chemical essences.",
+    "dishes": [
+      {
+        "name": "Paneer Butter Masala",
+        "price": 329,
+        "cat": "MAINS",
+        "sub": "Indian Gravies"
+      },
+      {
+        "name": "Kadai Paneer",
+        "price": 329,
+        "cat": "MAINS",
+        "sub": "Indian Gravies"
+      },
+      {
+        "name": "Palak Paneer",
+        "price": 329,
+        "cat": "MAINS",
+        "sub": "Indian Gravies"
+      },
+      {
+        "name": "Matar Paneer",
+        "price": 329,
+        "cat": "MAINS",
+        "sub": "Indian Gravies"
+      },
+      {
+        "name": "Veg Kofta Curry",
+        "price": 275,
+        "cat": "MAINS",
+        "sub": "Indian Gravies"
+      },
+      {
+        "name": "Veg Tomato Palak Bhurji",
+        "price": 219,
+        "cat": "MAINS",
+        "sub": "Indian Gravies"
+      },
+      {
+        "name": "Paneer Lababdar",
+        "price": 329,
+        "cat": "MAINS",
+        "sub": "Indian Gravies"
+      },
+      {
+        "name": "Paneer Bhurji",
+        "price": 329,
+        "cat": "MAINS",
+        "sub": "Indian Gravies"
+      },
+      {
+        "name": "Hing Dhaniya Ke Aloo",
+        "price": 219,
+        "cat": "MAINS",
+        "sub": "Indian Sabzi"
+      },
+      {
+        "name": "Methi Matar Malai",
+        "price": 275,
+        "cat": "MAINS",
+        "sub": "Indian Gravies"
+      },
+      {
+        "name": "Bhindi Masala",
+        "price": 279,
+        "cat": "MAINS",
+        "sub": "Indian Sabzi"
+      },
+      {
+        "name": "Baingan Bharta",
+        "price": 219,
+        "cat": "MAINS",
+        "sub": "Indian Sabzi"
+      },
+      {
+        "name": "Lauki Home Style",
+        "price": 219,
+        "cat": "MAINS",
+        "sub": "Indian Sabzi"
+      },
+      {
+        "name": "Karela Ki Sabji",
+        "price": 219,
+        "cat": "MAINS",
+        "sub": "Indian Sabzi"
+      },
+      {
+        "name": "Veg Kolhapuri",
+        "price": 275,
+        "cat": "MAINS",
+        "sub": "Indian Gravies"
+      },
+      {
+        "name": "Mix Veg",
+        "price": 275,
+        "cat": "MAINS",
+        "sub": "Indian Sabzi"
+      },
+      {
+        "name": "Soya Keema Matar",
+        "price": 249,
+        "cat": "MAINS",
+        "sub": "Indian Sabzi"
+      },
+      {
+        "name": "Sev Tomato",
+        "price": 219,
+        "cat": "MAINS",
+        "sub": "Indian Sabzi"
+      },
+      {
+        "name": "Yellow Dal Tadka / Dal Fry",
+        "price": 219,
+        "cat": "MAINS",
+        "sub": "Dal & Lentils"
+      },
+      {
+        "name": "Dal Makhani",
+        "price": 229,
+        "cat": "MAINS",
+        "sub": "Dal & Lentils"
+      },
+      {
+        "name": "Veg Manchurian Gravy",
+        "price": 249,
+        "cat": "MAINS",
+        "sub": "Chinese Mains"
+      },
+      {
+        "name": "Chilli Paneer Gravy",
+        "price": 275,
+        "cat": "MAINS",
+        "sub": "Chinese Mains"
+      },
+      {
+        "name": "Veg Hakka Noodles",
+        "price": 219,
+        "cat": "MAINS",
+        "sub": "Noodles"
+      },
+      {
+        "name": "Schezwan Noodles",
+        "price": 249,
+        "cat": "MAINS",
+        "sub": "Noodles"
+      },
+      {
+        "name": "Veg Fried Rice",
+        "price": 219,
+        "cat": "MAINS",
+        "sub": "Rice"
+      },
+      {
+        "name": "Schezwan Fried Rice",
+        "price": 249,
+        "cat": "MAINS",
+        "sub": "Rice"
+      },
+      {
+        "name": "Veg Noodle",
+        "price": 275,
+        "cat": "MAINS",
+        "sub": "Noodles"
+      },
+      {
+        "name": "Triple Schezwan Noodle & Rice",
+        "price": 385,
+        "cat": "MAINS",
+        "sub": "Chinese Mains"
+      }
+    ]
+  },
+  {
+    "id": "section-breads-rice",
+    "title": "—— V. INDIAN BREADS, RICE & TRADITIONAL SIDES ——",
+    "hindi": "रोटी, चावल एवं पारंपरिक संगत",
+    "desc": "Freshly rolled earthen breads, fragrant aged long-grain basmati rice preparations, cooling herbal raitas, and crisp sun-dried papads.",
+    "dishes": [
+      {
+        "name": "Bajra Ki Roti (Plain/Ghee)",
+        "price": 55,
+        "cat": "MAINS",
+        "sub": "Indian Breads"
+      },
+      {
+        "name": "Makka Ki Roti (Plain/Ghee)",
+        "price": 55,
+        "cat": "MAINS",
+        "sub": "Indian Breads"
+      },
+      {
+        "name": "Jowar Ki Roti (Plain/Ghee)",
+        "price": 55,
+        "cat": "MAINS",
+        "sub": "Indian Breads"
+      },
+      {
+        "name": "Lachha Paratha",
+        "price": 55,
+        "cat": "MAINS",
+        "sub": "Indian Breads"
+      },
+      {
+        "name": "Tawa Chapati (Plain/Ghee)",
+        "price": 35,
+        "cat": "MAINS",
+        "sub": "Indian Breads"
+      },
+      {
+        "name": "Missi Roti",
+        "price": 45,
+        "cat": "MAINS",
+        "sub": "Indian Breads"
+      },
+      {
+        "name": "Naan (Plain/Ghee)",
+        "price": 70,
+        "cat": "MAINS",
+        "sub": "Indian Breads"
+      },
+      {
+        "name": "Tandoori Roti (Plain/Ghee)",
+        "price": 30,
+        "cat": "MAINS",
+        "sub": "Indian Breads"
+      },
+      {
+        "name": "Stuffed Kulcha (Aloo/Paneer)",
+        "price": 99,
+        "cat": "MAINS",
+        "sub": "Indian Breads"
+      },
+      {
+        "name": "Indian Bread Basket",
+        "price": 195,
+        "cat": "MAINS",
+        "sub": "Indian Breads"
+      },
+      {
+        "name": "Subz Dum Biryani",
+        "price": 385,
+        "cat": "MAINS",
+        "sub": "Rice & Biryani"
+      },
+      {
+        "name": "Paneer Tikka Biryani",
+        "price": 499,
+        "cat": "MAINS",
+        "sub": "Rice & Biryani"
+      },
+      {
+        "name": "Jeera Rice",
+        "price": 219,
+        "cat": "MAINS",
+        "sub": "Rice & Biryani"
+      },
+      {
+        "name": "Veg Pulao / Matar Pulao",
+        "price": 329,
+        "cat": "MAINS",
+        "sub": "Rice & Biryani"
+      },
+      {
+        "name": "Steamed Rice",
+        "price": 165,
+        "cat": "MAINS",
+        "sub": "Rice & Biryani"
+      },
+      {
+        "name": "Dal Khichdi",
+        "price": 329,
+        "cat": "MAINS",
+        "sub": "Rice & Biryani"
+      },
+      {
+        "name": "Masala Papad",
+        "price": 55,
+        "cat": "STARTERS",
+        "sub": "Papad"
+      },
+      {
+        "name": "Plain Papad (fry/dry)",
+        "price": 35,
+        "cat": "STARTERS",
+        "sub": "Papad"
+      },
+      {
+        "name": "Mix Veg Raita",
+        "price": 129,
+        "cat": "MAINS",
+        "sub": "Raita"
+      },
+      {
+        "name": "Boondi Raita",
+        "price": 109,
+        "cat": "MAINS",
+        "sub": "Raita"
+      },
+      {
+        "name": "Pineapple Raita",
+        "price": 155,
+        "cat": "MAINS",
+        "sub": "Raita"
+      },
+      {
+        "name": "Mixed Fruit Raita",
+        "price": 165,
+        "cat": "MAINS",
+        "sub": "Raita"
+      },
+      {
+        "name": "Fresh Garden Green Salad",
+        "price": 119,
+        "cat": "STARTERS",
+        "sub": "Salads"
+      },
+      {
+        "name": "Russian Salad",
+        "price": 179,
+        "cat": "STARTERS",
+        "sub": "Salads"
+      },
+      {
+        "name": "Kachumber Salad",
+        "price": 119,
+        "cat": "STARTERS",
+        "sub": "Salads"
+      }
+    ]
+  },
+  {
+    "id": "section-desserts",
+    "title": "—— VI. DESSERTS & COLD/HOT BEVERAGES ——",
+    "hindi": "मिष्ठान एवं अमृत पेय",
+    "desc": "Wholesome sweet delicacies sweetened with raw desi khand, fragrant cold refreshments, and restorative herbal teas brewed with sacred Chitrakoot herbs.",
+    "dishes": [
+      {
+        "name": "Sawa Ki Kheer",
+        "price": 165,
+        "cat": "DESSERTS",
+        "sub": "Desserts"
+      },
+      {
+        "name": "Sewaiyan Ki Kheer",
+        "price": 165,
+        "cat": "DESSERTS",
+        "sub": "Desserts"
+      },
+      {
+        "name": "Gulab Jamun (2 pcs)",
+        "price": 79,
+        "cat": "DESSERTS",
+        "sub": "Desserts"
+      },
+      {
+        "name": "Moong Dal Halwa",
+        "price": 165,
+        "cat": "DESSERTS",
+        "sub": "Desserts"
+      },
+      {
+        "name": "Gajar Halwa (Seasonal)",
+        "price": 165,
+        "cat": "DESSERTS",
+        "sub": "Desserts"
+      },
+      {
+        "name": "Assorted Ice Cream",
+        "price": 79,
+        "cat": "DESSERTS",
+        "sub": "Desserts"
+      },
+      {
+        "name": "Fresh Watermelon Juice",
+        "price": 135,
+        "cat": "DESSERTS",
+        "sub": "Beverages"
+      },
+      {
+        "name": "Fresh Sweet Lime Juice",
+        "price": 135,
+        "cat": "DESSERTS",
+        "sub": "Beverages"
+      },
+      {
+        "name": "Fresh Orange Juice",
+        "price": 135,
+        "cat": "DESSERTS",
+        "sub": "Beverages"
+      },
+      {
+        "name": "Milk Shake (Vanilla/Chocolate/Strawberry)",
+        "price": 135,
+        "cat": "DESSERTS",
+        "sub": "Beverages"
+      },
+      {
+        "name": "Buttermilk (Plain/Masala)",
+        "price": 89,
+        "cat": "DESSERTS",
+        "sub": "Beverages"
+      },
+      {
+        "name": "Lassi (Sweet/Salty)",
+        "price": 109,
+        "cat": "DESSERTS",
+        "sub": "Beverages"
+      },
+      {
+        "name": "Cold Coffee",
+        "price": 129,
+        "cat": "DESSERTS",
+        "sub": "Beverages"
+      },
+      {
+        "name": "Fruit Punch Mocktail",
+        "price": 149,
+        "cat": "DESSERTS",
+        "sub": "Mocktails"
+      },
+      {
+        "name": "Virgin Mojito",
+        "price": 149,
+        "cat": "DESSERTS",
+        "sub": "Mocktails"
+      },
+      {
+        "name": "Fresh Lime Soda",
+        "price": 79,
+        "cat": "DESSERTS",
+        "sub": "Beverages"
+      },
+      {
+        "name": "Fresh Lime Water",
+        "price": 65,
+        "cat": "DESSERTS",
+        "sub": "Beverages"
+      },
+      {
+        "name": "Tea / Masala Tea / Gud Tulsi Chai",
+        "price": 65,
+        "cat": "DESSERTS",
+        "sub": "Hot Beverages"
+      },
+      {
+        "name": "Organic Green Tea",
+        "price": 75,
+        "cat": "DESSERTS",
+        "sub": "Hot Beverages"
+      },
+      {
+        "name": "Black Coffee / Milk Coffee",
+        "price": 75,
+        "cat": "DESSERTS",
+        "sub": "Hot Beverages"
+      },
+      {
+        "name": "Hot Milk",
+        "price": 85,
+        "cat": "DESSERTS",
+        "sub": "Hot Beverages"
+      },
+      {
+        "name": "Bournvita Milk / Hot Chocolate",
+        "price": 109,
+        "cat": "DESSERTS",
+        "sub": "Hot Beverages"
+      }
+    ]
+  }
+];
 
     let currentSearch = '';
 
-    
-    // Authentic Ayurvedic Preparation Notes mapping
-    function getAyurvedicNote(dish) {
+    // =========================================================================
+    // CATEGORY-SPECIFIC HANDCRAFTED SATVIK SVG ARTWORK
+    // =========================================================================
+
+    // 1. BREAKFAST: Steaming traditional brass plate with clay katori & wheat sheaf icon
+    function getSvgBreakfast() {
+      return `
+        <svg class="w-16 h-16 text-[#b98944]" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="32" cy="42" rx="26" ry="12" fill="#FAF8F5" stroke="#b98944" stroke-width="1.5"/>
+          <ellipse cx="32" cy="42" rx="21" ry="9" stroke="#8b6329" stroke-width="0.8" stroke-dasharray="1.5 1.5"/>
+          <path d="M22 40 C22 47 42 47 42 40 Z" fill="#EADBC8" stroke="#8b6329" stroke-width="1.2"/>
+          <ellipse cx="32" cy="40" rx="10" ry="3.5" fill="#C89D66" stroke="#8b6329" stroke-width="1"/>
+          <path d="M28 34 C26 30 30 26 28 22" stroke="#b98944" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.85"/>
+          <path d="M32 32 C34 28 30 24 32 20" stroke="#8b6329" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+          <path d="M36 34 C38 30 34 26 36 22" stroke="#b98944" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.85"/>
+          <path d="M12 40 C14 32 18 24 24 18" stroke="#b98944" stroke-width="1" stroke-linecap="round"/>
+          <path d="M20 22 C22 20 24 21 24 18 C22 18 20 20 20 22 Z" fill="#b98944"/>
+          <path d="M17 26 C19 24 21 25 21 22 C19 22 17 24 17 26 Z" fill="#b98944"/>
+          <path d="M15 31 C17 29 19 30 19 27 C17 27 15 29 15 31 Z" fill="#b98944"/>
+        </svg>
+      `;
+    }
+
+    // 2. STARTERS & TANDOORI: Traditional earthen clay tandoor / charcoal glow badge with pure herbs
+    function getSvgStarters() {
+      return `
+        <svg class="w-16 h-16 text-[#b98944]" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18 48 C18 52 46 52 46 48 L44 26 C44 24 20 24 20 26 Z" fill="#FAF6EE" stroke="#8b6329" stroke-width="1.4"/>
+          <ellipse cx="32" cy="26" rx="12" ry="4" fill="#C89D66" stroke="#8b6329" stroke-width="1.2"/>
+          <ellipse cx="32" cy="26" rx="8" ry="2.5" fill="#D97706" opacity="0.4"/>
+          <line x1="32" y1="12" x2="32" y2="34" stroke="#8b6329" stroke-width="1.2" stroke-linecap="round"/>
+          <rect x="29" y="16" width="6" height="5" rx="1" fill="#b98944" stroke="#8b6329" stroke-width="0.8"/>
+          <rect x="29" y="23" width="6" height="5" rx="1" fill="#D97706" stroke="#8b6329" stroke-width="0.8"/>
+          <path d="M37 20 C42 18 44 22 42 24 C39 24 38 21 37 20 Z" fill="#2E7D32" opacity="0.9"/>
+          <path d="M27 18 C22 16 20 20 22 22 C25 22 26 19 27 18 Z" fill="#2E7D32" opacity="0.9"/>
+          <path d="M26 14 C25 10 27 8 26 6" stroke="#D97706" stroke-width="1" stroke-linecap="round" fill="none"/>
+          <path d="M38 14 C39 10 37 8 38 6" stroke="#D97706" stroke-width="1" stroke-linecap="round" fill="none"/>
+        </svg>
+      `;
+    }
+
+    // 3. SOUPS: Elegant porcelain soup tureen with steam swirls and fresh basil motif
+    function getSvgSoups() {
+      return `
+        <svg class="w-16 h-16 text-[#b98944]" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 32 C16 46 48 46 48 32 Z" fill="#FAF8F5" stroke="#b98944" stroke-width="1.4"/>
+          <ellipse cx="32" cy="32" rx="16" ry="4" fill="#F4EFE6" stroke="#8b6329" stroke-width="1"/>
+          <path d="M16 33 C11 33 11 38 16 38" stroke="#b98944" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+          <path d="M48 33 C53 33 53 38 48 38" stroke="#b98944" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+          <path d="M26 45 L38 45 L40 49 L24 49 Z" fill="#F4EFE6" stroke="#8b6329" stroke-width="1"/>
+          <path d="M26 26 C24 22 28 18 26 14" stroke="#b98944" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+          <path d="M32 24 C34 20 30 16 32 12" stroke="#8b6329" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+          <path d="M38 26 C40 22 36 18 38 14" stroke="#b98944" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+          <path d="M32 40 C35 37 38 38 37 41 C35 42 33 41 32 40 Z" fill="#2E7D32"/>
+          <path d="M32 40 C29 38 28 41 30 42 C31 42 32 41 32 40 Z" fill="#388E3C"/>
+        </svg>
+      `;
+    }
+
+    // 4. MILLETS & GRAINS: Golden foxtail & pearl millet stalks tied with sacred thread
+    function getSvgMillets() {
+      return `
+        <svg class="w-16 h-16 text-[#b98944]" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M22 52 C26 40 34 26 42 14" stroke="#b98944" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M42 52 C38 40 30 26 22 14" stroke="#8b6329" stroke-width="1.5" stroke-linecap="round"/>
+          <ellipse cx="38" cy="20" rx="3" ry="5" transform="rotate(30 38 20)" fill="#b98944" stroke="#8b6329" stroke-width="0.6"/>
+          <ellipse cx="41" cy="16" rx="2.5" ry="4" transform="rotate(30 41 16)" fill="#d4af37" stroke="#8b6329" stroke-width="0.6"/>
+          <ellipse cx="35" cy="25" rx="3" ry="5" transform="rotate(30 35 25)" fill="#b98944" stroke="#8b6329" stroke-width="0.6"/>
+          <ellipse cx="26" cy="20" rx="3" ry="5" transform="rotate(-30 26 20)" fill="#b98944" stroke="#8b6329" stroke-width="0.6"/>
+          <ellipse cx="23" cy="16" rx="2.5" ry="4" transform="rotate(-30 23 16)" fill="#d4af37" stroke="#8b6329" stroke-width="0.6"/>
+          <ellipse cx="29" cy="25" rx="3" ry="5" transform="rotate(-30 29 25)" fill="#b98944" stroke="#8b6329" stroke-width="0.6"/>
+          <circle cx="32" cy="36" r="4.5" fill="#B91C1C" stroke="#b98944" stroke-width="1"/>
+          <circle cx="32" cy="36" r="2" fill="#FBBF24"/>
+          <path d="M30 40 C28 44 26 47 25 50" stroke="#B91C1C" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M34 40 C36 44 38 47 39 50" stroke="#F59E0B" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      `;
+    }
+
+    // 5. PANEER & MAINS: Traditional Indian bronze Handi / Kadai with aromatic steam
+    function getSvgMains() {
+      return `
+        <svg class="w-16 h-16 text-[#b98944]" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18 34 C16 48 48 48 46 34 Z" fill="#F4EFE6" stroke="#8b6329" stroke-width="1.4"/>
+          <ellipse cx="32" cy="32" rx="14" ry="4.5" fill="#C89D66" stroke="#8b6329" stroke-width="1.2"/>
+          <ellipse cx="32" cy="31" rx="11" ry="3" fill="#FAF8F5" stroke="#b98944" stroke-width="0.8"/>
+          <circle cx="15" cy="34" r="3.5" stroke="#8b6329" stroke-width="1.2" fill="none"/>
+          <circle cx="49" cy="34" r="3.5" stroke="#8b6329" stroke-width="1.2" fill="none"/>
+          <path d="M25 46 C28 48 36 48 39 46" stroke="#8b6329" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M26 24 C24 19 28 15 26 10" stroke="#b98944" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+          <path d="M32 22 C34 17 30 13 32 8" stroke="#8b6329" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+          <path d="M38 24 C40 19 36 15 38 10" stroke="#b98944" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+        </svg>
+      `;
+    }
+
+    // 6. BREADS (ROTI / NAAN): Golden wheat ear with traditional rolling pin / tawa silhouette
+    function getSvgBreads() {
+      return `
+        <svg class="w-16 h-16 text-[#b98944]" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="32" cy="36" r="15" fill="#F4EFE6" stroke="#b98944" stroke-width="1.4"/>
+          <circle cx="32" cy="36" r="11" stroke="#8b6329" stroke-width="0.8" stroke-dasharray="2 2"/>
+          <rect x="12" y="18" width="40" height="4" rx="2" transform="rotate(-25 32 20)" fill="#C89D66" stroke="#8b6329" stroke-width="1"/>
+          <circle cx="16" cy="27" r="2.5" fill="#8b6329"/>
+          <circle cx="48" cy="13" r="2.5" fill="#8b6329"/>
+          <path d="M44 48 C44 38 42 30 38 24" stroke="#b98944" stroke-width="1" stroke-linecap="round"/>
+          <path d="M43 32 C45 30 47 31 47 28 C45 28 43 30 43 32 Z" fill="#b98944"/>
+          <path d="M41 37 C43 35 45 36 45 33 C43 33 41 35 41 37 Z" fill="#b98944"/>
+        </svg>
+      `;
+    }
+
+    // 7. DESSERTS (KHEER / HALWA): Traditional silver bowl with saffron flower & pistachio motif
+    function getSvgDesserts() {
+      return `
+        <svg class="w-16 h-16 text-[#b98944]" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18 34 C18 46 46 46 46 34 Z" fill="#FAF8F5" stroke="#8b6329" stroke-width="1.4"/>
+          <ellipse cx="32" cy="34" rx="14" ry="4" fill="#F4EFE6" stroke="#8b6329" stroke-width="1"/>
+          <path d="M26 44 L38 44 L40 48 L24 48 Z" fill="#EAE5DC" stroke="#8b6329" stroke-width="1"/>
+          <path d="M32 30 L32 20" stroke="#DC2626" stroke-width="1.2" stroke-linecap="round"/>
+          <circle cx="32" cy="19" r="1.5" fill="#DC2626"/>
+          <path d="M30 30 C28 26 27 23 27 21" stroke="#EA580C" stroke-width="1.2" stroke-linecap="round"/>
+          <circle cx="27" cy="20" r="1.5" fill="#EA580C"/>
+          <path d="M34 30 C36 26 37 23 37 21" stroke="#EA580C" stroke-width="1.2" stroke-linecap="round"/>
+          <circle cx="37" cy="20" r="1.5" fill="#EA580C"/>
+          <path d="M32 40 C35 38 38 39 37 42 C35 42 33 41 32 40 Z" fill="#15803D"/>
+          <path d="M32 40 C29 38 26 39 27 42 C29 42 31 41 32 40 Z" fill="#16A34A"/>
+        </svg>
+      `;
+    }
+
+    // 8. BEVERAGES: Classic clay kulhad / brass tea glass with cardamom & mint leaf badge
+    function getSvgBeverages() {
+      return `
+        <svg class="w-16 h-16 text-[#b98944]" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M22 28 L24 48 C24 50 40 50 40 48 L42 28 Z" fill="#E4C6A0" stroke="#8b6329" stroke-width="1.4"/>
+          <ellipse cx="32" cy="28" rx="10" ry="3.5" fill="#C89D66" stroke="#8b6329" stroke-width="1.2"/>
+          <ellipse cx="32" cy="28" rx="8" ry="2.5" fill="#8b6329" opacity="0.6"/>
+          <line x1="23" y1="35" x2="41" y2="35" stroke="#8b6329" stroke-width="0.8" stroke-dasharray="2 1"/>
+          <line x1="23.5" y1="41" x2="40.5" y2="41" stroke="#8b6329" stroke-width="0.8" stroke-dasharray="2 1"/>
+          <path d="M30 22 C29 17 33 14 31 9" stroke="#b98944" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+          <path d="M34 21 C36 17 32 13 34 8" stroke="#8b6329" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+          <ellipse cx="20" cy="48" rx="3.5" ry="2.2" transform="rotate(-20 20 48)" fill="#65A30D" stroke="#3F6212" stroke-width="0.8"/>
+          <path d="M42 46 C45 44 48 46 47 49 C44 49 43 47 42 46 Z" fill="#15803D"/>
+        </svg>
+      `;
+    }
+
+    // Select the category SVG dynamically based on dish details
+    function getDishArtSVG(dish) {
       const name = (dish.name || '').toLowerCase();
       const sub = (dish.sub || '').toLowerCase();
       const cat = (dish.cat || '').toLowerCase();
 
-      // Specific dish notes
+      // 1. Beverages
+      if (sub.includes('beverage') || sub.includes('tea') || sub.includes('chai') || sub.includes('coffee') || 
+          name.includes('juice') || name.includes('lassi') || name.includes('buttermilk') || name.includes('tea') || 
+          name.includes('chai') || name.includes('milk') || name.includes('shake') || name.includes('water')) {
+        return getSvgBeverages();
+      }
+
+      // 2. Soups
+      if (sub.includes('soup') || name.includes('soup')) {
+        return getSvgSoups();
+      }
+
+      // 3. Desserts
+      if (sub.includes('dessert') || cat === 'DESSERTS' || name.includes('kheer') || name.includes('halwa') || 
+          name.includes('jamun') || name.includes('sweet') || name.includes('mithai')) {
+        return getSvgDesserts();
+      }
+
+      // 4. Millets & Grains
+      if (sub.includes('millet') || name.includes('millet') || name.includes('khichdi') || name.includes('daliya') || 
+          name.includes('ragi') || name.includes('jowar') || name.includes('bajra')) {
+        return getSvgMillets();
+      }
+
+      // 5. Breads & Flatbreads (in mains or sides)
+      if (sub.includes('bread') || name.includes('roti') || name.includes('naan') || 
+          name.includes('kulcha') || (cat === 'MAINS' && name.includes('paratha'))) {
+        return getSvgBreads();
+      }
+
+      // 6. Rice & Biryani
+      if (sub.includes('rice') || sub.includes('biryani') || name.includes('rice') || name.includes('biryani') || name.includes('pulao')) {
+        return getSvgBreads();
+      }
+
+      // 7. Starters, Tandoori, Chinese, Pizzas
+      if (cat === 'STARTERS' || sub.includes('starter') || sub.includes('tandoori') || sub.includes('tikka') || 
+          sub.includes('kebab') || sub.includes('pizza') || sub.includes('manchurian') || sub.includes('chilli') || sub.includes('roll')) {
+        return getSvgStarters();
+      }
+
+      // 8. Breakfast items
+      if (cat === 'BREAKFAST' || sub.includes('breakfast') || sub.includes('south indian') || sub.includes('continental') || 
+          sub.includes('sandwich') || sub.includes('fruit') || name.includes('idli') || name.includes('dosa') || 
+          name.includes('poha') || name.includes('upma') || name.includes('vada') || name.includes('paratha') || name.includes('puri')) {
+        return getSvgBreakfast();
+      }
+
+      // 9. Default to Handi / Royal Mains
+      return getSvgMains();
+    }
+
+    // Authentic Ayurvedic Preparation Notes mapping
+    function getAyurvedicNote(dish) {
+      const name = (dish.name || '').toLowerCase();
+      const sub = (dish.sub || '').toLowerCase();
+
       if (name.includes('poha')) return 'Steamed flattened rice tempered with roasted mustard, peanuts & fresh green chilies.';
       if (name.includes('puri bhaji')) return 'Hand-rolled wheat puris served with cumin-spiced homestyle potato curry.';
       if (name.includes('paratha')) return 'Slow-roasted on earthen tawa with unadulterated Gir cow desi ghee.';
@@ -348,7 +1292,7 @@
       if (name.includes('paneer butter') || name.includes('lababdar')) return 'Fresh artisan cottage cheese simmered in a velvety stone-ground tomato makhani reduction.';
       if (name.includes('dal makhani')) return 'Slow-simmered whole black urad lentils infused with white butter & smoked spices.';
       if (name.includes('dal tadka') || name.includes('dal fry')) return 'Organic yellow lentils tempered with roasted cumin, hing & pure cow ghee.';
-      if (name.includes('palak')) return 'Farm-fresh tender spinach puree infused with roasted garlic & Himalayan rock salt.';
+      if (name.includes('palak')) return 'Farm-fresh tender spinach puree infused with roasted cumin & Himalayan rock salt.';
       if (name.includes('kheer')) return 'Traditional milk pudding simmered with raw desi khand, green cardamom & saffron.';
       if (name.includes('halwa')) return 'Slow-roasted with stone-ground flour, pure desi ghee & crushed dry fruits.';
       if (name.includes('gulab jamun')) return 'Handcrafted khoya dumplings steeped in fragrant green cardamom & saffron nectar.';
@@ -357,7 +1301,6 @@
       if (name.includes('juice')) return '100% cold-pressed seasonal fresh fruits with zero artificial sweeteners or concentrates.';
       if (name.includes('coffee')) return 'Freshly brewed aromatic estate beans with pure farm milk or served black.';
 
-      // Category / Sub-category fallbacks
       if (sub.includes('soup')) return 'Aromatic herbal broth slow-simmered with mountain spices & fresh coriander.';
       if (sub.includes('tandoori') || sub.includes('kebab')) return 'Clay-oven roasted artisan cottage cheese & vegetables with Vedic digestive herbs.';
       if (sub.includes('bread')) return 'Freshly hand-rolled on traditional iron griddle with pure desi ghee.';
@@ -410,49 +1353,57 @@
               </p>
             </div>
 
-            <!-- Responsive 4-Column Food Photo Cards Grid -->
+            <!-- Responsive 4-Column Luxury Satvik Illustrated Cards Grid -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 sm:gap-6">
               ${matchingDishes.map(dish => `
                 <div class="bg-white border border-[#E6DFC8] rounded-sm overflow-hidden shadow-sm hover:border-[#b98944] hover:shadow-md transition-all duration-300 group flex flex-col justify-between">
-                  <!-- Food Photo Container -->
-                  <div class="relative w-full aspect-[16/10] overflow-hidden bg-[#FAF8F5]">
-                    <img 
-                      src="${dish.img}" 
-                      alt="${dish.name}" 
-                      loading="lazy" 
-                      class="w-full h-44 object-cover group-hover:scale-105 transition-transform duration-500" 
-                      onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=700&q=80';" 
-                    />
-                  </div>
-
-                  <!-- Card Body -->
-                  <div class="p-5 sm:p-6 flex flex-col justify-between flex-grow">
-                    <!-- Top Row: Satvik Badge & Sub-category -->
-                    <div class="flex items-center justify-between pb-3 border-b border-[#E6DFC8]/50">
-                      <div class="flex items-center space-x-1.5" title="100% Satvik Pure Veg Certified">
-                        <span class="w-3.5 h-3.5 rounded-full border border-emerald-600 flex items-center justify-center p-0.5 shrink-0">
-                          <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
-                        </span>
-                        <span class="text-[9px] uppercase tracking-wider font-semibold text-emerald-800 font-sans">100% Pure Satvik</span>
-                      </div>
-                      <span class="text-[10px] text-[#b98944] tracking-widest font-semibold uppercase font-cinzel">
-                        ${dish.sub || 'SATVIK'}
-                      </span>
+                  <!-- Top Banner: Handcrafted Pure-Satvik SVG Artwork Header -->
+                  <div class="h-32 w-full flex items-center justify-center relative overflow-hidden bg-gradient-to-b from-[#F4EFE6] to-[#FAF8F5] border-b border-[#E6DFC8] group-hover:from-[#F0E9DC] transition-colors">
+                    <!-- Subtle background ornament watermark -->
+                    <div class="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none">
+                      <svg class="w-28 h-28 text-[#b98944]" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.75">
+                        <circle cx="50" cy="50" r="45" stroke-dasharray="2 3"/>
+                        <circle cx="50" cy="50" r="35"/>
+                        <circle cx="50" cy="50" r="25" stroke-dasharray="1 2"/>
+                      </svg>
                     </div>
 
-                    <!-- Center Content: Dish Name & Ayurvedic Preparation Note -->
-                    <div class="py-3.5">
-                      <h3 class="font-serif font-bold text-lg sm:text-xl text-[#111827] group-hover:text-[#b98944] transition-colors leading-snug">
+                    <!-- Category-Specific Handcrafted SVG Art -->
+                    <div class="relative z-10 transform group-hover:scale-105 transition-transform duration-500 flex items-center justify-center">
+                      ${getDishArtSVG(dish)}
+                    </div>
+
+                    <!-- Top Left: Pure Veg Certified Green Dot Badge -->
+                    <div class="absolute top-2.5 left-2.5 flex items-center space-x-1 bg-white/90 backdrop-blur-xs px-2 py-0.5 border border-emerald-600/30 rounded-full shadow-2xs">
+                      <span class="w-2.5 h-2.5 rounded-full border border-emerald-600 flex items-center justify-center p-0.5">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+                      </span>
+                      <span class="text-[9px] uppercase tracking-wider font-bold text-emerald-800 font-sans">Satvik</span>
+                    </div>
+
+                    <!-- Top Right: Exact Sub-category Pill Badge in gold uppercase text -->
+                    <div class="absolute top-2.5 right-2.5 bg-white/90 backdrop-blur-xs px-2.5 py-0.5 border border-[#E6DFC8] rounded-full text-[9px] text-[#b98944] tracking-widest font-semibold uppercase font-cinzel shadow-2xs">
+                      ${dish.sub || 'SATVIK'}
+                    </div>
+                  </div>
+
+                  <!-- Dish Card Body -->
+                  <div class="p-4 sm:p-5 flex flex-col justify-between flex-grow">
+                    <div>
+                      <h3 class="font-serif font-bold text-base sm:text-lg text-gray-900 group-hover:text-[#b98944] transition-colors leading-snug">
                         ${dish.name}
                       </h3>
-                      <p class="font-serif italic text-xs text-tajMuted mt-1 line-clamp-2 leading-relaxed">
+                      <p class="text-[10px] text-emerald-800 font-medium tracking-wide mt-1">
+                        100% Satvik • Zero Onion • Zero Garlic • Wood-Pressed Oils
+                      </p>
+                      <p class="font-serif italic text-xs text-tajMuted mt-2 line-clamp-2 leading-relaxed">
                         ${getAyurvedicNote(dish)}
                       </p>
                     </div>
 
-                    <!-- Bottom Row: Price in INR & Tax Badge -->
-                    <div class="pt-3 border-t border-[#E6DFC8]/50 flex items-center justify-between mt-auto">
-                      <span class="font-cinzel text-xl font-bold text-[#111827]">
+                    <!-- Bottom Bar: Price & Statutory Tag -->
+                    <div class="pt-3 border-t border-[#E6DFC8]/60 flex items-center justify-between mt-4">
+                      <span class="font-cinzel text-lg sm:text-xl font-bold text-gray-900">
                         ₹${dish.price}
                       </span>
                       <span class="text-[10px] font-medium text-amber-800 bg-amber-50 px-2 py-0.5 border border-amber-200 rounded font-sans">
