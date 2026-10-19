@@ -1,0 +1,316 @@
+========================================================================
+AROGYADHAM SWASTHYA KUTIR — AAHAR-VIHAR DISH IMAGE MASTER REGISTRY
+========================================================================
+
+Instructions for Adding Real Food Photos:
+1. Save or copy each dish photo in JPG/JPEG format.
+2. Rename the file to the EXACT filename shown below (e.g. "puri-bhaji.jpg").
+3. Place the file inside the folder: assets/dishes/ (or public/assets/dishes/).
+4. If a dish image is not present in the folder, the site automatically displays
+   an ultra-clean luxury Satvik placeholder card with zero broken layout.
+
+Total Dishes: 135
+------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------
+SECTION: BREAKFAST
+------------------------------------------------------------------------
+  1. Puri Bhaji (4 pcs)                   | ₹165   | puri-bhaji.jpg
+  2. Plain Paratha                        | ₹55    | plain-paratha.jpg
+  3. Paneer Paratha                       | ₹89    | paneer-paratha.jpg
+  4. Aloo Paratha                         | ₹75    | aloo-paratha.jpg
+  5. Mix Veg Pakora (8 pcs)               | ₹165   | mix-veg-pakora.jpg
+  6. Paneer Pakora (8 pcs)                | ₹185   | paneer-pakora.jpg
+  7. Idli Sambar with Chutney             | ₹165   | idli-sambar.jpg
+  8. Vada Sambar with Chutney             | ₹165   | vada-sambar.jpg
+  9. Uttapam (Plain / Masala)             | ₹145   | uttapam.jpg
+ 10. Plain Dosa                           | ₹165   | plain-dosa.jpg
+ 11. Masala Dosa                          | ₹185   | masala-dosa.jpg
+ 12. Cheese Dosa                          | ₹209   | cheese-dosa.jpg
+ 13. Veg Upma with Sambar & Chutney       | ₹165   | veg-upma.jpg
+ 14. Indori Poha                          | ₹109   | indori-poha.jpg
+ 15. Veg Cutlet                           | ₹165   | veg-cutlet.jpg
+ 16. French Fries                         | ₹145   | french-fries.jpg
+ 17. Bread Ghee Jam                       | ₹89    | bread-ghee-jam.jpg
+ 18. Oats (Sweet / Salty)                 | ₹165   | oats.jpg
+ 19. Choco Flakes with Milk               | ₹109   | choco-flakes.jpg
+ 20. Corn Flakes with Milk                | ₹109   | corn-flakes.jpg
+ 21. Fresh Fruit Platter                  | ₹199   | fresh-fruit-platter.jpg
+ 22. Veg Sandwich                         | ₹145   | veg-sandwich.jpg
+ 23. Veg Grilled Sandwich                 | ₹165   | veg-grilled-sandwich.jpg
+ 24. Veg Club Sandwich                    | ₹189   | veg-club-sandwich.jpg
+ 25. Cheese Chilly Toast                  | ₹145   | cheese-chilly-toast.jpg
+
+------------------------------------------------------------------------
+SECTION: STARTERS
+------------------------------------------------------------------------
+ 26. Hara Bhara Kebab                     | ₹219   | hara-bhara-kebab.jpg
+ 27. Dahi Ke Kebab                        | ₹275   | dahi-ke-kebab.jpg
+ 28. Paneer Tikka                         | ₹275   | paneer-tikka.jpg
+ 29. Peshawari Paneer Tikka               | ₹275   | peshawari-paneer-tikka.jpg
+ 30. Malai Paneer Tikka                   | ₹275   | malai-paneer-tikka.jpg
+ 31. Corn Cheese Kebab                    | ₹219   | corn-cheese-kebab.jpg
+ 32. Tandoori Mushroom                    | ₹275   | tandoori-mushroom.jpg
+ 33. Chilli Mushroom (Dry)                | ₹275   | chilli-mushroom.jpg
+ 34. Veg Manchurian (Dry)                 | ₹249   | veg-manchurian.jpg
+ 35. Chilli Paneer (Dry)                  | ₹285   | chilli-paneer.jpg
+ 36. Crispy Corn                          | ₹219   | crispy-corn.jpg
+ 37. Corn Salt & Pepper                   | ₹219   | corn-salt-and-pepper.jpg
+ 38. Veg Spring Roll                      | ₹275   | veg-spring-roll.jpg
+ 39. Honey Chilli Potato                  | ₹249   | honey-chilli-potato.jpg
+ 40. Chilli Potato                        | ₹249   | chilli-potato.jpg
+ 41. Vegetable Chinese Sizzler            | ₹439   | vegetable-chinese-sizzler.jpg
+ 42. Cream of Tomato Soup                 | ₹165   | cream-of-tomato-soup.jpg
+ 43. Hot & Sour Soup                      | ₹165   | hot-and-sour-soup.jpg
+ 44. Veg Manchow Soup                     | ₹165   | veg-manchow-soup.jpg
+ 45. Veg Sweet Corn Soup                  | ₹165   | veg-sweet-corn-soup.jpg
+ 46. Mix Millet Soup                      | ₹189   | mix-millet-soup.jpg
+ 47. Cream of Spinach Soup                | ₹165   | cream-of-spinach-soup.jpg
+ 48. Veg Clear Soup                       | ₹165   | veg-clear-soup.jpg
+ 49. Cream of Veg Soup                    | ₹165   | cream-of-veg-soup.jpg
+ 50. Lemon Coriander Soup                 | ₹165   | lemon-coriander-soup.jpg
+ 51. Paneer Tikka Pizza                   | ₹265   | paneer-tikka-pizza.jpg
+ 52. Margherita Pizza                     | ₹219   | margherita-pizza.jpg
+ 53. Corn and Veg Pizza                   | ₹239   | corn-and-veg-pizza.jpg
+ 54. Pasta Alfredo / Pink Sauce           | ₹165   | pasta-alfredo.jpg
+ 55. Cheese Chilly Balls                  | ₹319   | cheese-chilly-balls.jpg
+ 56. Sauteed Veg                          | ₹275   | sauteed-veg.jpg
+
+------------------------------------------------------------------------
+SECTION: MAINS
+------------------------------------------------------------------------
+ 57. Mix Millet Khichdi                   | ₹385   | mix-millet-khichdi.jpg
+ 58. Makai Palak Ki Subzi                 | ₹385   | makai-palak-ki-subzi.jpg
+ 59. Millet Daliya                        | ₹385   | millet-daliya.jpg
+ 60. Black Fried Rice                     | ₹385   | black-fried-rice.jpg
+ 61. Paneer Butter Masala                 | ₹329   | paneer-butter-masala.jpg
+ 62. Kadai Paneer                         | ₹329   | kadai-paneer.jpg
+ 63. Palak Paneer                         | ₹329   | palak-paneer.jpg
+ 64. Matar Paneer                         | ₹329   | matar-paneer.jpg
+ 65. Veg Kofta Curry                      | ₹275   | veg-kofta-curry.jpg
+ 66. Veg Tomato Palak Bhurji              | ₹219   | veg-tomato-palak-bhurji.jpg
+ 67. Paneer Lababdar                      | ₹329   | paneer-lababdar.jpg
+ 68. Paneer Bhurji                        | ₹329   | paneer-bhurji.jpg
+ 69. Hing Dhaniya Ke Aloo                 | ₹219   | hing-dhaniya-ke-aloo.jpg
+ 70. Methi Matar Malai                    | ₹275   | methi-matar-malai.jpg
+ 71. Bhindi Masala                        | ₹279   | bhindi-masala.jpg
+ 72. Baingan Bharta                       | ₹219   | baingan-bharta.jpg
+ 73. Lauki Home Style                     | ₹219   | lauki-home-style.jpg
+ 74. Karela Ki Sabji                      | ₹219   | karela-ki-sabji.jpg
+ 75. Veg Kolhapuri                        | ₹275   | veg-kolhapuri.jpg
+ 76. Mix Veg                              | ₹275   | mix-veg.jpg
+ 77. Soya Keema Matar                     | ₹249   | soya-keema-matar.jpg
+ 78. Sev Tomato                           | ₹219   | sev-tomato.jpg
+ 79. Yellow Dal Tadka / Dal Fry           | ₹219   | yellow-dal-tadka.jpg
+ 80. Dal Makhani                          | ₹229   | dal-makhani.jpg
+ 81. Veg Manchurian Gravy                 | ₹249   | veg-manchurian-gravy.jpg
+ 82. Chilli Paneer Gravy                  | ₹275   | chilli-paneer-gravy.jpg
+ 83. Veg Hakka Noodles                    | ₹219   | veg-hakka-noodles.jpg
+ 84. Schezwan Noodles                     | ₹249   | schezwan-noodles.jpg
+ 85. Veg Fried Rice                       | ₹219   | veg-fried-rice.jpg
+ 86. Schezwan Fried Rice                  | ₹249   | schezwan-fried-rice.jpg
+ 87. Veg Noodle                           | ₹275   | veg-noodle.jpg
+ 88. Triple Schezwan Noodle & Rice        | ₹385   | triple-schezwan-noodle-and-rice.jpg
+ 89. Bajra Ki Roti (Plain/Ghee)           | ₹55    | bajra-ki-roti.jpg
+ 90. Makka Ki Roti (Plain/Ghee)           | ₹55    | makka-ki-roti.jpg
+ 91. Jowar Ki Roti (Plain/Ghee)           | ₹55    | jowar-ki-roti.jpg
+ 92. Lachha Paratha                       | ₹55    | lachha-paratha.jpg
+ 93. Tawa Chapati (Plain/Ghee)            | ₹35    | tawa-chapati.jpg
+ 94. Missi Roti                           | ₹45    | missi-roti.jpg
+ 95. Naan (Plain/Ghee)                    | ₹70    | naan.jpg
+ 96. Tandoori Roti (Plain/Ghee)           | ₹30    | tandoori-roti.jpg
+ 97. Stuffed Kulcha (Aloo/Paneer)         | ₹99    | stuffed-kulcha.jpg
+ 98. Indian Bread Basket                  | ₹195   | indian-bread-basket.jpg
+ 99. Subz Dum Biryani                     | ₹385   | subz-dum-biryani.jpg
+100. Paneer Tikka Biryani                 | ₹499   | paneer-tikka-biryani.jpg
+101. Jeera Rice                           | ₹219   | jeera-rice.jpg
+102. Veg Pulao / Matar Pulao              | ₹329   | veg-pulao.jpg
+103. Steamed Rice                         | ₹165   | steamed-rice.jpg
+104. Dal Khichdi                          | ₹329   | dal-khichdi.jpg
+
+------------------------------------------------------------------------
+SECTION: STARTERS
+------------------------------------------------------------------------
+105. Masala Papad                         | ₹55    | masala-papad.jpg
+106. Plain Papad (fry/dry)                | ₹35    | plain-papad.jpg
+
+------------------------------------------------------------------------
+SECTION: MAINS
+------------------------------------------------------------------------
+107. Mix Veg Raita                        | ₹129   | mix-veg-raita.jpg
+108. Boondi Raita                         | ₹109   | boondi-raita.jpg
+109. Pineapple Raita                      | ₹155   | pineapple-raita.jpg
+110. Mixed Fruit Raita                    | ₹165   | mixed-fruit-raita.jpg
+
+------------------------------------------------------------------------
+SECTION: STARTERS
+------------------------------------------------------------------------
+111. Fresh Garden Green Salad             | ₹119   | fresh-garden-green-salad.jpg
+112. Russian Salad                        | ₹179   | russian-salad.jpg
+113. Kachumber Salad                      | ₹119   | kachumber-salad.jpg
+
+------------------------------------------------------------------------
+SECTION: DESSERTS
+------------------------------------------------------------------------
+114. Sawa Ki Kheer                        | ₹165   | sawa-kheer.jpg
+115. Sewaiyan Ki Kheer                    | ₹165   | sewaiyan-kheer.jpg
+116. Gulab Jamun (2 pcs)                  | ₹79    | gulab-jamun.jpg
+117. Moong Dal Halwa                      | ₹165   | moong-dal-halwa.jpg
+118. Gajar Halwa (Seasonal)               | ₹165   | gajar-halwa.jpg
+119. Assorted Ice Cream                   | ₹79    | assorted-ice-cream.jpg
+120. Fresh Watermelon Juice               | ₹135   | fresh-watermelon-juice.jpg
+121. Fresh Sweet Lime Juice               | ₹135   | fresh-sweet-lime-juice.jpg
+122. Fresh Orange Juice                   | ₹135   | fresh-orange-juice.jpg
+123. Milk Shake (Vanilla/Chocolate/Strawberry) | ₹135   | milk-shake.jpg
+124. Buttermilk (Plain/Masala)            | ₹89    | buttermilk.jpg
+125. Lassi (Sweet/Salty)                  | ₹109   | lassi.jpg
+126. Cold Coffee                          | ₹129   | cold-coffee.jpg
+127. Fruit Punch Mocktail                 | ₹149   | fruit-punch-mocktail.jpg
+128. Virgin Mojito                        | ₹149   | virgin-mojito.jpg
+129. Fresh Lime Soda                      | ₹79    | fresh-lime-soda.jpg
+130. Fresh Lime Water                     | ₹65    | fresh-lime-water.jpg
+131. Tea / Masala Tea / Gud Tulsi Chai    | ₹65    | masala-tea.jpg
+132. Organic Green Tea                    | ₹75    | organic-green-tea.jpg
+133. Black Coffee / Milk Coffee           | ₹75    | coffee.jpg
+134. Hot Milk                             | ₹85    | hot-milk.jpg
+135. Bournvita Milk / Hot Chocolate       | ₹109   | bournvita-hot-chocolate.jpg
+
+========================================================================
+FLAT FILENAME LIST (135 FILES FOR QUICK BATCH REFERENCE):
+========================================================================
+puri-bhaji.jpg
+plain-paratha.jpg
+paneer-paratha.jpg
+aloo-paratha.jpg
+mix-veg-pakora.jpg
+paneer-pakora.jpg
+idli-sambar.jpg
+vada-sambar.jpg
+uttapam.jpg
+plain-dosa.jpg
+masala-dosa.jpg
+cheese-dosa.jpg
+veg-upma.jpg
+indori-poha.jpg
+veg-cutlet.jpg
+french-fries.jpg
+bread-ghee-jam.jpg
+oats.jpg
+choco-flakes.jpg
+corn-flakes.jpg
+fresh-fruit-platter.jpg
+veg-sandwich.jpg
+veg-grilled-sandwich.jpg
+veg-club-sandwich.jpg
+cheese-chilly-toast.jpg
+hara-bhara-kebab.jpg
+dahi-ke-kebab.jpg
+paneer-tikka.jpg
+peshawari-paneer-tikka.jpg
+malai-paneer-tikka.jpg
+corn-cheese-kebab.jpg
+tandoori-mushroom.jpg
+chilli-mushroom.jpg
+veg-manchurian.jpg
+chilli-paneer.jpg
+crispy-corn.jpg
+corn-salt-and-pepper.jpg
+veg-spring-roll.jpg
+honey-chilli-potato.jpg
+chilli-potato.jpg
+vegetable-chinese-sizzler.jpg
+cream-of-tomato-soup.jpg
+hot-and-sour-soup.jpg
+veg-manchow-soup.jpg
+veg-sweet-corn-soup.jpg
+mix-millet-soup.jpg
+cream-of-spinach-soup.jpg
+veg-clear-soup.jpg
+cream-of-veg-soup.jpg
+lemon-coriander-soup.jpg
+paneer-tikka-pizza.jpg
+margherita-pizza.jpg
+corn-and-veg-pizza.jpg
+pasta-alfredo.jpg
+cheese-chilly-balls.jpg
+sauteed-veg.jpg
+mix-millet-khichdi.jpg
+makai-palak-ki-subzi.jpg
+millet-daliya.jpg
+black-fried-rice.jpg
+paneer-butter-masala.jpg
+kadai-paneer.jpg
+palak-paneer.jpg
+matar-paneer.jpg
+veg-kofta-curry.jpg
+veg-tomato-palak-bhurji.jpg
+paneer-lababdar.jpg
+paneer-bhurji.jpg
+hing-dhaniya-ke-aloo.jpg
+methi-matar-malai.jpg
+bhindi-masala.jpg
+baingan-bharta.jpg
+lauki-home-style.jpg
+karela-ki-sabji.jpg
+veg-kolhapuri.jpg
+mix-veg.jpg
+soya-keema-matar.jpg
+sev-tomato.jpg
+yellow-dal-tadka.jpg
+dal-makhani.jpg
+veg-manchurian-gravy.jpg
+chilli-paneer-gravy.jpg
+veg-hakka-noodles.jpg
+schezwan-noodles.jpg
+veg-fried-rice.jpg
+schezwan-fried-rice.jpg
+veg-noodle.jpg
+triple-schezwan-noodle-and-rice.jpg
+bajra-ki-roti.jpg
+makka-ki-roti.jpg
+jowar-ki-roti.jpg
+lachha-paratha.jpg
+tawa-chapati.jpg
+missi-roti.jpg
+naan.jpg
+tandoori-roti.jpg
+stuffed-kulcha.jpg
+indian-bread-basket.jpg
+subz-dum-biryani.jpg
+paneer-tikka-biryani.jpg
+jeera-rice.jpg
+veg-pulao.jpg
+steamed-rice.jpg
+dal-khichdi.jpg
+masala-papad.jpg
+plain-papad.jpg
+mix-veg-raita.jpg
+boondi-raita.jpg
+pineapple-raita.jpg
+mixed-fruit-raita.jpg
+fresh-garden-green-salad.jpg
+russian-salad.jpg
+kachumber-salad.jpg
+sawa-kheer.jpg
+sewaiyan-kheer.jpg
+gulab-jamun.jpg
+moong-dal-halwa.jpg
+gajar-halwa.jpg
+assorted-ice-cream.jpg
+fresh-watermelon-juice.jpg
+fresh-sweet-lime-juice.jpg
+fresh-orange-juice.jpg
+milk-shake.jpg
+buttermilk.jpg
+lassi.jpg
+cold-coffee.jpg
+fruit-punch-mocktail.jpg
+virgin-mojito.jpg
+fresh-lime-soda.jpg
+fresh-lime-water.jpg
+masala-tea.jpg
+organic-green-tea.jpg
+coffee.jpg
+hot-milk.jpg
+bournvita-hot-chocolate.jpg

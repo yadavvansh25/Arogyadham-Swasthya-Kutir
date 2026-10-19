@@ -28,6 +28,7 @@ app.use((req, res, next) => {
 
 // Serve static frontend assets
 app.use(express.static(path.join(__dirname)));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Configurable Djubo Booking Engine target URL
 const DJUBO_BOOKING_URL = process.env.DJUBO_BOOKING_URL || 'https://live.ipms247.com/booking/book-rooms-arogyadham';
@@ -88,6 +89,9 @@ app.get('/api/config', (req, res) => {
 
 // Fallback route for SPA (compatible with Express 5)
 app.use((req, res) => {
+  if (req.path.startsWith('/assets/') || req.path.includes('.')) {
+    return res.status(404).send('Asset Not Found');
+  }
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
