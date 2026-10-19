@@ -1,0 +1,145 @@
+# Arogyadham Swasthya Kutir - Aahar-Vihar Dish Asset Directory
+
+This directory stores authentic high-resolution photographs for every culinary preparation served at Aahar-Vihar Restaurant.
+
+## Naming Guidelines:
+- Place exact JPG files matching the specified systematic slug in this folder (`/assets/menu-dishes/<slug>.jpg`).
+- As soon as a photo is dropped in this folder, the website will automatically display it.
+- If a file is absent, the website gracefully displays an ultra-luxury Taj-styled Satvik badge card with zero visual distortion.
+
+## Complete Dish Slugs (135 items):
+- **Puri Bhaji (4 pcs)** (₹165, Indian Breakfast): `puri-bhaji.jpg`
+- **Plain Paratha** (₹55, Indian Breakfast): `plain-paratha.jpg`
+- **Paneer Paratha** (₹89, Indian Breakfast): `paneer-paratha.jpg`
+- **Aloo Paratha** (₹75, Indian Breakfast): `aloo-paratha.jpg`
+- **Mix Veg Pakora (8 pcs)** (₹165, Indian Breakfast): `mix-veg-pakora.jpg`
+- **Paneer Pakora (8 pcs)** (₹185, Indian Breakfast): `paneer-pakora.jpg`
+- **Idli Sambar with Chutney** (₹165, South Indian): `idli-sambar.jpg`
+- **Vada Sambar with Chutney** (₹165, South Indian): `vada-sambar.jpg`
+- **Uttapam (Plain / Masala)** (₹145, South Indian): `uttapam.jpg`
+- **Plain Dosa** (₹165, South Indian): `plain-dosa.jpg`
+- **Masala Dosa** (₹185, South Indian): `masala-dosa.jpg`
+- **Cheese Dosa** (₹209, South Indian): `cheese-dosa.jpg`
+- **Veg Upma with Sambar & Chutney** (₹165, South Indian): `veg-upma.jpg`
+- **Indori Poha** (₹109, South Indian): `indori-poha.jpg`
+- **Veg Cutlet** (₹165, Continental): `veg-cutlet.jpg`
+- **French Fries** (₹145, Continental): `french-fries.jpg`
+- **Bread Ghee Jam** (₹89, Continental): `bread-ghee-jam.jpg`
+- **Oats (Sweet / Salty)** (₹165, Continental): `oats.jpg`
+- **Choco Flakes with Milk** (₹109, Continental): `choco-flakes.jpg`
+- **Corn Flakes with Milk** (₹109, Continental): `corn-flakes.jpg`
+- **Fresh Fruit Platter** (₹199, Fruits): `fresh-fruit-platter.jpg`
+- **Veg Sandwich** (₹145, Sandwiches): `veg-sandwich.jpg`
+- **Veg Grilled Sandwich** (₹165, Sandwiches): `veg-grilled-sandwich.jpg`
+- **Veg Club Sandwich** (₹189, Sandwiches): `veg-club-sandwich.jpg`
+- **Cheese Chilly Toast** (₹145, Sandwiches): `cheese-chilly-toast.jpg`
+- **Hara Bhara Kebab** (₹219, Indian Starters): `hara-bhara-kebab.jpg`
+- **Dahi Ke Kebab** (₹275, Indian Starters): `dahi-ke-kebab.jpg`
+- **Paneer Tikka** (₹275, Tandoori): `paneer-tikka.jpg`
+- **Peshawari Paneer Tikka** (₹275, Tandoori): `peshawari-paneer-tikka.jpg`
+- **Malai Paneer Tikka** (₹275, Tandoori): `malai-paneer-tikka.jpg`
+- **Corn Cheese Kebab** (₹219, Starters): `corn-cheese-kebab.jpg`
+- **Tandoori Mushroom** (₹275, Tandoori): `tandoori-mushroom.jpg`
+- **Chilli Mushroom (Dry)** (₹275, Chinese Starters): `chilli-mushroom.jpg`
+- **Veg Manchurian (Dry)** (₹249, Chinese Starters): `veg-manchurian.jpg`
+- **Chilli Paneer (Dry)** (₹285, Chinese Starters): `chilli-paneer.jpg`
+- **Crispy Corn** (₹219, Chinese Starters): `crispy-corn.jpg`
+- **Corn Salt & Pepper** (₹219, Chinese Starters): `corn-salt-and-pepper.jpg`
+- **Veg Spring Roll** (₹275, Chinese Starters): `veg-spring-roll.jpg`
+- **Honey Chilli Potato** (₹249, Chinese Starters): `honey-chilli-potato.jpg`
+- **Chilli Potato** (₹249, Chinese Starters): `chilli-potato.jpg`
+- **Vegetable Chinese Sizzler** (₹439, Sizzlers): `vegetable-chinese-sizzler.jpg`
+- **Cream of Tomato Soup** (₹165, Soups): `cream-of-tomato-soup.jpg`
+- **Hot & Sour Soup** (₹165, Soups): `hot-and-sour-soup.jpg`
+- **Veg Manchow Soup** (₹165, Soups): `veg-manchow-soup.jpg`
+- **Veg Sweet Corn Soup** (₹165, Soups): `veg-sweet-corn-soup.jpg`
+- **Mix Millet Soup** (₹189, Soups): `mix-millet-soup.jpg`
+- **Cream of Spinach Soup** (₹165, Soups): `cream-of-spinach-soup.jpg`
+- **Veg Clear Soup** (₹165, Soups): `veg-clear-soup.jpg`
+- **Cream of Veg Soup** (₹165, Soups): `cream-of-veg-soup.jpg`
+- **Lemon Coriander Soup** (₹165, Soups): `lemon-coriander-soup.jpg`
+- **Paneer Tikka Pizza** (₹265, Pizza): `paneer-tikka-pizza.jpg`
+- **Margherita Pizza** (₹219, Pizza): `margherita-pizza.jpg`
+- **Corn and Veg Pizza** (₹239, Pizza): `corn-and-veg-pizza.jpg`
+- **Pasta Alfredo / Pink Sauce** (₹165, Continental): `pasta-alfredo.jpg`
+- **Cheese Chilly Balls** (₹319, Continental): `cheese-chilly-balls.jpg`
+- **Sauteed Veg** (₹275, Continental): `sauteed-veg.jpg`
+- **Mix Millet Khichdi** (₹385, Millet Delights): `mix-millet-khichdi.jpg`
+- **Makai Palak Ki Subzi** (₹385, Millet Delights): `makai-palak-ki-subzi.jpg`
+- **Millet Daliya** (₹385, Millet Delights): `millet-daliya.jpg`
+- **Black Fried Rice** (₹385, Millet Delights): `black-fried-rice.jpg`
+- **Paneer Butter Masala** (₹329, Indian Gravies): `paneer-butter-masala.jpg`
+- **Kadai Paneer** (₹329, Indian Gravies): `kadai-paneer.jpg`
+- **Palak Paneer** (₹329, Indian Gravies): `palak-paneer.jpg`
+- **Matar Paneer** (₹329, Indian Gravies): `matar-paneer.jpg`
+- **Veg Kofta Curry** (₹275, Indian Gravies): `veg-kofta-curry.jpg`
+- **Veg Tomato Palak Bhurji** (₹219, Indian Gravies): `veg-tomato-palak-bhurji.jpg`
+- **Paneer Lababdar** (₹329, Indian Gravies): `paneer-lababdar.jpg`
+- **Paneer Bhurji** (₹329, Indian Gravies): `paneer-bhurji.jpg`
+- **Hing Dhaniya Ke Aloo** (₹219, Indian Sabzi): `hing-dhaniya-ke-aloo.jpg`
+- **Methi Matar Malai** (₹275, Indian Gravies): `methi-matar-malai.jpg`
+- **Bhindi Masala** (₹279, Indian Sabzi): `bhindi-masala.jpg`
+- **Baingan Bharta** (₹219, Indian Sabzi): `baingan-bharta.jpg`
+- **Lauki Home Style** (₹219, Indian Sabzi): `lauki-home-style.jpg`
+- **Karela Ki Sabji** (₹219, Indian Sabzi): `karela-ki-sabji.jpg`
+- **Veg Kolhapuri** (₹275, Indian Gravies): `veg-kolhapuri.jpg`
+- **Mix Veg** (₹275, Indian Sabzi): `mix-veg.jpg`
+- **Soya Keema Matar** (₹249, Indian Sabzi): `soya-keema-matar.jpg`
+- **Sev Tomato** (₹219, Indian Sabzi): `sev-tomato.jpg`
+- **Yellow Dal Tadka / Dal Fry** (₹219, Dal & Lentils): `yellow-dal-tadka.jpg`
+- **Dal Makhani** (₹229, Dal & Lentils): `dal-makhani.jpg`
+- **Veg Manchurian Gravy** (₹249, Chinese Mains): `veg-manchurian-gravy.jpg`
+- **Chilli Paneer Gravy** (₹275, Chinese Mains): `chilli-paneer-gravy.jpg`
+- **Veg Hakka Noodles** (₹219, Noodles): `veg-hakka-noodles.jpg`
+- **Schezwan Noodles** (₹249, Noodles): `schezwan-noodles.jpg`
+- **Veg Fried Rice** (₹219, Rice): `veg-fried-rice.jpg`
+- **Schezwan Fried Rice** (₹249, Rice): `schezwan-fried-rice.jpg`
+- **Veg Noodle** (₹275, Noodles): `veg-noodle.jpg`
+- **Triple Schezwan Noodle & Rice** (₹385, Chinese Mains): `triple-schezwan-noodle-and-rice.jpg`
+- **Bajra Ki Roti (Plain/Ghee)** (₹55, Indian Breads): `bajra-ki-roti.jpg`
+- **Makka Ki Roti (Plain/Ghee)** (₹55, Indian Breads): `makka-ki-roti.jpg`
+- **Jowar Ki Roti (Plain/Ghee)** (₹55, Indian Breads): `jowar-ki-roti.jpg`
+- **Lachha Paratha** (₹55, Indian Breads): `lachha-paratha.jpg`
+- **Tawa Chapati (Plain/Ghee)** (₹35, Indian Breads): `tawa-chapati.jpg`
+- **Missi Roti** (₹45, Indian Breads): `missi-roti.jpg`
+- **Naan (Plain/Ghee)** (₹70, Indian Breads): `naan.jpg`
+- **Tandoori Roti (Plain/Ghee)** (₹30, Indian Breads): `tandoori-roti.jpg`
+- **Stuffed Kulcha (Aloo/Paneer)** (₹99, Indian Breads): `stuffed-kulcha.jpg`
+- **Indian Bread Basket** (₹195, Indian Breads): `indian-bread-basket.jpg`
+- **Subz Dum Biryani** (₹385, Rice & Biryani): `subz-dum-biryani.jpg`
+- **Paneer Tikka Biryani** (₹499, Rice & Biryani): `paneer-tikka-biryani.jpg`
+- **Jeera Rice** (₹219, Rice & Biryani): `jeera-rice.jpg`
+- **Veg Pulao / Matar Pulao** (₹329, Rice & Biryani): `veg-pulao.jpg`
+- **Steamed Rice** (₹165, Rice & Biryani): `steamed-rice.jpg`
+- **Dal Khichdi** (₹329, Rice & Biryani): `dal-khichdi.jpg`
+- **Masala Papad** (₹55, Papad): `masala-papad.jpg`
+- **Plain Papad (fry/dry)** (₹35, Papad): `plain-papad.jpg`
+- **Mix Veg Raita** (₹129, Raita): `mix-veg-raita.jpg`
+- **Boondi Raita** (₹109, Raita): `boondi-raita.jpg`
+- **Pineapple Raita** (₹155, Raita): `pineapple-raita.jpg`
+- **Mixed Fruit Raita** (₹165, Raita): `mixed-fruit-raita.jpg`
+- **Fresh Garden Green Salad** (₹119, Salads): `fresh-garden-green-salad.jpg`
+- **Russian Salad** (₹179, Salads): `russian-salad.jpg`
+- **Kachumber Salad** (₹119, Salads): `kachumber-salad.jpg`
+- **Sawa Ki Kheer** (₹165, Desserts): `sawa-kheer.jpg`
+- **Sewaiyan Ki Kheer** (₹165, Desserts): `sewaiyan-kheer.jpg`
+- **Gulab Jamun (2 pcs)** (₹79, Desserts): `gulab-jamun.jpg`
+- **Moong Dal Halwa** (₹165, Desserts): `moong-dal-halwa.jpg`
+- **Gajar Halwa (Seasonal)** (₹165, Desserts): `gajar-halwa.jpg`
+- **Assorted Ice Cream** (₹79, Desserts): `assorted-ice-cream.jpg`
+- **Fresh Watermelon Juice** (₹135, Beverages): `fresh-watermelon-juice.jpg`
+- **Fresh Sweet Lime Juice** (₹135, Beverages): `fresh-sweet-lime-juice.jpg`
+- **Fresh Orange Juice** (₹135, Beverages): `fresh-orange-juice.jpg`
+- **Milk Shake (Vanilla/Chocolate/Strawberry)** (₹135, Beverages): `milk-shake.jpg`
+- **Buttermilk (Plain/Masala)** (₹89, Beverages): `buttermilk.jpg`
+- **Lassi (Sweet/Salty)** (₹109, Beverages): `lassi.jpg`
+- **Cold Coffee** (₹129, Beverages): `cold-coffee.jpg`
+- **Fruit Punch Mocktail** (₹149, Mocktails): `fruit-punch-mocktail.jpg`
+- **Virgin Mojito** (₹149, Mocktails): `virgin-mojito.jpg`
+- **Fresh Lime Soda** (₹79, Beverages): `fresh-lime-soda.jpg`
+- **Fresh Lime Water** (₹65, Beverages): `fresh-lime-water.jpg`
+- **Tea / Masala Tea / Gud Tulsi Chai** (₹65, Hot Beverages): `masala-tea.jpg`
+- **Organic Green Tea** (₹75, Hot Beverages): `organic-green-tea.jpg`
+- **Black Coffee / Milk Coffee** (₹75, Hot Beverages): `coffee.jpg`
+- **Hot Milk** (₹85, Hot Beverages): `hot-milk.jpg`
+- **Bournvita Milk / Hot Chocolate** (₹109, Hot Beverages): `bournvita-hot-chocolate.jpg`
