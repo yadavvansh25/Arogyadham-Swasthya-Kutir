@@ -104,346 +104,1097 @@
       </div>
 
       <div class="text-[11px] text-amber-800 bg-amber-50 border border-amber-200 py-1.5 px-4 rounded-sm inline-block mt-3 font-semibold">
-        Government taxes extra as applicable (+5% GST on all food &amp; beverages).
+        Government taxes extra as applicable (+5% GST on all food &amp; beverages). Pure Satvik • No Onion • No Garlic.
       </div>
     </div>
   </section>
 
-  <!-- SEARCH & CATEGORY FILTER TABS -->
+  <!-- STICKY SEARCH & CATEGORY JUMP-PILLS -->
   <section class="sticky top-20 z-30 bg-tajIvory/98 backdrop-blur-md border-b border-tajBorder py-4 px-4 sm:px-6 lg:px-8 shadow-sm">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+    <div class="max-w-7xl mx-auto flex flex-col gap-3.5">
       
-      <!-- Search Input -->
-      <div class="relative w-full md:w-80">
-        <input 
-          id="dish-search"
-          type="text" 
-          placeholder="Search dishes (e.g. Dosa, Paneer, Kheer, Biryani)..."
-          oninput="handleSearch(this.value)"
-          class="w-full h-11 pl-10 pr-4 bg-white border border-tajBorder focus:border-tajGold text-xs text-tajDark rounded-sm outline-none transition-colors shadow-sm"
-        />
-        <i data-lucide="search" class="w-4 h-4 text-tajGold absolute left-3.5 top-3.5"></i>
+      <!-- Top Row: Live Search & Summary Status -->
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="relative w-full sm:w-96">
+          <input 
+            id="dish-search"
+            type="text" 
+            placeholder="Search all dishes (e.g. Dosa, Paneer, Kheer, Biryani)..."
+            oninput="handleSearch(this.value)"
+            class="w-full h-11 pl-10 pr-9 bg-white border border-tajBorder focus:border-tajGold text-xs text-tajDark rounded-sm outline-none transition-colors shadow-sm"
+          />
+          <i data-lucide="search" class="w-4 h-4 text-tajGold absolute left-3.5 top-3.5"></i>
+          <button id="search-clear-btn" onclick="clearSearch()" class="hidden absolute right-3 top-3.5 text-gray-400 hover:text-tajDark">
+            <i data-lucide="x" class="w-4 h-4"></i>
+          </button>
+        </div>
+
+        <div class="flex items-center justify-between sm:justify-end w-full sm:w-auto gap-4 text-xs font-semibold">
+          <span class="uppercase tracking-wider text-gray-500">
+            Displaying: <strong id="dish-counter" class="text-tajDark font-cinzel text-sm">135</strong> Dishes
+          </span>
+          <span class="text-[11px] text-emerald-800 flex items-center gap-1.5">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-600 inline-block border border-emerald-800"></span> 100% Satvik Pure Veg
+          </span>
+        </div>
       </div>
 
-      <!-- Filter Tabs -->
-      <div class="flex items-center space-x-2 overflow-x-auto w-full md:w-auto pb-1 md:pb-0 scrollbar-none">
-        <button onclick="filterCategory('ALL')" data-cat="ALL" class="cat-btn px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-sm border border-tajGold bg-tajGold text-white transition-all whitespace-nowrap shadow-sm">
-          All Dishes (120+)
-        </button>
-        <button onclick="filterCategory('BREAKFAST')" data-cat="BREAKFAST" class="cat-btn px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-sm border border-tajBorder bg-white text-gray-700 hover:border-tajGold hover:text-tajGold transition-all whitespace-nowrap shadow-sm">
+      <!-- Bottom Row: Sticky Jump Navigation Pills -->
+      <div class="flex items-center space-x-2 overflow-x-auto py-1 scrollbar-none border-t border-tajBorder/50 pt-2.5">
+        <span class="text-[11px] uppercase font-bold tracking-widest text-tajGold shrink-0 mr-1">Jump to:</span>
+        <a href="#section-breakfast" class="jump-pill px-3.5 py-1.5 text-xs font-semibold rounded-sm border border-tajBorder bg-white text-tajDark hover:border-tajGold hover:text-tajGold hover:bg-tajIvory transition-all whitespace-nowrap shadow-sm">
           Breakfast
-        </button>
-        <button onclick="filterCategory('STARTERS')" data-cat="STARTERS" class="cat-btn px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-sm border border-tajBorder bg-white text-gray-700 hover:border-tajGold hover:text-tajGold transition-all whitespace-nowrap shadow-sm">
+        </a>
+        <a href="#section-starters" class="jump-pill px-3.5 py-1.5 text-xs font-semibold rounded-sm border border-tajBorder bg-white text-tajDark hover:border-tajGold hover:text-tajGold hover:bg-tajIvory transition-all whitespace-nowrap shadow-sm">
           Starters &amp; Soups
-        </button>
-        <button onclick="filterCategory('MAINS')" data-cat="MAINS" class="cat-btn px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-sm border border-tajBorder bg-white text-gray-700 hover:border-tajGold hover:text-tajGold transition-all whitespace-nowrap shadow-sm">
-          Main Course &amp; Millets
-        </button>
-        <button onclick="filterCategory('DESSERTS')" data-cat="DESSERTS" class="cat-btn px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-sm border border-tajBorder bg-white text-gray-700 hover:border-tajGold hover:text-tajGold transition-all whitespace-nowrap shadow-sm">
+        </a>
+        <a href="#section-millets" class="jump-pill px-3.5 py-1.5 text-xs font-semibold rounded-sm border border-tajBorder bg-white text-tajDark hover:border-tajGold hover:text-tajGold hover:bg-tajIvory transition-all whitespace-nowrap shadow-sm">
+          Millet Delights
+        </a>
+        <a href="#section-mains" class="jump-pill px-3.5 py-1.5 text-xs font-semibold rounded-sm border border-tajBorder bg-white text-tajDark hover:border-tajGold hover:text-tajGold hover:bg-tajIvory transition-all whitespace-nowrap shadow-sm">
+          Royal Mains
+        </a>
+        <a href="#section-breads-rice" class="jump-pill px-3.5 py-1.5 text-xs font-semibold rounded-sm border border-tajBorder bg-white text-tajDark hover:border-tajGold hover:text-tajGold hover:bg-tajIvory transition-all whitespace-nowrap shadow-sm">
+          Breads &amp; Rice
+        </a>
+        <a href="#section-desserts" class="jump-pill px-3.5 py-1.5 text-xs font-semibold rounded-sm border border-tajBorder bg-white text-tajDark hover:border-tajGold hover:text-tajGold hover:bg-tajIvory transition-all whitespace-nowrap shadow-sm">
           Desserts &amp; Beverages
-        </button>
+        </a>
       </div>
 
     </div>
   </section>
 
-  <!-- COMPLETE DISHES PHOTO CATALOG GRID -->
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow w-full">
-    
-    <div class="flex justify-between items-center mb-6 border-b border-tajBorder/60 pb-3">
-      <span class="text-xs uppercase tracking-widest text-gray-500 font-semibold">
-        Displaying: <strong id="dish-counter" class="text-tajDark">0</strong> Dishes
-      </span>
-      <span class="text-[11px] text-emerald-800 flex items-center gap-1.5 font-semibold">
-        <span class="w-2.5 h-2.5 rounded-full bg-emerald-600 inline-block border border-emerald-800"></span> 100% Satvik Pure Vegetarian
-      </span>
-    </div>
-
-    <!-- Active Grid -->
-    <div id="dishes-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-      <!-- Populated via JavaScript with full photo cards -->
-    </div>
-
-    <!-- No Match State -->
-    <div id="no-results" class="hidden text-center py-24 bg-white border border-tajBorder rounded-sm mt-6">
-      <i data-lucide="utensils" class="w-12 h-12 text-gray-300 mx-auto mb-3"></i>
-      <h3 class="font-cinzel text-lg text-tajDark font-bold">No Matching Dishes Found</h3>
-      <p class="text-xs text-gray-500 mt-1">Try another keyword or select "All Dishes (120+)".</p>
-    </div>
-
+  <!-- MASTER SECTION CONTAINER -->
+  <main id="menu-sections-container" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-grow w-full space-y-16">
+    <!-- Populated dynamically section-wise by JavaScript -->
   </main>
 
+  <!-- GLOBAL NO RESULTS FOUND STATE -->
+  <div id="no-results" class="hidden max-w-xl mx-auto text-center py-24 px-6 bg-white border border-tajBorder rounded-sm my-16 shadow-sm">
+    <div class="w-14 h-14 rounded-full bg-tajIvory border border-tajBorder flex items-center justify-center mx-auto mb-4 text-tajGold">
+      <i data-lucide="utensils" class="w-7 h-7"></i>
+    </div>
+    <h3 class="font-cinzel text-xl text-tajDark font-bold uppercase tracking-wider">No Matching Dishes Found</h3>
+    <p class="text-xs text-gray-500 mt-2 leading-relaxed">
+      We could not find any culinary items matching your search term. Please try another ingredient or clear the search to view our full menu.
+    </p>
+    <button onclick="clearSearch()" class="mt-5 inline-flex items-center space-x-2 px-5 py-2.5 bg-tajGold text-white hover:bg-tajGoldHover text-xs font-bold uppercase tracking-wider rounded-sm transition-all shadow-sm">
+      <span>View All 135 Dishes</span>
+    </button>
+  </div>
+
   <!-- LUXURY FOOTER -->
-  <footer class="bg-tajNavy text-white border-t border-tajGold/30 py-10 px-4 text-center text-xs">
-    <div class="max-w-5xl mx-auto space-y-3">
-      <span class="font-cinzel text-base tracking-widest text-tajGold block font-bold">AAHAR-VIHAR • AROGYADHAM SWASTHYA KUTIR</span>
-      <p class="text-gray-400 font-light text-[11px]">
-        Arogya Dham Rd, Parisar, Majhgawan, Chitrakoot, Madhya Pradesh 485334
+  <footer class="bg-tajNavy text-white border-t border-tajGold/30 py-12 px-4 text-center text-xs mt-12">
+    <div class="max-w-5xl mx-auto space-y-4">
+      <span class="font-cinzel text-lg tracking-widest text-tajGold block font-bold">AAHAR-VIHAR • AROGYADHAM SWASTHYA KUTIR</span>
+      <p class="text-gray-400 font-light text-[11px] max-w-2xl mx-auto leading-relaxed">
+        Arogya Dham Rd, Parisar, Majhgawan, Chitrakoot, Madhya Pradesh 485334. Prepared strictly following Vedic Satvik culinary traditions with unadulterated cow ghee and well-water filtration.
       </p>
-      <p class="text-[10px] text-gray-500">
-        © 2026 Arogyadham Swasthya Kutir. All culinary items prepared in strict accordance with Ayurvedic Satvik guidelines.
+      <div class="pt-2 flex justify-center gap-6 text-[11px] text-tajGoldLight">
+        <a href="./panchvati-pasoee-menu.html" class="hover:underline">Explore Panchvati Pasoee Bhojanshala →</a>
+        <a href="./index.html" class="hover:underline">Back to Main Resort Sanctuary →</a>
+      </div>
+      <p class="text-[10px] text-gray-500 pt-2">
+        © 2026 Arogyadham Swasthya Kutir. All culinary items prepared in strict accordance with Ayurvedic Satvik guidelines (+5% GST extra).
       </p>
     </div>
   </footer>
 
-  <!-- COMPLETE 120+ DISHES DATABASE WITH DEDICATED VISUAL PHOTOGRAPHY -->
+  <!-- COMPLETE SECTION-WISE JAVASCRIPT DATABASE & RENDER LOGIC -->
   <script>
-    const DISHES_DATA = [
-      // === A) INDIAN BREAKFAST ===
-      { name: "Puri Bhaji (4 pcs)", price: 165, cat: "BREAKFAST", sub: "Indian Breakfast", img: "https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=800&q=80" },
-      { name: "Plain Paratha", price: 55, cat: "BREAKFAST", sub: "Indian Breakfast", img: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80" },
-      { name: "Paneer Paratha", price: 89, cat: "BREAKFAST", sub: "Indian Breakfast", img: "https://images.unsplash.com/photo-1606491956689-2ea866880c84?auto=format&fit=crop&w=800&q=80" },
-      { name: "Aloo Paratha", price: 75, cat: "BREAKFAST", sub: "Indian Breakfast", img: "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=800&q=80" },
-      { name: "Mix Veg Pakora (8 pcs)", price: 165, cat: "BREAKFAST", sub: "Indian Breakfast", img: "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=800&q=80" },
-      { name: "Paneer Pakora (8 pcs)", price: 185, cat: "BREAKFAST", sub: "Indian Breakfast", img: "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=800&q=80" },
+    const MENU_SECTIONS = [
+  {
+    "id": "section-breakfast",
+    "title": "—— I. PRABHAT AAHAR (BREAKFAST & LIGHT BITES) ——",
+    "hindi": "प्रभात अल्पाहार",
+    "desc": "Energizing morning nourishment designed to balance digestive Agni with wholesome grains, live Vedic herbs, and fresh seasonal harvests.",
+    "dishes": [
+      {
+        "name": "Puri Bhaji (4 pcs)",
+        "price": 165,
+        "sub": "Indian Breakfast",
+        "img": "https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Plain Paratha",
+        "price": 55,
+        "sub": "Indian Breakfast",
+        "img": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Paneer Paratha",
+        "price": 89,
+        "sub": "Indian Breakfast",
+        "img": "https://images.unsplash.com/photo-1606491956689-2ea866880c84?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Aloo Paratha",
+        "price": 75,
+        "sub": "Indian Breakfast",
+        "img": "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Mix Veg Pakora (8 pcs)",
+        "price": 165,
+        "sub": "Indian Breakfast",
+        "img": "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Paneer Pakora (8 pcs)",
+        "price": 185,
+        "sub": "Indian Breakfast",
+        "img": "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Idli Sambar with Chutney",
+        "price": 165,
+        "sub": "South Indian",
+        "img": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=799&q=80"
+      },
+      {
+        "name": "Vada Sambar with Chutney",
+        "price": 165,
+        "sub": "South Indian",
+        "img": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=798&q=80"
+      },
+      {
+        "name": "Uttapam (Plain/Masala)",
+        "price": 145,
+        "sub": "South Indian",
+        "img": "https://images.unsplash.com/photo-1610192244261-3f33de3f55e4?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Plain Dosa",
+        "price": 165,
+        "sub": "South Indian",
+        "img": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=797&q=80"
+      },
+      {
+        "name": "Masala Dosa",
+        "price": 185,
+        "sub": "South Indian",
+        "img": "https://images.unsplash.com/photo-1668236543090-82eba5ee5976?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Cheese Dosa",
+        "price": 209,
+        "sub": "South Indian",
+        "img": "https://images.unsplash.com/photo-1610192244261-3f33de3f55e4?auto=format&fit=crop&w=799&q=80"
+      },
+      {
+        "name": "Veg Upma with Sambar & Chutney",
+        "price": 165,
+        "sub": "South Indian",
+        "img": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Indori Poha",
+        "price": 109,
+        "sub": "South Indian",
+        "img": "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=799&q=80"
+      },
+      {
+        "name": "Veg Cutlet",
+        "price": 165,
+        "sub": "Continental",
+        "img": "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=799&q=80"
+      },
+      {
+        "name": "French Fries",
+        "price": 145,
+        "sub": "Continental",
+        "img": "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Bread Ghee Jam",
+        "price": 89,
+        "sub": "Continental",
+        "img": "https://images.unsplash.com/photo-1509722747041-616f39b57569?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Oats (Sweet/Salty)",
+        "price": 165,
+        "sub": "Continental",
+        "img": "https://images.unsplash.com/photo-1517673132405-a56a62b18caf?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Choco Flakes with Milk",
+        "price": 109,
+        "sub": "Continental",
+        "img": "https://images.unsplash.com/photo-1584776296944-ab6fb57b0bdd?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Corn Flakes with Milk",
+        "price": 109,
+        "sub": "Continental",
+        "img": "https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Fresh Fruit Platter",
+        "price": 199,
+        "sub": "Fresh Fruits",
+        "img": "https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Veg Sandwich",
+        "price": 145,
+        "sub": "Sandwiches",
+        "img": "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Veg Grilled Sandwich",
+        "price": 165,
+        "sub": "Sandwiches",
+        "img": "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Veg Club Sandwich",
+        "price": 189,
+        "sub": "Sandwiches",
+        "img": "https://images.unsplash.com/photo-1567234669003-dce7a7a88821?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Cheese Chilly Toast",
+        "price": 145,
+        "sub": "Sandwiches",
+        "img": "https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=799&q=80"
+      }
+    ]
+  },
+  {
+    "id": "section-starters",
+    "title": "—— II. SHURUVAAT (STARTERS, SOUPS & PIZZAS) ——",
+    "hindi": "शुरुआत एवं सूप",
+    "desc": "Artful appetizers, clay-oven tandoori specialties, nourishing warm broths, and hand-stretched pizzas prepared with freshly churned cottage cheese and farm herbs.",
+    "dishes": [
+      {
+        "name": "Hara Bhara Kebab",
+        "price": 219,
+        "sub": "Tandoori Starter",
+        "img": "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=798&q=80"
+      },
+      {
+        "name": "Dahi Ke Kebab",
+        "price": 275,
+        "sub": "Tandoori Starter",
+        "img": "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=799&q=80"
+      },
+      {
+        "name": "Paneer Tikka",
+        "price": 275,
+        "sub": "Tandoori Starter",
+        "img": "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=798&q=80"
+      },
+      {
+        "name": "Peshawari Paneer Tikka",
+        "price": 275,
+        "sub": "Tandoori Starter",
+        "img": "https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Malai Paneer Tikka",
+        "price": 275,
+        "sub": "Tandoori Starter",
+        "img": "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=797&q=80"
+      },
+      {
+        "name": "Corn Cheese Kebab",
+        "price": 219,
+        "sub": "Tandoori Starter",
+        "img": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=799&q=80"
+      },
+      {
+        "name": "Tandoori Mushroom",
+        "price": 275,
+        "sub": "Tandoori Starter",
+        "img": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Chilli Mushroom (Dry)",
+        "price": 275,
+        "sub": "Chinese Starter",
+        "img": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=798&q=80"
+      },
+      {
+        "name": "Veg Manchurian (Dry)",
+        "price": 249,
+        "sub": "Chinese Starter",
+        "img": "https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Chilli Paneer (Dry)",
+        "price": 285,
+        "sub": "Chinese Starter",
+        "img": "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=796&q=80"
+      },
+      {
+        "name": "Crispy Corn",
+        "price": 219,
+        "sub": "Chinese Starter",
+        "img": "https://images.unsplash.com/photo-1551782450-a2132b4ba21d?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Corn Salt & Pepper",
+        "price": 219,
+        "sub": "Chinese Starter",
+        "img": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=797&q=80"
+      },
+      {
+        "name": "Veg Spring Roll",
+        "price": 275,
+        "sub": "Chinese Starter",
+        "img": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Honey Chilli Potato",
+        "price": 249,
+        "sub": "Chinese Starter",
+        "img": "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=799&q=80"
+      },
+      {
+        "name": "Chilli Potato",
+        "price": 249,
+        "sub": "Chinese Starter",
+        "img": "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=798&q=80"
+      },
+      {
+        "name": "Vegetable Chinese Sizzler",
+        "price": 439,
+        "sub": "Chinese Sizzler",
+        "img": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=799&q=80"
+      },
+      {
+        "name": "Cream of Tomato Soup",
+        "price": 165,
+        "sub": "Soups",
+        "img": "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Hot & Sour Soup",
+        "price": 165,
+        "sub": "Soups",
+        "img": "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=799&q=80"
+      },
+      {
+        "name": "Veg Manchow Soup",
+        "price": 165,
+        "sub": "Soups",
+        "img": "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=798&q=80"
+      },
+      {
+        "name": "Veg Sweet Corn Soup",
+        "price": 165,
+        "sub": "Soups",
+        "img": "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=797&q=80"
+      },
+      {
+        "name": "Mix Millet Soup",
+        "price": 189,
+        "sub": "Soups",
+        "img": "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=796&q=80"
+      },
+      {
+        "name": "Cream of Spinach Soup",
+        "price": 165,
+        "sub": "Soups",
+        "img": "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=795&q=80"
+      },
+      {
+        "name": "Veg Clear Soup",
+        "price": 165,
+        "sub": "Soups",
+        "img": "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=794&q=80"
+      },
+      {
+        "name": "Cream of Veg Soup",
+        "price": 165,
+        "sub": "Soups",
+        "img": "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=793&q=80"
+      },
+      {
+        "name": "Lemon Coriander Soup",
+        "price": 165,
+        "sub": "Soups",
+        "img": "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=792&q=80"
+      },
+      {
+        "name": "Paneer Tikka Pizza",
+        "price": 265,
+        "sub": "Artisanal Pizza",
+        "img": "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Margherita Pizza",
+        "price": 219,
+        "sub": "Artisanal Pizza",
+        "img": "https://images.unsplash.com/photo-1604382355076-af4b0eb60143?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Corn and Veg Pizza",
+        "price": 239,
+        "sub": "Artisanal Pizza",
+        "img": "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=799&q=80"
+      },
+      {
+        "name": "Pasta Alfredo / Pink Sauce",
+        "price": 165,
+        "sub": "Continental Pasta",
+        "img": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Cheese Chilly Balls",
+        "price": 319,
+        "sub": "Continental Snack",
+        "img": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=796&q=80"
+      },
+      {
+        "name": "Sauteed Veg",
+        "price": 275,
+        "sub": "Continental Healthy",
+        "img": "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80"
+      }
+    ]
+  },
+  {
+    "id": "section-millets",
+    "title": "—— III. MILLET DELIGHTS & WHOLESOME GRAINS ——",
+    "hindi": "श्री अन्न (मिलेट्स) व्यंजन",
+    "desc": "Ancient Vedic supergrains slow-simmered in cold-pressed oils and A2 cow ghee for optimal prana and digestive harmony.",
+    "dishes": [
+      {
+        "name": "Mix Millet Khichdi",
+        "price": 385,
+        "sub": "Millet Special",
+        "img": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=795&q=80"
+      },
+      {
+        "name": "Makai Palak Ki Subzi",
+        "price": 385,
+        "sub": "Millet Special",
+        "img": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Millet Daliya",
+        "price": 385,
+        "sub": "Millet Special",
+        "img": "https://images.unsplash.com/photo-1517673132405-a56a62b18caf?auto=format&fit=crop&w=799&q=80"
+      },
+      {
+        "name": "Black Fried Rice",
+        "price": 385,
+        "sub": "Millet Special",
+        "img": "https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=800&q=80"
+      }
+    ]
+  },
+  {
+    "id": "section-mains",
+    "title": "—— IV. MUKHYA BHOJAN (ROYAL CURRIES & GRAVIES) ——",
+    "hindi": "मुख्य भोजन एवं रसीली सब्ज़ियां",
+    "desc": "Regal Satvik gravies simmered with freshly stone-ground spices, garden-picked seasonal vegetables, and delicate cottage cheese without onion or garlic.",
+    "dishes": [
+      {
+        "name": "Paneer Butter Masala",
+        "price": 329,
+        "sub": "Royal Gravy",
+        "img": "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Kadai Paneer",
+        "price": 329,
+        "sub": "Royal Gravy",
+        "img": "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=799&q=80"
+      },
+      {
+        "name": "Palak Paneer",
+        "price": 329,
+        "sub": "Royal Gravy",
+        "img": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=796&q=80"
+      },
+      {
+        "name": "Matar Paneer",
+        "price": 329,
+        "sub": "Royal Gravy",
+        "img": "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=798&q=80"
+      },
+      {
+        "name": "Veg Kofta Curry",
+        "price": 275,
+        "sub": "Royal Gravy",
+        "img": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=799&q=80"
+      },
+      {
+        "name": "Veg Tomato Palak Bhurji",
+        "price": 219,
+        "sub": "Satvik Sabzi",
+        "img": "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=799&q=80"
+      },
+      {
+        "name": "Paneer Lababdar",
+        "price": 329,
+        "sub": "Royal Gravy",
+        "img": "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=797&q=80"
+      },
+      {
+        "name": "Paneer Bhurji",
+        "price": 329,
+        "sub": "Royal Gravy",
+        "img": "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=795&q=80"
+      },
+      {
+        "name": "Hing Dhaniya Ke Aloo",
+        "price": 219,
+        "sub": "Desi Sabzi",
+        "img": "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=798&q=80"
+      },
+      {
+        "name": "Methi Matar Malai",
+        "price": 275,
+        "sub": "Royal Gravy",
+        "img": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=798&q=80"
+      },
+      {
+        "name": "Bhindi Masala",
+        "price": 279,
+        "sub": "Desi Sabzi",
+        "img": "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=798&q=80"
+      },
+      {
+        "name": "Baingan Bharta",
+        "price": 219,
+        "sub": "Desi Sabzi",
+        "img": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=797&q=80"
+      },
+      {
+        "name": "Lauki Home Style",
+        "price": 219,
+        "sub": "Desi Sabzi",
+        "img": "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=797&q=80"
+      },
+      {
+        "name": "Karela Ki Sabji",
+        "price": 219,
+        "sub": "Desi Sabzi",
+        "img": "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=796&q=80"
+      },
+      {
+        "name": "Veg Kolhapuri",
+        "price": 275,
+        "sub": "Spicy Sabzi",
+        "img": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=796&q=80"
+      },
+      {
+        "name": "Mix Veg",
+        "price": 275,
+        "sub": "Satvik Sabzi",
+        "img": "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=795&q=80"
+      },
+      {
+        "name": "Soya Keema Matar",
+        "price": 249,
+        "sub": "Protein Sabzi",
+        "img": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=795&q=80"
+      },
+      {
+        "name": "Sev Tomato",
+        "price": 219,
+        "sub": "Malwa Special",
+        "img": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=794&q=80"
+      },
+      {
+        "name": "Yellow Dal Tadka / Dal Fry",
+        "price": 219,
+        "sub": "Dal & Lentils",
+        "img": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=793&q=80"
+      },
+      {
+        "name": "Dal Makhani",
+        "price": 229,
+        "sub": "Dal & Lentils",
+        "img": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=792&q=80"
+      },
+      {
+        "name": "Veg Manchurian Gravy",
+        "price": 249,
+        "sub": "Chinese Gravy",
+        "img": "https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=799&q=80"
+      },
+      {
+        "name": "Chilli Paneer Gravy",
+        "price": 275,
+        "sub": "Chinese Gravy",
+        "img": "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=794&q=80"
+      },
+      {
+        "name": "Veg Hakka Noodles",
+        "price": 219,
+        "sub": "Noodles",
+        "img": "https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=798&q=80"
+      },
+      {
+        "name": "Schezwan Noodles",
+        "price": 249,
+        "sub": "Noodles",
+        "img": "https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=797&q=80"
+      },
+      {
+        "name": "Veg Fried Rice",
+        "price": 219,
+        "sub": "Fried Rice",
+        "img": "https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=799&q=80"
+      },
+      {
+        "name": "Schezwan Fried Rice",
+        "price": 249,
+        "sub": "Fried Rice",
+        "img": "https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=798&q=80"
+      },
+      {
+        "name": "Veg Noodle",
+        "price": 275,
+        "sub": "Noodles",
+        "img": "https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=796&q=80"
+      },
+      {
+        "name": "Triple Schezwan Noodle & Rice",
+        "price": 385,
+        "sub": "Chinese Fusion",
+        "img": "https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=795&q=80"
+      }
+    ]
+  },
+  {
+    "id": "section-breads-rice",
+    "title": "—— V. ROTI, CHAWAL, PAPAD & RAITA ——",
+    "hindi": "रोटी, चावल एवं रायता",
+    "desc": "Hand-patted regional millet rotis, tandoor-baked artisanal breads, long-grain fragrant rice preparations, and cooling digestive accompaniments.",
+    "dishes": [
+      {
+        "name": "Bajra Ki Roti (Plain/Ghee)",
+        "price": 55,
+        "sub": "Millet Roti",
+        "img": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=795&q=80"
+      },
+      {
+        "name": "Makka Ki Roti (Plain/Ghee)",
+        "price": 55,
+        "sub": "Millet Roti",
+        "img": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=794&q=80"
+      },
+      {
+        "name": "Jowar Ki Roti (Plain/Ghee)",
+        "price": 55,
+        "sub": "Millet Roti",
+        "img": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=793&q=80"
+      },
+      {
+        "name": "Lachha Paratha",
+        "price": 55,
+        "sub": "Tandoor Bread",
+        "img": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=792&q=80"
+      },
+      {
+        "name": "Tawa Chapati (Plain/Ghee)",
+        "price": 35,
+        "sub": "Tawa Bread",
+        "img": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=791&q=80"
+      },
+      {
+        "name": "Missi Roti",
+        "price": 45,
+        "sub": "Besan Roti",
+        "img": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=790&q=80"
+      },
+      {
+        "name": "Naan (Plain/Ghee)",
+        "price": 70,
+        "sub": "Tandoor Bread",
+        "img": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=789&q=80"
+      },
+      {
+        "name": "Tandoori Roti (Plain/Ghee)",
+        "price": 30,
+        "sub": "Tandoor Bread",
+        "img": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=788&q=80"
+      },
+      {
+        "name": "Stuffed Kulcha (Aloo/Paneer)",
+        "price": 99,
+        "sub": "Kulcha",
+        "img": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=787&q=80"
+      },
+      {
+        "name": "Indian Bread Basket",
+        "price": 195,
+        "sub": "Assorted Breads",
+        "img": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=786&q=80"
+      },
+      {
+        "name": "Subz Dum Biryani",
+        "price": 385,
+        "sub": "Royal Biryani",
+        "img": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Paneer Tikka Biryani",
+        "price": 499,
+        "sub": "Royal Biryani",
+        "img": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=799&q=80"
+      },
+      {
+        "name": "Jeera Rice",
+        "price": 219,
+        "sub": "Basmati Rice",
+        "img": "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Veg Pulao / Matar Pulao",
+        "price": 329,
+        "sub": "Basmati Rice",
+        "img": "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=799&q=80"
+      },
+      {
+        "name": "Steamed Rice",
+        "price": 165,
+        "sub": "Basmati Rice",
+        "img": "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=798&q=80"
+      },
+      {
+        "name": "Dal Khichdi",
+        "price": 329,
+        "sub": "Comfort Rice",
+        "img": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=794&q=80"
+      },
+      {
+        "name": "Masala Papad",
+        "price": 55,
+        "sub": "Papad & Crisp",
+        "img": "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=797&q=80"
+      },
+      {
+        "name": "Plain Papad (fry/dry)",
+        "price": 35,
+        "sub": "Papad & Crisp",
+        "img": "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=796&q=80"
+      },
+      {
+        "name": "Mix Veg Raita",
+        "price": 129,
+        "sub": "Digestive Raita",
+        "img": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=793&q=80"
+      },
+      {
+        "name": "Boondi Raita",
+        "price": 109,
+        "sub": "Digestive Raita",
+        "img": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=792&q=80"
+      },
+      {
+        "name": "Pineapple Raita",
+        "price": 155,
+        "sub": "Digestive Raita",
+        "img": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=791&q=80"
+      },
+      {
+        "name": "Mixed Fruit Raita",
+        "price": 165,
+        "sub": "Digestive Raita",
+        "img": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=790&q=80"
+      },
+      {
+        "name": "Fresh Garden Green Salad",
+        "price": 119,
+        "sub": "Farm Fresh Salad",
+        "img": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Russian Salad",
+        "price": 179,
+        "sub": "Farm Fresh Salad",
+        "img": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=799&q=80"
+      },
+      {
+        "name": "Kachumber Salad",
+        "price": 119,
+        "sub": "Farm Fresh Salad",
+        "img": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=798&q=80"
+      }
+    ]
+  },
+  {
+    "id": "section-desserts",
+    "title": "—— VI. MADHUR & PEYA (DESSERTS & BEVERAGES) ——",
+    "hindi": "मधुर मिष्ठान्न एवं पेय",
+    "desc": "Traditional nectarous confections sweetened with organic jaggery and pure cow milk, alongside fresh cold-pressed fruit extracts and healing herbal decoctions.",
+    "dishes": [
+      {
+        "name": "Sawa Ki Kheer",
+        "price": 165,
+        "sub": "Traditional Sweet",
+        "img": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=785&q=80"
+      },
+      {
+        "name": "Sewaiyan Ki Kheer",
+        "price": 165,
+        "sub": "Traditional Sweet",
+        "img": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=784&q=80"
+      },
+      {
+        "name": "Gulab Jamun (2 pcs)",
+        "price": 79,
+        "sub": "Traditional Sweet",
+        "img": "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=795&q=80"
+      },
+      {
+        "name": "Moong Dal Halwa",
+        "price": 165,
+        "sub": "Traditional Sweet",
+        "img": "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=794&q=80"
+      },
+      {
+        "name": "Gajar Halwa (Seasonal)",
+        "price": 165,
+        "sub": "Traditional Sweet",
+        "img": "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=793&q=80"
+      },
+      {
+        "name": "Assorted Ice Cream",
+        "price": 79,
+        "sub": "Dessert Ice Cream",
+        "img": "https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Fresh Watermelon Juice",
+        "price": 135,
+        "sub": "Fresh Juice",
+        "img": "https://images.unsplash.com/photo-1589733955941-5eeaf752f6dd?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Fresh Sweet Lime Juice",
+        "price": 135,
+        "sub": "Fresh Juice",
+        "img": "https://images.unsplash.com/photo-1613478223719-2ab802602423?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Fresh Orange Juice",
+        "price": 135,
+        "sub": "Fresh Juice",
+        "img": "https://images.unsplash.com/photo-1613478223719-2ab802602423?auto=format&fit=crop&w=799&q=80"
+      },
+      {
+        "name": "Milk Shake (Vanilla/Chocolate/Strawberry)",
+        "price": 135,
+        "sub": "Milkshake",
+        "img": "https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Buttermilk (Plain/Masala)",
+        "price": 89,
+        "sub": "Probiotic Drink",
+        "img": "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Lassi (Sweet/Salty)",
+        "price": 109,
+        "sub": "Probiotic Drink",
+        "img": "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=799&q=80"
+      },
+      {
+        "name": "Cold Coffee",
+        "price": 129,
+        "sub": "Cold Beverage",
+        "img": "https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Fruit Punch Mocktail",
+        "price": 149,
+        "sub": "Mocktail",
+        "img": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Virgin Mojito",
+        "price": 149,
+        "sub": "Mocktail",
+        "img": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=799&q=80"
+      },
+      {
+        "name": "Fresh Lime Soda",
+        "price": 79,
+        "sub": "Refreshing Beverage",
+        "img": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=798&q=80"
+      },
+      {
+        "name": "Fresh Lime Water",
+        "price": 65,
+        "sub": "Refreshing Beverage",
+        "img": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=797&q=80"
+      },
+      {
+        "name": "Tea / Masala Tea / Gud Tulsi Chai",
+        "price": 65,
+        "sub": "Ayurvedic Chai",
+        "img": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Organic Green Tea",
+        "price": 75,
+        "sub": "Herbal Tea",
+        "img": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=799&q=80"
+      },
+      {
+        "name": "Black Coffee / Milk Coffee",
+        "price": 75,
+        "sub": "Hot Brew",
+        "img": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Hot Milk",
+        "price": 85,
+        "sub": "A2 Cow Milk",
+        "img": "https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "name": "Bournvita Milk / Hot Chocolate",
+        "price": 109,
+        "sub": "Hot Beverage",
+        "img": "https://images.unsplash.com/photo-1542990253-0d0f5be5f0ed?auto=format&fit=crop&w=800&q=80"
+      }
+    ]
+  }
+];
 
-      // === SOUTH INDIAN BREAKFAST ===
-      { name: "Idli Sambar with Chutney", price: 165, cat: "BREAKFAST", sub: "South Indian", img: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80" },
-      { name: "Vada Sambar with Chutney", price: 165, cat: "BREAKFAST", sub: "South Indian", img: "https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=800&q=80" },
-      { name: "Uttapam (Plain / Masala)", price: 145, cat: "BREAKFAST", sub: "South Indian", img: "https://images.unsplash.com/photo-1610192244261-3f33de3f55e4?auto=format&fit=crop&w=800&q=80" },
-      { name: "Plain Dosa", price: 165, cat: "BREAKFAST", sub: "South Indian", img: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80" },
-      { name: "Masala Dosa", price: 185, cat: "BREAKFAST", sub: "South Indian", img: "https://images.unsplash.com/photo-1668236543090-82eba5ee5976?auto=format&fit=crop&w=800&q=80" },
-      { name: "Cheese Dosa", price: 209, cat: "BREAKFAST", sub: "South Indian", img: "https://images.unsplash.com/photo-1610192244261-3f33de3f55e4?auto=format&fit=crop&w=800&q=80" },
-      { name: "Veg Upma with Sambar & Chutney", price: 165, cat: "BREAKFAST", sub: "South Indian", img: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80" },
-      { name: "Indori Poha", price: 109, cat: "BREAKFAST", sub: "South Indian", img: "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=800&q=80" },
-
-      // === CONTINENTAL & QUICK BITES ===
-      { name: "Veg Cutlet", price: 165, cat: "BREAKFAST", sub: "Continental", img: "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=800&q=80" },
-      { name: "French Fries", price: 145, cat: "BREAKFAST", sub: "Continental", img: "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=800&q=80" },
-      { name: "Bread Ghee Jam", price: 89, cat: "BREAKFAST", sub: "Continental", img: "https://images.unsplash.com/photo-1509722747041-616f39b57569?auto=format&fit=crop&w=800&q=80" },
-      { name: "Oats (Sweet / Salty)", price: 165, cat: "BREAKFAST", sub: "Continental", img: "https://images.unsplash.com/photo-1517673132405-a56a62b18caf?auto=format&fit=crop&w=800&q=80" },
-      { name: "Choco Flakes with Milk", price: 109, cat: "BREAKFAST", sub: "Continental", img: "https://images.unsplash.com/photo-1584776296944-ab6fb57b0bdd?auto=format&fit=crop&w=800&q=80" },
-      { name: "Corn Flakes with Milk", price: 109, cat: "BREAKFAST", sub: "Continental", img: "https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=800&q=80" },
-      { name: "Fresh Fruit Platter", price: 199, cat: "BREAKFAST", sub: "Fruits", img: "https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?auto=format&fit=crop&w=800&q=80" },
-      { name: "Veg Sandwich", price: 145, cat: "BREAKFAST", sub: "Sandwiches", img: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=800&q=80" },
-      { name: "Veg Grilled Sandwich", price: 165, cat: "BREAKFAST", sub: "Sandwiches", img: "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80" },
-      { name: "Veg Club Sandwich", price: 189, cat: "BREAKFAST", sub: "Sandwiches", img: "https://images.unsplash.com/photo-1567234669003-dce7a7a88821?auto=format&fit=crop&w=800&q=80" },
-      { name: "Cheese Chilly Toast", price: 145, cat: "BREAKFAST", sub: "Sandwiches", img: "https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=800&q=80" },
-
-      // === STARTERS (INDIAN & CHINESE) ===
-      { name: "Hara Bhara Kebab", price: 219, cat: "STARTERS", sub: "Indian Starters", img: "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=800&q=80" },
-      { name: "Dahi Ke Kebab", price: 275, cat: "STARTERS", sub: "Indian Starters", img: "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=800&q=80" },
-      { name: "Paneer Tikka", price: 275, cat: "STARTERS", sub: "Tandoori", img: "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=800&q=80" },
-      { name: "Peshawari Paneer Tikka", price: 275, cat: "STARTERS", sub: "Tandoori", img: "https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&w=800&q=80" },
-      { name: "Malai Paneer Tikka", price: 275, cat: "STARTERS", sub: "Tandoori", img: "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=800&q=80" },
-      { name: "Corn Cheese Kebab", price: 219, cat: "STARTERS", sub: "Starters", img: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80" },
-      { name: "Tandoori Mushroom", price: 275, cat: "STARTERS", sub: "Tandoori", img: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80" },
-      { name: "Chilli Mushroom (Dry)", price: 275, cat: "STARTERS", sub: "Chinese Starters", img: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80" },
-      { name: "Veg Manchurian (Dry)", price: 249, cat: "STARTERS", sub: "Chinese Starters", img: "https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=800&q=80" },
-      { name: "Chilli Paneer (Dry)", price: 285, cat: "STARTERS", sub: "Chinese Starters", img: "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=800&q=80" },
-      { name: "Crispy Corn", price: 219, cat: "STARTERS", sub: "Chinese Starters", img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d?auto=format&fit=crop&w=800&q=80" },
-      { name: "Corn Salt & Pepper", price: 219, cat: "STARTERS", sub: "Chinese Starters", img: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80" },
-      { name: "Veg Spring Roll", price: 275, cat: "STARTERS", sub: "Chinese Starters", img: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80" },
-      { name: "Honey Chilli Potato", price: 249, cat: "STARTERS", sub: "Chinese Starters", img: "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=800&q=80" },
-      { name: "Chilli Potato", price: 249, cat: "STARTERS", sub: "Chinese Starters", img: "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=800&q=80" },
-      { name: "Vegetable Chinese Sizzler", price: 439, cat: "STARTERS", sub: "Sizzlers", img: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80" },
-
-      // === SOUPS, PIZZAS & CONTINENTAL ===
-      { name: "Cream of Tomato Soup", price: 165, cat: "STARTERS", sub: "Soups", img: "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80" },
-      { name: "Hot & Sour Soup", price: 165, cat: "STARTERS", sub: "Soups", img: "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80" },
-      { name: "Veg Manchow Soup", price: 165, cat: "STARTERS", sub: "Soups", img: "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80" },
-      { name: "Veg Sweet Corn Soup", price: 165, cat: "STARTERS", sub: "Soups", img: "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80" },
-      { name: "Mix Millet Soup", price: 189, cat: "STARTERS", sub: "Soups", img: "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80" },
-      { name: "Cream of Spinach Soup", price: 165, cat: "STARTERS", sub: "Soups", img: "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80" },
-      { name: "Veg Clear Soup", price: 165, cat: "STARTERS", sub: "Soups", img: "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80" },
-      { name: "Cream of Veg Soup", price: 165, cat: "STARTERS", sub: "Soups", img: "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80" },
-      { name: "Lemon Coriander Soup", price: 165, cat: "STARTERS", sub: "Soups", img: "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80" },
-      { name: "Paneer Tikka Pizza", price: 265, cat: "STARTERS", sub: "Pizza", img: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80" },
-      { name: "Margherita Pizza", price: 219, cat: "STARTERS", sub: "Pizza", img: "https://images.unsplash.com/photo-1604382355076-af4b0eb60143?auto=format&fit=crop&w=800&q=80" },
-      { name: "Corn and Veg Pizza", price: 239, cat: "STARTERS", sub: "Pizza", img: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80" },
-      { name: "Pasta Alfredo / Pink Sauce", price: 165, cat: "STARTERS", sub: "Continental", img: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=800&q=80" },
-      { name: "Cheese Chilly Balls", price: 319, cat: "STARTERS", sub: "Continental", img: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80" },
-      { name: "Sauteed Veg", price: 275, cat: "STARTERS", sub: "Continental", img: "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80" },
-
-      // === MILLET & INDIAN MAIN COURSE ===
-      { name: "Mix Millet Khichdi", price: 385, cat: "MAINS", sub: "Millet Delights", img: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80" },
-      { name: "Makai Palak Ki Subzi", price: 385, cat: "MAINS", sub: "Millet Delights", img: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=800&q=80" },
-      { name: "Millet Daliya", price: 385, cat: "MAINS", sub: "Millet Delights", img: "https://images.unsplash.com/photo-1517673132405-a56a62b18caf?auto=format&fit=crop&w=800&q=80" },
-      { name: "Black Fried Rice", price: 385, cat: "MAINS", sub: "Millet Delights", img: "https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=800&q=80" },
-      { name: "Paneer Butter Masala", price: 329, cat: "MAINS", sub: "Indian Gravies", img: "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=800&q=80" },
-      { name: "Kadai Paneer", price: 329, cat: "MAINS", sub: "Indian Gravies", img: "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=800&q=80" },
-      { name: "Palak Paneer", price: 329, cat: "MAINS", sub: "Indian Gravies", img: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80" },
-      { name: "Matar Paneer", price: 329, cat: "MAINS", sub: "Indian Gravies", img: "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=800&q=80" },
-      { name: "Veg Kofta Curry", price: 275, cat: "MAINS", sub: "Indian Gravies", img: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=800&q=80" },
-      { name: "Veg Tomato Palak Bhurji", price: 219, cat: "MAINS", sub: "Indian Gravies", img: "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80" },
-      { name: "Paneer Lababdar", price: 329, cat: "MAINS", sub: "Indian Gravies", img: "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=800&q=80" },
-      { name: "Paneer Bhurji", price: 329, cat: "MAINS", sub: "Indian Gravies", img: "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=800&q=80" },
-      { name: "Hing Dhaniya Ke Aloo", price: 219, cat: "MAINS", sub: "Indian Sabzi", img: "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=800&q=80" },
-      { name: "Methi Matar Malai", price: 275, cat: "MAINS", sub: "Indian Gravies", img: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=800&q=80" },
-      { name: "Bhindi Masala", price: 279, cat: "MAINS", sub: "Indian Sabzi", img: "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80" },
-      { name: "Baingan Bharta", price: 219, cat: "MAINS", sub: "Indian Sabzi", img: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=800&q=80" },
-      { name: "Lauki Home Style", price: 219, cat: "MAINS", sub: "Indian Sabzi", img: "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80" },
-      { name: "Karela Ki Sabji", price: 219, cat: "MAINS", sub: "Indian Sabzi", img: "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80" },
-      { name: "Veg Kolhapuri", price: 275, cat: "MAINS", sub: "Indian Gravies", img: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=800&q=80" },
-      { name: "Mix Veg", price: 275, cat: "MAINS", sub: "Indian Sabzi", img: "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80" },
-      { name: "Soya Keema Matar", price: 249, cat: "MAINS", sub: "Indian Sabzi", img: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=800&q=80" },
-      { name: "Sev Tomato", price: 219, cat: "MAINS", sub: "Indian Sabzi", img: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=800&q=80" },
-      { name: "Yellow Dal Tadka / Dal Fry", price: 219, cat: "MAINS", sub: "Dal & Lentils", img: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=800&q=80" },
-      { name: "Dal Makhani", price: 229, cat: "MAINS", sub: "Dal & Lentils", img: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=800&q=80" },
-
-      // === CHINESE MAINS, BREADS & RICE ===
-      { name: "Veg Manchurian Gravy", price: 249, cat: "MAINS", sub: "Chinese Mains", img: "https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=800&q=80" },
-      { name: "Chilli Paneer Gravy", price: 275, cat: "MAINS", sub: "Chinese Mains", img: "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=800&q=80" },
-      { name: "Veg Hakka Noodles", price: 219, cat: "MAINS", sub: "Noodles", img: "https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=800&q=80" },
-      { name: "Schezwan Noodles", price: 249, cat: "MAINS", sub: "Noodles", img: "https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=800&q=80" },
-      { name: "Veg Fried Rice", price: 219, cat: "MAINS", sub: "Rice", img: "https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=800&q=80" },
-      { name: "Schezwan Fried Rice", price: 249, cat: "MAINS", sub: "Rice", img: "https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=800&q=80" },
-      { name: "Veg Noodle", price: 275, cat: "MAINS", sub: "Noodles", img: "https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=800&q=80" },
-      { name: "Triple Schezwan Noodle & Rice", price: 385, cat: "MAINS", sub: "Chinese Mains", img: "https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=800&q=80" },
-      { name: "Bajra Ki Roti (Plain/Ghee)", price: 55, cat: "MAINS", sub: "Indian Breads", img: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80" },
-      { name: "Makka Ki Roti (Plain/Ghee)", price: 55, cat: "MAINS", sub: "Indian Breads", img: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80" },
-      { name: "Jowar Ki Roti (Plain/Ghee)", price: 55, cat: "MAINS", sub: "Indian Breads", img: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80" },
-      { name: "Lachha Paratha", price: 55, cat: "MAINS", sub: "Indian Breads", img: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80" },
-      { name: "Tawa Chapati (Plain/Ghee)", price: 35, cat: "MAINS", sub: "Indian Breads", img: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80" },
-      { name: "Missi Roti", price: 45, cat: "MAINS", sub: "Indian Breads", img: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80" },
-      { name: "Naan (Plain/Ghee)", price: 70, cat: "MAINS", sub: "Indian Breads", img: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80" },
-      { name: "Tandoori Roti (Plain/Ghee)", price: 30, cat: "MAINS", sub: "Indian Breads", img: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80" },
-      { name: "Stuffed Kulcha (Aloo/Paneer)", price: 99, cat: "MAINS", sub: "Indian Breads", img: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80" },
-      { name: "Indian Bread Basket", price: 195, cat: "MAINS", sub: "Indian Breads", img: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80" },
-      { name: "Subz Dum Biryani", price: 385, cat: "MAINS", sub: "Rice & Biryani", img: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=800&q=80" },
-      { name: "Paneer Tikka Biryani", price: 499, cat: "MAINS", sub: "Rice & Biryani", img: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=800&q=80" },
-      { name: "Jeera Rice", price: 219, cat: "MAINS", sub: "Rice & Biryani", img: "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=800&q=80" },
-      { name: "Veg Pulao / Matar Pulao", price: 329, cat: "MAINS", sub: "Rice & Biryani", img: "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=800&q=80" },
-      { name: "Steamed Rice", price: 165, cat: "MAINS", sub: "Rice & Biryani", img: "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=800&q=80" },
-      { name: "Dal Khichdi", price: 329, cat: "MAINS", sub: "Rice & Biryani", img: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80" },
-
-      // === RAITA, SALADS, DESSERTS & BEVERAGES ===
-      { name: "Masala Papad", price: 55, cat: "STARTERS", sub: "Papad", img: "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=800&q=80" },
-      { name: "Plain Papad (fry/dry)", price: 35, cat: "STARTERS", sub: "Papad", img: "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=800&q=80" },
-      { name: "Mix Veg Raita", price: 129, cat: "MAINS", sub: "Raita", img: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80" },
-      { name: "Boondi Raita", price: 109, cat: "MAINS", sub: "Raita", img: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80" },
-      { name: "Pineapple Raita", price: 155, cat: "MAINS", sub: "Raita", img: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80" },
-      { name: "Mixed Fruit Raita", price: 165, cat: "MAINS", sub: "Raita", img: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80" },
-      { name: "Fresh Garden Green Salad", price: 119, cat: "STARTERS", sub: "Salads", img: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80" },
-      { name: "Russian Salad", price: 179, cat: "STARTERS", sub: "Salads", img: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80" },
-      { name: "Kachumber Salad", price: 119, cat: "STARTERS", sub: "Salads", img: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80" },
-      { name: "Sawa Ki Kheer", price: 165, cat: "DESSERTS", sub: "Desserts", img: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80" },
-      { name: "Sewaiyan Ki Kheer", price: 165, cat: "DESSERTS", sub: "Desserts", img: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80" },
-      { name: "Gulab Jamun (2 pcs)", price: 79, cat: "DESSERTS", sub: "Desserts", img: "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=800&q=80" },
-      { name: "Moong Dal Halwa", price: 165, cat: "DESSERTS", sub: "Desserts", img: "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=800&q=80" },
-      { name: "Gajar Halwa (Seasonal)", price: 165, cat: "DESSERTS", sub: "Desserts", img: "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=800&q=80" },
-      { name: "Assorted Ice Cream", price: 79, cat: "DESSERTS", sub: "Desserts", img: "https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=800&q=80" },
-      { name: "Fresh Watermelon Juice", price: 135, cat: "DESSERTS", sub: "Beverages", img: "https://images.unsplash.com/photo-1589733955941-5eeaf752f6dd?auto=format&fit=crop&w=800&q=80" },
-      { name: "Fresh Sweet Lime Juice", price: 135, cat: "DESSERTS", sub: "Beverages", img: "https://images.unsplash.com/photo-1613478223719-2ab802602423?auto=format&fit=crop&w=800&q=80" },
-      { name: "Fresh Orange Juice", price: 135, cat: "DESSERTS", sub: "Beverages", img: "https://images.unsplash.com/photo-1613478223719-2ab802602423?auto=format&fit=crop&w=800&q=80" },
-      { name: "Milk Shake (Vanilla/Chocolate/Strawberry)", price: 135, cat: "DESSERTS", sub: "Beverages", img: "https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=800&q=80" },
-      { name: "Buttermilk (Plain/Masala)", price: 89, cat: "DESSERTS", sub: "Beverages", img: "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=800&q=80" },
-      { name: "Lassi (Sweet/Salty)", price: 109, cat: "DESSERTS", sub: "Beverages", img: "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=800&q=80" },
-      { name: "Cold Coffee", price: 129, cat: "DESSERTS", sub: "Beverages", img: "https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?auto=format&fit=crop&w=800&q=80" },
-      { name: "Fruit Punch Mocktail", price: 149, cat: "DESSERTS", sub: "Mocktails", img: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=800&q=80" },
-      { name: "Virgin Mojito", price: 149, cat: "DESSERTS", sub: "Mocktails", img: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=800&q=80" },
-      { name: "Fresh Lime Soda (Sweet/Salty)", price: 79, cat: "DESSERTS", sub: "Beverages", img: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=800&q=80" },
-      { name: "Fresh Lime Water", price: 65, cat: "DESSERTS", sub: "Beverages", img: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=800&q=80" },
-      { name: "Tea / Masala Tea / Gud Tulsi Chai", price: 65, cat: "DESSERTS", sub: "Hot Beverages", img: "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=800&q=80" },
-      { name: "Organic Green Tea", price: 75, cat: "DESSERTS", sub: "Hot Beverages", img: "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=800&q=80" },
-      { name: "Black Coffee / Milk Coffee", price: 75, cat: "DESSERTS", sub: "Hot Beverages", img: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80" },
-      { name: "Hot Milk", price: 85, cat: "DESSERTS", sub: "Hot Beverages", img: "https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=800&q=80" },
-      { name: "Bournvita Milk / Hot Chocolate", price: 109, cat: "DESSERTS", sub: "Hot Beverages", img: "https://images.unsplash.com/photo-1542990253-0d0f5be5f0ed?auto=format&fit=crop&w=800&q=80" }
-    ];
-
-    let currentFilter = 'ALL';
     let currentSearch = '';
 
-    function renderDishes() {
-      const grid = document.getElementById('dishes-grid');
+    function renderMenu() {
+      const container = document.getElementById('menu-sections-container');
       const counter = document.getElementById('dish-counter');
       const noResults = document.getElementById('no-results');
 
-      let filtered = DISHES_DATA;
+      if (!container) return;
 
-      if (currentFilter !== 'ALL') {
-        filtered = filtered.filter(item => item.cat === currentFilter);
-      }
+      const q = currentSearch.trim().toLowerCase();
+      let totalVisibleDishes = 0;
 
-      if (currentSearch.trim() !== '') {
-        const q = currentSearch.toLowerCase();
-        filtered = filtered.filter(item => 
-          item.name.toLowerCase().includes(q) || 
-          item.sub.toLowerCase().includes(q)
-        );
-      }
+      container.innerHTML = MENU_SECTIONS.map(section => {
+        // Filter dishes within this section
+        const matchingDishes = section.dishes.filter(dish => {
+          if (!q) return true;
+          return dish.name.toLowerCase().includes(q) || dish.sub.toLowerCase().includes(q);
+        });
 
-      if (counter) counter.innerText = filtered.length;
+        totalVisibleDishes += matchingDishes.length;
 
-      if (filtered.length === 0) {
-        grid.innerHTML = '';
-        noResults.classList.remove('hidden');
-        return;
-      }
+        if (matchingDishes.length === 0) {
+          return '<section id="' + section.id + '" class="hidden scroll-mt-36"></section>';
+        }
 
-      noResults.classList.add('hidden');
-      grid.innerHTML = filtered.map(dish => `
-        <div class="bg-white border border-tajBorder rounded-sm overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 group flex flex-col justify-between">
-          <div>
-            <!-- High-Res Photo Container -->
-            <div class="relative w-full h-48 bg-tajIvory overflow-hidden">
-              <img 
-                src="${dish.img}" 
-                alt="${dish.name}" 
-                loading="lazy"
-                onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80';"
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 rounded-t-sm"
-              />
-              <span class="absolute top-2.5 right-2.5 bg-black/70 backdrop-blur-sm text-[10px] text-tajGold font-semibold uppercase tracking-wider px-2 py-0.5 rounded">
-                ${dish.sub}
-              </span>
-            </div>
-
-            <!-- Content -->
-            <div class="p-4">
-              <div class="flex items-start justify-between gap-2">
-                <div class="flex items-center space-x-1.5">
-                  <span class="w-3 h-3 rounded-full border border-emerald-600 flex items-center justify-center p-0.5 shrink-0">
-                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
-                  </span>
-                  <h3 class="font-serif font-bold text-base text-tajDark group-hover:text-tajGold transition-colors leading-tight">
-                    ${dish.name}
-                  </h3>
-                </div>
+        return `
+          <section id="${section.id}" class="scroll-mt-36 space-y-6">
+            <!-- Section Header Banner -->
+            <div class="text-center max-w-3xl mx-auto space-y-2 pt-4">
+              <div class="inline-block px-3 py-1 bg-tajCream/80 border border-tajBorder text-[10px] uppercase font-bold tracking-[0.25em] text-tajGold rounded-sm">
+                ${section.hindi} • ${matchingDishes.length} ${matchingDishes.length === 1 ? 'Dish' : 'Dishes'}
               </div>
+              <h2 class="font-cinzel text-xl sm:text-2xl md:text-3xl font-bold tracking-wider text-tajDark uppercase">
+                ${section.title}
+              </h2>
+              <div class="w-20 h-0.5 bg-tajGold mx-auto my-2"></div>
+              <p class="font-serif italic text-sm sm:text-base text-tajMuted max-w-2xl mx-auto leading-relaxed">
+                "${section.desc}"
+              </p>
             </div>
-          </div>
 
-          <!-- Price & Tax Tag -->
-          <div class="px-4 pb-4 pt-2 border-t border-tajBorder/40 flex items-center justify-between">
-            <span class="font-cinzel text-lg font-bold text-tajDark">
-              ₹${dish.price}
-            </span>
-            <span class="text-[10px] font-medium text-amber-800 bg-amber-50 px-2 py-0.5 border border-amber-200 rounded">
-              + 5% GST
-            </span>
-          </div>
-        </div>
-      `).join('');
+            <!-- Responsive 4-Column Food Photo Cards Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              ${matchingDishes.map(dish => `
+                <div class="bg-white border border-[#E6DFC8] rounded-sm overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 group flex flex-col justify-between">
+                  <div>
+                    <!-- Photo Container with Guaranteed Fallback & Category Pill -->
+                    <div class="relative w-full h-48 bg-[#FAF8F5] overflow-hidden">
+                      <img 
+                        src="${dish.img}" 
+                        alt="${dish.name}" 
+                        loading="lazy"
+                        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80';"
+                        class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500 rounded-t-sm"
+                      />
+                      <span class="absolute top-2.5 right-2.5 bg-black/70 backdrop-blur-sm text-[10px] text-tajGold font-semibold uppercase tracking-wider px-2 py-0.5 rounded shadow-sm">
+                        ${dish.sub}
+                      </span>
+                    </div>
+
+                    <!-- Card Content Header -->
+                    <div class="p-4">
+                      <div class="flex items-start justify-between gap-2">
+                        <div class="flex items-center space-x-1.5">
+                          <span class="w-3 h-3 rounded-full border border-emerald-600 flex items-center justify-center p-0.5 shrink-0" title="100% Satvik Pure Veg">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+                          </span>
+                          <h3 class="font-serif font-bold text-base text-tajDark group-hover:text-tajGold transition-colors leading-tight">
+                            ${dish.name}
+                          </h3>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Price Tag & Tax Badge -->
+                  <div class="px-4 pb-4 pt-2 border-t border-tajBorder/40 flex items-center justify-between">
+                    <span class="font-cinzel text-lg font-bold text-tajDark">
+                      ₹${dish.price}
+                    </span>
+                    <span class="text-[10px] font-medium text-amber-800 bg-amber-50 px-2 py-0.5 border border-amber-200 rounded">
+                      + 5% GST
+                    </span>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </section>
+        `;
+      }).join('');
+
+      if (counter) counter.innerText = totalVisibleDishes;
+
+      if (totalVisibleDishes === 0) {
+        container.classList.add('hidden');
+        noResults.classList.remove('hidden');
+      } else {
+        container.classList.remove('hidden');
+        noResults.classList.add('hidden');
+      }
 
       if (typeof lucide !== 'undefined') {
         try { lucide.createIcons(); } catch(e) {}
       }
     }
 
-    function filterCategory(cat) {
-      currentFilter = cat;
-      document.querySelectorAll('.cat-btn').forEach(btn => {
-        const btnCat = btn.getAttribute('data-cat');
-        if (btnCat === cat) {
-          btn.classList.add('bg-tajGold', 'text-white', 'border-tajGold');
-          btn.classList.remove('bg-white', 'text-gray-700', 'border-tajBorder');
+    function handleSearch(query) {
+      currentSearch = query || '';
+      const clearBtn = document.getElementById('search-clear-btn');
+      if (clearBtn) {
+        if (currentSearch.length > 0) {
+          clearBtn.classList.remove('hidden');
         } else {
-          btn.classList.remove('bg-tajGold', 'text-white', 'border-tajGold');
-          btn.classList.add('bg-white', 'text-gray-700', 'border-tajBorder');
+          clearBtn.classList.add('hidden');
         }
-      });
-      renderDishes();
+      }
+      renderMenu();
     }
 
-    function handleSearch(query) {
-      currentSearch = query;
-      renderDishes();
+    function clearSearch() {
+      const input = document.getElementById('dish-search');
+      if (input) input.value = '';
+      currentSearch = '';
+      const clearBtn = document.getElementById('search-clear-btn');
+      if (clearBtn) clearBtn.classList.add('hidden');
+      renderMenu();
     }
 
     // Initialize on page load
     window.addEventListener('DOMContentLoaded', () => {
-      renderDishes();
+      renderMenu();
       if (typeof lucide !== 'undefined') {
         try { lucide.createIcons(); } catch(e) {}
       }
