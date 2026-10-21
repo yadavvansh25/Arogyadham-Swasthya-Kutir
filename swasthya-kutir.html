@@ -15,6 +15,13 @@
       theme: {
         extend: {
           colors: {
+            tajNavy: '#0c131f',
+            tajDark: '#111827',
+            tajGold: '#b98944',
+            tajGoldHover: '#a17332',
+            tajGoldLight: '#dfc28d',
+            tajIvory: '#FAF8F5',
+            tajBorder: '#E8E2D8',
             taj: {
               gold: '#b98944',
               'gold-hover': '#a17332',
@@ -42,9 +49,6 @@
   <!-- Lucide Icons CDN -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
-  <!-- Google Identity Services (GIS) Official Client SDK -->
-  <script src="https://accounts.google.com/gsi/client" async defer></script>
-
   <!-- Firebase v10+ Modular Client Integration -->
   <script type="module" src="firebase-init.js"></script>
 
@@ -54,208 +58,135 @@
 
 <body class="bg-white text-taj-body font-montserrat antialiased selection:bg-taj-gold selection:text-white">
 
-  <!-- ================= 1. HERO & TOP NAVIGATION (OFFICIAL TAJ STYLE) ================= -->
-  <header id="taj-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 taj-header-gradient">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-20 sm:h-24">
+  <!-- ================= 1. STREAMLINED TOP NAVIGATION (OFFICIAL LUXURY TAJ STYLE) ================= -->
+  <header id="taj-nav" class="fixed top-0 left-0 right-0 z-50 bg-black/60 backdrop-blur-md border-b border-white/10 text-white transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
 
-        <!-- Left: Authentic Taj-style Logo Icon with AROGYADHAM -->
-        <a href="./index.html#hero" class="flex items-center gap-3 group">
-          <div
-            class="w-10 h-10 sm:w-11 sm:h-11 border border-taj-gold/80 p-1 flex items-center justify-center rounded-none bg-black/25 backdrop-blur-sm group-hover:border-white transition-colors">
-            <!-- Taj Imperial Lotus & Crest SVG -->
-            <svg class="w-7 h-7 text-taj-gold-light group-hover:scale-105 transition-transform" viewBox="0 0 100 100"
-              fill="currentColor">
-              <path d="M50 8 C47 22 35 32 20 35 C32 40 42 50 45 65 C48 50 58 40 70 35 C55 32 53 22 50 8 Z"
-                fill="#dfc28d" />
-              <path d="M50 25 C45 38 32 46 15 48 C28 53 38 62 40 76 C44 62 54 53 67 48 C52 46 51 38 50 25 Z"
-                fill="#b98944" />
-              <circle cx="50" cy="50" r="4" fill="#FFFFFF" />
-              <path d="M22 84 C34 78 66 78 78 84 C70 88 30 88 22 84 Z" fill="#dfc28d" />
-            </svg>
-          </div>
-          <div>
-            <span
-              class="nav-brand-title block font-cinzel text-lg sm:text-xl font-bold tracking-[0.22em] text-white transition-colors">
-              AROGYADHAM
-            </span>
-            <span
-              class="nav-brand-sub block font-montserrat text-[9px] tracking-[0.25em] text-taj-gold-light uppercase -mt-0.5 font-medium transition-colors">
-              Chitrakoot • Swasthya Kutir
-            </span>
-          </div>
+      <!-- LEFT: LUXURY BRAND MONOGRAM & IDENTITY -->
+      <a href="./index.html" class="flex items-center gap-3 group shrink-0 whitespace-nowrap">
+        <div class="w-10 h-10 border border-tajGold/80 p-1 flex items-center justify-center bg-black/40 backdrop-blur-sm group-hover:border-tajGold transition-colors">
+          <!-- Taj Imperial Lotus & Crest SVG -->
+          <svg class="w-7 h-7 text-tajGold group-hover:scale-105 transition-transform" viewBox="0 0 100 100" fill="currentColor">
+            <path d="M50 8 C47 22 35 32 20 35 C32 40 42 50 45 65 C48 50 58 40 70 35 C55 32 53 22 50 8 Z" fill="#dfc28d" />
+            <path d="M50 25 C45 38 32 46 15 48 C28 53 38 62 40 76 C44 62 54 53 67 48 C52 46 51 38 50 25 Z" fill="#b98944" />
+            <circle cx="50" cy="50" r="4" fill="#FFFFFF" />
+            <path d="M22 84 C34 78 66 78 78 84 C70 88 30 88 22 84 Z" fill="#dfc28d" />
+          </svg>
+        </div>
+        <div class="flex flex-col">
+          <span class="nav-brand-title font-cinzel text-lg sm:text-xl font-bold tracking-[0.2em] text-white group-hover:text-tajGold transition-colors leading-tight">
+            AROGYADHAM
+          </span>
+          <span class="nav-brand-sub font-montserrat text-[9px] tracking-[0.25em] text-tajGold uppercase font-medium">
+            Chitrakoot • Swasthya Kutir
+          </span>
+        </div>
+      </a>
+
+      <!-- CENTER: STREAMLINED ESSENTIAL NAVIGATION (Single line, strictly whitespace-nowrap) -->
+      <nav class="hidden lg:flex items-center gap-4 xl:gap-7 uppercase text-[11px] font-semibold tracking-[0.18em] text-white/90 whitespace-nowrap">
+        <a href="./swasthya-kutir.html#mandakini" class="nav-link whitespace-nowrap py-2 text-white/90 hover:text-white transition-colors duration-200 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-tajGold after:transition-all after:duration-300 hover:after:w-full">
+          MANDAKINI
+        </a>
+        <a href="./swasthya-kutir.html#paishwani" class="nav-link whitespace-nowrap py-2 text-white/90 hover:text-white transition-colors duration-200 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-tajGold after:transition-all after:duration-300 hover:after:w-full">
+          PAISHWANI
+        </a>
+        <a href="./swasthya-kutir.html#vaidehi" class="nav-link whitespace-nowrap py-2 text-white/90 hover:text-white transition-colors duration-200 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-tajGold after:transition-all after:duration-300 hover:after:w-full">
+          VAIDEHI
+        </a>
+        <a href="./panchvati.html" class="nav-link whitespace-nowrap py-2 text-white/90 hover:text-white transition-colors duration-200 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-tajGold after:transition-all after:duration-300 hover:after:w-full">
+          PANCHWATI
         </a>
 
-        <!-- Center Navigation Links -->
-        <nav
-          class="hidden xl:flex items-center gap-5 text-[11px] uppercase tracking-[0.16em] font-medium text-white/90">
-          <a href="./index.html#hero" class="nav-link hover:text-taj-gold-light transition-colors py-2">Destinations</a>
-          <a href="./index.html#rooms-section" class="nav-link hover:text-taj-gold-light transition-colors py-2">Rooms & Suites</a>
-          <a href="./swasthya-kutir.html" class="nav-link hover:text-taj-gold-light transition-colors py-2">Vaidehi / Swasthya Kutir</a>
-          <a href="./panchvati.html" class="nav-link hover:text-taj-gold-light transition-colors py-2">Panchvati</a>
-          <a href="./index.html#dining-section" class="nav-link hover:text-taj-gold-light transition-colors py-2">Dining</a>
-          <a href="./aahar-vihar-menu.html" class="nav-link hover:text-taj-gold-light transition-colors py-2">Aahar-Vihar Menu</a>
-          <a href="./panchvati-pasoee-menu.html" class="nav-link hover:text-taj-gold-light transition-colors py-2">Panchvati Pasoee</a>
-          <a href="./index.html#wellness-facilities" class="nav-link hover:text-taj-gold-light transition-colors py-2">Wellness</a>
-          <a href="./index.html#reviews" class="nav-link hover:text-taj-gold-light transition-colors py-2">Reviews</a>
-        </nav>
-
-        <!-- Right CTA: Phone, Auth State, and Mustard gold rectangular button "BOOK A STAY" -->
-        <div class="flex items-center gap-3 sm:gap-5">
-          <a href="tel:+917670265334"
-            class="nav-phone-btn text-[11px] uppercase tracking-[0.15em] font-medium text-white/90 hover:text-taj-gold-light transition-colors hidden sm:flex items-center gap-1.5">
-            <i data-lucide="phone" class="w-3.5 h-3.5 text-taj-gold"></i>
-            <span>+91 76702 65334</span>
-          </a>
-
-          <!-- USER AUTHENTICATION STATE (DESKTOP) -->
-          <div id="nav-auth-container" class="relative">
-            <!-- 1. Logged Out State: "LOGIN / JOIN" Button -->
-            <button id="nav-login-btn" onclick="openAuthModal('signin')"
-              class="text-[11px] uppercase tracking-[0.16em] font-medium text-white/95 hover:text-taj-gold-light transition-colors py-1.5 px-3 border border-white/20 hover:border-taj-gold bg-black/20 hover:bg-black/40 flex items-center gap-1.5">
-              <i data-lucide="user" class="w-3.5 h-3.5 text-taj-gold"></i>
-              <span>LOGIN / JOIN</span>
-            </button>
-
-            <!-- 2. Logged In State: User Avatar, Initials & Dropdown Menu -->
-            <div id="nav-user-dropdown" class="hidden relative">
-              <button id="nav-user-btn" onclick="toggleUserDropdown()"
-                class="flex items-center gap-2 text-white/95 hover:text-taj-gold transition-colors text-xs font-semibold uppercase tracking-wider py-1 px-2.5 border border-taj-gold/50 bg-black/35 hover:border-taj-gold">
-                <div id="nav-user-avatar"
-                  class="w-7 h-7 bg-taj-gold text-white font-bold text-xs flex items-center justify-center rounded-full border border-white/40 shadow-sm overflow-hidden flex-shrink-0">
-                  <img id="nav-user-photo" class="w-full h-full object-cover hidden" alt="User Profile"
-                    loading="lazy"
-                    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80';">
-                  <span id="nav-user-initials">VY</span>
-                </div>
-                <span id="nav-user-name" class="hidden md:inline max-w-[120px] truncate text-[11px] tracking-wider text-white">Vansh Yadav</span>
-                <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-taj-gold"></i>
-              </button>
-
-              <!-- Luxury User Profile Dropdown Menu -->
-              <div id="user-menu-dropdown"
-                class="hidden absolute right-0 mt-2 w-64 bg-white border-2 border-taj-gold shadow-2xl py-2 z-50 text-taj-charcoal">
-                <div class="px-4 py-2.5 border-b border-taj-border bg-taj-ivory">
-                  <div class="flex items-center justify-between">
-                    <p id="dropdown-user-fullname" class="font-cinzel font-bold text-xs text-taj-charcoal truncate">Vansh Yadav</p>
-                    <span id="dropdown-user-badge" class="text-[9px] uppercase tracking-wider px-1.5 py-0.5 bg-emerald-100 text-emerald-800 font-bold border border-emerald-300">
-                      ✓ Verified
-                    </span>
-                  </div>
-                  <p id="dropdown-user-email" class="text-[10px] text-taj-muted truncate mt-0.5 font-mono">vansh@example.com</p>
-                  <p id="dropdown-user-phone" class="text-[10px] text-taj-muted truncate mt-0.5">+91 98765 43210</p>
-                </div>
-                
-                <div class="py-1">
-                  <button onclick="openMyBookingsModal(); closeUserDropdown();"
-                    class="w-full text-left flex items-center justify-between px-4 py-2 text-xs font-medium hover:bg-taj-ivory hover:text-taj-gold transition-colors">
-                    <div class="flex items-center gap-2.5">
-                      <i data-lucide="calendar" class="w-3.5 h-3.5 text-taj-gold"></i>
-                      <span>My Bookings</span>
-                    </div>
-                    <span id="nav-bookings-count" class="text-[10px] px-1.5 py-0.2 bg-taj-gold text-white font-bold rounded-full">0</span>
-                  </button>
-
-                  <button onclick="openUserProfileModal(); closeUserDropdown();"
-                    class="w-full text-left flex items-center gap-2.5 px-4 py-2 text-xs font-medium hover:bg-taj-ivory hover:text-taj-gold transition-colors">
-                    <i data-lucide="user-check" class="w-3.5 h-3.5 text-taj-gold"></i>
-                    <span>Profile Details</span>
-                  </button>
-
-                  <button onclick="showSavedKutirsModal(); closeUserDropdown();"
-                    class="w-full text-left flex items-center gap-2.5 px-4 py-2 text-xs font-medium hover:bg-taj-ivory hover:text-taj-gold transition-colors">
-                    <i data-lucide="bookmark" class="w-3.5 h-3.5 text-taj-gold"></i>
-                    <span>Saved Kutirs</span>
-                  </button>
-                </div>
-
-                <div class="border-t border-taj-border/80 my-1"></div>
-                <button onclick="handleLogout(); closeUserDropdown();"
-                  class="w-full text-left flex items-center gap-2.5 px-4 py-2 text-xs font-bold text-red-600 hover:bg-red-50 transition-colors uppercase tracking-wider">
-                  <i data-lucide="log-out" class="w-3.5 h-3.5"></i>
-                  <span>Logout</span>
-                </button>
-              </div>
+        <!-- Essential Clean Dining Dropdown -->
+        <div class="relative group/dining py-2 whitespace-nowrap">
+          <button type="button" class="flex items-center gap-1 uppercase text-[11px] font-semibold tracking-[0.18em] text-white/90 hover:text-white transition-colors whitespace-nowrap relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-tajGold after:transition-all after:duration-300 group-hover/dining:after:w-full cursor-pointer">
+            <span>DINING</span>
+            <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-tajGold transition-transform duration-200 group-hover/dining:rotate-180"></i>
+          </button>
+          <div class="absolute left-0 top-full pt-1.5 w-64 hidden group-hover/dining:block z-50">
+            <div class="bg-black/95 backdrop-blur-md border border-tajGold/40 shadow-2xl py-2 px-1 text-white">
+              <a href="./aahar-vihar-menu.html" class="block px-4 py-2.5 text-xs font-medium tracking-wider hover:bg-tajGold/20 hover:text-tajGold transition-colors whitespace-nowrap">
+                Aahar-Vihar Restaurant
+              </a>
+              <a href="./panchvati-pasoee-menu.html" class="block px-4 py-2.5 text-xs font-medium tracking-wider hover:bg-tajGold/20 hover:text-tajGold transition-colors border-t border-white/10 whitespace-nowrap">
+                Panchvati Pasoee (Community Bhojan)
+              </a>
             </div>
           </div>
-
-          <!-- Iconic Taj Mustard Gold Rectangular Button -->
-          <button onclick="openBookingDrawer('Mandakini Royal Suite', 12000)" class="btn-taj-primary shadow-lg shrink-0 cursor-pointer min-h-[44px] px-6 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all">
-            <span>Book A Stay</span>
-          </button>
-
-          <!-- Mobile Hamburger -->
-          <button id="mobile-menu-btn" class="xl:hidden p-2 text-white hover:text-taj-gold-light"
-            aria-label="Toggle Menu">
-            <i data-lucide="menu" class="w-6 h-6"></i>
-          </button>
         </div>
 
-      </div>
-    </div>
+        <a href="./index.html#services-section" class="nav-link whitespace-nowrap py-2 text-white/90 hover:text-white transition-colors duration-200 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-tajGold after:transition-all after:duration-300 hover:after:w-full">
+          SERVICES
+        </a>
+      </nav>
 
-    <!-- Mobile Navigation Drawer -->
-    <div id="mobile-nav-menu"
-      class="hidden xl:hidden bg-white/98 backdrop-blur-md border-t border-taj-border px-6 py-6 space-y-4 text-xs uppercase tracking-[0.18em] text-taj-charcoal font-medium shadow-2xl">
-      
-      <!-- Mobile Auth Header Card -->
-      <div id="mobile-auth-section" class="pb-3 border-b border-taj-border">
-        <!-- Logged out mobile CTA -->
-        <button id="mobile-login-btn" onclick="openAuthModal('signin'); toggleMobileMenu();"
-          class="w-full py-2.5 px-4 text-center text-taj-charcoal border-2 border-taj-gold bg-taj-ivory font-bold hover:bg-taj-gold hover:text-white transition-colors flex items-center justify-center gap-2 text-xs">
-          <i data-lucide="user" class="w-4 h-4 text-taj-gold"></i>
-          <span>LOGIN / JOIN SWASTHYA KUTIR</span>
+      <!-- RIGHT: ACTIVE UTILITIES & DIRECT CALL -->
+      <div class="flex items-center gap-3 sm:gap-4 shrink-0 whitespace-nowrap">
+        <!-- Direct Contact Phone -->
+        <a href="tel:+917670265334" class="hidden sm:flex items-center space-x-2 text-xs font-semibold text-white hover:text-tajGold tracking-wider transition-colors border border-white/20 hover:border-tajGold px-3.5 py-2 rounded-sm bg-black/30 backdrop-blur-sm whitespace-nowrap">
+          <i data-lucide="phone-call" class="w-3.5 h-3.5 text-tajGold"></i>
+          <span>+91 76702 65334</span>
+        </a>
+
+        <!-- Primary Book A Stay CTA -->
+        <button onclick="openBookingDrawer('Mandakini Royal Suite', 12000)" class="px-5 py-2.5 text-xs font-bold tracking-widest uppercase bg-tajGold hover:bg-tajGoldHover text-white rounded-sm shadow-md transition-all whitespace-nowrap cursor-pointer">
+          BOOK A STAY
         </button>
 
-        <!-- Logged in mobile profile card -->
-        <div id="mobile-user-profile-bar" class="hidden p-3 bg-taj-ivory border border-taj-gold space-y-2.5">
-          <div class="flex items-center justify-between">
-            <div class="flex items-center gap-2.5">
-              <div id="mobile-user-avatar"
-                class="w-8 h-8 bg-taj-gold text-white font-bold text-xs flex items-center justify-center rounded-full border border-taj-gold overflow-hidden flex-shrink-0">
-                <img id="mobile-user-photo" class="w-full h-full object-cover hidden" alt="User Profile"
-                  loading="lazy"
-                  onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80';">
-                <span id="mobile-user-initials">VY</span>
-              </div>
-              <div>
-                <div id="mobile-user-name" class="font-bold text-xs text-taj-charcoal">Vansh Yadav</div>
-                <div id="mobile-user-badge" class="text-[9px] text-emerald-700 font-semibold">✓ Verified Member</div>
-              </div>
-            </div>
-            <button onclick="handleLogout(); toggleMobileMenu();"
-              class="text-[10px] text-red-600 font-bold border border-red-300 px-2 py-1 bg-white hover:bg-red-50 cursor-pointer min-h-[36px]">
-              LOGOUT
-            </button>
-          </div>
-          <div class="grid grid-cols-2 gap-2 pt-1 text-[10px]">
-            <button onclick="openMyBookingsModal(); toggleMobileMenu();"
-              class="py-2 min-h-[40px] bg-white border border-taj-border text-taj-charcoal hover:border-taj-gold font-bold flex items-center justify-center gap-1 cursor-pointer">
-              <i data-lucide="calendar" class="w-3 h-3 text-taj-gold"></i>
-              <span>My Bookings</span>
-            </button>
-            <button onclick="showSavedKutirsModal(); toggleMobileMenu();"
-              class="py-2 min-h-[40px] bg-white border border-taj-border text-taj-charcoal hover:border-taj-gold font-bold flex items-center justify-center gap-1 cursor-pointer">
-              <i data-lucide="bookmark" class="w-3 h-3 text-taj-gold"></i>
-              <span>Saved Kutirs</span>
-            </button>
-          </div>
-        </div>
+        <!-- Mobile Hamburger Icon (< 1024px) -->
+        <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="lg:hidden p-2 text-white hover:text-tajGold transition-colors" aria-label="Toggle Menu">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
       </div>
 
-      <a href="./index.html#hero" onclick="toggleMobileMenu(true);" class="block py-2 hover:text-taj-gold border-b border-gray-100">Destinations</a>
-      <a href="./index.html#rooms-section" onclick="toggleMobileMenu(true);" class="block py-2 hover:text-taj-gold border-b border-gray-100">Rooms & Suites</a>
-      <a href="./swasthya-kutir.html" onclick="toggleMobileMenu(true);" class="block py-2 hover:text-taj-gold border-b border-gray-100">Swasthya Kutir (Vaidehi) Wing</a>
-      <a href="./panchvati.html" onclick="toggleMobileMenu(true);" class="block py-2 hover:text-taj-gold border-b border-gray-100">Panchvati Wing</a>
-      <a href="./index.html#dining-section" onclick="toggleMobileMenu(true);" class="block py-2 hover:text-taj-gold border-b border-gray-100">Dining Overview</a>
-      <a href="./aahar-vihar-menu.html" onclick="toggleMobileMenu(true);" class="block py-2 hover:text-taj-gold border-b border-gray-100">Aahar-Vihar Menu</a>
-      <a href="./panchvati-pasoee-menu.html" onclick="toggleMobileMenu(true);" class="block py-2 hover:text-taj-gold border-b border-gray-100">Panchvati Pasoee Menu</a>
-      <a href="./index.html#wellness-facilities" onclick="toggleMobileMenu(true);" class="block py-2 hover:text-taj-gold border-b border-gray-100">Specialized Services & Campus</a>
-      <a href="./index.html#reviews" onclick="toggleMobileMenu(true);" class="block py-2 hover:text-taj-gold">Google Reviews &
-        Map</a>
-      <div class="pt-3">
-        <button onclick="openBookingDrawer('Mandakini Royal Suite', 12000); toggleMobileMenu();" class="w-full btn-taj-primary min-h-[44px] py-3 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer">
-          Book A Stay Now
+    </div>
+
+    <!-- MOBILE RESPONSIVE DRAWER (< 1024px) -->
+    <div id="mobile-nav-menu" class="hidden lg:hidden bg-black/95 backdrop-blur-xl border-t border-white/10 px-6 py-6 space-y-4 text-xs uppercase tracking-[0.18em] text-white font-medium shadow-2xl">
+      <div class="flex flex-col space-y-3 pb-3 border-b border-white/10">
+        <a href="./swasthya-kutir.html#mandakini" onclick="toggleMobileMenu(true);" class="py-2 text-white/90 hover:text-tajGold transition-colors flex items-center justify-between border-b border-white/5">
+          <span>Mandakini Cottage</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-tajGold"></i>
+        </a>
+        <a href="./swasthya-kutir.html#paishwani" onclick="toggleMobileMenu(true);" class="py-2 text-white/90 hover:text-tajGold transition-colors flex items-center justify-between border-b border-white/5">
+          <span>Paishwani Cottage</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-tajGold"></i>
+        </a>
+        <a href="./swasthya-kutir.html#vaidehi" onclick="toggleMobileMenu(true);" class="py-2 text-white/90 hover:text-tajGold transition-colors flex items-center justify-between border-b border-white/5">
+          <span>Vaidehi Suite &amp; Twin</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-tajGold"></i>
+        </a>
+        <a href="./panchvati.html" onclick="toggleMobileMenu(true);" class="py-2 text-white/90 hover:text-tajGold transition-colors flex items-center justify-between border-b border-white/5">
+          <span>Panchwati Wing</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-tajGold"></i>
+        </a>
+        <a href="./aahar-vihar-menu.html" onclick="toggleMobileMenu(true);" class="py-2 text-white/90 hover:text-tajGold transition-colors flex items-center justify-between border-b border-white/5">
+          <span>Aahar-Vihar Menu</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-tajGold"></i>
+        </a>
+        <a href="./panchvati-pasoee-menu.html" onclick="toggleMobileMenu(true);" class="py-2 text-white/90 hover:text-tajGold transition-colors flex items-center justify-between border-b border-white/5">
+          <span>Panchvati Pasoee Menu</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-tajGold"></i>
+        </a>
+        <a href="./index.html#services-section" onclick="toggleMobileMenu(true);" class="py-2 text-white/90 hover:text-tajGold transition-colors flex items-center justify-between">
+          <span>Campus Services</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-tajGold"></i>
+        </a>
+      </div>
+
+      <!-- Direct Tap-to-Call in Mobile Drawer -->
+      <div class="pt-2">
+        <a href="tel:+917670265334" class="w-full flex items-center justify-center space-x-2 text-xs font-semibold text-white hover:text-tajGold tracking-wider transition-colors border border-white/20 hover:border-tajGold py-3 rounded-sm bg-black/40">
+          <i data-lucide="phone-call" class="w-4 h-4 text-tajGold"></i>
+          <span>DIRECT CALL: +91 76702 65334</span>
+        </a>
+      </div>
+
+      <!-- Book a Stay Button in Mobile Drawer -->
+      <div class="pt-1">
+        <button onclick="openBookingDrawer('Mandakini Royal Suite', 12000); toggleMobileMenu(true);" class="w-full py-3.5 text-xs font-bold tracking-widest uppercase bg-tajGold hover:bg-tajGoldHover text-white rounded-sm shadow-md transition-all text-center cursor-pointer">
+          BOOK A STAY
         </button>
       </div>
     </div>
@@ -326,7 +257,7 @@
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
 
             <!-- CATEGORY 1: MANDAKINI PREMIUM COTTAGE -->
-            <div class="taj-white-card flex flex-col justify-between group overflow-hidden border border-taj-border hover:shadow-2xl transition-all duration-500">
+            <div id="mandakini" class="taj-white-card flex flex-col justify-between group overflow-hidden border border-taj-border hover:shadow-2xl transition-all duration-500 scroll-mt-28">
               <div>
                 <div class="relative h-72 sm:h-84 overflow-hidden">
                   <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80" alt="Mandakini Premium Cottage"
@@ -387,7 +318,7 @@
             </div>
 
             <!-- CATEGORY 2: PAISHWANI COTTAGE -->
-            <div class="taj-white-card flex flex-col justify-between group overflow-hidden border border-taj-border hover:shadow-2xl transition-all duration-500">
+            <div id="paishwani" class="taj-white-card flex flex-col justify-between group overflow-hidden border border-taj-border hover:shadow-2xl transition-all duration-500 scroll-mt-28">
               <div>
                 <div class="relative h-72 sm:h-84 overflow-hidden">
                   <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1200&q=80" alt="Paishwani Cottage"
@@ -448,7 +379,7 @@
             </div>
 
             <!-- CATEGORY 3: VAIDEHI SUITE ROOM -->
-            <div class="taj-white-card flex flex-col justify-between group overflow-hidden border border-taj-border hover:shadow-2xl transition-all duration-500">
+            <div id="vaidehi" class="taj-white-card flex flex-col justify-between group overflow-hidden border border-taj-border hover:shadow-2xl transition-all duration-500 scroll-mt-28">
               <div>
                 <div class="relative h-72 sm:h-84 overflow-hidden">
                   <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=80" alt="Vaidehi Suite Room"

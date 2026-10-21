@@ -1172,29 +1172,13 @@ function initTajNavbarScroll() {
     if (window.scrollY > 40) {
       if (nav) {
         nav.classList.add('taj-header-scrolled');
-        nav.classList.remove('taj-header-gradient');
+        nav.classList.remove('bg-black/60');
       }
-      if (brandTitle) brandTitle.classList.replace('text-white', 'text-taj-charcoal');
-      if (brandSub) brandSub.classList.replace('text-taj-gold-light', 'text-taj-gold');
-      if (phoneBtn) phoneBtn.classList.replace('text-white/90', 'text-taj-charcoal');
-      if (mobileBtn) mobileBtn.classList.replace('text-white', 'text-taj-charcoal');
-      navLinks.forEach(link => {
-        link.classList.replace('text-white/90', 'text-taj-charcoal');
-        link.classList.add('text-taj-charcoal');
-      });
     } else {
       if (nav) {
         nav.classList.remove('taj-header-scrolled');
-        nav.classList.add('taj-header-gradient');
+        nav.classList.add('bg-black/60');
       }
-      if (brandTitle) brandTitle.classList.replace('text-taj-charcoal', 'text-white');
-      if (brandSub) brandSub.classList.replace('text-taj-gold', 'text-taj-gold-light');
-      if (phoneBtn) phoneBtn.classList.replace('text-taj-charcoal', 'text-white/90');
-      if (mobileBtn) mobileBtn.classList.replace('text-taj-charcoal', 'text-white');
-      navLinks.forEach(link => {
-        link.classList.remove('text-taj-charcoal');
-        link.classList.add('text-white/90');
-      });
     }
   }
 

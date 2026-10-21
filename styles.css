@@ -124,16 +124,24 @@ body {
   color: #FFFFFF;
 }
 
-/* Header Gradient Overlay */
+/* Header Gradient Overlay & Scrolled States */
 .taj-header-gradient {
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 60%, transparent 100%);
+  background: rgba(0, 0, 0, 0.6);
 }
 
 .taj-header-scrolled {
-  background-color: rgba(255, 255, 255, 0.98);
-  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+  background-color: rgba(12, 19, 31, 0.95) !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
   border-bottom: 1px solid rgba(185, 137, 68, 0.25);
 }
+
+/* Explicit Taj Gold Utility Helpers */
+.text-tajGold { color: #b98944; }
+.hover\:text-tajGold:hover { color: #dfc28d; }
+.bg-tajGold { background-color: #b98944; }
+.hover\:bg-tajGoldHover:hover { background-color: #a17332; }
+.border-tajGold { border-color: #b98944; }
+.hover\:border-tajGold:hover { border-color: #dfc28d; }
 
 /* Floating Taj Search Pill */
 .taj-floating-search {

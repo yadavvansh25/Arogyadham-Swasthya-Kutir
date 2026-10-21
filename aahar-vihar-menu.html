@@ -47,34 +47,139 @@
     ::-webkit-scrollbar-thumb { background: #b98944; border-radius: 3px; }
   </style>
 </head>
-<body class="bg-tajIvory text-tajDark font-sans antialiased selection:bg-tajGold selection:text-white min-h-screen flex flex-col justify-between">
+<body class="bg-tajIvory text-tajDark font-sans antialiased selection:bg-tajGold selection:text-white min-h-screen flex flex-col justify-between pt-20">
 
-  <!-- TOP LUXURY HEADER -->
-  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-tajBorder shadow-sm">
+  <!-- ================= 1. STREAMLINED TOP NAVIGATION (OFFICIAL LUXURY TAJ STYLE) ================= -->
+  <header id="taj-nav" class="fixed top-0 left-0 right-0 z-50 bg-black/85 backdrop-blur-md border-b border-white/10 text-white transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-      
-      <!-- Logo & Back to Home -->
-      <a href="./index.html" class="flex items-center space-x-3 group">
+
+      <!-- LEFT: LUXURY BRAND MONOGRAM & IDENTITY -->
+      <a href="./index.html" class="flex items-center gap-3 group shrink-0 whitespace-nowrap">
+        <div class="w-10 h-10 border border-tajGold/80 p-1 flex items-center justify-center bg-black/40 backdrop-blur-sm group-hover:border-tajGold transition-colors">
+          <!-- Taj Imperial Lotus & Crest SVG -->
+          <svg class="w-7 h-7 text-tajGold group-hover:scale-105 transition-transform" viewBox="0 0 100 100" fill="currentColor">
+            <path d="M50 8 C47 22 35 32 20 35 C32 40 42 50 45 65 C48 50 58 40 70 35 C55 32 53 22 50 8 Z" fill="#dfc28d" />
+            <path d="M50 25 C45 38 32 46 15 48 C28 53 38 62 40 76 C44 62 54 53 67 48 C52 46 51 38 50 25 Z" fill="#b98944" />
+            <circle cx="50" cy="50" r="4" fill="#FFFFFF" />
+            <path d="M22 84 C34 78 66 78 78 84 C70 88 30 88 22 84 Z" fill="#dfc28d" />
+          </svg>
+        </div>
         <div class="flex flex-col">
-          <span class="font-cinzel text-xl font-bold tracking-[0.2em] text-tajDark group-hover:text-tajGold transition-colors">AROGYADHAM</span>
-          <span class="text-[9px] uppercase tracking-[0.25em] text-tajMuted">Swasthya Kutir • Chitrakoot</span>
+          <span class="nav-brand-title font-cinzel text-lg sm:text-xl font-bold tracking-[0.2em] text-white group-hover:text-tajGold transition-colors leading-tight">
+            AROGYADHAM
+          </span>
+          <span class="nav-brand-sub font-montserrat text-[9px] tracking-[0.25em] text-tajGold uppercase font-medium">
+            Chitrakoot • Swasthya Kutir
+          </span>
         </div>
       </a>
 
-      <!-- Center Title -->
-      <div class="hidden md:flex flex-col items-center">
-        <span class="font-cinzel text-base tracking-widest text-tajGold font-bold uppercase">AAHAR-VIHAR</span>
-        <span class="text-[10px] text-gray-500 uppercase tracking-wider">100% Satvik Pure Vegetarian Gastronomy</span>
+      <!-- CENTER: STREAMLINED ESSENTIAL NAVIGATION (Single line, strictly whitespace-nowrap) -->
+      <nav class="hidden lg:flex items-center gap-4 xl:gap-7 uppercase text-[11px] font-semibold tracking-[0.18em] text-white/90 whitespace-nowrap">
+        <a href="./swasthya-kutir.html#mandakini" class="nav-link whitespace-nowrap py-2 text-white/90 hover:text-white transition-colors duration-200 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-tajGold after:transition-all after:duration-300 hover:after:w-full">
+          MANDAKINI
+        </a>
+        <a href="./swasthya-kutir.html#paishwani" class="nav-link whitespace-nowrap py-2 text-white/90 hover:text-white transition-colors duration-200 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-tajGold after:transition-all after:duration-300 hover:after:w-full">
+          PAISHWANI
+        </a>
+        <a href="./swasthya-kutir.html#vaidehi" class="nav-link whitespace-nowrap py-2 text-white/90 hover:text-white transition-colors duration-200 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-tajGold after:transition-all after:duration-300 hover:after:w-full">
+          VAIDEHI
+        </a>
+        <a href="./panchvati.html" class="nav-link whitespace-nowrap py-2 text-white/90 hover:text-white transition-colors duration-200 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-tajGold after:transition-all after:duration-300 hover:after:w-full">
+          PANCHWATI
+        </a>
+
+        <!-- Essential Clean Dining Dropdown -->
+        <div class="relative group/dining py-2 whitespace-nowrap">
+          <button type="button" class="flex items-center gap-1 uppercase text-[11px] font-semibold tracking-[0.18em] text-tajGold hover:text-white transition-colors whitespace-nowrap relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-tajGold cursor-pointer">
+            <span>DINING</span>
+            <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-tajGold transition-transform duration-200 group-hover/dining:rotate-180"></i>
+          </button>
+          <div class="absolute left-0 top-full pt-1.5 w-64 hidden group-hover/dining:block z-50">
+            <div class="bg-black/95 backdrop-blur-md border border-tajGold/40 shadow-2xl py-2 px-1 text-white">
+              <a href="./aahar-vihar-menu.html" class="block px-4 py-2.5 text-xs font-bold tracking-wider text-tajGold bg-tajGold/15 whitespace-nowrap">
+                Aahar-Vihar Restaurant
+              </a>
+              <a href="./panchvati-pasoee-menu.html" class="block px-4 py-2.5 text-xs font-medium tracking-wider hover:bg-tajGold/20 hover:text-tajGold transition-colors border-t border-white/10 whitespace-nowrap">
+                Panchvati Pasoee (Community Bhojan)
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <a href="./index.html#services-section" class="nav-link whitespace-nowrap py-2 text-white/90 hover:text-white transition-colors duration-200 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-tajGold after:transition-all after:duration-300 hover:after:w-full">
+          SERVICES
+        </a>
+      </nav>
+
+      <!-- RIGHT: ACTIVE UTILITIES & DIRECT CALL -->
+      <div class="flex items-center gap-3 sm:gap-4 shrink-0 whitespace-nowrap">
+        <!-- Direct Contact Phone -->
+        <a href="tel:+917670265334" class="hidden sm:flex items-center space-x-2 text-xs font-semibold text-white hover:text-tajGold tracking-wider transition-colors border border-white/20 hover:border-tajGold px-3.5 py-2 rounded-sm bg-black/30 backdrop-blur-sm whitespace-nowrap">
+          <i data-lucide="phone-call" class="w-3.5 h-3.5 text-tajGold"></i>
+          <span>+91 76702 65334</span>
+        </a>
+
+        <!-- Primary Book A Stay CTA -->
+        <button onclick="window.location.href='./index.html#rooms-section';" class="px-5 py-2.5 text-xs font-bold tracking-widest uppercase bg-tajGold hover:bg-tajGoldHover text-white rounded-sm shadow-md transition-all whitespace-nowrap cursor-pointer">
+          BOOK A STAY
+        </button>
+
+        <!-- Mobile Hamburger Icon (< 1024px) -->
+        <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="lg:hidden p-2 text-white hover:text-tajGold transition-colors" aria-label="Toggle Menu">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
       </div>
 
-      <!-- Action Button -->
-      <div>
-        <a href="./index.html" class="inline-flex items-center space-x-2 px-5 py-2.5 border border-tajGold text-tajGold hover:bg-tajGold hover:text-white text-xs font-bold uppercase tracking-wider rounded-sm transition-all shadow-sm">
-          <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
-          <span>Back to Sanctuary</span>
+    </div>
+
+    <!-- MOBILE RESPONSIVE DRAWER (< 1024px) -->
+    <div id="mobile-nav-menu" class="hidden lg:hidden bg-black/95 backdrop-blur-xl border-t border-white/10 px-6 py-6 space-y-4 text-xs uppercase tracking-[0.18em] text-white font-medium shadow-2xl">
+      <div class="flex flex-col space-y-3 pb-3 border-b border-white/10">
+        <a href="./swasthya-kutir.html#mandakini" onclick="toggleMobileMenu(true);" class="py-2 text-white/90 hover:text-tajGold transition-colors flex items-center justify-between border-b border-white/5">
+          <span>Mandakini Cottage</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-tajGold"></i>
+        </a>
+        <a href="./swasthya-kutir.html#paishwani" onclick="toggleMobileMenu(true);" class="py-2 text-white/90 hover:text-tajGold transition-colors flex items-center justify-between border-b border-white/5">
+          <span>Paishwani Cottage</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-tajGold"></i>
+        </a>
+        <a href="./swasthya-kutir.html#vaidehi" onclick="toggleMobileMenu(true);" class="py-2 text-white/90 hover:text-tajGold transition-colors flex items-center justify-between border-b border-white/5">
+          <span>Vaidehi Suite &amp; Twin</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-tajGold"></i>
+        </a>
+        <a href="./panchvati.html" onclick="toggleMobileMenu(true);" class="py-2 text-white/90 hover:text-tajGold transition-colors flex items-center justify-between border-b border-white/5">
+          <span>Panchwati Wing</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-tajGold"></i>
+        </a>
+        <a href="./aahar-vihar-menu.html" onclick="toggleMobileMenu(true);" class="py-2 text-white/90 hover:text-tajGold transition-colors flex items-center justify-between border-b border-white/5">
+          <span>Aahar-Vihar Menu</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-tajGold"></i>
+        </a>
+        <a href="./panchvati-pasoee-menu.html" onclick="toggleMobileMenu(true);" class="py-2 text-white/90 hover:text-tajGold transition-colors flex items-center justify-between border-b border-white/5">
+          <span>Panchvati Pasoee Menu</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-tajGold"></i>
+        </a>
+        <a href="./index.html#services-section" onclick="toggleMobileMenu(true);" class="py-2 text-white/90 hover:text-tajGold transition-colors flex items-center justify-between">
+          <span>Campus Services</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-tajGold"></i>
         </a>
       </div>
 
+      <!-- Direct Tap-to-Call in Mobile Drawer -->
+      <div class="pt-2">
+        <a href="tel:+917670265334" class="w-full flex items-center justify-center space-x-2 text-xs font-semibold text-white hover:text-tajGold tracking-wider transition-colors border border-white/20 hover:border-tajGold py-3 rounded-sm bg-black/40">
+          <i data-lucide="phone-call" class="w-4 h-4 text-tajGold"></i>
+          <span>DIRECT CALL: +91 76702 65334</span>
+        </a>
+      </div>
+
+      <!-- Book a Stay Button in Mobile Drawer -->
+      <div class="pt-1">
+        <button onclick="window.location.href='./index.html#rooms-section'; toggleMobileMenu(true);" class="w-full py-3.5 text-xs font-bold tracking-widest uppercase bg-tajGold hover:bg-tajGoldHover text-white rounded-sm shadow-md transition-all text-center cursor-pointer">
+          BOOK A STAY
+        </button>
+      </div>
     </div>
   </header>
 
@@ -1453,6 +1558,17 @@
       const clearBtn = document.getElementById('search-clear-btn');
       if (clearBtn) clearBtn.classList.add('hidden');
       renderMenu();
+    }
+
+    function toggleMobileMenu(forceClose = false) {
+      const menu = document.getElementById('mobile-nav-menu');
+      if (menu) {
+        if (forceClose === true) {
+          menu.classList.add('hidden');
+        } else {
+          menu.classList.toggle('hidden');
+        }
+      }
     }
 
     // Initialize on page load
