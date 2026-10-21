@@ -272,18 +272,22 @@
       <section id="hero"
         class="relative min-h-[92vh] sm:min-h-screen flex items-end justify-center overflow-hidden pb-16 sm:pb-24">
         <!-- Ambient Looping Video Background -->
-        <div class="absolute inset-0 z-0 overflow-hidden">
+        <div class="absolute inset-0 z-0 overflow-hidden bg-tajNavy">
           <video 
+            id="heroVideo"
             autoplay 
             muted 
             loop 
             playsinline 
-            class="w-full h-full object-cover scale-105 transition-transform duration-1000"
+            preload="auto"
+            class="w-full h-full object-cover"
+            style="transform: translate3d(0, 0, 0); will-change: transform;"
           >
-            <source src="https://ik.imagekit.io/exnzknn2n/lv_0_20261021174431.mp4?updatedAt=1792585148398" type="video/mp4">
+            <source src="https://ik.imagekit.io/exnzknn2n/lv_0_20261021174431.mp4?tr=w-1280,q-60,f-webm" type="video/webm">
+            <source src="https://ik.imagekit.io/exnzknn2n/lv_0_20261021174431.mp4?tr=w-1280,q-65" type="video/mp4">
           </video>
-          <!-- Taj Dark/Navy Luxury Vignette Overlay -->
-          <div class="absolute inset-0 bg-gradient-to-t from-tajNavy via-black/40 to-black/60 pointer-events-none"></div>
+          <!-- Luxury Taj Vignette Overlay -->
+          <div class="absolute inset-0 bg-gradient-to-t from-tajNavy via-black/35 to-black/60 pointer-events-none"></div>
         </div>
 
         <!-- Hero Content -->

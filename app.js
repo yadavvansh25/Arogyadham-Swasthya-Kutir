@@ -80,6 +80,12 @@ document.addEventListener('DOMContentLoaded', () => {
   try { initRasoeeMenu(); } catch (e) { console.warn('rasoee menu issue:', e); }
   try { initMealPlanModalListeners(); } catch (e) { console.warn('meal plan listeners issue:', e); }
   try { initActionDelegation(); } catch (e) { console.warn('action delegation issue:', e); }
+
+  // Ensure hero background video starts playing immediately without delay
+  const heroVid = document.getElementById('heroVideo');
+  if (heroVid) {
+    heroVid.play().catch(() => {});
+  }
 });
 
 function initRasoeeMenu() {
