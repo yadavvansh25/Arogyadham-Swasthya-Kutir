@@ -15,6 +15,8 @@
       theme: {
         extend: {
           colors: {
+            tajNavy: '#0c131f',
+            tajDark: '#111827',
             taj: {
               gold: '#b98944',
               'gold-hover': '#a17332',
@@ -27,6 +29,7 @@
               cream: '#F5EFEB',
               sand: '#ECE4D9',
               border: '#E8E2D8',
+              navy: '#0c131f',
             }
           },
           fontFamily: {
@@ -268,15 +271,19 @@
       <!-- ================= CINEMATIC HERO SECTION ================= -->
       <section id="hero"
         class="relative min-h-[92vh] sm:min-h-screen flex items-end justify-center overflow-hidden pb-16 sm:pb-24">
-        <!-- Twilight Golden-Lit Palace Facade Image -->
-        <div class="absolute inset-0 z-0">
-          <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1920&q=80" alt="Arogyadham Swasthya Kutir Palace at Dusk"
-            loading="lazy"
-            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80';"
-            class="w-full h-full object-cover object-center transform scale-100 transition-transform duration-1000">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/55"></div>
-          <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(0,0,0,0.6)_100%)]">
-          </div>
+        <!-- Ambient Looping Video Background -->
+        <div class="absolute inset-0 z-0 overflow-hidden">
+          <video 
+            autoplay 
+            muted 
+            loop 
+            playsinline 
+            class="w-full h-full object-cover scale-105 transition-transform duration-1000"
+          >
+            <source src="https://ik.imagekit.io/exnzknn2n/lv_0_20261021174431.mp4?updatedAt=1792585148398" type="video/mp4">
+          </video>
+          <!-- Taj Dark/Navy Luxury Vignette Overlay -->
+          <div class="absolute inset-0 bg-gradient-to-t from-tajNavy via-black/40 to-black/60 pointer-events-none"></div>
         </div>
 
         <!-- Hero Content -->
