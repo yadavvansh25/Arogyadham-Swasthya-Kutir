@@ -18,15 +18,25 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
   font-family: 'Montserrat', sans-serif;
   color: var(--taj-body);
   background-color: var(--taj-white);
+  overflow-x: hidden;
 }
 
 body {
   overflow-x: hidden;
   background-color: var(--taj-white);
   color: var(--taj-body);
+}
+
+.backdrop-blur-md,
+.backdrop-blur-sm,
+.backdrop-blur-xl,
+.backdrop-blur {
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
 }
 
 /* Typography */

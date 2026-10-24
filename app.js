@@ -931,9 +931,97 @@ function triggerRoomBooking(roomName = 'Mandakini Cottage', rate = 9440, wing = 
 }
 
 function proceedToDjuboBooking(meta = null) {
-  redirectToDjubo("MANDAKINI_ROOM_ONLY");
+  const nameInput = document.getElementById('drawer-guest-name');
+  const phoneInput = document.getElementById('drawer-guest-phone');
+  const emailInput = document.getElementById('drawer-guest-email');
+  const checkinInput = document.getElementById('drawer-checkin');
+  const checkoutInput = document.getElementById('drawer-checkout');
+  const roomSelect = document.getElementById('drawer-room-select');
+  const totalElem = document.getElementById('drawer-calc-total');
+
+  const guestName = (nameInput && nameInput.value.trim()) || (meta && meta.guestName) || '';
+  const guestPhone = (phoneInput && phoneInput.value.trim()) || (meta && meta.guestPhone) || '';
+  const guestEmail = (emailInput && emailInput.value.trim()) || (meta && meta.guestEmail) || '';
+  const checkIn = (checkinInput && checkinInput.value) || (meta && meta.checkIn) || '';
+  const checkOut = (checkoutInput && checkoutInput.value) || (meta && meta.checkOut) || '';
+  const roomName = (roomSelect && roomSelect.options[roomSelect.selectedIndex] ? roomSelect.options[roomSelect.selectedIndex].getAttribute('data-name') : '') || (meta && meta.roomName) || (window.tajState && window.tajState.selectedRoom) || 'Mandakini Royal Suite';
+  const total = (totalElem && totalElem.textContent.trim()) || (meta && meta.total) || '₹12,000 + GST';
+
+  // Client-side Validation (Check 3)
+  if (!guestName || guestName.length < 2) {
+    if (typeof showTajToast === 'function') {
+      showTajToast('Guest Name Required', 'Please provide your full name to proceed with your booking enquiry.', 'alert-circle');
+    } else {
+      alert('Please provide your full name.');
+    }
+    if (nameInput) nameInput.focus();
+    return false;
+  }
+
+  const phoneDigits = guestPhone.replace(/\D/g, '');
+  if (phoneDigits.length < 10) {
+    if (typeof showTajToast === 'function') {
+      showTajToast('Valid Phone Number Required', 'Please provide a valid 10-digit mobile number for voucher confirmation.', 'alert-circle');
+    } else {
+      alert('Please provide a valid 10-digit mobile number.');
+    }
+    if (phoneInput) phoneInput.focus();
+    return false;
+  }
+
+  if (checkIn && checkOut && new Date(checkOut) <= new Date(checkIn)) {
+    if (typeof showTajToast === 'function') {
+      showTajToast('Invalid Stay Dates', 'Check-out date must be after check-in date.', 'alert-circle');
+    } else {
+      alert('Check-out date must be after check-in date.');
+    }
+    if (checkoutInput) checkoutInput.focus();
+    return false;
+  }
+
+  // Show elegant Taj-gold confirmation toast
+  if (typeof showTajToast === 'function') {
+    showTajToast('Reservation Request Received', `Thank you, ${guestName}! Redirecting your booking to our Concierge...`, 'check-circle');
+  }
+
+  // Compose pre-filled WhatsApp message
+  const waText = `Namaste Arogyadham Swasthya Kutir Concierge, I would like to book a stay:\n\n• Guest: ${guestName}\n• Contact: ${guestPhone}\n• Email: ${guestEmail || 'Not provided'}\n• Room Category: ${roomName}\n• Check-in: ${checkIn || 'To be decided'}\n• Check-out: ${checkOut || 'To be decided'}\n• Estimated Total: ${total}\n\nPlease confirm availability and payment details.`;
+  const waUrl = `https://wa.me/917670265334?text=${encodeURIComponent(waText)}`;
+
+  // Close reservation drawer if open
+  if (typeof closeBookingDrawer === 'function') {
+    closeBookingDrawer();
+  }
+
+  // Open WhatsApp Concierge or fallback to Djubo
+  setTimeout(() => {
+    window.open(waUrl, '_blank');
+  }, 400);
+
+  return true;
 }
 
+function showPolicyModal(policyType) {
+  let title = 'Sanctuary Guidelines';
+  let body = 'Arogyadham Swasthya Kutir is committed to upholding pristine standards of Ayurvedic holistic living, environmental conservation, and guest comfort.';
+  if (policyType === 'privacy') {
+    title = 'Privacy & Data Protection Policy';
+    body = 'At Arogyadham Swasthya Kutir, your privacy is sacred. We collect personal details strictly for reservation management, check-in verification, and wellness treatment coordination. We never sell or distribute your data to third parties. All online communications, vouchers, and transactions are processed with strict security and confidentiality.';
+  } else if (policyType === 'terms') {
+    title = 'Terms & Stay Conditions';
+    body = 'Check-in time is 12:00 PM and Check-out is 10:00 AM. As a sacred wellness sanctuary and Ayurvedic healing retreat along the holy Mandakini River, Arogyadham strictly maintains a 100% vegetarian, non-alcoholic, and smoke-free environment. Pets are not permitted in guest cottages. Cancellation requests made 7 days prior to arrival are eligible for full rescheduling or refund as per retreat guidelines.';
+  } else if (policyType === 'guidelines') {
+    title = 'Ayurvedic & Sanctuary Guidelines';
+    body = 'To maximize your rejuvenation, we invite you to immerse in our daily rhythm: sunrise yoga by the Mandakini ghats, morning Vedic pulse diagnosis, personalized Satvik nutrition at Aahar-Vihar and Panchvati Pasoee, and evening river aarti. We kindly request guests to maintain mindful silence in therapy corridors and temple grounds.';
+  }
+  if (typeof showFacilityModal === 'function') {
+    showFacilityModal(title, body);
+  } else {
+    alert(`${title}\n\n${body}`);
+  }
+}
+
+window.showPolicyModal = showPolicyModal;
 window.triggerRoomBooking = triggerRoomBooking;
 window.proceedToDjuboBooking = proceedToDjuboBooking;
 window.openBookingDrawer = triggerRoomBooking;
@@ -1146,8 +1234,10 @@ function toggleMobileMenu(forceClose = false) {
   if (mobileMenu) {
     if (forceClose === true) {
       mobileMenu.classList.add('hidden');
+      document.body.style.overflow = '';
     } else {
-      mobileMenu.classList.toggle('hidden');
+      const isHidden = mobileMenu.classList.toggle('hidden');
+      document.body.style.overflow = isHidden ? '' : 'hidden';
     }
   }
 }

@@ -4,9 +4,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   <title>Arogyadham Swasthya Kutir Wing | Heritage & Wellness Sanctuary, Chitrakoot</title>
   <meta name="description"
     content="Explore the royal accommodations of Arogyadham Swasthya Kutir Wing in Chitrakoot, featuring Mandakini Premium Cottage, Paishwani Cottage, Vaidehi Suite, and Vaidehi Twin Room.">
+  <link rel="canonical" href="https://arogydham.co/swasthya-kutir.html">
+
+  <!-- Social Link Preview (Open Graph & Twitter Meta) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Arogyadham Swasthya Kutir Wing, Chitrakoot">
+  <meta property="og:description" content="Explore royal waterfront living in Chitrakoot: Mandakini & Paishwani cottages, Vaidehi suites, Panchakarma, Naturopathy, and Satvik dining.">
+  <meta property="og:image" content="https://ik.imagekit.io/exnzknn2n/lv_0_20261021174431.mp4?tr=w-1200,h-630,q-80">
+  <meta property="og:url" content="https://arogydham.co/swasthya-kutir.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Arogyadham Swasthya Kutir Wing, Chitrakoot">
+  <meta name="twitter:description" content="Explore royal waterfront living in Chitrakoot: Mandakini & Paishwani cottages, Vaidehi suites, Panchakarma, Naturopathy, and Satvik dining.">
+  <meta name="twitter:image" content="https://ik.imagekit.io/exnzknn2n/lv_0_20261021174431.mp4?tr=w-1200,h-630,q-80">
+
+  <!-- Google tag (gtag.js) GA4 Placeholder -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -590,11 +612,12 @@
                 </p>
                 <p>
                   <span class="text-white/60 text-[10px] uppercase font-semibold block">Email:</span>
-                  <a href="mailto:reservation@arogydham.co" class="text-taj-gold-light hover:underline font-semibold">reservation@arogydham.co</a>
+                  <a href="mailto:reservation@arogydham.co" class="text-taj-gold-light hover:underline font-semibold block">reservation@arogydham.co</a>
+                  <a href="mailto:reservations@arogyadhamchitrakoot.org" class="text-taj-gold-light hover:underline font-semibold block text-[11px]">reservations@arogyadhamchitrakoot.org</a>
                 </p>
               </div>
               <div class="pt-2">
-                <button onclick="openBookingDrawer('Mandakini Royal Suite', 12000)"
+                <button onclick="if(typeof gtag==='function'){gtag('event', 'click_book_stay', {'event_category': 'CTA'});} openBookingDrawer('Mandakini Royal Suite', 12000)"
                   class="btn-taj-primary py-2 px-4 text-[10px] cursor-pointer">
                   Book Your Sanctuary
                 </button>
@@ -606,11 +629,11 @@
           <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-white/40">
             <p>© 2026 Arogyadham Swasthya Kutir, Chitrakoot. Inspired by Taj Hotels & Resorts standards.</p>
             <div class="flex items-center gap-4">
-              <a href="#" class="hover:text-white">Privacy Policy</a>
+              <button type="button" onclick="showPolicyModal('privacy')" class="hover:text-white cursor-pointer bg-transparent border-0 p-0 text-[11px] text-white/60">Privacy Policy</button>
               <span>•</span>
-              <a href="#" class="hover:text-white">Terms & Conditions</a>
+              <button type="button" onclick="showPolicyModal('terms')" class="hover:text-white cursor-pointer bg-transparent border-0 p-0 text-[11px] text-white/60">Terms & Conditions</button>
               <span>•</span>
-              <a href="#" class="hover:text-white">Ayurvedic Guidelines</a>
+              <button type="button" onclick="showPolicyModal('guidelines')" class="hover:text-white cursor-pointer bg-transparent border-0 p-0 text-[11px] text-white/60">Ayurvedic Guidelines</button>
             </div>
           </div>
         </div>
@@ -1196,9 +1219,9 @@
         <div class="p-3.5 bg-taj-ivory border border-taj-border flex items-center justify-between">
           <div>
             <h5 class="font-cinzel font-bold text-sm text-taj-charcoal">Vaidehi Suite</h5>
-            <p class="text-[11px] text-taj-gold font-semibold">₹8,000 + 12% GST / night</p>
+            <p class="text-[11px] text-taj-gold font-semibold">₹7,500 + GST / night</p>
           </div>
-          <button onclick="closeSavedKutirsModal(); openBookingDrawer('Vaidehi Suite', 8000);"
+          <button onclick="closeSavedKutirsModal(); openBookingDrawer('Vaidehi Suite', 7500);"
             class="btn-taj-primary py-1.5 px-3 text-[10px]">
             Book Now
           </button>
@@ -1213,7 +1236,12 @@
     </div>
   </div>
 
-
+  <!-- Floating WhatsApp Concierge CTA -->
+  <a href="https://wa.me/917670265334?text=Namaste%2C%20I%20would%20like%20to%20enquire%20about%20booking%20a%20stay%20at%20Arogyadham%20Swasthya%20Kutir." target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-3.5 rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center min-w-[52px] min-h-[52px]" aria-label="Chat on WhatsApp">
+    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+      <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.77.813 2.796.813 3.179 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.768-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.074-2.127-.518-1.745-.722-2.883-2.483-2.971-2.599-.088-.116-.708-.941-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.173.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.086s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824z"/>
+    </svg>
+  </a>
 
   <!-- Toast Notification Container -->
   <div id="toast-container"></div>

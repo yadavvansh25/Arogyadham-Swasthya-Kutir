@@ -4,9 +4,69 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arogyadham Swasthya Kutir, Chitrakoot | Luxury Wellness Resort</title>
-  <meta name="description"
-    content="Experience quintessential Taj-inspired luxury at Arogyadham Swasthya Kutir, Chitrakoot. Featuring Mandakini, Paishwani, Vaidehi, and Panchvati suites, Aahar-Vihar Satvik dining, and Vedic Panchakarma therapies.">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <title>Arogyadham Swasthya Kutir | Luxury Heritage Wellness & Nature Retreat, Chitrakoot</title>
+  <meta name="description" content="Experience 55-acre serene waterfront living in Chitrakoot. Luxury Mandakini & Paishwani cottages, authentic Panchakarma, Naturopathy, Gaushala, and Satvik dining.">
+  <link rel="canonical" href="https://arogydham.co/">
+
+  <!-- Social Link Preview (Open Graph & Twitter Meta) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Arogyadham Swasthya Kutir, Chitrakoot">
+  <meta property="og:description" content="55-Acre Sacred Sanctuary of Heritage, Wellness & Pure Satvik Living along Mandakini River.">
+  <meta property="og:image" content="https://ik.imagekit.io/exnzknn2n/lv_0_20261021174431.mp4?tr=w-1200,h-630,q-80">
+  <meta property="og:url" content="https://arogydham.co/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Arogyadham Swasthya Kutir, Chitrakoot">
+  <meta name="twitter:description" content="55-Acre Sacred Sanctuary of Heritage, Wellness & Pure Satvik Living along Mandakini River.">
+  <meta name="twitter:image" content="https://ik.imagekit.io/exnzknn2n/lv_0_20261021174431.mp4?tr=w-1200,h-630,q-80">
+
+  <!-- Google tag (gtag.js) GA4 Placeholder -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <!-- Structured Data: Resort, LodgingBusiness, and LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["Resort", "LodgingBusiness", "LocalBusiness"],
+        "@id": "https://arogydham.co/#resort",
+        "name": "Arogyadham Swasthya Kutir",
+        "url": "https://arogydham.co/",
+        "image": "https://ik.imagekit.io/exnzknn2n/lv_0_20261021174431.mp4?tr=w-1200,h-630,q-80",
+        "telephone": ["+91-7670265334", "+91-6261062326", "+91-8602801682"],
+        "email": ["reservation@arogydham.co", "reservations@arogyadhamchitrakoot.org"],
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Majhgawan Road, Arogyadham Campus",
+          "addressLocality": "Chitrakoot",
+          "addressRegion": "Madhya Pradesh",
+          "postalCode": "485334",
+          "addressCountry": "IN"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 25.1741,
+          "longitude": 80.8653
+        },
+        "amenityFeature": [
+          { "@type": "LocationFeatureSpecification", "name": "55-Acre Sacred Herbal Campus", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Vedic Panchakarma & Naturopathy", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "160+ Indigenous Cow Gaushala", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "5 Operational Helipads", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Satvik Dining Aahar-Vihar & Panchvati Pasoee", "value": true }
+        ],
+        "priceRange": "₹2,500 - ₹12,000 + GST"
+      }
+    ]
+  }
+  </script>
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -58,22 +118,28 @@
 <body class="bg-white text-taj-body font-montserrat antialiased selection:bg-taj-gold selection:text-white">
 
   <!-- ================= 1. STREAMLINED TOP NAVIGATION (OFFICIAL LUXURY TAJ STYLE) ================= -->
-  <header id="taj-nav" class="fixed top-0 left-0 right-0 z-50 bg-black/60 backdrop-blur-md border-b border-white/10 text-white transition-all duration-300">
+  <header id="taj-nav"
+    class="fixed top-0 left-0 right-0 z-50 bg-black/60 backdrop-blur-md border-b border-white/10 text-white transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
 
       <!-- LEFT: LUXURY BRAND MONOGRAM & IDENTITY -->
       <a href="./index.html" class="flex items-center gap-3 group shrink-0 whitespace-nowrap">
-        <div class="w-10 h-10 border border-tajGold/80 p-1 flex items-center justify-center bg-black/40 backdrop-blur-sm group-hover:border-tajGold transition-colors">
+        <div
+          class="w-10 h-10 border border-tajGold/80 p-1 flex items-center justify-center bg-black/40 backdrop-blur-sm group-hover:border-tajGold transition-colors">
           <!-- Taj Imperial Lotus & Crest SVG -->
-          <svg class="w-7 h-7 text-tajGold group-hover:scale-105 transition-transform" viewBox="0 0 100 100" fill="currentColor">
-            <path d="M50 8 C47 22 35 32 20 35 C32 40 42 50 45 65 C48 50 58 40 70 35 C55 32 53 22 50 8 Z" fill="#dfc28d" />
-            <path d="M50 25 C45 38 32 46 15 48 C28 53 38 62 40 76 C44 62 54 53 67 48 C52 46 51 38 50 25 Z" fill="#b98944" />
+          <svg class="w-7 h-7 text-tajGold group-hover:scale-105 transition-transform" viewBox="0 0 100 100"
+            fill="currentColor">
+            <path d="M50 8 C47 22 35 32 20 35 C32 40 42 50 45 65 C48 50 58 40 70 35 C55 32 53 22 50 8 Z"
+              fill="#dfc28d" />
+            <path d="M50 25 C45 38 32 46 15 48 C28 53 38 62 40 76 C44 62 54 53 67 48 C52 46 51 38 50 25 Z"
+              fill="#b98944" />
             <circle cx="50" cy="50" r="4" fill="#FFFFFF" />
             <path d="M22 84 C34 78 66 78 78 84 C70 88 30 88 22 84 Z" fill="#dfc28d" />
           </svg>
         </div>
         <div class="flex flex-col">
-          <span class="nav-brand-title font-cinzel text-lg sm:text-xl font-bold tracking-[0.2em] text-white group-hover:text-tajGold transition-colors leading-tight">
+          <span
+            class="nav-brand-title font-cinzel text-lg sm:text-xl font-bold tracking-[0.2em] text-white group-hover:text-tajGold transition-colors leading-tight">
             AROGYADHAM
           </span>
           <span class="nav-brand-sub font-montserrat text-[9px] tracking-[0.25em] text-tajGold uppercase font-medium">
@@ -83,39 +149,49 @@
       </a>
 
       <!-- CENTER: STREAMLINED ESSENTIAL NAVIGATION (Single line, strictly whitespace-nowrap) -->
-      <nav class="hidden lg:flex items-center gap-4 xl:gap-7 uppercase text-[11px] font-semibold tracking-[0.18em] text-white/90 whitespace-nowrap">
-        <a href="./swasthya-kutir.html#mandakini" class="nav-link whitespace-nowrap py-2 text-white/90 hover:text-white transition-colors duration-200 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-tajGold after:transition-all after:duration-300 hover:after:w-full">
+      <nav
+        class="hidden lg:flex items-center gap-4 xl:gap-7 uppercase text-[11px] font-semibold tracking-[0.18em] text-white/90 whitespace-nowrap">
+        <a href="./swasthya-kutir.html#mandakini"
+          class="nav-link whitespace-nowrap py-2 text-white/90 hover:text-white transition-colors duration-200 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-tajGold after:transition-all after:duration-300 hover:after:w-full">
           MANDAKINI
         </a>
-        <a href="./swasthya-kutir.html#paishwani" class="nav-link whitespace-nowrap py-2 text-white/90 hover:text-white transition-colors duration-200 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-tajGold after:transition-all after:duration-300 hover:after:w-full">
+        <a href="./swasthya-kutir.html#paishwani"
+          class="nav-link whitespace-nowrap py-2 text-white/90 hover:text-white transition-colors duration-200 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-tajGold after:transition-all after:duration-300 hover:after:w-full">
           PAISHWANI
         </a>
-        <a href="./swasthya-kutir.html#vaidehi" class="nav-link whitespace-nowrap py-2 text-white/90 hover:text-white transition-colors duration-200 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-tajGold after:transition-all after:duration-300 hover:after:w-full">
+        <a href="./swasthya-kutir.html#vaidehi"
+          class="nav-link whitespace-nowrap py-2 text-white/90 hover:text-white transition-colors duration-200 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-tajGold after:transition-all after:duration-300 hover:after:w-full">
           VAIDEHI
         </a>
-        <a href="./panchvati.html" class="nav-link whitespace-nowrap py-2 text-white/90 hover:text-white transition-colors duration-200 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-tajGold after:transition-all after:duration-300 hover:after:w-full">
+        <a href="./panchvati.html"
+          class="nav-link whitespace-nowrap py-2 text-white/90 hover:text-white transition-colors duration-200 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-tajGold after:transition-all after:duration-300 hover:after:w-full">
           PANCHWATI
         </a>
 
         <!-- Essential Clean Dining Dropdown -->
         <div class="relative group/dining py-2 whitespace-nowrap">
-          <button type="button" class="flex items-center gap-1 uppercase text-[11px] font-semibold tracking-[0.18em] text-white/90 hover:text-white transition-colors whitespace-nowrap relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-tajGold after:transition-all after:duration-300 group-hover/dining:after:w-full cursor-pointer">
+          <button type="button"
+            class="flex items-center gap-1 uppercase text-[11px] font-semibold tracking-[0.18em] text-white/90 hover:text-white transition-colors whitespace-nowrap relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-tajGold after:transition-all after:duration-300 group-hover/dining:after:w-full cursor-pointer">
             <span>DINING</span>
-            <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-tajGold transition-transform duration-200 group-hover/dining:rotate-180"></i>
+            <i data-lucide="chevron-down"
+              class="w-3.5 h-3.5 text-tajGold transition-transform duration-200 group-hover/dining:rotate-180"></i>
           </button>
           <div class="absolute left-0 top-full pt-1.5 w-64 hidden group-hover/dining:block z-50">
             <div class="bg-black/95 backdrop-blur-md border border-tajGold/40 shadow-2xl py-2 px-1 text-white">
-              <a href="./aahar-vihar-menu.html" class="block px-4 py-2.5 text-xs font-medium tracking-wider hover:bg-tajGold/20 hover:text-tajGold transition-colors whitespace-nowrap">
+              <a href="./aahar-vihar-menu.html"
+                class="block px-4 py-2.5 text-xs font-medium tracking-wider hover:bg-tajGold/20 hover:text-tajGold transition-colors whitespace-nowrap">
                 Aahar-Vihar Restaurant
               </a>
-              <a href="./panchvati-pasoee-menu.html" class="block px-4 py-2.5 text-xs font-medium tracking-wider hover:bg-tajGold/20 hover:text-tajGold transition-colors border-t border-white/10 whitespace-nowrap">
+              <a href="./panchvati-pasoee-menu.html"
+                class="block px-4 py-2.5 text-xs font-medium tracking-wider hover:bg-tajGold/20 hover:text-tajGold transition-colors border-t border-white/10 whitespace-nowrap">
                 Panchvati Pasoee (Community Bhojan)
               </a>
             </div>
           </div>
         </div>
 
-        <a href="./index.html#services-section" class="nav-link whitespace-nowrap py-2 text-white/90 hover:text-white transition-colors duration-200 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-tajGold after:transition-all after:duration-300 hover:after:w-full">
+        <a href="./index.html#services-section"
+          class="nav-link whitespace-nowrap py-2 text-white/90 hover:text-white transition-colors duration-200 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-tajGold after:transition-all after:duration-300 hover:after:w-full">
           SERVICES
         </a>
       </nav>
@@ -123,18 +199,21 @@
       <!-- RIGHT: ACTIVE UTILITIES & DIRECT CALL -->
       <div class="flex items-center gap-3 sm:gap-4 shrink-0 whitespace-nowrap">
         <!-- Direct Contact Phone -->
-        <a href="tel:+917670265334" class="hidden sm:flex items-center space-x-2 text-xs font-semibold text-white hover:text-tajGold tracking-wider transition-colors border border-white/20 hover:border-tajGold px-3.5 py-2 rounded-sm bg-black/30 backdrop-blur-sm whitespace-nowrap">
+        <a href="tel:+917670265334"
+          class="hidden sm:flex items-center space-x-2 text-xs font-semibold text-white hover:text-tajGold tracking-wider transition-colors border border-white/20 hover:border-tajGold px-3.5 py-2 rounded-sm bg-black/30 backdrop-blur-sm whitespace-nowrap">
           <i data-lucide="phone-call" class="w-3.5 h-3.5 text-tajGold"></i>
           <span>+91 76702 65334</span>
         </a>
 
         <!-- Primary Book A Stay CTA -->
-        <button onclick="openBookingDrawer('Mandakini Royal Suite', 12000)" class="px-5 py-2.5 text-xs font-bold tracking-widest uppercase bg-tajGold hover:bg-tajGoldHover text-white rounded-sm shadow-md transition-all whitespace-nowrap cursor-pointer">
+        <button onclick="openBookingDrawer('Mandakini Royal Suite', 12000)"
+          class="px-5 py-2.5 text-xs font-bold tracking-widest uppercase bg-tajGold hover:bg-tajGoldHover text-white rounded-sm shadow-md transition-all whitespace-nowrap cursor-pointer">
           BOOK A STAY
         </button>
 
         <!-- Mobile Hamburger Icon (< 1024px) -->
-        <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="lg:hidden p-2 text-white hover:text-tajGold transition-colors" aria-label="Toggle Menu">
+        <button id="mobile-menu-btn" onclick="toggleMobileMenu()"
+          class="lg:hidden p-2 text-white hover:text-tajGold transition-colors" aria-label="Toggle Menu">
           <i data-lucide="menu" class="w-6 h-6"></i>
         </button>
       </div>
@@ -142,33 +221,41 @@
     </div>
 
     <!-- MOBILE RESPONSIVE DRAWER (< 1024px) -->
-    <div id="mobile-nav-menu" class="hidden lg:hidden bg-black/95 backdrop-blur-xl border-t border-white/10 px-6 py-6 space-y-4 text-xs uppercase tracking-[0.18em] text-white font-medium shadow-2xl">
+    <div id="mobile-nav-menu"
+      class="hidden lg:hidden bg-black/95 backdrop-blur-xl border-t border-white/10 px-6 py-6 space-y-4 text-xs uppercase tracking-[0.18em] text-white font-medium shadow-2xl">
       <div class="flex flex-col space-y-3 pb-3 border-b border-white/10">
-        <a href="./swasthya-kutir.html#mandakini" onclick="toggleMobileMenu(true);" class="py-2 text-white/90 hover:text-tajGold transition-colors flex items-center justify-between border-b border-white/5">
+        <a href="./swasthya-kutir.html#mandakini" onclick="toggleMobileMenu(true);"
+          class="py-2 text-white/90 hover:text-tajGold transition-colors flex items-center justify-between border-b border-white/5">
           <span>Mandakini Cottage</span>
           <i data-lucide="chevron-right" class="w-4 h-4 text-tajGold"></i>
         </a>
-        <a href="./swasthya-kutir.html#paishwani" onclick="toggleMobileMenu(true);" class="py-2 text-white/90 hover:text-tajGold transition-colors flex items-center justify-between border-b border-white/5">
+        <a href="./swasthya-kutir.html#paishwani" onclick="toggleMobileMenu(true);"
+          class="py-2 text-white/90 hover:text-tajGold transition-colors flex items-center justify-between border-b border-white/5">
           <span>Paishwani Cottage</span>
           <i data-lucide="chevron-right" class="w-4 h-4 text-tajGold"></i>
         </a>
-        <a href="./swasthya-kutir.html#vaidehi" onclick="toggleMobileMenu(true);" class="py-2 text-white/90 hover:text-tajGold transition-colors flex items-center justify-between border-b border-white/5">
+        <a href="./swasthya-kutir.html#vaidehi" onclick="toggleMobileMenu(true);"
+          class="py-2 text-white/90 hover:text-tajGold transition-colors flex items-center justify-between border-b border-white/5">
           <span>Vaidehi Suite &amp; Twin</span>
           <i data-lucide="chevron-right" class="w-4 h-4 text-tajGold"></i>
         </a>
-        <a href="./panchvati.html" onclick="toggleMobileMenu(true);" class="py-2 text-white/90 hover:text-tajGold transition-colors flex items-center justify-between border-b border-white/5">
+        <a href="./panchvati.html" onclick="toggleMobileMenu(true);"
+          class="py-2 text-white/90 hover:text-tajGold transition-colors flex items-center justify-between border-b border-white/5">
           <span>Panchwati Wing</span>
           <i data-lucide="chevron-right" class="w-4 h-4 text-tajGold"></i>
         </a>
-        <a href="./aahar-vihar-menu.html" onclick="toggleMobileMenu(true);" class="py-2 text-white/90 hover:text-tajGold transition-colors flex items-center justify-between border-b border-white/5">
+        <a href="./aahar-vihar-menu.html" onclick="toggleMobileMenu(true);"
+          class="py-2 text-white/90 hover:text-tajGold transition-colors flex items-center justify-between border-b border-white/5">
           <span>Aahar-Vihar Menu</span>
           <i data-lucide="chevron-right" class="w-4 h-4 text-tajGold"></i>
         </a>
-        <a href="./panchvati-pasoee-menu.html" onclick="toggleMobileMenu(true);" class="py-2 text-white/90 hover:text-tajGold transition-colors flex items-center justify-between border-b border-white/5">
+        <a href="./panchvati-pasoee-menu.html" onclick="toggleMobileMenu(true);"
+          class="py-2 text-white/90 hover:text-tajGold transition-colors flex items-center justify-between border-b border-white/5">
           <span>Panchvati Pasoee Menu</span>
           <i data-lucide="chevron-right" class="w-4 h-4 text-tajGold"></i>
         </a>
-        <a href="./index.html#services-section" onclick="toggleMobileMenu(true);" class="py-2 text-white/90 hover:text-tajGold transition-colors flex items-center justify-between">
+        <a href="./index.html#services-section" onclick="toggleMobileMenu(true);"
+          class="py-2 text-white/90 hover:text-tajGold transition-colors flex items-center justify-between">
           <span>Campus Services</span>
           <i data-lucide="chevron-right" class="w-4 h-4 text-tajGold"></i>
         </a>
@@ -176,7 +263,8 @@
 
       <!-- Direct Tap-to-Call in Mobile Drawer -->
       <div class="pt-2">
-        <a href="tel:+917670265334" class="w-full flex items-center justify-center space-x-2 text-xs font-semibold text-white hover:text-tajGold tracking-wider transition-colors border border-white/20 hover:border-tajGold py-3 rounded-sm bg-black/40">
+        <a href="tel:+917670265334"
+          class="w-full flex items-center justify-center space-x-2 text-xs font-semibold text-white hover:text-tajGold tracking-wider transition-colors border border-white/20 hover:border-tajGold py-3 rounded-sm bg-black/40">
           <i data-lucide="phone-call" class="w-4 h-4 text-tajGold"></i>
           <span>DIRECT CALL: +91 76702 65334</span>
         </a>
@@ -184,7 +272,8 @@
 
       <!-- Book a Stay Button in Mobile Drawer -->
       <div class="pt-1">
-        <button onclick="openBookingDrawer('Mandakini Royal Suite', 12000); toggleMobileMenu(true);" class="w-full py-3.5 text-xs font-bold tracking-widest uppercase bg-tajGold hover:bg-tajGoldHover text-white rounded-sm shadow-md transition-all text-center cursor-pointer">
+        <button onclick="openBookingDrawer('Mandakini Royal Suite', 12000); toggleMobileMenu(true);"
+          class="w-full py-3.5 text-xs font-bold tracking-widest uppercase bg-tajGold hover:bg-tajGoldHover text-white rounded-sm shadow-md transition-all text-center cursor-pointer">
           BOOK A STAY
         </button>
       </div>
@@ -193,28 +282,22 @@
 
   <!-- ================= MAIN APP VIEW ROUTING CONTAINER ================= -->
   <main id="taj-app-content">
-<div id="view-home" class="view-page block" style="display: block;">
+    <div id="view-home" class="view-page block" style="display: block;">
 
       <!-- ================= CINEMATIC HERO SECTION ================= -->
       <section id="hero"
         class="relative min-h-[92vh] sm:min-h-screen flex items-end justify-center overflow-hidden pb-12 sm:pb-16">
         <!-- Ambient Looping Video Background -->
         <div class="absolute inset-0 z-0 overflow-hidden bg-tajNavy">
-          <video 
-            id="heroVideo"
-            autoplay 
-            muted 
-            loop 
-            playsinline 
-            preload="auto"
-            class="w-full h-full object-cover"
-            style="transform: translate3d(0, 0, 0); will-change: transform;"
-          >
-            <source src="https://ik.imagekit.io/exnzknn2n/lv_0_20261021174431.mp4?tr=w-1280,q-60,f-webm" type="video/webm">
+          <video id="heroVideo" autoplay muted loop playsinline preload="metadata" class="w-full h-full object-cover"
+            style="transform: translate3d(0, 0, 0); will-change: transform;">
+            <source src="https://ik.imagekit.io/exnzknn2n/lv_0_20261021174431.mp4?tr=w-1280,q-60,f-webm"
+              type="video/webm">
             <source src="https://ik.imagekit.io/exnzknn2n/lv_0_20261021174431.mp4?tr=w-1280,q-65" type="video/mp4">
           </video>
           <!-- Luxury Taj Vignette Overlay -->
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/40 pointer-events-none"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/40 pointer-events-none">
+          </div>
         </div>
 
         <!-- Hero Content -->
@@ -238,8 +321,7 @@
             AROGYADHAM SWASTHYA KUTIR
           </h1>
 
-          <p
-            class="text-xs sm:text-sm font-serif italic text-taj-gold-light font-light tracking-wide mb-4 drop-shadow">
+          <p class="text-xs sm:text-sm font-serif italic text-taj-gold-light font-light tracking-wide mb-4 drop-shadow">
             "A Sacred Sanctuary of Heritage &amp; Rejuvenation in Chitrakoot"
           </p>
 
@@ -267,13 +349,12 @@
             </div>
 
             <!-- Minimal Quick-Links Bar -->
-            <div
-              class="text-[10px] text-gray-300 mt-2.5 flex items-center justify-center gap-3 drop-shadow flex-wrap">
-              <span class="flex items-center gap-1"><i data-lucide="map-pin"
-                  class="w-3 h-3 text-taj-gold-light"></i> Parisar, Majhgawan, MP 485334</span>
+            <div class="text-[10px] text-gray-300 mt-2.5 flex items-center justify-center gap-3 drop-shadow flex-wrap">
+              <span class="flex items-center gap-1"><i data-lucide="map-pin" class="w-3 h-3 text-taj-gold-light"></i>
+                Parisar, Majhgawan, MP 485334</span>
               <span>•</span>
-              <span class="flex items-center gap-1"><i data-lucide="sparkles"
-                  class="w-3 h-3 text-taj-gold-light"></i> Mandakini • Paishwani • Vaidehi • Panchvati</span>
+              <span class="flex items-center gap-1"><i data-lucide="sparkles" class="w-3 h-3 text-taj-gold-light"></i>
+                Mandakini • Paishwani • Vaidehi • Panchvati</span>
               <span>•</span>
               <span class="flex items-center gap-1"><i data-lucide="shield-check"
                   class="w-3 h-3 text-taj-gold-light"></i> Starting from ₹2,500 + GST</span>
@@ -298,11 +379,13 @@
             <h2 class="font-cinzel text-2xl sm:text-3xl md:text-4xl font-bold text-taj-charcoal leading-snug mb-2">
               स्वास्थ्य, प्रकृति और शांति… इन तीनों का संगम है—
             </h2>
-            <p class="font-cinzel text-lg sm:text-xl md:text-2xl font-bold text-taj-gold uppercase tracking-widest mb-4">
+            <p
+              class="font-cinzel text-lg sm:text-xl md:text-2xl font-bold text-taj-gold uppercase tracking-widest mb-4">
               AROGYADHAM SWASTHYA KUTIR, CHITRAKOOT
             </p>
             <p class="font-cormorant italic text-lg sm:text-2xl text-taj-body max-w-3xl mx-auto leading-relaxed">
-              Spread across a 55-acre lush green serene campus where nature welcomes you at every step. Experience a harmonious blend of holistic stay, pure satvik dining, therapeutic healing, and spirituality.
+              Spread across a 55-acre lush green serene campus where nature welcomes you at every step. Experience a
+              harmonious blend of holistic stay, pure satvik dining, therapeutic healing, and spirituality.
             </p>
           </div>
 
@@ -310,11 +393,13 @@
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
 
             <!-- WING 1: AROGYADHAM SWASTHYA KUTIR (Heritage & Wellness Wing) -->
-            <div class="taj-white-card flex flex-col justify-between group overflow-hidden border border-taj-border hover:border-taj-gold/80 transition-all duration-500 shadow-sm hover:shadow-xl">
+            <div
+              class="taj-white-card flex flex-col justify-between group overflow-hidden border border-taj-border hover:border-taj-gold/80 transition-all duration-500 shadow-sm hover:shadow-xl">
               <div>
                 <div class="relative h-72 sm:h-88 overflow-hidden">
-                  <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80" alt="Arogyadham Swasthya Kutir - Heritage & Wellness Sanctuary"
-                    loading="lazy"
+                  <img
+                    src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80"
+                    alt="Arogyadham Swasthya Kutir - Heritage & Wellness Sanctuary" loading="lazy"
                     onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80';"
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                   <div
@@ -374,23 +459,27 @@
                 </div>
               </div>
 
-              <div class="p-6 sm:p-8 pt-0 border-t border-taj-border pt-5 flex flex-wrap items-center justify-between gap-3">
+              <div
+                class="p-6 sm:p-8 pt-0 border-t border-taj-border pt-5 flex flex-wrap items-center justify-between gap-3">
                 <div>
                   <span class="text-xs text-taj-charcoal font-semibold block">From ₹5,500 + GST / night</span>
                   <span class="text-[10px] text-taj-muted">Royal waterfront &amp; wellness retreat</span>
                 </div>
-                <a href="./swasthya-kutir.html" class="btn-taj-primary min-h-[44px] px-6 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer gap-2">
+                <a href="./swasthya-kutir.html"
+                  class="btn-taj-primary min-h-[44px] px-6 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer gap-2">
                   <span>EXPLORE SWASTHYA KUTIR ROOMS →</span>
                 </a>
               </div>
             </div>
 
             <!-- WING 2: PANCHVATI (Pilgrim, Family & Group Wing) -->
-            <div class="taj-white-card flex flex-col justify-between group overflow-hidden border border-taj-border hover:border-emerald-700/80 transition-all duration-500 shadow-sm hover:shadow-xl">
+            <div
+              class="taj-white-card flex flex-col justify-between group overflow-hidden border border-taj-border hover:border-emerald-700/80 transition-all duration-500 shadow-sm hover:shadow-xl">
               <div>
                 <div class="relative h-72 sm:h-88 overflow-hidden">
-                  <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80" alt="Panchvati - Pilgrim, Family & Group Living Wing"
-                    loading="lazy"
+                  <img
+                    src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80"
+                    alt="Panchvati - Pilgrim, Family & Group Living Wing" loading="lazy"
                     onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80';"
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                   <div
@@ -450,12 +539,14 @@
                 </div>
               </div>
 
-              <div class="p-6 sm:p-8 pt-0 border-t border-taj-border pt-5 flex flex-wrap items-center justify-between gap-3">
+              <div
+                class="p-6 sm:p-8 pt-0 border-t border-taj-border pt-5 flex flex-wrap items-center justify-between gap-3">
                 <div>
                   <span class="text-xs text-taj-charcoal font-semibold block">From ₹2,500 + GST / night</span>
                   <span class="text-[10px] text-taj-muted">Ideal for families, retreats &amp; pilgrims</span>
                 </div>
-                <a href="./panchvati.html" class="btn-taj-primary min-h-[44px] px-6 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer gap-2">
+                <a href="./panchvati.html"
+                  class="btn-taj-primary min-h-[44px] px-6 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer gap-2">
                   <span>EXPLORE PANCHVATI ROOMS →</span>
                 </a>
               </div>
@@ -487,21 +578,26 @@
           </div>
 
           <!-- TOP STATUTORY TAX & DIETARY NOTICE -->
-          <div class="mb-10 p-4 bg-taj-ivory border border-taj-gold/50 flex flex-col sm:flex-row items-center justify-center gap-3 text-center sm:text-left shadow-sm">
-            <div class="w-8 h-8 rounded-full bg-taj-gold/15 flex items-center justify-center text-taj-gold flex-shrink-0">
+          <div
+            class="mb-10 p-4 bg-taj-ivory border border-taj-gold/50 flex flex-col sm:flex-row items-center justify-center gap-3 text-center sm:text-left shadow-sm">
+            <div
+              class="w-8 h-8 rounded-full bg-taj-gold/15 flex items-center justify-center text-taj-gold flex-shrink-0">
               <i data-lucide="info" class="w-4 h-4"></i>
             </div>
             <p class="text-xs sm:text-sm text-taj-charcoal font-medium leading-relaxed">
-              <strong class="font-semibold text-taj-gold uppercase tracking-wider">Statutory Notice:</strong> 
-              Government taxes extra as applicable (+5% GST on all food &amp; beverages). Kindly inform our culinary team for any dietary restrictions or allergens.
+              <strong class="font-semibold text-taj-gold uppercase tracking-wider">Statutory Notice:</strong>
+              Government taxes extra as applicable (+5% GST on all food &amp; beverages). Kindly inform our culinary
+              team for any dietary restrictions or allergens.
             </p>
           </div>
 
           <!-- OPERATING SERVICE TIMINGS DISPLAY -->
           <div class="mb-14 grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
             <!-- Breakfast Timing -->
-            <div class="p-5 bg-taj-ivory border border-taj-border flex items-center gap-4 group hover:border-taj-gold transition-colors">
-              <div class="w-12 h-12 bg-white border border-taj-gold/40 flex items-center justify-center text-taj-gold flex-shrink-0">
+            <div
+              class="p-5 bg-taj-ivory border border-taj-border flex items-center gap-4 group hover:border-taj-gold transition-colors">
+              <div
+                class="w-12 h-12 bg-white border border-taj-gold/40 flex items-center justify-center text-taj-gold flex-shrink-0">
                 <i data-lucide="sunrise" class="w-6 h-6"></i>
               </div>
               <div>
@@ -513,8 +609,10 @@
             </div>
 
             <!-- Lunch Timing -->
-            <div class="p-5 bg-taj-ivory border border-taj-border flex items-center gap-4 group hover:border-taj-gold transition-colors">
-              <div class="w-12 h-12 bg-white border border-taj-gold/40 flex items-center justify-center text-taj-gold flex-shrink-0">
+            <div
+              class="p-5 bg-taj-ivory border border-taj-border flex items-center gap-4 group hover:border-taj-gold transition-colors">
+              <div
+                class="w-12 h-12 bg-white border border-taj-gold/40 flex items-center justify-center text-taj-gold flex-shrink-0">
                 <i data-lucide="sun" class="w-6 h-6"></i>
               </div>
               <div>
@@ -526,8 +624,10 @@
             </div>
 
             <!-- Dinner Timing -->
-            <div class="p-5 bg-taj-ivory border border-taj-border flex items-center gap-4 group hover:border-taj-gold transition-colors">
-              <div class="w-12 h-12 bg-white border border-taj-gold/40 flex items-center justify-center text-taj-gold flex-shrink-0">
+            <div
+              class="p-5 bg-taj-ivory border border-taj-border flex items-center gap-4 group hover:border-taj-gold transition-colors">
+              <div
+                class="w-12 h-12 bg-white border border-taj-gold/40 flex items-center justify-center text-taj-gold flex-shrink-0">
                 <i data-lucide="moon" class="w-6 h-6"></i>
               </div>
               <div>
@@ -545,11 +645,13 @@
             <div class="taj-white-card flex flex-col justify-between overflow-hidden">
               <div>
                 <div class="relative h-72 sm:h-80 overflow-hidden">
-                  <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80" alt="Aahar-Vihar Luxury Satvik Restaurant"
-                    loading="lazy"
+                  <img
+                    src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80"
+                    alt="Aahar-Vihar Luxury Satvik Restaurant" loading="lazy"
                     onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80';"
                     class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
-                  <div class="absolute top-4 left-4 bg-white/95 px-3 py-1 text-[10px] font-bold tracking-wide text-taj-charcoal border border-taj-border uppercase">
+                  <div
+                    class="absolute top-4 left-4 bg-white/95 px-3 py-1 text-[10px] font-bold tracking-wide text-taj-charcoal border border-taj-border uppercase">
                     Pure Satvik Multi-Cuisine
                   </div>
                 </div>
@@ -558,41 +660,41 @@
                   <div class="flex items-baseline justify-between border-b border-taj-border pb-3">
                     <div>
                       <h3 class="font-cinzel text-2xl font-bold text-taj-charcoal">
-                        Aahar-Vihar
+                        Ahar Vihar — In-House Pure Veg Multi-Cuisine Restaurant
                       </h3>
-                      <p class="text-xs text-taj-gold font-medium mt-0.5">In-House Pure Veg Multi-Cuisine Restaurant</p>
+                      <p class="text-xs text-taj-gold font-medium mt-0.5">Multi-Cuisine Pure Satvik Dining •
+                        Farm-to-Table</p>
                     </div>
-                    <span class="text-xs font-semibold px-2.5 py-1 bg-taj-ivory border border-taj-border text-taj-charcoal uppercase tracking-wider">
+                    <span
+                      class="text-xs font-semibold px-2.5 py-1 bg-taj-ivory border border-taj-border text-taj-charcoal uppercase tracking-wider">
                       +5% GST
                     </span>
                   </div>
 
-                  <!-- Core Facts -->
-                  <div class="space-y-2.5 text-xs text-taj-charcoal pt-1">
-                    <div class="flex items-start gap-2.5">
-                      <i data-lucide="check-circle" class="w-4 h-4 text-taj-gold flex-shrink-0 mt-0.5"></i>
-                      <span>Sourced from 55-acre in-house organic vegetable gardens</span>
-                    </div>
-                    <div class="flex items-start gap-2.5">
-                      <i data-lucide="check-circle" class="w-4 h-4 text-taj-gold flex-shrink-0 mt-0.5"></i>
-                      <span>Pure A2 dairy from 160+ indigenous desi cow Gaushala</span>
-                    </div>
-                    <div class="flex items-start gap-2.5">
-                      <i data-lucide="check-circle" class="w-4 h-4 text-taj-gold flex-shrink-0 mt-0.5"></i>
-                      <span>Strict Satvik preparation: 100% vegetarian, zero onion, zero garlic</span>
-                    </div>
-                    <div class="flex items-start gap-2.5">
-                      <i data-lucide="clock" class="w-4 h-4 text-taj-gold flex-shrink-0 mt-0.5"></i>
-                      <span><strong>Timings:</strong> Breakfast 07:00–10:30 | Lunch 12:30–15:30 | Dinner 19:00–22:30</span>
-                    </div>
+                  <p class="text-xs sm:text-sm text-taj-body leading-relaxed">
+                    Crafted using fresh organic vegetables grown in our own gardens and pure dairy from our indigenous
+                    Gaushala. 100% Satvik, pure, and nutritious.
+                  </p>
+
+                  <div class="grid grid-cols-2 gap-3 text-xs text-taj-muted pt-2">
+                    <span class="flex items-center gap-1.5"><i data-lucide="check"
+                        class="w-3.5 h-3.5 text-taj-gold"></i> 100% Satvik Pure Vegetarian</span>
+                    <span class="flex items-center gap-1.5"><i data-lucide="check"
+                        class="w-3.5 h-3.5 text-taj-gold"></i> Indigenous Desi Cow Dairy</span>
+                    <span class="flex items-center gap-1.5"><i data-lucide="check"
+                        class="w-3.5 h-3.5 text-taj-gold"></i> Organic In-House Gardens</span>
+                    <span class="flex items-center gap-1.5"><i data-lucide="check"
+                        class="w-3.5 h-3.5 text-taj-gold"></i> Zero Onion &amp; Zero Garlic</span>
                   </div>
                 </div>
               </div>
 
-              <div class="p-6 sm:p-8 pt-0 border-t border-taj-border pt-4 flex flex-wrap items-center justify-between gap-3">
-                <span class="text-xs text-taj-muted">Pure Farm-to-Table Satvik Dining</span>
-                <a href="./aahar-vihar-menu.html" class="btn-taj-primary min-h-[44px] px-6 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer gap-2">
-                  <span>VIEW FULL AAHAR-VIHAR MENU →</span>
+              <div
+                class="p-6 sm:p-8 pt-0 border-t border-taj-border pt-4 flex flex-wrap items-center justify-between gap-3">
+                <span class="text-xs text-taj-muted">Breakfast, Lunch &amp; Dinner Available</span>
+                <a href="./aahar-vihar-menu.html"
+                  class="btn-taj-primary min-h-[44px] px-6 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer gap-2">
+                  <span>View Aahar-Vihar Menu Card →</span>
                 </a>
               </div>
             </div>
@@ -601,11 +703,12 @@
             <div class="taj-white-card flex flex-col justify-between overflow-hidden">
               <div>
                 <div class="relative h-72 sm:h-80 overflow-hidden">
-                  <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80" alt="Panchvati Rasoi Traditional Dining Hall"
-                    loading="lazy"
+                  <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80"
+                    alt="Panchvati Rasoi Traditional Dining Hall" loading="lazy"
                     onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80';"
                     class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
-                  <div class="absolute top-4 left-4 bg-white/95 px-3 py-1 text-[10px] font-bold tracking-wide text-taj-charcoal border border-taj-border uppercase">
+                  <div
+                    class="absolute top-4 left-4 bg-white/95 px-3 py-1 text-[10px] font-bold tracking-wide text-taj-charcoal border border-taj-border uppercase">
                     Traditional Indian Thali Dining
                   </div>
                 </div>
@@ -614,80 +717,91 @@
                   <div class="flex items-baseline justify-between border-b border-taj-border pb-3">
                     <div>
                       <h3 class="font-cinzel text-2xl font-bold text-taj-charcoal">
-                        Panchvati Rasoi
+                        Panchvati Rasoi — Traditional Indian Thali Dining
                       </h3>
-                      <p class="text-xs text-emerald-800 font-medium mt-0.5">Traditional Indian Thali Dining Hall</p>
+                      <p class="text-xs text-taj-gold font-medium mt-0.5">Authentic Satvik Thali • Classical Indian
+                        Heritage</p>
                     </div>
-                    <span class="text-xs font-semibold px-2.5 py-1 bg-taj-ivory border border-taj-border text-taj-charcoal uppercase tracking-wider">
+                    <span
+                      class="text-xs font-semibold px-2.5 py-1 bg-taj-ivory border border-taj-border text-taj-charcoal uppercase tracking-wider">
                       +5% GST
                     </span>
                   </div>
 
-                  <!-- Meal Plans & Rates -->
-                  <div class="space-y-2.5">
-                    <div class="p-3 bg-taj-ivory border border-taj-border flex items-center justify-between">
+                  <p class="text-xs sm:text-sm text-taj-body leading-relaxed">
+                    A dedicated dining hall celebrating classical Indian culinary heritage, where every meal is served
+                    exclusively as a pure, wholesome, and traditional thali.
+                  </p>
+
+                  <!-- Highlight Cards -->
+                  <div class="space-y-3 pt-1">
+                    <div class="p-3.5 bg-taj-ivory border border-taj-border flex items-center justify-between">
                       <div>
-                        <h5 class="font-cinzel text-xs sm:text-sm font-bold text-taj-charcoal uppercase">Satvik Thali (Lunch &amp; Dinner)</h5>
-                        <p class="text-[11px] text-taj-muted mt-0.5">Seasonal Dal, 2 Sabzi, Phulka with Desi Ghee, Rice, Sweet</p>
+                        <h5 class="font-cinzel text-xs sm:text-sm font-bold text-taj-charcoal uppercase">Satvik Thali
+                          (Lunch / Dinner)</h5>
+                        <p class="text-[11px] text-taj-muted">Seasonal Dal, 2 Sabzi, Phulka, Steamed Rice &amp;
+                          Traditional Sweet</p>
                       </div>
                       <div class="text-right flex-shrink-0 ml-3">
-                        <span class="font-cinzel text-base sm:text-lg font-bold text-emerald-800">₹220</span>
+                        <span class="font-cinzel text-lg sm:text-xl font-bold text-taj-gold">₹220</span>
                         <span class="text-[10px] text-taj-muted block">+ 5% GST = ₹231</span>
                       </div>
                     </div>
 
-                    <div class="p-3 bg-taj-ivory border border-taj-border flex items-center justify-between">
+                    <div class="p-3.5 bg-taj-ivory border border-taj-border flex items-center justify-between">
                       <div>
-                        <h5 class="font-cinzel text-xs sm:text-sm font-bold text-taj-charcoal uppercase">Morning Breakfast</h5>
-                        <p class="text-[11px] text-taj-muted mt-0.5">Millet Daliya / Poha, Fresh Fruits, Herbal Tea</p>
+                        <h5 class="font-cinzel text-xs sm:text-sm font-bold text-taj-charcoal uppercase">Morning
+                          Breakfast</h5>
+                        <p class="text-[11px] text-taj-muted">Millet Daliya / Herbal Tea, Poha / Idli &amp; Fresh Fruits
+                        </p>
                       </div>
                       <div class="text-right flex-shrink-0 ml-3">
-                        <span class="font-cinzel text-base sm:text-lg font-bold text-emerald-800">₹150</span>
+                        <span class="font-cinzel text-lg sm:text-xl font-bold text-taj-gold">₹150</span>
                         <span class="text-[10px] text-taj-muted block">+ 5% GST = ₹157.50</span>
                       </div>
                     </div>
                   </div>
 
-                  <!-- Core Facts -->
-                  <div class="space-y-2 text-xs text-taj-charcoal pt-1">
-                    <div class="flex items-start gap-2.5">
-                      <i data-lucide="check-circle" class="w-4 h-4 text-emerald-700 flex-shrink-0 mt-0.5"></i>
-                      <span>Prepared using pure cold wood-pressed oils &amp; filtered well water</span>
-                    </div>
-                    <div class="flex items-start gap-2.5">
-                      <i data-lucide="clock" class="w-4 h-4 text-emerald-700 flex-shrink-0 mt-0.5"></i>
-                      <span><strong>Service Timings:</strong> Breakfast 07:30–09:30 | Lunch 12:00–14:30 | Dinner 19:30–21:30</span>
-                    </div>
+                  <div class="text-[11px] text-taj-muted space-y-1 pt-1">
+                    <p>✓ Timings: Breakfast 07:30 - 09:30 | Lunch 12:00 - 14:30 | Dinner 19:30 - 21:30</p>
+                    <p>✓ Prepared using pure wood-pressed oils &amp; Parisar natural filtered well water.</p>
                   </div>
                 </div>
               </div>
 
-              <div class="p-6 sm:p-8 pt-0 border-t border-taj-border pt-4 flex flex-wrap items-center justify-between gap-3">
-                <span class="text-xs text-taj-muted">Pilgrim &amp; Community Bhojanshala</span>
-                <a href="./panchvati-pasoee-menu.html" class="btn-taj-primary min-h-[44px] px-6 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer gap-2">
-                  <span>VIEW PANCHVATI RASOI MENU →</span>
+              <div
+                class="p-6 sm:p-8 pt-0 border-t border-taj-border pt-4 flex flex-wrap items-center justify-between gap-3">
+                <span class="text-xs text-taj-muted">Pilgrim &amp; Community Meals</span>
+                <a href="./panchvati-pasoee-menu.html"
+                  class="btn-taj-primary min-h-[44px] px-6 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer gap-2">
+                  <span>View Panchvati Rasoi Menu Card →</span>
                 </a>
               </div>
             </div>
           </div>
 
           <!-- PROMINENT CALL TO ACTION BANNER FOR FULL INTERACTIVE MENU -->
-          <div class="p-6 sm:p-8 bg-taj-ivory border border-taj-gold/60 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
+          <div
+            class="p-6 sm:p-8 bg-taj-ivory border border-taj-gold/60 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
             <div class="space-y-1 text-center md:text-left">
-              <span class="text-[10px] uppercase font-bold tracking-widest text-taj-gold block">Complete Restaurant Experiences</span>
+              <span class="text-[10px] uppercase font-bold tracking-widest text-taj-gold block">Complete Restaurant
+                Experiences</span>
               <h4 class="font-cinzel text-lg sm:text-xl font-bold text-taj-charcoal">
                 Explore Our Dual Satvik Dining Collections
               </h4>
               <p class="text-xs sm:text-sm text-taj-body max-w-2xl">
-                Choose between the authentic royal multi-cuisine menu card at Aahar-Vihar or traditional devotional thali offerings at Panchvati Pasoee.
+                Choose between the authentic royal multi-cuisine menu card at Aahar-Vihar or traditional devotional
+                thali offerings at Panchvati Pasoee.
               </p>
             </div>
             <div class="flex flex-wrap items-center gap-3">
-              <a href="./aahar-vihar-menu.html" class="btn-taj-primary min-h-[44px] px-5 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer whitespace-nowrap sm:whitespace-normal gap-2">
+              <a href="./aahar-vihar-menu.html"
+                class="btn-taj-primary min-h-[44px] px-5 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer whitespace-nowrap sm:whitespace-normal gap-2">
                 <span>View Aahar-Vihar Menu Card →</span>
                 <i data-lucide="arrow-right" class="w-4 h-4"></i>
               </a>
-              <a href="./panchvati-pasoee-menu.html" class="btn-taj-outline-dark min-h-[44px] px-5 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer whitespace-nowrap sm:whitespace-normal gap-2">
+              <a href="./panchvati-pasoee-menu.html"
+                class="btn-taj-outline-dark min-h-[44px] px-5 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer whitespace-nowrap sm:whitespace-normal gap-2">
                 <span>View Panchvati Pasoee Menu Card →</span>
                 <i data-lucide="arrow-right" class="w-4 h-4"></i>
               </a>
@@ -704,271 +818,329 @@
 
           <!-- SUBSECTION A: 🌱 Holistic Wellness & Health Care -->
           <div class="mb-20">
-          <!-- SUBSECTION A: 🌱 Holistic Wellness & Health Care -->
-          <div class="mb-20">
-            <div class="text-center mb-14">
-              <div class="mb-3">
-                <span class="taj-section-title-line">
-                  WELLNESS &amp; HEALING • INTEGRATIVE MEDICINE
-                </span>
+            <!-- SUBSECTION A: 🌱 Holistic Wellness & Health Care -->
+            <div class="mb-20">
+              <div class="text-center mb-14">
+                <div class="mb-3">
+                  <span class="taj-section-title-line">
+                    WELLNESS &amp; HEALING • INTEGRATIVE MEDICINE
+                  </span>
+                </div>
+                <h2 class="font-cinzel text-2xl sm:text-4xl font-bold text-taj-charcoal uppercase tracking-wider mb-3">
+                  🌱 Holistic Wellness &amp; Health Care
+                </h2>
+                <p class="font-cormorant italic text-lg sm:text-2xl text-taj-body max-w-3xl mx-auto">
+                  Comprehensive integrative therapeutic healing, clinical diagnostics, and yogic rejuvenation
+                  administered by expert physicians.
+                </p>
               </div>
-              <h2 class="font-cinzel text-2xl sm:text-4xl font-bold text-taj-charcoal uppercase tracking-wider mb-3">
-                🌱 Holistic Wellness &amp; Health Care
-              </h2>
-              <p class="font-cormorant italic text-lg sm:text-2xl text-taj-body max-w-3xl mx-auto">
-                Comprehensive integrative therapeutic healing, clinical diagnostics, and yogic rejuvenation administered by expert physicians.
-              </p>
+
+              <!-- 5 Wellness Cards Grid -->
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+
+                <!-- 1. Ayurveda Hospital -->
+                <div
+                  class="bg-white border border-taj-border p-6 sm:p-7 flex flex-col justify-between hover:border-taj-gold hover:shadow-lg transition-all group">
+                  <div class="space-y-4">
+                    <div
+                      class="w-12 h-12 bg-taj-ivory border border-taj-border flex items-center justify-center text-taj-gold group-hover:bg-taj-gold group-hover:text-white transition-colors">
+                      <i data-lucide="sparkles" class="w-6 h-6 stroke-1"></i>
+                    </div>
+                    <div>
+                      <span class="text-[10px] uppercase font-bold tracking-widest text-taj-gold block">Ayurvedic
+                        Healthcare</span>
+                      <h4 class="font-cinzel text-base font-bold text-taj-charcoal mt-0.5">Ayurveda Hospital</h4>
+                    </div>
+                    <p class="text-xs text-taj-body leading-relaxed">
+                      Panchakarma &amp; classical Ayurvedic therapies administered by experienced physicians.
+                    </p>
+                  </div>
+                  <div class="pt-6 border-t border-taj-border mt-6">
+                    <button
+                      onclick="showFacilityModal('Ayurveda Hospital', 'Panchakarma &amp; classical Ayurvedic therapies administered by experienced physicians.')"
+                      class="text-xs uppercase font-bold text-taj-gold hover:underline flex items-center gap-1">
+                      <span>Learn More</span>
+                      <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- 2. Naturopathy -->
+                <div
+                  class="bg-white border border-taj-border p-6 sm:p-7 flex flex-col justify-between hover:border-taj-gold hover:shadow-lg transition-all group">
+                  <div class="space-y-4">
+                    <div
+                      class="w-12 h-12 bg-taj-ivory border border-taj-border flex items-center justify-center text-taj-gold group-hover:bg-taj-gold group-hover:text-white transition-colors">
+                      <i data-lucide="leaf" class="w-6 h-6 stroke-1"></i>
+                    </div>
+                    <div>
+                      <span class="text-[10px] uppercase font-bold tracking-widest text-taj-gold block">Natural
+                        Detoxification</span>
+                      <h4 class="font-cinzel text-base font-bold text-taj-charcoal mt-0.5">Naturopathy (Kerala System)
+                      </h4>
+                    </div>
+                    <p class="text-xs text-taj-body leading-relaxed">
+                      Traditional Kerala-style natural detoxification and healing treatments.
+                    </p>
+                  </div>
+                  <div class="pt-6 border-t border-taj-border mt-6">
+                    <button
+                      onclick="showFacilityModal('Naturopathy (Kerala System)', 'Traditional Kerala-style natural detoxification and healing treatments.')"
+                      class="text-xs uppercase font-bold text-taj-gold hover:underline flex items-center gap-1">
+                      <span>Learn More</span>
+                      <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- 3. Dental Hospital -->
+                <div
+                  class="bg-white border border-taj-border p-6 sm:p-7 flex flex-col justify-between hover:border-taj-gold hover:shadow-lg transition-all group">
+                  <div class="space-y-4">
+                    <div
+                      class="w-12 h-12 bg-taj-ivory border border-taj-border flex items-center justify-center text-taj-gold group-hover:bg-taj-gold group-hover:text-white transition-colors">
+                      <i data-lucide="shield-check" class="w-6 h-6 stroke-1"></i>
+                    </div>
+                    <div>
+                      <span class="text-[10px] uppercase font-bold tracking-widest text-taj-gold block">Advanced
+                        Diagnostics</span>
+                      <h4 class="font-cinzel text-base font-bold text-taj-charcoal mt-0.5">Dental Hospital (Affiliated
+                        with UK Seva)</h4>
+                    </div>
+                    <p class="text-xs text-taj-body leading-relaxed">
+                      Advanced dental healthcare with modern precision diagnostic machinery.
+                    </p>
+                  </div>
+                  <div class="pt-6 border-t border-taj-border mt-6">
+                    <button
+                      onclick="showFacilityModal('Dental Hospital (Affiliated with UK Seva)', 'Advanced dental healthcare with modern precision diagnostic machinery.')"
+                      class="text-xs uppercase font-bold text-taj-gold hover:underline flex items-center gap-1">
+                      <span>Learn More</span>
+                      <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- 4. Physiotherapy Centre -->
+                <div
+                  class="bg-white border border-taj-border p-6 sm:p-7 flex flex-col justify-between hover:border-taj-gold hover:shadow-lg transition-all group">
+                  <div class="space-y-4">
+                    <div
+                      class="w-12 h-12 bg-taj-ivory border border-taj-border flex items-center justify-center text-taj-gold group-hover:bg-taj-gold group-hover:text-white transition-colors">
+                      <i data-lucide="heart-pulse" class="w-6 h-6 stroke-1"></i>
+                    </div>
+                    <div>
+                      <span class="text-[10px] uppercase font-bold tracking-widest text-taj-gold block">Pain
+                        Rehabilitation</span>
+                      <h4 class="font-cinzel text-base font-bold text-taj-charcoal mt-0.5">Physiotherapy Centre</h4>
+                    </div>
+                    <p class="text-xs text-taj-body leading-relaxed">
+                      Dedicated pain management and rehabilitation facilities.
+                    </p>
+                  </div>
+                  <div class="pt-6 border-t border-taj-border mt-6">
+                    <button
+                      onclick="showFacilityModal('Physiotherapy Centre', 'Dedicated pain management and rehabilitation facilities.')"
+                      class="text-xs uppercase font-bold text-taj-gold hover:underline flex items-center gap-1">
+                      <span>Learn More</span>
+                      <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- 5. Yog Sadan -->
+                <div
+                  class="bg-white border border-taj-border p-6 sm:p-7 flex flex-col justify-between hover:border-taj-gold hover:shadow-lg transition-all group">
+                  <div class="space-y-4">
+                    <div
+                      class="w-12 h-12 bg-taj-ivory border border-taj-border flex items-center justify-center text-taj-gold group-hover:bg-taj-gold group-hover:text-white transition-colors">
+                      <i data-lucide="sun" class="w-6 h-6 stroke-1"></i>
+                    </div>
+                    <div>
+                      <span class="text-[10px] uppercase font-bold tracking-widest text-taj-gold block">Mind &amp; Body
+                        Rejuvenation</span>
+                      <h4 class="font-cinzel text-base font-bold text-taj-charcoal mt-0.5">Yog Sadan</h4>
+                    </div>
+                    <p class="text-xs text-taj-body leading-relaxed">
+                      Expansive open lawns and daily guided yogic meditation sessions.
+                    </p>
+                  </div>
+                  <div class="pt-6 border-t border-taj-border mt-6">
+                    <button
+                      onclick="showFacilityModal('Yog Sadan', 'Expansive open lawns and daily guided yogic meditation sessions.')"
+                      class="text-xs uppercase font-bold text-taj-gold hover:underline flex items-center gap-1">
+                      <span>Learn More</span>
+                      <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                    </button>
+                  </div>
+                </div>
+
+              </div>
             </div>
 
-            <!-- 5 Wellness Cards Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-
-              <!-- 1. Ayurveda Hospital -->
-              <div class="bg-white border border-taj-border p-6 sm:p-7 flex flex-col justify-between hover:border-taj-gold hover:shadow-lg transition-all group">
-                <div class="space-y-4">
-                  <div class="w-12 h-12 bg-taj-ivory border border-taj-border flex items-center justify-center text-taj-gold group-hover:bg-taj-gold group-hover:text-white transition-colors">
-                    <i data-lucide="sparkles" class="w-6 h-6 stroke-1"></i>
-                  </div>
-                  <div>
-                    <span class="text-[10px] uppercase font-bold tracking-widest text-taj-gold block">Ayurvedic Healthcare</span>
-                    <h4 class="font-cinzel text-base font-bold text-taj-charcoal mt-0.5">Ayurveda Hospital</h4>
-                  </div>
-                  <p class="text-xs text-taj-body leading-relaxed">
-                    Panchakarma &amp; classical Ayurvedic therapies administered by experienced physicians.
-                  </p>
+            <!-- SUBSECTION B: 🌾 In-House Facilities -->
+            <div>
+              <div class="text-center mb-14">
+                <div class="mb-3">
+                  <span class="taj-section-title-line">
+                    CAMPUS AMENITIES • 55-ACRE SANCTUARY
+                  </span>
                 </div>
-                <div class="pt-6 border-t border-taj-border mt-6">
-                  <button onclick="showFacilityModal('Ayurveda Hospital', 'Panchakarma &amp; classical Ayurvedic therapies administered by experienced physicians.')" class="text-xs uppercase font-bold text-taj-gold hover:underline flex items-center gap-1">
-                    <span>Learn More</span>
-                    <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
-                  </button>
-                </div>
+                <h3 class="font-cinzel text-2xl sm:text-4xl font-bold text-taj-charcoal uppercase tracking-wider mb-3">
+                  🌾 In-House Facilities
+                </h3>
+                <p class="font-cormorant italic text-lg sm:text-2xl text-taj-body max-w-3xl mx-auto">
+                  Comprehensive 55-acre self-sustaining campus infrastructure designed for comfort, connectivity, and
+                  spiritual well-being.
+                </p>
               </div>
 
-              <!-- 2. Naturopathy -->
-              <div class="bg-white border border-taj-border p-6 sm:p-7 flex flex-col justify-between hover:border-taj-gold hover:shadow-lg transition-all group">
-                <div class="space-y-4">
-                  <div class="w-12 h-12 bg-taj-ivory border border-taj-border flex items-center justify-center text-taj-gold group-hover:bg-taj-gold group-hover:text-white transition-colors">
-                    <i data-lucide="leaf" class="w-6 h-6 stroke-1"></i>
-                  </div>
-                  <div>
-                    <span class="text-[10px] uppercase font-bold tracking-widest text-taj-gold block">Natural Detoxification</span>
-                    <h4 class="font-cinzel text-base font-bold text-taj-charcoal mt-0.5">Naturopathy (Kerala System)</h4>
-                  </div>
-                  <p class="text-xs text-taj-body leading-relaxed">
-                    Traditional Kerala-style natural detoxification and healing treatments.
-                  </p>
-                </div>
-                <div class="pt-6 border-t border-taj-border mt-6">
-                  <button onclick="showFacilityModal('Naturopathy (Kerala System)', 'Traditional Kerala-style natural detoxification and healing treatments.')" class="text-xs uppercase font-bold text-taj-gold hover:underline flex items-center gap-1">
-                    <span>Learn More</span>
-                    <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
-                  </button>
-                </div>
-              </div>
+              <!-- 5 In-House Facilities Grid -->
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
 
-              <!-- 3. Dental Hospital -->
-              <div class="bg-white border border-taj-border p-6 sm:p-7 flex flex-col justify-between hover:border-taj-gold hover:shadow-lg transition-all group">
-                <div class="space-y-4">
-                  <div class="w-12 h-12 bg-taj-ivory border border-taj-border flex items-center justify-center text-taj-gold group-hover:bg-taj-gold group-hover:text-white transition-colors">
-                    <i data-lucide="shield-check" class="w-6 h-6 stroke-1"></i>
+                <!-- 1. Gaushala -->
+                <div
+                  class="bg-white border border-taj-border p-6 sm:p-7 flex flex-col justify-between hover:border-taj-gold hover:shadow-lg transition-all group">
+                  <div class="space-y-4">
+                    <div
+                      class="w-12 h-12 bg-taj-ivory border border-taj-border flex items-center justify-center text-taj-gold group-hover:bg-taj-gold group-hover:text-white transition-colors">
+                      <i data-lucide="heart-handshake" class="w-6 h-6 stroke-1"></i>
+                    </div>
+                    <div>
+                      <span class="text-[10px] uppercase font-bold tracking-widest text-taj-gold block">160+ Indigenous
+                        Cows • 13 Breeds</span>
+                      <h4 class="font-cinzel text-base font-bold text-taj-charcoal mt-0.5">Gaushala (Indigenous Desi Cow
+                        Care)</h4>
+                    </div>
+                    <p class="text-xs text-taj-body leading-relaxed">
+                      160+ indigenous desi cows representing 13 distinct Indian breeds.
+                    </p>
                   </div>
-                  <div>
-                    <span class="text-[10px] uppercase font-bold tracking-widest text-taj-gold block">Advanced Diagnostics</span>
-                    <h4 class="font-cinzel text-base font-bold text-taj-charcoal mt-0.5">Dental Hospital (Affiliated with UK Seva)</h4>
+                  <div class="pt-6 border-t border-taj-border mt-6">
+                    <button
+                      onclick="showFacilityModal('Gaushala (Indigenous Desi Cow Care)', '160+ indigenous desi cows representing 13 distinct Indian breeds.')"
+                      class="text-xs uppercase font-bold text-taj-gold hover:underline flex items-center gap-1">
+                      <span>Learn More</span>
+                      <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                    </button>
                   </div>
-                  <p class="text-xs text-taj-body leading-relaxed">
-                    Advanced dental healthcare with modern precision diagnostic machinery.
-                  </p>
                 </div>
-                <div class="pt-6 border-t border-taj-border mt-6">
-                  <button onclick="showFacilityModal('Dental Hospital (Affiliated with UK Seva)', 'Advanced dental healthcare with modern precision diagnostic machinery.')" class="text-xs uppercase font-bold text-taj-gold hover:underline flex items-center gap-1">
-                    <span>Learn More</span>
-                    <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
-                  </button>
-                </div>
-              </div>
 
-              <!-- 4. Physiotherapy Centre -->
-              <div class="bg-white border border-taj-border p-6 sm:p-7 flex flex-col justify-between hover:border-taj-gold hover:shadow-lg transition-all group">
-                <div class="space-y-4">
-                  <div class="w-12 h-12 bg-taj-ivory border border-taj-border flex items-center justify-center text-taj-gold group-hover:bg-taj-gold group-hover:text-white transition-colors">
-                    <i data-lucide="heart-pulse" class="w-6 h-6 stroke-1"></i>
+                <!-- 2. Helipad -->
+                <div
+                  class="bg-white border border-taj-border p-6 sm:p-7 flex flex-col justify-between hover:border-taj-gold hover:shadow-lg transition-all group">
+                  <div class="space-y-4">
+                    <div
+                      class="w-12 h-12 bg-taj-ivory border border-taj-border flex items-center justify-center text-taj-gold group-hover:bg-taj-gold group-hover:text-white transition-colors">
+                      <i data-lucide="navigation" class="w-6 h-6 stroke-1"></i>
+                    </div>
+                    <div>
+                      <span class="text-[10px] uppercase font-bold tracking-widest text-taj-gold block">Executive
+                        Aviation Transit</span>
+                      <h4 class="font-cinzel text-base font-bold text-taj-charcoal mt-0.5">Helipad Transit Facility</h4>
+                    </div>
+                    <p class="text-xs text-taj-body leading-relaxed">
+                      5 on-campus helipads for corporate and VIP transit.
+                    </p>
                   </div>
-                  <div>
-                    <span class="text-[10px] uppercase font-bold tracking-widest text-taj-gold block">Pain Rehabilitation</span>
-                    <h4 class="font-cinzel text-base font-bold text-taj-charcoal mt-0.5">Physiotherapy Centre</h4>
+                  <div class="pt-6 border-t border-taj-border mt-6">
+                    <button
+                      onclick="showFacilityModal('Helipad Transit Facility', '5 on-campus helipads for corporate and VIP transit.')"
+                      class="text-xs uppercase font-bold text-taj-gold hover:underline flex items-center gap-1">
+                      <span>Learn More</span>
+                      <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                    </button>
                   </div>
-                  <p class="text-xs text-taj-body leading-relaxed">
-                    Dedicated pain management and rehabilitation facilities.
-                  </p>
                 </div>
-                <div class="pt-6 border-t border-taj-border mt-6">
-                  <button onclick="showFacilityModal('Physiotherapy Centre', 'Dedicated pain management and rehabilitation facilities.')" class="text-xs uppercase font-bold text-taj-gold hover:underline flex items-center gap-1">
-                    <span>Learn More</span>
-                    <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
-                  </button>
-                </div>
-              </div>
 
-              <!-- 5. Yog Sadan -->
-              <div class="bg-white border border-taj-border p-6 sm:p-7 flex flex-col justify-between hover:border-taj-gold hover:shadow-lg transition-all group">
-                <div class="space-y-4">
-                  <div class="w-12 h-12 bg-taj-ivory border border-taj-border flex items-center justify-center text-taj-gold group-hover:bg-taj-gold group-hover:text-white transition-colors">
-                    <i data-lucide="sun" class="w-6 h-6 stroke-1"></i>
+                <!-- 3. Mandakini River Viewpoints -->
+                <div
+                  class="bg-white border border-taj-border p-6 sm:p-7 flex flex-col justify-between hover:border-taj-gold hover:shadow-lg transition-all group">
+                  <div class="space-y-4">
+                    <div
+                      class="w-12 h-12 bg-taj-ivory border border-taj-border flex items-center justify-center text-taj-gold group-hover:bg-taj-gold group-hover:text-white transition-colors">
+                      <i data-lucide="waves" class="w-6 h-6 stroke-1"></i>
+                    </div>
+                    <div>
+                      <span class="text-[10px] uppercase font-bold tracking-widest text-taj-gold block">Sacred
+                        Riverfront Views</span>
+                      <h4 class="font-cinzel text-base font-bold text-taj-charcoal mt-0.5">Mandakini River Viewpoints
+                      </h4>
+                    </div>
+                    <p class="text-xs text-taj-body leading-relaxed">
+                      Scenic viewpoints overlooking the sacred Mandakini river.
+                    </p>
                   </div>
-                  <div>
-                    <span class="text-[10px] uppercase font-bold tracking-widest text-taj-gold block">Mind &amp; Body Rejuvenation</span>
-                    <h4 class="font-cinzel text-base font-bold text-taj-charcoal mt-0.5">Yog Sadan</h4>
+                  <div class="pt-6 border-t border-taj-border mt-6">
+                    <button
+                      onclick="showFacilityModal('Mandakini River Viewpoints', 'Scenic viewpoints overlooking the sacred Mandakini river.')"
+                      class="text-xs uppercase font-bold text-taj-gold hover:underline flex items-center gap-1">
+                      <span>Learn More</span>
+                      <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                    </button>
                   </div>
-                  <p class="text-xs text-taj-body leading-relaxed">
-                    Expansive open lawns and daily guided yogic meditation sessions.
-                  </p>
                 </div>
-                <div class="pt-6 border-t border-taj-border mt-6">
-                  <button onclick="showFacilityModal('Yog Sadan', 'Expansive open lawns and daily guided yogic meditation sessions.')" class="text-xs uppercase font-bold text-taj-gold hover:underline flex items-center gap-1">
-                    <span>Learn More</span>
-                    <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
-                  </button>
-                </div>
-              </div>
 
+                <!-- 4. Rasshala -->
+                <div
+                  class="bg-white border border-taj-border p-6 sm:p-7 flex flex-col justify-between hover:border-taj-gold hover:shadow-lg transition-all group">
+                  <div class="space-y-4">
+                    <div
+                      class="w-12 h-12 bg-taj-ivory border border-taj-border flex items-center justify-center text-taj-gold group-hover:bg-taj-gold group-hover:text-white transition-colors">
+                      <i data-lucide="flask-conical" class="w-6 h-6 stroke-1"></i>
+                    </div>
+                    <div>
+                      <span class="text-[10px] uppercase font-bold tracking-widest text-taj-gold block">Classical
+                        Medicine Preparations</span>
+                      <h4 class="font-cinzel text-base font-bold text-taj-charcoal mt-0.5">Rasshala (Ayurvedic
+                        Formulations)</h4>
+                    </div>
+                    <p class="text-xs text-taj-body leading-relaxed">
+                      Authentic in-house manufacturing center for classical Ayurvedic preparations and formulations.
+                    </p>
+                  </div>
+                  <div class="pt-6 border-t border-taj-border mt-6">
+                    <button
+                      onclick="showFacilityModal('Rasshala (Ayurvedic Formulations)', 'Authentic in-house manufacturing center for classical Ayurvedic preparations and formulations.')"
+                      class="text-xs uppercase font-bold text-taj-gold hover:underline flex items-center gap-1">
+                      <span>Learn More</span>
+                      <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- 5. Library, Gym & Botanical Gardens -->
+                <div
+                  class="bg-white border border-taj-border p-6 sm:p-7 flex flex-col justify-between hover:border-taj-gold hover:shadow-lg transition-all group">
+                  <div class="space-y-4">
+                    <div
+                      class="w-12 h-12 bg-taj-ivory border border-taj-border flex items-center justify-center text-taj-gold group-hover:bg-taj-gold group-hover:text-white transition-colors">
+                      <i data-lucide="book-open" class="w-6 h-6 stroke-1"></i>
+                    </div>
+                    <div>
+                      <span class="text-[10px] uppercase font-bold tracking-widest text-taj-gold block">Integrated
+                        Sanctuary Facilities</span>
+                      <h4 class="font-cinzel text-base font-bold text-taj-charcoal mt-0.5">Library, Gym &amp; Botanical
+                        Sanctuary</h4>
+                    </div>
+                    <p class="text-xs text-taj-body leading-relaxed">
+                      Library, Gym, Rasshala, and 55-acre medicinal botanical gardens.
+                    </p>
+                  </div>
+                  <div class="pt-6 border-t border-taj-border mt-6">
+                    <button
+                      onclick="showFacilityModal('Library, Gym &amp; Botanical Sanctuary', 'Library, Gym, Rasshala, and 55-acre medicinal botanical gardens.')"
+                      class="text-xs uppercase font-bold text-taj-gold hover:underline flex items-center gap-1">
+                      <span>Learn More</span>
+                      <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                    </button>
+                  </div>
+                </div>
+
+              </div>
             </div>
+
           </div>
-
-          <!-- SUBSECTION B: 🌾 In-House Facilities -->
-          <div>
-            <div class="text-center mb-14">
-              <div class="mb-3">
-                <span class="taj-section-title-line">
-                  CAMPUS AMENITIES • 55-ACRE SANCTUARY
-                </span>
-              </div>
-              <h3 class="font-cinzel text-2xl sm:text-4xl font-bold text-taj-charcoal uppercase tracking-wider mb-3">
-                🌾 In-House Facilities
-              </h3>
-              <p class="font-cormorant italic text-lg sm:text-2xl text-taj-body max-w-3xl mx-auto">
-                Comprehensive 55-acre self-sustaining campus infrastructure designed for comfort, connectivity, and spiritual well-being.
-              </p>
-            </div>
-
-            <!-- 5 In-House Facilities Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-
-              <!-- 1. Gaushala -->
-              <div class="bg-white border border-taj-border p-6 sm:p-7 flex flex-col justify-between hover:border-taj-gold hover:shadow-lg transition-all group">
-                <div class="space-y-4">
-                  <div class="w-12 h-12 bg-taj-ivory border border-taj-border flex items-center justify-center text-taj-gold group-hover:bg-taj-gold group-hover:text-white transition-colors">
-                    <i data-lucide="heart-handshake" class="w-6 h-6 stroke-1"></i>
-                  </div>
-                  <div>
-                    <span class="text-[10px] uppercase font-bold tracking-widest text-taj-gold block">160+ Indigenous Cows • 13 Breeds</span>
-                    <h4 class="font-cinzel text-base font-bold text-taj-charcoal mt-0.5">Gaushala (Indigenous Desi Cow Care)</h4>
-                  </div>
-                  <p class="text-xs text-taj-body leading-relaxed">
-                    160+ indigenous desi cows representing 13 distinct Indian breeds.
-                  </p>
-                </div>
-                <div class="pt-6 border-t border-taj-border mt-6">
-                  <button onclick="showFacilityModal('Gaushala (Indigenous Desi Cow Care)', '160+ indigenous desi cows representing 13 distinct Indian breeds.')" class="text-xs uppercase font-bold text-taj-gold hover:underline flex items-center gap-1">
-                    <span>Learn More</span>
-                    <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
-                  </button>
-                </div>
-              </div>
-
-              <!-- 2. Helipad -->
-              <div class="bg-white border border-taj-border p-6 sm:p-7 flex flex-col justify-between hover:border-taj-gold hover:shadow-lg transition-all group">
-                <div class="space-y-4">
-                  <div class="w-12 h-12 bg-taj-ivory border border-taj-border flex items-center justify-center text-taj-gold group-hover:bg-taj-gold group-hover:text-white transition-colors">
-                    <i data-lucide="navigation" class="w-6 h-6 stroke-1"></i>
-                  </div>
-                  <div>
-                    <span class="text-[10px] uppercase font-bold tracking-widest text-taj-gold block">Executive Aviation Transit</span>
-                    <h4 class="font-cinzel text-base font-bold text-taj-charcoal mt-0.5">Helipad Transit Facility</h4>
-                  </div>
-                  <p class="text-xs text-taj-body leading-relaxed">
-                    5 on-campus helipads for corporate and VIP transit.
-                  </p>
-                </div>
-                <div class="pt-6 border-t border-taj-border mt-6">
-                  <button onclick="showFacilityModal('Helipad Transit Facility', '5 on-campus helipads for corporate and VIP transit.')" class="text-xs uppercase font-bold text-taj-gold hover:underline flex items-center gap-1">
-                    <span>Learn More</span>
-                    <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
-                  </button>
-                </div>
-              </div>
-
-              <!-- 3. Mandakini River Viewpoints -->
-              <div class="bg-white border border-taj-border p-6 sm:p-7 flex flex-col justify-between hover:border-taj-gold hover:shadow-lg transition-all group">
-                <div class="space-y-4">
-                  <div class="w-12 h-12 bg-taj-ivory border border-taj-border flex items-center justify-center text-taj-gold group-hover:bg-taj-gold group-hover:text-white transition-colors">
-                    <i data-lucide="waves" class="w-6 h-6 stroke-1"></i>
-                  </div>
-                  <div>
-                    <span class="text-[10px] uppercase font-bold tracking-widest text-taj-gold block">Sacred Riverfront Views</span>
-                    <h4 class="font-cinzel text-base font-bold text-taj-charcoal mt-0.5">Mandakini River Viewpoints</h4>
-                  </div>
-                  <p class="text-xs text-taj-body leading-relaxed">
-                    Scenic viewpoints overlooking the sacred Mandakini river.
-                  </p>
-                </div>
-                <div class="pt-6 border-t border-taj-border mt-6">
-                  <button onclick="showFacilityModal('Mandakini River Viewpoints', 'Scenic viewpoints overlooking the sacred Mandakini river.')" class="text-xs uppercase font-bold text-taj-gold hover:underline flex items-center gap-1">
-                    <span>Learn More</span>
-                    <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
-                  </button>
-                </div>
-              </div>
-
-              <!-- 4. Rasshala -->
-              <div class="bg-white border border-taj-border p-6 sm:p-7 flex flex-col justify-between hover:border-taj-gold hover:shadow-lg transition-all group">
-                <div class="space-y-4">
-                  <div class="w-12 h-12 bg-taj-ivory border border-taj-border flex items-center justify-center text-taj-gold group-hover:bg-taj-gold group-hover:text-white transition-colors">
-                    <i data-lucide="flask-conical" class="w-6 h-6 stroke-1"></i>
-                  </div>
-                  <div>
-                    <span class="text-[10px] uppercase font-bold tracking-widest text-taj-gold block">Classical Medicine Preparations</span>
-                    <h4 class="font-cinzel text-base font-bold text-taj-charcoal mt-0.5">Rasshala (Ayurvedic Formulations)</h4>
-                  </div>
-                  <p class="text-xs text-taj-body leading-relaxed">
-                    Authentic in-house manufacturing center for classical Ayurvedic preparations and formulations.
-                  </p>
-                </div>
-                <div class="pt-6 border-t border-taj-border mt-6">
-                  <button onclick="showFacilityModal('Rasshala (Ayurvedic Formulations)', 'Authentic in-house manufacturing center for classical Ayurvedic preparations and formulations.')" class="text-xs uppercase font-bold text-taj-gold hover:underline flex items-center gap-1">
-                    <span>Learn More</span>
-                    <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
-                  </button>
-                </div>
-              </div>
-
-              <!-- 5. Library, Gym & Botanical Gardens -->
-              <div class="bg-white border border-taj-border p-6 sm:p-7 flex flex-col justify-between hover:border-taj-gold hover:shadow-lg transition-all group">
-                <div class="space-y-4">
-                  <div class="w-12 h-12 bg-taj-ivory border border-taj-border flex items-center justify-center text-taj-gold group-hover:bg-taj-gold group-hover:text-white transition-colors">
-                    <i data-lucide="book-open" class="w-6 h-6 stroke-1"></i>
-                  </div>
-                  <div>
-                    <span class="text-[10px] uppercase font-bold tracking-widest text-taj-gold block">Integrated Sanctuary Facilities</span>
-                    <h4 class="font-cinzel text-base font-bold text-taj-charcoal mt-0.5">Library, Gym &amp; Botanical Sanctuary</h4>
-                  </div>
-                  <p class="text-xs text-taj-body leading-relaxed">
-                    Library, Gym, Rasshala, and 55-acre medicinal botanical gardens.
-                  </p>
-                </div>
-                <div class="pt-6 border-t border-taj-border mt-6">
-                  <button onclick="showFacilityModal('Library, Gym &amp; Botanical Sanctuary', 'Library, Gym, Rasshala, and 55-acre medicinal botanical gardens.')" class="text-xs uppercase font-bold text-taj-gold hover:underline flex items-center gap-1">
-                    <span>Learn More</span>
-                    <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
-                  </button>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-        </div>
       </section>
 
       <!-- ================= 6. CREDENTIALS & GOOGLE RATINGS INTEGRATION ================= -->
@@ -1025,7 +1197,8 @@
                 km)</p>
             </div>
             <div class="flex flex-wrap items-center gap-3">
-              <button id="copy-address-btn" class="btn-taj-outline-dark min-h-[44px] px-5 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer gap-2">
+              <button id="copy-address-btn"
+                class="btn-taj-outline-dark min-h-[44px] px-5 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer gap-2">
                 <i data-lucide="copy" class="w-3.5 h-3.5"></i>
                 <span id="copy-btn-label">Copy Address</span>
               </button>
@@ -1041,8 +1214,8 @@
         </div>
       </section>
 
-      
-<!-- ================= TAJ-STYLE LUXURY FOOTER ================= -->
+
+      <!-- ================= TAJ-STYLE LUXURY FOOTER ================= -->
       <footer class="bg-taj-charcoal text-white/70 py-16 text-xs mt-16 border-t border-taj-gold/20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-white/10">
@@ -1064,10 +1237,14 @@
             <div class="space-y-2.5">
               <h4 class="font-cinzel text-xs uppercase tracking-widest text-white font-bold">Suite Collections</h4>
               <ul class="space-y-1.5 text-white/70">
-                <li><a href="./index.html#rooms-section" class="hover:text-white transition-colors cursor-pointer">1. Rooms & Suites (2 Grand Wings)</a></li>
-                <li><a href="./swasthya-kutir.html" class="hover:text-white transition-colors cursor-pointer">2. Swasthya Kutir Wing (From ₹5,500)</a></li>
-                <li><a href="./panchvati.html" class="hover:text-white transition-colors cursor-pointer">3. Panchvati Wing (From ₹2,500)</a></li>
-                <li><a href="./swasthya-kutir.html" class="hover:text-white transition-colors cursor-pointer">4. Mandakini & Paishwani Cottages</a></li>
+                <li><a href="./index.html#rooms-section" class="hover:text-white transition-colors cursor-pointer">1.
+                    Rooms & Suites (2 Grand Wings)</a></li>
+                <li><a href="./swasthya-kutir.html" class="hover:text-white transition-colors cursor-pointer">2.
+                    Swasthya Kutir Wing (From ₹5,500)</a></li>
+                <li><a href="./panchvati.html" class="hover:text-white transition-colors cursor-pointer">3. Panchvati
+                    Wing (From ₹2,500)</a></li>
+                <li><a href="./swasthya-kutir.html" class="hover:text-white transition-colors cursor-pointer">4.
+                    Mandakini & Paishwani Cottages</a></li>
               </ul>
             </div>
 
@@ -1086,22 +1263,29 @@
             </div>
 
             <div class="space-y-2.5">
-              <h4 class="font-cinzel text-xs uppercase tracking-widest text-white font-bold">Contact &amp; Reservations</h4>
+              <h4 class="font-cinzel text-xs uppercase tracking-widest text-white font-bold">Contact &amp; Reservations
+              </h4>
               <p class="text-white/70">Arogyadham, Chitrakoot (M.P.) 485334</p>
               <div class="text-white space-y-1.5">
                 <p class="leading-relaxed">
                   <span class="text-white/60 block text-[10px] uppercase font-semibold">Direct Helpline:</span>
-                  <a href="tel:+916261062326" class="text-taj-gold-light hover:underline font-semibold">+91 62610 62326</a><br>
-                  <a href="tel:+918602801682" class="text-taj-gold-light hover:underline font-semibold">+91 86028 01682</a><br>
-                  <a href="tel:+917670265334" class="text-taj-gold-light hover:underline font-semibold">+91 76702 65334</a>
+                  <a href="tel:+916261062326" class="text-taj-gold-light hover:underline font-semibold">+91 62610
+                    62326</a><br>
+                  <a href="tel:+918602801682" class="text-taj-gold-light hover:underline font-semibold">+91 86028
+                    01682</a><br>
+                  <a href="tel:+917670265334" class="text-taj-gold-light hover:underline font-semibold">+91 76702
+                    65334</a>
                 </p>
                 <p>
                   <span class="text-white/60 text-[10px] uppercase font-semibold block">Email:</span>
-                  <a href="mailto:reservation@arogydham.co" class="text-taj-gold-light hover:underline font-semibold">reservation@arogydham.co</a>
+                  <a href="mailto:reservation@arogydham.co"
+                    class="text-taj-gold-light hover:underline font-semibold block">reservation@arogydham.co</a>
+                  <a href="mailto:reservations@arogyadhamchitrakoot.org"
+                    class="text-taj-gold-light hover:underline font-semibold block text-[11px]">reservations@arogyadhamchitrakoot.org</a>
                 </p>
               </div>
               <div class="pt-2">
-                <button onclick="openBookingDrawer('Mandakini Royal Suite', 12000)"
+                <button onclick="if(typeof gtag==='function'){gtag('event', 'click_book_stay', {'event_category': 'CTA'});} openBookingDrawer('Mandakini Royal Suite', 12000)"
                   class="btn-taj-primary py-2 px-4 text-[10px] cursor-pointer">
                   Book Your Sanctuary
                 </button>
@@ -1113,29 +1297,27 @@
           <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-white/40">
             <p>© 2026 Arogyadham Swasthya Kutir, Chitrakoot. Inspired by Taj Hotels & Resorts standards.</p>
             <div class="flex items-center gap-4">
-              <a href="#" class="hover:text-white">Privacy Policy</a>
+              <button type="button" onclick="showPolicyModal('privacy')" class="hover:text-white cursor-pointer bg-transparent border-0 p-0 text-[11px] text-white/60">Privacy Policy</button>
               <span>•</span>
-              <a href="#" class="hover:text-white">Terms & Conditions</a>
+              <button type="button" onclick="showPolicyModal('terms')" class="hover:text-white cursor-pointer bg-transparent border-0 p-0 text-[11px] text-white/60">Terms & Conditions</button>
               <span>•</span>
-              <a href="#" class="hover:text-white">Ayurvedic Guidelines</a>
+              <button type="button" onclick="showPolicyModal('guidelines')" class="hover:text-white cursor-pointer bg-transparent border-0 p-0 text-[11px] text-white/60">Ayurvedic Guidelines</button>
+            </div>
           </div>
-        </div>
       </footer>
-  </div><!-- /#view-home -->
+    </div><!-- /#view-home -->
   </main><!-- /#taj-app-content -->
 
-<!-- ================= TAJ LUXURY MEAL PLAN SELECTION MODAL ================= -->
+  <!-- ================= TAJ LUXURY MEAL PLAN SELECTION MODAL ================= -->
   <div id="meal-plan-modal"
     class="modal-overlay hidden-modal fixed inset-0 z-50 items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden"
-    style="display: none;"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="meal-plan-modal-title">
+    style="display: none;" role="dialog" aria-modal="true" aria-labelledby="meal-plan-modal-title">
     <div
       class="modal-card w-full max-w-2xl bg-white border-2 border-taj-gold shadow-2xl overflow-hidden text-taj-charcoal animate-fadeIn max-h-[92vh] flex flex-col">
-      
+
       <!-- Modal Header -->
-      <div class="bg-gradient-to-r from-taj-cream via-white to-taj-cream p-5 sm:p-6 border-b border-taj-border relative flex-shrink-0">
+      <div
+        class="bg-gradient-to-r from-taj-cream via-white to-taj-cream p-5 sm:p-6 border-b border-taj-border relative flex-shrink-0">
         <button onclick="closeMealPlanModal()" data-action="close-modal"
           class="absolute right-4 top-4 w-9 h-9 rounded-full bg-taj-ivory border border-taj-border flex items-center justify-center text-taj-charcoal hover:text-white hover:bg-taj-charcoal hover:border-taj-charcoal transition-all p-1 cursor-pointer shadow-sm"
           aria-label="Close Meal Plan Options">
@@ -1143,11 +1325,13 @@
         </button>
 
         <div class="pr-10">
-          <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-taj-gold/10 border border-taj-gold/30 text-[10px] uppercase font-bold tracking-[0.18em] text-taj-gold mb-1.5">
+          <div
+            class="inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-taj-gold/10 border border-taj-gold/30 text-[10px] uppercase font-bold tracking-[0.18em] text-taj-gold mb-1.5">
             <i data-lucide="sparkles" class="w-3 h-3 text-taj-gold"></i>
             <span>AROGYADHAM RESERVATION DESK</span>
           </div>
-          <h3 id="meal-plan-modal-title" class="font-cinzel text-xl sm:text-2xl font-bold text-taj-charcoal uppercase tracking-wider">
+          <h3 id="meal-plan-modal-title"
+            class="font-cinzel text-xl sm:text-2xl font-bold text-taj-charcoal uppercase tracking-wider">
             SELECT OPTION FOR MANDAKINI COTTAGE
           </h3>
           <p id="meal-plan-modal-subtext" class="text-xs sm:text-sm text-taj-body mt-1">
@@ -1157,7 +1341,8 @@
       </div>
 
       <!-- Room Specs Strip -->
-      <div id="meal-plan-modal-specs" class="bg-taj-ivory/80 px-5 sm:px-6 py-3 border-b border-taj-border text-xs text-taj-charcoal font-medium flex flex-wrap items-center gap-2 sm:gap-4 flex-shrink-0">
+      <div id="meal-plan-modal-specs"
+        class="bg-taj-ivory/80 px-5 sm:px-6 py-3 border-b border-taj-border text-xs text-taj-charcoal font-medium flex flex-wrap items-center gap-2 sm:gap-4 flex-shrink-0">
         <!-- Injected dynamically -->
       </div>
 
@@ -1167,12 +1352,14 @@
       </div>
 
       <!-- Modal Footer -->
-      <div class="bg-taj-cream/50 px-5 sm:px-6 py-3.5 border-t border-taj-border flex items-center justify-between gap-3 text-xs text-taj-muted flex-shrink-0">
+      <div
+        class="bg-taj-cream/50 px-5 sm:px-6 py-3.5 border-t border-taj-border flex items-center justify-between gap-3 text-xs text-taj-muted flex-shrink-0">
         <div class="flex items-center gap-1.5">
           <i data-lucide="shield-check" class="w-4 h-4 text-taj-gold"></i>
           <span>Best Rate Guarantee • Instant Confirmation via Djubo</span>
         </div>
-        <button onclick="closeMealPlanModal()" data-action="close-modal" class="text-xs text-taj-charcoal hover:text-taj-gold font-semibold uppercase tracking-wider underline cursor-pointer">
+        <button onclick="closeMealPlanModal()" data-action="close-modal"
+          class="text-xs text-taj-charcoal hover:text-taj-gold font-semibold uppercase tracking-wider underline cursor-pointer">
           Cancel
         </button>
       </div>
@@ -1207,12 +1394,15 @@
       <form id="drawer-reservation-form" class="p-6 sm:p-8 space-y-5 max-h-[80vh] overflow-y-auto">
 
         <!-- Logged-in Verified Member Status Badge -->
-        <div id="drawer-user-badge" class="p-3 bg-emerald-50 border border-emerald-300 text-xs flex items-center justify-between text-emerald-900">
+        <div id="drawer-user-badge"
+          class="p-3 bg-emerald-50 border border-emerald-300 text-xs flex items-center justify-between text-emerald-900">
           <div class="flex items-center gap-2">
             <i data-lucide="shield-check" class="w-4 h-4 text-emerald-600 flex-shrink-0"></i>
-            <span class="text-[11px]">Auto-filled for <strong id="drawer-user-badge-name">Guest Member</strong> (<span id="drawer-user-badge-email" class="font-mono">guest@arogyadham.in</span>)</span>
+            <span class="text-[11px]">Auto-filled for <strong id="drawer-user-badge-name">Guest Member</strong> (<span
+                id="drawer-user-badge-email" class="font-mono">guest@arogyadham.in</span>)</span>
           </div>
-          <span class="text-[9px] uppercase tracking-wider font-bold bg-white px-2 py-0.5 border border-emerald-300 text-emerald-800">
+          <span
+            class="text-[9px] uppercase tracking-wider font-bold bg-white px-2 py-0.5 border border-emerald-300 text-emerald-800">
             ✓ Verified
           </span>
         </div>
@@ -1228,7 +1418,7 @@
               </option>
             </optgroup>
             <optgroup label="Vaidehi Collection">
-              <option value="8000" data-name="Vaidehi Suite">Vaidehi Suite — ₹8,000 / night</option>
+              <option value="7500" data-name="Vaidehi Suite">Vaidehi Suite — ₹7,500 / night</option>
               <option value="5500" data-name="Vaidehi Twin">Vaidehi Twin — ₹5,500 / night</option>
             </optgroup>
             <optgroup label="Panchvati Collection">
@@ -1277,8 +1467,10 @@
         <!-- Guest Details -->
         <div class="space-y-3 pt-2">
           <div class="flex items-center justify-between">
-            <span class="text-xs font-bold uppercase tracking-wider text-taj-charcoal block">Primary Guest Information</span>
-            <span class="text-[10px] text-taj-gold font-semibold uppercase tracking-wider">Auto-filled from Verified Account</span>
+            <span class="text-xs font-bold uppercase tracking-wider text-taj-charcoal block">Primary Guest
+              Information</span>
+            <span class="text-[10px] text-taj-gold font-semibold uppercase tracking-wider">Auto-filled from Verified
+              Account</span>
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <input type="text" id="drawer-guest-name" required placeholder="Full Name (e.g. Vansh Yadav)"
@@ -1322,7 +1514,8 @@
 
         <!-- Djubo Reservation Desk Trigger Button -->
         <div>
-          <button type="button" onclick="proceedToDjuboBooking()" id="drawer-pay-btn" class="w-full btn-taj-primary py-3.5 text-xs font-bold uppercase tracking-[0.16em] flex items-center justify-center gap-2 cursor-pointer">
+          <button type="button" onclick="proceedToDjuboBooking()" id="drawer-pay-btn"
+            class="w-full btn-taj-primary py-3.5 text-xs font-bold uppercase tracking-[0.16em] flex items-center justify-center gap-2 cursor-pointer">
             <i data-lucide="calendar-check" class="w-4 h-4 text-white"></i>
             <span id="drawer-pay-btn-label">Proceed to Secure Reservation Desk (Djubo)</span>
           </button>
@@ -1342,11 +1535,12 @@
     style="display: none;">
     <div
       class="modal-card w-full max-w-4xl bg-white border border-taj-border shadow-2xl p-6 sm:p-8 max-h-[88vh] overflow-y-auto text-taj-charcoal">
-      
+
       <!-- Modal Header -->
       <div class="flex items-center justify-between border-b border-taj-border pb-4 mb-4">
         <div>
-          <span class="text-[10px] uppercase font-bold tracking-widest text-taj-gold block">Ayurvedic Satvik Gastronomy</span>
+          <span class="text-[10px] uppercase font-bold tracking-widest text-taj-gold block">Ayurvedic Satvik
+            Gastronomy</span>
           <h3 class="font-cinzel text-xl sm:text-2xl font-bold text-taj-charcoal">AAHAR-VIHAR AUTHENTIC MENU</h3>
         </div>
         <button onclick="closeMenuModal()" class="p-1 text-taj-charcoal hover:text-taj-gold">
@@ -1357,7 +1551,8 @@
       <!-- Top Statutory Notice -->
       <div class="mb-5 p-3.5 bg-taj-ivory border border-taj-gold/50 flex items-center gap-3 text-xs text-taj-charcoal">
         <i data-lucide="info" class="w-4 h-4 text-taj-gold flex-shrink-0"></i>
-        <span><strong>Statutory Notice:</strong> Government taxes extra as applicable (+5% GST on all food & beverages). Kindly inform for any dietary restrictions or allergens.</span>
+        <span><strong>Statutory Notice:</strong> Government taxes extra as applicable (+5% GST on all food & beverages).
+          Kindly inform for any dietary restrictions or allergens.</span>
       </div>
 
       <!-- Operating Timings Strip -->
@@ -1386,12 +1581,16 @@
       </div>
 
       <!-- Jump to Interactive Menu Banner -->
-      <div class="mb-6 p-4 bg-taj-ivory border border-taj-gold/40 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+      <div
+        class="mb-6 p-4 bg-taj-ivory border border-taj-gold/40 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
         <div>
-          <h5 class="font-cinzel text-xs font-bold uppercase text-taj-charcoal">Interactive Bill & 5% GST Estimator Active</h5>
-          <p class="text-[11px] text-taj-muted">You can customize, add dishes, and calculate live 5% GST bills in our live dining explorer.</p>
+          <h5 class="font-cinzel text-xs font-bold uppercase text-taj-charcoal">Interactive Bill & 5% GST Estimator
+            Active</h5>
+          <p class="text-[11px] text-taj-muted">You can customize, add dishes, and calculate live 5% GST bills in our
+            live dining explorer.</p>
         </div>
-        <button onclick="closeMenuModal(); document.getElementById('aahar-vihar-menu-section').scrollIntoView({ behavior: 'smooth' });"
+        <button
+          onclick="closeMenuModal(); document.getElementById('aahar-vihar-menu-section').scrollIntoView({ behavior: 'smooth' });"
           class="btn-taj-primary py-2 px-4 text-xs whitespace-nowrap">
           Open Live Menu & Bill Estimator
         </button>
@@ -1399,24 +1598,27 @@
 
       <!-- 4 Pillars of Menu Highlight -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
-        
+
         <!-- Tab 1 Highlights -->
         <div class="border border-taj-border p-4 bg-taj-ivory/30 space-y-2">
           <div class="flex items-center justify-between border-b border-taj-border pb-1">
             <h4 class="font-cinzel text-xs font-bold text-taj-gold uppercase tracking-wider">Tab 1: Breakfast</h4>
             <span class="text-[10px] text-taj-muted">25 Dishes</span>
           </div>
-          <p class="text-[11px] text-taj-muted">Puri Bhaji (₹165), Parathas (₹55 - ₹89), Idli Sambar (₹165), Dosas (₹165 - ₹209), Indori Poha (₹109), Fresh Fruit Platter (₹199), Veg Club Sandwich (₹189).</p>
+          <p class="text-[11px] text-taj-muted">Puri Bhaji (₹165), Parathas (₹55 - ₹89), Idli Sambar (₹165), Dosas (₹165
+            - ₹209), Indori Poha (₹109), Fresh Fruit Platter (₹199), Veg Club Sandwich (₹189).</p>
           <span class="text-[10px] text-taj-gold font-medium block">+5% GST applicable on all items</span>
         </div>
 
         <!-- Tab 2 Highlights -->
         <div class="border border-taj-border p-4 bg-taj-ivory/30 space-y-2">
           <div class="flex items-center justify-between border-b border-taj-border pb-1">
-            <h4 class="font-cinzel text-xs font-bold text-taj-gold uppercase tracking-wider">Tab 2: Starters & Soups</h4>
+            <h4 class="font-cinzel text-xs font-bold text-taj-gold uppercase tracking-wider">Tab 2: Starters & Soups
+            </h4>
             <span class="text-[10px] text-taj-muted">26 Dishes</span>
           </div>
-          <p class="text-[11px] text-taj-muted">Hara Bhara Kebab (₹219), Dahi Ke Kebab (₹275), Paneer Tikka (₹275), Soups (₹165), Mix Millet Soup (₹189), Pizzas (₹219 - ₹265), Chinese Sizzler (₹439).</p>
+          <p class="text-[11px] text-taj-muted">Hara Bhara Kebab (₹219), Dahi Ke Kebab (₹275), Paneer Tikka (₹275),
+            Soups (₹165), Mix Millet Soup (₹189), Pizzas (₹219 - ₹265), Chinese Sizzler (₹439).</p>
           <span class="text-[10px] text-taj-gold font-medium block">+5% GST applicable on all items</span>
         </div>
 
@@ -1426,17 +1628,20 @@
             <h4 class="font-cinzel text-xs font-bold text-taj-gold uppercase tracking-wider">Tab 3: Main Course</h4>
             <span class="text-[10px] text-taj-muted">55 Dishes</span>
           </div>
-          <p class="text-[11px] text-taj-muted">Paneer Gravies (₹329), Mix Millet Khichdi (₹385), Dal Makhani (₹229), Chinese Mains (₹219 - ₹385), Millet/Makka Rotis (₹55), Subz Dum Biryani (₹385).</p>
+          <p class="text-[11px] text-taj-muted">Paneer Gravies (₹329), Mix Millet Khichdi (₹385), Dal Makhani (₹229),
+            Chinese Mains (₹219 - ₹385), Millet/Makka Rotis (₹55), Subz Dum Biryani (₹385).</p>
           <span class="text-[10px] text-taj-gold font-medium block">+5% GST applicable on all items</span>
         </div>
 
         <!-- Tab 4 Highlights -->
         <div class="border border-taj-border p-4 bg-taj-ivory/30 space-y-2">
           <div class="flex items-center justify-between border-b border-taj-border pb-1">
-            <h4 class="font-cinzel text-xs font-bold text-taj-gold uppercase tracking-wider">Tab 4: Desserts & Beverages</h4>
+            <h4 class="font-cinzel text-xs font-bold text-taj-gold uppercase tracking-wider">Tab 4: Desserts & Beverages
+            </h4>
             <span class="text-[10px] text-taj-muted">23 Dishes</span>
           </div>
-          <p class="text-[11px] text-taj-muted">Sawa Ki Kheer (₹165), Moong Dal Halwa (₹165), Fresh Juices (₹135), Shakes (₹135), Virgin Mojito (₹149), Gud Tulsi Chai (₹65), Filter Coffee (₹75/₹85).</p>
+          <p class="text-[11px] text-taj-muted">Sawa Ki Kheer (₹165), Moong Dal Halwa (₹165), Fresh Juices (₹135),
+            Shakes (₹135), Virgin Mojito (₹149), Gud Tulsi Chai (₹65), Filter Coffee (₹75/₹85).</p>
           <span class="text-[10px] text-taj-gold font-medium block">+5% GST applicable on all items</span>
         </div>
 
@@ -1444,7 +1649,8 @@
 
       <!-- Bottom Notice -->
       <div class="mt-5 p-3 bg-taj-ivory border border-taj-gold/40 text-[11px] text-taj-charcoal text-center">
-        Government taxes extra as applicable (+5% GST on all food & beverages). Kindly inform for any dietary restrictions or allergens.
+        Government taxes extra as applicable (+5% GST on all food & beverages). Kindly inform for any dietary
+        restrictions or allergens.
       </div>
 
       <!-- Modal Footer -->
@@ -1495,26 +1701,34 @@
 
       <!-- Modal Header -->
       <div class="bg-taj-cream p-6 border-b border-taj-border relative text-center">
-        <button onclick="closeAuthModal()" class="absolute right-4 top-4 text-taj-charcoal hover:text-taj-gold transition-colors p-1 cursor-pointer" aria-label="Close Authentication">
+        <button onclick="closeAuthModal()"
+          class="absolute right-4 top-4 text-taj-charcoal hover:text-taj-gold transition-colors p-1 cursor-pointer"
+          aria-label="Close Authentication">
           <i data-lucide="x" class="w-5 h-5"></i>
         </button>
-        <div class="w-12 h-12 border-2 border-taj-gold text-taj-gold mx-auto flex items-center justify-center mb-3 shadow-sm bg-white">
+        <div
+          class="w-12 h-12 border-2 border-taj-gold text-taj-gold mx-auto flex items-center justify-center mb-3 shadow-sm bg-white">
           <i data-lucide="crown" class="w-6 h-6"></i>
         </div>
-        <h3 id="auth-modal-title" class="font-cinzel text-base sm:text-lg font-bold text-taj-charcoal tracking-wider">Sign In with Google to Proceed to Reservation Desk</h3>
-        <p class="text-[10px] sm:text-[11px] text-taj-muted uppercase tracking-widest mt-1">Arogyadham Swasthya Kutir, Chitrakoot</p>
+        <h3 id="auth-modal-title" class="font-cinzel text-base sm:text-lg font-bold text-taj-charcoal tracking-wider">
+          Sign In with Google to Proceed to Reservation Desk</h3>
+        <p class="text-[10px] sm:text-[11px] text-taj-muted uppercase tracking-widest mt-1">Arogyadham Swasthya Kutir,
+          Chitrakoot</p>
       </div>
 
       <!-- Selected Room Banner (when redirected from a specific room) -->
-      <div id="auth-guard-alert" class="hidden bg-amber-50/80 border-b border-taj-gold/30 px-5 py-3 text-left flex items-center justify-between text-xs text-taj-charcoal">
+      <div id="auth-guard-alert"
+        class="hidden bg-amber-50/80 border-b border-taj-gold/30 px-5 py-3 text-left flex items-center justify-between text-xs text-taj-charcoal">
         <div class="flex items-center gap-2">
           <i data-lucide="bed-double" class="w-4 h-4 text-taj-gold flex-shrink-0"></i>
           <div>
             <span class="text-[10px] text-taj-muted uppercase tracking-wider block">Selected Sanctuary</span>
-            <strong id="auth-guard-msg" class="font-cinzel text-xs font-bold text-taj-charcoal">Mandakini Royal Suite</strong>
+            <strong id="auth-guard-msg" class="font-cinzel text-xs font-bold text-taj-charcoal">Mandakini Royal
+              Suite</strong>
           </div>
         </div>
-        <span class="text-[10px] uppercase font-bold tracking-wider text-taj-gold bg-white px-2 py-0.5 border border-taj-gold/40">
+        <span
+          class="text-[10px] uppercase font-bold tracking-wider text-taj-gold bg-white px-2 py-0.5 border border-taj-gold/40">
           Best Rate Guarantee
         </span>
       </div>
@@ -1523,7 +1737,8 @@
       <div class="p-6 sm:p-8 space-y-6">
 
         <p class="text-xs text-center text-taj-muted leading-relaxed">
-          Sign in to access real-time cottage availability, personalized wellness itineraries, and instant reservation confirmation via our secure booking engine.
+          Sign in to access real-time cottage availability, personalized wellness itineraries, and instant reservation
+          confirmation via our secure booking engine.
         </p>
 
         <!-- PRIMARY ACTION: CONTINUE WITH GOOGLE -->
@@ -1532,17 +1747,22 @@
             class="w-full flex items-center justify-center gap-3 py-3.5 px-5 bg-white border-2 border-taj-border hover:border-taj-gold hover:shadow-lg transition-all text-xs font-bold text-taj-charcoal uppercase tracking-wider group shadow-sm cursor-pointer min-h-[48px]">
             <!-- Official Multi-Color Google 'G' Logo -->
             <svg class="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24">
-              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-              <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
-              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+              <path fill="#4285F4"
+                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
+              <path fill="#34A853"
+                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+              <path fill="#FBBC05"
+                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" />
+              <path fill="#EA4335"
+                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" />
             </svg>
             <span class="group-hover:text-taj-gold transition-colors tracking-[0.14em]">Continue with Google</span>
           </button>
         </div>
 
         <!-- Security & Privacy Reassurance -->
-        <div class="pt-2 border-t border-taj-border/80 flex flex-col items-center gap-1.5 text-[11px] text-taj-muted text-center">
+        <div
+          class="pt-2 border-t border-taj-border/80 flex flex-col items-center gap-1.5 text-[11px] text-taj-muted text-center">
           <div class="flex items-center gap-1.5 text-taj-charcoal font-medium">
             <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-600"></i>
             <span>Google Identity Services • 256-bit SSL Verified</span>
@@ -1582,11 +1802,13 @@
 
       <!-- Empty State -->
       <div id="user-bookings-empty" class="hidden text-center py-10 space-y-3">
-        <div class="w-12 h-12 bg-taj-ivory border border-taj-gold/40 mx-auto flex items-center justify-center text-taj-gold">
+        <div
+          class="w-12 h-12 bg-taj-ivory border border-taj-gold/40 mx-auto flex items-center justify-center text-taj-gold">
           <i data-lucide="bed" class="w-6 h-6"></i>
         </div>
         <h4 class="font-cinzel text-base font-bold text-taj-charcoal">No Active Bookings Yet</h4>
-        <p class="text-xs text-taj-muted max-w-sm mx-auto">You have not reserved any Kutirs or Dining experiences yet. Discover our serene sanctuary suites in Chitrakoot.</p>
+        <p class="text-xs text-taj-muted max-w-sm mx-auto">You have not reserved any Kutirs or Dining experiences yet.
+          Discover our serene sanctuary suites in Chitrakoot.</p>
         <div class="pt-2">
           <button onclick="closeMyBookingsModal(); navigateToHomeRooms();" class="btn-taj-primary py-2.5 px-6 text-xs">
             Explore Rooms & Suites
@@ -1606,8 +1828,7 @@
   <div id="profile-modal"
     class="modal-overlay hidden-modal fixed inset-0 z-50 items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden"
     style="display: none;">
-    <div
-      class="modal-card w-full max-w-md bg-white border-2 border-taj-gold shadow-2xl p-6 sm:p-8 text-taj-charcoal">
+    <div class="modal-card w-full max-w-md bg-white border-2 border-taj-gold shadow-2xl p-6 sm:p-8 text-taj-charcoal">
       <div class="flex items-center justify-between border-b border-taj-border pb-4 mb-5">
         <h3 class="font-cinzel text-lg font-bold text-taj-charcoal">Guest Member Profile</h3>
         <button onclick="closeUserProfileModal()" class="text-taj-charcoal hover:text-taj-gold p-1">
@@ -1619,12 +1840,14 @@
         <div class="flex items-center gap-3 p-4 bg-taj-ivory border border-taj-border">
           <div id="profile-modal-avatar"
             class="w-12 h-12 bg-taj-gold text-white font-bold text-base flex items-center justify-center rounded-full border-2 border-white shadow overflow-hidden flex-shrink-0">
-            <img id="profile-modal-photo" class="w-full h-full object-cover hidden" alt="User Profile" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80';">
+            <img id="profile-modal-photo" class="w-full h-full object-cover hidden" alt="User Profile" loading="lazy"
+              onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80';">
             <span id="profile-modal-initials">VY</span>
           </div>
           <div>
             <h4 id="profile-modal-name" class="font-cinzel text-base font-bold text-taj-charcoal">Vansh Yadav</h4>
-            <span id="profile-modal-badge" class="inline-block mt-0.5 text-[10px] uppercase tracking-wider px-2 py-0.5 bg-emerald-100 text-emerald-800 font-bold border border-emerald-300">
+            <span id="profile-modal-badge"
+              class="inline-block mt-0.5 text-[10px] uppercase tracking-wider px-2 py-0.5 bg-emerald-100 text-emerald-800 font-bold border border-emerald-300">
               ✓ Verified Member
             </span>
           </div>
@@ -1651,7 +1874,8 @@
       </div>
 
       <div class="pt-5 mt-5 border-t border-taj-border flex gap-3">
-        <button onclick="closeUserProfileModal(); openMyBookingsModal();" class="flex-1 btn-taj-primary py-2.5 text-xs text-center">
+        <button onclick="closeUserProfileModal(); openMyBookingsModal();"
+          class="flex-1 btn-taj-primary py-2.5 text-xs text-center">
           View My Bookings
         </button>
         <button onclick="closeUserProfileModal()" class="flex-1 btn-taj-outline-dark py-2.5 text-xs text-center">
@@ -1665,8 +1889,7 @@
   <div id="saved-kutirs-modal"
     class="modal-overlay hidden-modal fixed inset-0 z-50 items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden"
     style="display: none;">
-    <div
-      class="modal-card w-full max-w-lg bg-white border-2 border-taj-gold shadow-2xl p-6 sm:p-8 text-taj-charcoal">
+    <div class="modal-card w-full max-w-lg bg-white border-2 border-taj-gold shadow-2xl p-6 sm:p-8 text-taj-charcoal">
       <div class="flex items-center justify-between border-b border-taj-border pb-4 mb-5">
         <div class="flex items-center gap-2.5">
           <i data-lucide="bookmark" class="w-5 h-5 text-taj-gold"></i>
@@ -1703,9 +1926,9 @@
         <div class="p-3.5 bg-taj-ivory border border-taj-border flex items-center justify-between">
           <div>
             <h5 class="font-cinzel font-bold text-sm text-taj-charcoal">Vaidehi Suite</h5>
-            <p class="text-[11px] text-taj-gold font-semibold">₹8,000 + 12% GST / night</p>
+            <p class="text-[11px] text-taj-gold font-semibold">₹7,500 + GST / night</p>
           </div>
-          <button onclick="closeSavedKutirsModal(); openBookingDrawer('Vaidehi Suite', 8000);"
+          <button onclick="closeSavedKutirsModal(); openBookingDrawer('Vaidehi Suite', 7500);"
             class="btn-taj-primary py-1.5 px-3 text-[10px]">
             Book Now
           </button>
@@ -1720,12 +1943,17 @@
     </div>
   </div>
 
-
+  <!-- Floating WhatsApp Concierge CTA -->
+  <a href="https://wa.me/917670265334?text=Namaste%2C%20I%20would%20like%20to%20enquire%20about%20booking%20a%20stay%20at%20Arogyadham%20Swasthya%20Kutir." target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-3.5 rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center min-w-[52px] min-h-[52px]" aria-label="Chat on WhatsApp">
+    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+      <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.77.813 2.796.813 3.179 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.768-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.074-2.127-.518-1.745-.722-2.883-2.483-2.971-2.599-.088-.116-.708-.941-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.173.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.086s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824z"/>
+    </svg>
+  </a>
 
   <!-- Toast Notification Container -->
   <div id="toast-container"></div>
 
-    <!-- JavaScript Modules -->
+  <!-- JavaScript Modules -->
   <script src="app.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -1735,4 +1963,5 @@
     });
   </script>
 </body>
+
 </html>
