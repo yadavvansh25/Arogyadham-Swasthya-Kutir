@@ -148,6 +148,7 @@ body {
 /* Explicit Taj Gold Utility Helpers */
 .text-tajGold { color: #b98944; }
 .hover\:text-tajGold:hover { color: #dfc28d; }
+.text-tajGoldLight { color: #dfc28d; }
 .bg-tajGold { background-color: #b98944; }
 .hover\:bg-tajGoldHover:hover { background-color: #a17332; }
 .border-tajGold { border-color: #b98944; }
