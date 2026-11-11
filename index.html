@@ -300,21 +300,54 @@
       <!-- ================= CINEMATIC HERO SECTION ================= -->
       <section id="hero"
         class="relative min-h-[92vh] sm:min-h-screen flex flex-col items-center justify-end overflow-hidden pb-8 sm:pb-12">
-        <!-- Ambient Looping Video Background -->
-        <div class="absolute inset-0 z-0 overflow-hidden bg-tajNavy">
-          <video id="heroVideo" autoplay muted loop playsinline preload="metadata" class="w-full h-full object-cover"
-            style="transform: translate3d(0, 0, 0); will-change: transform;">
-            <source src="https://ik.imagekit.io/exnzknn2n/lv_0_20261021174431.mp4?tr=w-1280,q-60,f-webm"
-              type="video/webm">
-            <source src="https://ik.imagekit.io/exnzknn2n/lv_0_20261021174431.mp4?tr=w-1280,q-65" type="video/mp4">
-          </video>
-          <!-- Luxury Taj Vignette Overlay -->
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/40 pointer-events-none">
+        <!-- Hero Auto Crossfade Slideshow Background -->
+        <div class="absolute inset-0 z-0 overflow-hidden bg-black" id="heroSliderContainer">
+          <!-- Slide 1 (Active on load) -->
+          <img 
+            src="https://ik.imagekit.io/exnzknn2n/retouch_2026110515345391.jpg?updatedAt=1794407095277" 
+            alt="Arogyadham Swasthya Kutir Heritage" 
+            fetchpriority="high"
+            class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out opacity-100 z-10"
+          />
+
+          <!-- Slide 2 -->
+          <img 
+            src="https://ik.imagekit.io/exnzknn2n/retouch_2026110515371524.jpg?updatedAt=1794407096564" 
+            alt="Arogyadham Cottages" 
+            loading="lazy"
+            class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out opacity-0 z-0"
+          />
+
+          <!-- Slide 3 -->
+          <img 
+            src="https://ik.imagekit.io/exnzknn2n/retouch_2026110516433648.jpg?updatedAt=1794407041370" 
+            alt="Arogyadham Campus & Nature" 
+            loading="lazy"
+            class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out opacity-0 z-0"
+          />
+
+          <!-- Slide 4 -->
+          <img 
+            src="https://ik.imagekit.io/exnzknn2n/retouch_2026110515324768.jpg?updatedAt=1794407086143" 
+            alt="Arogyadham Wellness Sanctuary" 
+            loading="lazy"
+            class="hero-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out opacity-0 z-0"
+          />
+
+          <!-- Dark Luxury Overlay (Ensures hero text & search bar remain readable) -->
+          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/50 pointer-events-none z-20"></div>
+
+          <!-- Bottom Dots Indicators -->
+          <div class="absolute bottom-3 left-1/2 -translate-x-1/2 z-30 flex items-center space-x-2">
+            <span class="slide-dot w-4 h-1.5 rounded-full bg-white transition-all duration-300"></span>
+            <span class="slide-dot w-2 h-1.5 rounded-full bg-white/40 transition-all duration-300"></span>
+            <span class="slide-dot w-2 h-1.5 rounded-full bg-white/40 transition-all duration-300"></span>
+            <span class="slide-dot w-2 h-1.5 rounded-full bg-white/40 transition-all duration-300"></span>
           </div>
         </div>
 
         <!-- Hero Content -->
-        <div class="relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
+        <div class="relative z-30 w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
 
           <!-- Verified Rating Badge -->
           <div
@@ -1959,6 +1992,49 @@
 
   <!-- JavaScript Modules -->
   <script src="app.js"></script>
+  <!-- Hero Auto Crossfade Slideshow Logic -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const slides = document.querySelectorAll('.hero-slide');
+      const dots = document.querySelectorAll('.slide-dot');
+      if (slides.length < 2) return;
+
+      let currentIndex = 0;
+      const intervalTime = 5000; // 5 Seconds
+
+      function switchSlide() {
+        // Fade out previous slide
+        slides[currentIndex].classList.remove('opacity-100', 'z-10');
+        slides[currentIndex].classList.add('opacity-0', 'z-0');
+        if (dots[currentIndex]) {
+          dots[currentIndex].classList.remove('bg-white', 'w-4');
+          dots[currentIndex].classList.add('bg-white/40', 'w-2');
+        }
+
+        // Increment index (cycles back to 0)
+        currentIndex = (currentIndex + 1) % slides.length;
+
+        // Fade in current slide
+        slides[currentIndex].classList.remove('opacity-0', 'z-0');
+        slides[currentIndex].classList.add('opacity-100', 'z-10');
+        if (dots[currentIndex]) {
+          dots[currentIndex].classList.remove('bg-white/40', 'w-2');
+          dots[currentIndex].classList.add('bg-white', 'w-4');
+        }
+      }
+
+      let timer = setInterval(switchSlide, intervalTime);
+
+      // Pause on mouse hover (desktop)
+      const container = document.getElementById('heroSliderContainer');
+      if (container) {
+        container.addEventListener('mouseenter', () => clearInterval(timer));
+        container.addEventListener('mouseleave', () => {
+          timer = setInterval(switchSlide, intervalTime);
+        });
+      }
+    });
+  </script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       if (typeof lucide !== 'undefined') {

@@ -535,10 +535,10 @@ body {
   }
 }
 
-/* ================= HERO VIDEO GPU HARDWARE ACCELERATION ================= */
-#heroVideo {
+/* ================= HERO VIDEO & SLIDESHOW ACCELERATION ================= */
+#heroVideo,
+.hero-slide {
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
-  perspective: 1000px;
-  will-change: transform;
+  will-change: opacity, transform;
 }
