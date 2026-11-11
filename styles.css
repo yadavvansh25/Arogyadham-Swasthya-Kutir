@@ -146,13 +146,33 @@ body {
 }
 
 /* Explicit Taj Gold Utility Helpers */
-.text-tajGold { color: #b98944; }
-.hover\:text-tajGold:hover { color: #dfc28d; }
-.text-tajGoldLight { color: #dfc28d; }
-.bg-tajGold { background-color: #b98944; }
-.hover\:bg-tajGoldHover:hover { background-color: #a17332; }
-.border-tajGold { border-color: #b98944; }
-.hover\:border-tajGold:hover { border-color: #dfc28d; }
+.text-tajGold {
+  color: #b98944;
+}
+
+.hover\:text-tajGold:hover {
+  color: #dfc28d;
+}
+
+.text-tajGoldLight {
+  color: #dfc28d;
+}
+
+.bg-tajGold {
+  background-color: #b98944;
+}
+
+.hover\:bg-tajGoldHover:hover {
+  background-color: #a17332;
+}
+
+.border-tajGold {
+  border-color: #b98944;
+}
+
+.hover\:border-tajGold:hover {
+  border-color: #dfc28d;
+}
 
 /* Floating Taj Search Pill */
 .taj-floating-search {
@@ -227,6 +247,7 @@ body {
   transition: opacity 0.3s ease, visibility 0.3s ease;
   pointer-events: none;
 }
+
 .modal-overlay.hidden-modal,
 .modal-overlay.hidden,
 .modal-overlay:not(.show-modal),
@@ -237,6 +258,7 @@ body {
   visibility: hidden !important;
   pointer-events: none !important;
 }
+
 .modal-overlay.show-modal,
 .modal-overlay.flex:not(.hidden):not(.hidden-modal),
 #paymentReceiptModal.flex:not(.hidden),
@@ -250,10 +272,12 @@ body {
 .modal-card {
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
 }
+
 .hidden-modal .modal-card {
   transform: translateY(20px) scale(0.96);
   opacity: 0;
 }
+
 .show-modal .modal-card {
   transform: translateY(0) scale(1);
   opacity: 1;
@@ -294,12 +318,15 @@ body {
   width: 6px;
   height: 6px;
 }
+
 ::-webkit-scrollbar-track {
   background: #F7F5F0;
 }
+
 ::-webkit-scrollbar-thumb {
   background: var(--taj-gold);
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: var(--taj-gold-hover);
 }
@@ -309,9 +336,12 @@ body {
   body * {
     visibility: hidden;
   }
-  #booking-confirmation-receipt, #booking-confirmation-receipt * {
+
+  #booking-confirmation-receipt,
+  #booking-confirmation-receipt * {
     visibility: visible;
   }
+
   #booking-confirmation-receipt {
     position: absolute;
     left: 0;
@@ -333,6 +363,7 @@ body {
     opacity: 0;
     transform: translateY(8px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -343,6 +374,7 @@ body {
 .breadcrumb-back-btn {
   transition: all 0.25s ease;
 }
+
 .breadcrumb-back-btn:hover {
   color: var(--taj-gold);
   transform: translateX(-3px);
@@ -494,6 +526,7 @@ body {
     opacity: 0;
     transform: translateY(8px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -514,9 +547,12 @@ body {
   body * {
     visibility: hidden;
   }
-  #confirmation-modal, #confirmation-modal * {
+
+  #confirmation-modal,
+  #confirmation-modal * {
     visibility: visible;
   }
+
   #confirmation-modal {
     position: absolute;
     left: 0;
@@ -525,11 +561,13 @@ body {
     height: 100%;
     background: #FFFFFF !important;
   }
+
   #confirmation-modal .modal-card {
     box-shadow: none !important;
     border: 1px solid #222 !important;
     max-width: 100% !important;
   }
+
   #confirmation-modal button {
     display: none !important;
   }
@@ -537,7 +575,7 @@ body {
 
 /* ================= HERO VIDEO & SLIDESHOW ACCELERATION ================= */
 #heroVideo,
-.hero-slide {
+.swasthya-slide {
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
   will-change: opacity, transform;
