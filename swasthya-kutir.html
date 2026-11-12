@@ -116,23 +116,35 @@
   <header id="taj-nav" class="fixed top-0 left-0 right-0 z-50 bg-black/60 backdrop-blur-md border-b border-white/10 text-white transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
 
-      <!-- LEFT: LUXURY BRAND MONOGRAM & IDENTITY -->
-      <a href="./index.html" class="flex items-center gap-3 group shrink-0 whitespace-nowrap">
-        <div class="w-10 h-10 border border-tajGold/80 p-1 flex items-center justify-center bg-black/40 backdrop-blur-sm group-hover:border-tajGold transition-colors">
-          <!-- Taj Imperial Lotus & Crest SVG -->
-          <svg class="w-7 h-7 text-tajGold group-hover:scale-105 transition-transform" viewBox="0 0 100 100" fill="currentColor">
-            <path d="M50 8 C47 22 35 32 20 35 C32 40 42 50 45 65 C48 50 58 40 70 35 C55 32 53 22 50 8 Z" fill="#dfc28d" />
-            <path d="M50 25 C45 38 32 46 15 48 C28 53 38 62 40 76 C44 62 54 53 67 48 C52 46 51 38 50 25 Z" fill="#b98944" />
-            <circle cx="50" cy="50" r="4" fill="#FFFFFF" />
-            <path d="M22 84 C34 78 66 78 78 84 C70 88 30 88 22 84 Z" fill="#dfc28d" />
+      <!-- LEFT: REFINED CANDLE-FLAME BRAND IDENTITY -->
+      <a href="./index.html" class="flex items-center gap-3 md:gap-4 group shrink-0">
+        <!-- SWASTHYA KUTIR EMBLEM -->
+        <div class="relative flex items-center justify-center w-12 h-12 md:w-14 md:h-14 border border-tajGold/40 bg-black/55 hover:border-tajGold rounded-sm transition-all duration-300 shadow p-1">
+          <!-- Candle Flame Graphic (Simplified - No text) -->
+          <svg class="w-full h-full" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Outer/Inner Glow flame visual -->
+            <path d="M50 12C50 12 68 36 68 56C68 66 60 74 50 74C40 74 32 66 32 56C32 36 50 12 50 12Z" fill="url(#flameGrad)"/>
+            <!-- Decorative base line -->
+            <path d="M15 70 L 41 70 L 50 63 L 59 70 L 85 70" stroke="#c0a060" stroke-width="2" stroke-linecap="round"/>
+            
+            <defs>
+              <!-- Gold/Orange Gradient mapping based on references -->
+              <linearGradient id="flameGrad" x1="50" y1="12" x2="50" y2="74" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#FFD700"/>
+                <stop offset="50%" stop-color="#FF8C00"/>
+                <stop offset="100%" stop-color="#E65100"/>
+              </linearGradient>
+            </defs>
           </svg>
         </div>
-        <div class="flex flex-col">
-          <span class="nav-brand-title font-cinzel text-lg sm:text-xl font-bold tracking-[0.2em] text-white group-hover:text-tajGold transition-colors leading-tight">
+
+        <!-- BRAND NAME & UPDATED SUBTITLE -->
+        <div class="flex flex-col select-none">
+          <span class="text-base sm:text-lg md:text-xl font-cinzel tracking-[0.15em] text-white font-semibold transition-colors duration-300 group-hover:text-tajGold">
             AROGYADHAM
           </span>
-          <span class="nav-brand-sub font-montserrat text-[9px] tracking-[0.25em] text-tajGold uppercase font-medium">
-            Chitrakoot • Swasthya Kutir
+          <span class="text-[9px] sm:text-[10px] tracking-[0.2em] font-medium text-tajGold uppercase">
+            SWASTHYA KUTIR
           </span>
         </div>
       </a>
