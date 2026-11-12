@@ -104,34 +104,39 @@
   <header id="taj-nav" class="fixed top-0 left-0 right-0 z-50 bg-black/85 backdrop-blur-md border-b border-white/10 text-white transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
 
-      <!-- LEFT: REFINED CANDLE-FLAME BRAND IDENTITY -->
-      <a href="./index.html" class="flex items-center gap-3 md:gap-4 group shrink-0">
-        <!-- SWASTHYA KUTIR EMBLEM -->
-        <div class="relative flex items-center justify-center w-12 h-12 md:w-14 md:h-14 border border-tajGold/40 bg-black/55 hover:border-tajGold rounded-sm transition-all duration-300 shadow p-1">
-          <!-- Candle Flame Graphic (Simplified - No text) -->
+      <!-- LEFT: CUSTOM FLAME EMBLEM & BRAND TYPOGRAPHY -->
+      <a href="./index.html" class="flex items-center gap-3 md:gap-4 group shrink-0" aria-label="Arogyadham Swasthya Kutir">
+        <!-- THE CUSTON FLAME EMBLEM -->
+        <div class="relative flex items-center justify-center w-12 h-12 md:w-[52px] md:h-[52px] border-2 border-[#D4AF37] bg-transparent transition-all duration-300 group-hover:border-white p-1.5 shrink-0">
+          <!-- Fine-tuned SVG mimicking the original image exactly -->
           <svg class="w-full h-full" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Outer/Inner Glow flame visual -->
-            <path d="M50 12C50 12 68 36 68 56C68 66 60 74 50 74C40 74 32 66 32 56C32 36 50 12 50 12Z" fill="url(#flameGrad)"/>
-            <!-- Decorative base line -->
-            <path d="M15 70 L 41 70 L 50 63 L 59 70 L 85 70" stroke="#c0a060" stroke-width="2" stroke-linecap="round"/>
+            <!-- Flame outer glow and organic curves -->
+            <path d="M50 14 C50 14, 63.5 35.5, 63.5 53 C63.5 61.5, 57.5 67, 50 67 C42.5 67, 36.5 61.5, 36.5 53 C36.5 35.5, 50 14, 50 14 Z" fill="url(#image79FlameGrad)" />
+            <!-- Subtle inner glow for realistic heat center -->
+            <path d="M50 32 C50 32, 57 44, 57 53 C57 57.5, 53.5 61, 50 61 C46.5 61, 43 57.5, 43 53 C43 44, 50 32, 50 32 Z" fill="#FFE082" opacity="0.85" />
+            <!-- Sharp ground divider from image with small 'V' kink below wick -->
+            <path d="M14 74 L 38.5 74 L 50 64 L 61.5 74 L 86 74" stroke="#D4AF37" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
             
             <defs>
-              <!-- Gold/Orange Gradient mapping based on references -->
-              <linearGradient id="flameGrad" x1="50" y1="12" x2="50" y2="74" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stop-color="#FFD700"/>
-                <stop offset="50%" stop-color="#FF8C00"/>
+              <!-- Smooth yellow-orange-red vertical gradient mimicking image_79.png -->
+              <linearGradient id="image79FlameGrad" x1="50" y1="14" x2="50" y2="67" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#FFE082"/>
+                <stop offset="35%" stop-color="#FFA726"/>
+                <stop offset="70%" stop-color="#FB8C00"/>
                 <stop offset="100%" stop-color="#E65100"/>
               </linearGradient>
             </defs>
           </svg>
         </div>
 
-        <!-- BRAND NAME & UPDATED SUBTITLE -->
-        <div class="flex flex-col select-none">
-          <span class="text-base sm:text-lg md:text-xl font-cinzel tracking-[0.15em] text-white font-semibold transition-colors duration-300 group-hover:text-tajGold">
+        <!-- THE BRAND TYPOGRAPHY -->
+        <div class="flex flex-col select-none justify-center">
+          <!-- Huge luxury serif text "AROGYADHAM" -->
+          <span class="text-base sm:text-lg md:text-[23px] font-cinzel tracking-[0.16em] text-white font-medium transition-colors duration-300 group-hover:text-tajGold leading-none mb-1 md:mb-1.5">
             AROGYADHAM
           </span>
-          <span class="text-[9px] sm:text-[10px] tracking-[0.2em] font-medium text-tajGold uppercase">
+          <!-- Sleek spaced "SWASTHYA KUTIR" Sub-brand label -->
+          <span class="text-[9px] sm:text-[10px] md:text-[10.5px] font-serif tracking-[0.24em] font-medium text-tajGold uppercase leading-none">
             SWASTHYA KUTIR
           </span>
         </div>
