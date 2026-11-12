@@ -3,6 +3,14 @@
  * Complete Modular Application Logic
  */
 
+// Safe Google Analytics gtag fallback
+if (typeof window.gtag !== 'function') {
+  window.gtag = function() {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push(arguments);
+  };
+}
+
 // Official Djubo Booking Engine Target URL
 const DJUBO_BOOKING_URL = "https://live.ipms247.com/booking/book-rooms-arogyadham";
 window.DJUBO_BOOKING_URL = DJUBO_BOOKING_URL;
@@ -1532,6 +1540,14 @@ function triggerQuickSearch() {
 
 /* ================= TAJ RESERVATION DRAWER & CALCULATION ================= */
 function openBookingDrawer(roomName = 'Mandakini Royal Suite', rate = 12000) {
+  // Fire Google Analytics event
+  if (typeof window.gtag === 'function') {
+    window.gtag('event', 'click_book_stay', {
+      'event_category': 'CTA',
+      'room_name': roomName
+    });
+  }
+
   // 1. MANDATORY AUTHENTICATION & EMAIL VERIFICATION GUARD ON BOOKINGS
   const firebaseUser = (window.TajFirebase && window.TajFirebase.auth) ? window.TajFirebase.auth.currentUser : null;
   const currentUser = firebaseUser || tajAuth.currentUser;
@@ -1795,6 +1811,26 @@ function initReservationDrawer() {
       const guestName = document.getElementById('drawer-guest-name')?.value.trim() || '';
       const guestPhone = document.getElementById('drawer-guest-phone')?.value.trim() || '';
       const guestEmail = document.getElementById('drawer-guest-email')?.value.trim() || '';
+
+      if (!guestName) {
+        showTajToast('Name Required', 'Please enter your full name for the reservation.', 'alert-circle');
+        document.getElementById('drawer-guest-name')?.focus();
+        return;
+      }
+
+      const cleanPhone = guestPhone.replace(/[^0-9]/g, '');
+      if (cleanPhone.length < 10) {
+        showTajToast('Valid Phone Required', 'Please enter a valid 10-digit mobile number.', 'alert-circle');
+        document.getElementById('drawer-guest-phone')?.focus();
+        return;
+      }
+
+      if (!tajState.checkIn || !tajState.checkOut) {
+        showTajToast('Dates Required', 'Please select valid check-in and check-out dates.', 'calendar');
+        return;
+      }
+
+      showTajToast('Reservation Enquiry Received', 'Connecting you to the reservation desk...', 'check');
 
       const roomMeta = {
         roomName: tajState.selectedRoom || 'Mandakini Premium Cottage',
