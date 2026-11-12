@@ -117,37 +117,45 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
 
       <!-- LEFT: CUSTOM FLAME EMBLEM & BRAND TYPOGRAPHY -->
-      <a href="./index.html" class="flex items-center gap-3 md:gap-4 group shrink-0" aria-label="Arogyadham Swasthya Kutir">
-        <!-- THE CUSTON FLAME EMBLEM -->
-        <div class="relative flex items-center justify-center w-12 h-12 md:w-[52px] md:h-[52px] border-2 border-[#D4AF37] bg-transparent transition-all duration-300 group-hover:border-white p-1.5 shrink-0">
-          <!-- Fine-tuned SVG mimicking the original image exactly -->
+      <a href="./index.html" class="flex items-center gap-3.5 md:gap-4 group shrink-0" aria-label="Arogyadham Swasthya Kutir">
+        <!-- THE REFINED SOLID-BLACK BOXED EMBLEM -->
+        <div class="relative flex items-center justify-center w-[52px] h-[52px] md:w-14 md:h-14 border-2 border-[#D4AF37] bg-black p-2 shrink-0 shadow-xl rounded-sm transition-all duration-300 group-hover:border-white">
+          <!-- Fine-tuned exact vector SVG replicating image_80.png -->
           <svg class="w-full h-full" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Flame outer glow and organic curves -->
-            <path d="M50 14 C50 14, 63.5 35.5, 63.5 53 C63.5 61.5, 57.5 67, 50 67 C42.5 67, 36.5 61.5, 36.5 53 C36.5 35.5, 50 14, 50 14 Z" fill="url(#image79FlameGrad)" />
-            <!-- Subtle inner glow for realistic heat center -->
-            <path d="M50 32 C50 32, 57 44, 57 53 C57 57.5, 53.5 61, 50 61 C46.5 61, 43 57.5, 43 53 C43 44, 50 32, 50 32 Z" fill="#FFE082" opacity="0.85" />
-            <!-- Sharp ground divider from image with small 'V' kink below wick -->
-            <path d="M14 74 L 38.5 74 L 50 64 L 61.5 74 L 86 74" stroke="#D4AF37" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+            <!-- Outer Flame Glow -->
+            <path d="M50 14 C50 14, 63.5 35.5, 63.5 53 C63.5 61.5, 57.5 67, 50 67 C42.5 67, 36.5 61.5, 36.5 53 C36.5 35.5, 50 14, 50 14 Z" fill="url(#image80FlameGrad)" filter="url(#glow)"/>
+            
+            <!-- Inner core (glowing yellow flame center) -->
+            <path d="M50 32 C50 32, 57 44, 57 53 C57 57.5, 53.5 61, 50 61 C46.5 61, 43 57.5, 43 53 C43 44, 50 32, 50 32 Z" fill="#FFE082" opacity="0.9"/>
+            
+            <!-- Ground Horizon base with exactly matching up-pointing 'V' from image_80.png -->
+            <path d="M14 74 L 41.5 74 L 50 65 L 58.5 74 L 86 74" stroke="#D4AF37" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" />
             
             <defs>
-              <!-- Smooth yellow-orange-red vertical gradient mimicking image_79.png -->
-              <linearGradient id="image79FlameGrad" x1="50" y1="14" x2="50" y2="67" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stop-color="#FFE082"/>
-                <stop offset="35%" stop-color="#FFA726"/>
-                <stop offset="70%" stop-color="#FB8C00"/>
-                <stop offset="100%" stop-color="#E65100"/>
+              <!-- Intense linear gradient replicating visual image_80.png (yellow to deep orange-red) -->
+              <linearGradient id="image80FlameGrad" x1="50" y1="14" x2="50" y2="67" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#FFD54F"/>
+                <stop offset="45%" stop-color="#FF9100"/>
+                <stop offset="80%" stop-color="#FF3D00"/>
+                <stop offset="100%" stop-color="#D50000"/>
               </linearGradient>
+              
+              <!-- WebKit friendly soft blur filter for outer glow -->
+              <filter id="glow" x="20%" y="0%" width="160%" height="160%">
+                <feGaussianBlur stdDeviation="1.5" result="blur" />
+                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+              </filter>
             </defs>
           </svg>
         </div>
 
         <!-- THE BRAND TYPOGRAPHY -->
         <div class="flex flex-col select-none justify-center">
-          <!-- Huge luxury serif text "AROGYADHAM" -->
+          <!-- Uppercase Luxury Serif "AROGYADHAM" -->
           <span class="text-base sm:text-lg md:text-[23px] font-cinzel tracking-[0.16em] text-white font-medium transition-colors duration-300 group-hover:text-tajGold leading-none mb-1 md:mb-1.5">
             AROGYADHAM
           </span>
-          <!-- Sleek spaced "SWASTHYA KUTIR" Sub-brand label -->
+          <!-- Sub-brand label "SWASTHYA KUTIR" in gold with high letter-spacing -->
           <span class="text-[9px] sm:text-[10px] md:text-[10.5px] font-serif tracking-[0.24em] font-medium text-tajGold uppercase leading-none">
             SWASTHYA KUTIR
           </span>
