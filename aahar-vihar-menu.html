@@ -96,6 +96,89 @@
     ::-webkit-scrollbar { width: 6px; height: 6px; }
     ::-webkit-scrollbar-track { background: #FAF8F5; }
     ::-webkit-scrollbar-thumb { background: #b98944; border-radius: 3px; }
+
+    /* 21st.dev Interactive Pill Hover Button */
+    .taj-interactive-btn {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border-radius: 9999px;
+      border: 1px solid rgba(192, 160, 96, 0.45);
+      background-color: #141414;
+      color: #ffffff;
+      padding: 0.65rem 1.5rem;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: border-color 0.35s ease, box-shadow 0.35s ease;
+      isolation: isolate;
+    }
+
+    .taj-interactive-btn:hover {
+      border-color: #c0a060;
+      box-shadow: 0 8px 22px -6px rgba(192, 160, 96, 0.45);
+    }
+
+    /* Expanding dot background */
+    .taj-btn-dot {
+      position: absolute;
+      left: 1.15rem;
+      width: 7px;
+      height: 7px;
+      border-radius: 9999px;
+      background-color: #c0a060;
+      transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease;
+      z-index: 0;
+    }
+
+    .taj-interactive-btn:hover .taj-btn-dot {
+      transform: scale(46);
+    }
+
+    /* Default label (slides right & fades out on hover) */
+    .taj-btn-label-default {
+      position: relative;
+      z-index: 10;
+      display: inline-block;
+      padding-left: 0.75rem;
+      transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease;
+    }
+
+    .taj-interactive-btn:hover .taj-btn-label-default {
+      transform: translateX(2.5rem);
+      opacity: 0;
+    }
+
+    /* Hover label + Arrow (slides in from left on hover) */
+    .taj-btn-label-hover {
+      position: absolute;
+      inset: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      color: #ffffff;
+      transform: translateX(-2.5rem);
+      opacity: 0;
+      transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease;
+    }
+
+    .taj-interactive-btn:hover .taj-btn-label-hover {
+      transform: translateX(0);
+      opacity: 1;
+    }
+
+    /* Navbar compact variant so it fits cleanly in the top header */
+    .taj-interactive-btn.taj-btn-nav {
+      padding: 0.5rem 1.25rem;
+      font-size: 10.5px;
+      background-color: rgba(20, 20, 20, 0.9);
+    }
   </style>
 </head>
 <body class="bg-tajIvory text-tajDark font-sans antialiased selection:bg-tajGold selection:text-white min-h-screen flex flex-col justify-between pt-20 overflow-x-hidden">
@@ -192,9 +275,14 @@
         <a 
           href="./index.html#booking-widget" 
           onclick="gtag('event', 'click_book_stay', {'event_category': 'CTA'});"
-          class="flex items-center justify-center h-9 px-4 sm:px-5 text-xs font-bold uppercase tracking-widest bg-tajGold hover:bg-tajGoldHover text-white rounded-sm shadow-md transition-all duration-300 whitespace-nowrap cursor-pointer"
+          class="taj-interactive-btn taj-btn-nav whitespace-nowrap"
         >
-          BOOK A STAY
+          <span class="taj-btn-dot" aria-hidden="true"></span>
+          <span class="taj-btn-label-default">BOOK A STAY</span>
+          <span class="taj-btn-label-hover">
+            <span>BOOK A STAY</span>
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6l6 6-6 6"/></svg>
+          </span>
         </a>
 
         <!-- Mobile Hamburger Icon (< 1024px) -->
@@ -249,8 +337,13 @@
 
       <!-- Book a Stay Button in Mobile Drawer -->
       <div class="pt-1">
-        <button onclick="window.location.href='./index.html#rooms-section'; toggleMobileMenu(true);" class="w-full py-3.5 text-xs font-bold tracking-widest uppercase bg-tajGold hover:bg-tajGoldHover text-white rounded-sm shadow-md transition-all text-center cursor-pointer">
-          BOOK A STAY
+        <button type="button" onclick="window.location.href='./index.html#rooms-section'; toggleMobileMenu(true);" class="w-full taj-interactive-btn">
+          <span class="taj-btn-dot" aria-hidden="true"></span>
+          <span class="taj-btn-label-default">BOOK A STAY</span>
+          <span class="taj-btn-label-hover">
+            <span>BOOK A STAY</span>
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6l6 6-6 6"/></svg>
+          </span>
         </button>
       </div>
     </div>
