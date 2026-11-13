@@ -194,6 +194,33 @@
       font-size: 10.5px;
       background-color: rgba(20, 20, 20, 0.9);
     }
+
+    /* Vertical Slot-Machine Digit Roll Animation */
+    .price-roll-wrap {
+      display: inline-flex;
+      align-items: baseline;
+      overflow: hidden;
+      line-height: 1.05;
+    }
+    .digit-col {
+      display: inline-block;
+      height: 1.05em;
+      overflow: hidden;
+      vertical-align: bottom;
+    }
+    .digit-strip {
+      display: flex;
+      flex-direction: column;
+      transform: translateY(0%);
+      transition: transform 1.35s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: transform;
+    }
+    .digit-strip span {
+      height: 1.05em;
+      line-height: 1.05em;
+      display: block;
+      text-align: center;
+    }
   </style>
 </head>
 
@@ -479,7 +506,7 @@
                       <h3 class="font-cinzel text-2xl font-bold text-sanctuary-charcoal">Mandakini Cottages</h3>
                     </div>
                     <div class="text-right flex-shrink-0">
-                      <span class="font-cinzel text-2xl sm:text-3xl font-bold text-sanctuary-charcoal">₹12,000</span>
+                      <span class="font-cinzel text-2xl sm:text-3xl font-bold text-sanctuary-charcoal">₹<span class="js-roll-amount" data-target="12,000">12,000</span></span>
                       <span class="text-[10px] text-sanctuary-muted block">+ GST / night</span>
                     </div>
                   </div>
@@ -545,7 +572,7 @@
                       <h3 class="font-cinzel text-2xl font-bold text-sanctuary-charcoal">Paishwani Cottages</h3>
                     </div>
                     <div class="text-right flex-shrink-0">
-                      <span class="font-cinzel text-2xl sm:text-3xl font-bold text-sanctuary-charcoal">₹10,000</span>
+                      <span class="font-cinzel text-2xl sm:text-3xl font-bold text-sanctuary-charcoal">₹<span class="js-roll-amount" data-target="10,000">10,000</span></span>
                       <span class="text-[10px] text-sanctuary-muted block">+ GST / night</span>
                     </div>
                   </div>
@@ -611,7 +638,7 @@
                       <h3 class="font-cinzel text-2xl font-bold text-sanctuary-charcoal">Vaidehi Suites</h3>
                     </div>
                     <div class="text-right flex-shrink-0">
-                      <span class="font-cinzel text-2xl sm:text-3xl font-bold text-sanctuary-charcoal">₹7,500</span>
+                      <span class="font-cinzel text-2xl sm:text-3xl font-bold text-sanctuary-charcoal">₹<span class="js-roll-amount" data-target="7,500">7,500</span></span>
                       <span class="text-[10px] text-sanctuary-muted block">+ GST / night</span>
                     </div>
                   </div>
@@ -677,7 +704,7 @@
                       <h3 class="font-cinzel text-2xl font-bold text-sanctuary-charcoal">Vaidehi Twin Rooms</h3>
                     </div>
                     <div class="text-right flex-shrink-0">
-                      <span class="font-cinzel text-2xl sm:text-3xl font-bold text-sanctuary-charcoal">₹5,500</span>
+                      <span class="font-cinzel text-2xl sm:text-3xl font-bold text-sanctuary-charcoal">₹<span class="js-roll-amount" data-target="5,500">5,500</span></span>
                       <span class="text-[10px] text-sanctuary-muted block">+ GST / night</span>
                     </div>
                   </div>
@@ -1489,6 +1516,74 @@
         try { lucide.createIcons(); } catch (err) { console.warn(err); }
       }
     });
+  </script>
+  <!-- Vertical Slot-Machine Digit Roll Script -->
+  <script>
+  (function() {
+    const els = document.querySelectorAll('.js-roll-amount');
+    if (!els.length) return;
+
+    els.forEach((el) => {
+      const targetText = (el.getAttribute('data-target') || el.textContent).trim();
+      el.classList.add('price-roll-wrap');
+      el.innerHTML = '';
+
+      const strips = [];
+
+      [...targetText].forEach((char, idx) => {
+        if (/\d/.test(char)) {
+          const targetDigit = parseInt(char, 10);
+          const col = document.createElement('span');
+          col.className = 'digit-col';
+
+          const strip = document.createElement('span');
+          strip.className = 'digit-strip';
+          strip.style.transitionDelay = `${idx * 75}ms`;
+
+          // Build 2 full cycles of 0-9 + final target digit for authentic slot-roll motion
+          const sequence = [];
+          for (let cycle = 0; cycle < 2; cycle++) {
+            for (let d = 0; d <= 9; d++) sequence.push(d);
+          }
+          for (let d = 0; d <= targetDigit; d++) sequence.push(d);
+
+          sequence.forEach((num) => {
+            const s = document.createElement('span');
+            s.textContent = num;
+            strip.appendChild(s);
+          });
+
+          col.appendChild(strip);
+          el.appendChild(col);
+          strips.push({ strip, finalIndex: sequence.length - 1 });
+        } else {
+          // Keep comma separator static
+          const sep = document.createElement('span');
+          sep.textContent = char;
+          el.appendChild(sep);
+        }
+      });
+
+      const triggerRoll = () => {
+        strips.forEach(({ strip, finalIndex }) => {
+          const pct = (finalIndex / (finalIndex + 1)) * 100;
+          strip.style.transform = `translateY(-${pct}%)`;
+        });
+      };
+
+      // Trigger on page load & when card enters viewport
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            requestAnimationFrame(() => requestAnimationFrame(triggerRoll));
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.25 });
+
+      observer.observe(el);
+    });
+  })();
   </script>
 </body>
 
