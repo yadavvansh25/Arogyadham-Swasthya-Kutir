@@ -119,6 +119,33 @@
 
   <!-- Custom Taj Styles -->
   <link rel="stylesheet" href="styles.css">
+
+  <style>
+    .cf-stage {
+      perspective: calc(var(--cf-card) * 3);
+      touch-action: pan-y;
+    }
+    .cf-track {
+      height: var(--cf-card);
+      transform-style: preserve-3d;
+    }
+    .cf-card {
+      width: var(--cf-card);
+      left: 50%;
+      top: 0;
+      transform-style: preserve-3d;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      will-change: transform, opacity;
+    }
+    @keyframes cfFadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .cf-caption-animate {
+      animation: cfFadeIn 0.3s ease-out forwards;
+    }
+  </style>
 </head>
 
 <body
@@ -475,6 +502,7 @@
                   <div class="border-b border-taj-border pb-3">
                     <h3 class="font-cinzel text-2xl font-bold text-taj-charcoal uppercase">
                       Panchvati
+
                     </h3>
                     <p class="text-xs text-emerald-800 font-semibold uppercase tracking-wider mt-0.5">
                       Family, Pilgrim &amp; Group Accommodations
@@ -759,178 +787,50 @@
       </section>
 
       <!-- ================= 5. PART 1: INTEGRATIVE HEALTH & HEALING ================= -->
-      <section id="wellness-health-part1" class="py-16 sm:py-24 bg-[#FAF8F5] border-b border-taj-gold/20 scroll-mt-20">
+      <section id="wellness-health-part1" class="bg-[#FAF8F5] py-16 sm:py-24 overflow-hidden border-t border-gray-200/60">
         <a id="services-section" class="sr-only"></a>
         <a id="wellness-facilities" class="sr-only"></a>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-8">
+          <span class="text-[11px] font-semibold tracking-[0.25em] text-tajGold uppercase block mb-2">
+            HOLISTIC WELLNESS
+          </span>
+          <h2 class="text-2xl sm:text-4xl font-cinzel tracking-[0.12em] text-gray-900 uppercase">
+            INTEGRATIVE HEALTH &amp; HEALING
+          </h2>
+          <p class="text-sm sm:text-base font-serif italic text-gray-600 max-w-2xl mx-auto mt-3">
+            Authentic Ayurvedic therapies, Kerala Panchakarma, and clinical healing administered by expert physicians.
+          </p>
+        </div>
 
-          <!-- Section Heading -->
-          <div class="text-center mb-10 sm:mb-14 max-w-3xl mx-auto">
-            <span class="taj-section-title-line">
-              HOLISTIC WELLNESS
-            </span>
-            <h2 class="font-cinzel text-2xl sm:text-3xl md:text-4xl font-bold text-taj-charcoal uppercase tracking-wider mt-2.5 mb-2">
-              INTEGRATIVE HEALTH &amp; HEALING
-            </h2>
-            <p class="font-cormorant italic text-lg sm:text-xl text-taj-body max-w-2xl mx-auto">
-              Authentic Ayurvedic therapies, Kerala Panchakarma, and clinical healing administered by expert physicians.
-            </p>
-          </div>
-
-          <!-- 3D Coverflow Stage Container -->
-          <div id="cf-stage-container" tabindex="0" class="relative w-full h-[360px] sm:h-[430px] md:h-[470px] overflow-hidden select-none outline-none cursor-grab active:cursor-grabbing focus:ring-1 focus:ring-tajGold/40 rounded-2xl">
+        <!-- 3D Coverflow Carousel Wrapper -->
+        <div id="wellnessCoverflow" class="w-full select-none" style="--cf-card: clamp(210px, 26vw, 310px);" role="region" aria-roledescription="carousel" aria-label="Integrative Health and Healing">
+          <div class="relative max-w-6xl mx-auto">
             
-            <!-- Left Chevron Arrow -->
-            <button 
-              id="cf-prev-btn" 
-              type="button" 
-              aria-label="Previous facility" 
-              class="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-40 w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-white/90 backdrop-blur-md border border-tajGold/40 shadow-lg text-tajCharcoal hover:bg-tajGold hover:text-white hover:border-tajGold transition-all duration-300 flex items-center justify-center cursor-pointer group">
-              <i data-lucide="chevron-left" class="w-5 h-5 transition-transform group-hover:-translate-x-0.5"></i>
+            <!-- 3D Perspective Frame -->
+            <div id="cfFrame" tabindex="0" class="cf-stage cursor-grab overflow-hidden py-10 outline-none active:cursor-grabbing">
+              <div id="cfTrack" class="cf-track relative">
+                <!-- Cards injected cleanly via JS -->
+              </div>
+            </div>
+
+            <!-- Left & Right Navigation Buttons -->
+            <button type="button" id="cfPrevBtn" aria-label="Previous slide" class="absolute left-3 sm:left-6 top-1/2 z-[200] -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full bg-white/85 hover:bg-white text-gray-900 border border-gray-200 shadow-lg backdrop-blur transition hover:scale-105">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
             </button>
-
-            <!-- Right Chevron Arrow -->
-            <button 
-              id="cf-next-btn" 
-              type="button" 
-              aria-label="Next facility" 
-              class="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-40 w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-white/90 backdrop-blur-md border border-tajGold/40 shadow-lg text-tajCharcoal hover:bg-tajGold hover:text-white hover:border-tajGold transition-all duration-300 flex items-center justify-center cursor-pointer group">
-              <i data-lucide="chevron-right" class="w-5 h-5 transition-transform group-hover:translate-x-0.5"></i>
+            <button type="button" id="cfNextBtn" aria-label="Next slide" class="absolute right-3 sm:right-6 top-1/2 z-[200] -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full bg-white/85 hover:bg-white text-gray-900 border border-gray-200 shadow-lg backdrop-blur transition hover:scale-105">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
             </button>
-
-            <!-- 3D Perspective Stage -->
-            <div id="cf-stage" class="cf-stage-perspective relative w-full h-full flex items-center justify-center">
-              
-              <!-- Card 0: Ayurveda Hospital -->
-              <div class="cf-card-3d" data-index="0">
-                <div class="w-full h-full rounded-2xl overflow-hidden shadow-2xl border border-tajGold/40 bg-black relative group">
-                  <img 
-                    src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&h=800&fit=crop&q=80" 
-                    alt="Ayurveda Hospital" 
-                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 pointer-events-none"
-                    loading="lazy"
-                  />
-                  <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent pointer-events-none"></div>
-                  <div class="absolute bottom-4 left-4 right-4 pointer-events-none">
-                    <span class="text-tajGoldLight text-[10px] tracking-widest uppercase font-semibold block">Ayurvedic Healthcare</span>
-                    <h4 class="text-white font-serif text-base sm:text-lg font-semibold mt-0.5">Ayurveda Hospital</h4>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Card 1: Kerala Naturopathy -->
-              <div class="cf-card-3d" data-index="1">
-                <div class="w-full h-full rounded-2xl overflow-hidden shadow-2xl border border-tajGold/40 bg-black relative group">
-                  <img 
-                    src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=800&h=800&fit=crop&q=80" 
-                    alt="Kerala Naturopathy" 
-                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 pointer-events-none"
-                    loading="lazy"
-                  />
-                  <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent pointer-events-none"></div>
-                  <div class="absolute bottom-4 left-4 right-4 pointer-events-none">
-                    <span class="text-tajGoldLight text-[10px] tracking-widest uppercase font-semibold block">Natural Detoxification</span>
-                    <h4 class="text-white font-serif text-base sm:text-lg font-semibold mt-0.5">Kerala Naturopathy</h4>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Card 2: Dental Hospital -->
-              <div class="cf-card-3d" data-index="2">
-                <div class="w-full h-full rounded-2xl overflow-hidden shadow-2xl border border-tajGold/40 bg-black relative group">
-                  <img 
-                    src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800&h=800&fit=crop&q=80" 
-                    alt="Dental Hospital" 
-                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 pointer-events-none"
-                    loading="lazy"
-                  />
-                  <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent pointer-events-none"></div>
-                  <div class="absolute bottom-4 left-4 right-4 pointer-events-none">
-                    <span class="text-tajGoldLight text-[10px] tracking-widest uppercase font-semibold block">Clinical Diagnostics</span>
-                    <h4 class="text-white font-serif text-base sm:text-lg font-semibold mt-0.5">Dental Hospital</h4>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Card 3: Physiotherapy Centre -->
-              <div class="cf-card-3d" data-index="3">
-                <div class="w-full h-full rounded-2xl overflow-hidden shadow-2xl border border-tajGold/40 bg-black relative group">
-                  <img 
-                    src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=800&fit=crop&q=80" 
-                    alt="Physiotherapy Centre" 
-                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 pointer-events-none"
-                    loading="lazy"
-                  />
-                  <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent pointer-events-none"></div>
-                  <div class="absolute bottom-4 left-4 right-4 pointer-events-none">
-                    <span class="text-tajGoldLight text-[10px] tracking-widest uppercase font-semibold block">Mobility Therapy</span>
-                    <h4 class="text-white font-serif text-base sm:text-lg font-semibold mt-0.5">Physiotherapy Centre</h4>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Card 4: Yog Sadan -->
-              <div class="cf-card-3d" data-index="4">
-                <div class="w-full h-full rounded-2xl overflow-hidden shadow-2xl border border-tajGold/40 bg-black relative group">
-                  <img 
-                    src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&h=800&fit=crop&q=80" 
-                    alt="Yog Sadan" 
-                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 pointer-events-none"
-                    loading="lazy"
-                  />
-                  <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent pointer-events-none"></div>
-                  <div class="absolute bottom-4 left-4 right-4 pointer-events-none">
-                    <span class="text-tajGoldLight text-[10px] tracking-widest uppercase font-semibold block">Mind &amp; Body Rejuvenation</span>
-                    <h4 class="text-white font-serif text-base sm:text-lg font-semibold mt-0.5">Yog Sadan</h4>
-                  </div>
-                </div>
-              </div>
-
-            </div>
           </div>
 
-          <!-- Pagination Indicator Dots -->
-          <div class="flex items-center justify-center gap-2.5 mt-6" id="cf-dots">
-            <button type="button" aria-label="Go to slide 1" data-dot="0" class="w-3 h-3 rounded-full transition-all duration-300 bg-tajGold scale-110 cursor-pointer"></button>
-            <button type="button" aria-label="Go to slide 2" data-dot="1" class="w-2.5 h-2.5 rounded-full transition-all duration-300 bg-tajGold/30 hover:bg-tajGold/60 cursor-pointer"></button>
-            <button type="button" aria-label="Go to slide 3" data-dot="2" class="w-2.5 h-2.5 rounded-full transition-all duration-300 bg-tajGold/30 hover:bg-tajGold/60 cursor-pointer"></button>
-            <button type="button" aria-label="Go to slide 4" data-dot="3" class="w-2.5 h-2.5 rounded-full transition-all duration-300 bg-tajGold/30 hover:bg-tajGold/60 cursor-pointer"></button>
-            <button type="button" aria-label="Go to slide 5" data-dot="4" class="w-2.5 h-2.5 rounded-full transition-all duration-300 bg-tajGold/30 hover:bg-tajGold/60 cursor-pointer"></button>
+          <!-- Active Slide Caption & Meta Panel -->
+          <div id="cfCaptionBox" class="mt-2 flex flex-col items-center px-6 text-center max-w-md mx-auto">
+            <!-- Dynamic caption rendered here -->
           </div>
 
-          <!-- Active Slide Editorial Caption Card -->
-          <div id="cf-caption-box" class="mt-8 max-w-2xl mx-auto bg-white border border-tajGold/30 rounded-2xl p-6 sm:p-8 shadow-md text-center transition-all duration-300">
-            <span id="cf-caption-eyebrow" class="text-tajGold text-[11px] sm:text-xs tracking-[0.25em] font-semibold uppercase block transition-opacity duration-300">
-              AYURVEDIC HEALTHCARE
-            </span>
-            <h3 id="cf-caption-title" class="text-xl sm:text-2xl font-serif text-gray-900 mt-1 font-semibold transition-opacity duration-300">
-              Ayurveda Hospital
-            </h3>
-            <p id="cf-caption-desc" class="text-xs sm:text-sm text-gray-600 mt-2.5 max-w-lg mx-auto leading-relaxed transition-opacity duration-300">
-              Pulse diagnostics (Nadi Parikshan) and personalized classical Ayurvedic treatment protocols.
-            </p>
-            <div id="cf-caption-meta" class="mt-5 pt-4 border-t border-tajGold/20 grid grid-cols-2 gap-3 sm:gap-4 text-left transition-opacity duration-300 max-w-md mx-auto">
-              <div class="bg-[#FAF8F5] p-3 rounded-lg border border-tajGold/15">
-                <span id="cf-meta-key1" class="text-[10px] uppercase tracking-wider text-gray-500 block">Specialty</span>
-                <span id="cf-meta-val1" class="text-xs font-semibold text-gray-900 mt-0.5 block truncate">Nadi Parikshan &amp; Rasayana</span>
-              </div>
-              <div class="bg-[#FAF8F5] p-3 rounded-lg border border-tajGold/15">
-                <span id="cf-meta-key2" class="text-[10px] uppercase tracking-wider text-gray-500 block">Consultation</span>
-                <span id="cf-meta-val2" class="text-xs font-semibold text-gray-900 mt-0.5 block truncate">Senior Vaidyas</span>
-              </div>
-            </div>
-            <div class="mt-6 flex justify-center">
-              <button 
-                id="cf-caption-cta" 
-                type="button" 
-                onclick="showFacilityModal('Ayurveda Hospital', 'Pulse diagnostics (Nadi Parikshan) and personalized classical Ayurvedic treatment protocols.')"
-                class="inline-flex items-center gap-2 px-6 py-2.5 bg-tajCharcoal hover:bg-tajGold text-white text-xs font-semibold uppercase tracking-wider rounded transition-colors duration-300 shadow cursor-pointer">
-                <span>LEARN MORE</span>
-                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-              </button>
-            </div>
+          <!-- Pagination Dots -->
+          <div id="cfDots" class="mt-6 flex items-center justify-center gap-2">
+            <!-- Dots rendered here -->
           </div>
-
         </div>
       </section>
 
@@ -1904,263 +1804,255 @@
 
   <!-- ================= 3D COVERFLOW CAROUSEL ENGINE ================= -->
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const container = document.getElementById('cf-stage-container');
-      const stage = document.getElementById('cf-stage');
-      const prevBtn = document.getElementById('cf-prev-btn');
-      const nextBtn = document.getElementById('cf-next-btn');
-      const dotsContainer = document.getElementById('cf-dots');
-      const cards = Array.from(document.querySelectorAll('.cf-card-3d'));
-      
-      if (!container || !stage || cards.length === 0) return;
-
-      const SLIDES_DATA = [
-        {
-          category: 'AYURVEDIC HEALTHCARE',
-          title: 'Ayurveda Hospital',
-          desc: 'Pulse diagnostics (Nadi Parikshan) and personalized classical Ayurvedic treatment protocols.',
-          meta1: { key: 'Specialty', val: 'Nadi Parikshan & Rasayana' },
-          meta2: { key: 'Consultation', val: 'Senior Vaidyas' }
-        },
-        {
-          category: 'NATURAL DETOXIFICATION',
-          title: 'Kerala Naturopathy',
-          desc: 'Authentic Kerala-style Panchakarma, Abhyanga oil therapies, and herbal steam baths.',
-          meta1: { key: 'Therapies', val: 'Panchakarma & Abhyanga' },
-          meta2: { key: 'Tradition', val: 'Authentic Kerala Lineage' }
-        },
-        {
-          category: 'CLINICAL DIAGNOSTICS',
-          title: 'Dental Hospital',
-          desc: 'Advanced dental care equipped with modern precision diagnostics and UK Seva affiliation.',
-          meta1: { key: 'Affiliation', val: 'UK Seva Affiliated' },
-          meta2: { key: 'Care', val: 'Precision Diagnostics' }
-        },
-        {
-          category: 'MOBILITY THERAPY',
-          title: 'Physiotherapy Centre',
-          desc: 'Comprehensive neuro-musculoskeletal rehabilitation, posture alignment, and post-operative mobility care.',
-          meta1: { key: 'Focus', val: 'Neuro-Musculoskeletal Rehab' },
-          meta2: { key: 'Care', val: 'Post-Operative & Posture' }
-        },
-        {
-          category: 'MIND & BODY REJUVENATION',
-          title: 'Yog Sadan',
-          desc: 'Open-air waterfront lawns for guided dawn pranayama, meditation, and therapeutic asanas.',
-          meta1: { key: 'Setting', val: 'Mandakini Waterfront Lawns' },
-          meta2: { key: 'Practice', val: 'Dawn Pranayama & Asanas' }
-        }
-      ];
-
-      const n = cards.length;
-      const rotate = 44;
-      const depth = 0.6;
-      const falloff = 0.56;
-      const fade = 0.12;
-      const gap = 0.06;
-
-      let currentPos = 0;
-      let targetPos = 0;
-      let isDragging = false;
-      let startX = 0;
-      let lastX = 0;
-      let lastTime = 0;
-      let dragVelocity = 0;
-      let activeIndex = 0;
-
-      // Caption Elements
-      const eyebrowEl = document.getElementById('cf-caption-eyebrow');
-      const titleEl = document.getElementById('cf-caption-title');
-      const descEl = document.getElementById('cf-caption-desc');
-      const metaKey1 = document.getElementById('cf-meta-key1');
-      const metaVal1 = document.getElementById('cf-meta-val1');
-      const metaKey2 = document.getElementById('cf-meta-key2');
-      const metaVal2 = document.getElementById('cf-meta-val2');
-      const ctaBtn = document.getElementById('cf-caption-cta');
-      const dots = Array.from(dotsContainer ? dotsContainer.querySelectorAll('[data-dot]') : []);
-
-      function updateCaption(idx) {
-        const item = SLIDES_DATA[idx];
-        if (!item) return;
-
-        const animTargets = [eyebrowEl, titleEl, descEl, metaVal1, metaVal2];
-        animTargets.forEach(el => { if (el) el.style.opacity = '0.3'; });
-
-        setTimeout(() => {
-          if (eyebrowEl) eyebrowEl.textContent = item.category;
-          if (titleEl) titleEl.textContent = item.title;
-          if (descEl) descEl.textContent = item.desc;
-          if (metaKey1) metaKey1.textContent = item.meta1.key;
-          if (metaVal1) metaVal1.textContent = item.meta1.val;
-          if (metaKey2) metaKey2.textContent = item.meta2.key;
-          if (metaVal2) metaVal2.textContent = item.meta2.val;
-          if (ctaBtn) {
-            ctaBtn.onclick = () => {
-              if (typeof showFacilityModal === 'function') {
-                showFacilityModal(item.title, item.desc);
-              }
-            };
-          }
-          animTargets.forEach(el => { if (el) el.style.opacity = '1'; });
-          if (typeof lucide !== 'undefined') {
-            try { lucide.createIcons(); } catch (_) {}
-          }
-        }, 120);
-
-        dots.forEach((dot, dIdx) => {
-          if (dIdx === idx) {
-            dot.className = 'w-3 h-3 rounded-full transition-all duration-300 bg-tajGold scale-110 cursor-pointer';
-          } else {
-            dot.className = 'w-2.5 h-2.5 rounded-full transition-all duration-300 bg-tajGold/30 hover:bg-tajGold/60 cursor-pointer';
-          }
-        });
+  (function() {
+    const SLIDES = [
+      {
+        src: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&h=800&fit=crop&q=80",
+        alt: "Ayurveda Hospital Nadi Parikshan",
+        category: "Ayurvedic Healthcare",
+        title: "Ayurveda Hospital",
+        subtitle: "Pulse diagnostics (Nadi Parikshan) and personalized classical Ayurvedic treatment protocols.",
+        meta: [
+          { label: "Diagnostics", value: "Nadi Parikshan" },
+          { label: "Consultation", value: "Senior Vaidyas" }
+        ]
+      },
+      {
+        src: "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=800&h=800&fit=crop&q=80",
+        alt: "Kerala Naturopathy Panchakarma",
+        category: "Natural Detoxification",
+        title: "Kerala Naturopathy",
+        subtitle: "Authentic Kerala-style Panchakarma, Abhyanga oil therapies, and herbal steam baths.",
+        meta: [
+          { label: "Therapy", value: "Panchakarma & Abhyanga" },
+          { label: "Lineage", value: "Authentic Kerala" }
+        ]
+      },
+      {
+        src: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800&h=800&fit=crop&q=80",
+        alt: "Dental Hospital Precision Care",
+        category: "Clinical Diagnostics",
+        title: "Dental Hospital",
+        subtitle: "Advanced dental care equipped with modern precision diagnostics and UK Seva affiliation.",
+        meta: [
+          { label: "Affiliation", value: "UK Seva" },
+          { label: "Care", value: "Modern Diagnostics" }
+        ]
+      },
+      {
+        src: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=800&fit=crop&q=80",
+        alt: "Physiotherapy Centre Rehabilitation",
+        category: "Mobility Therapy",
+        title: "Physiotherapy Centre",
+        subtitle: "Comprehensive neuro-musculoskeletal rehabilitation, posture alignment, and post-operative mobility care.",
+        meta: [
+          { label: "Focus", value: "Neuro-Musculoskeletal" },
+          { label: "Support", value: "Post-Operative Care" }
+        ]
+      },
+      {
+        src: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&h=800&fit=crop&q=80",
+        alt: "Yog Sadan Waterfront Pranayama",
+        category: "Mind & Body Rejuvenation",
+        title: "Yog Sadan",
+        subtitle: "Open-air waterfront lawns for guided dawn pranayama, meditation, and therapeutic asanas.",
+        meta: [
+          { label: "Setting", value: "Waterfront Lawns" },
+          { label: "Sessions", value: "Dawn Pranayama" }
+        ]
       }
+    ];
 
-      function render() {
-        const cardWidth = cards[0].offsetWidth || 280;
-        const pitch = cardWidth * (0.68 + gap);
+    const frame = document.getElementById("cfFrame");
+    const track = document.getElementById("cfTrack");
+    const captionBox = document.getElementById("cfCaptionBox");
+    const dotsBox = document.getElementById("cfDots");
+    const prevBtn = document.getElementById("cfPrevBtn");
+    const nextBtn = document.getElementById("cfNextBtn");
 
-        cards.forEach((card, i) => {
-          let offset = i - currentPos;
-          while (offset > n / 2) offset -= n;
-          while (offset < -n / 2) offset += n;
+    if (!frame || !track) return;
 
-          const ramp = Math.min(1.5, Math.pow(Math.abs(offset), falloff));
-          const tilt = Math.sign(offset) * Math.min(1, Math.pow(Math.min(1, Math.abs(offset)), falloff)) * rotate;
-          const x = offset * pitch;
-          const z = -depth * cardWidth * ramp;
-          const rotY = -tilt;
-          const opacity = Math.max(0.12, 1 - fade * Math.abs(offset) * 2.2);
-          const zIndex = Math.round(100 - Math.abs(offset) * 10);
+    const count = SLIDES.length;
+    const rotate = 44;
+    const depth = 0.6;
+    const falloff = 0.56;
+    const fade = 0.12;
+    const gap = 0.05;
+    const loop = true;
 
-          card.style.transform = `translateX(calc(-50% + ${x.toFixed(2)}px)) translateY(-50%) translateZ(${z.toFixed(2)}px) rotateY(${rotY.toFixed(2)}deg)`;
-          card.style.opacity = opacity.toFixed(3);
-          card.style.zIndex = zIndex;
-        });
+    let pos = 0;
+    let target = 0;
+    let cardWidth = 0;
+    let rafId = null;
+    let selected = 0;
+    let drag = null;
 
-        const currentActive = ((Math.round(currentPos) % n) + n) % n;
-        if (currentActive !== activeIndex) {
-          activeIndex = currentActive;
-          updateCaption(activeIndex);
-        }
-      }
-
-      function loop() {
-        if (!isDragging) {
-          currentPos += (targetPos - currentPos) * 0.14;
-          if (Math.abs(targetPos - currentPos) < 0.001) {
-            currentPos = targetPos;
-          }
-        }
-        render();
-        requestAnimationFrame(loop);
-      }
-      requestAnimationFrame(loop);
-
-      // Pointer Drag & Flick Support
-      container.addEventListener('pointerdown', (e) => {
-        isDragging = true;
-        startX = e.clientX;
-        lastX = e.clientX;
-        lastTime = performance.now();
-        dragVelocity = 0;
-        try { container.setPointerCapture(e.pointerId); } catch (_) {}
+    // Build Cards & Dots
+    const cardEls = SLIDES.map((slide, index) => {
+      const card = document.createElement("div");
+      card.className = "cf-card absolute aspect-square overflow-hidden rounded-2xl bg-gray-900 shadow-2xl border border-tajGold/30 cursor-pointer";
+      card.setAttribute("role", "group");
+      card.setAttribute("aria-label", `${index + 1} of ${count}`);
+      card.innerHTML = `<img src="${slide.src}" alt="${slide.alt}" draggable="false" class="h-full w-full select-none object-cover pointer-events-none" />`;
+      card.addEventListener("click", () => {
+        if (!drag || Math.abs(drag.moved) < 6) goTo(index);
       });
-
-      container.addEventListener('pointermove', (e) => {
-        if (!isDragging) return;
-        const dx = e.clientX - lastX;
-        const now = performance.now();
-        const dt = now - lastTime;
-        if (dt > 0) dragVelocity = dx / dt;
-        lastX = e.clientX;
-        lastTime = now;
-
-        const cardWidth = cards[0].offsetWidth || 280;
-        const pitch = cardWidth * (0.68 + gap);
-        currentPos -= dx / pitch;
-        targetPos = currentPos;
-      });
-
-      function onPointerEnd(e) {
-        if (!isDragging) return;
-        isDragging = false;
-        try { container.releasePointerCapture(e.pointerId); } catch (_) {}
-
-        if (Math.abs(dragVelocity) > 0.35) {
-          const flickStep = Math.sign(dragVelocity) * (Math.abs(dragVelocity) > 1.2 ? 2 : 1);
-          targetPos -= flickStep;
-        }
-        targetPos = Math.round(targetPos);
-      }
-
-      container.addEventListener('pointerup', onPointerEnd);
-      container.addEventListener('pointercancel', onPointerEnd);
-
-      // Card Click Handler
-      cards.forEach((card, idx) => {
-        card.addEventListener('click', (e) => {
-          if (Math.abs(e.clientX - startX) > 6) return; // Ignore drag
-          let offset = idx - currentPos;
-          while (offset > n / 2) offset -= n;
-          while (offset < -n / 2) offset += n;
-
-          if (Math.abs(offset) > 0.3) {
-            targetPos = Math.round(currentPos + offset);
-          } else {
-            // Clicked active center slide: open modal
-            const item = SLIDES_DATA[idx];
-            if (item && typeof showFacilityModal === 'function') {
-              showFacilityModal(item.title, item.desc);
-            }
-          }
-        });
-      });
-
-      // Chevron Navigation Buttons
-      if (prevBtn) {
-        prevBtn.addEventListener('click', (e) => {
-          e.stopPropagation();
-          targetPos = Math.round(targetPos) - 1;
-        });
-      }
-      if (nextBtn) {
-        nextBtn.addEventListener('click', (e) => {
-          e.stopPropagation();
-          targetPos = Math.round(targetPos) + 1;
-        });
-      }
-
-      // Keyboard Navigation
-      container.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowLeft') {
-          e.preventDefault();
-          targetPos = Math.round(targetPos) - 1;
-        } else if (e.key === 'ArrowRight') {
-          e.preventDefault();
-          targetPos = Math.round(targetPos) + 1;
-        }
-      });
-
-      // Pagination Dots
-      dots.forEach((dot, dotIdx) => {
-        dot.addEventListener('click', () => {
-          const currentNorm = ((Math.round(currentPos) % n) + n) % n;
-          let diff = dotIdx - currentNorm;
-          while (diff > n / 2) diff -= n;
-          while (diff < -n / 2) diff += n;
-          targetPos = Math.round(currentPos) + diff;
-        });
-      });
-
-      // Window Resize Handler
-      window.addEventListener('resize', () => {
-        render();
-      });
-
-      // Initial Caption Render
-      updateCaption(0);
+      track.appendChild(card);
+      return card;
     });
+
+    const dotEls = SLIDES.map((_, index) => {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.setAttribute("aria-label", `Go to slide ${index + 1}`);
+      btn.className = "h-2 rounded-full transition-all duration-300 " + (index === 0 ? "w-6 bg-tajGold" : "w-2 bg-gray-400/50 hover:bg-gray-600");
+      btn.addEventListener("click", () => goTo(index));
+      dotsBox.appendChild(btn);
+      return btn;
+    });
+
+    function indexAt(p) {
+      return ((Math.round(p) % count) + count) % count;
+    }
+
+    function renderCaption(idx) {
+      const active = SLIDES[idx];
+      const metaHtml = active.meta.map(row => `
+        <div class="flex justify-between py-1.5 border-b border-gray-200/70">
+          <dt class="text-gray-500">${row.label}</dt>
+          <dd class="font-medium text-gray-900">${row.value}</dd>
+        </div>
+      `).join("");
+
+      captionBox.innerHTML = `
+        <div class="cf-caption-animate w-full flex flex-col items-center">
+          <span class="text-[10px] font-bold tracking-[0.22em] text-tajGold uppercase">${active.category}</span>
+          <h3 class="text-xl sm:text-2xl font-cinzel text-gray-900 mt-1">${active.title}</h3>
+          <p class="mt-2 text-xs sm:text-sm text-gray-600 leading-relaxed">${active.subtitle}</p>
+          <dl class="mt-5 w-full max-w-[260px] text-xs">${metaHtml}</dl>
+          <a href="#booking-widget" class="inline-flex items-center gap-1.5 mt-6 text-[11px] font-bold uppercase tracking-[0.2em] text-tajGold hover:text-tajGoldHover border-b border-tajGold pb-1 transition-colors">
+            LEARN MORE <span>&rarr;</span>
+          </a>
+        </div>
+      `;
+
+      dotEls.forEach((dot, i) => {
+        dot.className = "h-2 rounded-full transition-all duration-300 " + (i === idx ? "w-6 bg-tajGold" : "w-2 bg-gray-400/50 hover:bg-gray-600");
+      });
+    }
+
+    function paint() {
+      if (!cardWidth) return;
+      const pitch = cardWidth * (1 + gap);
+
+      cardEls.forEach((card, index) => {
+        let offset = index - pos;
+        if (loop) {
+          offset = ((offset % count) + count) % count;
+          if (offset > count / 2) offset -= count;
+        }
+
+        const distance = Math.abs(offset);
+        const ramp = Math.pow(distance, falloff);
+        const tilt = Math.min(rotate * ramp, 82) * Math.sign(offset);
+
+        card.style.transform = `translateX(calc(-50% + ${offset * pitch}px)) translateZ(${-depth * cardWidth * ramp}px) rotateY(${-tilt}deg)`;
+
+        const edge = loop ? Math.min(1, Math.max(0, count / 2 - distance)) : 1;
+        card.style.opacity = String(Math.max(0, 1 - fade * distance) * edge);
+        card.style.zIndex = String(100 - Math.round(distance));
+      });
+    }
+
+    function settle(nextTarget) {
+      if (rafId !== null) cancelAnimationFrame(rafId);
+      target = nextTarget;
+      const nextIdx = indexAt(target);
+      if (nextIdx !== selected) {
+        selected = nextIdx;
+        renderCaption(selected);
+      }
+
+      function step() {
+        const remaining = target - pos;
+        if (Math.abs(remaining) < 0.0004) {
+          pos = target;
+          paint();
+          rafId = null;
+          return;
+        }
+        pos += remaining * 0.16;
+        paint();
+        rafId = requestAnimationFrame(step);
+      }
+      rafId = requestAnimationFrame(step);
+    }
+
+    function goTo(index) {
+      const t = loop ? index + Math.round((target - index) / count) * count : index;
+      settle(t);
+    }
+
+    function nudge(by) {
+      settle(Math.round(target) + by);
+    }
+
+    frame.addEventListener("pointerdown", (e) => {
+      if (rafId !== null) { cancelAnimationFrame(rafId); rafId = null; }
+      frame.setPointerCapture(e.pointerId);
+      target = pos;
+      drag = { id: e.pointerId, x: e.clientX, startPos: pos, v: 0, t: performance.now(), moved: 0 };
+    });
+
+    frame.addEventListener("pointermove", (e) => {
+      if (!drag || drag.id !== e.pointerId) return;
+      const pitch = cardWidth * (1 + gap);
+      if (!pitch) return;
+
+      const now = performance.now();
+      const prev = pos;
+      drag.moved = e.clientX - drag.x;
+      pos = drag.startPos - drag.moved / pitch;
+      drag.v = ((pos - prev) / Math.max(now - drag.t, 1)) * 1000;
+      drag.t = now;
+
+      const idx = indexAt(pos);
+      if (idx !== selected) {
+        selected = idx;
+        renderCaption(selected);
+      }
+      paint();
+    });
+
+    function endDrag(e) {
+      if (!drag || drag.id !== e.pointerId) return;
+      const carried = Math.max(-2, Math.min(2, drag.v * 0.18));
+      const finalTarget = Math.round(pos + carried);
+      setTimeout(() => { drag = null; }, 50);
+      settle(finalTarget);
+    }
+
+    frame.addEventListener("pointerup", endDrag);
+    frame.addEventListener("pointercancel", endDrag);
+    frame.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft") { e.preventDefault(); nudge(-1); }
+      if (e.key === "ArrowRight") { e.preventDefault(); nudge(1); }
+    });
+
+    prevBtn.addEventListener("click", () => nudge(-1));
+    nextBtn.addEventListener("click", () => nudge(1));
+
+    function measure() {
+      if (cardEls[0]) {
+        cardWidth = cardEls[0].offsetWidth;
+        paint();
+      }
+    }
+
+    renderCaption(0);
+    measure();
+    new ResizeObserver(measure).observe(frame);
+  })();
   </script>
 </body>
 
