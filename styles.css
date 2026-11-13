@@ -575,7 +575,8 @@ body {
 
 /* ================= HERO VIDEO & SLIDESHOW ACCELERATION ================= */
 #heroVideo,
-.swasthya-slide {
+.swasthya-slide,
+.panchvati-slide {
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
   will-change: opacity, transform;

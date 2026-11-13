@@ -737,15 +737,54 @@
             <div
               class="taj-white-card flex flex-col justify-between group overflow-hidden border border-taj-border hover:border-emerald-700/80 transition-all duration-500 shadow-sm hover:shadow-xl">
               <div>
-                <div class="relative h-64 sm:h-72 overflow-hidden">
-                  <img src="https://ik.imagekit.io/exnzknn2n/retouch_2026111315501619.jpg?updatedAt=1794565756384"
-                    alt="Panchvati - Pilgrim, Family & Group Living Wing" loading="lazy"
-                    onerror="this.onerror=null;this.src='https://ik.imagekit.io/exnzknn2n/retouch_2026111315501619.jpg?updatedAt=1794565756384';"
-                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                    decoding="async">
-                  <div
-                    class="absolute top-3 left-3 bg-emerald-800 text-white px-2.5 py-1 text-[10px] font-bold tracking-widest shadow uppercase">
+                <div class="relative w-full h-64 sm:h-72 overflow-hidden rounded-t-sm bg-black" id="panchvatiCardSlider">
+                  <!-- Slide 1 (Active on load - Provided Panchvati Image) -->
+                  <img 
+                    src="https://ik.imagekit.io/exnzknn2n/retouch_2026111315501619.jpg?updatedAt=1794565756384" 
+                    alt="Panchvati Pilgrim & Family Complex" 
+                    class="panchvati-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out opacity-100 z-10"
+                  />
+
+                  <!-- Slide 2 (Placeholder slot - ready for 2nd Panchvati photo URL) -->
+                  <img 
+                    src="https://ik.imagekit.io/exnzknn2n/retouch_2026111315501619.jpg?updatedAt=1794565756384" 
+                    alt="Panchvati Courtyard & Rooms" 
+                    class="panchvati-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out opacity-0 z-0"
+                    loading="lazy"
+                  />
+
+                  <!-- Slide 3 (Placeholder slot - ready for 3rd Panchvati photo URL) -->
+                  <img 
+                    src="https://ik.imagekit.io/exnzknn2n/retouch_2026111315501619.jpg?updatedAt=1794565756384" 
+                    alt="Panchvati Executive Family Suites" 
+                    class="panchvati-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out opacity-0 z-0"
+                    loading="lazy"
+                  />
+
+                  <!-- Slide 4 (Placeholder slot - ready for 4th Panchvati photo URL) -->
+                  <img 
+                    src="https://ik.imagekit.io/exnzknn2n/retouch_2026111315501619.jpg?updatedAt=1794565756384" 
+                    alt="Panchvati Rasoi & Campus" 
+                    class="panchvati-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out opacity-0 z-0"
+                    loading="lazy"
+                  />
+
+                  <!-- Top Badge -->
+                  <div class="absolute top-3 left-3 z-20 bg-emerald-800 text-white px-2.5 py-1 text-[10px] font-bold tracking-widest shadow uppercase">
                     Sacred Community Living
+                  </div>
+
+                  <!-- Existing Category Badge over image -->
+                  <span class="absolute bottom-3 right-3 z-20 bg-black/75 backdrop-blur-sm text-white text-[11px] font-medium px-3 py-1 rounded-sm border border-white/15">
+                    4 Versatile Categories
+                  </span>
+
+                  <!-- Minimal Slider Dots Indicator -->
+                  <div class="absolute bottom-3 left-3 z-20 flex items-center space-x-1.5 bg-black/45 px-2.5 py-1 rounded-full backdrop-blur-sm">
+                    <span class="panchvati-dot w-3.5 h-1 rounded-full bg-white transition-all duration-300"></span>
+                    <span class="panchvati-dot w-1.5 h-1 rounded-full bg-white/40 transition-all duration-300"></span>
+                    <span class="panchvati-dot w-1.5 h-1 rounded-full bg-white/40 transition-all duration-300"></span>
+                    <span class="panchvati-dot w-1.5 h-1 rounded-full bg-white/40 transition-all duration-300"></span>
                   </div>
                 </div>
 
@@ -1974,6 +2013,39 @@
         }
 
         // Cycle next
+        currentIndex = (currentIndex + 1) % slides.length;
+
+        // Fade in next slide
+        slides[currentIndex].classList.remove('opacity-0', 'z-0');
+        slides[currentIndex].classList.add('opacity-100', 'z-10');
+        if (dots[currentIndex]) {
+          dots[currentIndex].classList.remove('bg-white/40', 'w-1.5');
+          dots[currentIndex].classList.add('bg-white', 'w-3.5');
+        }
+      }, intervalTime);
+    });
+  </script>
+
+  <!-- Panchvati Card Auto Crossfade Slideshow Logic -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const slides = document.querySelectorAll('.panchvati-slide');
+      const dots = document.querySelectorAll('.panchvati-dot');
+      if (slides.length < 2) return;
+
+      let currentIndex = 0;
+      const intervalTime = 5000; // 5 Seconds interval
+
+      setInterval(() => {
+        // Fade out active slide
+        slides[currentIndex].classList.remove('opacity-100', 'z-10');
+        slides[currentIndex].classList.add('opacity-0', 'z-0');
+        if (dots[currentIndex]) {
+          dots[currentIndex].classList.remove('bg-white', 'w-3.5');
+          dots[currentIndex].classList.add('bg-white/40', 'w-1.5');
+        }
+
+        // Advance to next slide
         currentIndex = (currentIndex + 1) % slides.length;
 
         // Fade in next slide
