@@ -125,10 +125,12 @@
       perspective: calc(var(--cf-card) * 3);
       touch-action: pan-y;
     }
+
     .cf-track {
       height: var(--cf-card);
       transform-style: preserve-3d;
     }
+
     .cf-card {
       width: var(--cf-card);
       left: 50%;
@@ -138,34 +140,72 @@
       -webkit-backface-visibility: hidden;
       will-change: transform, opacity;
     }
+
     @keyframes cfFadeIn {
-      from { opacity: 0; transform: translateY(6px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(6px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
+
     .cf-caption-animate {
       animation: cfFadeIn 0.3s ease-out forwards;
     }
 
     /* Luxury Coverflow Animations */
     @keyframes slowKenBurns {
-      0%   { transform: scale(1) translate(0, 0); }
-      50%  { transform: scale(1.08) translate(-1%, -1%); }
-      100% { transform: scale(1) translate(0, 0); }
+      0% {
+        transform: scale(1) translate(0, 0);
+      }
+
+      50% {
+        transform: scale(1.08) translate(-1%, -1%);
+      }
+
+      100% {
+        transform: scale(1) translate(0, 0);
+      }
     }
 
     @keyframes goldPulseRing {
-      0%, 100% { box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(192, 160, 96, 0.45), 0 0 28px rgba(192, 160, 96, 0.22); }
-      50%      { box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.45), 0 0 0 2px rgba(192, 160, 96, 0.85), 0 0 42px rgba(192, 160, 96, 0.45); }
+
+      0%,
+      100% {
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(192, 160, 96, 0.45), 0 0 28px rgba(192, 160, 96, 0.22);
+      }
+
+      50% {
+        box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.45), 0 0 0 2px rgba(192, 160, 96, 0.85), 0 0 42px rgba(192, 160, 96, 0.45);
+      }
     }
 
     @keyframes ambientOrbFloat {
-      0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.45; }
-      50%      { transform: translate(-50%, -53%) scale(1.12); opacity: 0.75; }
+
+      0%,
+      100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.45;
+      }
+
+      50% {
+        transform: translate(-50%, -53%) scale(1.12);
+        opacity: 0.75;
+      }
     }
 
     @keyframes shimmerSweep {
-      0%   { transform: translateX(-140%) skewX(-20deg); }
-      100% { transform: translateX(240%) skewX(-20deg); }
+      0% {
+        transform: translateX(-140%) skewX(-20deg);
+      }
+
+      100% {
+        transform: translateX(240%) skewX(-20deg);
+      }
     }
 
     .cf-ambient-aura {
@@ -196,64 +236,108 @@
     /* Picture Rail Gallery Styles */
     .pr-rail {
       background: linear-gradient(to bottom, #e5dec9 0%, #d4c8a8 22%, #b5a47e 45%, #dfd7c2 65%, #9e8d68 100%);
-      box-shadow: 0 2px 6px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.7);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.7);
     }
+
     .pr-frame-black {
       border: 8px solid #1c1c1c;
-      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.12), 0 12px 24px -6px rgba(0,0,0,0.32);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12), 0 12px 24px -6px rgba(0, 0, 0, 0.32);
     }
+
     .pr-frame-oak {
       border: 8px solid #9c6f44;
-      box-shadow: inset 0 0 0 1px rgba(255,235,205,0.25), 0 12px 24px -6px rgba(0,0,0,0.28);
+      box-shadow: inset 0 0 0 1px rgba(255, 235, 205, 0.25), 0 12px 24px -6px rgba(0, 0, 0, 0.28);
     }
+
     .pr-frame-white {
       border: 8px solid #f7f5f0;
-      box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08), 0 12px 24px -6px rgba(0,0,0,0.22);
+      box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08), 0 12px 24px -6px rgba(0, 0, 0, 0.22);
     }
+
     .pr-mat {
       padding: 12px;
       background: linear-gradient(to bottom, #fcfaf5, #f2ede2);
-      box-shadow: inset 0 1px 4px rgba(0,0,0,0.25);
+      box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.25);
     }
+
     .pr-spotlight {
       background: radial-gradient(85% 75% at 50% 0%, rgba(255, 223, 128, 0.38) 0%, rgba(255, 215, 100, 0.12) 55%, transparent 85%);
       mix-blend-mode: screen;
       transition: opacity 0.35s ease;
     }
+
     .pr-flip-scene {
       perspective: 1400px;
     }
+
     .pr-flip-card {
       transform-style: preserve-3d;
       transition: transform 0.7s cubic-bezier(0.22, 0.85, 0.3, 1);
     }
+
     .pr-flip-card.is-flipped {
       transform: rotateY(180deg);
     }
+
     .pr-face {
       backface-visibility: hidden;
       -webkit-backface-visibility: hidden;
     }
+
     .pr-face-back {
       transform: rotateY(180deg);
     }
 
     @keyframes framePendulumSwing {
-      0%   { transform: rotate(var(--base-tilt, 0deg)) scale(1.03) translateY(-6px); }
-      18%  { transform: rotate(calc(var(--base-tilt, 0deg) + 5.5deg)) scale(1.04) translateY(-8px); }
-      36%  { transform: rotate(calc(var(--base-tilt, 0deg) - 4.2deg)) scale(1.04) translateY(-7px); }
-      54%  { transform: rotate(calc(var(--base-tilt, 0deg) + 2.6deg)) scale(1.03) translateY(-6px); }
-      72%  { transform: rotate(calc(var(--base-tilt, 0deg) - 1.4deg)) scale(1.03) translateY(-6px); }
-      88%  { transform: rotate(calc(var(--base-tilt, 0deg) + 0.6deg)) scale(1.03) translateY(-6px); }
-      100% { transform: rotate(var(--base-tilt, 0deg)) scale(1.03) translateY(-6px); }
+      0% {
+        transform: rotate(var(--base-tilt, 0deg)) scale(1.03) translateY(-6px);
+      }
+
+      18% {
+        transform: rotate(calc(var(--base-tilt, 0deg) + 5.5deg)) scale(1.04) translateY(-8px);
+      }
+
+      36% {
+        transform: rotate(calc(var(--base-tilt, 0deg) - 4.2deg)) scale(1.04) translateY(-7px);
+      }
+
+      54% {
+        transform: rotate(calc(var(--base-tilt, 0deg) + 2.6deg)) scale(1.03) translateY(-6px);
+      }
+
+      72% {
+        transform: rotate(calc(var(--base-tilt, 0deg) - 1.4deg)) scale(1.03) translateY(-6px);
+      }
+
+      88% {
+        transform: rotate(calc(var(--base-tilt, 0deg) + 0.6deg)) scale(1.03) translateY(-6px);
+      }
+
+      100% {
+        transform: rotate(var(--base-tilt, 0deg)) scale(1.03) translateY(-6px);
+      }
     }
 
     @keyframes frameClickJolt {
-      0%   { transform: rotate(var(--base-tilt, 0deg)) scale(0.97); }
-      25%  { transform: rotate(calc(var(--base-tilt, 0deg) - 7deg)) scale(1.06) translateY(-10px); }
-      55%  { transform: rotate(calc(var(--base-tilt, 0deg) + 5deg)) scale(1.05) translateY(-8px); }
-      80%  { transform: rotate(calc(var(--base-tilt, 0deg) - 2deg)) scale(1.03) translateY(-6px); }
-      100% { transform: rotate(var(--base-tilt, 0deg)) scale(1) translateY(0); }
+      0% {
+        transform: rotate(var(--base-tilt, 0deg)) scale(0.97);
+      }
+
+      25% {
+        transform: rotate(calc(var(--base-tilt, 0deg) - 7deg)) scale(1.06) translateY(-10px);
+      }
+
+      55% {
+        transform: rotate(calc(var(--base-tilt, 0deg) + 5deg)) scale(1.05) translateY(-8px);
+      }
+
+      80% {
+        transform: rotate(calc(var(--base-tilt, 0deg) - 2deg)) scale(1.03) translateY(-6px);
+      }
+
+      100% {
+        transform: rotate(var(--base-tilt, 0deg)) scale(1) translateY(0);
+      }
     }
 
     .pr-swing-unit {
@@ -273,27 +357,42 @@
 
     /* Testimonials Dual-Row Infinite Marquee */
     @keyframes marqueeLeft {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
     }
+
     @keyframes marqueeRight {
-      0% { transform: translateX(-50%); }
-      100% { transform: translateX(0); }
+      0% {
+        transform: translateX(-50%);
+      }
+
+      100% {
+        transform: translateX(0);
+      }
     }
+
     .rev-marquee-wrap {
       mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
       -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
     }
+
     .rev-track-left {
       display: flex;
       width: max-content;
       animation: marqueeLeft 55s linear infinite;
     }
+
     .rev-track-right {
       display: flex;
       width: max-content;
       animation: marqueeRight 60s linear infinite;
     }
+
     .rev-marquee-wrap:hover .rev-track-left,
     .rev-marquee-wrap:hover .rev-track-right {
       animation-play-state: paused;
@@ -639,10 +738,9 @@
               class="taj-white-card flex flex-col justify-between group overflow-hidden border border-taj-border hover:border-emerald-700/80 transition-all duration-500 shadow-sm hover:shadow-xl">
               <div>
                 <div class="relative h-64 sm:h-72 overflow-hidden">
-                  <img
-                    src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80"
+                  <img src="https://ik.imagekit.io/exnzknn2n/retouch_2026111315501619.jpg?updatedAt=1794565756384"
                     alt="Panchvati - Pilgrim, Family & Group Living Wing" loading="lazy"
-                    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80';"
+                    onerror="this.onerror=null;this.src='https://ik.imagekit.io/exnzknn2n/retouch_2026111315501619.jpg?updatedAt=1794565756384';"
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     decoding="async">
                   <div
@@ -940,7 +1038,8 @@
       </section>
 
       <!-- ================= 5. PART 1: INTEGRATIVE HEALTH & HEALING ================= -->
-      <section id="wellness-health-part1" class="bg-[#FAF8F5] py-16 sm:py-24 overflow-hidden border-t border-gray-200/60">
+      <section id="wellness-health-part1"
+        class="bg-[#FAF8F5] py-16 sm:py-24 overflow-hidden border-t border-gray-200/60">
         <a id="services-section" class="sr-only"></a>
         <a id="wellness-facilities" class="sr-only"></a>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-8">
@@ -957,24 +1056,34 @@
         </div>
 
         <!-- 3D Coverflow Carousel Wrapper -->
-        <div id="wellnessCoverflow" class="w-full select-none" style="--cf-card: clamp(210px, 26vw, 310px);" role="region" aria-roledescription="carousel" aria-label="Integrative Health and Healing">
+        <div id="wellnessCoverflow" class="w-full select-none" style="--cf-card: clamp(210px, 26vw, 310px);"
+          role="region" aria-roledescription="carousel" aria-label="Integrative Health and Healing">
           <div class="relative max-w-6xl mx-auto">
             <!-- Ambient Golden Aura behind Center Card -->
-            <div aria-hidden="true" class="cf-ambient-aura pointer-events-none absolute left-1/2 top-1/2 w-[360px] sm:w-[480px] h-[360px] sm:h-[480px] rounded-full blur-3xl -z-0" style="background: radial-gradient(circle, rgba(192,160,96,0.22) 0%, transparent 70%);"></div>
-            
+            <div aria-hidden="true"
+              class="cf-ambient-aura pointer-events-none absolute left-1/2 top-1/2 w-[360px] sm:w-[480px] h-[360px] sm:h-[480px] rounded-full blur-3xl -z-0"
+              style="background: radial-gradient(circle, rgba(192,160,96,0.22) 0%, transparent 70%);"></div>
+
             <!-- 3D Perspective Frame -->
-            <div id="cfFrame" tabindex="0" class="cf-stage cursor-grab overflow-hidden py-10 outline-none active:cursor-grabbing">
+            <div id="cfFrame" tabindex="0"
+              class="cf-stage cursor-grab overflow-hidden py-10 outline-none active:cursor-grabbing">
               <div id="cfTrack" class="cf-track relative">
                 <!-- Cards injected cleanly via JS -->
               </div>
             </div>
 
             <!-- Left & Right Navigation Buttons -->
-            <button type="button" id="cfPrevBtn" aria-label="Previous slide" class="absolute left-3 sm:left-6 top-1/2 z-[200] -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full bg-white/85 hover:bg-white text-gray-900 border border-gray-200 shadow-lg backdrop-blur transition hover:scale-105">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+            <button type="button" id="cfPrevBtn" aria-label="Previous slide"
+              class="absolute left-3 sm:left-6 top-1/2 z-[200] -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full bg-white/85 hover:bg-white text-gray-900 border border-gray-200 shadow-lg backdrop-blur transition hover:scale-105">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+              </svg>
             </button>
-            <button type="button" id="cfNextBtn" aria-label="Next slide" class="absolute right-3 sm:right-6 top-1/2 z-[200] -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full bg-white/85 hover:bg-white text-gray-900 border border-gray-200 shadow-lg backdrop-blur transition hover:scale-105">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+            <button type="button" id="cfNextBtn" aria-label="Next slide"
+              class="absolute right-3 sm:right-6 top-1/2 z-[200] -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full bg-white/85 hover:bg-white text-gray-900 border border-gray-200 shadow-lg backdrop-blur transition hover:scale-105">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
             </button>
           </div>
 
@@ -991,14 +1100,17 @@
       </section>
 
       <!-- ================= 6. PART 2: SANCTUARY FACILITIES & AMENITIES ================= -->
-      <section id="sanctuary-facilities-part2" class="relative isolate w-full overflow-hidden bg-white py-16 sm:py-24 border-t border-gray-200/80 select-none">
+      <section id="sanctuary-facilities-part2"
+        class="relative isolate w-full overflow-hidden bg-white py-16 sm:py-24 border-t border-gray-200/80 select-none">
         <!-- Subtle Gallery Wall Ambient Radial Glow -->
-        <div aria-hidden="true" class="pointer-events-none absolute inset-0 -z-10" style="background: radial-gradient(75% 60% at 50% 45%, rgba(192,160,96,0.06), transparent 78%);"></div>
+        <div aria-hidden="true" class="pointer-events-none absolute inset-0 -z-10"
+          style="background: radial-gradient(75% 60% at 50% 45%, rgba(192,160,96,0.06), transparent 78%);"></div>
 
         <!-- Section Heading -->
         <header class="relative z-10 flex flex-col items-center gap-2 px-6 text-center max-w-3xl mx-auto">
           <p class="text-[11px] font-semibold uppercase tracking-[0.26em] text-tajGold">CAMPUS INFRASTRUCTURE</p>
-          <h2 class="text-2xl sm:text-4xl font-cinzel tracking-[0.12em] text-gray-900 uppercase">SANCTUARY FACILITIES &amp; AMENITIES</h2>
+          <h2 class="text-2xl sm:text-4xl font-cinzel tracking-[0.12em] text-gray-900 uppercase">SANCTUARY FACILITIES
+            &amp; AMENITIES</h2>
           <p class="text-sm sm:text-base font-serif italic text-gray-600 mt-1">
             Comprehensive 55-acre self-sustaining campus infrastructure designed for comfort and serene living.
           </p>
@@ -1010,7 +1122,8 @@
           <div aria-hidden="true" class="pr-rail w-full h-3 rounded-full relative z-10"></div>
 
           <!-- Hanging Frames Track -->
-          <div id="prTrack" class="relative flex items-start justify-start md:justify-center gap-6 sm:gap-8 lg:gap-10 pt-8 min-w-max md:min-w-0 px-4">
+          <div id="prTrack"
+            class="relative flex items-start justify-start md:justify-center gap-6 sm:gap-8 lg:gap-10 pt-8 min-w-max md:min-w-0 px-4">
             <!-- Frames injected via Vanilla JS -->
           </div>
         </div>
@@ -1018,16 +1131,19 @@
         <!-- Active Frame Live Caption Bar -->
         <div class="relative z-10 flex flex-col items-center gap-3 px-6 pt-4 text-center max-w-xl mx-auto">
           <div id="prCaptionBox" aria-live="polite" class="min-h-[3.5rem] transition-all duration-300">
-            <p class="text-sm font-medium text-gray-900">Hover or tap any framed sanctuary exhibit to illuminate • Click to lift &amp; inspect</p>
+            <p class="text-sm font-medium text-gray-900">Hover or tap any framed sanctuary exhibit to illuminate • Click
+              to lift &amp; inspect</p>
           </div>
-          <a href="#booking-widget" class="mt-2 inline-flex items-center gap-2 rounded-sm bg-tajGold hover:bg-tajGoldHover px-6 py-2.5 text-xs font-bold uppercase tracking-[0.2em] text-white shadow-sm transition">
+          <a href="#booking-widget"
+            class="mt-2 inline-flex items-center gap-2 rounded-sm bg-tajGold hover:bg-tajGoldHover px-6 py-2.5 text-xs font-bold uppercase tracking-[0.2em] text-white shadow-sm transition">
             EXPLORE CAMPUS STAY <span>&rarr;</span>
           </a>
         </div>
       </section>
 
       <!-- ================= 6. CREDENTIALS & GOOGLE RATINGS INTEGRATION ================= -->
-      <section id="verified-reviews" class="bg-white py-16 sm:py-24 border-t border-gray-200/70 overflow-hidden select-none">
+      <section id="verified-reviews"
+        class="bg-white py-16 sm:py-24 border-t border-gray-200/70 overflow-hidden select-none">
         <a id="reviews" class="sr-only"></a>
         <!-- Existing Taj Luxury Header -->
         <div class="max-w-4xl mx-auto px-4 text-center mb-12">
@@ -1038,7 +1154,9 @@
             4.7 <span class="text-gray-900">&#9733;</span> VERIFIED GOOGLE RATING
           </h2>
           <p class="text-sm sm:text-base font-serif italic text-gray-600 mt-3">
-            Based on 156 Verified Google <span class="bg-tajGold text-white px-2 py-0.5 not-italic font-sans text-xs sm:text-sm rounded-[2px]">Reviews</span> from pilgrims, doctors, and wellness travelers.
+            Based on 156 Verified Google <span
+              class="bg-tajGold text-white px-2 py-0.5 not-italic font-sans text-xs sm:text-sm rounded-[2px]">Reviews</span>
+            from pilgrims, doctors, and wellness travelers.
           </p>
         </div>
 
@@ -1792,21 +1910,28 @@
 
 
   <!-- 3D Flip Inspection Modal (Front Photo / Back Gallery Label) -->
-  <div id="prModal" role="dialog" aria-modal="true" class="fixed inset-0 z-[500] hidden items-center justify-center p-4 sm:p-6 transition-all duration-300">
-    <div id="prModalBackdrop" class="absolute inset-0 bg-black/85 backdrop-blur-md transition-opacity duration-300 opacity-0"></div>
-    
-    <button type="button" id="prModalClose" class="absolute right-5 top-5 z-20 inline-flex items-center gap-1.5 rounded-full bg-white/15 hover:bg-white/25 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white backdrop-blur transition cursor-pointer">
+  <div id="prModal" role="dialog" aria-modal="true"
+    class="fixed inset-0 z-[500] hidden items-center justify-center p-4 sm:p-6 transition-all duration-300">
+    <div id="prModalBackdrop"
+      class="absolute inset-0 bg-black/85 backdrop-blur-md transition-opacity duration-300 opacity-0"></div>
+
+    <button type="button" id="prModalClose"
+      class="absolute right-5 top-5 z-20 inline-flex items-center gap-1.5 rounded-full bg-white/15 hover:bg-white/25 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white backdrop-blur transition cursor-pointer">
       Close <span>&times;</span>
     </button>
 
-    <div id="prModalDialog" class="relative z-10 grid w-full max-w-4xl items-center gap-8 md:grid-cols-2 bg-[#FAF8F5] p-6 sm:p-10 rounded-sm shadow-2xl border border-tajGold/30 transition-all duration-300 transform opacity-0 scale-95">
+    <div id="prModalDialog"
+      class="relative z-10 grid w-full max-w-4xl items-center gap-8 md:grid-cols-2 bg-[#FAF8F5] p-6 sm:p-10 rounded-sm shadow-2xl border border-tajGold/30 transition-all duration-300 transform opacity-0 scale-95">
       <!-- Left: 3D Flippable Frame -->
-      <div class="pr-flip-scene w-full aspect-[4/5] max-w-[320px] mx-auto cursor-pointer" id="prFlipScene" title="Click frame to flip Front / Back">
+      <div class="pr-flip-scene w-full aspect-[4/5] max-w-[320px] mx-auto cursor-pointer" id="prFlipScene"
+        title="Click frame to flip Front / Back">
         <div id="prFlipCard" class="pr-flip-card relative w-full h-full">
           <!-- Front Face -->
           <div id="prModalFront" class="pr-face absolute inset-0 bg-white overflow-hidden shadow-xl"></div>
           <!-- Back Face (Museum Gallery Label & Hanging Wire) -->
-          <div id="prModalBack" class="pr-face pr-face-back absolute inset-0 bg-[#d8b888] border-8 border-[#2b2118] p-5 flex flex-col justify-between shadow-xl"></div>
+          <div id="prModalBack"
+            class="pr-face pr-face-back absolute inset-0 bg-[#d8b888] border-8 border-[#2b2118] p-5 flex flex-col justify-between shadow-xl">
+          </div>
         </div>
       </div>
 
@@ -1864,127 +1989,127 @@
 
   <!-- ================= 3D COVERFLOW CAROUSEL ENGINE ================= -->
   <script>
-  (function() {
-    const SLIDES = [
-      {
-        src: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&h=800&fit=crop&q=80",
-        alt: "Ayurveda Hospital Nadi Parikshan",
-        category: "Ayurvedic Healthcare",
-        title: "Ayurveda Hospital",
-        subtitle: "Pulse diagnostics (Nadi Parikshan) and personalized classical Ayurvedic treatment protocols.",
-        meta: [
-          { label: "Diagnostics", value: "Nadi Parikshan" },
-          { label: "Consultation", value: "Senior Vaidyas" }
-        ]
-      },
-      {
-        src: "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=800&h=800&fit=crop&q=80",
-        alt: "Kerala Naturopathy Panchakarma",
-        category: "Natural Detoxification",
-        title: "Kerala Naturopathy",
-        subtitle: "Authentic Kerala-style Panchakarma, Abhyanga oil therapies, and herbal steam baths.",
-        meta: [
-          { label: "Therapy", value: "Panchakarma & Abhyanga" },
-          { label: "Lineage", value: "Authentic Kerala" }
-        ]
-      },
-      {
-        src: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800&h=800&fit=crop&q=80",
-        alt: "Dental Hospital Precision Care",
-        category: "Clinical Diagnostics",
-        title: "Dental Hospital",
-        subtitle: "Advanced dental care equipped with modern precision diagnostics and UK Seva affiliation.",
-        meta: [
-          { label: "Affiliation", value: "UK Seva" },
-          { label: "Care", value: "Modern Diagnostics" }
-        ]
-      },
-      {
-        src: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=800&fit=crop&q=80",
-        alt: "Physiotherapy Centre Rehabilitation",
-        category: "Mobility Therapy",
-        title: "Physiotherapy Centre",
-        subtitle: "Comprehensive neuro-musculoskeletal rehabilitation, posture alignment, and post-operative mobility care.",
-        meta: [
-          { label: "Focus", value: "Neuro-Musculoskeletal" },
-          { label: "Support", value: "Post-Operative Care" }
-        ]
-      },
-      {
-        src: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&h=800&fit=crop&q=80",
-        alt: "Yog Sadan Waterfront Pranayama",
-        category: "Mind & Body Rejuvenation",
-        title: "Yog Sadan",
-        subtitle: "Open-air waterfront lawns for guided dawn pranayama, meditation, and therapeutic asanas.",
-        meta: [
-          { label: "Setting", value: "Waterfront Lawns" },
-          { label: "Sessions", value: "Dawn Pranayama" }
-        ]
-      }
-    ];
+    (function () {
+      const SLIDES = [
+        {
+          src: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&h=800&fit=crop&q=80",
+          alt: "Ayurveda Hospital Nadi Parikshan",
+          category: "Ayurvedic Healthcare",
+          title: "Ayurveda Hospital",
+          subtitle: "Pulse diagnostics (Nadi Parikshan) and personalized classical Ayurvedic treatment protocols.",
+          meta: [
+            { label: "Diagnostics", value: "Nadi Parikshan" },
+            { label: "Consultation", value: "Senior Vaidyas" }
+          ]
+        },
+        {
+          src: "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=800&h=800&fit=crop&q=80",
+          alt: "Kerala Naturopathy Panchakarma",
+          category: "Natural Detoxification",
+          title: "Kerala Naturopathy",
+          subtitle: "Authentic Kerala-style Panchakarma, Abhyanga oil therapies, and herbal steam baths.",
+          meta: [
+            { label: "Therapy", value: "Panchakarma & Abhyanga" },
+            { label: "Lineage", value: "Authentic Kerala" }
+          ]
+        },
+        {
+          src: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800&h=800&fit=crop&q=80",
+          alt: "Dental Hospital Precision Care",
+          category: "Clinical Diagnostics",
+          title: "Dental Hospital",
+          subtitle: "Advanced dental care equipped with modern precision diagnostics and UK Seva affiliation.",
+          meta: [
+            { label: "Affiliation", value: "UK Seva" },
+            { label: "Care", value: "Modern Diagnostics" }
+          ]
+        },
+        {
+          src: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=800&fit=crop&q=80",
+          alt: "Physiotherapy Centre Rehabilitation",
+          category: "Mobility Therapy",
+          title: "Physiotherapy Centre",
+          subtitle: "Comprehensive neuro-musculoskeletal rehabilitation, posture alignment, and post-operative mobility care.",
+          meta: [
+            { label: "Focus", value: "Neuro-Musculoskeletal" },
+            { label: "Support", value: "Post-Operative Care" }
+          ]
+        },
+        {
+          src: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&h=800&fit=crop&q=80",
+          alt: "Yog Sadan Waterfront Pranayama",
+          category: "Mind & Body Rejuvenation",
+          title: "Yog Sadan",
+          subtitle: "Open-air waterfront lawns for guided dawn pranayama, meditation, and therapeutic asanas.",
+          meta: [
+            { label: "Setting", value: "Waterfront Lawns" },
+            { label: "Sessions", value: "Dawn Pranayama" }
+          ]
+        }
+      ];
 
-    const frame = document.getElementById("cfFrame");
-    const track = document.getElementById("cfTrack");
-    const captionBox = document.getElementById("cfCaptionBox");
-    const dotsBox = document.getElementById("cfDots");
-    const prevBtn = document.getElementById("cfPrevBtn");
-    const nextBtn = document.getElementById("cfNextBtn");
+      const frame = document.getElementById("cfFrame");
+      const track = document.getElementById("cfTrack");
+      const captionBox = document.getElementById("cfCaptionBox");
+      const dotsBox = document.getElementById("cfDots");
+      const prevBtn = document.getElementById("cfPrevBtn");
+      const nextBtn = document.getElementById("cfNextBtn");
 
-    if (!frame || !track) return;
+      if (!frame || !track) return;
 
-    const count = SLIDES.length;
-    const rotate = 44;
-    const depth = 0.6;
-    const falloff = 0.56;
-    const fade = 0.12;
-    const gap = 0.05;
-    const loop = true;
+      const count = SLIDES.length;
+      const rotate = 44;
+      const depth = 0.6;
+      const falloff = 0.56;
+      const fade = 0.12;
+      const gap = 0.05;
+      const loop = true;
 
-    let pos = 0;
-    let target = 0;
-    let cardWidth = 0;
-    let rafId = null;
-    let selected = 0;
-    let drag = null;
+      let pos = 0;
+      let target = 0;
+      let cardWidth = 0;
+      let rafId = null;
+      let selected = 0;
+      let drag = null;
 
-    // Build Cards & Dots
-    const cardEls = SLIDES.map((slide, index) => {
-      const card = document.createElement("div");
-      card.className = "cf-card absolute aspect-square overflow-hidden rounded-2xl bg-gray-900 shadow-2xl border border-tajGold/30 cursor-pointer";
-      card.setAttribute("role", "group");
-      card.setAttribute("aria-label", `${index + 1} of ${count}`);
-      card.innerHTML = `<img src="${slide.src}" alt="${slide.alt}" draggable="false" class="h-full w-full select-none object-cover pointer-events-none" />`;
-      card.addEventListener("click", () => {
-        if (!drag || Math.abs(drag.moved) < 6) goTo(index);
+      // Build Cards & Dots
+      const cardEls = SLIDES.map((slide, index) => {
+        const card = document.createElement("div");
+        card.className = "cf-card absolute aspect-square overflow-hidden rounded-2xl bg-gray-900 shadow-2xl border border-tajGold/30 cursor-pointer";
+        card.setAttribute("role", "group");
+        card.setAttribute("aria-label", `${index + 1} of ${count}`);
+        card.innerHTML = `<img src="${slide.src}" alt="${slide.alt}" draggable="false" class="h-full w-full select-none object-cover pointer-events-none" />`;
+        card.addEventListener("click", () => {
+          if (!drag || Math.abs(drag.moved) < 6) goTo(index);
+        });
+        track.appendChild(card);
+        return card;
       });
-      track.appendChild(card);
-      return card;
-    });
 
-    const dotEls = SLIDES.map((_, index) => {
-      const btn = document.createElement("button");
-      btn.type = "button";
-      btn.setAttribute("aria-label", `Go to slide ${index + 1}`);
-      btn.className = "h-2 rounded-full transition-all duration-300 " + (index === 0 ? "w-6 bg-tajGold" : "w-2 bg-gray-400/50 hover:bg-gray-600");
-      btn.addEventListener("click", () => goTo(index));
-      dotsBox.appendChild(btn);
-      return btn;
-    });
+      const dotEls = SLIDES.map((_, index) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.setAttribute("aria-label", `Go to slide ${index + 1}`);
+        btn.className = "h-2 rounded-full transition-all duration-300 " + (index === 0 ? "w-6 bg-tajGold" : "w-2 bg-gray-400/50 hover:bg-gray-600");
+        btn.addEventListener("click", () => goTo(index));
+        dotsBox.appendChild(btn);
+        return btn;
+      });
 
-    function indexAt(p) {
-      return ((Math.round(p) % count) + count) % count;
-    }
+      function indexAt(p) {
+        return ((Math.round(p) % count) + count) % count;
+      }
 
-    function renderCaption(idx) {
-      const active = SLIDES[idx];
-      const metaHtml = active.meta.map(row => `
+      function renderCaption(idx) {
+        const active = SLIDES[idx];
+        const metaHtml = active.meta.map(row => `
         <div class="flex justify-between py-1.5 border-b border-gray-200/70">
           <dt class="text-gray-500">${row.label}</dt>
           <dd class="font-medium text-gray-900">${row.value}</dd>
         </div>
       `).join("");
 
-      captionBox.innerHTML = `
+        captionBox.innerHTML = `
         <div class="cf-caption-animate w-full flex flex-col items-center">
           <span class="text-[10px] font-bold tracking-[0.22em] text-tajGold uppercase">${active.category}</span>
           <h3 class="text-xl sm:text-2xl font-cinzel text-gray-900 mt-1">${active.title}</h3>
@@ -1996,375 +2121,375 @@
         </div>
       `;
 
-      dotEls.forEach((dot, i) => {
-        dot.className = "h-2 rounded-full transition-all duration-300 " + (i === idx ? "w-6 bg-tajGold" : "w-2 bg-gray-400/50 hover:bg-gray-600");
-      });
-    }
-
-    const mouseTilt = { active: false, x: 0, y: 0 };
-
-    function paint() {
-      if (!cardWidth) return;
-      const pitch = cardWidth * (1 + gap);
-
-      cardEls.forEach((card, index) => {
-        let offset = index - pos;
-        if (loop) {
-          offset = ((offset % count) + count) % count;
-          if (offset > count / 2) offset -= count;
-        }
-
-        const distance = Math.abs(offset);
-        const ramp = Math.pow(distance, falloff);
-        const tilt = Math.min(rotate * ramp, 82) * Math.sign(offset);
-
-        // Highlight active center card for gold aura, shimmer sweep, and Ken Burns animation
-        const isCenter = distance < 0.35;
-        if (isCenter) {
-          card.classList.add("is-center");
-        } else {
-          card.classList.remove("is-center");
-        }
-
-        let extraTiltX = 0;
-        let extraTiltY = 0;
-        if (isCenter && mouseTilt.active) {
-          extraTiltX = mouseTilt.x;
-          extraTiltY = mouseTilt.y;
-        }
-
-        card.style.transform = `translateX(calc(-50% + ${offset * pitch}px)) translateZ(${-depth * cardWidth * ramp}px) rotateY(${-tilt + extraTiltX}deg) rotateX(${-extraTiltY}deg)`;
-
-        const edge = loop ? Math.min(1, Math.max(0, count / 2 - distance)) : 1;
-        card.style.opacity = String(Math.max(0, 1 - fade * distance) * edge);
-        card.style.zIndex = String(100 - Math.round(distance));
-      });
-    }
-
-    function settle(nextTarget) {
-      if (rafId !== null) cancelAnimationFrame(rafId);
-      target = nextTarget;
-      const nextIdx = indexAt(target);
-      if (nextIdx !== selected) {
-        selected = nextIdx;
-        renderCaption(selected);
+        dotEls.forEach((dot, i) => {
+          dot.className = "h-2 rounded-full transition-all duration-300 " + (i === idx ? "w-6 bg-tajGold" : "w-2 bg-gray-400/50 hover:bg-gray-600");
+        });
       }
 
-      function step() {
-        const remaining = target - pos;
-        if (Math.abs(remaining) < 0.0004) {
-          pos = target;
-          paint();
-          rafId = null;
-          return;
+      const mouseTilt = { active: false, x: 0, y: 0 };
+
+      function paint() {
+        if (!cardWidth) return;
+        const pitch = cardWidth * (1 + gap);
+
+        cardEls.forEach((card, index) => {
+          let offset = index - pos;
+          if (loop) {
+            offset = ((offset % count) + count) % count;
+            if (offset > count / 2) offset -= count;
+          }
+
+          const distance = Math.abs(offset);
+          const ramp = Math.pow(distance, falloff);
+          const tilt = Math.min(rotate * ramp, 82) * Math.sign(offset);
+
+          // Highlight active center card for gold aura, shimmer sweep, and Ken Burns animation
+          const isCenter = distance < 0.35;
+          if (isCenter) {
+            card.classList.add("is-center");
+          } else {
+            card.classList.remove("is-center");
+          }
+
+          let extraTiltX = 0;
+          let extraTiltY = 0;
+          if (isCenter && mouseTilt.active) {
+            extraTiltX = mouseTilt.x;
+            extraTiltY = mouseTilt.y;
+          }
+
+          card.style.transform = `translateX(calc(-50% + ${offset * pitch}px)) translateZ(${-depth * cardWidth * ramp}px) rotateY(${-tilt + extraTiltX}deg) rotateX(${-extraTiltY}deg)`;
+
+          const edge = loop ? Math.min(1, Math.max(0, count / 2 - distance)) : 1;
+          card.style.opacity = String(Math.max(0, 1 - fade * distance) * edge);
+          card.style.zIndex = String(100 - Math.round(distance));
+        });
+      }
+
+      function settle(nextTarget) {
+        if (rafId !== null) cancelAnimationFrame(rafId);
+        target = nextTarget;
+        const nextIdx = indexAt(target);
+        if (nextIdx !== selected) {
+          selected = nextIdx;
+          renderCaption(selected);
         }
-        pos += remaining * 0.16;
-        paint();
+
+        function step() {
+          const remaining = target - pos;
+          if (Math.abs(remaining) < 0.0004) {
+            pos = target;
+            paint();
+            rafId = null;
+            return;
+          }
+          pos += remaining * 0.16;
+          paint();
+          rafId = requestAnimationFrame(step);
+        }
         rafId = requestAnimationFrame(step);
       }
-      rafId = requestAnimationFrame(step);
-    }
 
-    function goTo(index) {
-      const t = loop ? index + Math.round((target - index) / count) * count : index;
-      settle(t);
-    }
+      function goTo(index) {
+        const t = loop ? index + Math.round((target - index) / count) * count : index;
+        settle(t);
+      }
 
-    function nudge(by) {
-      settle(Math.round(target) + by);
-    }
+      function nudge(by) {
+        settle(Math.round(target) + by);
+      }
 
-    // 3D Mouse Parallax Tilt on Active Center Card
-    frame.addEventListener("mousemove", (e) => {
-      if (drag) {
+      // 3D Mouse Parallax Tilt on Active Center Card
+      frame.addEventListener("mousemove", (e) => {
+        if (drag) {
+          if (mouseTilt.active) {
+            mouseTilt.active = false;
+            mouseTilt.x = 0;
+            mouseTilt.y = 0;
+            paint();
+          }
+          return;
+        }
+        const centerCard = cardEls.find(c => c.classList.contains("is-center"));
+        if (!centerCard) return;
+
+        const rect = centerCard.getBoundingClientRect();
+        const isOverCenter = (
+          e.clientX >= rect.left &&
+          e.clientX <= rect.right &&
+          e.clientY >= rect.top &&
+          e.clientY <= rect.bottom
+        );
+
+        if (isOverCenter) {
+          const normX = (e.clientX - (rect.left + rect.width / 2)) / (rect.width / 2);
+          const normY = (e.clientY - (rect.top + rect.height / 2)) / (rect.height / 2);
+          mouseTilt.active = true;
+          mouseTilt.x = Math.max(-4, Math.min(4, normX * 4));
+          mouseTilt.y = Math.max(-4, Math.min(4, normY * 4));
+          paint();
+        } else if (mouseTilt.active) {
+          mouseTilt.active = false;
+          mouseTilt.x = 0;
+          mouseTilt.y = 0;
+          paint();
+        }
+      });
+
+      frame.addEventListener("mouseleave", () => {
         if (mouseTilt.active) {
           mouseTilt.active = false;
           mouseTilt.x = 0;
           mouseTilt.y = 0;
           paint();
         }
-        return;
-      }
-      const centerCard = cardEls.find(c => c.classList.contains("is-center"));
-      if (!centerCard) return;
+      });
 
-      const rect = centerCard.getBoundingClientRect();
-      const isOverCenter = (
-        e.clientX >= rect.left &&
-        e.clientX <= rect.right &&
-        e.clientY >= rect.top &&
-        e.clientY <= rect.bottom
-      );
+      frame.addEventListener("pointerdown", (e) => {
+        if (rafId !== null) { cancelAnimationFrame(rafId); rafId = null; }
+        frame.setPointerCapture(e.pointerId);
+        target = pos;
+        drag = { id: e.pointerId, x: e.clientX, startPos: pos, v: 0, t: performance.now(), moved: 0 };
+        isUserInteracting = true;
+        stopAutoPlay();
+      });
 
-      if (isOverCenter) {
-        const normX = (e.clientX - (rect.left + rect.width / 2)) / (rect.width / 2);
-        const normY = (e.clientY - (rect.top + rect.height / 2)) / (rect.height / 2);
-        mouseTilt.active = true;
-        mouseTilt.x = Math.max(-4, Math.min(4, normX * 4));
-        mouseTilt.y = Math.max(-4, Math.min(4, normY * 4));
+      frame.addEventListener("pointermove", (e) => {
+        if (!drag || drag.id !== e.pointerId) return;
+        const pitch = cardWidth * (1 + gap);
+        if (!pitch) return;
+
+        const now = performance.now();
+        const prev = pos;
+        drag.moved = e.clientX - drag.x;
+        pos = drag.startPos - drag.moved / pitch;
+        drag.v = ((pos - prev) / Math.max(now - drag.t, 1)) * 1000;
+        drag.t = now;
+
+        const idx = indexAt(pos);
+        if (idx !== selected) {
+          selected = idx;
+          renderCaption(selected);
+        }
         paint();
-      } else if (mouseTilt.active) {
-        mouseTilt.active = false;
-        mouseTilt.x = 0;
-        mouseTilt.y = 0;
-        paint();
+      });
+
+      function endDrag(e) {
+        if (!drag || drag.id !== e.pointerId) return;
+        const carried = Math.max(-2, Math.min(2, drag.v * 0.18));
+        const finalTarget = Math.round(pos + carried);
+        setTimeout(() => { drag = null; }, 50);
+        settle(finalTarget);
+        isUserInteracting = false;
+        pauseAndResumeAutoPlay();
       }
-    });
 
-    frame.addEventListener("mouseleave", () => {
-      if (mouseTilt.active) {
-        mouseTilt.active = false;
-        mouseTilt.x = 0;
-        mouseTilt.y = 0;
-        paint();
-      }
-    });
+      frame.addEventListener("pointerup", endDrag);
+      frame.addEventListener("pointercancel", endDrag);
+      frame.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowLeft") { e.preventDefault(); nudge(-1); pauseAndResumeAutoPlay(); }
+        if (e.key === "ArrowRight") { e.preventDefault(); nudge(1); pauseAndResumeAutoPlay(); }
+      });
 
-    frame.addEventListener("pointerdown", (e) => {
-      if (rafId !== null) { cancelAnimationFrame(rafId); rafId = null; }
-      frame.setPointerCapture(e.pointerId);
-      target = pos;
-      drag = { id: e.pointerId, x: e.clientX, startPos: pos, v: 0, t: performance.now(), moved: 0 };
-      isUserInteracting = true;
-      stopAutoPlay();
-    });
-
-    frame.addEventListener("pointermove", (e) => {
-      if (!drag || drag.id !== e.pointerId) return;
-      const pitch = cardWidth * (1 + gap);
-      if (!pitch) return;
-
-      const now = performance.now();
-      const prev = pos;
-      drag.moved = e.clientX - drag.x;
-      pos = drag.startPos - drag.moved / pitch;
-      drag.v = ((pos - prev) / Math.max(now - drag.t, 1)) * 1000;
-      drag.t = now;
-
-      const idx = indexAt(pos);
-      if (idx !== selected) {
-        selected = idx;
-        renderCaption(selected);
-      }
-      paint();
-    });
-
-    function endDrag(e) {
-      if (!drag || drag.id !== e.pointerId) return;
-      const carried = Math.max(-2, Math.min(2, drag.v * 0.18));
-      const finalTarget = Math.round(pos + carried);
-      setTimeout(() => { drag = null; }, 50);
-      settle(finalTarget);
-      isUserInteracting = false;
-      pauseAndResumeAutoPlay();
-    }
-
-    frame.addEventListener("pointerup", endDrag);
-    frame.addEventListener("pointercancel", endDrag);
-    frame.addEventListener("keydown", (e) => {
-      if (e.key === "ArrowLeft") { e.preventDefault(); nudge(-1); pauseAndResumeAutoPlay(); }
-      if (e.key === "ArrowRight") { e.preventDefault(); nudge(1); pauseAndResumeAutoPlay(); }
-    });
-
-    prevBtn.addEventListener("click", () => {
-      nudge(-1);
-      pauseAndResumeAutoPlay();
-    });
-    nextBtn.addEventListener("click", () => {
-      nudge(1);
-      pauseAndResumeAutoPlay();
-    });
-
-    // Auto-Play Engine (Every 4.2 seconds, pause on hover/interaction, resume after 3 seconds)
-    const carouselEl = document.getElementById("wellnessCoverflow");
-    let autoPlayTimer = null;
-    let resumeTimer = null;
-    let isUserInteracting = false;
-
-    function startAutoPlay() {
-      stopAutoPlay();
-      if (isUserInteracting) return;
-      autoPlayTimer = setInterval(() => {
+      prevBtn.addEventListener("click", () => {
+        nudge(-1);
+        pauseAndResumeAutoPlay();
+      });
+      nextBtn.addEventListener("click", () => {
         nudge(1);
-      }, 4200);
-    }
+        pauseAndResumeAutoPlay();
+      });
 
-    function stopAutoPlay() {
-      if (autoPlayTimer) {
-        clearInterval(autoPlayTimer);
-        autoPlayTimer = null;
+      // Auto-Play Engine (Every 4.2 seconds, pause on hover/interaction, resume after 3 seconds)
+      const carouselEl = document.getElementById("wellnessCoverflow");
+      let autoPlayTimer = null;
+      let resumeTimer = null;
+      let isUserInteracting = false;
+
+      function startAutoPlay() {
+        stopAutoPlay();
+        if (isUserInteracting) return;
+        autoPlayTimer = setInterval(() => {
+          nudge(1);
+        }, 4200);
       }
-    }
 
-    function pauseAndResumeAutoPlay() {
-      stopAutoPlay();
-      if (resumeTimer) clearTimeout(resumeTimer);
-      resumeTimer = setTimeout(() => {
-        if (!isUserInteracting) {
+      function stopAutoPlay() {
+        if (autoPlayTimer) {
+          clearInterval(autoPlayTimer);
+          autoPlayTimer = null;
+        }
+      }
+
+      function pauseAndResumeAutoPlay() {
+        stopAutoPlay();
+        if (resumeTimer) clearTimeout(resumeTimer);
+        resumeTimer = setTimeout(() => {
+          if (!isUserInteracting) {
+            startAutoPlay();
+          }
+        }, 3000);
+      }
+
+      if (carouselEl) {
+        carouselEl.addEventListener("mouseenter", () => {
+          isUserInteracting = true;
+          stopAutoPlay();
+        });
+
+        carouselEl.addEventListener("mouseleave", () => {
+          isUserInteracting = false;
+          pauseAndResumeAutoPlay();
+        });
+
+        carouselEl.addEventListener("touchstart", () => {
+          isUserInteracting = true;
+          stopAutoPlay();
+        }, { passive: true });
+
+        carouselEl.addEventListener("touchend", () => {
+          isUserInteracting = false;
+          pauseAndResumeAutoPlay();
+        }, { passive: true });
+
+        if ("IntersectionObserver" in window) {
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                startAutoPlay();
+              } else {
+                stopAutoPlay();
+              }
+            });
+          }, { threshold: 0.25 });
+          observer.observe(carouselEl);
+        } else {
           startAutoPlay();
         }
-      }, 3000);
-    }
-
-    if (carouselEl) {
-      carouselEl.addEventListener("mouseenter", () => {
-        isUserInteracting = true;
-        stopAutoPlay();
-      });
-
-      carouselEl.addEventListener("mouseleave", () => {
-        isUserInteracting = false;
-        pauseAndResumeAutoPlay();
-      });
-
-      carouselEl.addEventListener("touchstart", () => {
-        isUserInteracting = true;
-        stopAutoPlay();
-      }, { passive: true });
-
-      carouselEl.addEventListener("touchend", () => {
-        isUserInteracting = false;
-        pauseAndResumeAutoPlay();
-      }, { passive: true });
-
-      if ("IntersectionObserver" in window) {
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              startAutoPlay();
-            } else {
-              stopAutoPlay();
-            }
-          });
-        }, { threshold: 0.25 });
-        observer.observe(carouselEl);
-      } else {
-        startAutoPlay();
       }
-    }
 
-    function measure() {
-      if (cardEls[0]) {
-        cardWidth = cardEls[0].offsetWidth;
-        paint();
+      function measure() {
+        if (cardEls[0]) {
+          cardWidth = cardEls[0].offsetWidth;
+          paint();
+        }
       }
-    }
 
-    renderCaption(0);
-    measure();
-    new ResizeObserver(measure).observe(frame);
-  })();
+      renderCaption(0);
+      measure();
+      new ResizeObserver(measure).observe(frame);
+    })();
   </script>
 
   <!-- ================= BRASS PICTURE RAIL GALLERY ENGINE ================= -->
   <script>
-  (function() {
-    const FACILITIES = [
-      {
-        id: "indigenous-gaushala",
-        category: "Desi Cow Sanctuary",
-        title: "Indigenous Gaushala",
-        subtitle: "160+ indigenous cows across 13 Indian breeds providing pure farm-fresh A2 dairy.",
-        image: "https://images.unsplash.com/photo-1545468800-85cc9bc6ecf7?w=800&h=1000&fit=crop&q=80",
-        frame: "oak",
-        mat: true,
-        drop: 0,
-        tag: "13 Indigenous Breeds",
-        details: ["160+ Desi Gir & Sahiwal Cows", "Pure Satvik A2 Dairy Supply", "Organic Panchagavya Care", "Guided Morning Gaushala Visits"]
-      },
-      {
-        id: "helipad-transit",
-        category: "Aviation Transit",
-        title: "Helipad Transit Facility",
-        subtitle: "Five operational on-campus helipads facilitating executive transit and VIP air arrivals.",
-        image: "https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=800&h=1000&fit=crop&q=80",
-        frame: "black",
-        mat: true,
-        drop: 18,
-        tag: "5 Operational Helipads",
-        details: ["5 Dedicated Landing Pads", "Direct Executive Air Access", "Private Chitrakoot Transfers", "24/7 Ground Coordination"]
-      },
-      {
-        id: "riverfront-ghat",
-        category: "Sacred Waterfront",
-        title: "Riverfront Ghat Promenade",
-        subtitle: "Private riverfront walking trails and tranquil sit-outs overlooking the sacred Mandakini River.",
-        image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=1000&fit=crop&q=80",
-        frame: "white",
-        mat: true,
-        drop: 6,
-        tag: "Mandakini Waterfront",
-        details: ["Private Mandakini Ghat Access", "Dawn Sandhya & Meditation Decks", "Landscaped Riverside Trails", "Serene Sunset Sit-Outs"]
-      },
-      {
-        id: "ayurvedic-rasshala",
-        category: "Classical Formulations",
-        title: "Ayurvedic Rasshala",
-        subtitle: "Authentic in-house pharmacy formulating classical Ayurvedic medicines from farm-harvested herbs.",
-        image: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=800&h=1000&fit=crop&q=80",
-        frame: "oak",
-        mat: true,
-        drop: 22,
-        tag: "In-House Pharmacy",
-        details: ["Farm-Harvested Medicinal Herbs", "Classical Rasashastra Formulations", "GMP-Certified Quality Standards", "Custom Physician Prescriptions"]
-      },
-      {
-        id: "library-botanical",
-        category: "Integrated Amenities",
-        title: "Library & Botanical Flora",
-        subtitle: "Wellness reference library, modern fitness gym, and 55-acre cultivated medicinal botanical flora.",
-        image: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=800&h=1000&fit=crop&q=80",
-        frame: "black",
-        mat: true,
-        drop: 8,
-        tag: "55-Acre Sanctuary",
-        details: ["Vedic & Wellness Reference Library", "Modern Cardio & Fitness Studio", "55-Acre Medicinal Flora Gardens", "Quiet Reading Verandahs"]
-      }
-    ];
+    (function () {
+      const FACILITIES = [
+        {
+          id: "indigenous-gaushala",
+          category: "Desi Cow Sanctuary",
+          title: "Indigenous Gaushala",
+          subtitle: "160+ indigenous cows across 13 Indian breeds providing pure farm-fresh A2 dairy.",
+          image: "https://images.unsplash.com/photo-1545468800-85cc9bc6ecf7?w=800&h=1000&fit=crop&q=80",
+          frame: "oak",
+          mat: true,
+          drop: 0,
+          tag: "13 Indigenous Breeds",
+          details: ["160+ Desi Gir & Sahiwal Cows", "Pure Satvik A2 Dairy Supply", "Organic Panchagavya Care", "Guided Morning Gaushala Visits"]
+        },
+        {
+          id: "helipad-transit",
+          category: "Aviation Transit",
+          title: "Helipad Transit Facility",
+          subtitle: "Five operational on-campus helipads facilitating executive transit and VIP air arrivals.",
+          image: "https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=800&h=1000&fit=crop&q=80",
+          frame: "black",
+          mat: true,
+          drop: 18,
+          tag: "5 Operational Helipads",
+          details: ["5 Dedicated Landing Pads", "Direct Executive Air Access", "Private Chitrakoot Transfers", "24/7 Ground Coordination"]
+        },
+        {
+          id: "riverfront-ghat",
+          category: "Sacred Waterfront",
+          title: "Riverfront Ghat Promenade",
+          subtitle: "Private riverfront walking trails and tranquil sit-outs overlooking the sacred Mandakini River.",
+          image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=1000&fit=crop&q=80",
+          frame: "white",
+          mat: true,
+          drop: 6,
+          tag: "Mandakini Waterfront",
+          details: ["Private Mandakini Ghat Access", "Dawn Sandhya & Meditation Decks", "Landscaped Riverside Trails", "Serene Sunset Sit-Outs"]
+        },
+        {
+          id: "ayurvedic-rasshala",
+          category: "Classical Formulations",
+          title: "Ayurvedic Rasshala",
+          subtitle: "Authentic in-house pharmacy formulating classical Ayurvedic medicines from farm-harvested herbs.",
+          image: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=800&h=1000&fit=crop&q=80",
+          frame: "oak",
+          mat: true,
+          drop: 22,
+          tag: "In-House Pharmacy",
+          details: ["Farm-Harvested Medicinal Herbs", "Classical Rasashastra Formulations", "GMP-Certified Quality Standards", "Custom Physician Prescriptions"]
+        },
+        {
+          id: "library-botanical",
+          category: "Integrated Amenities",
+          title: "Library & Botanical Flora",
+          subtitle: "Wellness reference library, modern fitness gym, and 55-acre cultivated medicinal botanical flora.",
+          image: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=800&h=1000&fit=crop&q=80",
+          frame: "black",
+          mat: true,
+          drop: 8,
+          tag: "55-Acre Sanctuary",
+          details: ["Vedic & Wellness Reference Library", "Modern Cardio & Fitness Studio", "55-Acre Medicinal Flora Gardens", "Quiet Reading Verandahs"]
+        }
+      ];
 
-    const track = document.getElementById("prTrack");
-    const captionBox = document.getElementById("prCaptionBox");
-    const modal = document.getElementById("prModal");
-    const modalBackdrop = document.getElementById("prModalBackdrop");
-    const modalClose = document.getElementById("prModalClose");
-    const flipScene = document.getElementById("prFlipScene");
-    const flipCard = document.getElementById("prFlipCard");
-    const modalFront = document.getElementById("prModalFront");
-    const modalBack = document.getElementById("prModalBack");
-    const modalInfo = document.getElementById("prModalInfo");
+      const track = document.getElementById("prTrack");
+      const captionBox = document.getElementById("prCaptionBox");
+      const modal = document.getElementById("prModal");
+      const modalBackdrop = document.getElementById("prModalBackdrop");
+      const modalClose = document.getElementById("prModalClose");
+      const flipScene = document.getElementById("prFlipScene");
+      const flipCard = document.getElementById("prFlipCard");
+      const modalFront = document.getElementById("prModalFront");
+      const modalBack = document.getElementById("prModalBack");
+      const modalInfo = document.getElementById("prModalInfo");
 
-    if (!track) return;
+      if (!track) return;
 
-    let activeIndex = 0;
-    const allSwingUnits = [];
+      let activeIndex = 0;
+      const allSwingUnits = [];
 
-    function setCaption(idx) {
-      const item = FACILITIES[idx];
-      if (!item || !captionBox) return;
-      captionBox.innerHTML = `
+      function setCaption(idx) {
+        const item = FACILITIES[idx];
+        if (!item || !captionBox) return;
+        captionBox.innerHTML = `
         <span class="text-[10px] font-bold uppercase tracking-[0.22em] text-tajGold">${item.category}</span>
         <p class="text-base sm:text-lg font-cinzel text-gray-900 mt-0.5">${item.title}</p>
         <p class="text-xs sm:text-sm text-gray-600 mt-1">${item.subtitle} <span class="text-tajGold font-semibold ml-1 underline">Lift to view &rarr;</span></p>
       `;
-    }
+      }
 
-    function triggerSwing(unit, animationClass = "is-swinging") {
-      if (!unit) return;
-      unit.classList.remove("is-swinging", "is-clicked");
-      void unit.offsetWidth; // Force reflow
-      unit.classList.add(animationClass);
-    }
+      function triggerSwing(unit, animationClass = "is-swinging") {
+        if (!unit) return;
+        unit.classList.remove("is-swinging", "is-clicked");
+        void unit.offsetWidth; // Force reflow
+        unit.classList.add(animationClass);
+      }
 
-    // Render Hanging Frames on the Brass Rail
-    FACILITIES.forEach((item, idx) => {
-      const frameClass = item.frame === "oak" ? "pr-frame-oak" : item.frame === "white" ? "pr-frame-white" : "pr-frame-black";
-      const initialTilt = (((idx * 37 + 11) % 5) - 2) * 0.6;
+      // Render Hanging Frames on the Brass Rail
+      FACILITIES.forEach((item, idx) => {
+        const frameClass = item.frame === "oak" ? "pr-frame-oak" : item.frame === "white" ? "pr-frame-white" : "pr-frame-black";
+        const initialTilt = (((idx * 37 + 11) % 5) - 2) * 0.6;
 
-      const wrapper = document.createElement("div");
-      wrapper.className = "relative flex flex-col items-center group cursor-pointer shrink-0";
-      wrapper.style.marginTop = `${item.drop}px`;
+        const wrapper = document.createElement("div");
+        wrapper.className = "relative flex flex-col items-center group cursor-pointer shrink-0";
+        wrapper.style.marginTop = `${item.drop}px`;
 
-      wrapper.innerHTML = `
+        wrapper.innerHTML = `
         <!-- Brass Rail Hook -->
         <div aria-hidden="true" class="w-2.5 h-4 -mt-9 rounded-b-sm bg-gradient-to-b from-amber-300 via-amber-500 to-amber-700 shadow pointer-events-none"></div>
         
@@ -2395,52 +2520,52 @@
         </span>
       `;
 
-      const swingUnit = wrapper.querySelector(".pr-swing-unit");
-      allSwingUnits.push(swingUnit);
+        const swingUnit = wrapper.querySelector(".pr-swing-unit");
+        allSwingUnits.push(swingUnit);
 
-      if (swingUnit) {
-        swingUnit.addEventListener("animationend", () => {
-          swingUnit.classList.remove("is-swinging", "is-clicked");
+        if (swingUnit) {
+          swingUnit.addEventListener("animationend", () => {
+            swingUnit.classList.remove("is-swinging", "is-clicked");
+          });
+        }
+
+        wrapper.addEventListener("mouseenter", () => {
+          activeIndex = idx;
+          setCaption(idx);
+
+          // 1) Trigger smooth pendulum swing on current frame
+          triggerSwing(swingUnit, "is-swinging");
+
+          // 2) Gently nudge neighboring frames (idx - 1 and idx + 1)
+          if (idx > 0 && allSwingUnits[idx - 1]) {
+            triggerSwing(allSwingUnits[idx - 1], "is-swinging");
+          }
+          if (idx < FACILITIES.length - 1 && allSwingUnits[idx + 1]) {
+            triggerSwing(allSwingUnits[idx + 1], "is-swinging");
+          }
         });
-      }
 
-      wrapper.addEventListener("mouseenter", () => {
-        activeIndex = idx;
-        setCaption(idx);
+        wrapper.addEventListener("click", () => {
+          // Immediate tactile jolt feedback
+          triggerSwing(swingUnit, "is-clicked");
+          // Smoothly open modal after short tactile jolt
+          setTimeout(() => openModal(idx), 180);
+        });
 
-        // 1) Trigger smooth pendulum swing on current frame
-        triggerSwing(swingUnit, "is-swinging");
-
-        // 2) Gently nudge neighboring frames (idx - 1 and idx + 1)
-        if (idx > 0 && allSwingUnits[idx - 1]) {
-          triggerSwing(allSwingUnits[idx - 1], "is-swinging");
-        }
-        if (idx < FACILITIES.length - 1 && allSwingUnits[idx + 1]) {
-          triggerSwing(allSwingUnits[idx + 1], "is-swinging");
-        }
+        track.appendChild(wrapper);
       });
 
-      wrapper.addEventListener("click", () => {
-        // Immediate tactile jolt feedback
-        triggerSwing(swingUnit, "is-clicked");
-        // Smoothly open modal after short tactile jolt
-        setTimeout(() => openModal(idx), 180);
-      });
+      function openModal(idx) {
+        const item = FACILITIES[idx];
+        if (!item || !modal) return;
 
-      track.appendChild(wrapper);
-    });
+        flipCard.classList.remove("is-flipped");
+        const frameClass = item.frame === "oak" ? "pr-frame-oak" : item.frame === "white" ? "pr-frame-white" : "pr-frame-black";
 
-    function openModal(idx) {
-      const item = FACILITIES[idx];
-      if (!item || !modal) return;
+        modalFront.className = `pr-face absolute inset-0 bg-white overflow-hidden shadow-xl ${frameClass} ${item.mat ? 'pr-mat' : ''}`;
+        modalFront.innerHTML = `<img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover" />`;
 
-      flipCard.classList.remove("is-flipped");
-      const frameClass = item.frame === "oak" ? "pr-frame-oak" : item.frame === "white" ? "pr-frame-white" : "pr-frame-black";
-
-      modalFront.className = `pr-face absolute inset-0 bg-white overflow-hidden shadow-xl ${frameClass} ${item.mat ? 'pr-mat' : ''}`;
-      modalFront.innerHTML = `<img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover" />`;
-
-      modalBack.innerHTML = `
+        modalBack.innerHTML = `
         <div class="w-full flex flex-col items-center pt-2">
           <svg class="w-40 h-10 overflow-visible" viewBox="0 0 160 40">
             <path d="M15,32 Q80,6 145,32" fill="none" stroke="#4b5563" stroke-width="2" />
@@ -2456,9 +2581,9 @@
         </div>
       `;
 
-      const detailsList = item.details.map(d => `<li class="px-3 py-1 rounded-full bg-white border border-gray-200 text-xs text-gray-700">${d}</li>`).join("");
+        const detailsList = item.details.map(d => `<li class="px-3 py-1 rounded-full bg-white border border-gray-200 text-xs text-gray-700">${d}</li>`).join("");
 
-      modalInfo.innerHTML = `
+        modalInfo.innerHTML = `
         <span class="font-mono text-xs tracking-[0.2em] text-gray-400">0${idx + 1} / 0${FACILITIES.length}</span>
         <span class="text-[11px] font-bold uppercase tracking-[0.2em] text-tajGold mt-2">${item.category}</span>
         <h3 class="text-2xl sm:text-3xl font-cinzel text-gray-900 mt-1">${item.title}</h3>
@@ -2471,119 +2596,119 @@
         </div>
       `;
 
-      document.getElementById("prBtnFront").onclick = () => {
-        flipCard.classList.remove("is-flipped");
-        document.getElementById("prBtnFront").classList.replace("border-transparent", "border-tajGold");
-        document.getElementById("prBtnFront").classList.replace("text-gray-500", "text-gray-900");
-        document.getElementById("prBtnBack").classList.replace("border-tajGold", "border-transparent");
-        document.getElementById("prBtnBack").classList.replace("text-gray-900", "text-gray-500");
-      };
+        document.getElementById("prBtnFront").onclick = () => {
+          flipCard.classList.remove("is-flipped");
+          document.getElementById("prBtnFront").classList.replace("border-transparent", "border-tajGold");
+          document.getElementById("prBtnFront").classList.replace("text-gray-500", "text-gray-900");
+          document.getElementById("prBtnBack").classList.replace("border-tajGold", "border-transparent");
+          document.getElementById("prBtnBack").classList.replace("text-gray-900", "text-gray-500");
+        };
 
-      document.getElementById("prBtnBack").onclick = () => {
-        flipCard.classList.add("is-flipped");
-        document.getElementById("prBtnBack").classList.replace("border-transparent", "border-tajGold");
-        document.getElementById("prBtnBack").classList.replace("text-gray-500", "text-gray-900");
-        document.getElementById("prBtnFront").classList.replace("border-tajGold", "border-transparent");
-        document.getElementById("prBtnFront").classList.replace("text-gray-900", "text-gray-500");
-      };
+        document.getElementById("prBtnBack").onclick = () => {
+          flipCard.classList.add("is-flipped");
+          document.getElementById("prBtnBack").classList.replace("border-transparent", "border-tajGold");
+          document.getElementById("prBtnBack").classList.replace("text-gray-500", "text-gray-900");
+          document.getElementById("prBtnFront").classList.replace("border-tajGold", "border-transparent");
+          document.getElementById("prBtnFront").classList.replace("text-gray-900", "text-gray-500");
+        };
 
-      modal.classList.remove("hidden");
-      modal.classList.add("flex");
-      document.body.style.overflow = "hidden";
+        modal.classList.remove("hidden");
+        modal.classList.add("flex");
+        document.body.style.overflow = "hidden";
 
-      // Smooth scale-in transition
-      requestAnimationFrame(() => {
-        if (modalBackdrop) {
-          modalBackdrop.classList.remove("opacity-0");
-          modalBackdrop.classList.add("opacity-100");
-        }
+        // Smooth scale-in transition
+        requestAnimationFrame(() => {
+          if (modalBackdrop) {
+            modalBackdrop.classList.remove("opacity-0");
+            modalBackdrop.classList.add("opacity-100");
+          }
+          const dialog = document.getElementById("prModalDialog");
+          if (dialog) {
+            dialog.classList.remove("opacity-0", "scale-95");
+            dialog.classList.add("opacity-100", "scale-100");
+          }
+        });
+      }
+
+      function closeModal() {
+        if (!modal) return;
         const dialog = document.getElementById("prModalDialog");
         if (dialog) {
-          dialog.classList.remove("opacity-0", "scale-95");
-          dialog.classList.add("opacity-100", "scale-100");
+          dialog.classList.remove("opacity-100", "scale-100");
+          dialog.classList.add("opacity-0", "scale-95");
         }
-      });
-    }
-
-    function closeModal() {
-      if (!modal) return;
-      const dialog = document.getElementById("prModalDialog");
-      if (dialog) {
-        dialog.classList.remove("opacity-100", "scale-100");
-        dialog.classList.add("opacity-0", "scale-95");
+        if (modalBackdrop) {
+          modalBackdrop.classList.remove("opacity-100");
+          modalBackdrop.classList.add("opacity-0");
+        }
+        setTimeout(() => {
+          modal.classList.add("hidden");
+          modal.classList.remove("flex");
+          document.body.style.overflow = "";
+        }, 200);
       }
-      if (modalBackdrop) {
-        modalBackdrop.classList.remove("opacity-100");
-        modalBackdrop.classList.add("opacity-0");
+
+      if (flipScene) {
+        flipScene.addEventListener("click", () => {
+          flipCard.classList.toggle("is-flipped");
+        });
       }
-      setTimeout(() => {
-        modal.classList.add("hidden");
-        modal.classList.remove("flex");
-        document.body.style.overflow = "";
-      }, 200);
-    }
 
-    if (flipScene) {
-      flipScene.addEventListener("click", () => {
-        flipCard.classList.toggle("is-flipped");
+      if (modalClose) modalClose.addEventListener("click", closeModal);
+      if (modalBackdrop) modalBackdrop.addEventListener("click", closeModal);
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && modal && !modal.classList.contains("hidden")) closeModal();
       });
-    }
 
-    if (modalClose) modalClose.addEventListener("click", closeModal);
-    if (modalBackdrop) modalBackdrop.addEventListener("click", closeModal);
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && modal && !modal.classList.contains("hidden")) closeModal();
-    });
-
-    setCaption(0);
-  })();
+      setCaption(0);
+    })();
   </script>
 
   <!-- ================= TESTIMONIALS INFINITE MARQUEE ENGINE ================= -->
   <script>
-  (function() {
-    const ROW1_REVIEWS = [
-      { name: "Vansh Yadav", meta: "Google • Holiday ❘ Family", rating: 5, text: "Luxury stay with great views, high-tech amenities, and exceptional value. Rooms 5.0, Service 5.0, Location 5.0." },
-      { name: "Yashaskar", meta: "Google • 2 months ago", rating: 5, text: "From the moment I arrived, the overall atmosphere felt peaceful, clean, and welcoming. Comfortable rooms and attentive staff." },
-      { name: "Satyam Agrawal", meta: "Google • 2 months ago", rating: 5, text: "Great experience, team was well behaved and active. Peaceful atmosphere and a lovely upgrade to a cottage room." },
-      { name: "Anurag Patel", meta: "Google • Holiday ❘ Family", rating: 5, text: "A wonderful place for relaxation and spiritual peace. Clean, spacious rooms, lush greenery, and excellent hospitality." },
-      { name: "Pawan Daga", meta: "Google • a month ago", rating: 5, text: "Excellent property within a natural environment. Pure, home-like Satvik food without onion or garlic. Must visit." },
-      { name: "Lt Gen VK Sharma (Retd)", meta: "Google • 6 months ago", rating: 5, text: "Great place to stay. Excellent location and service. The staff is very courteous and helpful with delicious organic food." },
-      { name: "Canakapalli Bhaskar", meta: "Google • Holiday ❘ Family", rating: 4, text: "Beautiful, clean, and peaceful cottages set inside a 55-acre campus with an Ayurvedic hospital and Gurukul." },
-      { name: "Saurav Barot", meta: "Google • Holiday ❘ Family", rating: 5, text: "Great place to stay if travelling to Chitrakoot with family or pets. Quiet, peaceful, and 100% value for money." },
-      { name: "Siddhi Gaidhani", meta: "Google • 4 months ago", rating: 5, text: "One of the best options in Chitrakoot. Farm-to-table food harvested right on campus makes it a one-of-a-kind experience." },
-      { name: "Prateek Kumar", meta: "Google • 7 months ago", rating: 5, text: "Fabulous place to stay, nice food, and awesome experience. Special thanks to Mr. Umesh for prompt support." },
-      { name: "Adarsh Shukla", meta: "Google • Family", rating: 5, text: "Surrounded by nature with stunning sunrise and sunset views near the Mandakini River, plus on-campus helipad access." },
-      { name: "Dr. Mohit Sharma", meta: "Tripadvisor • 10 months ago", rating: 5, text: "One of the best places to stay in Chitrakoot Dham. Wonderful ambience and warm hospitality from Shiva Pandey, Umesh & Harsh." },
-      { name: "Dhruv Patel", meta: "Google • Family", rating: 5, text: "Ashutosh Ji offered top service even at 10 PM. Suite 117 had 5-star amenities and gave us a deeply relaxed stay." },
-      { name: "Arin Paliwal", meta: "Google • Holiday ❘ Family", rating: 5, text: "Prompt room upgrade when needed and truly amazing Satvik food prepared without any onion or garlic." },
-      { name: "Sunil Kedia", meta: "Google • Holiday ❘ Friends", rating: 5, text: "Very peaceful and calm atmosphere at the site. Comfortable stay, superb food, and holistic hospitality led by Mr. Mayank." }
-    ];
+    (function () {
+      const ROW1_REVIEWS = [
+        { name: "Vansh Yadav", meta: "Google • Holiday ❘ Family", rating: 5, text: "Luxury stay with great views, high-tech amenities, and exceptional value. Rooms 5.0, Service 5.0, Location 5.0." },
+        { name: "Yashaskar", meta: "Google • 2 months ago", rating: 5, text: "From the moment I arrived, the overall atmosphere felt peaceful, clean, and welcoming. Comfortable rooms and attentive staff." },
+        { name: "Satyam Agrawal", meta: "Google • 2 months ago", rating: 5, text: "Great experience, team was well behaved and active. Peaceful atmosphere and a lovely upgrade to a cottage room." },
+        { name: "Anurag Patel", meta: "Google • Holiday ❘ Family", rating: 5, text: "A wonderful place for relaxation and spiritual peace. Clean, spacious rooms, lush greenery, and excellent hospitality." },
+        { name: "Pawan Daga", meta: "Google • a month ago", rating: 5, text: "Excellent property within a natural environment. Pure, home-like Satvik food without onion or garlic. Must visit." },
+        { name: "Lt Gen VK Sharma (Retd)", meta: "Google • 6 months ago", rating: 5, text: "Great place to stay. Excellent location and service. The staff is very courteous and helpful with delicious organic food." },
+        { name: "Canakapalli Bhaskar", meta: "Google • Holiday ❘ Family", rating: 4, text: "Beautiful, clean, and peaceful cottages set inside a 55-acre campus with an Ayurvedic hospital and Gurukul." },
+        { name: "Saurav Barot", meta: "Google • Holiday ❘ Family", rating: 5, text: "Great place to stay if travelling to Chitrakoot with family or pets. Quiet, peaceful, and 100% value for money." },
+        { name: "Siddhi Gaidhani", meta: "Google • 4 months ago", rating: 5, text: "One of the best options in Chitrakoot. Farm-to-table food harvested right on campus makes it a one-of-a-kind experience." },
+        { name: "Prateek Kumar", meta: "Google • 7 months ago", rating: 5, text: "Fabulous place to stay, nice food, and awesome experience. Special thanks to Mr. Umesh for prompt support." },
+        { name: "Adarsh Shukla", meta: "Google • Family", rating: 5, text: "Surrounded by nature with stunning sunrise and sunset views near the Mandakini River, plus on-campus helipad access." },
+        { name: "Dr. Mohit Sharma", meta: "Tripadvisor • 10 months ago", rating: 5, text: "One of the best places to stay in Chitrakoot Dham. Wonderful ambience and warm hospitality from Shiva Pandey, Umesh & Harsh." },
+        { name: "Dhruv Patel", meta: "Google • Family", rating: 5, text: "Ashutosh Ji offered top service even at 10 PM. Suite 117 had 5-star amenities and gave us a deeply relaxed stay." },
+        { name: "Arin Paliwal", meta: "Google • Holiday ❘ Family", rating: 5, text: "Prompt room upgrade when needed and truly amazing Satvik food prepared without any onion or garlic." },
+        { name: "Sunil Kedia", meta: "Google • Holiday ❘ Friends", rating: 5, text: "Very peaceful and calm atmosphere at the site. Comfortable stay, superb food, and holistic hospitality led by Mr. Mayank." }
+      ];
 
-    const ROW2_REVIEWS = [
-      { name: "Harshit Gupta", meta: "Google • 2 months ago", rating: 5, text: "Ashutosh, Anurag, and Indrajeet treated us very kindly and were always ready to help. Food is very good." },
-      { name: "Utsav Yadav", meta: "Google • 9 months ago", rating: 5, text: "Serene atmosphere perfect for healing. Knowledgeable doctors, supportive therapists, yoga, and Satvik food improved my health." },
-      { name: "Ketan Gandhi", meta: "Google • Holiday ❘ Family", rating: 5, text: "Everything was excellent—calming stay, delicious food, and dedicated support from Mr. Mayank Yadav and Mr. Umesh." },
-      { name: "717pramodk", meta: "Tripadvisor • Verified Stay", rating: 5, text: "Amazing 100% pollution-free green campus with cottages scattered across serene hills and flat gardens." },
-      { name: "Dr. Purva Gupta", meta: "Google • Holiday", rating: 4, text: "Wonderful stay at Arogyadham. Loved the Gaushala, fresh A2 dairy, Panchakarma therapies, and care from Saurabh, Harsh & Mayank." },
-      { name: "Joydeep Ganguly", meta: "Google • Holiday ❘ Family", rating: 5, text: "Awesome place to stay with a tranquil atmosphere, luxury views, and quality restaurant dining." },
-      { name: "Abhishek Jai Singh", meta: "Google • Holiday ❘ Family", rating: 5, text: "Lovely experience and great value. Staff members were really cooperative, especially Anurag." },
-      { name: "Anand Dabak", meta: "Google • Verified Stay", rating: 5, text: "Stayed on our way from Prayag to Khajuraho. Clean rooms with garden views, wonderful breakfast, and helpful staff." },
-      { name: "Ashok Tiwari", meta: "Google • 9 months ago", rating: 5, text: "Convenient location for exploring Chitrakoot, very comfortable beds, and warm service. Highly recommended." },
-      { name: "Trishala Nyaik", meta: "Google • Holiday ❘ Family", rating: 5, text: "Booked for my parents and family—authentic, serene, and cooperative staff. Ideal for a week-long spiritual retreat." },
-      { name: "Kanda ManojKumar", meta: "Google • Verified Stay", rating: 5, text: "Feeling blessed to stay here. The divine nature, calmness, restaurant, and peace we felt are beyond words." },
-      { name: "Ashutosh Das", meta: "Google • Holiday ❘ Family", rating: 5, text: "Mandakini cottages are spacious and luxurious, service is attentive, and Aahar Vihar food is delicious." },
-      { name: "Ajay Arora", meta: "Google • Holiday ❘ Family", rating: 4, text: "Nice quiet place to stay amidst hillside surroundings with well-behaved staff. Worth staying." },
-      { name: "Sadhna Bind", meta: "Google • 4 months ago", rating: 4, text: "Very tasty Satvik food and active, attentive service from the staff throughout our visit." },
-      { name: "Flyer756089", meta: "Tripadvisor • 2 months ago", rating: 5, text: "Spacious rooms, clean and neat campus atmosphere, and well-functioning amenities throughout our Chitrakoot stay." }
-    ];
+      const ROW2_REVIEWS = [
+        { name: "Harshit Gupta", meta: "Google • 2 months ago", rating: 5, text: "Ashutosh, Anurag, and Indrajeet treated us very kindly and were always ready to help. Food is very good." },
+        { name: "Utsav Yadav", meta: "Google • 9 months ago", rating: 5, text: "Serene atmosphere perfect for healing. Knowledgeable doctors, supportive therapists, yoga, and Satvik food improved my health." },
+        { name: "Ketan Gandhi", meta: "Google • Holiday ❘ Family", rating: 5, text: "Everything was excellent—calming stay, delicious food, and dedicated support from Mr. Mayank Yadav and Mr. Umesh." },
+        { name: "717pramodk", meta: "Tripadvisor • Verified Stay", rating: 5, text: "Amazing 100% pollution-free green campus with cottages scattered across serene hills and flat gardens." },
+        { name: "Dr. Purva Gupta", meta: "Google • Holiday", rating: 4, text: "Wonderful stay at Arogyadham. Loved the Gaushala, fresh A2 dairy, Panchakarma therapies, and care from Saurabh, Harsh & Mayank." },
+        { name: "Joydeep Ganguly", meta: "Google • Holiday ❘ Family", rating: 5, text: "Awesome place to stay with a tranquil atmosphere, luxury views, and quality restaurant dining." },
+        { name: "Abhishek Jai Singh", meta: "Google • Holiday ❘ Family", rating: 5, text: "Lovely experience and great value. Staff members were really cooperative, especially Anurag." },
+        { name: "Anand Dabak", meta: "Google • Verified Stay", rating: 5, text: "Stayed on our way from Prayag to Khajuraho. Clean rooms with garden views, wonderful breakfast, and helpful staff." },
+        { name: "Ashok Tiwari", meta: "Google • 9 months ago", rating: 5, text: "Convenient location for exploring Chitrakoot, very comfortable beds, and warm service. Highly recommended." },
+        { name: "Trishala Nyaik", meta: "Google • Holiday ❘ Family", rating: 5, text: "Booked for my parents and family—authentic, serene, and cooperative staff. Ideal for a week-long spiritual retreat." },
+        { name: "Kanda ManojKumar", meta: "Google • Verified Stay", rating: 5, text: "Feeling blessed to stay here. The divine nature, calmness, restaurant, and peace we felt are beyond words." },
+        { name: "Ashutosh Das", meta: "Google • Holiday ❘ Family", rating: 5, text: "Mandakini cottages are spacious and luxurious, service is attentive, and Aahar Vihar food is delicious." },
+        { name: "Ajay Arora", meta: "Google • Holiday ❘ Family", rating: 4, text: "Nice quiet place to stay amidst hillside surroundings with well-behaved staff. Worth staying." },
+        { name: "Sadhna Bind", meta: "Google • 4 months ago", rating: 4, text: "Very tasty Satvik food and active, attentive service from the staff throughout our visit." },
+        { name: "Flyer756089", meta: "Tripadvisor • 2 months ago", rating: 5, text: "Spacious rooms, clean and neat campus atmosphere, and well-functioning amenities throughout our Chitrakoot stay." }
+      ];
 
-    function createCard(rev) {
-      const initials = rev.name.split(" ").map(w => w[0]).slice(0, 2).join("").toUpperCase();
-      const stars = "&#9733;".repeat(rev.rating) + "&#9734;".repeat(5 - rev.rating);
-      const sourceBadge = rev.meta.includes("Tripadvisor") ? "Tripadvisor" : "Google";
+      function createCard(rev) {
+        const initials = rev.name.split(" ").map(w => w[0]).slice(0, 2).join("").toUpperCase();
+        const stars = "&#9733;".repeat(rev.rating) + "&#9734;".repeat(5 - rev.rating);
+        const sourceBadge = rev.meta.includes("Tripadvisor") ? "Tripadvisor" : "Google";
 
-      return `
+        return `
         <article class="w-[310px] sm:w-[350px] shrink-0 rounded-xl bg-[#FAF8F5] border border-tajGold/30 p-5 shadow-sm hover:shadow-md hover:border-tajGold transition-all duration-300 flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between gap-3 mb-3">
@@ -2607,19 +2732,19 @@
           </div>
         </article>
       `;
-    }
+      }
 
-    const row1El = document.getElementById("revRow1");
-    const row2El = document.getElementById("revRow2");
+      const row1El = document.getElementById("revRow1");
+      const row2El = document.getElementById("revRow2");
 
-    if (row1El && row2El) {
-      // Duplicate items seamlessly for infinite loop
-      const r1Html = ROW1_REVIEWS.map(createCard).join("");
-      const r2Html = ROW2_REVIEWS.map(createCard).join("");
-      row1El.innerHTML = r1Html + r1Html;
-      row2El.innerHTML = r2Html + r2Html;
-    }
-  })();
+      if (row1El && row2El) {
+        // Duplicate items seamlessly for infinite loop
+        const r1Html = ROW1_REVIEWS.map(createCard).join("");
+        const r2Html = ROW2_REVIEWS.map(createCard).join("");
+        row1El.innerHTML = r1Html + r1Html;
+        row2El.innerHTML = r2Html + r2Html;
+      }
+    })();
   </script>
 </body>
 
