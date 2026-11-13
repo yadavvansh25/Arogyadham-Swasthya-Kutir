@@ -190,6 +190,39 @@
     .pr-face-back {
       transform: rotateY(180deg);
     }
+
+    @keyframes framePendulumSwing {
+      0%   { transform: rotate(var(--base-tilt, 0deg)) scale(1.03) translateY(-6px); }
+      18%  { transform: rotate(calc(var(--base-tilt, 0deg) + 5.5deg)) scale(1.04) translateY(-8px); }
+      36%  { transform: rotate(calc(var(--base-tilt, 0deg) - 4.2deg)) scale(1.04) translateY(-7px); }
+      54%  { transform: rotate(calc(var(--base-tilt, 0deg) + 2.6deg)) scale(1.03) translateY(-6px); }
+      72%  { transform: rotate(calc(var(--base-tilt, 0deg) - 1.4deg)) scale(1.03) translateY(-6px); }
+      88%  { transform: rotate(calc(var(--base-tilt, 0deg) + 0.6deg)) scale(1.03) translateY(-6px); }
+      100% { transform: rotate(var(--base-tilt, 0deg)) scale(1.03) translateY(-6px); }
+    }
+
+    @keyframes frameClickJolt {
+      0%   { transform: rotate(var(--base-tilt, 0deg)) scale(0.97); }
+      25%  { transform: rotate(calc(var(--base-tilt, 0deg) - 7deg)) scale(1.06) translateY(-10px); }
+      55%  { transform: rotate(calc(var(--base-tilt, 0deg) + 5deg)) scale(1.05) translateY(-8px); }
+      80%  { transform: rotate(calc(var(--base-tilt, 0deg) - 2deg)) scale(1.03) translateY(-6px); }
+      100% { transform: rotate(var(--base-tilt, 0deg)) scale(1) translateY(0); }
+    }
+
+    .pr-swing-unit {
+      transform-origin: 50% 0%;
+      transform: rotate(var(--base-tilt, 0deg));
+      transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), filter 0.3s ease;
+      will-change: transform;
+    }
+
+    .pr-swing-unit.is-swinging {
+      animation: framePendulumSwing 1.35s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    }
+
+    .pr-swing-unit.is-clicked {
+      animation: frameClickJolt 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
   </style>
 </head>
 
@@ -914,32 +947,6 @@
           </a>
         </div>
       </section>
-
-      <!-- 3D Flip Inspection Modal (Front Photo / Back Gallery Label) -->
-      <div id="prModal" role="dialog" aria-modal="true" class="fixed inset-0 z-[500] hidden items-center justify-center p-4 sm:p-6">
-        <div id="prModalBackdrop" class="absolute inset-0 bg-black/85 backdrop-blur-md transition-opacity"></div>
-        
-        <button type="button" id="prModalClose" class="absolute right-5 top-5 z-20 inline-flex items-center gap-1.5 rounded-full bg-white/15 hover:bg-white/25 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white backdrop-blur transition">
-          Close <span>&times;</span>
-        </button>
-
-        <div class="relative z-10 grid w-full max-w-4xl items-center gap-8 md:grid-cols-2 bg-[#FAF8F5] p-6 sm:p-10 rounded-sm shadow-2xl border border-tajGold/30">
-          <!-- Left: 3D Flippable Frame -->
-          <div class="pr-flip-scene w-full aspect-[4/5] max-w-[320px] mx-auto cursor-pointer" id="prFlipScene" title="Click frame to flip Front / Back">
-            <div id="prFlipCard" class="pr-flip-card relative w-full h-full">
-              <!-- Front Face -->
-              <div id="prModalFront" class="pr-face absolute inset-0 bg-white overflow-hidden shadow-xl"></div>
-              <!-- Back Face (Museum Gallery Label & Hanging Wire) -->
-              <div id="prModalBack" class="pr-face pr-face-back absolute inset-0 bg-[#d8b888] border-8 border-[#2b2118] p-5 flex flex-col justify-between shadow-xl"></div>
-            </div>
-          </div>
-
-          <!-- Right: Facility Details & Flip Controls -->
-          <div id="prModalInfo" class="flex flex-col text-center md:text-left">
-            <!-- Populated dynamically via JS -->
-          </div>
-        </div>
-      </div>
 
       <!-- ================= 6. CREDENTIALS & GOOGLE RATINGS INTEGRATION ================= -->
       <section id="reviews" class="py-20 sm:py-28 bg-white border-b border-taj-border">
@@ -1747,6 +1754,32 @@
 
 
 
+  <!-- 3D Flip Inspection Modal (Front Photo / Back Gallery Label) -->
+  <div id="prModal" role="dialog" aria-modal="true" class="fixed inset-0 z-[500] hidden items-center justify-center p-4 sm:p-6 transition-all duration-300">
+    <div id="prModalBackdrop" class="absolute inset-0 bg-black/85 backdrop-blur-md transition-opacity duration-300 opacity-0"></div>
+    
+    <button type="button" id="prModalClose" class="absolute right-5 top-5 z-20 inline-flex items-center gap-1.5 rounded-full bg-white/15 hover:bg-white/25 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white backdrop-blur transition cursor-pointer">
+      Close <span>&times;</span>
+    </button>
+
+    <div id="prModalDialog" class="relative z-10 grid w-full max-w-4xl items-center gap-8 md:grid-cols-2 bg-[#FAF8F5] p-6 sm:p-10 rounded-sm shadow-2xl border border-tajGold/30 transition-all duration-300 transform opacity-0 scale-95">
+      <!-- Left: 3D Flippable Frame -->
+      <div class="pr-flip-scene w-full aspect-[4/5] max-w-[320px] mx-auto cursor-pointer" id="prFlipScene" title="Click frame to flip Front / Back">
+        <div id="prFlipCard" class="pr-flip-card relative w-full h-full">
+          <!-- Front Face -->
+          <div id="prModalFront" class="pr-face absolute inset-0 bg-white overflow-hidden shadow-xl"></div>
+          <!-- Back Face (Museum Gallery Label & Hanging Wire) -->
+          <div id="prModalBack" class="pr-face pr-face-back absolute inset-0 bg-[#d8b888] border-8 border-[#2b2118] p-5 flex flex-col justify-between shadow-xl"></div>
+        </div>
+      </div>
+
+      <!-- Right: Facility Details & Flip Controls -->
+      <div id="prModalInfo" class="flex flex-col text-center md:text-left">
+        <!-- Populated dynamically via JS -->
+      </div>
+    </div>
+  </div>
+
   <!-- Toast Notification Container -->
   <div id="toast-container"></div>
 
@@ -2125,15 +2158,23 @@
     if (!track) return;
 
     let activeIndex = 0;
+    const allSwingUnits = [];
 
     function setCaption(idx) {
       const item = FACILITIES[idx];
-      if (!item) return;
+      if (!item || !captionBox) return;
       captionBox.innerHTML = `
         <span class="text-[10px] font-bold uppercase tracking-[0.22em] text-tajGold">${item.category}</span>
         <p class="text-base sm:text-lg font-cinzel text-gray-900 mt-0.5">${item.title}</p>
         <p class="text-xs sm:text-sm text-gray-600 mt-1">${item.subtitle} <span class="text-tajGold font-semibold ml-1 underline">Lift to view &rarr;</span></p>
       `;
+    }
+
+    function triggerSwing(unit, animationClass = "is-swinging") {
+      if (!unit) return;
+      unit.classList.remove("is-swinging", "is-clicked");
+      void unit.offsetWidth; // Force reflow
+      unit.classList.add(animationClass);
     }
 
     // Render Hanging Frames on the Brass Rail
@@ -2147,45 +2188,73 @@
 
       wrapper.innerHTML = `
         <!-- Brass Rail Hook -->
-        <div aria-hidden="true" class="w-2.5 h-4 -mt-9 rounded-b-sm bg-gradient-to-b from-amber-300 via-amber-500 to-amber-700 shadow"></div>
+        <div aria-hidden="true" class="w-2.5 h-4 -mt-9 rounded-b-sm bg-gradient-to-b from-amber-300 via-amber-500 to-amber-700 shadow pointer-events-none"></div>
         
-        <!-- Hanging Steel Wires -->
-        <svg aria-hidden="true" class="w-32 h-7 overflow-visible pointer-events-none" viewBox="0 0 128 28">
-          <line x1="64" y1="0" x2="26" y2="28" stroke="#6b7280" stroke-width="1" stroke-opacity="0.65" />
-          <line x1="64" y1="0" x2="102" y2="28" stroke="#6b7280" stroke-width="1" stroke-opacity="0.65" />
-        </svg>
+        <!-- Swing Unit Container (Hanging Wires + Picture Lamp + Framed Print) -->
+        <div class="pr-swing-unit flex flex-col items-center" style="--base-tilt: ${initialTilt}deg;">
+          <!-- Hanging Steel Wires -->
+          <svg aria-hidden="true" class="w-32 h-7 overflow-visible pointer-events-none" viewBox="0 0 128 28">
+            <line x1="64" y1="0" x2="26" y2="28" stroke="#6b7280" stroke-width="1" stroke-opacity="0.65" />
+            <line x1="64" y1="0" x2="102" y2="28" stroke="#6b7280" stroke-width="1" stroke-opacity="0.65" />
+          </svg>
 
-        <!-- Brass Picture Lamp Hood -->
-        <div aria-hidden="true" class="w-20 h-2 rounded-full bg-gradient-to-r from-amber-700 via-amber-400 to-amber-700 shadow-md -mb-1 z-20 transition-transform duration-300 group-hover:scale-105"></div>
+          <!-- Brass Picture Lamp Hood -->
+          <div aria-hidden="true" class="w-20 h-2 rounded-full bg-gradient-to-r from-amber-700 via-amber-400 to-amber-700 shadow-md -mb-1 z-20 transition-transform duration-300 group-hover:scale-105 pointer-events-none"></div>
 
-        <!-- Swinging Framed Print -->
-        <div class="pr-frame-body relative w-44 sm:w-48 aspect-[4/5] bg-white transition-all duration-500 ease-out group-hover:-translate-y-2 group-hover:scale-[1.04] group-hover:shadow-2xl ${frameClass} ${item.mat ? 'pr-mat' : ''}"
-             style="transform: rotate(${initialTilt}deg); transform-origin: top center;">
-          <div class="relative w-full h-full overflow-hidden bg-gray-100">
-            <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-            <!-- Warm Gallery Spotlight Cone -->
-            <div class="pr-spotlight absolute inset-0 opacity-0 group-hover:opacity-100 pointer-events-none"></div>
+          <!-- Framed Print Body -->
+          <div class="pr-frame-body relative w-44 sm:w-48 aspect-[4/5] bg-white transition-all duration-500 ease-out group-hover:shadow-2xl ${frameClass} ${item.mat ? 'pr-mat' : ''}">
+            <div class="relative w-full h-full overflow-hidden bg-gray-100">
+              <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 pointer-events-none" />
+              <!-- Warm Gallery Spotlight Cone -->
+              <div class="pr-spotlight absolute inset-0 opacity-0 group-hover:opacity-100 pointer-events-none"></div>
+            </div>
           </div>
         </div>
 
         <!-- Wall Museum Tag -->
-        <span class="mt-3 px-2.5 py-1 rounded-[2px] border border-gray-200 bg-[#FAF8F5] text-[10px] font-medium tracking-wider text-gray-700 shadow-sm group-hover:border-tajGold group-hover:text-tajGold transition-colors">
+        <span class="mt-3 px-2.5 py-1 rounded-[2px] border border-gray-200 bg-[#FAF8F5] text-[10px] font-medium tracking-wider text-gray-700 shadow-sm group-hover:border-tajGold group-hover:text-tajGold transition-colors pointer-events-none">
           ${item.tag}
         </span>
       `;
 
+      const swingUnit = wrapper.querySelector(".pr-swing-unit");
+      allSwingUnits.push(swingUnit);
+
+      if (swingUnit) {
+        swingUnit.addEventListener("animationend", () => {
+          swingUnit.classList.remove("is-swinging", "is-clicked");
+        });
+      }
+
       wrapper.addEventListener("mouseenter", () => {
         activeIndex = idx;
         setCaption(idx);
+
+        // 1) Trigger smooth pendulum swing on current frame
+        triggerSwing(swingUnit, "is-swinging");
+
+        // 2) Gently nudge neighboring frames (idx - 1 and idx + 1)
+        if (idx > 0 && allSwingUnits[idx - 1]) {
+          triggerSwing(allSwingUnits[idx - 1], "is-swinging");
+        }
+        if (idx < FACILITIES.length - 1 && allSwingUnits[idx + 1]) {
+          triggerSwing(allSwingUnits[idx + 1], "is-swinging");
+        }
       });
 
-      wrapper.addEventListener("click", () => openModal(idx));
+      wrapper.addEventListener("click", () => {
+        // Immediate tactile jolt feedback
+        triggerSwing(swingUnit, "is-clicked");
+        // Smoothly open modal after short tactile jolt
+        setTimeout(() => openModal(idx), 180);
+      });
+
       track.appendChild(wrapper);
     });
 
     function openModal(idx) {
       const item = FACILITIES[idx];
-      if (!item) return;
+      if (!item || !modal) return;
 
       flipCard.classList.remove("is-flipped");
       const frameClass = item.frame === "oak" ? "pr-frame-oak" : item.frame === "white" ? "pr-frame-white" : "pr-frame-black";
@@ -2219,8 +2288,8 @@
         <ul class="flex flex-wrap justify-center md:justify-start gap-2 mt-5">${detailsList}</ul>
         
         <div class="flex items-center justify-center md:justify-start gap-4 mt-7 pt-5 border-t border-gray-200">
-          <button type="button" id="prBtnFront" class="text-xs font-bold uppercase tracking-widest pb-1 border-b-2 border-tajGold text-gray-900">Front View</button>
-          <button type="button" id="prBtnBack" class="text-xs font-bold uppercase tracking-widest pb-1 border-b-2 border-transparent text-gray-500 hover:text-gray-900">Back Label</button>
+          <button type="button" id="prBtnFront" class="text-xs font-bold uppercase tracking-widest pb-1 border-b-2 border-tajGold text-gray-900 cursor-pointer">Front View</button>
+          <button type="button" id="prBtnBack" class="text-xs font-bold uppercase tracking-widest pb-1 border-b-2 border-transparent text-gray-500 hover:text-gray-900 cursor-pointer">Back Label</button>
         </div>
       `;
 
@@ -2243,22 +2312,49 @@
       modal.classList.remove("hidden");
       modal.classList.add("flex");
       document.body.style.overflow = "hidden";
+
+      // Smooth scale-in transition
+      requestAnimationFrame(() => {
+        if (modalBackdrop) {
+          modalBackdrop.classList.remove("opacity-0");
+          modalBackdrop.classList.add("opacity-100");
+        }
+        const dialog = document.getElementById("prModalDialog");
+        if (dialog) {
+          dialog.classList.remove("opacity-0", "scale-95");
+          dialog.classList.add("opacity-100", "scale-100");
+        }
+      });
     }
 
     function closeModal() {
-      modal.classList.add("hidden");
-      modal.classList.remove("flex");
-      document.body.style.overflow = "";
+      if (!modal) return;
+      const dialog = document.getElementById("prModalDialog");
+      if (dialog) {
+        dialog.classList.remove("opacity-100", "scale-100");
+        dialog.classList.add("opacity-0", "scale-95");
+      }
+      if (modalBackdrop) {
+        modalBackdrop.classList.remove("opacity-100");
+        modalBackdrop.classList.add("opacity-0");
+      }
+      setTimeout(() => {
+        modal.classList.add("hidden");
+        modal.classList.remove("flex");
+        document.body.style.overflow = "";
+      }, 200);
     }
 
-    flipScene.addEventListener("click", () => {
-      flipCard.classList.toggle("is-flipped");
-    });
+    if (flipScene) {
+      flipScene.addEventListener("click", () => {
+        flipCard.classList.toggle("is-flipped");
+      });
+    }
 
-    modalClose.addEventListener("click", closeModal);
-    modalBackdrop.addEventListener("click", closeModal);
+    if (modalClose) modalClose.addEventListener("click", closeModal);
+    if (modalBackdrop) modalBackdrop.addEventListener("click", closeModal);
     document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && !modal.classList.contains("hidden")) closeModal();
+      if (e.key === "Escape" && modal && !modal.classList.contains("hidden")) closeModal();
     });
 
     setCaption(0);
