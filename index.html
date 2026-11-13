@@ -979,15 +979,49 @@
             <!-- B) RIGHT COLUMN — PANCHVATI RASOI -->
             <div class="taj-white-card flex flex-col justify-between overflow-hidden">
               <div>
-                <div class="relative h-64 sm:h-72 overflow-hidden">
-                  <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80"
-                    alt="Panchvati Rasoi Traditional Dining Hall" loading="lazy"
-                    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80';"
-                    class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-                    decoding="async">
-                  <div
-                    class="absolute top-3 left-3 bg-white/95 px-2.5 py-1 text-[10px] font-bold tracking-widest text-taj-charcoal border border-taj-border uppercase shadow-sm">
-                    Traditional Indian Thali Dining
+                <div class="relative w-full h-64 sm:h-72 overflow-hidden bg-black" id="panchvatiRasoiSlider">
+                  <!-- Slide 1 (Active on load) -->
+                  <img 
+                    src="https://ik.imagekit.io/exnzknn2n/DSC00229.JPG" 
+                    alt="Panchvati Rasoi Dining Hall" 
+                    class="rasoi-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out opacity-100 z-10"
+                  />
+
+                  <!-- Slide 2 -->
+                  <img 
+                    src="https://ik.imagekit.io/exnzknn2n/DSC00240.JPG" 
+                    alt="Panchvati Rasoi Satvik Thali Experience" 
+                    class="rasoi-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out opacity-0 z-0"
+                    loading="lazy"
+                  />
+
+                  <!-- Slide 3 -->
+                  <img 
+                    src="https://ik.imagekit.io/exnzknn2n/DSC00236.JPG" 
+                    alt="Panchvati Rasoi Traditional Bhojanshala" 
+                    class="rasoi-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out opacity-0 z-0"
+                    loading="lazy"
+                  />
+
+                  <!-- Slide 4 -->
+                  <img 
+                    src="https://ik.imagekit.io/exnzknn2n/DSC00232.JPG" 
+                    alt="Panchvati Rasoi Interior & Seating" 
+                    class="rasoi-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out opacity-0 z-0"
+                    loading="lazy"
+                  />
+
+                  <!-- Existing Top-Left Badge -->
+                  <span class="absolute top-3 left-3 z-20 bg-black/80 backdrop-blur-sm text-white text-[10px] tracking-widest uppercase font-semibold px-3 py-1 rounded-sm">
+                    TRADITIONAL INDIAN THALI DINING
+                  </span>
+
+                  <!-- Minimal Slider Dots Indicator -->
+                  <div class="absolute bottom-3 right-3 z-20 flex items-center space-x-1.5 bg-black/45 px-2.5 py-1 rounded-full backdrop-blur-sm">
+                    <span class="rasoi-dot w-3.5 h-1 rounded-full bg-white transition-all duration-300"></span>
+                    <span class="rasoi-dot w-1.5 h-1 rounded-full bg-white/40 transition-all duration-300"></span>
+                    <span class="rasoi-dot w-1.5 h-1 rounded-full bg-white/40 transition-all duration-300"></span>
+                    <span class="rasoi-dot w-1.5 h-1 rounded-full bg-white/40 transition-all duration-300"></span>
                   </div>
                 </div>
 
@@ -2817,6 +2851,39 @@
         row2El.innerHTML = r2Html + r2Html;
       }
     })();
+  </script>
+
+  <!-- Panchvati Rasoi Dining Auto Crossfade Slideshow Logic -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const slides = document.querySelectorAll('.rasoi-slide');
+      const dots = document.querySelectorAll('.rasoi-dot');
+      if (slides.length < 2) return;
+
+      let currentIndex = 0;
+      const intervalTime = 5000; // Exactly 5 seconds
+
+      setInterval(() => {
+        // Fade out current slide
+        slides[currentIndex].classList.remove('opacity-100', 'z-10');
+        slides[currentIndex].classList.add('opacity-0', 'z-0');
+        if (dots[currentIndex]) {
+          dots[currentIndex].classList.remove('bg-white', 'w-3.5');
+          dots[currentIndex].classList.add('bg-white/40', 'w-1.5');
+        }
+
+        // Move to next slide
+        currentIndex = (currentIndex + 1) % slides.length;
+
+        // Fade in next slide
+        slides[currentIndex].classList.remove('opacity-0', 'z-0');
+        slides[currentIndex].classList.add('opacity-100', 'z-10');
+        if (dots[currentIndex]) {
+          dots[currentIndex].classList.remove('bg-white/40', 'w-1.5');
+          dots[currentIndex].classList.add('bg-white', 'w-3.5');
+        }
+      }, intervalTime);
+    });
   </script>
 </body>
 
