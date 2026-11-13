@@ -146,6 +146,53 @@
       animation: cfFadeIn 0.3s ease-out forwards;
     }
 
+    /* Luxury Coverflow Animations */
+    @keyframes slowKenBurns {
+      0%   { transform: scale(1) translate(0, 0); }
+      50%  { transform: scale(1.08) translate(-1%, -1%); }
+      100% { transform: scale(1) translate(0, 0); }
+    }
+
+    @keyframes goldPulseRing {
+      0%, 100% { box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(192, 160, 96, 0.45), 0 0 28px rgba(192, 160, 96, 0.22); }
+      50%      { box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.45), 0 0 0 2px rgba(192, 160, 96, 0.85), 0 0 42px rgba(192, 160, 96, 0.45); }
+    }
+
+    @keyframes ambientOrbFloat {
+      0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.45; }
+      50%      { transform: translate(-50%, -53%) scale(1.12); opacity: 0.75; }
+    }
+
+    @keyframes shimmerSweep {
+      0%   { transform: translateX(-140%) skewX(-20deg); }
+      100% { transform: translateX(240%) skewX(-20deg); }
+    }
+
+    .cf-ambient-aura {
+      animation: ambientOrbFloat 7s ease-in-out infinite;
+    }
+
+    .cf-card.is-center {
+      animation: goldPulseRing 3.6s ease-in-out infinite;
+    }
+
+    .cf-card.is-center img {
+      animation: slowKenBurns 12s ease-in-out infinite;
+    }
+
+    .cf-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(105deg, transparent 30%, rgba(255, 255, 255, 0.28) 50%, transparent 70%);
+      transform: translateX(-140%) skewX(-20deg);
+      pointer-events: none;
+    }
+
+    .cf-card.is-center::after {
+      animation: shimmerSweep 4.5s ease-in-out infinite;
+    }
+
     /* Picture Rail Gallery Styles */
     .pr-rail {
       background: linear-gradient(to bottom, #e5dec9 0%, #d4c8a8 22%, #b5a47e 45%, #dfd7c2 65%, #9e8d68 100%);
@@ -906,11 +953,14 @@
           <p class="text-sm sm:text-base font-serif italic text-gray-600 max-w-2xl mx-auto mt-3">
             Authentic Ayurvedic therapies, Kerala Panchakarma, and clinical healing administered by expert physicians.
           </p>
+          <div class="w-16 h-[1.5px] bg-gradient-to-r from-transparent via-tajGold to-transparent mx-auto mt-4"></div>
         </div>
 
         <!-- 3D Coverflow Carousel Wrapper -->
         <div id="wellnessCoverflow" class="w-full select-none" style="--cf-card: clamp(210px, 26vw, 310px);" role="region" aria-roledescription="carousel" aria-label="Integrative Health and Healing">
           <div class="relative max-w-6xl mx-auto">
+            <!-- Ambient Golden Aura behind Center Card -->
+            <div aria-hidden="true" class="cf-ambient-aura pointer-events-none absolute left-1/2 top-1/2 w-[360px] sm:w-[480px] h-[360px] sm:h-[480px] rounded-full blur-3xl -z-0" style="background: radial-gradient(circle, rgba(192,160,96,0.22) 0%, transparent 70%);"></div>
             
             <!-- 3D Perspective Frame -->
             <div id="cfFrame" tabindex="0" class="cf-stage cursor-grab overflow-hidden py-10 outline-none active:cursor-grabbing">
@@ -1951,6 +2001,8 @@
       });
     }
 
+    const mouseTilt = { active: false, x: 0, y: 0 };
+
     function paint() {
       if (!cardWidth) return;
       const pitch = cardWidth * (1 + gap);
@@ -1966,7 +2018,22 @@
         const ramp = Math.pow(distance, falloff);
         const tilt = Math.min(rotate * ramp, 82) * Math.sign(offset);
 
-        card.style.transform = `translateX(calc(-50% + ${offset * pitch}px)) translateZ(${-depth * cardWidth * ramp}px) rotateY(${-tilt}deg)`;
+        // Highlight active center card for gold aura, shimmer sweep, and Ken Burns animation
+        const isCenter = distance < 0.35;
+        if (isCenter) {
+          card.classList.add("is-center");
+        } else {
+          card.classList.remove("is-center");
+        }
+
+        let extraTiltX = 0;
+        let extraTiltY = 0;
+        if (isCenter && mouseTilt.active) {
+          extraTiltX = mouseTilt.x;
+          extraTiltY = mouseTilt.y;
+        }
+
+        card.style.transform = `translateX(calc(-50% + ${offset * pitch}px)) translateZ(${-depth * cardWidth * ramp}px) rotateY(${-tilt + extraTiltX}deg) rotateX(${-extraTiltY}deg)`;
 
         const edge = loop ? Math.min(1, Math.max(0, count / 2 - distance)) : 1;
         card.style.opacity = String(Math.max(0, 1 - fade * distance) * edge);
@@ -2007,11 +2074,59 @@
       settle(Math.round(target) + by);
     }
 
+    // 3D Mouse Parallax Tilt on Active Center Card
+    frame.addEventListener("mousemove", (e) => {
+      if (drag) {
+        if (mouseTilt.active) {
+          mouseTilt.active = false;
+          mouseTilt.x = 0;
+          mouseTilt.y = 0;
+          paint();
+        }
+        return;
+      }
+      const centerCard = cardEls.find(c => c.classList.contains("is-center"));
+      if (!centerCard) return;
+
+      const rect = centerCard.getBoundingClientRect();
+      const isOverCenter = (
+        e.clientX >= rect.left &&
+        e.clientX <= rect.right &&
+        e.clientY >= rect.top &&
+        e.clientY <= rect.bottom
+      );
+
+      if (isOverCenter) {
+        const normX = (e.clientX - (rect.left + rect.width / 2)) / (rect.width / 2);
+        const normY = (e.clientY - (rect.top + rect.height / 2)) / (rect.height / 2);
+        mouseTilt.active = true;
+        mouseTilt.x = Math.max(-4, Math.min(4, normX * 4));
+        mouseTilt.y = Math.max(-4, Math.min(4, normY * 4));
+        paint();
+      } else if (mouseTilt.active) {
+        mouseTilt.active = false;
+        mouseTilt.x = 0;
+        mouseTilt.y = 0;
+        paint();
+      }
+    });
+
+    frame.addEventListener("mouseleave", () => {
+      if (mouseTilt.active) {
+        mouseTilt.active = false;
+        mouseTilt.x = 0;
+        mouseTilt.y = 0;
+        paint();
+      }
+    });
+
     frame.addEventListener("pointerdown", (e) => {
       if (rafId !== null) { cancelAnimationFrame(rafId); rafId = null; }
       frame.setPointerCapture(e.pointerId);
       target = pos;
       drag = { id: e.pointerId, x: e.clientX, startPos: pos, v: 0, t: performance.now(), moved: 0 };
+      isUserInteracting = true;
+      stopAutoPlay();
     });
 
     frame.addEventListener("pointermove", (e) => {
@@ -2040,17 +2155,93 @@
       const finalTarget = Math.round(pos + carried);
       setTimeout(() => { drag = null; }, 50);
       settle(finalTarget);
+      isUserInteracting = false;
+      pauseAndResumeAutoPlay();
     }
 
     frame.addEventListener("pointerup", endDrag);
     frame.addEventListener("pointercancel", endDrag);
     frame.addEventListener("keydown", (e) => {
-      if (e.key === "ArrowLeft") { e.preventDefault(); nudge(-1); }
-      if (e.key === "ArrowRight") { e.preventDefault(); nudge(1); }
+      if (e.key === "ArrowLeft") { e.preventDefault(); nudge(-1); pauseAndResumeAutoPlay(); }
+      if (e.key === "ArrowRight") { e.preventDefault(); nudge(1); pauseAndResumeAutoPlay(); }
     });
 
-    prevBtn.addEventListener("click", () => nudge(-1));
-    nextBtn.addEventListener("click", () => nudge(1));
+    prevBtn.addEventListener("click", () => {
+      nudge(-1);
+      pauseAndResumeAutoPlay();
+    });
+    nextBtn.addEventListener("click", () => {
+      nudge(1);
+      pauseAndResumeAutoPlay();
+    });
+
+    // Auto-Play Engine (Every 4.2 seconds, pause on hover/interaction, resume after 3 seconds)
+    const carouselEl = document.getElementById("wellnessCoverflow");
+    let autoPlayTimer = null;
+    let resumeTimer = null;
+    let isUserInteracting = false;
+
+    function startAutoPlay() {
+      stopAutoPlay();
+      if (isUserInteracting) return;
+      autoPlayTimer = setInterval(() => {
+        nudge(1);
+      }, 4200);
+    }
+
+    function stopAutoPlay() {
+      if (autoPlayTimer) {
+        clearInterval(autoPlayTimer);
+        autoPlayTimer = null;
+      }
+    }
+
+    function pauseAndResumeAutoPlay() {
+      stopAutoPlay();
+      if (resumeTimer) clearTimeout(resumeTimer);
+      resumeTimer = setTimeout(() => {
+        if (!isUserInteracting) {
+          startAutoPlay();
+        }
+      }, 3000);
+    }
+
+    if (carouselEl) {
+      carouselEl.addEventListener("mouseenter", () => {
+        isUserInteracting = true;
+        stopAutoPlay();
+      });
+
+      carouselEl.addEventListener("mouseleave", () => {
+        isUserInteracting = false;
+        pauseAndResumeAutoPlay();
+      });
+
+      carouselEl.addEventListener("touchstart", () => {
+        isUserInteracting = true;
+        stopAutoPlay();
+      }, { passive: true });
+
+      carouselEl.addEventListener("touchend", () => {
+        isUserInteracting = false;
+        pauseAndResumeAutoPlay();
+      }, { passive: true });
+
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              startAutoPlay();
+            } else {
+              stopAutoPlay();
+            }
+          });
+        }, { threshold: 0.25 });
+        observer.observe(carouselEl);
+      } else {
+        startAutoPlay();
+      }
+    }
 
     function measure() {
       if (cardEls[0]) {
