@@ -1,7 +1,7 @@
-/* Arogyadham Swasthya Kutir - Official Taj Hotels Aesthetic Design System */
+/* Arogyadham Swasthya Kutir - Official Arogyadham Swasthya Kutir Aesthetic Design System */
 
 /* 21st.dev Interactive Pill Hover Button */
-.taj-interactive-btn {
+.sanctuary-interactive-btn {
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -21,13 +21,13 @@
   isolation: isolate;
 }
 
-.taj-interactive-btn:hover {
+.sanctuary-interactive-btn:hover {
   border-color: #c0a060;
   box-shadow: 0 8px 22px -6px rgba(192, 160, 96, 0.45);
 }
 
 /* Expanding dot background */
-.taj-btn-dot {
+.sanctuary-btn-dot {
   position: absolute;
   left: 1.15rem;
   width: 7px;
@@ -38,12 +38,12 @@
   z-index: 0;
 }
 
-.taj-interactive-btn:hover .taj-btn-dot {
+.sanctuary-interactive-btn:hover .sanctuary-btn-dot {
   transform: scale(46);
 }
 
 /* Default label (slides right & fades out on hover) */
-.taj-btn-label-default {
+.sanctuary-btn-label-default {
   position: relative;
   z-index: 10;
   display: inline-block;
@@ -51,13 +51,13 @@
   transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease;
 }
 
-.taj-interactive-btn:hover .taj-btn-label-default {
+.sanctuary-interactive-btn:hover .sanctuary-btn-label-default {
   transform: translateX(2.5rem);
   opacity: 0;
 }
 
 /* Hover label + Arrow (slides in from left on hover) */
-.taj-btn-label-hover {
+.sanctuary-btn-label-hover {
   position: absolute;
   inset: 0;
   z-index: 10;
@@ -71,13 +71,13 @@
   transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease;
 }
 
-.taj-interactive-btn:hover .taj-btn-label-hover {
+.sanctuary-interactive-btn:hover .sanctuary-btn-label-hover {
   transform: translateX(0);
   opacity: 1;
 }
 
 /* Navbar compact variant so it fits cleanly in the top header */
-.taj-interactive-btn.taj-btn-nav {
+.sanctuary-interactive-btn.sanctuary-btn-nav {
   padding: 0.5rem 1.25rem;
   font-size: 10.5px;
   background-color: rgba(20, 20, 20, 0.9);
@@ -86,33 +86,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@200;300;400;500;600;700&display=swap');
 
 :root {
-  --taj-gold: #b98944;
-  --taj-gold-hover: #a17332;
-  --taj-gold-light: #dfc28d;
-  --taj-gold-subtle: #f4ecdf;
-  --taj-charcoal: #222222;
-  --taj-body: #454545;
-  --taj-muted: #767676;
-  --taj-ivory: #FAF8F5;
-  --taj-cream: #F5EFEB;
-  --taj-sand: #ECE4D9;
-  --taj-border: #E8E2D8;
-  --taj-white: #FFFFFF;
+  --sanctuary-gold: #b98944;
+  --sanctuary-gold-hover: #a17332;
+  --sanctuary-gold-light: #dfc28d;
+  --sanctuary-gold-subtle: #f4ecdf;
+  --sanctuary-charcoal: #222222;
+  --sanctuary-body: #454545;
+  --sanctuary-muted: #767676;
+  --sanctuary-ivory: #FAF8F5;
+  --sanctuary-cream: #F5EFEB;
+  --sanctuary-sand: #ECE4D9;
+  --sanctuary-border: #E8E2D8;
+  --sanctuary-white: #FFFFFF;
 }
 
 html {
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   font-family: 'Montserrat', sans-serif;
-  color: var(--taj-body);
-  background-color: var(--taj-white);
+  color: var(--sanctuary-body);
+  background-color: var(--sanctuary-white);
   overflow-x: hidden;
 }
 
 body {
   overflow-x: hidden;
-  background-color: var(--taj-white);
-  color: var(--taj-body);
+  background-color: var(--sanctuary-white);
+  color: var(--sanctuary-body);
 }
 
 .backdrop-blur-md,
@@ -136,9 +136,9 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
-/* Taj Gold Button - Iconic Rectangular Shape */
-.btn-taj-primary {
-  background-color: var(--taj-gold);
+/* Sanctuary Gold Button - Iconic Rectangular Shape */
+.btn-sanctuary-primary {
+  background-color: var(--sanctuary-gold);
   color: #FFFFFF;
   font-family: 'Montserrat', sans-serif;
   font-size: 11px;
@@ -156,19 +156,19 @@ body {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  border: 1px solid var(--taj-gold);
+  border: 1px solid var(--sanctuary-gold);
 }
 
-.btn-taj-primary:hover {
-  background-color: var(--taj-gold-hover);
-  border-color: var(--taj-gold-hover);
+.btn-sanctuary-primary:hover {
+  background-color: var(--sanctuary-gold-hover);
+  border-color: var(--sanctuary-gold-hover);
   box-shadow: 0 4px 15px rgba(185, 137, 68, 0.35);
   transform: translateY(-1px);
 }
 
-.btn-taj-outline-dark {
-  border: 1px solid var(--taj-charcoal);
-  color: var(--taj-charcoal);
+.btn-sanctuary-outline-dark {
+  border: 1px solid var(--sanctuary-charcoal);
+  color: var(--sanctuary-charcoal);
   background: transparent;
   font-size: 11px;
   font-weight: 600;
@@ -187,14 +187,14 @@ body {
   gap: 8px;
 }
 
-.btn-taj-outline-dark:hover {
-  background-color: var(--taj-charcoal);
+.btn-sanctuary-outline-dark:hover {
+  background-color: var(--sanctuary-charcoal);
   color: #FFFFFF;
 }
 
-.btn-taj-outline-gold {
-  border: 1px solid var(--taj-gold);
-  color: var(--taj-gold);
+.btn-sanctuary-outline-gold {
+  border: 1px solid var(--sanctuary-gold);
+  color: var(--sanctuary-gold);
   background: transparent;
   font-size: 11px;
   font-weight: 600;
@@ -213,95 +213,95 @@ body {
   gap: 8px;
 }
 
-.btn-taj-outline-gold:hover {
-  background-color: var(--taj-gold);
+.btn-sanctuary-outline-gold:hover {
+  background-color: var(--sanctuary-gold);
   color: #FFFFFF;
 }
 
 /* Header Gradient Overlay & Scrolled States */
-.taj-header-gradient {
+.sanctuary-header-gradient {
   background: rgba(0, 0, 0, 0.6);
 }
 
-.taj-header-scrolled {
+.sanctuary-header-scrolled {
   background-color: rgba(12, 19, 31, 0.95) !important;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
   border-bottom: 1px solid rgba(185, 137, 68, 0.25);
 }
 
-/* Explicit Taj Gold Utility Helpers */
-.text-tajGold {
+/* Explicit Sanctuary Gold Utility Helpers */
+.text-sanctuaryGold {
   color: #b98944;
 }
 
-.hover\:text-tajGold:hover {
+.hover\:text-sanctuaryGold:hover {
   color: #dfc28d;
 }
 
-.text-tajGoldLight {
+.text-sanctuaryGoldLight {
   color: #dfc28d;
 }
 
-.bg-tajGold {
+.bg-sanctuaryGold {
   background-color: #b98944;
 }
 
-.hover\:bg-tajGoldHover:hover {
+.hover\:bg-sanctuaryGoldHover:hover {
   background-color: #a17332;
 }
 
-.border-tajGold {
+.border-sanctuaryGold {
   border-color: #b98944;
 }
 
-.hover\:border-tajGold:hover {
+.hover\:border-sanctuaryGold:hover {
   border-color: #dfc28d;
 }
 
-/* Floating Taj Search Pill */
-.taj-floating-search {
+/* Floating Sanctuary Search Pill */
+.sanctuary-floating-search {
   background: #FFFFFF;
   box-shadow: 0 14px 40px rgba(0, 0, 0, 0.25);
   transition: all 0.3s ease;
 }
 
-.taj-floating-search:hover {
+.sanctuary-floating-search:hover {
   box-shadow: 0 18px 50px rgba(0, 0, 0, 0.32);
 }
 
-/* Taj Section Accent Title (—— TITLE ——) */
-.taj-section-title-line {
+/* Sanctuary Section Accent Title (—— TITLE ——) */
+.sanctuary-section-title-line {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 16px;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: var(--taj-charcoal);
+  color: var(--sanctuary-charcoal);
   font-family: 'Cinzel', serif;
   font-size: 13px;
   font-weight: 600;
 }
 
-.taj-section-title-line::before,
-.taj-section-title-line::after {
+.sanctuary-section-title-line::before,
+.sanctuary-section-title-line::after {
   content: '';
   height: 1px;
   width: 45px;
-  background-color: var(--taj-gold);
+  background-color: var(--sanctuary-gold);
 }
 
 /* Luxury Card Shadow & Hover */
-.taj-white-card {
+.sanctuary-white-card {
   background: #FFFFFF;
-  border: 1px solid var(--taj-border);
+  border: 1px solid var(--sanctuary-border);
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.taj-white-card:hover {
+.sanctuary-white-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
-  border-color: var(--taj-gold);
+  border-color: var(--sanctuary-gold);
 }
 
 /* Category Filter Tabs */
@@ -313,17 +313,17 @@ body {
   text-transform: uppercase;
   padding: 10px 22px;
   border-bottom: 2px solid transparent;
-  color: var(--taj-muted);
+  color: var(--sanctuary-muted);
   transition: all 0.25s ease;
 }
 
 .subcat-tab-btn:hover {
-  color: var(--taj-charcoal);
+  color: var(--sanctuary-charcoal);
 }
 
 .subcat-tab-btn.active {
-  color: var(--taj-gold);
-  border-bottom-color: var(--taj-gold);
+  color: var(--sanctuary-gold);
+  border-bottom-color: var(--sanctuary-gold);
 }
 
 /* Modal Transitions */
@@ -379,12 +379,12 @@ body {
   pointer-events: none;
 }
 
-.taj-toast {
+.sanctuary-toast {
   pointer-events: auto;
   min-width: 320px;
   max-width: 440px;
   background: #FFFFFF;
-  border-left: 4px solid var(--taj-gold);
+  border-left: 4px solid var(--sanctuary-gold);
   border-top: 1px solid rgba(0, 0, 0, 0.06);
   border-right: 1px solid rgba(0, 0, 0, 0.06);
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
@@ -393,7 +393,7 @@ body {
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.taj-toast.toast-active {
+.sanctuary-toast.toast-active {
   transform: translateX(0);
 }
 
@@ -408,11 +408,11 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--taj-gold);
+  background: var(--sanctuary-gold);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--taj-gold-hover);
+  background: var(--sanctuary-gold-hover);
 }
 
 /* Print styles for booking voucher */
@@ -460,7 +460,7 @@ body {
 }
 
 .breadcrumb-back-btn:hover {
-  color: var(--taj-gold);
+  color: var(--sanctuary-gold);
   transform: translateX(-3px);
 }
 
@@ -473,19 +473,19 @@ body {
   text-transform: uppercase;
   padding: 12px 20px;
   border-bottom: 2px solid transparent;
-  color: var(--taj-muted);
+  color: var(--sanctuary-muted);
   transition: all 0.25s ease;
   white-space: nowrap;
 }
 
 .dining-tab-btn:hover {
-  color: var(--taj-charcoal);
+  color: var(--sanctuary-charcoal);
   background-color: rgba(185, 137, 68, 0.04);
 }
 
 .dining-tab-btn.active {
-  color: var(--taj-gold);
-  border-bottom-color: var(--taj-gold);
+  color: var(--sanctuary-gold);
+  border-bottom-color: var(--sanctuary-gold);
   background-color: rgba(185, 137, 68, 0.08);
 }
 
@@ -494,9 +494,9 @@ body {
   font-weight: 600;
   letter-spacing: 0.03em;
   padding: 6px 14px;
-  border: 1px solid var(--taj-border);
+  border: 1px solid var(--sanctuary-border);
   background: #FFFFFF;
-  color: var(--taj-body);
+  color: var(--sanctuary-body);
   transition: all 0.2s ease;
   border-radius: 9999px;
   cursor: pointer;
@@ -504,24 +504,24 @@ body {
 }
 
 .dining-subcat-chip:hover {
-  border-color: var(--taj-gold);
-  color: var(--taj-gold);
+  border-color: var(--sanctuary-gold);
+  color: var(--sanctuary-gold);
 }
 
 .dining-subcat-chip.active {
-  background: var(--taj-charcoal);
-  border-color: var(--taj-charcoal);
+  background: var(--sanctuary-charcoal);
+  border-color: var(--sanctuary-charcoal);
   color: #FFFFFF;
 }
 
 .menu-dish-card {
   background: #FFFFFF;
-  border: 1px solid var(--taj-border);
+  border: 1px solid var(--sanctuary-border);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .menu-dish-card:hover {
-  border-color: var(--taj-gold);
+  border-color: var(--sanctuary-gold);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
   transform: translateY(-2px);
 }
@@ -549,7 +549,7 @@ body {
 
 .bill-receipt-paper {
   background: #FFFFFF;
-  border: 1px solid var(--taj-border);
+  border: 1px solid var(--sanctuary-border);
   box-shadow: 0 14px 40px rgba(0, 0, 0, 0.08);
   position: relative;
 }
@@ -561,7 +561,7 @@ body {
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, var(--taj-gold), #dfc28d, var(--taj-gold));
+  background: linear-gradient(90deg, var(--sanctuary-gold), #dfc28d, var(--sanctuary-gold));
 }
 
 .qty-btn {
@@ -571,8 +571,8 @@ body {
   align-items: center;
   justify-content: center;
   background: #FAF8F5;
-  border: 1px solid var(--taj-border);
-  color: var(--taj-charcoal);
+  border: 1px solid var(--sanctuary-border);
+  color: var(--sanctuary-charcoal);
   font-weight: 700;
   font-size: 14px;
   transition: all 0.2s ease;
@@ -580,28 +580,28 @@ body {
 }
 
 .qty-btn:hover {
-  background: var(--taj-gold);
+  background: var(--sanctuary-gold);
   color: #FFFFFF;
-  border-color: var(--taj-gold);
+  border-color: var(--sanctuary-gold);
 }
 
 /* ================= AUTHENTICATION & OTP VERIFICATION STYLES ================= */
 .otp-digit {
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  caret-color: var(--taj-gold);
+  caret-color: var(--sanctuary-gold);
 }
 
 .otp-digit:focus {
-  border-color: var(--taj-gold) !important;
+  border-color: var(--sanctuary-gold) !important;
   box-shadow: 0 0 0 3px rgba(185, 137, 68, 0.25);
   background-color: #FAF8F5;
   transform: translateY(-2px);
 }
 
 .otp-digit.filled {
-  border-color: var(--taj-gold);
+  border-color: var(--sanctuary-gold);
   background-color: #FAF8F5;
-  color: var(--taj-charcoal);
+  color: var(--sanctuary-charcoal);
 }
 
 /* User Dropdown Animations */

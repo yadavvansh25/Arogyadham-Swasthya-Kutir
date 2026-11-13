@@ -78,12 +78,12 @@
       theme: {
         extend: {
           colors: {
-            tajNavy: '#0c131f',
-            tajDark: '#111827',
-            tajGold: '#b98944',
-            tajGoldHover: '#a17332',
-            tajGoldLight: '#dfc28d',
-            taj: {
+            sanctuaryNavy: '#0c131f',
+            sanctuaryDark: '#111827',
+            sanctuaryGold: '#b98944',
+            sanctuaryGoldHover: '#a17332',
+            sanctuaryGoldLight: '#dfc28d',
+            sanctuary: {
               gold: '#b98944',
               'gold-hover': '#a17332',
               'gold-light': '#dfc28d',
@@ -117,7 +117,7 @@
   <!-- Firebase v10+ Modular Client Integration -->
   <script type="module" src="firebase-init.js"></script>
 
-  <!-- Custom Taj Styles -->
+  <!-- Sanctuary Custom Styles -->
   <link rel="stylesheet" href="styles.css">
 
   <style>
@@ -399,7 +399,7 @@
     }
 
     /* 21st.dev Interactive Pill Hover Button */
-    .taj-interactive-btn {
+    .sanctuary-interactive-btn {
       position: relative;
       display: inline-flex;
       align-items: center;
@@ -419,13 +419,13 @@
       isolation: isolate;
     }
 
-    .taj-interactive-btn:hover {
+    .sanctuary-interactive-btn:hover {
       border-color: #c0a060;
       box-shadow: 0 8px 22px -6px rgba(192, 160, 96, 0.45);
     }
 
     /* Expanding dot background */
-    .taj-btn-dot {
+    .sanctuary-btn-dot {
       position: absolute;
       left: 1.15rem;
       width: 7px;
@@ -436,12 +436,12 @@
       z-index: 0;
     }
 
-    .taj-interactive-btn:hover .taj-btn-dot {
+    .sanctuary-interactive-btn:hover .sanctuary-btn-dot {
       transform: scale(46);
     }
 
     /* Default label (slides right & fades out on hover) */
-    .taj-btn-label-default {
+    .sanctuary-btn-label-default {
       position: relative;
       z-index: 10;
       display: inline-block;
@@ -449,13 +449,13 @@
       transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease;
     }
 
-    .taj-interactive-btn:hover .taj-btn-label-default {
+    .sanctuary-interactive-btn:hover .sanctuary-btn-label-default {
       transform: translateX(2.5rem);
       opacity: 0;
     }
 
     /* Hover label + Arrow (slides in from left on hover) */
-    .taj-btn-label-hover {
+    .sanctuary-btn-label-hover {
       position: absolute;
       inset: 0;
       z-index: 10;
@@ -469,13 +469,13 @@
       transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease;
     }
 
-    .taj-interactive-btn:hover .taj-btn-label-hover {
+    .sanctuary-interactive-btn:hover .sanctuary-btn-label-hover {
       transform: translateX(0);
       opacity: 1;
     }
 
     /* Navbar compact variant so it fits cleanly in the top header */
-    .taj-interactive-btn.taj-btn-nav {
+    .sanctuary-interactive-btn.sanctuary-btn-nav {
       padding: 0.5rem 1.25rem;
       font-size: 10.5px;
       background-color: rgba(20, 20, 20, 0.9);
@@ -484,10 +484,10 @@
 </head>
 
 <body
-  class="bg-white text-taj-body font-montserrat antialiased selection:bg-taj-gold selection:text-white overflow-x-hidden">
+  class="bg-white text-sanctuary-body font-montserrat antialiased selection:bg-sanctuary-gold selection:text-white overflow-x-hidden">
 
-  <!-- ================= 1. STREAMLINED TOP NAVIGATION (OFFICIAL LUXURY TAJ STYLE) ================= -->
-  <header id="taj-nav"
+  <!-- ================= 1. STREAMLINED TOP NAVIGATION (HERITAGE SANCTUARY STYLE) ================= -->
+  <header id="sanctuary-nav"
     class="fixed top-0 left-0 right-0 z-50 bg-black/60 backdrop-blur-md border-b border-white/10 text-white transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
 
@@ -505,12 +505,12 @@
         <div class="flex flex-col select-none justify-center">
           <!-- Uppercase Luxury Serif "AROGYADHAM" -->
           <span
-            class="text-base sm:text-lg md:text-[23px] font-cinzel tracking-[0.16em] text-white font-medium transition-colors duration-300 group-hover:text-tajGold leading-none mb-1 md:mb-1.5">
+            class="text-base sm:text-lg md:text-[23px] font-cinzel tracking-[0.16em] text-white font-medium transition-colors duration-300 group-hover:text-sanctuaryGold leading-none mb-1 md:mb-1.5">
             AROGYADHAM
           </span>
           <!-- Sub-brand label "SWASTHYA KUTIR" in gold with high letter-spacing -->
           <span
-            class="text-[9px] sm:text-[10px] md:text-[10.5px] font-serif tracking-[0.24em] font-medium text-tajGold uppercase leading-none">
+            class="text-[9px] sm:text-[10px] md:text-[10.5px] font-serif tracking-[0.24em] font-medium text-sanctuaryGold uppercase leading-none">
             SWASTHYA KUTIR
           </span>
         </div>
@@ -520,38 +520,38 @@
       <nav
         class="hidden lg:flex items-center gap-4 xl:gap-7 uppercase text-[11px] font-semibold tracking-[0.18em] text-white/90 whitespace-nowrap">
         <a href="./swasthya-kutir.html#mandakini"
-          class="nav-link whitespace-nowrap py-2 text-white/90 hover:text-white transition-colors duration-200 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-tajGold after:transition-all after:duration-300 hover:after:w-full">
+          class="nav-link whitespace-nowrap py-2 text-white/90 hover:text-white transition-colors duration-200 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-sanctuaryGold after:transition-all after:duration-300 hover:after:w-full">
           MANDAKINI
         </a>
         <a href="./swasthya-kutir.html#paishwani"
-          class="nav-link whitespace-nowrap py-2 text-white/90 hover:text-white transition-colors duration-200 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-tajGold after:transition-all after:duration-300 hover:after:w-full">
+          class="nav-link whitespace-nowrap py-2 text-white/90 hover:text-white transition-colors duration-200 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-sanctuaryGold after:transition-all after:duration-300 hover:after:w-full">
           PAISHWANI
         </a>
         <a href="./swasthya-kutir.html#vaidehi"
-          class="nav-link whitespace-nowrap py-2 text-white/90 hover:text-white transition-colors duration-200 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-tajGold after:transition-all after:duration-300 hover:after:w-full">
+          class="nav-link whitespace-nowrap py-2 text-white/90 hover:text-white transition-colors duration-200 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-sanctuaryGold after:transition-all after:duration-300 hover:after:w-full">
           VAIDEHI
         </a>
         <a href="./panchvati.html"
-          class="nav-link whitespace-nowrap py-2 text-white/90 hover:text-white transition-colors duration-200 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-tajGold after:transition-all after:duration-300 hover:after:w-full">
+          class="nav-link whitespace-nowrap py-2 text-white/90 hover:text-white transition-colors duration-200 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-sanctuaryGold after:transition-all after:duration-300 hover:after:w-full">
           PANCHWATI
         </a>
 
         <!-- Essential Clean Dining Dropdown -->
         <div class="relative group/dining py-2 whitespace-nowrap">
           <button type="button"
-            class="flex items-center gap-1 uppercase text-[11px] font-semibold tracking-[0.18em] text-white/90 hover:text-white transition-colors whitespace-nowrap relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-tajGold after:transition-all after:duration-300 group-hover/dining:after:w-full cursor-pointer">
+            class="flex items-center gap-1 uppercase text-[11px] font-semibold tracking-[0.18em] text-white/90 hover:text-white transition-colors whitespace-nowrap relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-sanctuaryGold after:transition-all after:duration-300 group-hover/dining:after:w-full cursor-pointer">
             <span>DINING</span>
             <i data-lucide="chevron-down"
-              class="w-3.5 h-3.5 text-tajGold transition-transform duration-200 group-hover/dining:rotate-180"></i>
+              class="w-3.5 h-3.5 text-sanctuaryGold transition-transform duration-200 group-hover/dining:rotate-180"></i>
           </button>
           <div class="absolute left-0 top-full pt-1.5 w-64 hidden group-hover/dining:block z-50">
-            <div class="bg-black/95 backdrop-blur-md border border-tajGold/40 shadow-2xl py-2 px-1 text-white">
+            <div class="bg-black/95 backdrop-blur-md border border-sanctuaryGold/40 shadow-2xl py-2 px-1 text-white">
               <a href="./aahar-vihar-menu.html"
-                class="block px-4 py-2.5 text-xs font-medium tracking-wider hover:bg-tajGold/20 hover:text-tajGold transition-colors whitespace-nowrap">
+                class="block px-4 py-2.5 text-xs font-medium tracking-wider hover:bg-sanctuaryGold/20 hover:text-sanctuaryGold transition-colors whitespace-nowrap">
                 Aahar-Vihar Restaurant
               </a>
               <a href="./panchvati-pasoee-menu.html"
-                class="block px-4 py-2.5 text-xs font-medium tracking-wider hover:bg-tajGold/20 hover:text-tajGold transition-colors border-t border-white/10 whitespace-nowrap">
+                class="block px-4 py-2.5 text-xs font-medium tracking-wider hover:bg-sanctuaryGold/20 hover:text-sanctuaryGold transition-colors border-t border-white/10 whitespace-nowrap">
                 Panchvati Rasoi (Community Bhojan)
               </a>
             </div>
@@ -559,7 +559,7 @@
         </div>
 
         <a href="./index.html#services-section"
-          class="nav-link whitespace-nowrap py-2 text-white/90 hover:text-white transition-colors duration-200 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-tajGold after:transition-all after:duration-300 hover:after:w-full">
+          class="nav-link whitespace-nowrap py-2 text-white/90 hover:text-white transition-colors duration-200 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-sanctuaryGold after:transition-all after:duration-300 hover:after:w-full">
           SERVICES
         </a>
       </nav>
@@ -604,10 +604,10 @@
         <button
           type="button"
           onclick="gtag('event', 'click_book_stay', {'event_category': 'CTA'}); openBookingDrawer('Mandakini Royal Suite', 12000)"
-          class="taj-interactive-btn taj-btn-nav whitespace-nowrap">
-          <span class="taj-btn-dot" aria-hidden="true"></span>
-          <span class="taj-btn-label-default">BOOK A STAY</span>
-          <span class="taj-btn-label-hover">
+          class="sanctuary-interactive-btn sanctuary-btn-nav whitespace-nowrap">
+          <span class="sanctuary-btn-dot" aria-hidden="true"></span>
+          <span class="sanctuary-btn-label-default">BOOK A STAY</span>
+          <span class="sanctuary-btn-label-hover">
             <span>BOOK A STAY</span>
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6l6 6-6 6"/></svg>
           </span>
@@ -615,7 +615,7 @@
 
         <!-- Mobile Hamburger Icon (< 1024px) -->
         <button id="mobile-menu-btn" onclick="toggleMobileMenu()"
-          class="lg:hidden flex items-center justify-center w-9 h-9 text-white hover:text-tajGold transition-colors"
+          class="lg:hidden flex items-center justify-center w-9 h-9 text-white hover:text-sanctuaryGold transition-colors"
           aria-label="Toggle Menu">
           <i data-lucide="menu" class="w-6 h-6"></i>
         </button>
@@ -628,47 +628,47 @@
       class="hidden lg:hidden bg-black/95 backdrop-blur-xl border-t border-white/10 px-6 py-6 space-y-4 text-xs uppercase tracking-[0.18em] text-white font-medium shadow-2xl">
       <div class="flex flex-col space-y-3 pb-3 border-b border-white/10">
         <a href="./swasthya-kutir.html#mandakini" onclick="toggleMobileMenu(true);"
-          class="py-2 text-white/90 hover:text-tajGold transition-colors flex items-center justify-between border-b border-white/5">
+          class="py-2 text-white/90 hover:text-sanctuaryGold transition-colors flex items-center justify-between border-b border-white/5">
           <span>Mandakini Cottage</span>
-          <i data-lucide="chevron-right" class="w-4 h-4 text-tajGold"></i>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-sanctuaryGold"></i>
         </a>
         <a href="./swasthya-kutir.html#paishwani" onclick="toggleMobileMenu(true);"
-          class="py-2 text-white/90 hover:text-tajGold transition-colors flex items-center justify-between border-b border-white/5">
+          class="py-2 text-white/90 hover:text-sanctuaryGold transition-colors flex items-center justify-between border-b border-white/5">
           <span>Paishwani Cottage</span>
-          <i data-lucide="chevron-right" class="w-4 h-4 text-tajGold"></i>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-sanctuaryGold"></i>
         </a>
         <a href="./swasthya-kutir.html#vaidehi" onclick="toggleMobileMenu(true);"
-          class="py-2 text-white/90 hover:text-tajGold transition-colors flex items-center justify-between border-b border-white/5">
+          class="py-2 text-white/90 hover:text-sanctuaryGold transition-colors flex items-center justify-between border-b border-white/5">
           <span>Vaidehi Suite &amp; Twin</span>
-          <i data-lucide="chevron-right" class="w-4 h-4 text-tajGold"></i>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-sanctuaryGold"></i>
         </a>
         <a href="./panchvati.html" onclick="toggleMobileMenu(true);"
-          class="py-2 text-white/90 hover:text-tajGold transition-colors flex items-center justify-between border-b border-white/5">
+          class="py-2 text-white/90 hover:text-sanctuaryGold transition-colors flex items-center justify-between border-b border-white/5">
           <span>Panchwati Wing</span>
-          <i data-lucide="chevron-right" class="w-4 h-4 text-tajGold"></i>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-sanctuaryGold"></i>
         </a>
         <a href="./aahar-vihar-menu.html" onclick="toggleMobileMenu(true);"
-          class="py-2 text-white/90 hover:text-tajGold transition-colors flex items-center justify-between border-b border-white/5">
+          class="py-2 text-white/90 hover:text-sanctuaryGold transition-colors flex items-center justify-between border-b border-white/5">
           <span>Aahar-Vihar Menu</span>
-          <i data-lucide="chevron-right" class="w-4 h-4 text-tajGold"></i>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-sanctuaryGold"></i>
         </a>
         <a href="./panchvati-rasoi-menu.html" onclick="toggleMobileMenu(true);"
-          class="py-2 text-white/90 hover:text-tajGold transition-colors flex items-center justify-between border-b border-white/5">
+          class="py-2 text-white/90 hover:text-sanctuaryGold transition-colors flex items-center justify-between border-b border-white/5">
           <span>Panchvati Rasoi Menu</span>
-          <i data-lucide="chevron-right" class="w-4 h-4 text-tajGold"></i>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-sanctuaryGold"></i>
         </a>
         <a href="./index.html#services-section" onclick="toggleMobileMenu(true);"
-          class="py-2 text-white/90 hover:text-tajGold transition-colors flex items-center justify-between">
+          class="py-2 text-white/90 hover:text-sanctuaryGold transition-colors flex items-center justify-between">
           <span>Campus Services</span>
-          <i data-lucide="chevron-right" class="w-4 h-4 text-tajGold"></i>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-sanctuaryGold"></i>
         </a>
       </div>
 
       <!-- Direct Tap-to-Call in Mobile Drawer -->
       <div class="pt-2">
         <a href="tel:+917670265334"
-          class="w-full flex items-center justify-center space-x-2 text-xs font-semibold text-white hover:text-tajGold tracking-wider transition-colors border border-white/20 hover:border-tajGold py-3 rounded-sm bg-black/40">
-          <i data-lucide="phone-call" class="w-4 h-4 text-tajGold"></i>
+          class="w-full flex items-center justify-center space-x-2 text-xs font-semibold text-white hover:text-sanctuaryGold tracking-wider transition-colors border border-white/20 hover:border-sanctuaryGold py-3 rounded-sm bg-black/40">
+          <i data-lucide="phone-call" class="w-4 h-4 text-sanctuaryGold"></i>
           <span>DIRECT CALL: +91 76702 65334</span>
         </a>
       </div>
@@ -676,10 +676,10 @@
       <!-- Book a Stay Button in Mobile Drawer -->
       <div class="pt-1">
         <button type="button" onclick="openBookingDrawer('Mandakini Royal Suite', 12000); toggleMobileMenu(true);"
-          class="w-full taj-interactive-btn">
-          <span class="taj-btn-dot" aria-hidden="true"></span>
-          <span class="taj-btn-label-default">BOOK A STAY</span>
-          <span class="taj-btn-label-hover">
+          class="w-full sanctuary-interactive-btn">
+          <span class="sanctuary-btn-dot" aria-hidden="true"></span>
+          <span class="sanctuary-btn-label-default">BOOK A STAY</span>
+          <span class="sanctuary-btn-label-hover">
             <span>BOOK A STAY</span>
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6l6 6-6 6"/></svg>
           </span>
@@ -689,20 +689,20 @@
   </header>
 
   <!-- ================= MAIN APP VIEW ROUTING CONTAINER ================= -->
-  <main id="taj-app-content">
+  <main id="sanctuary-app-content">
     <div id="view-home" class="view-page block" style="display: block;">
 
       <!-- ================= CINEMATIC HERO SECTION ================= -->
       <section id="hero"
         class="relative min-h-[92vh] sm:min-h-screen flex flex-col items-center justify-end overflow-hidden">
         <!-- Ambient Looping Video Background -->
-        <div class="absolute inset-0 z-0 overflow-hidden bg-tajNavy">
+        <div class="absolute inset-0 z-0 overflow-hidden bg-sanctuaryNavy">
           <video id="heroVideo" autoplay muted loop playsinline preload="metadata"
             class="absolute inset-0 w-full h-full object-cover z-0"
             style="transform: translate3d(0, 0, 0); will-change: transform;">
             <source src="https://ik.imagekit.io/exnzknn2n/lv_0_20261021174431.mp4" type="video/mp4" />
           </video>
-          <!-- Luxury Taj Vignette Overlay -->
+          <!-- Luxury Sanctuary Vignette Overlay -->
           <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/40 pointer-events-none z-0">
           </div>
         </div>
@@ -714,27 +714,27 @@
             class="text-lg sm:text-2xl md:text-3xl font-cinzel tracking-[0.2em] uppercase text-white font-medium drop-shadow-lg mb-1.5 lg:whitespace-nowrap">
             AROGYADHAM SWASTHYA KUTIR
           </h1>
-          <p class="text-xs sm:text-base font-serif italic text-tajGoldLight tracking-wide drop-shadow-md">
+          <p class="text-xs sm:text-base font-serif italic text-sanctuaryGoldLight tracking-wide drop-shadow-md">
             "A Sacred Sanctuary of Heritage &amp; Rejuvenation in Chitrakoot"
           </p>
         </div>
       </section>
 
       <!-- ================= 2. PRIMARY ROOMS & SUITES SECTION (2 MAIN GRAND WINGS) ================= -->
-      <section id="rooms-section" class="py-20 sm:py-28 bg-white border-b border-taj-border relative">
+      <section id="rooms-section" class="py-20 sm:py-28 bg-white border-b border-sanctuary-border relative">
         <a id="rooms-wings" class="sr-only"></a>
         <div id="rooms-pillars" class="absolute -top-28"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           <div class="text-center mb-14 max-w-3xl mx-auto">
-            <span class="taj-section-title-line">
+            <span class="sanctuary-section-title-line">
               SACRED ACCOMMODATIONS
             </span>
             <h2
-              class="font-cinzel text-2xl sm:text-3xl md:text-4xl font-bold text-taj-charcoal uppercase tracking-wider mt-2.5 mb-2">
+              class="font-cinzel text-2xl sm:text-3xl md:text-4xl font-bold text-sanctuary-charcoal uppercase tracking-wider mt-2.5 mb-2">
               Two Grand Architectural Wings
             </h2>
-            <p class="font-cormorant italic text-lg sm:text-xl text-taj-body max-w-2xl mx-auto">
+            <p class="font-cormorant italic text-lg sm:text-xl text-sanctuary-body max-w-2xl mx-auto">
               A 55-acre riverfront sanctuary blending heritage living, Ayurveda, and tranquil hospitality.
             </p>
           </div>
@@ -744,7 +744,7 @@
 
             <!-- WING 1: AROGYADHAM SWASTHYA KUTIR (Heritage & Wellness Wing) -->
             <div
-              class="taj-white-card flex flex-col justify-between group overflow-hidden border border-taj-border hover:border-taj-gold/80 transition-all duration-500 shadow-sm hover:shadow-xl">
+              class="sanctuary-white-card flex flex-col justify-between group overflow-hidden border border-sanctuary-border hover:border-sanctuary-gold/80 transition-all duration-500 shadow-sm hover:shadow-xl">
               <div>
                 <div class="relative w-full h-64 sm:h-72 overflow-hidden rounded-t-sm bg-black"
                   id="swasthyaKutirCardSlider">
@@ -768,7 +768,7 @@
 
                   <!-- Badge over image -->
                   <span
-                    class="absolute top-3 left-3 z-20 bg-tajGold text-white text-[10px] tracking-widest uppercase font-semibold px-2.5 py-1 rounded-sm shadow">
+                    class="absolute top-3 left-3 z-20 bg-sanctuaryGold text-white text-[10px] tracking-widest uppercase font-semibold px-2.5 py-1 rounded-sm shadow">
                     Heritage Wellness Sanctuary
                   </span>
 
@@ -783,31 +783,31 @@
                 </div>
 
                 <div class="p-6 sm:p-8 space-y-4">
-                  <div class="border-b border-taj-border pb-3">
-                    <h3 class="font-cinzel text-2xl font-bold text-taj-charcoal">
+                  <div class="border-b border-sanctuary-border pb-3">
+                    <h3 class="font-cinzel text-2xl font-bold text-sanctuary-charcoal">
                       AROGYADHAM SWASTHYA KUTIR
                     </h3>
-                    <p class="text-xs text-taj-gold font-semibold uppercase tracking-wider mt-0.5">
+                    <p class="text-xs text-sanctuary-gold font-semibold uppercase tracking-wider mt-0.5">
                       Heritage Waterfront Cottages &amp; Ayurvedic Suites
                     </p>
                   </div>
 
                   <!-- 4 Essential Facts -->
-                  <div class="space-y-2 text-xs text-taj-charcoal pt-1">
+                  <div class="space-y-2 text-xs text-sanctuary-charcoal pt-1">
                     <div class="flex items-start gap-2.5">
-                      <i data-lucide="check-circle" class="w-4 h-4 text-taj-gold flex-shrink-0 mt-0.5"></i>
+                      <i data-lucide="check-circle" class="w-4 h-4 text-sanctuary-gold flex-shrink-0 mt-0.5"></i>
                       <span>16 Waterfront Cottages &amp; 6 Suites (250–1,250 sq.ft)</span>
                     </div>
                     <div class="flex items-start gap-2.5">
-                      <i data-lucide="check-circle" class="w-4 h-4 text-taj-gold flex-shrink-0 mt-0.5"></i>
+                      <i data-lucide="check-circle" class="w-4 h-4 text-sanctuary-gold flex-shrink-0 mt-0.5"></i>
                       <span>Accommodates up to 5 Guests with Sitting Lounges</span>
                     </div>
                     <div class="flex items-start gap-2.5">
-                      <i data-lucide="check-circle" class="w-4 h-4 text-taj-gold flex-shrink-0 mt-0.5"></i>
+                      <i data-lucide="check-circle" class="w-4 h-4 text-sanctuary-gold flex-shrink-0 mt-0.5"></i>
                       <span>Private Verandahs with Mandakini River &amp; Garden Views</span>
                     </div>
                     <div class="flex items-start gap-2.5">
-                      <i data-lucide="check-circle" class="w-4 h-4 text-taj-gold flex-shrink-0 mt-0.5"></i>
+                      <i data-lucide="check-circle" class="w-4 h-4 text-sanctuary-gold flex-shrink-0 mt-0.5"></i>
                       <span>In-House Ayurvedic Hospital &amp; Panchakarma Center</span>
                     </div>
                   </div>
@@ -815,15 +815,15 @@
               </div>
 
               <div
-                class="p-6 sm:p-8 pt-0 border-t border-taj-border pt-4 flex flex-wrap items-center justify-between gap-3">
+                class="p-6 sm:p-8 pt-0 border-t border-sanctuary-border pt-4 flex flex-wrap items-center justify-between gap-3">
                 <div>
-                  <span class="text-xs text-taj-charcoal font-semibold block">₹5,500 + GST / night</span>
-                  <span class="text-[10px] text-taj-muted">Royal waterfront &amp; wellness retreat</span>
+                  <span class="text-xs text-sanctuary-charcoal font-semibold block">₹5,500 + GST / night</span>
+                  <span class="text-[10px] text-sanctuary-muted">Royal waterfront &amp; wellness retreat</span>
                 </div>
-                <a href="./swasthya-kutir.html" class="taj-interactive-btn">
-                  <span class="taj-btn-dot" aria-hidden="true"></span>
-                  <span class="taj-btn-label-default">EXPLORE SUITES</span>
-                  <span class="taj-btn-label-hover">
+                <a href="./swasthya-kutir.html" class="sanctuary-interactive-btn">
+                  <span class="sanctuary-btn-dot" aria-hidden="true"></span>
+                  <span class="sanctuary-btn-label-default">EXPLORE SUITES</span>
+                  <span class="sanctuary-btn-label-hover">
                     <span>EXPLORE SUITES</span>
                     <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6l6 6-6 6"/></svg>
                   </span>
@@ -834,7 +834,7 @@
 
             <!-- WING 2: PANCHVATI (Pilgrim, Family & Group Wing) -->
             <div
-              class="taj-white-card flex flex-col justify-between group overflow-hidden border border-taj-border hover:border-emerald-700/80 transition-all duration-500 shadow-sm hover:shadow-xl">
+              class="sanctuary-white-card flex flex-col justify-between group overflow-hidden border border-sanctuary-border hover:border-emerald-700/80 transition-all duration-500 shadow-sm hover:shadow-xl">
               <div>
                 <div class="relative w-full h-64 sm:h-72 overflow-hidden rounded-t-sm bg-black"
                   id="panchvatiCardSlider">
@@ -884,8 +884,8 @@
                 </div>
 
                 <div class="p-6 sm:p-8 space-y-4">
-                  <div class="border-b border-taj-border pb-3">
-                    <h3 class="font-cinzel text-2xl font-bold text-taj-charcoal uppercase">
+                  <div class="border-b border-sanctuary-border pb-3">
+                    <h3 class="font-cinzel text-2xl font-bold text-sanctuary-charcoal uppercase">
                       Panchvati
 
                     </h3>
@@ -895,7 +895,7 @@
                   </div>
 
                   <!-- 4 Essential Facts -->
-                  <div class="space-y-2 text-xs text-taj-charcoal pt-1">
+                  <div class="space-y-2 text-xs text-sanctuary-charcoal pt-1">
                     <div class="flex items-start gap-2.5">
                       <i data-lucide="check-circle" class="w-4 h-4 text-emerald-700 flex-shrink-0 mt-0.5"></i>
                       <span>46 Rooms &amp; Suites across 4 Configurations (308–450 sq.ft)</span>
@@ -917,15 +917,15 @@
               </div>
 
               <div
-                class="p-6 sm:p-8 pt-0 border-t border-taj-border pt-4 flex flex-wrap items-center justify-between gap-3">
+                class="p-6 sm:p-8 pt-0 border-t border-sanctuary-border pt-4 flex flex-wrap items-center justify-between gap-3">
                 <div>
-                  <span class="text-xs text-taj-charcoal font-semibold block">₹2,500 + GST / night</span>
-                  <span class="text-[10px] text-taj-muted">Ideal for families, retreats &amp; pilgrims</span>
+                  <span class="text-xs text-sanctuary-charcoal font-semibold block">₹2,500 + GST / night</span>
+                  <span class="text-[10px] text-sanctuary-muted">Ideal for families, retreats &amp; pilgrims</span>
                 </div>
-                <a href="./panchvati.html" class="taj-interactive-btn">
-                  <span class="taj-btn-dot" aria-hidden="true"></span>
-                  <span class="taj-btn-label-default">EXPLORE SUITES</span>
-                  <span class="taj-btn-label-hover">
+                <a href="./panchvati.html" class="sanctuary-interactive-btn">
+                  <span class="sanctuary-btn-dot" aria-hidden="true"></span>
+                  <span class="sanctuary-btn-label-default">EXPLORE SUITES</span>
+                  <span class="sanctuary-btn-label-hover">
                     <span>EXPLORE SUITES</span>
                     <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6l6 6-6 6"/></svg>
                   </span>
@@ -939,33 +939,33 @@
       </section>
 
       <!-- ================= 4. DINING & RESTAURANT OVERVIEW (AAHAR-VIHAR & PANCHVATI RASOEE) ================= -->
-      <section id="dining-section" class="py-20 sm:py-28 bg-white border-b border-taj-border">
+      <section id="dining-section" class="py-20 sm:py-28 bg-white border-b border-sanctuary-border">
         <a id="dining" class="sr-only"></a>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           <!-- Section Heading -->
           <div class="text-center mb-12">
-            <span class="taj-section-title-line">
+            <span class="sanctuary-section-title-line">
               SATVIK GASTRONOMY
             </span>
             <h2
-              class="font-cinzel text-2xl sm:text-4xl font-bold text-taj-charcoal uppercase tracking-wider mt-2.5 mb-2">
+              class="font-cinzel text-2xl sm:text-4xl font-bold text-sanctuary-charcoal uppercase tracking-wider mt-2.5 mb-2">
               Culinary Heritage &amp; Dining
             </h2>
-            <p class="font-cormorant italic text-lg sm:text-xl text-taj-body max-w-2xl mx-auto">
+            <p class="font-cormorant italic text-lg sm:text-xl text-sanctuary-body max-w-2xl mx-auto">
               Pure farm-to-table cuisine prepared with indigenous cow ghee and garden-fresh organic produce.
             </p>
           </div>
 
           <!-- TOP STATUTORY TAX & DIETARY NOTICE -->
           <div
-            class="mb-12 p-3.5 bg-taj-ivory border border-taj-gold/40 flex flex-col sm:flex-row items-center justify-center gap-2.5 text-center sm:text-left shadow-sm">
+            class="mb-12 p-3.5 bg-sanctuary-ivory border border-sanctuary-gold/40 flex flex-col sm:flex-row items-center justify-center gap-2.5 text-center sm:text-left shadow-sm">
             <div
-              class="w-7 h-7 rounded-full bg-taj-gold/15 flex items-center justify-center text-taj-gold flex-shrink-0">
+              class="w-7 h-7 rounded-full bg-sanctuary-gold/15 flex items-center justify-center text-sanctuary-gold flex-shrink-0">
               <i data-lucide="info" class="w-3.5 h-3.5"></i>
             </div>
-            <p class="text-xs text-taj-charcoal font-medium">
-              <strong class="font-semibold text-taj-gold uppercase tracking-wider">Statutory Notice:</strong>
+            <p class="text-xs text-sanctuary-charcoal font-medium">
+              <strong class="font-semibold text-sanctuary-gold uppercase tracking-wider">Statutory Notice:</strong>
               Government taxes extra as applicable (+5% GST on food &amp; beverages). 100% Satvik Pure Vegetarian • Zero
               Onion • Zero Garlic.
             </p>
@@ -975,46 +975,46 @@
           <div class="mb-12 grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
             <!-- Breakfast Timing -->
             <div
-              class="p-5 bg-taj-ivory border border-taj-border flex items-center gap-4 group hover:border-taj-gold transition-colors">
+              class="p-5 bg-sanctuary-ivory border border-sanctuary-border flex items-center gap-4 group hover:border-sanctuary-gold transition-colors">
               <div
-                class="w-11 h-11 bg-white border border-taj-gold/40 flex items-center justify-center text-taj-gold flex-shrink-0">
+                class="w-11 h-11 bg-white border border-sanctuary-gold/40 flex items-center justify-center text-sanctuary-gold flex-shrink-0">
                 <i data-lucide="sunrise" class="w-5 h-5"></i>
               </div>
               <div>
-                <span class="text-[10px] uppercase font-bold tracking-widest text-taj-gold block">Morning Repast</span>
-                <h4 class="font-cinzel text-base font-bold text-taj-charcoal">Breakfast</h4>
-                <p class="text-xs font-semibold text-taj-charcoal mt-0.5">07:00 AM – 10:30 AM</p>
-                <span class="text-[11px] text-taj-muted">Wholesome grains, herbal tea &amp; South Indian</span>
+                <span class="text-[10px] uppercase font-bold tracking-widest text-sanctuary-gold block">Morning Repast</span>
+                <h4 class="font-cinzel text-base font-bold text-sanctuary-charcoal">Breakfast</h4>
+                <p class="text-xs font-semibold text-sanctuary-charcoal mt-0.5">07:00 AM – 10:30 AM</p>
+                <span class="text-[11px] text-sanctuary-muted">Wholesome grains, herbal tea &amp; South Indian</span>
               </div>
             </div>
 
             <!-- Lunch Timing -->
             <div
-              class="p-5 bg-taj-ivory border border-taj-border flex items-center gap-4 group hover:border-taj-gold transition-colors">
+              class="p-5 bg-sanctuary-ivory border border-sanctuary-border flex items-center gap-4 group hover:border-sanctuary-gold transition-colors">
               <div
-                class="w-11 h-11 bg-white border border-taj-gold/40 flex items-center justify-center text-taj-gold flex-shrink-0">
+                class="w-11 h-11 bg-white border border-sanctuary-gold/40 flex items-center justify-center text-sanctuary-gold flex-shrink-0">
                 <i data-lucide="sun" class="w-5 h-5"></i>
               </div>
               <div>
-                <span class="text-[10px] uppercase font-bold tracking-widest text-taj-gold block">Afternoon Feast</span>
-                <h4 class="font-cinzel text-base font-bold text-taj-charcoal">Lunch</h4>
-                <p class="text-xs font-semibold text-taj-charcoal mt-0.5">12:30 PM – 03:30 PM</p>
-                <span class="text-[11px] text-taj-muted">Royal Thalis, seasonal gravies &amp; millets</span>
+                <span class="text-[10px] uppercase font-bold tracking-widest text-sanctuary-gold block">Afternoon Feast</span>
+                <h4 class="font-cinzel text-base font-bold text-sanctuary-charcoal">Lunch</h4>
+                <p class="text-xs font-semibold text-sanctuary-charcoal mt-0.5">12:30 PM – 03:30 PM</p>
+                <span class="text-[11px] text-sanctuary-muted">Royal Thalis, seasonal gravies &amp; millets</span>
               </div>
             </div>
 
             <!-- Dinner Timing -->
             <div
-              class="p-5 bg-taj-ivory border border-taj-border flex items-center gap-4 group hover:border-taj-gold transition-colors">
+              class="p-5 bg-sanctuary-ivory border border-sanctuary-border flex items-center gap-4 group hover:border-sanctuary-gold transition-colors">
               <div
-                class="w-11 h-11 bg-white border border-taj-gold/40 flex items-center justify-center text-taj-gold flex-shrink-0">
+                class="w-11 h-11 bg-white border border-sanctuary-gold/40 flex items-center justify-center text-sanctuary-gold flex-shrink-0">
                 <i data-lucide="moon" class="w-5 h-5"></i>
               </div>
               <div>
-                <span class="text-[10px] uppercase font-bold tracking-widest text-taj-gold block">Evening Repast</span>
-                <h4 class="font-cinzel text-base font-bold text-taj-charcoal">Dinner</h4>
-                <p class="text-xs font-semibold text-taj-charcoal mt-0.5">07:00 PM – 10:30 PM</p>
-                <span class="text-[11px] text-taj-muted">Fine dining, light curries, breads &amp; desserts</span>
+                <span class="text-[10px] uppercase font-bold tracking-widest text-sanctuary-gold block">Evening Repast</span>
+                <h4 class="font-cinzel text-base font-bold text-sanctuary-charcoal">Dinner</h4>
+                <p class="text-xs font-semibold text-sanctuary-charcoal mt-0.5">07:00 PM – 10:30 PM</p>
+                <span class="text-[11px] text-sanctuary-muted">Fine dining, light curries, breads &amp; desserts</span>
               </div>
             </div>
           </div>
@@ -1022,7 +1022,7 @@
           <!-- TWO-COLUMN BALANCED DINING SHOWCASE (AAHAR-VIHAR & PANCHVATI RASOI) -->
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch mb-12">
             <!-- A) LEFT COLUMN — AAHAR-VIHAR -->
-            <div class="taj-white-card flex flex-col justify-between overflow-hidden">
+            <div class="sanctuary-white-card flex flex-col justify-between overflow-hidden">
               <div>
                 <div class="relative h-64 sm:h-72 overflow-hidden">
                   <img
@@ -1032,51 +1032,51 @@
                     class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                     decoding="async">
                   <div
-                    class="absolute top-3 left-3 bg-white/95 px-2.5 py-1 text-[10px] font-bold tracking-widest text-taj-charcoal border border-taj-border uppercase shadow-sm">
+                    class="absolute top-3 left-3 bg-white/95 px-2.5 py-1 text-[10px] font-bold tracking-widest text-sanctuary-charcoal border border-sanctuary-border uppercase shadow-sm">
                     Pure Satvik Multi-Cuisine
                   </div>
                 </div>
 
                 <div class="p-6 sm:p-8 space-y-4">
-                  <div class="border-b border-taj-border pb-3">
-                    <h3 class="font-cinzel text-2xl font-bold text-taj-charcoal">
+                  <div class="border-b border-sanctuary-border pb-3">
+                    <h3 class="font-cinzel text-2xl font-bold text-sanctuary-charcoal">
                       Aahar-Vihar Restaurant
                     </h3>
-                    <p class="text-xs text-taj-gold font-medium mt-0.5">
+                    <p class="text-xs text-sanctuary-gold font-medium mt-0.5">
                       Multi-Cuisine Pure Satvik Dining • Farm-to-Table
                     </p>
                   </div>
 
-                  <p class="text-xs sm:text-sm text-taj-body leading-relaxed">
+                  <p class="text-xs sm:text-sm text-sanctuary-body leading-relaxed">
                     Fine dining crafted with fresh organic vegetables from our gardens and pure dairy from our
                     indigenous Gaushala.
                   </p>
 
-                  <div class="grid grid-cols-2 gap-2.5 text-xs text-taj-muted pt-1">
+                  <div class="grid grid-cols-2 gap-2.5 text-xs text-sanctuary-muted pt-1">
                     <span class="flex items-center gap-1.5"><i data-lucide="check"
-                        class="w-3.5 h-3.5 text-taj-gold"></i> 100% Satvik Pure Vegetarian</span>
+                        class="w-3.5 h-3.5 text-sanctuary-gold"></i> 100% Satvik Pure Vegetarian</span>
                     <span class="flex items-center gap-1.5"><i data-lucide="check"
-                        class="w-3.5 h-3.5 text-taj-gold"></i> Indigenous Desi Cow Dairy</span>
+                        class="w-3.5 h-3.5 text-sanctuary-gold"></i> Indigenous Desi Cow Dairy</span>
                     <span class="flex items-center gap-1.5"><i data-lucide="check"
-                        class="w-3.5 h-3.5 text-taj-gold"></i> Organic In-House Gardens</span>
+                        class="w-3.5 h-3.5 text-sanctuary-gold"></i> Organic In-House Gardens</span>
                     <span class="flex items-center gap-1.5"><i data-lucide="check"
-                        class="w-3.5 h-3.5 text-taj-gold"></i> Zero Onion &amp; Zero Garlic</span>
+                        class="w-3.5 h-3.5 text-sanctuary-gold"></i> Zero Onion &amp; Zero Garlic</span>
                   </div>
                 </div>
               </div>
 
               <div
-                class="p-6 sm:p-8 pt-0 border-t border-taj-border pt-4 flex flex-wrap items-center justify-between gap-3">
-                <span class="text-xs text-taj-muted">Breakfast, Lunch &amp; Dinner</span>
+                class="p-6 sm:p-8 pt-0 border-t border-sanctuary-border pt-4 flex flex-wrap items-center justify-between gap-3">
+                <span class="text-xs text-sanctuary-muted">Breakfast, Lunch &amp; Dinner</span>
                 <a href="./aahar-vihar-menu.html"
-                  class="btn-taj-primary min-h-[44px] px-6 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer gap-2">
+                  class="btn-sanctuary-primary min-h-[44px] px-6 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer gap-2">
                   <span>VIEW MENU →</span>
                 </a>
               </div>
             </div>
 
             <!-- B) RIGHT COLUMN — PANCHVATI RASOI -->
-            <div class="taj-white-card flex flex-col justify-between overflow-hidden">
+            <div class="sanctuary-white-card flex flex-col justify-between overflow-hidden">
               <div>
                 <div class="relative w-full h-64 sm:h-72 overflow-hidden bg-black" id="panchvatiRasoiSlider">
                   <!-- Slide 1 (Active on load) -->
@@ -1115,44 +1115,44 @@
                 </div>
 
                 <div class="p-6 sm:p-8 space-y-4">
-                  <div class="border-b border-taj-border pb-3">
-                    <h3 class="font-cinzel text-2xl font-bold text-taj-charcoal">
+                  <div class="border-b border-sanctuary-border pb-3">
+                    <h3 class="font-cinzel text-2xl font-bold text-sanctuary-charcoal">
                       Panchvati Rasoi
                     </h3>
-                    <p class="text-xs text-taj-gold font-medium mt-0.5">
+                    <p class="text-xs text-sanctuary-gold font-medium mt-0.5">
                       Authentic Satvik Bhojanshala • Classical Thali
                     </p>
                   </div>
 
-                  <p class="text-xs sm:text-sm text-taj-body leading-relaxed">
+                  <p class="text-xs sm:text-sm text-sanctuary-body leading-relaxed">
                     A dedicated dining hall celebrating classical Vedic culinary heritage, where meals are served as
                     wholesome, freshly prepared thalis.
                   </p>
 
                   <!-- Highlight Cards -->
                   <div class="space-y-2.5 pt-1">
-                    <div class="p-3 bg-taj-ivory border border-taj-border flex items-center justify-between">
+                    <div class="p-3 bg-sanctuary-ivory border border-sanctuary-border flex items-center justify-between">
                       <div>
-                        <h5 class="font-cinzel text-xs sm:text-sm font-bold text-taj-charcoal uppercase">Satvik Thali
+                        <h5 class="font-cinzel text-xs sm:text-sm font-bold text-sanctuary-charcoal uppercase">Satvik Thali
                           (Lunch / Dinner)</h5>
-                        <p class="text-[11px] text-taj-muted">Seasonal Dal, 2 Sabzi, Phulka, Steamed Rice &amp; Sweet
+                        <p class="text-[11px] text-sanctuary-muted">Seasonal Dal, 2 Sabzi, Phulka, Steamed Rice &amp; Sweet
                         </p>
                       </div>
                       <div class="text-right flex-shrink-0 ml-3">
-                        <span class="font-cinzel text-lg font-bold text-taj-gold">₹220</span>
-                        <span class="text-[10px] text-taj-muted block">+ 5% GST</span>
+                        <span class="font-cinzel text-lg font-bold text-sanctuary-gold">₹220</span>
+                        <span class="text-[10px] text-sanctuary-muted block">+ 5% GST</span>
                       </div>
                     </div>
 
-                    <div class="p-3 bg-taj-ivory border border-taj-border flex items-center justify-between">
+                    <div class="p-3 bg-sanctuary-ivory border border-sanctuary-border flex items-center justify-between">
                       <div>
-                        <h5 class="font-cinzel text-xs sm:text-sm font-bold text-taj-charcoal uppercase">Morning
+                        <h5 class="font-cinzel text-xs sm:text-sm font-bold text-sanctuary-charcoal uppercase">Morning
                           Breakfast</h5>
-                        <p class="text-[11px] text-taj-muted">Millet Daliya, Herbal Tea, Poha / Idli &amp; Fruits</p>
+                        <p class="text-[11px] text-sanctuary-muted">Millet Daliya, Herbal Tea, Poha / Idli &amp; Fruits</p>
                       </div>
                       <div class="text-right flex-shrink-0 ml-3">
-                        <span class="font-cinzel text-lg font-bold text-taj-gold">₹150</span>
-                        <span class="text-[10px] text-taj-muted block">+ 5% GST</span>
+                        <span class="font-cinzel text-lg font-bold text-sanctuary-gold">₹150</span>
+                        <span class="text-[10px] text-sanctuary-muted block">+ 5% GST</span>
                       </div>
                     </div>
                   </div>
@@ -1160,10 +1160,10 @@
               </div>
 
               <div
-                class="p-6 sm:p-8 pt-0 border-t border-taj-border pt-4 flex flex-wrap items-center justify-between gap-3">
-                <span class="text-xs text-taj-muted">Pilgrim &amp; Community Dining</span>
+                class="p-6 sm:p-8 pt-0 border-t border-sanctuary-border pt-4 flex flex-wrap items-center justify-between gap-3">
+                <span class="text-xs text-sanctuary-muted">Pilgrim &amp; Community Dining</span>
                 <a href="./panchvati-pasoee-menu.html"
-                  class="btn-taj-primary min-h-[44px] px-6 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer gap-2">
+                  class="btn-sanctuary-primary min-h-[44px] px-6 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer gap-2">
                   <span>VIEW MENU →</span>
                 </a>
               </div>
@@ -1172,26 +1172,26 @@
 
           <!-- PROMINENT CALL TO ACTION BANNER FOR FULL INTERACTIVE MENU -->
           <div
-            class="p-6 sm:p-8 bg-taj-ivory border border-taj-gold/60 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
+            class="p-6 sm:p-8 bg-sanctuary-ivory border border-sanctuary-gold/60 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
             <div class="space-y-1 text-center md:text-left">
-              <span class="text-[10px] uppercase font-bold tracking-widest text-taj-gold block">
+              <span class="text-[10px] uppercase font-bold tracking-widest text-sanctuary-gold block">
                 Dining Collections
               </span>
-              <h4 class="font-cinzel text-lg sm:text-xl font-bold text-taj-charcoal">
+              <h4 class="font-cinzel text-lg sm:text-xl font-bold text-sanctuary-charcoal">
                 Explore Our Dual Satvik Dining Collections
               </h4>
-              <p class="text-xs sm:text-sm text-taj-body max-w-2xl">
+              <p class="text-xs sm:text-sm text-sanctuary-body max-w-2xl">
                 Choose between the multi-cuisine menu at Aahar-Vihar or traditional thali offerings at Panchvati Rasoi.
               </p>
             </div>
 
             <div class="flex flex-wrap items-center gap-3">
               <a href="./aahar-vihar-menu.html"
-                class="btn-taj-primary min-h-[44px] px-5 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer whitespace-nowrap sm:whitespace-normal gap-2">
+                class="btn-sanctuary-primary min-h-[44px] px-5 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer whitespace-nowrap sm:whitespace-normal gap-2">
                 <span>VIEW AAHAR-VIHAR MENU →</span>
               </a>
               <a href="./panchvati-pasoee-menu.html"
-                class="btn-taj-outline-dark min-h-[44px] px-5 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer whitespace-nowrap sm:whitespace-normal gap-2">
+                class="btn-sanctuary-outline-dark min-h-[44px] px-5 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer whitespace-nowrap sm:whitespace-normal gap-2">
                 <span>VIEW PANCHVATI MENU →</span>
               </a>
             </div>
@@ -1206,7 +1206,7 @@
         <a id="services-section" class="sr-only"></a>
         <a id="wellness-facilities" class="sr-only"></a>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-8">
-          <span class="text-[11px] font-semibold tracking-[0.25em] text-tajGold uppercase block mb-2">
+          <span class="text-[11px] font-semibold tracking-[0.25em] text-sanctuaryGold uppercase block mb-2">
             HOLISTIC WELLNESS
           </span>
           <h2 class="text-2xl sm:text-4xl font-cinzel tracking-[0.12em] text-gray-900 uppercase">
@@ -1215,7 +1215,7 @@
           <p class="text-sm sm:text-base font-serif italic text-gray-600 max-w-2xl mx-auto mt-3">
             Authentic Ayurvedic therapies, Kerala Panchakarma, and clinical healing administered by expert physicians.
           </p>
-          <div class="w-16 h-[1.5px] bg-gradient-to-r from-transparent via-tajGold to-transparent mx-auto mt-4"></div>
+          <div class="w-16 h-[1.5px] bg-gradient-to-r from-transparent via-sanctuaryGold to-transparent mx-auto mt-4"></div>
         </div>
 
         <!-- 3D Coverflow Carousel Wrapper -->
@@ -1271,7 +1271,7 @@
 
         <!-- Section Heading -->
         <header class="relative z-10 flex flex-col items-center gap-2 px-6 text-center max-w-3xl mx-auto">
-          <p class="text-[11px] font-semibold uppercase tracking-[0.26em] text-tajGold">CAMPUS INFRASTRUCTURE</p>
+          <p class="text-[11px] font-semibold uppercase tracking-[0.26em] text-sanctuaryGold">CAMPUS INFRASTRUCTURE</p>
           <h2 class="text-2xl sm:text-4xl font-cinzel tracking-[0.12em] text-gray-900 uppercase">SANCTUARY FACILITIES
             &amp; AMENITIES</h2>
           <p class="text-sm sm:text-base font-serif italic text-gray-600 mt-1">
@@ -1298,7 +1298,7 @@
               to lift &amp; inspect</p>
           </div>
           <a href="#booking-widget"
-            class="mt-2 inline-flex items-center gap-2 rounded-sm bg-tajGold hover:bg-tajGoldHover px-6 py-2.5 text-xs font-bold uppercase tracking-[0.2em] text-white shadow-sm transition">
+            class="mt-2 inline-flex items-center gap-2 rounded-sm bg-sanctuaryGold hover:bg-sanctuaryGoldHover px-6 py-2.5 text-xs font-bold uppercase tracking-[0.2em] text-white shadow-sm transition">
             EXPLORE CAMPUS STAY <span>&rarr;</span>
           </a>
         </div>
@@ -1308,7 +1308,7 @@
       <section id="verified-reviews"
         class="bg-white py-16 sm:py-24 border-t border-gray-200/70 overflow-hidden select-none">
         <a id="reviews" class="sr-only"></a>
-        <!-- Existing Taj Luxury Header -->
+        <!-- Existing Sanctuary Header -->
         <div class="max-w-4xl mx-auto px-4 text-center mb-12">
           <span class="text-[11px] font-semibold tracking-[0.25em] text-gray-500 uppercase block mb-2">
             VERIFIED CREDENTIALS
@@ -1318,7 +1318,7 @@
           </h2>
           <p class="text-sm sm:text-base font-serif italic text-gray-600 mt-3">
             Based on 156 Verified Google <span
-              class="bg-tajGold text-white px-2 py-0.5 not-italic font-sans text-xs sm:text-sm rounded-[2px]">Reviews</span>
+              class="bg-sanctuaryGold text-white px-2 py-0.5 not-italic font-sans text-xs sm:text-sm rounded-[2px]">Reviews</span>
             from pilgrims, doctors, and wellness travelers.
           </p>
         </div>
@@ -1338,8 +1338,8 @@
       </section>
 
 
-      <!-- ================= TAJ-STYLE LUXURY FOOTER ================= -->
-      <footer class="bg-taj-charcoal text-white/70 py-16 text-xs mt-16 border-t border-taj-gold/20">
+      <!-- ================= SANCTUARY LUXURY FOOTER ================= -->
+      <footer class="bg-sanctuary-charcoal text-white/70 py-16 text-xs mt-16 border-t border-sanctuary-gold/20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="grid grid-cols-1 md:grid-cols-3 gap-12 pb-12 border-b border-white/10">
 
@@ -1347,16 +1347,16 @@
             <div class="space-y-4">
               <div class="flex items-center gap-3">
                 <img src="assets/images/logo.png" alt="Arogyadham Swasthya Kutir Emblem"
-                  class="w-10 h-10 object-contain rounded-sm border border-taj-gold/40 p-0.5 bg-black" />
+                  class="w-10 h-10 object-contain rounded-sm border border-sanctuary-gold/40 p-0.5 bg-black" />
                 <div>
                   <span class="font-cinzel text-sm font-bold text-white tracking-widest block">AROGYADHAM</span>
-                  <span class="text-[10px] text-taj-gold-light uppercase tracking-wider block">SWASTHYA KUTIR</span>
+                  <span class="text-[10px] text-sanctuary-gold-light uppercase tracking-wider block">SWASTHYA KUTIR</span>
                 </div>
               </div>
               <p class="text-xs text-white/70 leading-relaxed">
                 Parisar, Majhgawan, Chitrakoot, MP 485334
               </p>
-              <div class="flex items-center gap-2 text-[11px] text-taj-gold-light">
+              <div class="flex items-center gap-2 text-[11px] text-sanctuary-gold-light">
                 <span>★ 4.7 Verified Google Rating</span>
                 <span class="text-white/30">•</span>
                 <span class="text-white/60">156 Reviews</span>
@@ -1387,25 +1387,25 @@
               <h4 class="font-cinzel text-xs uppercase tracking-widest text-white font-bold">Reservations Desk</h4>
               <div class="space-y-2 text-white/70">
                 <p class="flex items-center gap-2">
-                  <i data-lucide="phone" class="w-3.5 h-3.5 text-taj-gold"></i>
+                  <i data-lucide="phone" class="w-3.5 h-3.5 text-sanctuary-gold"></i>
                   <a href="tel:+917670265334"
-                    class="text-taj-gold-light hover:underline font-semibold tracking-wide">+91 76702 65334</a>
+                    class="text-sanctuary-gold-light hover:underline font-semibold tracking-wide">+91 76702 65334</a>
                 </p>
                 <p class="flex items-center gap-2">
                   <i data-lucide="message-circle" class="w-3.5 h-3.5 text-emerald-400"></i>
                   <a href="https://wa.me/917670265334?text=Namaste%2C%20I%20would%20like%20to%20inquire%20about%20booking%20a%20stay%20at%20Arogyadham%20Swasthya%20Kutir."
                     target="_blank" rel="noopener noreferrer"
-                    class="text-taj-gold-light hover:underline font-semibold">WhatsApp Concierge</a>
+                    class="text-sanctuary-gold-light hover:underline font-semibold">WhatsApp Concierge</a>
                 </p>
                 <p class="flex items-center gap-2">
-                  <i data-lucide="mail" class="w-3.5 h-3.5 text-taj-gold"></i>
+                  <i data-lucide="mail" class="w-3.5 h-3.5 text-sanctuary-gold"></i>
                   <a href="mailto:reservation@arogydham.co"
-                    class="text-taj-gold-light hover:underline">reservation@arogydham.co</a>
+                    class="text-sanctuary-gold-light hover:underline">reservation@arogydham.co</a>
                 </p>
               </div>
               <div class="pt-2">
                 <button onclick="openBookingDrawer('Mandakini Royal Suite', 12000)"
-                  class="btn-taj-primary py-2.5 px-5 text-[10px] uppercase font-bold tracking-wider cursor-pointer">
+                  class="btn-sanctuary-primary py-2.5 px-5 text-[10px] uppercase font-bold tracking-wider cursor-pointer">
                   Book a Stay
                 </button>
               </div>
@@ -1414,7 +1414,7 @@
           </div>
 
           <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-white/40">
-            <p>© 2026 Arogyadham Swasthya Kutir, Chitrakoot. Inspired by Taj Hotels standards.</p>
+            <p>© 2026 Arogyadham Swasthya Kutir, Chitrakoot. Sacred Riverside Wellness Sanctuary, Chitrakoot.</p>
             <div class="flex items-center gap-4">
               <button type="button" onclick="showPolicyModal('privacy')"
                 class="hover:text-white cursor-pointer bg-transparent border-0 p-0 text-[11px] text-white/60">Privacy
@@ -1432,35 +1432,35 @@
         </div>
       </footer>
     </div><!-- /#view-home -->
-  </main><!-- /#taj-app-content -->
+  </main><!-- /#sanctuary-app-content -->
 
-  <!-- ================= TAJ LUXURY MEAL PLAN SELECTION MODAL ================= -->
+  <!-- ================= SANCTUARY MEAL PLAN SELECTION MODAL ================= -->
   <div id="meal-plan-modal"
     class="modal-overlay hidden-modal fixed inset-0 z-50 items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden"
     style="display: none;" role="dialog" aria-modal="true" aria-labelledby="meal-plan-modal-title">
     <div
-      class="modal-card w-full max-w-2xl bg-white border-2 border-taj-gold shadow-2xl overflow-hidden text-taj-charcoal animate-fadeIn max-h-[92vh] flex flex-col">
+      class="modal-card w-full max-w-2xl bg-white border-2 border-sanctuary-gold shadow-2xl overflow-hidden text-sanctuary-charcoal animate-fadeIn max-h-[92vh] flex flex-col">
 
       <!-- Modal Header -->
       <div
-        class="bg-gradient-to-r from-taj-cream via-white to-taj-cream p-5 sm:p-6 border-b border-taj-border relative flex-shrink-0">
+        class="bg-gradient-to-r from-sanctuary-cream via-white to-sanctuary-cream p-5 sm:p-6 border-b border-sanctuary-border relative flex-shrink-0">
         <button onclick="closeMealPlanModal()" data-action="close-modal"
-          class="absolute right-4 top-4 w-9 h-9 rounded-full bg-taj-ivory border border-taj-border flex items-center justify-center text-taj-charcoal hover:text-white hover:bg-taj-charcoal hover:border-taj-charcoal transition-all p-1 cursor-pointer shadow-sm"
+          class="absolute right-4 top-4 w-9 h-9 rounded-full bg-sanctuary-ivory border border-sanctuary-border flex items-center justify-center text-sanctuary-charcoal hover:text-white hover:bg-sanctuary-charcoal hover:border-sanctuary-charcoal transition-all p-1 cursor-pointer shadow-sm"
           aria-label="Close Meal Plan Options">
           <i data-lucide="x" class="w-5 h-5"></i>
         </button>
 
         <div class="pr-10">
           <div
-            class="inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-taj-gold/10 border border-taj-gold/30 text-[10px] uppercase font-bold tracking-[0.18em] text-taj-gold mb-1.5">
-            <i data-lucide="sparkles" class="w-3 h-3 text-taj-gold"></i>
+            class="inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-sanctuary-gold/10 border border-sanctuary-gold/30 text-[10px] uppercase font-bold tracking-[0.18em] text-sanctuary-gold mb-1.5">
+            <i data-lucide="sparkles" class="w-3 h-3 text-sanctuary-gold"></i>
             <span>AROGYADHAM RESERVATION DESK</span>
           </div>
           <h3 id="meal-plan-modal-title"
-            class="font-cinzel text-xl sm:text-2xl font-bold text-taj-charcoal uppercase tracking-wider">
+            class="font-cinzel text-xl sm:text-2xl font-bold text-sanctuary-charcoal uppercase tracking-wider">
             SELECT OPTION FOR MANDAKINI COTTAGE
           </h3>
-          <p id="meal-plan-modal-subtext" class="text-xs sm:text-sm text-taj-body mt-1">
+          <p id="meal-plan-modal-subtext" class="text-xs sm:text-sm text-sanctuary-body mt-1">
             Select your preferred meal plan for 1 Adult | 0 Child (Per night, incl. taxes)
           </p>
         </div>
@@ -1468,7 +1468,7 @@
 
       <!-- Room Specs Strip -->
       <div id="meal-plan-modal-specs"
-        class="bg-taj-ivory/80 px-5 sm:px-6 py-3 border-b border-taj-border text-xs text-taj-charcoal font-medium flex flex-wrap items-center gap-2 sm:gap-4 flex-shrink-0">
+        class="bg-sanctuary-ivory/80 px-5 sm:px-6 py-3 border-b border-sanctuary-border text-xs text-sanctuary-charcoal font-medium flex flex-wrap items-center gap-2 sm:gap-4 flex-shrink-0">
         <!-- Injected dynamically -->
       </div>
 
@@ -1479,13 +1479,13 @@
 
       <!-- Modal Footer -->
       <div
-        class="bg-taj-cream/50 px-5 sm:px-6 py-3.5 border-t border-taj-border flex items-center justify-between gap-3 text-xs text-taj-muted flex-shrink-0">
+        class="bg-sanctuary-cream/50 px-5 sm:px-6 py-3.5 border-t border-sanctuary-border flex items-center justify-between gap-3 text-xs text-sanctuary-muted flex-shrink-0">
         <div class="flex items-center gap-1.5">
-          <i data-lucide="shield-check" class="w-4 h-4 text-taj-gold"></i>
+          <i data-lucide="shield-check" class="w-4 h-4 text-sanctuary-gold"></i>
           <span>Best Rate Guarantee • Instant Confirmation via Djubo</span>
         </div>
         <button onclick="closeMealPlanModal()" data-action="close-modal"
-          class="text-xs text-taj-charcoal hover:text-taj-gold font-semibold uppercase tracking-wider underline cursor-pointer">
+          class="text-xs text-sanctuary-charcoal hover:text-sanctuary-gold font-semibold uppercase tracking-wider underline cursor-pointer">
           Cancel
         </button>
       </div>
@@ -1493,25 +1493,25 @@
     </div>
   </div>
 
-  <!-- ================= TAJ-STYLE "BOOK A STAY" RESERVATION DRAWER ================= -->
+  <!-- ================= SANCTUARY RESERVATION DRAWER ================= -->
   <div id="booking-drawer"
     class="modal-overlay hidden-modal fixed inset-0 z-50 items-center justify-center p-4 bg-black/75 backdrop-blur-sm hidden"
     style="display: none;">
     <div
-      class="modal-card w-full max-w-2xl bg-white border border-taj-border shadow-2xl overflow-hidden text-taj-charcoal">
+      class="modal-card w-full max-w-2xl bg-white border border-sanctuary-border shadow-2xl overflow-hidden text-sanctuary-charcoal">
 
       <!-- Drawer Header -->
-      <div class="bg-taj-cream p-5 border-b border-taj-border flex items-center justify-between">
+      <div class="bg-sanctuary-cream p-5 border-b border-sanctuary-border flex items-center justify-between">
         <div class="flex items-center gap-3">
-          <div class="w-8 h-8 border border-taj-gold flex items-center justify-center text-taj-gold">
+          <div class="w-8 h-8 border border-sanctuary-gold flex items-center justify-center text-sanctuary-gold">
             <i data-lucide="crown" class="w-4 h-4"></i>
           </div>
           <div>
-            <h3 class="font-cinzel text-base font-bold text-taj-charcoal tracking-wider">Book A Stay • Arogyadham</h3>
-            <p class="text-[11px] text-taj-muted">Arogya Dham Rd, Parisar, Chitrakoot, MP 485334</p>
+            <h3 class="font-cinzel text-base font-bold text-sanctuary-charcoal tracking-wider">Book A Stay • Arogyadham</h3>
+            <p class="text-[11px] text-sanctuary-muted">Arogya Dham Rd, Parisar, Chitrakoot, MP 485334</p>
           </div>
         </div>
-        <button onclick="closeBookingDrawer()" class="p-1.5 text-taj-charcoal hover:text-taj-gold transition-colors">
+        <button onclick="closeBookingDrawer()" class="p-1.5 text-sanctuary-charcoal hover:text-sanctuary-gold transition-colors">
           <i data-lucide="x" class="w-5 h-5"></i>
         </button>
       </div>
@@ -1535,9 +1535,9 @@
 
         <!-- Accommodation Selection Dropdown -->
         <div class="space-y-1.5">
-          <label class="block text-xs font-bold uppercase tracking-wider text-taj-charcoal">Select Category</label>
+          <label class="block text-xs font-bold uppercase tracking-wider text-sanctuary-charcoal">Select Category</label>
           <select id="drawer-room-select"
-            class="w-full bg-white border border-taj-border p-2.5 text-xs text-taj-charcoal focus:border-taj-gold focus:outline-none font-semibold">
+            class="w-full bg-white border border-sanctuary-border p-2.5 text-xs text-sanctuary-charcoal focus:border-sanctuary-gold focus:outline-none font-semibold">
             <optgroup label="The 4 Main Pillars">
               <option value="12000" data-name="Mandakini Royal Suite">Mandakini Royal Suite — ₹12,000 / night</option>
               <option value="10000" data-name="Paishwani Heritage Suite">Paishwani Heritage Suite — ₹10,000 / night
@@ -1558,95 +1558,95 @@
         </div>
 
         <!-- Room Summary Pill -->
-        <div class="p-4 bg-taj-ivory border border-taj-border flex items-center justify-between">
+        <div class="p-4 bg-sanctuary-ivory border border-sanctuary-border flex items-center justify-between">
           <div>
-            <span class="text-[10px] uppercase font-bold tracking-wider text-taj-muted block">Selected Sanctuary</span>
-            <div id="drawer-kutir-name" class="font-cinzel text-base font-bold text-taj-charcoal">
+            <span class="text-[10px] uppercase font-bold tracking-wider text-sanctuary-muted block">Selected Sanctuary</span>
+            <div id="drawer-kutir-name" class="font-cinzel text-base font-bold text-sanctuary-charcoal">
               Mandakini Royal Suite
             </div>
-            <div id="drawer-nights-display" class="text-xs text-taj-muted mt-0.5">
+            <div id="drawer-nights-display" class="text-xs text-sanctuary-muted mt-0.5">
               18 Oct — 19 Oct (1 Night) • 2 Guests
             </div>
           </div>
           <div class="text-right">
-            <span class="text-[10px] uppercase font-bold tracking-wider text-taj-muted block">Base Rate</span>
-            <div id="drawer-kutir-rate" class="font-cinzel text-xl font-bold text-taj-gold">₹12,000</div>
+            <span class="text-[10px] uppercase font-bold tracking-wider text-sanctuary-muted block">Base Rate</span>
+            <div id="drawer-kutir-rate" class="font-cinzel text-xl font-bold text-sanctuary-gold">₹12,000</div>
           </div>
         </div>
 
         <!-- Date Inputs -->
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label class="block text-xs font-semibold uppercase tracking-wider text-taj-charcoal mb-1">Check-in
+            <label class="block text-xs font-semibold uppercase tracking-wider text-sanctuary-charcoal mb-1">Check-in
               Date</label>
             <input type="date" id="drawer-checkin" value="2026-10-18"
-              class="w-full bg-white border border-taj-border p-2.5 text-xs text-taj-charcoal focus:border-taj-gold focus:outline-none">
+              class="w-full bg-white border border-sanctuary-border p-2.5 text-xs text-sanctuary-charcoal focus:border-sanctuary-gold focus:outline-none">
           </div>
           <div>
-            <label class="block text-xs font-semibold uppercase tracking-wider text-taj-charcoal mb-1">Check-out
+            <label class="block text-xs font-semibold uppercase tracking-wider text-sanctuary-charcoal mb-1">Check-out
               Date</label>
             <input type="date" id="drawer-checkout" value="2026-10-19"
-              class="w-full bg-white border border-taj-border p-2.5 text-xs text-taj-charcoal focus:border-taj-gold focus:outline-none">
+              class="w-full bg-white border border-sanctuary-border p-2.5 text-xs text-sanctuary-charcoal focus:border-sanctuary-gold focus:outline-none">
           </div>
         </div>
 
         <!-- Guest Details -->
         <div class="space-y-3 pt-2">
           <div class="flex items-center justify-between">
-            <span class="text-xs font-bold uppercase tracking-wider text-taj-charcoal block">Primary Guest
+            <span class="text-xs font-bold uppercase tracking-wider text-sanctuary-charcoal block">Primary Guest
               Information</span>
-            <span class="text-[10px] text-taj-gold font-semibold uppercase tracking-wider">Auto-filled from Verified
+            <span class="text-[10px] text-sanctuary-gold font-semibold uppercase tracking-wider">Auto-filled from Verified
               Account</span>
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <input type="text" id="drawer-guest-name" required placeholder="Full Name (e.g. Vansh Yadav)"
-              class="w-full bg-white border border-taj-border p-2.5 text-xs text-taj-charcoal focus:border-taj-gold focus:outline-none">
+              class="w-full bg-white border border-sanctuary-border p-2.5 text-xs text-sanctuary-charcoal focus:border-sanctuary-gold focus:outline-none">
             <input type="tel" id="drawer-guest-phone" required placeholder="Phone / WhatsApp (+91 ...)"
-              class="w-full bg-white border border-taj-border p-2.5 text-xs text-taj-charcoal focus:border-taj-gold focus:outline-none">
+              class="w-full bg-white border border-sanctuary-border p-2.5 text-xs text-sanctuary-charcoal focus:border-sanctuary-gold focus:outline-none">
           </div>
           <input type="email" id="drawer-guest-email" required placeholder="Email Address for Voucher Confirmation"
-            class="w-full bg-white border border-taj-border p-2.5 text-xs text-taj-charcoal focus:border-taj-gold focus:outline-none">
+            class="w-full bg-white border border-sanctuary-border p-2.5 text-xs text-sanctuary-charcoal focus:border-sanctuary-gold focus:outline-none">
         </div>
 
         <!-- Promo Code -->
         <div class="flex items-center gap-2">
-          <input type="text" id="drawer-promo-code" placeholder="Promo Code (Use 'TAJWELLNESS')"
-            class="flex-1 bg-white border border-taj-border p-2.5 text-xs text-taj-charcoal uppercase tracking-wider focus:border-taj-gold focus:outline-none">
-          <button type="button" id="drawer-apply-promo" class="btn-taj-outline-dark py-2.5 px-4 text-[10px]">
+          <input type="text" id="drawer-promo-code" placeholder="Promo Code (Use 'SANCTUARY10')"
+            class="flex-1 bg-white border border-sanctuary-border p-2.5 text-xs text-sanctuary-charcoal uppercase tracking-wider focus:border-sanctuary-gold focus:outline-none">
+          <button type="button" id="drawer-apply-promo" class="btn-sanctuary-outline-dark py-2.5 px-4 text-[10px]">
             Apply
           </button>
         </div>
         <p id="drawer-promo-msg" class="text-[11px] text-emerald-700 hidden"></p>
 
         <!-- Calculation Breakdown -->
-        <div class="p-4 bg-taj-ivory border border-taj-border space-y-1.5 text-xs">
-          <div class="flex justify-between text-taj-muted">
+        <div class="p-4 bg-sanctuary-ivory border border-sanctuary-border space-y-1.5 text-xs">
+          <div class="flex justify-between text-sanctuary-muted">
             <span>Base Subtotal (<span id="calc-nights-count">1</span> Night):</span>
-            <span id="drawer-calc-base" class="text-taj-charcoal font-semibold">₹12,000</span>
+            <span id="drawer-calc-base" class="text-sanctuary-charcoal font-semibold">₹12,000</span>
           </div>
           <div id="drawer-discount-row" class="hidden flex justify-between text-emerald-700">
-            <span>Taj Heritage Discount (10%):</span>
+            <span>Sanctuary Heritage Discount (10%):</span>
             <span id="drawer-calc-discount">-₹1,200</span>
           </div>
-          <div class="flex justify-between text-taj-muted">
+          <div class="flex justify-between text-sanctuary-muted">
             <span id="drawer-calc-tax-label">GST (12% Hospitality Tax):</span>
-            <span id="drawer-calc-tax" class="text-taj-charcoal font-semibold">₹1,440</span>
+            <span id="drawer-calc-tax" class="text-sanctuary-charcoal font-semibold">₹1,440</span>
           </div>
-          <div class="pt-2 border-t border-taj-border flex justify-between font-bold text-sm text-taj-charcoal">
+          <div class="pt-2 border-t border-sanctuary-border flex justify-between font-bold text-sm text-sanctuary-charcoal">
             <span>Total Payable Amount:</span>
-            <span id="drawer-calc-total" class="font-cinzel text-base text-taj-gold font-bold">₹13,440</span>
+            <span id="drawer-calc-total" class="font-cinzel text-base text-sanctuary-gold font-bold">₹13,440</span>
           </div>
         </div>
 
         <!-- Djubo Reservation Desk Trigger Button -->
         <div>
           <button type="button" onclick="proceedToDjuboBooking()" id="drawer-pay-btn"
-            class="w-full btn-taj-primary py-3.5 text-xs font-bold uppercase tracking-[0.16em] flex items-center justify-center gap-2 cursor-pointer">
+            class="w-full btn-sanctuary-primary py-3.5 text-xs font-bold uppercase tracking-[0.16em] flex items-center justify-center gap-2 cursor-pointer">
             <i data-lucide="calendar-check" class="w-4 h-4 text-white"></i>
             <span id="drawer-pay-btn-label">Proceed to Secure Reservation Desk (Djubo)</span>
           </button>
-          <div class="flex items-center justify-center gap-2 text-[10px] text-taj-muted text-center pt-2.5">
-            <i data-lucide="lock" class="w-3.5 h-3.5 text-taj-gold"></i>
+          <div class="flex items-center justify-center gap-2 text-[10px] text-sanctuary-muted text-center pt-2.5">
+            <i data-lucide="lock" class="w-3.5 h-3.5 text-sanctuary-gold"></i>
             <span>Official Booking Engine • Instant Confirmation • Best Rate Guarantee</span>
           </div>
         </div>
@@ -1660,64 +1660,64 @@
     class="modal-overlay hidden-modal fixed inset-0 z-50 items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden"
     style="display: none;">
     <div
-      class="modal-card w-full max-w-4xl bg-white border border-taj-border shadow-2xl p-6 sm:p-8 max-h-[88vh] overflow-y-auto text-taj-charcoal">
+      class="modal-card w-full max-w-4xl bg-white border border-sanctuary-border shadow-2xl p-6 sm:p-8 max-h-[88vh] overflow-y-auto text-sanctuary-charcoal">
 
       <!-- Modal Header -->
-      <div class="flex items-center justify-between border-b border-taj-border pb-4 mb-4">
+      <div class="flex items-center justify-between border-b border-sanctuary-border pb-4 mb-4">
         <div>
-          <span class="text-[10px] uppercase font-bold tracking-widest text-taj-gold block">Ayurvedic Satvik
+          <span class="text-[10px] uppercase font-bold tracking-widest text-sanctuary-gold block">Ayurvedic Satvik
             Gastronomy</span>
-          <h3 class="font-cinzel text-xl sm:text-2xl font-bold text-taj-charcoal">AAHAR-VIHAR AUTHENTIC MENU</h3>
+          <h3 class="font-cinzel text-xl sm:text-2xl font-bold text-sanctuary-charcoal">AAHAR-VIHAR AUTHENTIC MENU</h3>
         </div>
-        <button onclick="closeMenuModal()" class="p-1 text-taj-charcoal hover:text-taj-gold">
+        <button onclick="closeMenuModal()" class="p-1 text-sanctuary-charcoal hover:text-sanctuary-gold">
           <i data-lucide="x" class="w-6 h-6"></i>
         </button>
       </div>
 
       <!-- Top Statutory Notice -->
-      <div class="mb-5 p-3.5 bg-taj-ivory border border-taj-gold/50 flex items-center gap-3 text-xs text-taj-charcoal">
-        <i data-lucide="info" class="w-4 h-4 text-taj-gold flex-shrink-0"></i>
+      <div class="mb-5 p-3.5 bg-sanctuary-ivory border border-sanctuary-gold/50 flex items-center gap-3 text-xs text-sanctuary-charcoal">
+        <i data-lucide="info" class="w-4 h-4 text-sanctuary-gold flex-shrink-0"></i>
         <span><strong>Statutory Notice:</strong> Government taxes extra as applicable (+5% GST on all food & beverages).
           Kindly inform for any dietary restrictions or allergens.</span>
       </div>
 
       <!-- Operating Timings Strip -->
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6 text-xs bg-white border border-taj-border p-3">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6 text-xs bg-white border border-sanctuary-border p-3">
         <div class="flex items-center gap-2">
-          <i data-lucide="sunrise" class="w-4 h-4 text-taj-gold flex-shrink-0"></i>
+          <i data-lucide="sunrise" class="w-4 h-4 text-sanctuary-gold flex-shrink-0"></i>
           <div>
-            <strong class="text-taj-charcoal block">Breakfast</strong>
-            <span class="text-taj-muted text-[11px]">07:00 AM – 10:30 AM</span>
+            <strong class="text-sanctuary-charcoal block">Breakfast</strong>
+            <span class="text-sanctuary-muted text-[11px]">07:00 AM – 10:30 AM</span>
           </div>
         </div>
-        <div class="flex items-center gap-2 sm:border-l sm:border-taj-border sm:pl-3">
-          <i data-lucide="sun" class="w-4 h-4 text-taj-gold flex-shrink-0"></i>
+        <div class="flex items-center gap-2 sm:border-l sm:border-sanctuary-border sm:pl-3">
+          <i data-lucide="sun" class="w-4 h-4 text-sanctuary-gold flex-shrink-0"></i>
           <div>
-            <strong class="text-taj-charcoal block">Lunch</strong>
-            <span class="text-taj-muted text-[11px]">12:30 PM – 03:30 PM</span>
+            <strong class="text-sanctuary-charcoal block">Lunch</strong>
+            <span class="text-sanctuary-muted text-[11px]">12:30 PM – 03:30 PM</span>
           </div>
         </div>
-        <div class="flex items-center gap-2 sm:border-l sm:border-taj-border sm:pl-3">
-          <i data-lucide="moon" class="w-4 h-4 text-taj-gold flex-shrink-0"></i>
+        <div class="flex items-center gap-2 sm:border-l sm:border-sanctuary-border sm:pl-3">
+          <i data-lucide="moon" class="w-4 h-4 text-sanctuary-gold flex-shrink-0"></i>
           <div>
-            <strong class="text-taj-charcoal block">Dinner</strong>
-            <span class="text-taj-muted text-[11px]">07:00 PM – 10:30 PM</span>
+            <strong class="text-sanctuary-charcoal block">Dinner</strong>
+            <span class="text-sanctuary-muted text-[11px]">07:00 PM – 10:30 PM</span>
           </div>
         </div>
       </div>
 
       <!-- Jump to Interactive Menu Banner -->
       <div
-        class="mb-6 p-4 bg-taj-ivory border border-taj-gold/40 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+        class="mb-6 p-4 bg-sanctuary-ivory border border-sanctuary-gold/40 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
         <div>
-          <h5 class="font-cinzel text-xs font-bold uppercase text-taj-charcoal">Interactive Bill & 5% GST Estimator
+          <h5 class="font-cinzel text-xs font-bold uppercase text-sanctuary-charcoal">Interactive Bill & 5% GST Estimator
             Active</h5>
-          <p class="text-[11px] text-taj-muted">You can customize, add dishes, and calculate live 5% GST bills in our
+          <p class="text-[11px] text-sanctuary-muted">You can customize, add dishes, and calculate live 5% GST bills in our
             live dining explorer.</p>
         </div>
         <button
           onclick="closeMenuModal(); document.getElementById('aahar-vihar-menu-section').scrollIntoView({ behavior: 'smooth' });"
-          class="btn-taj-primary py-2 px-4 text-xs whitespace-nowrap">
+          class="btn-sanctuary-primary py-2 px-4 text-xs whitespace-nowrap">
           Open Live Menu & Bill Estimator
         </button>
       </div>
@@ -1726,68 +1726,68 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
 
         <!-- Tab 1 Highlights -->
-        <div class="border border-taj-border p-4 bg-taj-ivory/30 space-y-2">
-          <div class="flex items-center justify-between border-b border-taj-border pb-1">
-            <h4 class="font-cinzel text-xs font-bold text-taj-gold uppercase tracking-wider">Tab 1: Breakfast</h4>
-            <span class="text-[10px] text-taj-muted">25 Dishes</span>
+        <div class="border border-sanctuary-border p-4 bg-sanctuary-ivory/30 space-y-2">
+          <div class="flex items-center justify-between border-b border-sanctuary-border pb-1">
+            <h4 class="font-cinzel text-xs font-bold text-sanctuary-gold uppercase tracking-wider">Tab 1: Breakfast</h4>
+            <span class="text-[10px] text-sanctuary-muted">25 Dishes</span>
           </div>
-          <p class="text-[11px] text-taj-muted">Puri Bhaji (₹165), Parathas (₹55 - ₹89), Idli Sambar (₹165), Dosas (₹165
+          <p class="text-[11px] text-sanctuary-muted">Puri Bhaji (₹165), Parathas (₹55 - ₹89), Idli Sambar (₹165), Dosas (₹165
             - ₹209), Indori Poha (₹109), Fresh Fruit Platter (₹199), Veg Club Sandwich (₹189).</p>
-          <span class="text-[10px] text-taj-gold font-medium block">+5% GST applicable on all items</span>
+          <span class="text-[10px] text-sanctuary-gold font-medium block">+5% GST applicable on all items</span>
         </div>
 
         <!-- Tab 2 Highlights -->
-        <div class="border border-taj-border p-4 bg-taj-ivory/30 space-y-2">
-          <div class="flex items-center justify-between border-b border-taj-border pb-1">
-            <h4 class="font-cinzel text-xs font-bold text-taj-gold uppercase tracking-wider">Tab 2: Starters & Soups
+        <div class="border border-sanctuary-border p-4 bg-sanctuary-ivory/30 space-y-2">
+          <div class="flex items-center justify-between border-b border-sanctuary-border pb-1">
+            <h4 class="font-cinzel text-xs font-bold text-sanctuary-gold uppercase tracking-wider">Tab 2: Starters & Soups
             </h4>
-            <span class="text-[10px] text-taj-muted">26 Dishes</span>
+            <span class="text-[10px] text-sanctuary-muted">26 Dishes</span>
           </div>
-          <p class="text-[11px] text-taj-muted">Hara Bhara Kebab (₹219), Dahi Ke Kebab (₹275), Paneer Tikka (₹275),
+          <p class="text-[11px] text-sanctuary-muted">Hara Bhara Kebab (₹219), Dahi Ke Kebab (₹275), Paneer Tikka (₹275),
             Soups (₹165), Mix Millet Soup (₹189), Pizzas (₹219 - ₹265), Chinese Sizzler (₹439).</p>
-          <span class="text-[10px] text-taj-gold font-medium block">+5% GST applicable on all items</span>
+          <span class="text-[10px] text-sanctuary-gold font-medium block">+5% GST applicable on all items</span>
         </div>
 
         <!-- Tab 3 Highlights -->
-        <div class="border border-taj-border p-4 bg-taj-ivory/30 space-y-2">
-          <div class="flex items-center justify-between border-b border-taj-border pb-1">
-            <h4 class="font-cinzel text-xs font-bold text-taj-gold uppercase tracking-wider">Tab 3: Main Course</h4>
-            <span class="text-[10px] text-taj-muted">55 Dishes</span>
+        <div class="border border-sanctuary-border p-4 bg-sanctuary-ivory/30 space-y-2">
+          <div class="flex items-center justify-between border-b border-sanctuary-border pb-1">
+            <h4 class="font-cinzel text-xs font-bold text-sanctuary-gold uppercase tracking-wider">Tab 3: Main Course</h4>
+            <span class="text-[10px] text-sanctuary-muted">55 Dishes</span>
           </div>
-          <p class="text-[11px] text-taj-muted">Paneer Gravies (₹329), Mix Millet Khichdi (₹385), Dal Makhani (₹229),
+          <p class="text-[11px] text-sanctuary-muted">Paneer Gravies (₹329), Mix Millet Khichdi (₹385), Dal Makhani (₹229),
             Chinese Mains (₹219 - ₹385), Millet/Makka Rotis (₹55), Subz Dum Biryani (₹385).</p>
-          <span class="text-[10px] text-taj-gold font-medium block">+5% GST applicable on all items</span>
+          <span class="text-[10px] text-sanctuary-gold font-medium block">+5% GST applicable on all items</span>
         </div>
 
         <!-- Tab 4 Highlights -->
-        <div class="border border-taj-border p-4 bg-taj-ivory/30 space-y-2">
-          <div class="flex items-center justify-between border-b border-taj-border pb-1">
-            <h4 class="font-cinzel text-xs font-bold text-taj-gold uppercase tracking-wider">Tab 4: Desserts & Beverages
+        <div class="border border-sanctuary-border p-4 bg-sanctuary-ivory/30 space-y-2">
+          <div class="flex items-center justify-between border-b border-sanctuary-border pb-1">
+            <h4 class="font-cinzel text-xs font-bold text-sanctuary-gold uppercase tracking-wider">Tab 4: Desserts & Beverages
             </h4>
-            <span class="text-[10px] text-taj-muted">23 Dishes</span>
+            <span class="text-[10px] text-sanctuary-muted">23 Dishes</span>
           </div>
-          <p class="text-[11px] text-taj-muted">Sawa Ki Kheer (₹165), Moong Dal Halwa (₹165), Fresh Juices (₹135),
+          <p class="text-[11px] text-sanctuary-muted">Sawa Ki Kheer (₹165), Moong Dal Halwa (₹165), Fresh Juices (₹135),
             Shakes (₹135), Virgin Mojito (₹149), Gud Tulsi Chai (₹65), Filter Coffee (₹75/₹85).</p>
-          <span class="text-[10px] text-taj-gold font-medium block">+5% GST applicable on all items</span>
+          <span class="text-[10px] text-sanctuary-gold font-medium block">+5% GST applicable on all items</span>
         </div>
 
       </div>
 
       <!-- Bottom Notice -->
-      <div class="mt-5 p-3 bg-taj-ivory border border-taj-gold/40 text-[11px] text-taj-charcoal text-center">
+      <div class="mt-5 p-3 bg-sanctuary-ivory border border-sanctuary-gold/40 text-[11px] text-sanctuary-charcoal text-center">
         Government taxes extra as applicable (+5% GST on all food & beverages). Kindly inform for any dietary
         restrictions or allergens.
       </div>
 
       <!-- Modal Footer -->
-      <div class="pt-5 mt-5 border-t border-taj-border flex flex-wrap items-center justify-between gap-3">
-        <span class="text-xs text-taj-muted">Advance dining reservations recommended for dinner.</span>
+      <div class="pt-5 mt-5 border-t border-sanctuary-border flex flex-wrap items-center justify-between gap-3">
+        <span class="text-xs text-sanctuary-muted">Advance dining reservations recommended for dinner.</span>
         <div class="flex items-center gap-2">
           <button onclick="closeMenuModal(); openBookingDrawer('Table Reservation at Aahar-Vihar', 450);"
-            class="btn-taj-primary py-2.5 px-5 text-xs">
+            class="btn-sanctuary-primary py-2.5 px-5 text-xs">
             Reserve A Table
           </button>
-          <button onclick="closeMenuModal()" class="btn-taj-outline-dark py-2.5 px-4 text-xs">
+          <button onclick="closeMenuModal()" class="btn-sanctuary-outline-dark py-2.5 px-4 text-xs">
             Close
           </button>
         </div>
@@ -1799,19 +1799,19 @@
   <div id="facility-modal"
     class="modal-overlay hidden-modal fixed inset-0 z-50 items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden"
     style="display: none;">
-    <div class="modal-card w-full max-w-md bg-white border-2 border-taj-gold shadow-2xl p-6 sm:p-8 text-taj-charcoal">
-      <div class="flex items-center justify-between border-b border-taj-border pb-3 mb-4">
-        <h3 id="facility-modal-title" class="font-cinzel text-lg font-bold text-taj-charcoal">Facility Details</h3>
-        <button onclick="closeFacilityModal()" class="text-taj-charcoal hover:text-taj-gold">
+    <div class="modal-card w-full max-w-md bg-white border-2 border-sanctuary-gold shadow-2xl p-6 sm:p-8 text-sanctuary-charcoal">
+      <div class="flex items-center justify-between border-b border-sanctuary-border pb-3 mb-4">
+        <h3 id="facility-modal-title" class="font-cinzel text-lg font-bold text-sanctuary-charcoal">Facility Details</h3>
+        <button onclick="closeFacilityModal()" class="text-sanctuary-charcoal hover:text-sanctuary-gold">
           <i data-lucide="x" class="w-5 h-5"></i>
         </button>
       </div>
-      <p id="facility-modal-body" class="text-xs sm:text-sm text-taj-body leading-relaxed mb-6"></p>
+      <p id="facility-modal-body" class="text-xs sm:text-sm text-sanctuary-body leading-relaxed mb-6"></p>
       <div class="flex gap-3">
-        <a href="tel:+917670265334" class="flex-1 btn-taj-outline-dark py-2.5 text-[10px] text-center">
+        <a href="tel:+917670265334" class="flex-1 btn-sanctuary-outline-dark py-2.5 text-[10px] text-center">
           Inquire Now
         </a>
-        <button onclick="closeFacilityModal()" class="flex-1 btn-taj-primary py-2.5 text-[10px]">
+        <button onclick="closeFacilityModal()" class="flex-1 btn-sanctuary-primary py-2.5 text-[10px]">
           Close
         </button>
       </div>
@@ -1823,38 +1823,38 @@
     class="modal-overlay hidden-modal fixed inset-0 z-50 items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden"
     style="display: none;">
     <div
-      class="modal-card w-full max-w-md bg-[#FAF8F5] border-2 border-taj-gold shadow-2xl overflow-hidden text-taj-charcoal animate-fadeIn">
+      class="modal-card w-full max-w-md bg-[#FAF8F5] border-2 border-sanctuary-gold shadow-2xl overflow-hidden text-sanctuary-charcoal animate-fadeIn">
 
       <!-- Modal Header -->
-      <div class="bg-taj-cream p-6 border-b border-taj-border relative text-center">
+      <div class="bg-sanctuary-cream p-6 border-b border-sanctuary-border relative text-center">
         <button onclick="closeAuthModal()"
-          class="absolute right-4 top-4 text-taj-charcoal hover:text-taj-gold transition-colors p-1 cursor-pointer"
+          class="absolute right-4 top-4 text-sanctuary-charcoal hover:text-sanctuary-gold transition-colors p-1 cursor-pointer"
           aria-label="Close Authentication">
           <i data-lucide="x" class="w-5 h-5"></i>
         </button>
         <div
-          class="w-12 h-12 border-2 border-taj-gold text-taj-gold mx-auto flex items-center justify-center mb-3 shadow-sm bg-white">
+          class="w-12 h-12 border-2 border-sanctuary-gold text-sanctuary-gold mx-auto flex items-center justify-center mb-3 shadow-sm bg-white">
           <i data-lucide="crown" class="w-6 h-6"></i>
         </div>
-        <h3 id="auth-modal-title" class="font-cinzel text-base sm:text-lg font-bold text-taj-charcoal tracking-wider">
+        <h3 id="auth-modal-title" class="font-cinzel text-base sm:text-lg font-bold text-sanctuary-charcoal tracking-wider">
           Sign In with Google to Proceed to Reservation Desk</h3>
-        <p class="text-[10px] sm:text-[11px] text-taj-muted uppercase tracking-widest mt-1">Arogyadham Swasthya Kutir,
+        <p class="text-[10px] sm:text-[11px] text-sanctuary-muted uppercase tracking-widest mt-1">Arogyadham Swasthya Kutir,
           Chitrakoot</p>
       </div>
 
       <!-- Selected Room Banner (when redirected from a specific room) -->
       <div id="auth-guard-alert"
-        class="hidden bg-amber-50/80 border-b border-taj-gold/30 px-5 py-3 text-left flex items-center justify-between text-xs text-taj-charcoal">
+        class="hidden bg-amber-50/80 border-b border-sanctuary-gold/30 px-5 py-3 text-left flex items-center justify-between text-xs text-sanctuary-charcoal">
         <div class="flex items-center gap-2">
-          <i data-lucide="bed-double" class="w-4 h-4 text-taj-gold flex-shrink-0"></i>
+          <i data-lucide="bed-double" class="w-4 h-4 text-sanctuary-gold flex-shrink-0"></i>
           <div>
-            <span class="text-[10px] text-taj-muted uppercase tracking-wider block">Selected Sanctuary</span>
-            <strong id="auth-guard-msg" class="font-cinzel text-xs font-bold text-taj-charcoal">Mandakini Royal
+            <span class="text-[10px] text-sanctuary-muted uppercase tracking-wider block">Selected Sanctuary</span>
+            <strong id="auth-guard-msg" class="font-cinzel text-xs font-bold text-sanctuary-charcoal">Mandakini Royal
               Suite</strong>
           </div>
         </div>
         <span
-          class="text-[10px] uppercase font-bold tracking-wider text-taj-gold bg-white px-2 py-0.5 border border-taj-gold/40">
+          class="text-[10px] uppercase font-bold tracking-wider text-sanctuary-gold bg-white px-2 py-0.5 border border-sanctuary-gold/40">
           Best Rate Guarantee
         </span>
       </div>
@@ -1862,7 +1862,7 @@
       <!-- Card Body Content -->
       <div class="p-6 sm:p-8 space-y-6">
 
-        <p class="text-xs text-center text-taj-muted leading-relaxed">
+        <p class="text-xs text-center text-sanctuary-muted leading-relaxed">
           Sign in to access real-time cottage availability, personalized wellness itineraries, and instant reservation
           confirmation via our secure booking engine.
         </p>
@@ -1870,7 +1870,7 @@
         <!-- PRIMARY ACTION: CONTINUE WITH GOOGLE -->
         <div id="auth-social-section">
           <button type="button" onclick="handleGoogleSignIn()"
-            class="w-full flex items-center justify-center gap-3 py-3.5 px-5 bg-white border-2 border-taj-border hover:border-taj-gold hover:shadow-lg transition-all text-xs font-bold text-taj-charcoal uppercase tracking-wider group shadow-sm cursor-pointer min-h-[48px]">
+            class="w-full flex items-center justify-center gap-3 py-3.5 px-5 bg-white border-2 border-sanctuary-border hover:border-sanctuary-gold hover:shadow-lg transition-all text-xs font-bold text-sanctuary-charcoal uppercase tracking-wider group shadow-sm cursor-pointer min-h-[48px]">
             <!-- Official Multi-Color Google 'G' Logo -->
             <svg class="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24">
               <path fill="#4285F4"
@@ -1882,18 +1882,18 @@
               <path fill="#EA4335"
                 d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" />
             </svg>
-            <span class="group-hover:text-taj-gold transition-colors tracking-[0.14em]">Continue with Google</span>
+            <span class="group-hover:text-sanctuary-gold transition-colors tracking-[0.14em]">Continue with Google</span>
           </button>
         </div>
 
         <!-- Security & Privacy Reassurance -->
         <div
-          class="pt-2 border-t border-taj-border/80 flex flex-col items-center gap-1.5 text-[11px] text-taj-muted text-center">
-          <div class="flex items-center gap-1.5 text-taj-charcoal font-medium">
+          class="pt-2 border-t border-sanctuary-border/80 flex flex-col items-center gap-1.5 text-[11px] text-sanctuary-muted text-center">
+          <div class="flex items-center gap-1.5 text-sanctuary-charcoal font-medium">
             <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-600"></i>
             <span>Google Identity Services • 256-bit SSL Verified</span>
           </div>
-          <p class="text-[10px] text-taj-muted/80">Direct instant reservation via Djubo Booking Engine.</p>
+          <p class="text-[10px] text-sanctuary-muted/80">Direct instant reservation via Djubo Booking Engine.</p>
         </div>
 
       </div>
@@ -1905,18 +1905,18 @@
     class="modal-overlay hidden-modal fixed inset-0 z-50 items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden"
     style="display: none;">
     <div
-      class="modal-card w-full max-w-2xl bg-white border-2 border-taj-gold shadow-2xl p-6 sm:p-8 text-taj-charcoal max-h-[85vh] overflow-y-auto">
-      <div class="flex items-center justify-between border-b border-taj-border pb-4 mb-5">
+      class="modal-card w-full max-w-2xl bg-white border-2 border-sanctuary-gold shadow-2xl p-6 sm:p-8 text-sanctuary-charcoal max-h-[85vh] overflow-y-auto">
+      <div class="flex items-center justify-between border-b border-sanctuary-border pb-4 mb-5">
         <div class="flex items-center gap-3">
-          <div class="w-9 h-9 border border-taj-gold flex items-center justify-center text-taj-gold">
+          <div class="w-9 h-9 border border-sanctuary-gold flex items-center justify-center text-sanctuary-gold">
             <i data-lucide="calendar" class="w-5 h-5"></i>
           </div>
           <div>
-            <h3 class="font-cinzel text-lg font-bold text-taj-charcoal">My Reservations & Vouchers</h3>
-            <p class="text-[11px] text-taj-muted">Arogyadham Swasthya Kutir, Chitrakoot</p>
+            <h3 class="font-cinzel text-lg font-bold text-sanctuary-charcoal">My Reservations & Vouchers</h3>
+            <p class="text-[11px] text-sanctuary-muted">Arogyadham Swasthya Kutir, Chitrakoot</p>
           </div>
         </div>
-        <button onclick="closeMyBookingsModal()" class="text-taj-charcoal hover:text-taj-gold p-1">
+        <button onclick="closeMyBookingsModal()" class="text-sanctuary-charcoal hover:text-sanctuary-gold p-1">
           <i data-lucide="x" class="w-5 h-5"></i>
         </button>
       </div>
@@ -1929,21 +1929,21 @@
       <!-- Empty State -->
       <div id="user-bookings-empty" class="hidden text-center py-10 space-y-3">
         <div
-          class="w-12 h-12 bg-taj-ivory border border-taj-gold/40 mx-auto flex items-center justify-center text-taj-gold">
+          class="w-12 h-12 bg-sanctuary-ivory border border-sanctuary-gold/40 mx-auto flex items-center justify-center text-sanctuary-gold">
           <i data-lucide="bed" class="w-6 h-6"></i>
         </div>
-        <h4 class="font-cinzel text-base font-bold text-taj-charcoal">No Active Bookings Yet</h4>
-        <p class="text-xs text-taj-muted max-w-sm mx-auto">You have not reserved any Kutirs or Dining experiences yet.
+        <h4 class="font-cinzel text-base font-bold text-sanctuary-charcoal">No Active Bookings Yet</h4>
+        <p class="text-xs text-sanctuary-muted max-w-sm mx-auto">You have not reserved any Kutirs or Dining experiences yet.
           Discover our serene sanctuary suites in Chitrakoot.</p>
         <div class="pt-2">
-          <button onclick="closeMyBookingsModal(); navigateToHomeRooms();" class="btn-taj-primary py-2.5 px-6 text-xs">
+          <button onclick="closeMyBookingsModal(); navigateToHomeRooms();" class="btn-sanctuary-primary py-2.5 px-6 text-xs">
             Explore Rooms & Suites
           </button>
         </div>
       </div>
 
-      <div class="pt-5 mt-6 border-t border-taj-border flex justify-end">
-        <button onclick="closeMyBookingsModal()" class="btn-taj-outline-dark py-2 px-5 text-xs">
+      <div class="pt-5 mt-6 border-t border-sanctuary-border flex justify-end">
+        <button onclick="closeMyBookingsModal()" class="btn-sanctuary-outline-dark py-2 px-5 text-xs">
           Close
         </button>
       </div>
@@ -1954,25 +1954,25 @@
   <div id="profile-modal"
     class="modal-overlay hidden-modal fixed inset-0 z-50 items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden"
     style="display: none;">
-    <div class="modal-card w-full max-w-md bg-white border-2 border-taj-gold shadow-2xl p-6 sm:p-8 text-taj-charcoal">
-      <div class="flex items-center justify-between border-b border-taj-border pb-4 mb-5">
-        <h3 class="font-cinzel text-lg font-bold text-taj-charcoal">Guest Member Profile</h3>
-        <button onclick="closeUserProfileModal()" class="text-taj-charcoal hover:text-taj-gold p-1">
+    <div class="modal-card w-full max-w-md bg-white border-2 border-sanctuary-gold shadow-2xl p-6 sm:p-8 text-sanctuary-charcoal">
+      <div class="flex items-center justify-between border-b border-sanctuary-border pb-4 mb-5">
+        <h3 class="font-cinzel text-lg font-bold text-sanctuary-charcoal">Guest Member Profile</h3>
+        <button onclick="closeUserProfileModal()" class="text-sanctuary-charcoal hover:text-sanctuary-gold p-1">
           <i data-lucide="x" class="w-5 h-5"></i>
         </button>
       </div>
 
       <div class="space-y-4 text-xs">
-        <div class="flex items-center gap-3 p-4 bg-taj-ivory border border-taj-border">
+        <div class="flex items-center gap-3 p-4 bg-sanctuary-ivory border border-sanctuary-border">
           <div id="profile-modal-avatar"
-            class="w-12 h-12 bg-taj-gold text-white font-bold text-base flex items-center justify-center rounded-full border-2 border-white shadow overflow-hidden flex-shrink-0">
+            class="w-12 h-12 bg-sanctuary-gold text-white font-bold text-base flex items-center justify-center rounded-full border-2 border-white shadow overflow-hidden flex-shrink-0">
             <img id="profile-modal-photo" class="w-full h-full object-cover hidden" alt="User Profile" loading="lazy"
               onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80';"
               decoding="async">
             <span id="profile-modal-initials">VY</span>
           </div>
           <div>
-            <h4 id="profile-modal-name" class="font-cinzel text-base font-bold text-taj-charcoal">Vansh Yadav</h4>
+            <h4 id="profile-modal-name" class="font-cinzel text-base font-bold text-sanctuary-charcoal">Vansh Yadav</h4>
             <span id="profile-modal-badge"
               class="inline-block mt-0.5 text-[10px] uppercase tracking-wider px-2 py-0.5 bg-emerald-100 text-emerald-800 font-bold border border-emerald-300">
               ✓ Verified Member
@@ -1980,32 +1980,32 @@
           </div>
         </div>
 
-        <div class="p-4 bg-white border border-taj-border space-y-2.5">
+        <div class="p-4 bg-white border border-sanctuary-border space-y-2.5">
           <div class="flex justify-between">
-            <span class="text-taj-muted">Email Address:</span>
-            <strong id="profile-modal-email" class="font-mono text-taj-charcoal">vansh@example.com</strong>
+            <span class="text-sanctuary-muted">Email Address:</span>
+            <strong id="profile-modal-email" class="font-mono text-sanctuary-charcoal">vansh@example.com</strong>
           </div>
           <div class="flex justify-between">
-            <span class="text-taj-muted">Contact Phone:</span>
-            <strong id="profile-modal-phone" class="text-taj-charcoal">+91 98765 43210</strong>
+            <span class="text-sanctuary-muted">Contact Phone:</span>
+            <strong id="profile-modal-phone" class="text-sanctuary-charcoal">+91 98765 43210</strong>
           </div>
           <div class="flex justify-between">
-            <span class="text-taj-muted">Membership Tier:</span>
-            <strong class="text-taj-gold">Arogyadham Heritage Circle (Gold)</strong>
+            <span class="text-sanctuary-muted">Membership Tier:</span>
+            <strong class="text-sanctuary-gold">Arogyadham Heritage Circle (Gold)</strong>
           </div>
           <div class="flex justify-between">
-            <span class="text-taj-muted">Total Reservations:</span>
-            <strong id="profile-modal-total-bookings" class="text-taj-charcoal">0</strong>
+            <span class="text-sanctuary-muted">Total Reservations:</span>
+            <strong id="profile-modal-total-bookings" class="text-sanctuary-charcoal">0</strong>
           </div>
         </div>
       </div>
 
-      <div class="pt-5 mt-5 border-t border-taj-border flex gap-3">
+      <div class="pt-5 mt-5 border-t border-sanctuary-border flex gap-3">
         <button onclick="closeUserProfileModal(); openMyBookingsModal();"
-          class="flex-1 btn-taj-primary py-2.5 text-xs text-center">
+          class="flex-1 btn-sanctuary-primary py-2.5 text-xs text-center">
           View My Bookings
         </button>
-        <button onclick="closeUserProfileModal()" class="flex-1 btn-taj-outline-dark py-2.5 text-xs text-center">
+        <button onclick="closeUserProfileModal()" class="flex-1 btn-sanctuary-outline-dark py-2.5 text-xs text-center">
           Done
         </button>
       </div>
@@ -2016,54 +2016,54 @@
   <div id="saved-kutirs-modal"
     class="modal-overlay hidden-modal fixed inset-0 z-50 items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden"
     style="display: none;">
-    <div class="modal-card w-full max-w-lg bg-white border-2 border-taj-gold shadow-2xl p-6 sm:p-8 text-taj-charcoal">
-      <div class="flex items-center justify-between border-b border-taj-border pb-4 mb-5">
+    <div class="modal-card w-full max-w-lg bg-white border-2 border-sanctuary-gold shadow-2xl p-6 sm:p-8 text-sanctuary-charcoal">
+      <div class="flex items-center justify-between border-b border-sanctuary-border pb-4 mb-5">
         <div class="flex items-center gap-2.5">
-          <i data-lucide="bookmark" class="w-5 h-5 text-taj-gold"></i>
-          <h3 class="font-cinzel text-lg font-bold text-taj-charcoal">Saved Sanctuary Kutirs</h3>
+          <i data-lucide="bookmark" class="w-5 h-5 text-sanctuary-gold"></i>
+          <h3 class="font-cinzel text-lg font-bold text-sanctuary-charcoal">Saved Sanctuary Kutirs</h3>
         </div>
-        <button onclick="closeSavedKutirsModal()" class="text-taj-charcoal hover:text-taj-gold p-1">
+        <button onclick="closeSavedKutirsModal()" class="text-sanctuary-charcoal hover:text-sanctuary-gold p-1">
           <i data-lucide="x" class="w-5 h-5"></i>
         </button>
       </div>
 
       <div class="space-y-3 text-xs">
-        <div class="p-3.5 bg-taj-ivory border border-taj-border flex items-center justify-between">
+        <div class="p-3.5 bg-sanctuary-ivory border border-sanctuary-border flex items-center justify-between">
           <div>
-            <h5 class="font-cinzel font-bold text-sm text-taj-charcoal">Mandakini Royal Suite</h5>
-            <p class="text-[11px] text-taj-gold font-semibold">₹12,000 + 12% GST / night</p>
+            <h5 class="font-cinzel font-bold text-sm text-sanctuary-charcoal">Mandakini Royal Suite</h5>
+            <p class="text-[11px] text-sanctuary-gold font-semibold">₹12,000 + 12% GST / night</p>
           </div>
           <button onclick="closeSavedKutirsModal(); openBookingDrawer('Mandakini Royal Suite', 12000);"
-            class="btn-taj-primary py-1.5 px-3 text-[10px]">
+            class="btn-sanctuary-primary py-1.5 px-3 text-[10px]">
             Book Now
           </button>
         </div>
 
-        <div class="p-3.5 bg-taj-ivory border border-taj-border flex items-center justify-between">
+        <div class="p-3.5 bg-sanctuary-ivory border border-sanctuary-border flex items-center justify-between">
           <div>
-            <h5 class="font-cinzel font-bold text-sm text-taj-charcoal">Paishwani Heritage Suite</h5>
-            <p class="text-[11px] text-taj-gold font-semibold">₹10,000 + 12% GST / night</p>
+            <h5 class="font-cinzel font-bold text-sm text-sanctuary-charcoal">Paishwani Heritage Suite</h5>
+            <p class="text-[11px] text-sanctuary-gold font-semibold">₹10,000 + 12% GST / night</p>
           </div>
           <button onclick="closeSavedKutirsModal(); openBookingDrawer('Paishwani Heritage Suite', 10000);"
-            class="btn-taj-primary py-1.5 px-3 text-[10px]">
+            class="btn-sanctuary-primary py-1.5 px-3 text-[10px]">
             Book Now
           </button>
         </div>
 
-        <div class="p-3.5 bg-taj-ivory border border-taj-border flex items-center justify-between">
+        <div class="p-3.5 bg-sanctuary-ivory border border-sanctuary-border flex items-center justify-between">
           <div>
-            <h5 class="font-cinzel font-bold text-sm text-taj-charcoal">Vaidehi Suite</h5>
-            <p class="text-[11px] text-taj-gold font-semibold">₹8,000 + 12% GST / night</p>
+            <h5 class="font-cinzel font-bold text-sm text-sanctuary-charcoal">Vaidehi Suite</h5>
+            <p class="text-[11px] text-sanctuary-gold font-semibold">₹8,000 + 12% GST / night</p>
           </div>
           <button onclick="closeSavedKutirsModal(); openBookingDrawer('Vaidehi Suite', 8000);"
-            class="btn-taj-primary py-1.5 px-3 text-[10px]">
+            class="btn-sanctuary-primary py-1.5 px-3 text-[10px]">
             Book Now
           </button>
         </div>
       </div>
 
-      <div class="pt-5 mt-5 border-t border-taj-border flex justify-end">
-        <button onclick="closeSavedKutirsModal()" class="btn-taj-outline-dark py-2 px-5 text-xs">
+      <div class="pt-5 mt-5 border-t border-sanctuary-border flex justify-end">
+        <button onclick="closeSavedKutirsModal()" class="btn-sanctuary-outline-dark py-2 px-5 text-xs">
           Close
         </button>
       </div>
@@ -2084,7 +2084,7 @@
     </button>
 
     <div id="prModalDialog"
-      class="relative z-10 grid w-full max-w-4xl items-center gap-8 md:grid-cols-2 bg-[#FAF8F5] p-6 sm:p-10 rounded-sm shadow-2xl border border-tajGold/30 transition-all duration-300 transform opacity-0 scale-95">
+      class="relative z-10 grid w-full max-w-4xl items-center gap-8 md:grid-cols-2 bg-[#FAF8F5] p-6 sm:p-10 rounded-sm shadow-2xl border border-sanctuaryGold/30 transition-all duration-300 transform opacity-0 scale-95">
       <!-- Left: 3D Flippable Frame -->
       <div class="pr-flip-scene w-full aspect-[4/5] max-w-[320px] mx-auto cursor-pointer" id="prFlipScene"
         title="Click frame to flip Front / Back">
@@ -2271,7 +2271,7 @@
       // Build Cards & Dots
       const cardEls = SLIDES.map((slide, index) => {
         const card = document.createElement("div");
-        card.className = "cf-card absolute aspect-square overflow-hidden rounded-2xl bg-gray-900 shadow-2xl border border-tajGold/30 cursor-pointer";
+        card.className = "cf-card absolute aspect-square overflow-hidden rounded-2xl bg-gray-900 shadow-2xl border border-sanctuaryGold/30 cursor-pointer";
         card.setAttribute("role", "group");
         card.setAttribute("aria-label", `${index + 1} of ${count}`);
         card.innerHTML = `<img src="${slide.src}" alt="${slide.alt}" draggable="false" class="h-full w-full select-none object-cover pointer-events-none" />`;
@@ -2286,7 +2286,7 @@
         const btn = document.createElement("button");
         btn.type = "button";
         btn.setAttribute("aria-label", `Go to slide ${index + 1}`);
-        btn.className = "h-2 rounded-full transition-all duration-300 " + (index === 0 ? "w-6 bg-tajGold" : "w-2 bg-gray-400/50 hover:bg-gray-600");
+        btn.className = "h-2 rounded-full transition-all duration-300 " + (index === 0 ? "w-6 bg-sanctuaryGold" : "w-2 bg-gray-400/50 hover:bg-gray-600");
         btn.addEventListener("click", () => goTo(index));
         dotsBox.appendChild(btn);
         return btn;
@@ -2307,18 +2307,18 @@
 
         captionBox.innerHTML = `
         <div class="cf-caption-animate w-full flex flex-col items-center">
-          <span class="text-[10px] font-bold tracking-[0.22em] text-tajGold uppercase">${active.category}</span>
+          <span class="text-[10px] font-bold tracking-[0.22em] text-sanctuaryGold uppercase">${active.category}</span>
           <h3 class="text-xl sm:text-2xl font-cinzel text-gray-900 mt-1">${active.title}</h3>
           <p class="mt-2 text-xs sm:text-sm text-gray-600 leading-relaxed">${active.subtitle}</p>
           <dl class="mt-5 w-full max-w-[260px] text-xs">${metaHtml}</dl>
-          <a href="#booking-widget" class="inline-flex items-center gap-1.5 mt-6 text-[11px] font-bold uppercase tracking-[0.2em] text-tajGold hover:text-tajGoldHover border-b border-tajGold pb-1 transition-colors">
+          <a href="#booking-widget" class="inline-flex items-center gap-1.5 mt-6 text-[11px] font-bold uppercase tracking-[0.2em] text-sanctuaryGold hover:text-sanctuaryGoldHover border-b border-sanctuaryGold pb-1 transition-colors">
             LEARN MORE <span>&rarr;</span>
           </a>
         </div>
       `;
 
         dotEls.forEach((dot, i) => {
-          dot.className = "h-2 rounded-full transition-all duration-300 " + (i === idx ? "w-6 bg-tajGold" : "w-2 bg-gray-400/50 hover:bg-gray-600");
+          dot.className = "h-2 rounded-full transition-all duration-300 " + (i === idx ? "w-6 bg-sanctuaryGold" : "w-2 bg-gray-400/50 hover:bg-gray-600");
         });
       }
 
@@ -2663,9 +2663,9 @@
         const item = FACILITIES[idx];
         if (!item || !captionBox) return;
         captionBox.innerHTML = `
-        <span class="text-[10px] font-bold uppercase tracking-[0.22em] text-tajGold">${item.category}</span>
+        <span class="text-[10px] font-bold uppercase tracking-[0.22em] text-sanctuaryGold">${item.category}</span>
         <p class="text-base sm:text-lg font-cinzel text-gray-900 mt-0.5">${item.title}</p>
-        <p class="text-xs sm:text-sm text-gray-600 mt-1">${item.subtitle} <span class="text-tajGold font-semibold ml-1 underline">Lift to view &rarr;</span></p>
+        <p class="text-xs sm:text-sm text-gray-600 mt-1">${item.subtitle} <span class="text-sanctuaryGold font-semibold ml-1 underline">Lift to view &rarr;</span></p>
       `;
       }
 
@@ -2711,7 +2711,7 @@
         </div>
 
         <!-- Wall Museum Tag -->
-        <span class="mt-3 px-2.5 py-1 rounded-[2px] border border-gray-200 bg-[#FAF8F5] text-[10px] font-medium tracking-wider text-gray-700 shadow-sm group-hover:border-tajGold group-hover:text-tajGold transition-colors pointer-events-none">
+        <span class="mt-3 px-2.5 py-1 rounded-[2px] border border-gray-200 bg-[#FAF8F5] text-[10px] font-medium tracking-wider text-gray-700 shadow-sm group-hover:border-sanctuaryGold group-hover:text-sanctuaryGold transition-colors pointer-events-none">
           ${item.tag}
         </span>
       `;
@@ -2773,7 +2773,7 @@
           <p class="text-[9px] uppercase tracking-[0.22em] text-gray-500">Sanctuary Archive Label</p>
           <p class="font-cinzel text-sm font-bold mt-1">${item.title}</p>
           <p class="text-[11px] text-gray-600 mt-0.5">${item.category} • Chitrakoot Campus</p>
-          <p class="text-[10px] font-serif italic text-tajGold mt-2 pt-2 border-t border-gray-200">Arogyadham Swasthya Kutir</p>
+          <p class="text-[10px] font-serif italic text-sanctuaryGold mt-2 pt-2 border-t border-gray-200">Arogyadham Swasthya Kutir</p>
         </div>
       `;
 
@@ -2781,30 +2781,30 @@
 
         modalInfo.innerHTML = `
         <span class="font-mono text-xs tracking-[0.2em] text-gray-400">0${idx + 1} / 0${FACILITIES.length}</span>
-        <span class="text-[11px] font-bold uppercase tracking-[0.2em] text-tajGold mt-2">${item.category}</span>
+        <span class="text-[11px] font-bold uppercase tracking-[0.2em] text-sanctuaryGold mt-2">${item.category}</span>
         <h3 class="text-2xl sm:text-3xl font-cinzel text-gray-900 mt-1">${item.title}</h3>
         <p class="text-sm text-gray-600 mt-3 leading-relaxed">${item.subtitle}</p>
         <ul class="flex flex-wrap justify-center md:justify-start gap-2 mt-5">${detailsList}</ul>
         
         <div class="flex items-center justify-center md:justify-start gap-4 mt-7 pt-5 border-t border-gray-200">
-          <button type="button" id="prBtnFront" class="text-xs font-bold uppercase tracking-widest pb-1 border-b-2 border-tajGold text-gray-900 cursor-pointer">Front View</button>
+          <button type="button" id="prBtnFront" class="text-xs font-bold uppercase tracking-widest pb-1 border-b-2 border-sanctuaryGold text-gray-900 cursor-pointer">Front View</button>
           <button type="button" id="prBtnBack" class="text-xs font-bold uppercase tracking-widest pb-1 border-b-2 border-transparent text-gray-500 hover:text-gray-900 cursor-pointer">Back Label</button>
         </div>
       `;
 
         document.getElementById("prBtnFront").onclick = () => {
           flipCard.classList.remove("is-flipped");
-          document.getElementById("prBtnFront").classList.replace("border-transparent", "border-tajGold");
+          document.getElementById("prBtnFront").classList.replace("border-transparent", "border-sanctuaryGold");
           document.getElementById("prBtnFront").classList.replace("text-gray-500", "text-gray-900");
-          document.getElementById("prBtnBack").classList.replace("border-tajGold", "border-transparent");
+          document.getElementById("prBtnBack").classList.replace("border-sanctuaryGold", "border-transparent");
           document.getElementById("prBtnBack").classList.replace("text-gray-900", "text-gray-500");
         };
 
         document.getElementById("prBtnBack").onclick = () => {
           flipCard.classList.add("is-flipped");
-          document.getElementById("prBtnBack").classList.replace("border-transparent", "border-tajGold");
+          document.getElementById("prBtnBack").classList.replace("border-transparent", "border-sanctuaryGold");
           document.getElementById("prBtnBack").classList.replace("text-gray-500", "text-gray-900");
-          document.getElementById("prBtnFront").classList.replace("border-tajGold", "border-transparent");
+          document.getElementById("prBtnFront").classList.replace("border-sanctuaryGold", "border-transparent");
           document.getElementById("prBtnFront").classList.replace("text-gray-900", "text-gray-500");
         };
 
@@ -2905,11 +2905,11 @@
         const sourceBadge = rev.meta.includes("Tripadvisor") ? "Tripadvisor" : "Google";
 
         return `
-        <article class="w-[310px] sm:w-[350px] shrink-0 rounded-xl bg-[#FAF8F5] border border-tajGold/30 p-5 shadow-sm hover:shadow-md hover:border-tajGold transition-all duration-300 flex flex-col justify-between">
+        <article class="w-[310px] sm:w-[350px] shrink-0 rounded-xl bg-[#FAF8F5] border border-sanctuaryGold/30 p-5 shadow-sm hover:shadow-md hover:border-sanctuaryGold transition-all duration-300 flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between gap-3 mb-3">
               <div class="flex items-center gap-3 min-w-0">
-                <div class="w-9 h-9 rounded-full bg-tajGold/15 border border-tajGold/40 text-tajGold font-cinzel font-bold text-xs flex items-center justify-center shrink-0">
+                <div class="w-9 h-9 rounded-full bg-sanctuaryGold/15 border border-sanctuaryGold/40 text-sanctuaryGold font-cinzel font-bold text-xs flex items-center justify-center shrink-0">
                   ${initials}
                 </div>
                 <div class="min-w-0">
@@ -2921,7 +2921,7 @@
                 ${sourceBadge}
               </span>
             </div>
-            <div class="text-tajGold text-xs tracking-widest mb-2">${stars}</div>
+            <div class="text-sanctuaryGold text-xs tracking-widest mb-2">${stars}</div>
             <p class="text-xs sm:text-[13px] text-gray-700 leading-relaxed line-clamp-3 font-sans">
               "${rev.text}"
             </p>

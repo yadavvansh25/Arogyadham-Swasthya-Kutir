@@ -5,7 +5,7 @@ This directory stores authentic high-resolution photographs for every culinary p
 ## Naming Guidelines:
 - Place exact JPG files matching the specified systematic slug in this folder (`/assets/menu-dishes/<slug>.jpg`).
 - As soon as a photo is dropped in this folder, the website will automatically display it.
-- If a file is absent, the website gracefully displays an ultra-luxury Taj-styled Satvik badge card with zero visual distortion.
+- If a file is absent, the website gracefully displays an ultra-luxury Sanctuary-styled Satvik badge card with zero visual distortion.
 
 ## Complete Dish Slugs (135 items):
 - **Puri Bhaji (4 pcs)** (₹165, Indian Breakfast): `puri-bhaji.jpg`

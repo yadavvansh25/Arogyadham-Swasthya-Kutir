@@ -1,11 +1,11 @@
 # Arogyadham Swasthya Kutir, Chitrakoot
-### Luxury Resort & Wellness Sanctuary — Inspired by Taj Hotels & Resorts
+### Luxury Resort & Wellness Sanctuary — Arogyadham Swasthya Kutir
 
 ---
 
 ## 🏛️ Property Architecture & Visual Identity
 
-This website reflects the exact visual aesthetic, lighting, and layout of the **official Taj Hotels portal (`tajhotels.com`)**:
+This website reflects the exact visual aesthetic, lighting, and layout of the **official Arogyadham Swasthya Kutir portal (`arogydham.co`)**:
 - **Warm Dusk Palace Lighting:** Illuminated sandstone facade, twilight evening sky, and reflective lotus pool.
 - **Transparent-to-Solid Header:** Seamless dark-to-transparent overlay on hero that transitions into a clean solid white navbar upon scrolling.
 - **Typography:** `Cinzel` for regal titles, `Cormorant Garamond` for poetic subtitles, and `Montserrat` for clean UI.

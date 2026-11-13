@@ -1,5 +1,5 @@
 /**
- * Arogyadham Swasthya Kutir - Official Taj Hotels Experience
+ * Arogyadham Swasthya Kutir - Official Arogyadham Swasthya Kutir Experience
  * Complete Modular Application Logic
  */
 
@@ -55,7 +55,7 @@ window.closeReceipt = closeReceipt;
 window.closeConfirmationModal = closeReceipt;
 
 // Application State
-const tajState = {
+const sanctuaryState = {
   selectedRoom: 'Mandakini Royal Suite',
   selectedRate: 12000,
   checkIn: '2026-10-18',
@@ -78,8 +78,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // Strictly hide payment receipt modal on initial page load
   try { closeReceipt(); } catch (e) {}
 
-  try { tajAuth.init(); } catch (e) { console.warn('tajAuth init issue:', e); }
-  try { initTajNavbarScroll(); } catch (e) { console.warn('navbar init issue:', e); }
+  try { sanctuaryAuth.init(); } catch (e) { console.warn('sanctuaryAuth init issue:', e); }
+  try { initSanctuaryNavbarScroll(); } catch (e) { console.warn('navbar init issue:', e); }
   try { initReservationDrawer(); } catch (e) { console.warn('drawer init issue:', e); }
   try { initCopyAddress(); } catch (e) { console.warn('copy address issue:', e); }
   try { initSearchInput(); } catch (e) { console.warn('search input issue:', e); }
@@ -103,7 +103,7 @@ function initRasoeeMenu() {
 const initPasoeeMenu = initRasoeeMenu;
 
 /* ================= REAL FIREBASE AUTHENTICATION & STATE MANAGEMENT ================= */
-const tajAuth = {
+const sanctuaryAuth = {
   currentUser: null,
   pendingBooking: null,
   firestoreBookings: [],
@@ -131,13 +131,13 @@ const tajAuth = {
     this.updateUI();
     this.setupDropdownCloser();
 
-    // Bind with TajFirebase module once loaded
-    if (window.TajFirebase) {
-      this.bindFirebase(window.TajFirebase);
+    // Bind with SanctuaryFirebase module once loaded
+    if (window.SanctuaryFirebase) {
+      this.bindFirebase(window.SanctuaryFirebase);
     } else {
-      window.onTajFirebaseReady = () => {
-        if (window.TajFirebase) {
-          this.bindFirebase(window.TajFirebase);
+      window.onSanctuaryFirebaseReady = () => {
+        if (window.SanctuaryFirebase) {
+          this.bindFirebase(window.SanctuaryFirebase);
         }
       };
     }
@@ -350,7 +350,7 @@ const tajAuth = {
       sessionStorage.removeItem('ask_intended_booking');
       this.pendingBooking = null;
 
-      showTajToast(
+      showSanctuaryToast(
         'Resuming Booking',
         `Welcome! Proceeding with your sanctuary reservation for "${intended.roomName}"...`,
         'check'
@@ -387,10 +387,10 @@ const tajAuth = {
     sessionStorage.removeItem('ask_pending_room');
     localStorage.removeItem('ask_selected_room');
     this.updateUI();
-    showTajToast('Logged Out', 'You have been safely signed out from Arogyadham Swasthya Kutir.', 'log-out');
+    showSanctuaryToast('Logged Out', 'You have been safely signed out from Arogyadham Swasthya Kutir.', 'log-out');
   }
 };
-window.tajAuth = tajAuth;
+window.sanctuaryAuth = sanctuaryAuth;
 
 /* ================= AUTHENTICATION MODAL CONTROLLERS ================= */
 function openAuthModal(tab = 'signin', guardMessage = null, roomMeta = null) {
@@ -437,20 +437,20 @@ function togglePasswordVisibility(inputId) {
 }
 
 async function forgotPasswordNotice() {
-  showTajToast('Google Sign-In', 'Please use "Continue with Google" for instant one-click access.', 'shield-check');
+  showSanctuaryToast('Google Sign-In', 'Please use "Continue with Google" for instant one-click access.', 'shield-check');
 }
 
 /* ================= GOOGLE IDENTITY SERVICES / OAUTH HANDLER ================= */
 async function handleGoogleSignIn() {
   try {
-    showTajToast('Google Authentication', 'Connecting with Google Identity Services...', 'loader');
+    showSanctuaryToast('Google Authentication', 'Connecting with Google Identity Services...', 'loader');
 
     let profile = null;
 
     // 1. Try Firebase Auth popup if available and valid
-    if (window.TajFirebase && typeof window.TajFirebase.signInWithGoogle === 'function') {
+    if (window.SanctuaryFirebase && typeof window.SanctuaryFirebase.signInWithGoogle === 'function') {
       try {
-        const user = await window.TajFirebase.signInWithGoogle();
+        const user = await window.SanctuaryFirebase.signInWithGoogle();
         if (user && user.email) {
           profile = {
             name: user.displayName || 'Vansh Yadav',
@@ -478,14 +478,14 @@ async function handleGoogleSignIn() {
       };
     }
 
-    // Save profile to localStorage and sync tajAuth
+    // Save profile to localStorage and sync sanctuaryAuth
     localStorage.setItem('sanctuary_user', JSON.stringify(profile));
-    tajAuth.currentUser = profile;
-    tajAuth.updateUI();
+    sanctuaryAuth.currentUser = profile;
+    sanctuaryAuth.updateUI();
 
     closeAuthModal();
 
-    showTajToast(
+    showSanctuaryToast(
       'Signed In with Google',
       `Welcome to Arogyadham, ${profile.name}!`,
       'check-circle'
@@ -511,8 +511,8 @@ async function handleGoogleSignIn() {
       verified: true
     };
     localStorage.setItem('sanctuary_user', JSON.stringify(fallbackProfile));
-    tajAuth.currentUser = fallbackProfile;
-    tajAuth.updateUI();
+    sanctuaryAuth.currentUser = fallbackProfile;
+    sanctuaryAuth.updateUI();
     closeAuthModal();
     proceedToDjuboBooking();
   }
@@ -707,18 +707,18 @@ function openMealPlanModal(roomIdentifier) {
   if (specsEl) {
     const parts = selected.specs.split('|').map(s => s.trim());
     specsEl.innerHTML = `
-      <div class="flex items-center gap-1.5 text-taj-charcoal text-xs">
-        <i data-lucide="sparkles" class="w-3.5 h-3.5 text-taj-gold flex-shrink-0"></i>
+      <div class="flex items-center gap-1.5 text-sanctuary-charcoal text-xs">
+        <i data-lucide="sparkles" class="w-3.5 h-3.5 text-sanctuary-gold flex-shrink-0"></i>
         <span>${parts[0] || 'Bathroom amenities'}</span>
       </div>
-      <span class="text-taj-border">|</span>
-      <div class="flex items-center gap-1.5 text-taj-charcoal text-xs">
-        <i data-lucide="users" class="w-3.5 h-3.5 text-taj-gold flex-shrink-0"></i>
+      <span class="text-sanctuary-border">|</span>
+      <div class="flex items-center gap-1.5 text-sanctuary-charcoal text-xs">
+        <i data-lucide="users" class="w-3.5 h-3.5 text-sanctuary-gold flex-shrink-0"></i>
         <span>${parts[1] || 'Max Occupancy: 2'}</span>
       </div>
-      <span class="text-taj-border">|</span>
-      <div class="flex items-center gap-1.5 text-taj-charcoal text-xs">
-        <i data-lucide="bed-double" class="w-3.5 h-3.5 text-taj-gold flex-shrink-0"></i>
+      <span class="text-sanctuary-border">|</span>
+      <div class="flex items-center gap-1.5 text-sanctuary-charcoal text-xs">
+        <i data-lucide="bed-double" class="w-3.5 h-3.5 text-sanctuary-gold flex-shrink-0"></i>
         <span>${parts[2] || 'Bed Type: Double Bed - 1'}</span>
       </div>
     `;
@@ -726,23 +726,23 @@ function openMealPlanModal(roomIdentifier) {
 
   if (optionsEl) {
     optionsEl.innerHTML = selected.options.map(opt => `
-      <div class="p-4 sm:p-5 bg-taj-cream/30 border border-taj-border hover:border-taj-gold/70 transition-all shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4 group">
+      <div class="p-4 sm:p-5 bg-sanctuary-cream/30 border border-sanctuary-border hover:border-sanctuary-gold/70 transition-all shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4 group">
         <div class="space-y-1.5 flex-1">
           <div class="flex items-center gap-2">
-            <span class="w-2 h-2 rounded-full bg-taj-gold group-hover:scale-125 transition-transform flex-shrink-0"></span>
-            <h4 class="font-cinzel text-sm sm:text-base font-bold text-taj-charcoal">${opt.title}</h4>
+            <span class="w-2 h-2 rounded-full bg-sanctuary-gold group-hover:scale-125 transition-transform flex-shrink-0"></span>
+            <h4 class="font-cinzel text-sm sm:text-base font-bold text-sanctuary-charcoal">${opt.title}</h4>
           </div>
-          <p class="text-xs text-taj-body leading-relaxed">${opt.description}</p>
-          <div class="text-[11px] text-taj-gold font-semibold flex items-center gap-1.5 pt-0.5">
-            <i data-lucide="check" class="w-3.5 h-3.5 text-taj-gold flex-shrink-0"></i>
+          <p class="text-xs text-sanctuary-body leading-relaxed">${opt.description}</p>
+          <div class="text-[11px] text-sanctuary-gold font-semibold flex items-center gap-1.5 pt-0.5">
+            <i data-lucide="check" class="w-3.5 h-3.5 text-sanctuary-gold flex-shrink-0"></i>
             <span>${opt.perk}</span>
           </div>
         </div>
 
-        <div class="flex items-center justify-between sm:justify-end gap-5 border-t sm:border-t-0 pt-3 sm:pt-0 border-taj-border/60 flex-shrink-0">
+        <div class="flex items-center justify-between sm:justify-end gap-5 border-t sm:border-t-0 pt-3 sm:pt-0 border-sanctuary-border/60 flex-shrink-0">
           <div class="text-left sm:text-right">
-            <div class="font-cinzel text-xl sm:text-2xl font-bold text-taj-charcoal">${opt.priceFormatted}</div>
-            <div class="text-[10px] uppercase font-semibold tracking-wider text-taj-muted">per night (incl. taxes)</div>
+            <div class="font-cinzel text-xl sm:text-2xl font-bold text-sanctuary-charcoal">${opt.priceFormatted}</div>
+            <div class="text-[10px] uppercase font-semibold tracking-wider text-sanctuary-muted">per night (incl. taxes)</div>
           </div>
           <button onclick="handleDjuboAdd('${opt.djuboKey}')" data-action="redirect-djubo" data-target="${opt.djuboKey}"
             class="bg-[#FF7700] hover:bg-[#E06600] active:scale-95 text-white font-bold text-xs uppercase tracking-wider px-6 py-2.5 shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer flex items-center justify-center min-w-[90px] min-h-[42px] shrink-0"
@@ -772,8 +772,8 @@ function handleDjuboAdd(key) {
     targetLink = window.DJUBO_BOOKING_URL || "https://live.ipms247.com/booking/book-rooms-arogyadham";
   }
 
-  if (typeof showTajToast === 'function') {
-    showTajToast(
+  if (typeof showSanctuaryToast === 'function') {
+    showSanctuaryToast(
       'Arogyadham Reservation Desk',
       'Redirecting to Arogyadham Secure Booking Engine (Djubo)...',
       'shield-check'
@@ -952,13 +952,13 @@ function proceedToDjuboBooking(meta = null) {
   const guestEmail = (emailInput && emailInput.value.trim()) || (meta && meta.guestEmail) || '';
   const checkIn = (checkinInput && checkinInput.value) || (meta && meta.checkIn) || '';
   const checkOut = (checkoutInput && checkoutInput.value) || (meta && meta.checkOut) || '';
-  const roomName = (roomSelect && roomSelect.options[roomSelect.selectedIndex] ? roomSelect.options[roomSelect.selectedIndex].getAttribute('data-name') : '') || (meta && meta.roomName) || (window.tajState && window.tajState.selectedRoom) || 'Mandakini Royal Suite';
+  const roomName = (roomSelect && roomSelect.options[roomSelect.selectedIndex] ? roomSelect.options[roomSelect.selectedIndex].getAttribute('data-name') : '') || (meta && meta.roomName) || (window.sanctuaryState && window.sanctuaryState.selectedRoom) || 'Mandakini Royal Suite';
   const total = (totalElem && totalElem.textContent.trim()) || (meta && meta.total) || '₹12,000 + GST';
 
   // Client-side Validation (Check 3)
   if (!guestName || guestName.length < 2) {
-    if (typeof showTajToast === 'function') {
-      showTajToast('Guest Name Required', 'Please provide your full name to proceed with your booking enquiry.', 'alert-circle');
+    if (typeof showSanctuaryToast === 'function') {
+      showSanctuaryToast('Guest Name Required', 'Please provide your full name to proceed with your booking enquiry.', 'alert-circle');
     } else {
       alert('Please provide your full name.');
     }
@@ -968,8 +968,8 @@ function proceedToDjuboBooking(meta = null) {
 
   const phoneDigits = guestPhone.replace(/\D/g, '');
   if (phoneDigits.length < 10) {
-    if (typeof showTajToast === 'function') {
-      showTajToast('Valid Phone Number Required', 'Please provide a valid 10-digit mobile number for voucher confirmation.', 'alert-circle');
+    if (typeof showSanctuaryToast === 'function') {
+      showSanctuaryToast('Valid Phone Number Required', 'Please provide a valid 10-digit mobile number for voucher confirmation.', 'alert-circle');
     } else {
       alert('Please provide a valid 10-digit mobile number.');
     }
@@ -978,8 +978,8 @@ function proceedToDjuboBooking(meta = null) {
   }
 
   if (checkIn && checkOut && new Date(checkOut) <= new Date(checkIn)) {
-    if (typeof showTajToast === 'function') {
-      showTajToast('Invalid Stay Dates', 'Check-out date must be after check-in date.', 'alert-circle');
+    if (typeof showSanctuaryToast === 'function') {
+      showSanctuaryToast('Invalid Stay Dates', 'Check-out date must be after check-in date.', 'alert-circle');
     } else {
       alert('Check-out date must be after check-in date.');
     }
@@ -987,9 +987,9 @@ function proceedToDjuboBooking(meta = null) {
     return false;
   }
 
-  // Show elegant Taj-gold confirmation toast
-  if (typeof showTajToast === 'function') {
-    showTajToast('Reservation Request Received', `Thank you, ${guestName}! Redirecting your booking to our Concierge...`, 'check-circle');
+  // Show elegant Sanctuary-gold confirmation toast
+  if (typeof showSanctuaryToast === 'function') {
+    showSanctuaryToast('Reservation Request Received', `Thank you, ${guestName}! Redirecting your booking to our Concierge...`, 'check-circle');
   }
 
   // Compose pre-filled WhatsApp message
@@ -1054,11 +1054,11 @@ function resumePendingBooking() {
 
 async function handleLogout() {
   try {
-    if (window.TajFirebase) {
-      await window.TajFirebase.signOut();
+    if (window.SanctuaryFirebase) {
+      await window.SanctuaryFirebase.signOut();
     }
   } catch (e) {}
-  tajAuth.logout();
+  sanctuaryAuth.logout();
 }
 
 function toggleUserDropdown() {
@@ -1081,7 +1081,7 @@ function openMyBookingsModal() {
   const listElem = document.getElementById('user-bookings-list');
   const emptyElem = document.getElementById('user-bookings-empty');
 
-  const bookings = tajAuth.getBookings();
+  const bookings = sanctuaryAuth.getBookings();
 
   if (!bookings || bookings.length === 0) {
     if (listElem) listElem.innerHTML = '';
@@ -1099,11 +1099,11 @@ function openMyBookingsModal() {
         const paymentId = b.razorpayPaymentId || b.paymentId || 'rzp_verified';
 
         return `
-        <div class="p-4 bg-taj-ivory border-2 border-taj-border hover:border-taj-gold transition-colors text-xs space-y-2">
-          <div class="flex items-center justify-between border-b border-taj-border/80 pb-2">
+        <div class="p-4 bg-sanctuary-ivory border-2 border-sanctuary-border hover:border-sanctuary-gold transition-colors text-xs space-y-2">
+          <div class="flex items-center justify-between border-b border-sanctuary-border/80 pb-2">
             <div>
-              <span class="text-[9px] uppercase tracking-wider font-bold text-taj-muted">Booking Reference</span>
-              <div class="font-mono text-taj-gold font-bold text-sm">${refNo}</div>
+              <span class="text-[9px] uppercase tracking-wider font-bold text-sanctuary-muted">Booking Reference</span>
+              <div class="font-mono text-sanctuary-gold font-bold text-sm">${refNo}</div>
             </div>
             <span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 text-[10px] font-bold uppercase tracking-wider border border-emerald-300">
               ✓ Guaranteed • Cloud Firestore
@@ -1111,17 +1111,17 @@ function openMyBookingsModal() {
           </div>
           <div class="flex items-center justify-between">
             <div>
-              <h5 class="font-cinzel font-bold text-sm text-taj-charcoal">${room}</h5>
-              <p class="text-[11px] text-taj-muted">${checkIn} — ${checkOut} (${nights} Night${nights > 1 ? 's' : ''})</p>
+              <h5 class="font-cinzel font-bold text-sm text-sanctuary-charcoal">${room}</h5>
+              <p class="text-[11px] text-sanctuary-muted">${checkIn} — ${checkOut} (${nights} Night${nights > 1 ? 's' : ''})</p>
             </div>
             <div class="text-right">
-              <span class="text-[10px] text-taj-muted block">Amount Paid</span>
-              <span class="font-cinzel text-base font-bold text-taj-gold">₹${Number(total).toLocaleString('en-IN')}</span>
+              <span class="text-[10px] text-sanctuary-muted block">Amount Paid</span>
+              <span class="font-cinzel text-base font-bold text-sanctuary-gold">₹${Number(total).toLocaleString('en-IN')}</span>
             </div>
           </div>
-          <div class="flex items-center justify-between border-t border-taj-border/80 pt-2 text-[10px] text-taj-muted">
-            <span>Ref ID: <strong class="font-mono text-taj-charcoal">${paymentId}</strong></span>
-            <button onclick="viewBookingVoucher('${refNo}')" class="text-taj-gold hover:underline font-bold uppercase tracking-wider">
+          <div class="flex items-center justify-between border-t border-sanctuary-border/80 pt-2 text-[10px] text-sanctuary-muted">
+            <span>Ref ID: <strong class="font-mono text-sanctuary-charcoal">${paymentId}</strong></span>
+            <button onclick="viewBookingVoucher('${refNo}')" class="text-sanctuary-gold hover:underline font-bold uppercase tracking-wider">
               View Voucher →
             </button>
           </div>
@@ -1141,7 +1141,7 @@ function closeMyBookingsModal() {
 }
 
 function viewBookingVoucher(refNo) {
-  const bookings = tajAuth.getBookings();
+  const bookings = sanctuaryAuth.getBookings();
   const b = bookings.find(item => (item.bookingId === refNo || item.refNo === refNo));
   if (!b) return;
 
@@ -1150,8 +1150,8 @@ function viewBookingVoucher(refNo) {
   const confirmModal = document.getElementById('confirmation-modal');
   const bRefNo = b.bookingId || b.refNo || 'ASK-RESERVATION';
   const bPaymentId = b.paymentId || 'djubo_confirmed';
-  const bGuest = b.guestName || (tajAuth.currentUser ? tajAuth.currentUser.name : 'Guest');
-  const bEmail = b.guestEmail || (tajAuth.currentUser ? tajAuth.currentUser.email : '');
+  const bGuest = b.guestName || (sanctuaryAuth.currentUser ? sanctuaryAuth.currentUser.name : 'Guest');
+  const bEmail = b.guestEmail || (sanctuaryAuth.currentUser ? sanctuaryAuth.currentUser.email : '');
   const bPhone = b.guestPhone || '+91 98765 43210';
   const bRoom = b.roomName || b.room || 'Sanctuary Suite';
   const bCheckIn = b.checkin || b.checkIn || '';
@@ -1179,9 +1179,9 @@ function viewBookingVoucher(refNo) {
 
 function openUserProfileModal() {
   const modal = document.getElementById('profile-modal');
-  const user = tajAuth.getUser() || { name: 'Vansh Yadav', email: 'vansh@arogyadham.in', phone: '+91 98765 43210' };
-  const initials = tajAuth.getInitials(user.name);
-  const bookings = tajAuth.getBookings();
+  const user = sanctuaryAuth.getUser() || { name: 'Vansh Yadav', email: 'vansh@arogyadham.in', phone: '+91 98765 43210' };
+  const initials = sanctuaryAuth.getInitials(user.name);
+  const bookings = sanctuaryAuth.getBookings();
 
   const photoEl = document.getElementById('profile-modal-photo');
   const initialsEl = document.getElementById('profile-modal-initials');
@@ -1250,9 +1250,9 @@ function toggleMobileMenu(forceClose = false) {
   }
 }
 
-/* ================= TAJ NAVBAR SCROLL EFFECT ================= */
-function initTajNavbarScroll() {
-  const nav = document.getElementById('taj-nav');
+/* ================= SANCTUARY NAVBAR SCROLL EFFECT ================= */
+function initSanctuaryNavbarScroll() {
+  const nav = document.getElementById('sanctuary-nav');
   const brandTitle = document.querySelector('.nav-brand-title');
   const brandSub = document.querySelector('.nav-brand-sub');
   const navLinks = document.querySelectorAll('.nav-link');
@@ -1269,12 +1269,12 @@ function initTajNavbarScroll() {
   function handleScroll() {
     if (window.scrollY > 40) {
       if (nav) {
-        nav.classList.add('taj-header-scrolled');
+        nav.classList.add('sanctuary-header-scrolled');
         nav.classList.remove('bg-black/60');
       }
     } else {
       if (nav) {
-        nav.classList.remove('taj-header-scrolled');
+        nav.classList.remove('sanctuary-header-scrolled');
         nav.classList.add('bg-black/60');
       }
     }
@@ -1538,7 +1538,7 @@ function triggerQuickSearch() {
   }
 }
 
-/* ================= TAJ RESERVATION DRAWER & CALCULATION ================= */
+/* ================= SANCTUARY RESERVATION DRAWER & CALCULATION ================= */
 function openBookingDrawer(roomName = 'Mandakini Royal Suite', rate = 12000) {
   // Fire Google Analytics event
   if (typeof window.gtag === 'function') {
@@ -1549,31 +1549,31 @@ function openBookingDrawer(roomName = 'Mandakini Royal Suite', rate = 12000) {
   }
 
   // 1. MANDATORY AUTHENTICATION & EMAIL VERIFICATION GUARD ON BOOKINGS
-  const firebaseUser = (window.TajFirebase && window.TajFirebase.auth) ? window.TajFirebase.auth.currentUser : null;
-  const currentUser = firebaseUser || tajAuth.currentUser;
+  const firebaseUser = (window.SanctuaryFirebase && window.SanctuaryFirebase.auth) ? window.SanctuaryFirebase.auth.currentUser : null;
+  const currentUser = firebaseUser || sanctuaryAuth.currentUser;
   const isAuth = !!currentUser;
   const isVerified = !!(firebaseUser ? firebaseUser.emailVerified : (currentUser && currentUser.emailVerified));
 
   if (!isAuth) {
     sessionStorage.setItem('ask_intended_booking', JSON.stringify({ roomName, rate }));
-    tajAuth.pendingBooking = { roomName, rate };
+    sanctuaryAuth.pendingBooking = { roomName, rate };
     openAuthModal('signin', `Please login or signup with Google/Email to proceed with your booking for "${roomName}".`);
     return;
   }
 
   if (!isVerified) {
     sessionStorage.setItem('ask_intended_booking', JSON.stringify({ roomName, rate }));
-    tajAuth.pendingBooking = { roomName, rate };
+    sanctuaryAuth.pendingBooking = { roomName, rate };
     openEmailVerificationGuardModal(currentUser ? currentUser.email : '');
     return;
   }
 
   // Clear intended booking once guard passed
   sessionStorage.removeItem('ask_intended_booking');
-  tajAuth.pendingBooking = null;
+  sanctuaryAuth.pendingBooking = null;
 
-  tajState.selectedRoom = roomName;
-  tajState.selectedRate = rate;
+  sanctuaryState.selectedRoom = roomName;
+  sanctuaryState.selectedRate = rate;
 
   const drawer = document.getElementById('booking-drawer');
   const kutirNameElem = document.getElementById('drawer-kutir-name');
@@ -1634,13 +1634,13 @@ function openBookingDrawer(roomName = 'Mandakini Royal Suite', rate = 12000) {
       const matchedOpt = selectElem.options[matchedIndex];
       const optName = matchedOpt.getAttribute('data-name');
       const optRate = parseInt(matchedOpt.value, 10);
-      if (optName) tajState.selectedRoom = optName;
-      if (optRate) tajState.selectedRate = optRate;
+      if (optName) sanctuaryState.selectedRoom = optName;
+      if (optRate) sanctuaryState.selectedRate = optRate;
     }
   }
 
-  if (kutirNameElem) kutirNameElem.textContent = tajState.selectedRoom;
-  if (kutirRateElem) kutirRateElem.textContent = `₹${tajState.selectedRate.toLocaleString('en-IN')}`;
+  if (kutirNameElem) kutirNameElem.textContent = sanctuaryState.selectedRoom;
+  if (kutirRateElem) kutirRateElem.textContent = `₹${sanctuaryState.selectedRate.toLocaleString('en-IN')}`;
 
   calculateTotals();
 
@@ -1733,8 +1733,8 @@ function initReservationDrawer() {
       const rate = parseInt(selectedOption.value, 10);
       const name = selectedOption.getAttribute('data-name');
 
-      tajState.selectedRate = rate;
-      tajState.selectedRoom = name;
+      sanctuaryState.selectedRate = rate;
+      sanctuaryState.selectedRoom = name;
 
       const kutirNameElem = document.getElementById('drawer-kutir-name');
       const kutirRateElem = document.getElementById('drawer-kutir-rate');
@@ -1758,15 +1758,15 @@ function initReservationDrawer() {
         checkoutInput.value = nextDay.toISOString().split('T')[0];
       }
 
-      tajState.checkIn = checkinInput.value;
-      tajState.checkOut = checkoutInput.value;
+      sanctuaryState.checkIn = checkinInput.value;
+      sanctuaryState.checkOut = checkoutInput.value;
 
       const diff = Math.abs(new Date(checkoutInput.value) - new Date(checkinInput.value));
-      tajState.nights = Math.max(1, Math.ceil(diff / (1000 * 60 * 60 * 24)));
+      sanctuaryState.nights = Math.max(1, Math.ceil(diff / (1000 * 60 * 60 * 24)));
 
       const nightsDisplay = document.getElementById('drawer-nights-display');
       if (nightsDisplay) {
-        nightsDisplay.textContent = `${tajState.checkIn} — ${tajState.checkOut} (${tajState.nights} Night${tajState.nights > 1 ? 's' : ''}) • 2 Guests`;
+        nightsDisplay.textContent = `${sanctuaryState.checkIn} — ${sanctuaryState.checkOut} (${sanctuaryState.nights} Night${sanctuaryState.nights > 1 ? 's' : ''}) • 2 Guests`;
       }
 
       calculateTotals();
@@ -1780,21 +1780,21 @@ function initReservationDrawer() {
   if (promoBtn && promoInput) {
     promoBtn.addEventListener('click', () => {
       const code = promoInput.value.trim().toUpperCase();
-      if (code === 'TAJWELLNESS' || code === 'CHITRAKOOT10') {
-        tajState.discountPercent = 10;
-        tajState.promoCode = code;
+      if (code === 'SANCTUARY10' || code === 'CHITRAKOOT10') {
+        sanctuaryState.discountPercent = 10;
+        sanctuaryState.promoCode = code;
         if (promoMsg) {
-          promoMsg.textContent = '✓ Taj Heritage Promotion Applied: 10% Discount Subtracted';
+          promoMsg.textContent = '✓ Sanctuary Heritage Promotion Applied: 10% Discount Subtracted';
           promoMsg.classList.remove('hidden', 'text-red-600');
           promoMsg.classList.add('text-emerald-700');
         }
-        showTajToast('Promotion Applied', '10% Royal Heritage discount applied to your stay.', 'check');
+        showSanctuaryToast('Promotion Applied', '10% Royal Heritage discount applied to your stay.', 'check');
       } else if (code === '') {
-        tajState.discountPercent = 0;
+        sanctuaryState.discountPercent = 0;
         if (promoMsg) promoMsg.classList.add('hidden');
       } else {
         if (promoMsg) {
-          promoMsg.textContent = '✕ Invalid promo code. Try "TAJWELLNESS"';
+          promoMsg.textContent = '✕ Invalid promo code. Try "SANCTUARY10"';
           promoMsg.classList.remove('hidden', 'text-emerald-700');
           promoMsg.classList.add('text-red-600');
         }
@@ -1813,32 +1813,32 @@ function initReservationDrawer() {
       const guestEmail = document.getElementById('drawer-guest-email')?.value.trim() || '';
 
       if (!guestName) {
-        showTajToast('Name Required', 'Please enter your full name for the reservation.', 'alert-circle');
+        showSanctuaryToast('Name Required', 'Please enter your full name for the reservation.', 'alert-circle');
         document.getElementById('drawer-guest-name')?.focus();
         return;
       }
 
       const cleanPhone = guestPhone.replace(/[^0-9]/g, '');
       if (cleanPhone.length < 10) {
-        showTajToast('Valid Phone Required', 'Please enter a valid 10-digit mobile number.', 'alert-circle');
+        showSanctuaryToast('Valid Phone Required', 'Please enter a valid 10-digit mobile number.', 'alert-circle');
         document.getElementById('drawer-guest-phone')?.focus();
         return;
       }
 
-      if (!tajState.checkIn || !tajState.checkOut) {
-        showTajToast('Dates Required', 'Please select valid check-in and check-out dates.', 'calendar');
+      if (!sanctuaryState.checkIn || !sanctuaryState.checkOut) {
+        showSanctuaryToast('Dates Required', 'Please select valid check-in and check-out dates.', 'calendar');
         return;
       }
 
-      showTajToast('Reservation Enquiry Received', 'Connecting you to the reservation desk...', 'check');
+      showSanctuaryToast('Reservation Enquiry Received', 'Connecting you to the reservation desk...', 'check');
 
       const roomMeta = {
-        roomName: tajState.selectedRoom || 'Mandakini Premium Cottage',
-        wing: inferWingFromRoomName(tajState.selectedRoom),
-        rate: tajState.selectedRate || 12000,
-        nights: tajState.nights || 1,
-        checkIn: tajState.checkIn,
-        checkOut: tajState.checkOut,
+        roomName: sanctuaryState.selectedRoom || 'Mandakini Premium Cottage',
+        wing: inferWingFromRoomName(sanctuaryState.selectedRoom),
+        rate: sanctuaryState.selectedRate || 12000,
+        nights: sanctuaryState.nights || 1,
+        checkIn: sanctuaryState.checkIn,
+        checkOut: sanctuaryState.checkOut,
         guestName,
         guestPhone,
         guestEmail,
@@ -1850,7 +1850,7 @@ function initReservationDrawer() {
 
       closeBookingDrawer();
 
-      if (!tajAuth.isLoggedIn()) {
+      if (!sanctuaryAuth.isLoggedIn()) {
         openAuthModal('signin', 'Sign In with Google to Proceed to Reservation Desk', roomMeta);
       } else {
         proceedToDjuboBooking(roomMeta);
@@ -1861,15 +1861,15 @@ function initReservationDrawer() {
 
 /* ================= BILL BREAKDOWN & DYNAMIC GST CALCULATION ================= */
 function calculateTotals() {
-  const nights = tajState.nights || 1;
-  const isDining = /table|meal|aahar|rasoee|pasoee|thali|dish|coupon/i.test(tajState.selectedRoom);
+  const nights = sanctuaryState.nights || 1;
+  const isDining = /table|meal|aahar|rasoee|pasoee|thali|dish|coupon/i.test(sanctuaryState.selectedRoom);
 
   // For dining experiences, base is the single event cost; for Kutirs, base is rate * nights
-  const baseSubtotal = isDining ? tajState.selectedRate : (tajState.selectedRate * nights);
+  const baseSubtotal = isDining ? sanctuaryState.selectedRate : (sanctuaryState.selectedRate * nights);
   let discount = 0;
 
-  if (tajState.discountPercent > 0) {
-    discount = Math.round((baseSubtotal * tajState.discountPercent) / 100);
+  if (sanctuaryState.discountPercent > 0) {
+    discount = Math.round((baseSubtotal * sanctuaryState.discountPercent) / 100);
   }
 
   const taxable = baseSubtotal - discount;
@@ -1877,11 +1877,11 @@ function calculateTotals() {
   const tax = Math.round(taxable * (taxPercent / 100));
   const total = taxable + tax;
 
-  tajState.calculatedBase = taxable;
-  tajState.calculatedTax = tax;
-  tajState.calculatedTaxPercent = taxPercent;
-  tajState.calculatedTaxLabel = isDining ? 'GST (5% Satvik Dining Tax):' : 'GST (12% Hospitality Tax):';
-  tajState.calculatedTotal = total;
+  sanctuaryState.calculatedBase = taxable;
+  sanctuaryState.calculatedTax = tax;
+  sanctuaryState.calculatedTaxPercent = taxPercent;
+  sanctuaryState.calculatedTaxLabel = isDining ? 'GST (5% Satvik Dining Tax):' : 'GST (12% Hospitality Tax):';
+  sanctuaryState.calculatedTotal = total;
 
   const nightsCountElem = document.getElementById('calc-nights-count');
   const baseElem = document.getElementById('drawer-calc-base');
@@ -1905,7 +1905,7 @@ function calculateTotals() {
   }
 
   if (taxLabelElem) {
-    taxLabelElem.textContent = tajState.calculatedTaxLabel;
+    taxLabelElem.textContent = sanctuaryState.calculatedTaxLabel;
   }
   if (taxElem) taxElem.textContent = `₹${tax.toLocaleString('en-IN')}`;
   if (totalElem) totalElem.textContent = `₹${total.toLocaleString('en-IN')}`;
@@ -1922,15 +1922,15 @@ function copyAddress() {
   if (navigator.clipboard && navigator.clipboard.writeText) {
     navigator.clipboard.writeText(addressText).then(() => {
       if (copyLabel) copyLabel.textContent = 'Address Copied!';
-      showTajToast('Address Copied', addressText, 'map-pin');
+      showSanctuaryToast('Address Copied', addressText, 'map-pin');
       setTimeout(() => {
         if (copyLabel) copyLabel.textContent = 'Copy Address';
       }, 3000);
     }).catch(() => {
-      showTajToast('Resort Address', addressText, 'map-pin');
+      showSanctuaryToast('Resort Address', addressText, 'map-pin');
     });
   } else {
-    showTajToast('Resort Address', addressText, 'map-pin');
+    showSanctuaryToast('Resort Address', addressText, 'map-pin');
   }
 }
 const copyResortAddress = copyAddress;
@@ -1945,12 +1945,12 @@ function shareProperty() {
     navigator.share(shareData).catch(() => {});
   } else if (navigator.clipboard && navigator.clipboard.writeText) {
     navigator.clipboard.writeText(window.location.href).then(() => {
-      showTajToast('Link Copied', 'Resort sanctuary link copied to clipboard.', 'share-2');
+      showSanctuaryToast('Link Copied', 'Resort sanctuary link copied to clipboard.', 'share-2');
     }).catch(() => {
-      showTajToast('Share Arogyadham', window.location.href, 'share-2');
+      showSanctuaryToast('Share Arogyadham', window.location.href, 'share-2');
     });
   } else {
-    showTajToast('Share Arogyadham', window.location.href, 'share-2');
+    showSanctuaryToast('Share Arogyadham', window.location.href, 'share-2');
   }
 }
 
@@ -1961,7 +1961,7 @@ function toggleAllPrices(includeTax) {
   } else {
     arePricesWithTax = !arePricesWithTax;
   }
-  showTajToast('Pricing Display', arePricesWithTax ? 'Displaying estimated total prices with GST.' : 'Displaying base nightly rates excluding GST.', 'tag');
+  showSanctuaryToast('Pricing Display', arePricesWithTax ? 'Displaying estimated total prices with GST.' : 'Displaying base nightly rates excluding GST.', 'tag');
 }
 
 function initCopyAddress() {
@@ -1973,22 +1973,22 @@ function initCopyAddress() {
   }
 }
 
-/* ================= TAJ TOAST NOTIFICATION ================= */
-function showTajToast(title, message, iconName = 'sparkles') {
+/* ================= SANCTUARY TOAST NOTIFICATION ================= */
+function showSanctuaryToast(title, message, iconName = 'sparkles') {
   const container = document.getElementById('toast-container');
   if (!container) return;
 
   const toast = document.createElement('div');
-  toast.className = 'taj-toast p-4 flex items-start gap-3 shadow-xl';
+  toast.className = 'sanctuary-toast p-4 flex items-start gap-3 shadow-xl';
   toast.innerHTML = `
-    <div class="w-8 h-8 bg-taj-gold/15 flex items-center justify-center text-taj-gold flex-shrink-0 mt-0.5">
+    <div class="w-8 h-8 bg-sanctuary-gold/15 flex items-center justify-center text-sanctuary-gold flex-shrink-0 mt-0.5">
       <i data-lucide="${iconName}" class="w-4 h-4"></i>
     </div>
     <div class="flex-1">
-      <h4 class="font-cinzel text-xs font-bold text-taj-charcoal tracking-wider uppercase">${title}</h4>
-      <p class="text-xs text-taj-muted mt-0.5 leading-snug">${message}</p>
+      <h4 class="font-cinzel text-xs font-bold text-sanctuary-charcoal tracking-wider uppercase">${title}</h4>
+      <p class="text-xs text-sanctuary-muted mt-0.5 leading-snug">${message}</p>
     </div>
-    <button class="text-taj-muted hover:text-taj-charcoal p-1" onclick="this.parentElement.remove()">
+    <button class="text-sanctuary-muted hover:text-sanctuary-charcoal p-1" onclick="this.parentElement.remove()">
       <i data-lucide="x" class="w-3.5 h-3.5"></i>
     </button>
   `;
@@ -2349,11 +2349,11 @@ function renderDiningDishes() {
               <span class="text-[10px] uppercase font-bold tracking-widest text-emerald-800">Pure Veg</span>
             </div>
 
-            <h4 class="font-cinzel text-base font-bold text-taj-charcoal group-hover:text-taj-gold transition-colors leading-snug">
+            <h4 class="font-cinzel text-base font-bold text-sanctuary-charcoal group-hover:text-sanctuary-gold transition-colors leading-snug">
               ${item.name}
             </h4>
 
-            <p class="text-xs text-taj-body line-clamp-2 leading-relaxed">
+            <p class="text-xs text-sanctuary-body line-clamp-2 leading-relaxed">
               ${item.desc}
             </p>
           </div>
@@ -2363,8 +2363,8 @@ function renderDiningDishes() {
         <div class="px-4 pb-4 pt-3 border-t border-[#E6DFC8]/60 flex items-center justify-between">
           <div>
             <div class="flex items-baseline gap-1">
-              <span class="font-cinzel text-lg font-bold text-taj-charcoal">₹${basePrice}</span>
-              <span class="text-[10px] text-taj-muted">+ 5% GST</span>
+              <span class="font-cinzel text-lg font-bold text-sanctuary-charcoal">₹${basePrice}</span>
+              <span class="text-[10px] text-sanctuary-muted">+ 5% GST</span>
             </div>
             <span class="text-[11px] text-[#997B3E] block font-semibold">
               = ₹${totalPrice} incl. tax
@@ -2373,7 +2373,7 @@ function renderDiningDishes() {
 
           <div class="text-right">
             <span class="text-[9px] uppercase font-bold tracking-widest text-[#997B3E] block">Pure Satvik</span>
-            <span class="text-[10px] text-taj-muted">Farm Fresh</span>
+            <span class="text-[10px] text-sanctuary-muted">Farm Fresh</span>
           </div>
         </div>
       </div>
@@ -2390,7 +2390,7 @@ function addToDiningCart(dishId) {
   diningMenuState.cart[dishId] = (diningMenuState.cart[dishId] || 0) + 1;
   renderDiningDishes();
   updateDiningBillUI();
-  showTajToast('Added to Dining Tray', `${item.name} • ₹${item.price} (+5% GST)`, 'utensils');
+  showSanctuaryToast('Added to Dining Tray', `${item.name} • ₹${item.price} (+5% GST)`, 'utensils');
 }
 
 function changeDiningQty(dishId, delta) {
@@ -2411,7 +2411,7 @@ function clearDiningCart() {
   diningMenuState.cart = {};
   renderDiningDishes();
   updateDiningBillUI();
-  showTajToast('Tray Cleared', 'All dishes removed from your dining estimate.', 'trash-2');
+  showSanctuaryToast('Tray Cleared', 'All dishes removed from your dining estimate.', 'trash-2');
 }
 
 function calculateDiningBill() {
@@ -2472,26 +2472,26 @@ function updateDiningBillUI() {
   if (listElem) {
     if (bill.items.length === 0) {
       listElem.innerHTML = `
-        <div class="text-center py-6 text-taj-muted text-xs">
-          <i data-lucide="shopping-bag" class="w-6 h-6 text-taj-gold/50 mx-auto mb-2 stroke-1"></i>
+        <div class="text-center py-6 text-sanctuary-muted text-xs">
+          <i data-lucide="shopping-bag" class="w-6 h-6 text-sanctuary-gold/50 mx-auto mb-2 stroke-1"></i>
           <p>Your dining tray is empty.</p>
-          <p class="text-[11px] text-taj-muted mt-0.5">Click <strong class="text-taj-charcoal font-semibold">+ Add</strong> on any dish to preview your bill with 5% GST.</p>
+          <p class="text-[11px] text-sanctuary-muted mt-0.5">Click <strong class="text-sanctuary-charcoal font-semibold">+ Add</strong> on any dish to preview your bill with 5% GST.</p>
         </div>
       `;
     } else {
       listElem.innerHTML = bill.items.map(item => `
-        <div class="flex items-center justify-between p-2 bg-taj-ivory/70 border border-taj-border/80 text-xs">
+        <div class="flex items-center justify-between p-2 bg-sanctuary-ivory/70 border border-sanctuary-border/80 text-xs">
           <div class="flex-1 pr-2">
-            <h5 class="font-semibold text-taj-charcoal text-xs leading-tight">${item.name}</h5>
-            <span class="text-[10px] text-taj-muted">₹${item.price} × ${item.qty}</span>
+            <h5 class="font-semibold text-sanctuary-charcoal text-xs leading-tight">${item.name}</h5>
+            <span class="text-[10px] text-sanctuary-muted">₹${item.price} × ${item.qty}</span>
           </div>
           <div class="flex items-center gap-2">
-            <div class="flex items-center border border-taj-border bg-white">
-              <button type="button" onclick="changeDiningQty('${item.id}', -1)" class="w-5 h-5 flex items-center justify-center hover:bg-taj-gold hover:text-white text-xs font-bold">−</button>
+            <div class="flex items-center border border-sanctuary-border bg-white">
+              <button type="button" onclick="changeDiningQty('${item.id}', -1)" class="w-5 h-5 flex items-center justify-center hover:bg-sanctuary-gold hover:text-white text-xs font-bold">−</button>
               <span class="w-5 text-center text-[11px] font-bold">${item.qty}</span>
-              <button type="button" onclick="changeDiningQty('${item.id}', 1)" class="w-5 h-5 flex items-center justify-center hover:bg-taj-gold hover:text-white text-xs font-bold">+</button>
+              <button type="button" onclick="changeDiningQty('${item.id}', 1)" class="w-5 h-5 flex items-center justify-center hover:bg-sanctuary-gold hover:text-white text-xs font-bold">+</button>
             </div>
-            <span class="font-bold text-taj-charcoal text-xs min-w-[50px] text-right">₹${item.lineSubtotal}</span>
+            <span class="font-bold text-sanctuary-charcoal text-xs min-w-[50px] text-right">₹${item.lineSubtotal}</span>
           </div>
         </div>
       `).join('');
@@ -2510,13 +2510,13 @@ function reserveTableWithOrder() {
 
   const orderTitle = `Table Reservation at Aahar-Vihar (${bill.itemsCount} Dishes)`;
   openBookingDrawer(orderTitle, Math.round(bill.totalPayable));
-  showTajToast('Dining Order Pre-Loaded', `${bill.itemsCount} items with 5% GST loaded into booking drawer.`, 'check-circle');
+  showSanctuaryToast('Dining Order Pre-Loaded', `${bill.itemsCount} items with 5% GST loaded into booking drawer.`, 'check-circle');
 }
 
 function shareOrderOnWhatsApp() {
   const bill = calculateDiningBill();
   if (bill.itemsCount === 0) {
-    showTajToast('Tray Empty', 'Please add dishes to calculate your estimate before sending.', 'info');
+    showSanctuaryToast('Tray Empty', 'Please add dishes to calculate your estimate before sending.', 'info');
     return;
   }
 
@@ -2643,12 +2643,12 @@ function renderPasoeeItems() {
               <span class="text-[10px] uppercase font-bold tracking-widest text-emerald-800">Pure Veg</span>
             </div>
 
-            <h4 class="font-cinzel text-base font-bold text-taj-charcoal group-hover:text-taj-gold transition-colors leading-snug">
+            <h4 class="font-cinzel text-base font-bold text-sanctuary-charcoal group-hover:text-sanctuary-gold transition-colors leading-snug">
               ${item.name}
             </h4>
             <span class="text-[11px] text-[#997B3E] font-medium block">${item.hindi}</span>
 
-            <p class="text-xs text-taj-body line-clamp-2 leading-relaxed">
+            <p class="text-xs text-sanctuary-body line-clamp-2 leading-relaxed">
               ${item.desc}
             </p>
           </div>
@@ -2658,8 +2658,8 @@ function renderPasoeeItems() {
         <div class="px-4 pb-4 pt-3 border-t border-[#E6DFC8]/60 flex items-center justify-between">
           <div>
             <div class="flex items-baseline gap-1">
-              <span class="font-cinzel text-lg font-bold text-taj-charcoal">₹${item.basePrice}</span>
-              <span class="text-[10px] text-taj-muted">+ 5% GST</span>
+              <span class="font-cinzel text-lg font-bold text-sanctuary-charcoal">₹${item.basePrice}</span>
+              <span class="text-[10px] text-sanctuary-muted">+ 5% GST</span>
             </div>
             <span class="text-[11px] text-[#997B3E] block font-semibold">
               = ₹${totalInclTax} incl. tax
@@ -2668,7 +2668,7 @@ function renderPasoeeItems() {
 
           <div class="text-right">
             <span class="text-[9px] uppercase font-bold tracking-widest text-[#997B3E] block">Sacred Offering</span>
-            <span class="text-[10px] text-taj-muted">Vedic Bhojan</span>
+            <span class="text-[10px] text-sanctuary-muted">Vedic Bhojan</span>
           </div>
         </div>
       </div>
@@ -2686,7 +2686,7 @@ function addToPasoeeCart(id) {
   updatePasoeeCartUI();
   const item = PANCHVATI_PASOEE_ITEMS.find(i => i.id === id);
   if (item) {
-    showTajToast('Coupon Added', `${item.name} added to coupon tray.`, 'check-circle');
+    showSanctuaryToast('Coupon Added', `${item.name} added to coupon tray.`, 'check-circle');
   }
 }
 
@@ -2704,7 +2704,7 @@ function clearPasoeeCart() {
   pasoeeCart = {};
   renderPasoeeItems();
   updatePasoeeCartUI();
-  showTajToast('Tray Cleared', 'Your coupon estimator has been reset.', 'info');
+  showSanctuaryToast('Tray Cleared', 'Your coupon estimator has been reset.', 'info');
 }
 
 function calculatePasoeeBill() {
@@ -2761,26 +2761,26 @@ function updatePasoeeCartUI() {
   if (listElem) {
     if (bill.items.length === 0) {
       listElem.innerHTML = `
-        <div class="p-4 bg-white border border-dashed border-taj-border text-center text-taj-muted">
-          <i data-lucide="utensils-crossed" class="w-6 h-6 mx-auto mb-2 text-taj-muted/50"></i>
+        <div class="p-4 bg-white border border-dashed border-sanctuary-border text-center text-sanctuary-muted">
+          <i data-lucide="utensils-crossed" class="w-6 h-6 mx-auto mb-2 text-sanctuary-muted/50"></i>
           <p>No meal coupons added yet.</p>
           <span class="text-[10px] block mt-1">Select a thali or breakfast to calculate live estimate.</span>
         </div>
       `;
     } else {
       listElem.innerHTML = bill.items.map(item => `
-        <div class="flex items-center justify-between p-2 bg-taj-ivory/70 border border-taj-border/80 text-xs">
+        <div class="flex items-center justify-between p-2 bg-sanctuary-ivory/70 border border-sanctuary-border/80 text-xs">
           <div class="flex-1 pr-2">
-            <h5 class="font-semibold text-taj-charcoal text-xs leading-tight">${item.name}</h5>
-            <span class="text-[10px] text-taj-muted">₹${item.price} × ${item.qty}</span>
+            <h5 class="font-semibold text-sanctuary-charcoal text-xs leading-tight">${item.name}</h5>
+            <span class="text-[10px] text-sanctuary-muted">₹${item.price} × ${item.qty}</span>
           </div>
           <div class="flex items-center gap-2">
-            <div class="flex items-center border border-taj-border bg-white">
-              <button type="button" onclick="changePasoeeQty('${item.id}', -1)" class="w-5 h-5 flex items-center justify-center hover:bg-taj-gold hover:text-white text-xs font-bold">−</button>
+            <div class="flex items-center border border-sanctuary-border bg-white">
+              <button type="button" onclick="changePasoeeQty('${item.id}', -1)" class="w-5 h-5 flex items-center justify-center hover:bg-sanctuary-gold hover:text-white text-xs font-bold">−</button>
               <span class="w-5 text-center text-[11px] font-bold">${item.qty}</span>
-              <button type="button" onclick="changePasoeeQty('${item.id}', 1)" class="w-5 h-5 flex items-center justify-center hover:bg-taj-gold hover:text-white text-xs font-bold">+</button>
+              <button type="button" onclick="changePasoeeQty('${item.id}', 1)" class="w-5 h-5 flex items-center justify-center hover:bg-sanctuary-gold hover:text-white text-xs font-bold">+</button>
             </div>
-            <span class="font-bold text-taj-charcoal text-xs min-w-[50px] text-right">₹${item.lineSubtotal}</span>
+            <span class="font-bold text-sanctuary-charcoal text-xs min-w-[50px] text-right">₹${item.lineSubtotal}</span>
           </div>
         </div>
       `).join('');
@@ -2799,13 +2799,13 @@ function reservePasoeeCoupon() {
 
   const orderTitle = `Meal Coupons at Panchvati Rasoee (${bill.itemsCount} Items)`;
   openBookingDrawer(orderTitle, Math.round(bill.totalPayable));
-  showTajToast('Coupon Pre-Loaded', `${bill.itemsCount} coupons with 5% GST loaded into booking drawer.`, 'check-circle');
+  showSanctuaryToast('Coupon Pre-Loaded', `${bill.itemsCount} coupons with 5% GST loaded into booking drawer.`, 'check-circle');
 }
 
 function sharePasoeeWhatsApp() {
   const bill = calculatePasoeeBill();
   if (bill.itemsCount === 0) {
-    showTajToast('Tray Empty', 'Please select thali coupons before sharing on WhatsApp.', 'info');
+    showSanctuaryToast('Tray Empty', 'Please select thali coupons before sharing on WhatsApp.', 'info');
     return;
   }
 
@@ -2932,7 +2932,7 @@ window.shareRasoeeWhatsApp = shareRasoeeWhatsApp;
 function onPaymentSuccess() {}
 window.onPaymentSuccess = onPaymentSuccess;
 window.safeCreateIcons = safeCreateIcons;
-window.showTajToast = showTajToast;
+window.showSanctuaryToast = showSanctuaryToast;
 window.openMealModal = openMealPlanModal;
 window.openMealPlanModal = openMealPlanModal;
 window.closeMealModal = closeMealPlanModal;

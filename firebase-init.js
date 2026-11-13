@@ -46,8 +46,8 @@ let auth = null;
 let db = null;
 let isInitialized = false;
 
-// Global wrapper for Taj Firebase operations
-const TajFirebase = {
+// Global wrapper for Sanctuary Firebase operations
+const SanctuaryFirebase = {
   app: null,
   auth: null,
   db: null,
@@ -254,13 +254,13 @@ const TajFirebase = {
 };
 
 // Expose globally on window
-window.TajFirebase = TajFirebase;
+window.SanctuaryFirebase = SanctuaryFirebase;
 
-// Auto-initialize TajFirebase
-TajFirebase.init().then(() => {
-  if (window.onTajFirebaseReady) {
-    window.onTajFirebaseReady();
+// Auto-initialize SanctuaryFirebase
+SanctuaryFirebase.init().then(() => {
+  if (window.onSanctuaryFirebaseReady) {
+    window.onSanctuaryFirebaseReady();
   }
 });
 
-export default TajFirebase;
+export default SanctuaryFirebase;
