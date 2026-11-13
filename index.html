@@ -223,6 +223,34 @@
     .pr-swing-unit.is-clicked {
       animation: frameClickJolt 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
     }
+
+    /* Testimonials Dual-Row Infinite Marquee */
+    @keyframes marqueeLeft {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    @keyframes marqueeRight {
+      0% { transform: translateX(-50%); }
+      100% { transform: translateX(0); }
+    }
+    .rev-marquee-wrap {
+      mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    }
+    .rev-track-left {
+      display: flex;
+      width: max-content;
+      animation: marqueeLeft 55s linear infinite;
+    }
+    .rev-track-right {
+      display: flex;
+      width: max-content;
+      animation: marqueeRight 60s linear infinite;
+    }
+    .rev-marquee-wrap:hover .rev-track-left,
+    .rev-marquee-wrap:hover .rev-track-right {
+      animation-play-state: paused;
+    }
   </style>
 </head>
 
@@ -949,73 +977,32 @@
       </section>
 
       <!-- ================= 6. CREDENTIALS & GOOGLE RATINGS INTEGRATION ================= -->
-      <section id="reviews" class="py-20 sm:py-28 bg-white border-b border-taj-border">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="verified-reviews" class="bg-white py-16 sm:py-24 border-t border-gray-200/70 overflow-hidden select-none">
+        <a id="reviews" class="sr-only"></a>
+        <!-- Existing Taj Luxury Header -->
+        <div class="max-w-4xl mx-auto px-4 text-center mb-12">
+          <span class="text-[11px] font-semibold tracking-[0.25em] text-gray-500 uppercase block mb-2">
+            VERIFIED CREDENTIALS
+          </span>
+          <h2 class="text-2xl sm:text-4xl font-cinzel tracking-[0.12em] text-gray-900 uppercase font-semibold">
+            4.7 <span class="text-gray-900">&#9733;</span> VERIFIED GOOGLE RATING
+          </h2>
+          <p class="text-sm sm:text-base font-serif italic text-gray-600 mt-3">
+            Based on 156 Verified Google <span class="bg-tajGold text-white px-2 py-0.5 not-italic font-sans text-xs sm:text-sm rounded-[2px]">Reviews</span> from pilgrims, doctors, and wellness travelers.
+          </p>
+        </div>
 
-          <div class="text-center mb-14">
-            <div class="mb-3">
-              <span class="taj-section-title-line">
-                VERIFIED CREDENTIALS
-              </span>
-            </div>
-            <h2 class="font-cinzel text-2xl sm:text-4xl font-bold text-taj-charcoal uppercase tracking-wider mb-2">
-              4.7 ★ Verified Google Rating
-            </h2>
-            <p class="font-cormorant italic text-lg sm:text-2xl text-taj-body">
-              Based on 156 Verified Google Reviews from pilgrims, doctors, and wellness travelers.
-            </p>
+        <!-- 2-Row Dual-Direction Infinite Testimonials Marquee -->
+        <div class="rev-marquee-wrap max-w-7xl mx-auto space-y-5 px-2">
+          <!-- Row 1 (Scrolls Left) -->
+          <div class="overflow-hidden">
+            <div id="revRow1" class="rev-track-left gap-5"></div>
           </div>
 
-          <!-- Testimonial Quote Spotlight Card -->
-          <div
-            class="bg-taj-ivory border-2 border-taj-gold/30 p-8 sm:p-12 text-center max-w-3xl mx-auto shadow-md mb-12 relative">
-            <div class="flex items-center justify-center text-amber-500 gap-1 mb-4">
-              <i data-lucide="star" class="w-5 h-5 fill-amber-500"></i>
-              <i data-lucide="star" class="w-5 h-5 fill-amber-500"></i>
-              <i data-lucide="star" class="w-5 h-5 fill-amber-500"></i>
-              <i data-lucide="star" class="w-5 h-5 fill-amber-500"></i>
-              <i data-lucide="star" class="w-5 h-5 fill-amber-500"></i>
-            </div>
-
-            <blockquote
-              class="font-cormorant italic text-2xl sm:text-3xl text-taj-charcoal leading-snug font-medium mb-6">
-              "Rooms, service, food, location, all are 5 star."
-            </blockquote>
-
-            <div class="taj-section-title-line mb-2">
-              <span class="text-xs font-bold text-taj-charcoal">VANSH YADAV</span>
-            </div>
-            <span class="text-[11px] text-taj-gold uppercase tracking-wider font-semibold block">Local Guide • Verified
-              Google Review</span>
+          <!-- Row 2 (Scrolls Right) -->
+          <div class="overflow-hidden">
+            <div id="revRow2" class="rev-track-right gap-5"></div>
           </div>
-
-          <!-- Address & Map Locator -->
-          <div
-            class="p-6 sm:p-8 bg-white border border-taj-border flex flex-col md:flex-row items-center justify-between gap-6">
-            <div class="space-y-1 text-center md:text-left">
-              <span class="text-[10px] font-bold uppercase tracking-widest text-taj-gold block">Official Sanctuary
-                Address</span>
-              <p id="full-address-text" class="text-sm font-semibold text-taj-charcoal select-all">
-                Arogyadham, Chitrakoot (M.P.) 485334
-              </p>
-              <p class="text-xs text-taj-muted">Distance: Ramghat Aarti (3.8 km) • Chitrakoot Dham Karwi Station (9.4
-                km)</p>
-            </div>
-            <div class="flex flex-wrap items-center gap-3">
-              <button id="copy-address-btn"
-                class="btn-taj-outline-dark min-h-[44px] px-5 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer gap-2">
-                <i data-lucide="copy" class="w-3.5 h-3.5"></i>
-                <span id="copy-btn-label">Copy Address</span>
-              </button>
-              <a href="https://maps.google.com/?q=Arogyadham+Swasthya+Kutir+Chitrakoot+Madhya+Pradesh+485334"
-                target="_blank" rel="noopener noreferrer"
-                class="btn-taj-primary min-h-[44px] px-5 py-2.5 flex items-center justify-center font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer gap-2">
-                <i data-lucide="navigation" class="w-3.5 h-3.5"></i>
-                <span>Directions & Maps</span>
-              </a>
-            </div>
-          </div>
-
         </div>
       </section>
 
@@ -2358,6 +2345,89 @@
     });
 
     setCaption(0);
+  })();
+  </script>
+
+  <!-- ================= TESTIMONIALS INFINITE MARQUEE ENGINE ================= -->
+  <script>
+  (function() {
+    const ROW1_REVIEWS = [
+      { name: "Vansh Yadav", meta: "Google • Holiday ❘ Family", rating: 5, text: "Luxury stay with great views, high-tech amenities, and exceptional value. Rooms 5.0, Service 5.0, Location 5.0." },
+      { name: "Yashaskar", meta: "Google • 2 months ago", rating: 5, text: "From the moment I arrived, the overall atmosphere felt peaceful, clean, and welcoming. Comfortable rooms and attentive staff." },
+      { name: "Satyam Agrawal", meta: "Google • 2 months ago", rating: 5, text: "Great experience, team was well behaved and active. Peaceful atmosphere and a lovely upgrade to a cottage room." },
+      { name: "Anurag Patel", meta: "Google • Holiday ❘ Family", rating: 5, text: "A wonderful place for relaxation and spiritual peace. Clean, spacious rooms, lush greenery, and excellent hospitality." },
+      { name: "Pawan Daga", meta: "Google • a month ago", rating: 5, text: "Excellent property within a natural environment. Pure, home-like Satvik food without onion or garlic. Must visit." },
+      { name: "Lt Gen VK Sharma (Retd)", meta: "Google • 6 months ago", rating: 5, text: "Great place to stay. Excellent location and service. The staff is very courteous and helpful with delicious organic food." },
+      { name: "Canakapalli Bhaskar", meta: "Google • Holiday ❘ Family", rating: 4, text: "Beautiful, clean, and peaceful cottages set inside a 55-acre campus with an Ayurvedic hospital and Gurukul." },
+      { name: "Saurav Barot", meta: "Google • Holiday ❘ Family", rating: 5, text: "Great place to stay if travelling to Chitrakoot with family or pets. Quiet, peaceful, and 100% value for money." },
+      { name: "Siddhi Gaidhani", meta: "Google • 4 months ago", rating: 5, text: "One of the best options in Chitrakoot. Farm-to-table food harvested right on campus makes it a one-of-a-kind experience." },
+      { name: "Prateek Kumar", meta: "Google • 7 months ago", rating: 5, text: "Fabulous place to stay, nice food, and awesome experience. Special thanks to Mr. Umesh for prompt support." },
+      { name: "Adarsh Shukla", meta: "Google • Family", rating: 5, text: "Surrounded by nature with stunning sunrise and sunset views near the Mandakini River, plus on-campus helipad access." },
+      { name: "Dr. Mohit Sharma", meta: "Tripadvisor • 10 months ago", rating: 5, text: "One of the best places to stay in Chitrakoot Dham. Wonderful ambience and warm hospitality from Shiva Pandey, Umesh & Harsh." },
+      { name: "Dhruv Patel", meta: "Google • Family", rating: 5, text: "Ashutosh Ji offered top service even at 10 PM. Suite 117 had 5-star amenities and gave us a deeply relaxed stay." },
+      { name: "Arin Paliwal", meta: "Google • Holiday ❘ Family", rating: 5, text: "Prompt room upgrade when needed and truly amazing Satvik food prepared without any onion or garlic." },
+      { name: "Sunil Kedia", meta: "Google • Holiday ❘ Friends", rating: 5, text: "Very peaceful and calm atmosphere at the site. Comfortable stay, superb food, and holistic hospitality led by Mr. Mayank." }
+    ];
+
+    const ROW2_REVIEWS = [
+      { name: "Harshit Gupta", meta: "Google • 2 months ago", rating: 5, text: "Ashutosh, Anurag, and Indrajeet treated us very kindly and were always ready to help. Food is very good." },
+      { name: "Utsav Yadav", meta: "Google • 9 months ago", rating: 5, text: "Serene atmosphere perfect for healing. Knowledgeable doctors, supportive therapists, yoga, and Satvik food improved my health." },
+      { name: "Ketan Gandhi", meta: "Google • Holiday ❘ Family", rating: 5, text: "Everything was excellent—calming stay, delicious food, and dedicated support from Mr. Mayank Yadav and Mr. Umesh." },
+      { name: "717pramodk", meta: "Tripadvisor • Verified Stay", rating: 5, text: "Amazing 100% pollution-free green campus with cottages scattered across serene hills and flat gardens." },
+      { name: "Dr. Purva Gupta", meta: "Google • Holiday", rating: 4, text: "Wonderful stay at Arogyadham. Loved the Gaushala, fresh A2 dairy, Panchakarma therapies, and care from Saurabh, Harsh & Mayank." },
+      { name: "Joydeep Ganguly", meta: "Google • Holiday ❘ Family", rating: 5, text: "Awesome place to stay with a tranquil atmosphere, luxury views, and quality restaurant dining." },
+      { name: "Abhishek Jai Singh", meta: "Google • Holiday ❘ Family", rating: 5, text: "Lovely experience and great value. Staff members were really cooperative, especially Anurag." },
+      { name: "Anand Dabak", meta: "Google • Verified Stay", rating: 5, text: "Stayed on our way from Prayag to Khajuraho. Clean rooms with garden views, wonderful breakfast, and helpful staff." },
+      { name: "Ashok Tiwari", meta: "Google • 9 months ago", rating: 5, text: "Convenient location for exploring Chitrakoot, very comfortable beds, and warm service. Highly recommended." },
+      { name: "Trishala Nyaik", meta: "Google • Holiday ❘ Family", rating: 5, text: "Booked for my parents and family—authentic, serene, and cooperative staff. Ideal for a week-long spiritual retreat." },
+      { name: "Kanda ManojKumar", meta: "Google • Verified Stay", rating: 5, text: "Feeling blessed to stay here. The divine nature, calmness, restaurant, and peace we felt are beyond words." },
+      { name: "Ashutosh Das", meta: "Google • Holiday ❘ Family", rating: 5, text: "Mandakini cottages are spacious and luxurious, service is attentive, and Aahar Vihar food is delicious." },
+      { name: "Ajay Arora", meta: "Google • Holiday ❘ Family", rating: 4, text: "Nice quiet place to stay amidst hillside surroundings with well-behaved staff. Worth staying." },
+      { name: "Sadhna Bind", meta: "Google • 4 months ago", rating: 4, text: "Very tasty Satvik food and active, attentive service from the staff throughout our visit." },
+      { name: "Flyer756089", meta: "Tripadvisor • 2 months ago", rating: 5, text: "Spacious rooms, clean and neat campus atmosphere, and well-functioning amenities throughout our Chitrakoot stay." }
+    ];
+
+    function createCard(rev) {
+      const initials = rev.name.split(" ").map(w => w[0]).slice(0, 2).join("").toUpperCase();
+      const stars = "&#9733;".repeat(rev.rating) + "&#9734;".repeat(5 - rev.rating);
+      const sourceBadge = rev.meta.includes("Tripadvisor") ? "Tripadvisor" : "Google";
+
+      return `
+        <article class="w-[310px] sm:w-[350px] shrink-0 rounded-xl bg-[#FAF8F5] border border-tajGold/30 p-5 shadow-sm hover:shadow-md hover:border-tajGold transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between gap-3 mb-3">
+              <div class="flex items-center gap-3 min-w-0">
+                <div class="w-9 h-9 rounded-full bg-tajGold/15 border border-tajGold/40 text-tajGold font-cinzel font-bold text-xs flex items-center justify-center shrink-0">
+                  ${initials}
+                </div>
+                <div class="min-w-0">
+                  <h3 class="text-sm font-semibold text-gray-900 truncate">${rev.name}</h3>
+                  <p class="text-[11px] text-gray-500 truncate">${rev.meta}</p>
+                </div>
+              </div>
+              <span class="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded bg-white border border-gray-200 text-gray-600 shrink-0">
+                ${sourceBadge}
+              </span>
+            </div>
+            <div class="text-tajGold text-xs tracking-widest mb-2">${stars}</div>
+            <p class="text-xs sm:text-[13px] text-gray-700 leading-relaxed line-clamp-3 font-sans">
+              "${rev.text}"
+            </p>
+          </div>
+        </article>
+      `;
+    }
+
+    const row1El = document.getElementById("revRow1");
+    const row2El = document.getElementById("revRow2");
+
+    if (row1El && row2El) {
+      // Duplicate items seamlessly for infinite loop
+      const r1Html = ROW1_REVIEWS.map(createCard).join("");
+      const r2Html = ROW2_REVIEWS.map(createCard).join("");
+      row1El.innerHTML = r1Html + r1Html;
+      row2El.innerHTML = r2Html + r2Html;
+    }
   })();
   </script>
 </body>
