@@ -580,3 +580,28 @@ body {
   backface-visibility: hidden;
   will-change: opacity, transform;
 }
+
+/* ================= 3D COVERFLOW CAROUSEL ================= */
+:root {
+  --cf-card: clamp(220px, 28vw, 320px);
+}
+
+.cf-stage-perspective {
+  perspective: calc(var(--cf-card) * 3);
+  perspective-origin: center center;
+  transform-style: preserve-3d;
+}
+
+.cf-card-3d {
+  width: var(--cf-card);
+  aspect-ratio: 1 / 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-style: preserve-3d;
+  will-change: transform, opacity, z-index;
+  user-select: none;
+  -webkit-user-drag: none;
+  cursor: pointer;
+  touch-action: pan-y;
+}
