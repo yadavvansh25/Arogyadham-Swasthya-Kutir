@@ -1023,16 +1023,49 @@
             <!-- A) LEFT COLUMN — AAHAR-VIHAR -->
             <div class="sanctuary-white-card flex flex-col justify-between overflow-hidden">
               <div>
-                <div class="relative h-64 sm:h-72 overflow-hidden">
-                  <img
-                    src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80"
-                    alt="Aahar-Vihar Luxury Satvik Restaurant" loading="lazy"
-                    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80';"
-                    class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-                    decoding="async">
-                  <div
-                    class="absolute top-3 left-3 bg-white/95 px-2.5 py-1 text-[10px] font-bold tracking-widest text-sanctuary-charcoal border border-sanctuary-border uppercase shadow-sm">
-                    Pure Satvik Multi-Cuisine
+                <div class="relative w-full h-64 sm:h-72 overflow-hidden bg-black" id="aaharViharSlider">
+                  <!-- Slide 1 (Active on load) -->
+                  <img 
+                    src="https://ik.imagekit.io/exnzknn2n/retouch_2026111320004717.jpg?updatedAt=1794580391341" 
+                    alt="Aahar-Vihar Pure Satvik Restaurant Interior" 
+                    class="aahar-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out opacity-100 z-10"
+                  />
+
+                  <!-- Slide 2 -->
+                  <img 
+                    src="https://ik.imagekit.io/exnzknn2n/retouch_2026111319535389.jpg?updatedAt=1794580390336" 
+                    alt="Aahar-Vihar Fine Dining Seating" 
+                    class="aahar-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out opacity-0 z-0"
+                    loading="lazy"
+                  />
+
+                  <!-- Slide 3 -->
+                  <img 
+                    src="https://ik.imagekit.io/exnzknn2n/retouch_2026111319342487.jpg?updatedAt=1794580391790" 
+                    alt="Aahar-Vihar Farm-to-Table Ambience" 
+                    class="aahar-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out opacity-0 z-0"
+                    loading="lazy"
+                  />
+
+                  <!-- Slide 4 -->
+                  <img 
+                    src="https://ik.imagekit.io/exnzknn2n/retouch_2026111319420061.jpg?updatedAt=1794580391728" 
+                    alt="Aahar-Vihar Culinary Experience" 
+                    class="aahar-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out opacity-0 z-0"
+                    loading="lazy"
+                  />
+
+                  <!-- Existing Top-Left Badge -->
+                  <span class="absolute top-3 left-3 z-20 bg-black/80 backdrop-blur-sm text-white text-[10px] tracking-widest uppercase font-semibold px-3 py-1 rounded-sm">
+                    PURE SATVIK MULTI-CUISINE
+                  </span>
+
+                  <!-- Minimal Slider Dots Indicator -->
+                  <div class="absolute bottom-3 right-3 z-20 flex items-center space-x-1.5 bg-black/45 px-2.5 py-1 rounded-full backdrop-blur-sm">
+                    <span class="aahar-dot w-3.5 h-1 rounded-full bg-white transition-all duration-300"></span>
+                    <span class="aahar-dot w-1.5 h-1 rounded-full bg-white/40 transition-all duration-300"></span>
+                    <span class="aahar-dot w-1.5 h-1 rounded-full bg-white/40 transition-all duration-300"></span>
+                    <span class="aahar-dot w-1.5 h-1 rounded-full bg-white/40 transition-all duration-300"></span>
                   </div>
                 </div>
 
@@ -2962,6 +2995,39 @@
         }
 
         // Move to next slide
+        currentIndex = (currentIndex + 1) % slides.length;
+
+        // Fade in next slide
+        slides[currentIndex].classList.remove('opacity-0', 'z-0');
+        slides[currentIndex].classList.add('opacity-100', 'z-10');
+        if (dots[currentIndex]) {
+          dots[currentIndex].classList.remove('bg-white/40', 'w-1.5');
+          dots[currentIndex].classList.add('bg-white', 'w-3.5');
+        }
+      }, intervalTime);
+    });
+  </script>
+
+  <!-- Aahar-Vihar Dining Auto Crossfade Slideshow Logic -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const slides = document.querySelectorAll('.aahar-slide');
+      const dots = document.querySelectorAll('.aahar-dot');
+      if (slides.length < 2) return;
+
+      let currentIndex = 0;
+      const intervalTime = 5000; // 5 Seconds interval
+
+      setInterval(() => {
+        // Fade out active slide
+        slides[currentIndex].classList.remove('opacity-100', 'z-10');
+        slides[currentIndex].classList.add('opacity-0', 'z-0');
+        if (dots[currentIndex]) {
+          dots[currentIndex].classList.remove('bg-white', 'w-3.5');
+          dots[currentIndex].classList.add('bg-white/40', 'w-1.5');
+        }
+
+        // Advance to next slide
         currentIndex = (currentIndex + 1) % slides.length;
 
         // Fade in next slide
