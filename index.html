@@ -145,6 +145,51 @@
     .cf-caption-animate {
       animation: cfFadeIn 0.3s ease-out forwards;
     }
+
+    /* Picture Rail Gallery Styles */
+    .pr-rail {
+      background: linear-gradient(to bottom, #e5dec9 0%, #d4c8a8 22%, #b5a47e 45%, #dfd7c2 65%, #9e8d68 100%);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.7);
+    }
+    .pr-frame-black {
+      border: 8px solid #1c1c1c;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.12), 0 12px 24px -6px rgba(0,0,0,0.32);
+    }
+    .pr-frame-oak {
+      border: 8px solid #9c6f44;
+      box-shadow: inset 0 0 0 1px rgba(255,235,205,0.25), 0 12px 24px -6px rgba(0,0,0,0.28);
+    }
+    .pr-frame-white {
+      border: 8px solid #f7f5f0;
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08), 0 12px 24px -6px rgba(0,0,0,0.22);
+    }
+    .pr-mat {
+      padding: 12px;
+      background: linear-gradient(to bottom, #fcfaf5, #f2ede2);
+      box-shadow: inset 0 1px 4px rgba(0,0,0,0.25);
+    }
+    .pr-spotlight {
+      background: radial-gradient(85% 75% at 50% 0%, rgba(255, 223, 128, 0.38) 0%, rgba(255, 215, 100, 0.12) 55%, transparent 85%);
+      mix-blend-mode: screen;
+      transition: opacity 0.35s ease;
+    }
+    .pr-flip-scene {
+      perspective: 1400px;
+    }
+    .pr-flip-card {
+      transform-style: preserve-3d;
+      transition: transform 0.7s cubic-bezier(0.22, 0.85, 0.3, 1);
+    }
+    .pr-flip-card.is-flipped {
+      transform: rotateY(180deg);
+    }
+    .pr-face {
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+    .pr-face-back {
+      transform: rotateY(180deg);
+    }
   </style>
 </head>
 
@@ -835,121 +880,66 @@
       </section>
 
       <!-- ================= 6. PART 2: SANCTUARY FACILITIES & AMENITIES ================= -->
-      <section id="sanctuary-facilities-part2" class="py-20 sm:py-28 bg-white border-b border-taj-border scroll-mt-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="sanctuary-facilities-part2" class="relative isolate w-full overflow-hidden bg-white py-16 sm:py-24 border-t border-gray-200/80 select-none">
+        <!-- Subtle Gallery Wall Ambient Radial Glow -->
+        <div aria-hidden="true" class="pointer-events-none absolute inset-0 -z-10" style="background: radial-gradient(75% 60% at 50% 45%, rgba(192,160,96,0.06), transparent 78%);"></div>
 
-          <!-- Section Heading -->
-          <div class="text-center mb-14 max-w-3xl mx-auto">
-            <span class="taj-section-title-line">
-              CAMPUS INFRASTRUCTURE
-            </span>
-            <h2 class="font-cinzel text-2xl sm:text-3xl md:text-4xl font-bold text-taj-charcoal uppercase tracking-wider mt-2.5 mb-2">
-              SANCTUARY FACILITIES &amp; AMENITIES
-            </h2>
-            <p class="font-cormorant italic text-lg sm:text-xl text-taj-body max-w-2xl mx-auto">
-              Comprehensive 55-acre self-sustaining campus infrastructure designed for comfort and serene living.
-            </p>
-          </div>
+        <!-- Section Heading -->
+        <header class="relative z-10 flex flex-col items-center gap-2 px-6 text-center max-w-3xl mx-auto">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.26em] text-tajGold">CAMPUS INFRASTRUCTURE</p>
+          <h2 class="text-2xl sm:text-4xl font-cinzel tracking-[0.12em] text-gray-900 uppercase">SANCTUARY FACILITIES &amp; AMENITIES</h2>
+          <p class="text-sm sm:text-base font-serif italic text-gray-600 mt-1">
+            Comprehensive 55-acre self-sustaining campus infrastructure designed for comfort and serene living.
+          </p>
+        </header>
 
-          <!-- 3-Column Photo Gallery Grid -->
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <!-- Interactive Brass Picture Rail Stage -->
+        <div id="prStage" class="relative mt-10 w-full max-w-7xl mx-auto px-4 overflow-x-auto md:overflow-visible pb-6">
+          <!-- Top Brass Gallery Rail -->
+          <div aria-hidden="true" class="pr-rail w-full h-3 rounded-full relative z-10"></div>
 
-            <!-- Card 1: Indigenous Gaushala -->
-            <div class="group bg-white border border-gray-200/80 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden">
-              <div class="relative w-full h-56 aspect-[4/3] overflow-hidden bg-gray-100">
-                <img 
-                  data-slot="part2-photo-1"
-                  src="https://images.unsplash.com/photo-1546445317-29f4545e9d53?auto=format&fit=crop&w=800&q=80" 
-                  alt="Indigenous Gaushala" 
-                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  loading="lazy"
-                />
-              </div>
-              <div class="p-6 bg-white flex flex-col flex-grow justify-between">
-                <div>
-                  <span class="text-tajGold text-[10px] tracking-widest font-semibold uppercase block">Desi Cow Sanctuary</span>
-                  <h3 class="text-lg font-serif text-gray-900 mt-1 font-semibold">Indigenous Gaushala</h3>
-                  <p class="text-xs text-gray-600 mt-2 leading-relaxed">
-                    160+ indigenous cows across 13 Indian breeds providing pure farm-fresh A2 dairy and traditional care.
-                  </p>
-                </div>
-                <div class="mt-4 pt-3 border-t border-gray-100">
-                  <button 
-                    type="button"
-                    onclick="showFacilityModal('Indigenous Gaushala', '160+ indigenous cows across 13 Indian breeds providing pure farm-fresh A2 dairy.')"
-                    class="text-xs font-bold tracking-wider text-tajGold hover:text-tajGoldHover uppercase inline-flex items-center gap-1 transition-colors cursor-pointer">
-                    <span>LEARN MORE</span>
-                    <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <!-- Card 2: Riverfront Ghat Promenade -->
-            <div class="group bg-white border border-gray-200/80 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden">
-              <div class="relative w-full h-56 aspect-[4/3] overflow-hidden bg-gray-100">
-                <img 
-                  data-slot="part2-photo-2"
-                  src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" 
-                  alt="Riverfront Ghat Promenade & Gardens" 
-                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  loading="lazy"
-                />
-              </div>
-              <div class="p-6 bg-white flex flex-col flex-grow justify-between">
-                <div>
-                  <span class="text-tajGold text-[10px] tracking-widest font-semibold uppercase block">Sacred Waterfront</span>
-                  <h3 class="text-lg font-serif text-gray-900 mt-1 font-semibold">Riverfront Ghat Promenade</h3>
-                  <p class="text-xs text-gray-600 mt-2 leading-relaxed">
-                    Private riverfront walking trails and tranquil sit-outs overlooking the sacred Mandakini River.
-                  </p>
-                </div>
-                <div class="mt-4 pt-3 border-t border-gray-100">
-                  <button 
-                    type="button"
-                    onclick="showFacilityModal('Riverfront Ghat Promenade', 'Private riverfront walking trails and tranquil sit-outs overlooking the sacred Mandakini River.')"
-                    class="text-xs font-bold tracking-wider text-tajGold hover:text-tajGoldHover uppercase inline-flex items-center gap-1 transition-colors cursor-pointer">
-                    <span>LEARN MORE</span>
-                    <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <!-- Card 3: Helipad Transit Facility -->
-            <div class="group bg-white border border-gray-200/80 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden">
-              <div class="relative w-full h-56 aspect-[4/3] overflow-hidden bg-gray-100">
-                <img 
-                  data-slot="part2-photo-3"
-                  src="https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&w=800&q=80" 
-                  alt="Helipad Transit Facility" 
-                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  loading="lazy"
-                />
-              </div>
-              <div class="p-6 bg-white flex flex-col flex-grow justify-between">
-                <div>
-                  <span class="text-tajGold text-[10px] tracking-widest font-semibold uppercase block">Executive Aviation</span>
-                  <h3 class="text-lg font-serif text-gray-900 mt-1 font-semibold">Helipad Transit Facility</h3>
-                  <p class="text-xs text-gray-600 mt-2 leading-relaxed">
-                    Five operational on-campus helipads facilitating executive transit, VIP air arrivals, and rapid regional connectivity.
-                  </p>
-                </div>
-                <div class="mt-4 pt-3 border-t border-gray-100">
-                  <button 
-                    type="button"
-                    onclick="showFacilityModal('Helipad Transit Facility', 'Five operational on-campus helipads facilitating executive transit and VIP air arrivals.')"
-                    class="text-xs font-bold tracking-wider text-tajGold hover:text-tajGoldHover uppercase inline-flex items-center gap-1 transition-colors cursor-pointer">
-                    <span>LEARN MORE</span>
-                    <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-
+          <!-- Hanging Frames Track -->
+          <div id="prTrack" class="relative flex items-start justify-start md:justify-center gap-6 sm:gap-8 lg:gap-10 pt-8 min-w-max md:min-w-0 px-4">
+            <!-- Frames injected via Vanilla JS -->
           </div>
         </div>
+
+        <!-- Active Frame Live Caption Bar -->
+        <div class="relative z-10 flex flex-col items-center gap-3 px-6 pt-4 text-center max-w-xl mx-auto">
+          <div id="prCaptionBox" aria-live="polite" class="min-h-[3.5rem] transition-all duration-300">
+            <p class="text-sm font-medium text-gray-900">Hover or tap any framed sanctuary exhibit to illuminate • Click to lift &amp; inspect</p>
+          </div>
+          <a href="#booking-widget" class="mt-2 inline-flex items-center gap-2 rounded-sm bg-tajGold hover:bg-tajGoldHover px-6 py-2.5 text-xs font-bold uppercase tracking-[0.2em] text-white shadow-sm transition">
+            EXPLORE CAMPUS STAY <span>&rarr;</span>
+          </a>
+        </div>
       </section>
+
+      <!-- 3D Flip Inspection Modal (Front Photo / Back Gallery Label) -->
+      <div id="prModal" role="dialog" aria-modal="true" class="fixed inset-0 z-[500] hidden items-center justify-center p-4 sm:p-6">
+        <div id="prModalBackdrop" class="absolute inset-0 bg-black/85 backdrop-blur-md transition-opacity"></div>
+        
+        <button type="button" id="prModalClose" class="absolute right-5 top-5 z-20 inline-flex items-center gap-1.5 rounded-full bg-white/15 hover:bg-white/25 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white backdrop-blur transition">
+          Close <span>&times;</span>
+        </button>
+
+        <div class="relative z-10 grid w-full max-w-4xl items-center gap-8 md:grid-cols-2 bg-[#FAF8F5] p-6 sm:p-10 rounded-sm shadow-2xl border border-tajGold/30">
+          <!-- Left: 3D Flippable Frame -->
+          <div class="pr-flip-scene w-full aspect-[4/5] max-w-[320px] mx-auto cursor-pointer" id="prFlipScene" title="Click frame to flip Front / Back">
+            <div id="prFlipCard" class="pr-flip-card relative w-full h-full">
+              <!-- Front Face -->
+              <div id="prModalFront" class="pr-face absolute inset-0 bg-white overflow-hidden shadow-xl"></div>
+              <!-- Back Face (Museum Gallery Label & Hanging Wire) -->
+              <div id="prModalBack" class="pr-face pr-face-back absolute inset-0 bg-[#d8b888] border-8 border-[#2b2118] p-5 flex flex-col justify-between shadow-xl"></div>
+            </div>
+          </div>
+
+          <!-- Right: Facility Details & Flip Controls -->
+          <div id="prModalInfo" class="flex flex-col text-center md:text-left">
+            <!-- Populated dynamically via JS -->
+          </div>
+        </div>
+      </div>
 
       <!-- ================= 6. CREDENTIALS & GOOGLE RATINGS INTEGRATION ================= -->
       <section id="reviews" class="py-20 sm:py-28 bg-white border-b border-taj-border">
@@ -2052,6 +2042,226 @@
     renderCaption(0);
     measure();
     new ResizeObserver(measure).observe(frame);
+  })();
+  </script>
+
+  <!-- ================= BRASS PICTURE RAIL GALLERY ENGINE ================= -->
+  <script>
+  (function() {
+    const FACILITIES = [
+      {
+        id: "indigenous-gaushala",
+        category: "Desi Cow Sanctuary",
+        title: "Indigenous Gaushala",
+        subtitle: "160+ indigenous cows across 13 Indian breeds providing pure farm-fresh A2 dairy.",
+        image: "https://images.unsplash.com/photo-1545468800-85cc9bc6ecf7?w=800&h=1000&fit=crop&q=80",
+        frame: "oak",
+        mat: true,
+        drop: 0,
+        tag: "13 Indigenous Breeds",
+        details: ["160+ Desi Gir & Sahiwal Cows", "Pure Satvik A2 Dairy Supply", "Organic Panchagavya Care", "Guided Morning Gaushala Visits"]
+      },
+      {
+        id: "helipad-transit",
+        category: "Aviation Transit",
+        title: "Helipad Transit Facility",
+        subtitle: "Five operational on-campus helipads facilitating executive transit and VIP air arrivals.",
+        image: "https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=800&h=1000&fit=crop&q=80",
+        frame: "black",
+        mat: true,
+        drop: 18,
+        tag: "5 Operational Helipads",
+        details: ["5 Dedicated Landing Pads", "Direct Executive Air Access", "Private Chitrakoot Transfers", "24/7 Ground Coordination"]
+      },
+      {
+        id: "riverfront-ghat",
+        category: "Sacred Waterfront",
+        title: "Riverfront Ghat Promenade",
+        subtitle: "Private riverfront walking trails and tranquil sit-outs overlooking the sacred Mandakini River.",
+        image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=1000&fit=crop&q=80",
+        frame: "white",
+        mat: true,
+        drop: 6,
+        tag: "Mandakini Waterfront",
+        details: ["Private Mandakini Ghat Access", "Dawn Sandhya & Meditation Decks", "Landscaped Riverside Trails", "Serene Sunset Sit-Outs"]
+      },
+      {
+        id: "ayurvedic-rasshala",
+        category: "Classical Formulations",
+        title: "Ayurvedic Rasshala",
+        subtitle: "Authentic in-house pharmacy formulating classical Ayurvedic medicines from farm-harvested herbs.",
+        image: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=800&h=1000&fit=crop&q=80",
+        frame: "oak",
+        mat: true,
+        drop: 22,
+        tag: "In-House Pharmacy",
+        details: ["Farm-Harvested Medicinal Herbs", "Classical Rasashastra Formulations", "GMP-Certified Quality Standards", "Custom Physician Prescriptions"]
+      },
+      {
+        id: "library-botanical",
+        category: "Integrated Amenities",
+        title: "Library & Botanical Flora",
+        subtitle: "Wellness reference library, modern fitness gym, and 55-acre cultivated medicinal botanical flora.",
+        image: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=800&h=1000&fit=crop&q=80",
+        frame: "black",
+        mat: true,
+        drop: 8,
+        tag: "55-Acre Sanctuary",
+        details: ["Vedic & Wellness Reference Library", "Modern Cardio & Fitness Studio", "55-Acre Medicinal Flora Gardens", "Quiet Reading Verandahs"]
+      }
+    ];
+
+    const track = document.getElementById("prTrack");
+    const captionBox = document.getElementById("prCaptionBox");
+    const modal = document.getElementById("prModal");
+    const modalBackdrop = document.getElementById("prModalBackdrop");
+    const modalClose = document.getElementById("prModalClose");
+    const flipScene = document.getElementById("prFlipScene");
+    const flipCard = document.getElementById("prFlipCard");
+    const modalFront = document.getElementById("prModalFront");
+    const modalBack = document.getElementById("prModalBack");
+    const modalInfo = document.getElementById("prModalInfo");
+
+    if (!track) return;
+
+    let activeIndex = 0;
+
+    function setCaption(idx) {
+      const item = FACILITIES[idx];
+      if (!item) return;
+      captionBox.innerHTML = `
+        <span class="text-[10px] font-bold uppercase tracking-[0.22em] text-tajGold">${item.category}</span>
+        <p class="text-base sm:text-lg font-cinzel text-gray-900 mt-0.5">${item.title}</p>
+        <p class="text-xs sm:text-sm text-gray-600 mt-1">${item.subtitle} <span class="text-tajGold font-semibold ml-1 underline">Lift to view &rarr;</span></p>
+      `;
+    }
+
+    // Render Hanging Frames on the Brass Rail
+    FACILITIES.forEach((item, idx) => {
+      const frameClass = item.frame === "oak" ? "pr-frame-oak" : item.frame === "white" ? "pr-frame-white" : "pr-frame-black";
+      const initialTilt = (((idx * 37 + 11) % 5) - 2) * 0.6;
+
+      const wrapper = document.createElement("div");
+      wrapper.className = "relative flex flex-col items-center group cursor-pointer shrink-0";
+      wrapper.style.marginTop = `${item.drop}px`;
+
+      wrapper.innerHTML = `
+        <!-- Brass Rail Hook -->
+        <div aria-hidden="true" class="w-2.5 h-4 -mt-9 rounded-b-sm bg-gradient-to-b from-amber-300 via-amber-500 to-amber-700 shadow"></div>
+        
+        <!-- Hanging Steel Wires -->
+        <svg aria-hidden="true" class="w-32 h-7 overflow-visible pointer-events-none" viewBox="0 0 128 28">
+          <line x1="64" y1="0" x2="26" y2="28" stroke="#6b7280" stroke-width="1" stroke-opacity="0.65" />
+          <line x1="64" y1="0" x2="102" y2="28" stroke="#6b7280" stroke-width="1" stroke-opacity="0.65" />
+        </svg>
+
+        <!-- Brass Picture Lamp Hood -->
+        <div aria-hidden="true" class="w-20 h-2 rounded-full bg-gradient-to-r from-amber-700 via-amber-400 to-amber-700 shadow-md -mb-1 z-20 transition-transform duration-300 group-hover:scale-105"></div>
+
+        <!-- Swinging Framed Print -->
+        <div class="pr-frame-body relative w-44 sm:w-48 aspect-[4/5] bg-white transition-all duration-500 ease-out group-hover:-translate-y-2 group-hover:scale-[1.04] group-hover:shadow-2xl ${frameClass} ${item.mat ? 'pr-mat' : ''}"
+             style="transform: rotate(${initialTilt}deg); transform-origin: top center;">
+          <div class="relative w-full h-full overflow-hidden bg-gray-100">
+            <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            <!-- Warm Gallery Spotlight Cone -->
+            <div class="pr-spotlight absolute inset-0 opacity-0 group-hover:opacity-100 pointer-events-none"></div>
+          </div>
+        </div>
+
+        <!-- Wall Museum Tag -->
+        <span class="mt-3 px-2.5 py-1 rounded-[2px] border border-gray-200 bg-[#FAF8F5] text-[10px] font-medium tracking-wider text-gray-700 shadow-sm group-hover:border-tajGold group-hover:text-tajGold transition-colors">
+          ${item.tag}
+        </span>
+      `;
+
+      wrapper.addEventListener("mouseenter", () => {
+        activeIndex = idx;
+        setCaption(idx);
+      });
+
+      wrapper.addEventListener("click", () => openModal(idx));
+      track.appendChild(wrapper);
+    });
+
+    function openModal(idx) {
+      const item = FACILITIES[idx];
+      if (!item) return;
+
+      flipCard.classList.remove("is-flipped");
+      const frameClass = item.frame === "oak" ? "pr-frame-oak" : item.frame === "white" ? "pr-frame-white" : "pr-frame-black";
+
+      modalFront.className = `pr-face absolute inset-0 bg-white overflow-hidden shadow-xl ${frameClass} ${item.mat ? 'pr-mat' : ''}`;
+      modalFront.innerHTML = `<img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover" />`;
+
+      modalBack.innerHTML = `
+        <div class="w-full flex flex-col items-center pt-2">
+          <svg class="w-40 h-10 overflow-visible" viewBox="0 0 160 40">
+            <path d="M15,32 Q80,6 145,32" fill="none" stroke="#4b5563" stroke-width="2" />
+            <circle cx="15" cy="32" r="3.5" fill="#9ca3af" />
+            <circle cx="145" cy="32" r="3.5" fill="#9ca3af" />
+          </svg>
+        </div>
+        <div class="bg-[#fcfaf5] p-4 rounded-[2px] shadow border border-black/10 text-left text-gray-900">
+          <p class="text-[9px] uppercase tracking-[0.22em] text-gray-500">Sanctuary Archive Label</p>
+          <p class="font-cinzel text-sm font-bold mt-1">${item.title}</p>
+          <p class="text-[11px] text-gray-600 mt-0.5">${item.category} • Chitrakoot Campus</p>
+          <p class="text-[10px] font-serif italic text-tajGold mt-2 pt-2 border-t border-gray-200">Arogyadham Swasthya Kutir</p>
+        </div>
+      `;
+
+      const detailsList = item.details.map(d => `<li class="px-3 py-1 rounded-full bg-white border border-gray-200 text-xs text-gray-700">${d}</li>`).join("");
+
+      modalInfo.innerHTML = `
+        <span class="font-mono text-xs tracking-[0.2em] text-gray-400">0${idx + 1} / 0${FACILITIES.length}</span>
+        <span class="text-[11px] font-bold uppercase tracking-[0.2em] text-tajGold mt-2">${item.category}</span>
+        <h3 class="text-2xl sm:text-3xl font-cinzel text-gray-900 mt-1">${item.title}</h3>
+        <p class="text-sm text-gray-600 mt-3 leading-relaxed">${item.subtitle}</p>
+        <ul class="flex flex-wrap justify-center md:justify-start gap-2 mt-5">${detailsList}</ul>
+        
+        <div class="flex items-center justify-center md:justify-start gap-4 mt-7 pt-5 border-t border-gray-200">
+          <button type="button" id="prBtnFront" class="text-xs font-bold uppercase tracking-widest pb-1 border-b-2 border-tajGold text-gray-900">Front View</button>
+          <button type="button" id="prBtnBack" class="text-xs font-bold uppercase tracking-widest pb-1 border-b-2 border-transparent text-gray-500 hover:text-gray-900">Back Label</button>
+        </div>
+      `;
+
+      document.getElementById("prBtnFront").onclick = () => {
+        flipCard.classList.remove("is-flipped");
+        document.getElementById("prBtnFront").classList.replace("border-transparent", "border-tajGold");
+        document.getElementById("prBtnFront").classList.replace("text-gray-500", "text-gray-900");
+        document.getElementById("prBtnBack").classList.replace("border-tajGold", "border-transparent");
+        document.getElementById("prBtnBack").classList.replace("text-gray-900", "text-gray-500");
+      };
+
+      document.getElementById("prBtnBack").onclick = () => {
+        flipCard.classList.add("is-flipped");
+        document.getElementById("prBtnBack").classList.replace("border-transparent", "border-tajGold");
+        document.getElementById("prBtnBack").classList.replace("text-gray-500", "text-gray-900");
+        document.getElementById("prBtnFront").classList.replace("border-tajGold", "border-transparent");
+        document.getElementById("prBtnFront").classList.replace("text-gray-900", "text-gray-500");
+      };
+
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeModal() {
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+      document.body.style.overflow = "";
+    }
+
+    flipScene.addEventListener("click", () => {
+      flipCard.classList.toggle("is-flipped");
+    });
+
+    modalClose.addEventListener("click", closeModal);
+    modalBackdrop.addEventListener("click", closeModal);
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !modal.classList.contains("hidden")) closeModal();
+    });
+
+    setCaption(0);
   })();
   </script>
 </body>
